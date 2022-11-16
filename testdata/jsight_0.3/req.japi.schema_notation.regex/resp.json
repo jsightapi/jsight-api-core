@@ -1,0 +1,42 @@
+{
+  "tags": {
+    "@catsName": {
+      "name": "@catsName",
+      "title": "/catsName",
+      "interactionGroups": [
+        {
+          "protocol": "http",
+          "interactions": [
+            "http GET /catsName"
+          ]
+        }
+      ]
+    }
+  },
+  "interactions": {
+    "http GET /catsName": {
+      "id": "http GET /catsName",
+      "protocol": "http",
+      "httpMethod": "GET",
+      "path": "/catsName",
+      "tags": [
+        "@catsName"
+      ],
+      "responses": [
+        {
+          "code": "200",
+          "body": {
+            "format": "plainString",
+            "schema": {
+              "content": "[a-z]+",
+              "example": "u",
+              "notation": "regex"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "jsight": "0.3",
+  "jdocExchangeVersion": "2.0.0"
+}

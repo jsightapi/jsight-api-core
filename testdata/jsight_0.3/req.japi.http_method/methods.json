@@ -1,0 +1,74 @@
+{
+  "tags": {
+    "@cats": {
+      "name": "@cats",
+      "title": "/cats",
+      "interactionGroups": [
+        {
+          "protocol": "http",
+          "interactions": [
+            "http POST /cats",
+            "http GET /cats/{id}",
+            "http PUT /cats/{id}",
+            "http PATCH /cats/{id}",
+            "http DELETE /cats/{id}"
+          ]
+        }
+      ]
+    }
+  },
+  "interactions": {
+    "http POST /cats": {
+      "id": "http POST /cats",
+      "protocol": "http",
+      "path": "/cats",
+      "tags": [
+        "@cats"
+      ],
+      "annotation": "Create a new cat.",
+      "httpMethod": "POST"
+    },
+    "http GET /cats/{id}": {
+      "id": "http GET /cats/{id}",
+      "protocol": "http",
+      "path": "/cats/{id}",
+      "tags": [
+        "@cats"
+      ],
+      "annotation": "Get a cat.",
+      "httpMethod": "GET"
+    },
+    "http PUT /cats/{id}": {
+      "id": "http PUT /cats/{id}",
+      "protocol": "http",
+      "path": "/cats/{id}",
+      "tags": [
+        "@cats"
+      ],
+      "annotation": "Update the whole cat.",
+      "httpMethod": "PUT"
+    },
+    "http PATCH /cats/{id}": {
+      "id": "http PATCH /cats/{id}",
+      "protocol": "http",
+      "path": "/cats/{id}",
+      "tags": [
+        "@cats"
+      ],
+      "annotation": "Change the status of the cat.",
+      "httpMethod": "PATCH"
+    },
+    "http DELETE /cats/{id}": {
+      "id": "http DELETE /cats/{id}",
+      "protocol": "http",
+      "path": "/cats/{id}",
+      "tags": [
+        "@cats"
+      ],
+      "annotation": "Remove the cat.",
+      "httpMethod": "DELETE"
+    }
+  },
+  "jsight": "0.3",
+  "jdocExchangeVersion": "2.0.0"
+}

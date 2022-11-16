@@ -1,0 +1,3 @@
+directive "JSIGHT" not allowed in included file
+mixins/err_with_banned_directive.jst:2
+err_34_mixin_with_banned_directive.jst:3

@@ -1,0 +1,43 @@
+{
+	"tags": {},
+	"userTypes": {
+		"@n": {
+			"schema": {
+				"content": {
+					"tokenType": "object",
+					"type": "object",
+					"children": [
+						{
+							"key": "a",
+							"tokenType": "number",
+							"type": "integer",
+							"scalarValue": "1",
+							"optional": false
+						}
+					],
+					"optional": false
+				},
+				"example": "{\"a\":1}",
+				"notation": "jsight"
+			}
+		},
+		"@n1": {
+			"schema": {
+				"content": {
+					"tokenType": "reference",
+					"type": "@n",
+					"scalarValue": "@n",
+					"optional": false
+				},
+				"example": "{\"a\":1}",
+				"notation": "jsight",
+				"usedUserTypes": [
+					"@n"
+				]
+			}
+		}
+	},
+	"interactions": {},
+	"jsight": "0.3",
+	"jdocExchangeVersion": "2.0.0"
+}

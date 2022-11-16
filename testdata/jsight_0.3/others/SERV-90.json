@@ -1,0 +1,686 @@
+{
+  "tags": {},
+  "userTypes": {
+    "@cat": {
+      "annotation": "A cat.",
+      "schema": {
+        "content": {
+          "rules": [
+            {
+              "key": "allOf",
+              "tokenType": "reference",
+              "scalarValue": "@pet"
+            }
+          ],
+          "tokenType": "object",
+          "type": "object",
+          "children": [
+            {
+              "key": "type",
+              "tokenType": "reference",
+              "type": "@animalType",
+              "scalarValue": "@animalType",
+              "inheritedFrom": "@pet",
+              "optional": false
+            },
+            {
+              "key": "moodStatus",
+              "tokenType": "string",
+              "type": "enum",
+              "scalarValue": "happy",
+              "inheritedFrom": "@pet",
+              "rules": [
+                {
+                  "key": "type",
+                  "tokenType": "string",
+                  "scalarValue": "enum"
+                },
+                {
+                  "key": "enum",
+                  "tokenType": "array",
+                  "children": [
+                    {
+                      "tokenType": "string",
+                      "scalarValue": "happy"
+                    },
+                    {
+                      "tokenType": "string",
+                      "scalarValue": "gloomy"
+                    }
+                  ]
+                }
+              ],
+              "optional": false
+            },
+            {
+              "key": "age",
+              "tokenType": "number",
+              "type": "integer",
+              "scalarValue": "12",
+              "inheritedFrom": "@pet",
+              "rules": [
+                {
+                  "key": "min",
+                  "tokenType": "number",
+                  "scalarValue": "0"
+                },
+                {
+                  "key": "max",
+                  "tokenType": "number",
+                  "scalarValue": "600"
+                }
+              ],
+              "optional": false
+            },
+            {
+              "key": "weight",
+              "tokenType": "number",
+              "type": "float",
+              "scalarValue": "2.5",
+              "inheritedFrom": "@pet",
+              "rules": [
+                {
+                  "key": "min",
+                  "tokenType": "number",
+                  "scalarValue": "0"
+                },
+                {
+                  "key": "exclusiveMinimum",
+                  "tokenType": "boolean",
+                  "scalarValue": "true"
+                },
+                {
+                  "key": "max",
+                  "tokenType": "number",
+                  "scalarValue": "6000"
+                },
+                {
+                  "key": "exclusiveMaximum",
+                  "tokenType": "boolean",
+                  "scalarValue": "false"
+                }
+              ],
+              "optional": false
+            },
+            {
+              "key": "birthday",
+              "tokenType": "string",
+              "type": "date",
+              "scalarValue": "2006-01-02",
+              "inheritedFrom": "@pet",
+              "rules": [
+                {
+                  "key": "type",
+                  "tokenType": "string",
+                  "scalarValue": "date"
+                }
+              ],
+              "optional": false
+            },
+            {
+              "key": "passportNumber",
+              "tokenType": "number",
+              "type": "mixed",
+              "scalarValue": "1234123212",
+              "inheritedFrom": "@pet",
+              "rules": [
+                {
+                  "key": "or",
+                  "tokenType": "array",
+                  "children": [
+                    {
+                      "tokenType": "object",
+                      "children": [
+                        {
+                          "key": "type",
+                          "tokenType": "string",
+                          "scalarValue": "integer"
+                        }
+                      ]
+                    },
+                    {
+                      "tokenType": "object",
+                      "children": [
+                        {
+                          "key": "type",
+                          "tokenType": "string",
+                          "scalarValue": "string"
+                        },
+                        {
+                          "key": "minLength",
+                          "tokenType": "number",
+                          "scalarValue": "10"
+                        },
+                        {
+                          "key": "maxLength",
+                          "tokenType": "number",
+                          "scalarValue": "10"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "optional": false
+            },
+            {
+              "key": "name",
+              "tokenType": "string",
+              "type": "string",
+              "scalarValue": "Thomas the Great",
+              "inheritedFrom": "@pet",
+              "optional": false
+            },
+            {
+              "key": "email",
+              "tokenType": "string",
+              "type": "email",
+              "scalarValue": "thomas@catsbook.com",
+              "inheritedFrom": "@pet",
+              "rules": [
+                {
+                  "key": "type",
+                  "tokenType": "string",
+                  "scalarValue": "email"
+                }
+              ],
+              "optional": false
+            },
+            {
+              "key": "website",
+              "tokenType": "string",
+              "type": "uri",
+              "scalarValue": "http://www.thomas-the-great.com",
+              "inheritedFrom": "@pet",
+              "rules": [
+                {
+                  "key": "type",
+                  "tokenType": "string",
+                  "scalarValue": "uri"
+                },
+                {
+                  "key": "nullable",
+                  "tokenType": "boolean",
+                  "scalarValue": "true"
+                }
+              ],
+              "optional": false
+            },
+            {
+              "key": "owners",
+              "tokenType": "array",
+              "type": "array",
+              "inheritedFrom": "@pet",
+              "note": "Owners",
+              "children": [
+                {
+                  "tokenType": "object",
+                  "type": "object",
+                  "note": "Owner",
+                  "children": [
+                    {
+                      "note": "Owners id.",
+                      "key": "id",
+                      "tokenType": "string",
+                      "type": "uuid",
+                      "scalarValue": "550e8400-e29b-41d4-a716-446655440000",
+                      "rules": [
+                        {
+                          "key": "type",
+                          "tokenType": "string",
+                          "scalarValue": "uuid"
+                        }
+                      ],
+                      "optional": false
+                    },
+                    {
+                      "key": "name",
+                      "tokenType": "string",
+                      "type": "string",
+                      "scalarValue": "John",
+                      "optional": false
+                    }
+                  ],
+                  "optional": true
+                }
+              ],
+              "optional": false
+            },
+            {
+              "note": "Cat’s id.",
+              "key": "id",
+              "tokenType": "string",
+              "type": "@catId",
+              "scalarValue": "CAT-123",
+              "rules": [
+                {
+                  "key": "type",
+                  "tokenType": "reference",
+                  "scalarValue": "@catId"
+                }
+              ],
+              "optional": false
+            }
+          ],
+          "optional": false
+        },
+        "example": "{\"id\":\"CAT-123\",\"passportNumber\":1234123212,\"name\":\"Thomas the Great\",\"email\":\"thomas@catsbook.com\",\"website\":\"http://www.thomas-the-great.com\",\"owners\":[{\"id\":\"550e8400-e29b-41d4-a716-446655440000\",\"name\":\"John\"}],\"type\":\"cat\",\"moodStatus\":\"happy\",\"age\":12,\"weight\":2.5,\"birthday\":\"2006-01-02\"}",
+        "notation": "jsight",
+        "usedUserTypes": [
+          "@pet",
+          "@catId",
+          "@animalType"
+        ]
+      }
+    },
+    "@pet": {
+      "schema": {
+        "content": {
+          "rules": [
+            {
+              "key": "allOf",
+              "tokenType": "reference",
+              "scalarValue": "@animal"
+            }
+          ],
+          "tokenType": "object",
+          "type": "object",
+          "children": [
+            {
+              "key": "type",
+              "tokenType": "reference",
+              "type": "@animalType",
+              "scalarValue": "@animalType",
+              "inheritedFrom": "@animal",
+              "optional": false
+            },
+            {
+              "key": "moodStatus",
+              "tokenType": "string",
+              "type": "enum",
+              "scalarValue": "happy",
+              "inheritedFrom": "@animal",
+              "rules": [
+                {
+                  "key": "type",
+                  "tokenType": "string",
+                  "scalarValue": "enum"
+                },
+                {
+                  "key": "enum",
+                  "tokenType": "array",
+                  "children": [
+                    {
+                      "tokenType": "string",
+                      "scalarValue": "happy"
+                    },
+                    {
+                      "tokenType": "string",
+                      "scalarValue": "gloomy"
+                    }
+                  ]
+                }
+              ],
+              "optional": false
+            },
+            {
+              "key": "age",
+              "tokenType": "number",
+              "type": "integer",
+              "scalarValue": "12",
+              "inheritedFrom": "@animal",
+              "rules": [
+                {
+                  "key": "min",
+                  "tokenType": "number",
+                  "scalarValue": "0"
+                },
+                {
+                  "key": "max",
+                  "tokenType": "number",
+                  "scalarValue": "600"
+                }
+              ],
+              "optional": false
+            },
+            {
+              "key": "weight",
+              "tokenType": "number",
+              "type": "float",
+              "scalarValue": "2.5",
+              "inheritedFrom": "@animal",
+              "rules": [
+                {
+                  "key": "min",
+                  "tokenType": "number",
+                  "scalarValue": "0"
+                },
+                {
+                  "key": "exclusiveMinimum",
+                  "tokenType": "boolean",
+                  "scalarValue": "true"
+                },
+                {
+                  "key": "max",
+                  "tokenType": "number",
+                  "scalarValue": "6000"
+                },
+                {
+                  "key": "exclusiveMaximum",
+                  "tokenType": "boolean",
+                  "scalarValue": "false"
+                }
+              ],
+              "optional": false
+            },
+            {
+              "key": "birthday",
+              "tokenType": "string",
+              "type": "date",
+              "scalarValue": "2006-01-02",
+              "inheritedFrom": "@animal",
+              "rules": [
+                {
+                  "key": "type",
+                  "tokenType": "string",
+                  "scalarValue": "date"
+                }
+              ],
+              "optional": false
+            },
+            {
+              "key": "passportNumber",
+              "tokenType": "number",
+              "type": "mixed",
+              "scalarValue": "1234123212",
+              "rules": [
+                {
+                  "key": "or",
+                  "tokenType": "array",
+                  "children": [
+                    {
+                      "tokenType": "object",
+                      "children": [
+                        {
+                          "key": "type",
+                          "tokenType": "string",
+                          "scalarValue": "integer"
+                        }
+                      ]
+                    },
+                    {
+                      "tokenType": "object",
+                      "children": [
+                        {
+                          "key": "type",
+                          "tokenType": "string",
+                          "scalarValue": "string"
+                        },
+                        {
+                          "key": "minLength",
+                          "tokenType": "number",
+                          "scalarValue": "10"
+                        },
+                        {
+                          "key": "maxLength",
+                          "tokenType": "number",
+                          "scalarValue": "10"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "optional": false
+            },
+            {
+              "key": "name",
+              "tokenType": "string",
+              "type": "string",
+              "scalarValue": "Thomas the Great",
+              "optional": false
+            },
+            {
+              "key": "email",
+              "tokenType": "string",
+              "type": "email",
+              "scalarValue": "thomas@catsbook.com",
+              "rules": [
+                {
+                  "key": "type",
+                  "tokenType": "string",
+                  "scalarValue": "email"
+                }
+              ],
+              "optional": false
+            },
+            {
+              "key": "website",
+              "tokenType": "string",
+              "type": "uri",
+              "scalarValue": "http://www.thomas-the-great.com",
+              "rules": [
+                {
+                  "key": "type",
+                  "tokenType": "string",
+                  "scalarValue": "uri"
+                },
+                {
+                  "key": "nullable",
+                  "tokenType": "boolean",
+                  "scalarValue": "true"
+                }
+              ],
+              "optional": false
+            },
+            {
+              "key": "owners",
+              "tokenType": "array",
+              "type": "array",
+              "note": "Owners",
+              "children": [
+                {
+                  "tokenType": "object",
+                  "type": "object",
+                  "note": "Owner",
+                  "children": [
+                    {
+                      "note": "Owners id.",
+                      "key": "id",
+                      "tokenType": "string",
+                      "type": "uuid",
+                      "scalarValue": "550e8400-e29b-41d4-a716-446655440000",
+                      "rules": [
+                        {
+                          "key": "type",
+                          "tokenType": "string",
+                          "scalarValue": "uuid"
+                        }
+                      ],
+                      "optional": false
+                    },
+                    {
+                      "key": "name",
+                      "tokenType": "string",
+                      "type": "string",
+                      "scalarValue": "John",
+                      "optional": false
+                    }
+                  ],
+                  "optional": true
+                }
+              ],
+              "optional": false
+            }
+          ],
+          "optional": false
+        },
+        "example": "{\"passportNumber\":1234123212,\"name\":\"Thomas the Great\",\"email\":\"thomas@catsbook.com\",\"website\":\"http://www.thomas-the-great.com\",\"owners\":[{\"id\":\"550e8400-e29b-41d4-a716-446655440000\",\"name\":\"John\"}],\"type\":\"cat\",\"moodStatus\":\"happy\",\"age\":12,\"weight\":2.5,\"birthday\":\"2006-01-02\"}",
+        "notation": "jsight",
+        "usedUserTypes": [
+          "@animal",
+          "@animalType"
+        ]
+      }
+    },
+    "@animal": {
+      "schema": {
+        "content": {
+          "tokenType": "object",
+          "type": "object",
+          "children": [
+            {
+              "key": "type",
+              "tokenType": "reference",
+              "type": "@animalType",
+              "scalarValue": "@animalType",
+              "optional": false
+            },
+            {
+              "key": "moodStatus",
+              "tokenType": "string",
+              "type": "enum",
+              "scalarValue": "happy",
+              "rules": [
+                {
+                  "key": "type",
+                  "tokenType": "string",
+                  "scalarValue": "enum"
+                },
+                {
+                  "key": "enum",
+                  "tokenType": "array",
+                  "children": [
+                    {
+                      "tokenType": "string",
+                      "scalarValue": "happy"
+                    },
+                    {
+                      "tokenType": "string",
+                      "scalarValue": "gloomy"
+                    }
+                  ]
+                }
+              ],
+              "optional": false
+            },
+            {
+              "key": "age",
+              "tokenType": "number",
+              "type": "integer",
+              "scalarValue": "12",
+              "rules": [
+                {
+                  "key": "min",
+                  "tokenType": "number",
+                  "scalarValue": "0"
+                },
+                {
+                  "key": "max",
+                  "tokenType": "number",
+                  "scalarValue": "600"
+                }
+              ],
+              "optional": false
+            },
+            {
+              "key": "weight",
+              "tokenType": "number",
+              "type": "float",
+              "scalarValue": "2.5",
+              "rules": [
+                {
+                  "key": "min",
+                  "tokenType": "number",
+                  "scalarValue": "0"
+                },
+                {
+                  "key": "exclusiveMinimum",
+                  "tokenType": "boolean",
+                  "scalarValue": "true"
+                },
+                {
+                  "key": "max",
+                  "tokenType": "number",
+                  "scalarValue": "6000"
+                },
+                {
+                  "key": "exclusiveMaximum",
+                  "tokenType": "boolean",
+                  "scalarValue": "false"
+                }
+              ],
+              "optional": false
+            },
+            {
+              "key": "birthday",
+              "tokenType": "string",
+              "type": "date",
+              "scalarValue": "2006-01-02",
+              "rules": [
+                {
+                  "key": "type",
+                  "tokenType": "string",
+                  "scalarValue": "date"
+                }
+              ],
+              "optional": false
+            }
+          ],
+          "optional": false
+        },
+        "example": "{\"type\":\"cat\",\"moodStatus\":\"happy\",\"age\":12,\"weight\":2.5,\"birthday\":\"2006-01-02\"}",
+        "notation": "jsight",
+        "usedUserTypes": [
+          "@animalType"
+        ]
+      }
+    },
+    "@catId": {
+      "schema": {
+        "content": "CAT-\\d+",
+        "example": "CAT-4",
+        "notation": "regex"
+      }
+    },
+    "@animalType": {
+      "schema": {
+        "content": {
+          "tokenType": "string",
+          "type": "enum",
+          "scalarValue": "cat",
+          "rules": [
+            {
+              "key": "enum",
+              "tokenType": "array",
+              "children": [
+                {
+                  "tokenType": "string",
+                  "scalarValue": "cat"
+                },
+                {
+                  "tokenType": "string",
+                  "scalarValue": "dog"
+                },
+                {
+                  "tokenType": "string",
+                  "scalarValue": "pig"
+                },
+                {
+                  "tokenType": "string",
+                  "scalarValue": "frog"
+                }
+              ]
+            }
+          ],
+          "optional": false
+        },
+        "example": "\"cat\"",
+        "notation": "jsight"
+      }
+    }
+  },
+  "interactions": {},
+  "jsight": "0.3",
+  "jdocExchangeVersion": "2.0.0"
+}

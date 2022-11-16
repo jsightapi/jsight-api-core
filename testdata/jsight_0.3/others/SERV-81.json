@@ -1,0 +1,192 @@
+{
+  "tags": {},
+  "userTypes": {
+    "@t1": {
+      "schema": {
+        "content": {
+          "rules": [
+            {
+              "key": "allOf",
+              "tokenType": "array",
+              "children": [
+                {
+                  "tokenType": "reference",
+                  "scalarValue": "@1"
+                },
+                {
+                  "tokenType": "reference",
+                  "scalarValue": "@2"
+                }
+              ]
+            }
+          ],
+          "tokenType": "object",
+          "type": "object",
+          "children": [
+            {
+              "key": "1-field1",
+              "tokenType": "number",
+              "type": "integer",
+              "scalarValue": "1",
+              "inheritedFrom": "@1",
+              "optional": false
+            },
+            {
+              "key": "1-field2",
+              "tokenType": "number",
+              "type": "integer",
+              "scalarValue": "1",
+              "inheritedFrom": "@1",
+              "optional": false
+            },
+            {
+              "key": "2-field1",
+              "tokenType": "number",
+              "type": "integer",
+              "scalarValue": "2",
+              "inheritedFrom": "@2",
+              "optional": false
+            },
+            {
+              "key": "2-field2",
+              "tokenType": "number",
+              "type": "integer",
+              "scalarValue": "2",
+              "inheritedFrom": "@2",
+              "optional": false
+            }
+          ],
+          "optional": false
+        },
+        "example": "{\"1-field1\":1,\"1-field2\":1,\"2-field1\":2,\"2-field2\":2}",
+        "notation": "jsight",
+        "usedUserTypes": [
+          "@1",
+          "@2"
+        ]
+      }
+    },
+    "@t2": {
+      "schema": {
+        "content": {
+          "rules": [
+            {
+              "key": "allOf",
+              "tokenType": "array",
+              "children": [
+                {
+                  "tokenType": "reference",
+                  "scalarValue": "@2"
+                },
+                {
+                  "tokenType": "reference",
+                  "scalarValue": "@1"
+                }
+              ]
+            }
+          ],
+          "tokenType": "object",
+          "type": "object",
+          "children": [
+            {
+              "key": "2-field1",
+              "tokenType": "number",
+              "type": "integer",
+              "scalarValue": "2",
+              "inheritedFrom": "@2",
+              "optional": false
+            },
+            {
+              "key": "2-field2",
+              "tokenType": "number",
+              "type": "integer",
+              "scalarValue": "2",
+              "inheritedFrom": "@2",
+              "optional": false
+            },
+            {
+              "key": "1-field1",
+              "tokenType": "number",
+              "type": "integer",
+              "scalarValue": "1",
+              "inheritedFrom": "@1",
+              "optional": false
+            },
+            {
+              "key": "1-field2",
+              "tokenType": "number",
+              "type": "integer",
+              "scalarValue": "1",
+              "inheritedFrom": "@1",
+              "optional": false
+            }
+          ],
+          "optional": false
+        },
+        "example": "{\"2-field1\":2,\"2-field2\":2,\"1-field1\":1,\"1-field2\":1}",
+        "notation": "jsight",
+        "usedUserTypes": [
+          "@2",
+          "@1"
+        ]
+      }
+    },
+    "@1": {
+      "schema": {
+        "content": {
+          "tokenType": "object",
+          "type": "object",
+          "children": [
+            {
+              "key": "1-field1",
+              "tokenType": "number",
+              "type": "integer",
+              "scalarValue": "1",
+              "optional": false
+            },
+            {
+              "key": "1-field2",
+              "tokenType": "number",
+              "type": "integer",
+              "scalarValue": "1",
+              "optional": false
+            }
+          ],
+          "optional": false
+        },
+        "example": "{\"1-field1\":1,\"1-field2\":1}",
+        "notation": "jsight"
+      }
+    },
+    "@2": {
+      "schema": {
+        "content": {
+          "tokenType": "object",
+          "type": "object",
+          "children": [
+            {
+              "key": "2-field1",
+              "tokenType": "number",
+              "type": "integer",
+              "scalarValue": "2",
+              "optional": false
+            },
+            {
+              "key": "2-field2",
+              "tokenType": "number",
+              "type": "integer",
+              "scalarValue": "2",
+              "optional": false
+            }
+          ],
+          "optional": false
+        },
+        "example": "{\"2-field1\":2,\"2-field2\":2}",
+        "notation": "jsight"
+      }
+    }
+  },
+  "interactions": {},
+  "jsight": "0.3",
+  "jdocExchangeVersion": "2.0.0"
+}

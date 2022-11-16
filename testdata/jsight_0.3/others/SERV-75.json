@@ -1,0 +1,64 @@
+{
+  "tags": {
+    "@highest-possible-card": {
+      "name": "@highest-possible-card",
+      "title": "/highest-possible-card",
+      "interactionGroups": [
+        {
+          "protocol": "http",
+          "interactions": [
+            "http GET /highest-possible-card/{v}"
+          ]
+        }
+      ]
+    }
+  },
+  "interactions": {
+    "http GET /highest-possible-card/{v}": {
+      "id": "http GET /highest-possible-card/{v}",
+      "protocol": "http",
+      "path": "/highest-possible-card/{v}",
+      "tags": [
+        "@highest-possible-card"
+      ],
+      "pathVariables": {
+        "schema": {
+          "content": {
+            "tokenType": "object",
+            "type": "object",
+            "children": [
+              {
+                "key": "v",
+                "tokenType": "string",
+                "type": "enum",
+                "scalarValue": "5",
+                "rules": [
+                  {
+                    "key": "enum",
+                    "tokenType": "array",
+                    "children": [
+                      {
+                        "tokenType": "string",
+                        "scalarValue": "5"
+                      },
+                      {
+                        "tokenType": "number",
+                        "scalarValue": "5"
+                      }
+                    ]
+                  }
+                ],
+                "optional": false
+              }
+            ],
+            "optional": false
+          },
+          "notation": "jsight"
+        }
+      },
+      "httpMethod": "GET"
+    }
+  },
+  "jsight": "0.3",
+  "jdocExchangeVersion": "2.0.0"
+}

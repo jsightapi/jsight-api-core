@@ -1,0 +1,29 @@
+{
+	"tags": {},
+	"userTypes": {
+		"@cat": {
+			"annotation": "annotation of cat type",
+			"schema": {
+				"content": {
+					"tokenType": "object",
+					"type": "object",
+					"children": [
+						{
+							"key": "id",
+							"tokenType": "number",
+							"type": "integer",
+							"scalarValue": "1",
+							"optional": false
+						}
+					],
+					"optional": false
+				},
+				"example": "{\"id\":1}",
+				"notation": "jsight"
+			}
+		}
+	},
+	"interactions": {},
+	"jsight": "0.3",
+	"jdocExchangeVersion": "2.0.0"
+}

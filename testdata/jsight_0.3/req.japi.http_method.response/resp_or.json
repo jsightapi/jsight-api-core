@@ -1,0 +1,94 @@
+{
+  "tags": {
+    "@cats": {
+      "name": "@cats",
+      "title": "/cats",
+      "interactionGroups": [
+        {
+          "protocol": "http",
+          "interactions": [
+            "http POST /cats"
+          ]
+        }
+      ]
+    }
+  },
+  "interactions": {
+    "http POST /cats": {
+      "id": "http POST /cats",
+      "protocol": "http",
+      "httpMethod": "POST",
+      "path": "/cats",
+      "tags": [
+        "@cats"
+      ],
+      "annotation": "Add a cat.",
+      "responses": [
+        {
+          "code": "200",
+          "body": {
+            "format": "json",
+            "schema": {
+              "content": {
+                "tokenType": "object",
+                "type": "object",
+                "children": [
+                  {
+                    "key": "data",
+                    "tokenType": "string",
+                    "type": "mixed",
+                    "scalarValue": "abc",
+                    "rules": [
+                      {
+                        "key": "or",
+                        "tokenType": "array",
+                        "children": [
+                          {
+                            "tokenType": "object",
+                            "children": [
+                              {
+                                "key": "type",
+                                "tokenType": "string",
+                                "scalarValue": "string"
+                              },
+                              {
+                                "key": "maxLength",
+                                "tokenType": "number",
+                                "scalarValue": "3"
+                              }
+                            ]
+                          },
+                          {
+                            "tokenType": "object",
+                            "children": [
+                              {
+                                "key": "type",
+                                "tokenType": "string",
+                                "scalarValue": "integer"
+                              },
+                              {
+                                "key": "min",
+                                "tokenType": "number",
+                                "scalarValue": "0"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ],
+                    "optional": false
+                  }
+                ],
+                "optional": false
+              },
+              "example": "{\"data\":\"abc\"}",
+              "notation": "jsight"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "jsight": "0.3",
+  "jdocExchangeVersion": "2.0.0"
+}

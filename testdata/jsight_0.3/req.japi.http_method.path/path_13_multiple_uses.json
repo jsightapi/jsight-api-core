@@ -1,0 +1,113 @@
+{
+  "tags": {
+    "@cats": {
+      "name": "@cats",
+      "title": "/cats",
+      "interactionGroups": [
+        {
+          "protocol": "http",
+          "interactions": [
+            "http GET /cats/{id}",
+            "http GET /cats/{id}/friends"
+          ]
+        }
+      ]
+    }
+  },
+  "interactions": {
+    "http GET /cats/{id}": {
+      "id": "http GET /cats/{id}",
+      "protocol": "http",
+      "path": "/cats/{id}",
+      "tags": [
+        "@cats"
+      ],
+      "pathVariables": {
+        "schema": {
+          "content": {
+            "tokenType": "object",
+            "type": "object",
+            "children": [
+              {
+                "key": "id",
+                "tokenType": "number",
+                "type": "integer",
+                "scalarValue": "12",
+                "rules": [
+                  {
+                    "key": "min",
+                    "tokenType": "number",
+                    "scalarValue": "0"
+                  }
+                ],
+                "optional": false
+              }
+            ],
+            "optional": false
+          },
+          "notation": "jsight"
+        }
+      },
+      "responses": [
+        {
+          "code": "200",
+          "body": {
+            "format": "binary",
+            "schema": {
+              "notation": "any"
+            }
+          }
+        }
+      ],
+      "httpMethod": "GET"
+    },
+    "http GET /cats/{id}/friends": {
+      "id": "http GET /cats/{id}/friends",
+      "protocol": "http",
+      "path": "/cats/{id}/friends",
+      "tags": [
+        "@cats"
+      ],
+      "pathVariables": {
+        "schema": {
+          "content": {
+            "tokenType": "object",
+            "type": "object",
+            "children": [
+              {
+                "key": "id",
+                "tokenType": "number",
+                "type": "integer",
+                "scalarValue": "12",
+                "rules": [
+                  {
+                    "key": "min",
+                    "tokenType": "number",
+                    "scalarValue": "0"
+                  }
+                ],
+                "optional": false
+              }
+            ],
+            "optional": false
+          },
+          "notation": "jsight"
+        }
+      },
+      "responses": [
+        {
+          "code": "200",
+          "body": {
+            "format": "binary",
+            "schema": {
+              "notation": "any"
+            }
+          }
+        }
+      ],
+      "httpMethod": "GET"
+    }
+  },
+  "jsight": "0.3",
+  "jdocExchangeVersion": "2.0.0"
+}

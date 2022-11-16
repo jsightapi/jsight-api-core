@@ -1,0 +1,64 @@
+{
+  "tags": {},
+  "userTypes": {
+    "@checkEnums": {
+      "schema": {
+        "content": {
+          "tokenType": "object",
+          "type": "object",
+          "children": [
+            {
+              "key": "mixedEnum",
+              "tokenType": "number",
+              "type": "enum",
+              "scalarValue": "1",
+              "rules": [
+                {
+                  "key": "enum",
+                  "tokenType": "array",
+                  "children": [
+                    {
+                      "tokenType": "number",
+                      "scalarValue": "1"
+                    },
+                    {
+                      "tokenType": "number",
+                      "scalarValue": "2"
+                    },
+                    {
+                      "tokenType": "string",
+                      "scalarValue": "3"
+                    },
+                    {
+                      "tokenType": "string",
+                      "scalarValue": "4"
+                    },
+                    {
+                      "tokenType": "boolean",
+                      "scalarValue": "true"
+                    },
+                    {
+                      "tokenType": "boolean",
+                      "scalarValue": "false"
+                    },
+                    {
+                      "tokenType": "null",
+                      "scalarValue": "null"
+                    }
+                  ]
+                }
+              ],
+              "optional": false
+            }
+          ],
+          "optional": false
+        },
+        "example": "{\"mixedEnum\":1}",
+        "notation": "jsight"
+      }
+    }
+  },
+  "interactions": {},
+  "jsight": "0.3",
+  "jdocExchangeVersion": "2.0.0"
+}

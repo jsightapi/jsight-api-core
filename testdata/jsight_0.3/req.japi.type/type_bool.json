@@ -1,0 +1,20 @@
+{
+	"tags": {},
+	"userTypes": {
+		"@n": {
+			"schema": {
+				"content": {
+					"tokenType": "boolean",
+					"type": "boolean",
+					"scalarValue": "false",
+					"optional": false
+				},
+				"example": "false",
+				"notation": "jsight"
+			}
+		}
+	},
+	"interactions": {},
+	"jsight": "0.3",
+	"jdocExchangeVersion": "2.0.0"
+}

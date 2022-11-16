@@ -1,0 +1,69 @@
+{
+  "tags": {
+    "@_": {
+      "name": "@_",
+      "title": "/",
+      "interactionGroups": [
+        {
+          "protocol": "http",
+          "interactions": [
+            "http POST /"
+          ]
+        }
+      ]
+    }
+  },
+  "userTypes": {
+    "@cat": {
+      "schema": {
+        "content": {
+          "tokenType": "object",
+          "type": "object",
+          "children": [
+            {
+              "key": "name",
+              "tokenType": "string",
+              "type": "string",
+              "scalarValue": "kusja",
+              "optional": false
+            }
+          ],
+          "optional": false
+        },
+        "example": "{\"name\":\"kusja\"}",
+        "notation": "jsight"
+      }
+    }
+  },
+  "interactions": {
+    "http POST /": {
+      "id": "http POST /",
+      "protocol": "http",
+      "httpMethod": "POST",
+      "path": "/",
+      "tags": [
+        "@_"
+      ],
+      "request": {
+        "body": {
+          "format": "json",
+          "schema": {
+            "content": {
+              "tokenType": "reference",
+              "type": "@cat",
+              "scalarValue": "@cat",
+              "optional": false
+            },
+            "example": "{\"name\":\"kusja\"}",
+            "notation": "jsight",
+            "usedUserTypes": [
+              "@cat"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "jsight": "0.3",
+  "jdocExchangeVersion": "2.0.0"
+}

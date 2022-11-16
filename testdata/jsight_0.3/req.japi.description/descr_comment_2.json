@@ -1,0 +1,30 @@
+{
+  "tags": {
+    "@_": {
+      "name": "@_",
+      "title": "/",
+      "interactionGroups": [
+        {
+          "protocol": "http",
+          "interactions": [
+            "http GET /"
+          ]
+        }
+      ]
+    }
+  },
+  "interactions": {
+    "http GET /": {
+      "id": "http GET /",
+      "protocol": "http",
+      "path": "/",
+      "tags": [
+        "@_"
+      ],
+      "description": "###\ncomment block\n###\n  Super puper duper resource\n  can get, post, put, patch, delete 7",
+      "httpMethod": "GET"
+    }
+  },
+  "jsight": "0.3",
+  "jdocExchangeVersion": "2.0.0"
+}

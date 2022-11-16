@@ -1,0 +1,157 @@
+{
+  "tags": {},
+  "userTypes": {
+    "@level1": {
+      "schema": {
+        "content": {
+          "tokenType": "object",
+          "type": "object",
+          "children": [
+            {
+              "key": "level1Field1",
+              "tokenType": "number",
+              "type": "integer",
+              "scalarValue": "1",
+              "optional": false
+            },
+            {
+              "key": "level1Field2",
+              "tokenType": "number",
+              "type": "integer",
+              "scalarValue": "1",
+              "optional": false
+            }
+          ],
+          "optional": false
+        },
+        "example": "{\"level1Field1\":1,\"level1Field2\":1}",
+        "notation": "jsight"
+      }
+    },
+    "@level2": {
+      "schema": {
+        "content": {
+          "rules": [
+            {
+              "key": "allOf",
+              "tokenType": "reference",
+              "scalarValue": "@level1"
+            }
+          ],
+          "tokenType": "object",
+          "type": "object",
+          "children": [
+            {
+              "key": "level1Field1",
+              "tokenType": "number",
+              "type": "integer",
+              "scalarValue": "1",
+              "inheritedFrom": "@level1",
+              "optional": false
+            },
+            {
+              "key": "level1Field2",
+              "tokenType": "number",
+              "type": "integer",
+              "scalarValue": "1",
+              "inheritedFrom": "@level1",
+              "optional": false
+            },
+            {
+              "key": "level2Field1",
+              "tokenType": "number",
+              "type": "integer",
+              "scalarValue": "2",
+              "optional": false
+            },
+            {
+              "key": "level2Field2",
+              "tokenType": "number",
+              "type": "integer",
+              "scalarValue": "2",
+              "optional": false
+            }
+          ],
+          "optional": false
+        },
+        "example": "{\"level2Field1\":2,\"level2Field2\":2,\"level1Field1\":1,\"level1Field2\":1}",
+        "notation": "jsight",
+        "usedUserTypes": [
+          "@level1"
+        ]
+      }
+    },
+    "@level3": {
+      "schema": {
+        "content": {
+          "rules": [
+            {
+              "key": "allOf",
+              "tokenType": "reference",
+              "scalarValue": "@level2"
+            }
+          ],
+          "tokenType": "object",
+          "type": "object",
+          "children": [
+            {
+              "key": "level1Field1",
+              "tokenType": "number",
+              "type": "integer",
+              "scalarValue": "1",
+              "inheritedFrom": "@level2",
+              "optional": false
+            },
+            {
+              "key": "level1Field2",
+              "tokenType": "number",
+              "type": "integer",
+              "scalarValue": "1",
+              "inheritedFrom": "@level2",
+              "optional": false
+            },
+            {
+              "key": "level2Field1",
+              "tokenType": "number",
+              "type": "integer",
+              "scalarValue": "2",
+              "inheritedFrom": "@level2",
+              "optional": false
+            },
+            {
+              "key": "level2Field2",
+              "tokenType": "number",
+              "type": "integer",
+              "scalarValue": "2",
+              "inheritedFrom": "@level2",
+              "optional": false
+            },
+            {
+              "key": "level3Field1",
+              "tokenType": "number",
+              "type": "integer",
+              "scalarValue": "3",
+              "optional": false
+            },
+            {
+              "key": "level3Field2",
+              "tokenType": "number",
+              "type": "integer",
+              "scalarValue": "3",
+              "optional": false
+            }
+          ],
+          "optional": false
+        },
+        "example": "{\"level3Field1\":3,\"level3Field2\":3,\"level2Field1\":2,\"level2Field2\":2,\"level1Field1\":1,\"level1Field2\":1}",
+        "notation": "jsight",
+        "usedUserTypes": [
+          "@level2"
+        ]
+      }
+    }
+  },
+  "interactions": {},
+  "jsight": "0.3",
+  "jdocExchangeVersion": "2.0.0"
+}

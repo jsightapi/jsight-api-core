@@ -1,0 +1,48 @@
+{
+  "tags": {},
+  "userTypes": {
+    "@animalType": {
+      "schema": {
+        "content": {
+          "tokenType": "string",
+          "type": "enum",
+          "scalarValue": "cat",
+          "rules": [
+            {
+              "key": "enum",
+              "tokenType": "array",
+              "children": [
+                {
+                  "tokenType": "string",
+                  "scalarValue": "cat",
+                  "note": "The cat"
+                },
+                {
+                  "tokenType": "string",
+                  "scalarValue": "dog",
+                  "note": "The dog"
+                },
+                {
+                  "tokenType": "string",
+                  "scalarValue": "pig",
+                  "note": "The pig"
+                },
+                {
+                  "tokenType": "string",
+                  "scalarValue": "frog",
+                  "note": "The frog"
+                }
+              ]
+            }
+          ],
+          "optional": false
+        },
+        "example": "\"cat\"",
+        "notation": "jsight"
+      }
+    }
+  },
+  "interactions": {},
+  "jsight": "0.3",
+  "jdocExchangeVersion": "2.0.0"
+}

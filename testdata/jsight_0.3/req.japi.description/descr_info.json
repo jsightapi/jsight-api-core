@@ -1,0 +1,34 @@
+{
+  "tags": {
+    "@users": {
+      "name": "@users",
+      "title": "/users",
+      "interactionGroups": [
+        {
+          "protocol": "http",
+          "interactions": [
+            "http GET /users"
+          ]
+        }
+      ]
+    }
+  },
+  "info": {
+    "title": "Catsbook API",
+    "version": "1.0",
+    "description": "Social Network API \nfor cats Catsbook."
+  },
+  "interactions": {
+    "http GET /users": {
+      "id": "http GET /users",
+      "protocol": "http",
+      "path": "/users",
+      "tags": [
+        "@users"
+      ],
+      "httpMethod": "GET"
+    }
+  },
+  "jsight": "0.3",
+  "jdocExchangeVersion": "2.0.0"
+}

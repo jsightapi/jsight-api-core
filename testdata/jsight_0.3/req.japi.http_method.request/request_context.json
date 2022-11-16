@@ -1,0 +1,44 @@
+{
+  "tags": {
+    "@_": {
+      "name": "@_",
+      "title": "/",
+      "interactionGroups": [
+        {
+          "protocol": "http",
+          "interactions": [
+            "http PUT /"
+          ]
+        }
+      ]
+    }
+  },
+  "interactions": {
+    "http PUT /": {
+      "id": "http PUT /",
+      "protocol": "http",
+      "httpMethod": "PUT",
+      "path": "/",
+      "tags": [
+        "@_"
+      ],
+      "request": {
+        "body": {
+          "format": "json",
+          "schema": {
+            "content": {
+              "tokenType": "number",
+              "type": "integer",
+              "scalarValue": "12",
+              "optional": false
+            },
+            "example": "12",
+            "notation": "jsight"
+          }
+        }
+      }
+    }
+  },
+  "jsight": "0.3",
+  "jdocExchangeVersion": "2.0.0"
+}

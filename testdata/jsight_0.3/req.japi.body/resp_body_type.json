@@ -1,0 +1,79 @@
+{
+  "tags": {
+    "@cat": {
+      "name": "@cat",
+      "title": "/cat",
+      "interactionGroups": [
+        {
+          "protocol": "http",
+          "interactions": [
+            "http POST /cat"
+          ]
+        }
+      ]
+    }
+  },
+  "userTypes": {
+    "@cat": {
+      "schema": {
+        "content": {
+          "tokenType": "object",
+          "type": "object",
+          "children": [
+            {
+              "key": "id",
+              "tokenType": "number",
+              "type": "integer",
+              "scalarValue": "12",
+              "optional": false
+            },
+            {
+              "key": "name",
+              "tokenType": "string",
+              "type": "string",
+              "scalarValue": "Tom",
+              "optional": false
+            }
+          ],
+          "optional": false
+        },
+        "example": "{\"id\":12,\"name\":\"Tom\"}",
+        "notation": "jsight"
+      }
+    }
+  },
+  "interactions": {
+    "http POST /cat": {
+      "id": "http POST /cat",
+      "protocol": "http",
+      "httpMethod": "POST",
+      "path": "/cat",
+      "tags": [
+        "@cat"
+      ],
+      "responses": [
+        {
+          "code": "200",
+          "body": {
+            "format": "json",
+            "schema": {
+              "content": {
+                "tokenType": "reference",
+                "type": "@cat",
+                "scalarValue": "@cat",
+                "optional": false
+              },
+              "example": "{\"id\":12,\"name\":\"Tom\"}",
+              "notation": "jsight",
+              "usedUserTypes": [
+                "@cat"
+              ]
+            }
+          }
+        }
+      ]
+    }
+  },
+  "jsight": "0.3",
+  "jdocExchangeVersion": "2.0.0"
+}

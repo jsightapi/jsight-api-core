@@ -1,0 +1,6196 @@
+{
+  "tags": {
+    "@get": {
+      "name": "@get",
+      "title": "/get",
+      "interactionGroups": [
+        {
+          "protocol": "http",
+          "interactions": [
+            "http GET /get",
+            "http GET /get/{id}"
+          ]
+        }
+      ]
+    },
+    "@post": {
+      "name": "@post",
+      "title": "/post",
+      "interactionGroups": [
+        {
+          "protocol": "http",
+          "interactions": [
+            "http POST /post",
+            "http POST /post/{id}"
+          ]
+        }
+      ]
+    },
+    "@put": {
+      "name": "@put",
+      "title": "/put",
+      "interactionGroups": [
+        {
+          "protocol": "http",
+          "interactions": [
+            "http PUT /put",
+            "http PUT /put/{id}"
+          ]
+        }
+      ]
+    },
+    "@patch": {
+      "name": "@patch",
+      "title": "/patch",
+      "interactionGroups": [
+        {
+          "protocol": "http",
+          "interactions": [
+            "http PATCH /patch",
+            "http PATCH /patch/{id}"
+          ]
+        }
+      ]
+    },
+    "@delete": {
+      "name": "@delete",
+      "title": "/delete",
+      "interactionGroups": [
+        {
+          "protocol": "http",
+          "interactions": [
+            "http DELETE /delete",
+            "http DELETE /delete/{id}"
+          ]
+        }
+      ]
+    },
+    "@url": {
+      "name": "@url",
+      "title": "/url",
+      "interactionGroups": [
+        {
+          "protocol": "http",
+          "interactions": [
+            "http GET /url",
+            "http POST /url",
+            "http PUT /url",
+            "http PATCH /url",
+            "http DELETE /url",
+            "http GET /url/{id}",
+            "http POST /url/{id}",
+            "http PUT /url/{id}",
+            "http PATCH /url/{id}",
+            "http DELETE /url/{id}"
+          ]
+        }
+      ]
+    }
+  },
+  "info": {
+    "title": "Info title",
+    "version": "3.14",
+    "description": "Info description"
+  },
+  "servers": {
+    "@foo": {
+      "baseUrl": "https://example.com"
+    }
+  },
+  "userTypes": {
+    "@foo": {
+      "schema": {
+        "content": {
+          "tokenType": "object",
+          "type": "object",
+          "children": [
+            {
+              "key": "foo",
+              "tokenType": "number",
+              "type": "integer",
+              "scalarValue": "1",
+              "optional": false
+            }
+          ],
+          "optional": false
+        },
+        "example": "{\"foo\":1}",
+        "notation": "jsight"
+      }
+    },
+    "@bar": {
+      "schema": {
+        "content": {
+          "tokenType": "object",
+          "type": "object",
+          "children": [
+            {
+              "key": "bar",
+              "tokenType": "number",
+              "type": "integer",
+              "scalarValue": "2",
+              "optional": false
+            }
+          ],
+          "optional": false
+        },
+        "example": "{\"bar\":2}",
+        "notation": "jsight"
+      }
+    }
+  },
+  "interactions": {
+    "http GET /get": {
+      "id": "http GET /get",
+      "protocol": "http",
+      "httpMethod": "GET",
+      "path": "/get",
+      "tags": [
+        "@get"
+      ],
+      "description": "HTTP Method description",
+      "query": {
+        "example": "page=1",
+        "format": "htmlFormEncoded",
+        "schema": {
+          "content": {
+            "tokenType": "object",
+            "type": "object",
+            "children": [
+              {
+                "key": "page",
+                "tokenType": "number",
+                "type": "integer",
+                "scalarValue": "1",
+                "optional": false
+              }
+            ],
+            "optional": false
+          },
+          "example": "{\"page\":1}",
+          "notation": "jsight"
+        }
+      },
+      "request": {
+        "headers": {
+          "schema": {
+            "content": {
+              "tokenType": "object",
+              "type": "object",
+              "children": [
+                {
+                  "key": "Authorization",
+                  "tokenType": "string",
+                  "type": "string",
+                  "scalarValue": "Basic dG9tQGNhdC5jb206YWJjMTIz=",
+                  "rules": [
+                    {
+                      "key": "regex",
+                      "tokenType": "string",
+                      "scalarValue": "Basic [A-Za-z0-9+/=]+"
+                    }
+                  ],
+                  "optional": false
+                },
+                {
+                  "key": "Content-Type",
+                  "tokenType": "string",
+                  "type": "string",
+                  "scalarValue": "application/json",
+                  "rules": [
+                    {
+                      "key": "const",
+                      "tokenType": "boolean",
+                      "scalarValue": "true"
+                    }
+                  ],
+                  "optional": false
+                }
+              ],
+              "optional": false
+            },
+            "example": "{\"Authorization\":\"Basic dG9tQGNhdC5jb206YWJjMTIz=\",\"Content-Type\":\"application/json\"}",
+            "notation": "jsight"
+          }
+        },
+        "body": {
+          "format": "json",
+          "schema": {
+            "content": {
+              "tokenType": "object",
+              "type": "object",
+              "children": [
+                {
+                  "key": "foo",
+                  "tokenType": "string",
+                  "type": "string",
+                  "scalarValue": "1",
+                  "optional": false
+                }
+              ],
+              "optional": false
+            },
+            "example": "{\"foo\":\"1\"}",
+            "notation": "jsight"
+          }
+        }
+      },
+      "responses": [
+        {
+          "code": "200",
+          "headers": {
+            "schema": {
+              "content": {
+                "tokenType": "object",
+                "type": "object",
+                "children": [
+                  {
+                    "key": "Authorization",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "Basic dG9tQGNhdC5jb206YWJjMTIz=",
+                    "rules": [
+                      {
+                        "key": "regex",
+                        "tokenType": "string",
+                        "scalarValue": "Basic [A-Za-z0-9+/=]+"
+                      }
+                    ],
+                    "optional": false
+                  },
+                  {
+                    "key": "Content-Type",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "application/json",
+                    "rules": [
+                      {
+                        "key": "const",
+                        "tokenType": "boolean",
+                        "scalarValue": "true"
+                      }
+                    ],
+                    "optional": false
+                  }
+                ],
+                "optional": false
+              },
+              "example": "{\"Authorization\":\"Basic dG9tQGNhdC5jb206YWJjMTIz=\",\"Content-Type\":\"application/json\"}",
+              "notation": "jsight"
+            }
+          },
+          "body": {
+            "format": "json",
+            "schema": {
+              "content": {
+                "tokenType": "object",
+                "type": "object",
+                "children": [
+                  {
+                    "key": "foo",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "1",
+                    "optional": false
+                  }
+                ],
+                "optional": false
+              },
+              "example": "{\"foo\":\"1\"}",
+              "notation": "jsight"
+            }
+          }
+        },
+        {
+          "code": "201",
+          "headers": {
+            "schema": {
+              "content": {
+                "tokenType": "object",
+                "type": "object",
+                "children": [
+                  {
+                    "key": "Authorization",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "Basic dG9tQGNhdC5jb206YWJjMTIz=",
+                    "rules": [
+                      {
+                        "key": "regex",
+                        "tokenType": "string",
+                        "scalarValue": "Basic [A-Za-z0-9+/=]+"
+                      }
+                    ],
+                    "optional": false
+                  },
+                  {
+                    "key": "Content-Type",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "application/json",
+                    "rules": [
+                      {
+                        "key": "const",
+                        "tokenType": "boolean",
+                        "scalarValue": "true"
+                      }
+                    ],
+                    "optional": false
+                  }
+                ],
+                "optional": false
+              },
+              "example": "{\"Authorization\":\"Basic dG9tQGNhdC5jb206YWJjMTIz=\",\"Content-Type\":\"application/json\"}",
+              "notation": "jsight"
+            }
+          },
+          "body": {
+            "format": "json",
+            "schema": {
+              "content": {
+                "tokenType": "object",
+                "type": "object",
+                "children": [
+                  {
+                    "key": "foo",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "1",
+                    "optional": false
+                  }
+                ],
+                "optional": false
+              },
+              "example": "{\"foo\":\"1\"}",
+              "notation": "jsight"
+            }
+          }
+        },
+        {
+          "code": "404",
+          "headers": {
+            "schema": {
+              "content": {
+                "tokenType": "object",
+                "type": "object",
+                "children": [
+                  {
+                    "key": "Authorization",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "Basic dG9tQGNhdC5jb206YWJjMTIz=",
+                    "rules": [
+                      {
+                        "key": "regex",
+                        "tokenType": "string",
+                        "scalarValue": "Basic [A-Za-z0-9+/=]+"
+                      }
+                    ],
+                    "optional": false
+                  },
+                  {
+                    "key": "Content-Type",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "application/json",
+                    "rules": [
+                      {
+                        "key": "const",
+                        "tokenType": "boolean",
+                        "scalarValue": "true"
+                      }
+                    ],
+                    "optional": false
+                  }
+                ],
+                "optional": false
+              },
+              "example": "{\"Authorization\":\"Basic dG9tQGNhdC5jb206YWJjMTIz=\",\"Content-Type\":\"application/json\"}",
+              "notation": "jsight"
+            }
+          },
+          "body": {
+            "format": "json",
+            "schema": {
+              "content": {
+                "tokenType": "object",
+                "type": "object",
+                "children": [
+                  {
+                    "key": "foo",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "1",
+                    "optional": false
+                  }
+                ],
+                "optional": false
+              },
+              "example": "{\"foo\":\"1\"}",
+              "notation": "jsight"
+            }
+          }
+        }
+      ]
+    },
+    "http GET /get/{id}": {
+      "id": "http GET /get/{id}",
+      "protocol": "http",
+      "httpMethod": "GET",
+      "path": "/get/{id}",
+      "pathVariables": {
+        "schema": {
+          "content": {
+            "tokenType": "object",
+            "type": "object",
+            "children": [
+              {
+                "key": "id",
+                "tokenType": "number",
+                "type": "integer",
+                "scalarValue": "1",
+                "optional": false
+              }
+            ],
+            "optional": false
+          },
+          "notation": "jsight"
+        }
+      },
+      "tags": [
+        "@get"
+      ],
+      "description": "HTTP Method description",
+      "query": {
+        "example": "page=1",
+        "format": "htmlFormEncoded",
+        "schema": {
+          "content": {
+            "tokenType": "object",
+            "type": "object",
+            "children": [
+              {
+                "key": "page",
+                "tokenType": "number",
+                "type": "integer",
+                "scalarValue": "1",
+                "optional": false
+              }
+            ],
+            "optional": false
+          },
+          "example": "{\"page\":1}",
+          "notation": "jsight"
+        }
+      },
+      "request": {
+        "headers": {
+          "schema": {
+            "content": {
+              "tokenType": "object",
+              "type": "object",
+              "children": [
+                {
+                  "key": "Authorization",
+                  "tokenType": "string",
+                  "type": "string",
+                  "scalarValue": "Basic dG9tQGNhdC5jb206YWJjMTIz=",
+                  "rules": [
+                    {
+                      "key": "regex",
+                      "tokenType": "string",
+                      "scalarValue": "Basic [A-Za-z0-9+/=]+"
+                    }
+                  ],
+                  "optional": false
+                },
+                {
+                  "key": "Content-Type",
+                  "tokenType": "string",
+                  "type": "string",
+                  "scalarValue": "application/json",
+                  "rules": [
+                    {
+                      "key": "const",
+                      "tokenType": "boolean",
+                      "scalarValue": "true"
+                    }
+                  ],
+                  "optional": false
+                }
+              ],
+              "optional": false
+            },
+            "example": "{\"Authorization\":\"Basic dG9tQGNhdC5jb206YWJjMTIz=\",\"Content-Type\":\"application/json\"}",
+            "notation": "jsight"
+          }
+        },
+        "body": {
+          "format": "json",
+          "schema": {
+            "content": {
+              "tokenType": "object",
+              "type": "object",
+              "children": [
+                {
+                  "key": "foo",
+                  "tokenType": "string",
+                  "type": "string",
+                  "scalarValue": "1",
+                  "optional": false
+                }
+              ],
+              "optional": false
+            },
+            "example": "{\"foo\":\"1\"}",
+            "notation": "jsight"
+          }
+        }
+      },
+      "responses": [
+        {
+          "code": "200",
+          "headers": {
+            "schema": {
+              "content": {
+                "tokenType": "object",
+                "type": "object",
+                "children": [
+                  {
+                    "key": "Authorization",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "Basic dG9tQGNhdC5jb206YWJjMTIz=",
+                    "rules": [
+                      {
+                        "key": "regex",
+                        "tokenType": "string",
+                        "scalarValue": "Basic [A-Za-z0-9+/=]+"
+                      }
+                    ],
+                    "optional": false
+                  },
+                  {
+                    "key": "Content-Type",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "application/json",
+                    "rules": [
+                      {
+                        "key": "const",
+                        "tokenType": "boolean",
+                        "scalarValue": "true"
+                      }
+                    ],
+                    "optional": false
+                  }
+                ],
+                "optional": false
+              },
+              "example": "{\"Authorization\":\"Basic dG9tQGNhdC5jb206YWJjMTIz=\",\"Content-Type\":\"application/json\"}",
+              "notation": "jsight"
+            }
+          },
+          "body": {
+            "format": "json",
+            "schema": {
+              "content": {
+                "tokenType": "object",
+                "type": "object",
+                "children": [
+                  {
+                    "key": "foo",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "1",
+                    "optional": false
+                  }
+                ],
+                "optional": false
+              },
+              "example": "{\"foo\":\"1\"}",
+              "notation": "jsight"
+            }
+          }
+        },
+        {
+          "code": "201",
+          "headers": {
+            "schema": {
+              "content": {
+                "tokenType": "object",
+                "type": "object",
+                "children": [
+                  {
+                    "key": "Authorization",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "Basic dG9tQGNhdC5jb206YWJjMTIz=",
+                    "rules": [
+                      {
+                        "key": "regex",
+                        "tokenType": "string",
+                        "scalarValue": "Basic [A-Za-z0-9+/=]+"
+                      }
+                    ],
+                    "optional": false
+                  },
+                  {
+                    "key": "Content-Type",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "application/json",
+                    "rules": [
+                      {
+                        "key": "const",
+                        "tokenType": "boolean",
+                        "scalarValue": "true"
+                      }
+                    ],
+                    "optional": false
+                  }
+                ],
+                "optional": false
+              },
+              "example": "{\"Authorization\":\"Basic dG9tQGNhdC5jb206YWJjMTIz=\",\"Content-Type\":\"application/json\"}",
+              "notation": "jsight"
+            }
+          },
+          "body": {
+            "format": "json",
+            "schema": {
+              "content": {
+                "tokenType": "object",
+                "type": "object",
+                "children": [
+                  {
+                    "key": "foo",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "1",
+                    "optional": false
+                  }
+                ],
+                "optional": false
+              },
+              "example": "{\"foo\":\"1\"}",
+              "notation": "jsight"
+            }
+          }
+        },
+        {
+          "code": "404",
+          "headers": {
+            "schema": {
+              "content": {
+                "tokenType": "object",
+                "type": "object",
+                "children": [
+                  {
+                    "key": "Authorization",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "Basic dG9tQGNhdC5jb206YWJjMTIz=",
+                    "rules": [
+                      {
+                        "key": "regex",
+                        "tokenType": "string",
+                        "scalarValue": "Basic [A-Za-z0-9+/=]+"
+                      }
+                    ],
+                    "optional": false
+                  },
+                  {
+                    "key": "Content-Type",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "application/json",
+                    "rules": [
+                      {
+                        "key": "const",
+                        "tokenType": "boolean",
+                        "scalarValue": "true"
+                      }
+                    ],
+                    "optional": false
+                  }
+                ],
+                "optional": false
+              },
+              "example": "{\"Authorization\":\"Basic dG9tQGNhdC5jb206YWJjMTIz=\",\"Content-Type\":\"application/json\"}",
+              "notation": "jsight"
+            }
+          },
+          "body": {
+            "format": "json",
+            "schema": {
+              "content": {
+                "tokenType": "object",
+                "type": "object",
+                "children": [
+                  {
+                    "key": "foo",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "1",
+                    "optional": false
+                  }
+                ],
+                "optional": false
+              },
+              "example": "{\"foo\":\"1\"}",
+              "notation": "jsight"
+            }
+          }
+        }
+      ]
+    },
+    "http POST /post": {
+      "id": "http POST /post",
+      "protocol": "http",
+      "httpMethod": "POST",
+      "path": "/post",
+      "tags": [
+        "@post"
+      ],
+      "description": "HTTP Method description",
+      "query": {
+        "example": "page=1",
+        "format": "htmlFormEncoded",
+        "schema": {
+          "content": {
+            "tokenType": "object",
+            "type": "object",
+            "children": [
+              {
+                "key": "page",
+                "tokenType": "number",
+                "type": "integer",
+                "scalarValue": "1",
+                "optional": false
+              }
+            ],
+            "optional": false
+          },
+          "example": "{\"page\":1}",
+          "notation": "jsight"
+        }
+      },
+      "request": {
+        "headers": {
+          "schema": {
+            "content": {
+              "tokenType": "object",
+              "type": "object",
+              "children": [
+                {
+                  "key": "Authorization",
+                  "tokenType": "string",
+                  "type": "string",
+                  "scalarValue": "Basic dG9tQGNhdC5jb206YWJjMTIz=",
+                  "rules": [
+                    {
+                      "key": "regex",
+                      "tokenType": "string",
+                      "scalarValue": "Basic [A-Za-z0-9+/=]+"
+                    }
+                  ],
+                  "optional": false
+                },
+                {
+                  "key": "Content-Type",
+                  "tokenType": "string",
+                  "type": "string",
+                  "scalarValue": "application/json",
+                  "rules": [
+                    {
+                      "key": "const",
+                      "tokenType": "boolean",
+                      "scalarValue": "true"
+                    }
+                  ],
+                  "optional": false
+                }
+              ],
+              "optional": false
+            },
+            "example": "{\"Authorization\":\"Basic dG9tQGNhdC5jb206YWJjMTIz=\",\"Content-Type\":\"application/json\"}",
+            "notation": "jsight"
+          }
+        },
+        "body": {
+          "format": "json",
+          "schema": {
+            "content": {
+              "tokenType": "object",
+              "type": "object",
+              "children": [
+                {
+                  "key": "foo",
+                  "tokenType": "string",
+                  "type": "string",
+                  "scalarValue": "1",
+                  "optional": false
+                }
+              ],
+              "optional": false
+            },
+            "example": "{\"foo\":\"1\"}",
+            "notation": "jsight"
+          }
+        }
+      },
+      "responses": [
+        {
+          "code": "200",
+          "headers": {
+            "schema": {
+              "content": {
+                "tokenType": "object",
+                "type": "object",
+                "children": [
+                  {
+                    "key": "Authorization",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "Basic dG9tQGNhdC5jb206YWJjMTIz=",
+                    "rules": [
+                      {
+                        "key": "regex",
+                        "tokenType": "string",
+                        "scalarValue": "Basic [A-Za-z0-9+/=]+"
+                      }
+                    ],
+                    "optional": false
+                  },
+                  {
+                    "key": "Content-Type",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "application/json",
+                    "rules": [
+                      {
+                        "key": "const",
+                        "tokenType": "boolean",
+                        "scalarValue": "true"
+                      }
+                    ],
+                    "optional": false
+                  }
+                ],
+                "optional": false
+              },
+              "example": "{\"Authorization\":\"Basic dG9tQGNhdC5jb206YWJjMTIz=\",\"Content-Type\":\"application/json\"}",
+              "notation": "jsight"
+            }
+          },
+          "body": {
+            "format": "json",
+            "schema": {
+              "content": {
+                "tokenType": "object",
+                "type": "object",
+                "children": [
+                  {
+                    "key": "foo",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "1",
+                    "optional": false
+                  }
+                ],
+                "optional": false
+              },
+              "example": "{\"foo\":\"1\"}",
+              "notation": "jsight"
+            }
+          }
+        },
+        {
+          "code": "201",
+          "headers": {
+            "schema": {
+              "content": {
+                "tokenType": "object",
+                "type": "object",
+                "children": [
+                  {
+                    "key": "Authorization",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "Basic dG9tQGNhdC5jb206YWJjMTIz=",
+                    "rules": [
+                      {
+                        "key": "regex",
+                        "tokenType": "string",
+                        "scalarValue": "Basic [A-Za-z0-9+/=]+"
+                      }
+                    ],
+                    "optional": false
+                  },
+                  {
+                    "key": "Content-Type",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "application/json",
+                    "rules": [
+                      {
+                        "key": "const",
+                        "tokenType": "boolean",
+                        "scalarValue": "true"
+                      }
+                    ],
+                    "optional": false
+                  }
+                ],
+                "optional": false
+              },
+              "example": "{\"Authorization\":\"Basic dG9tQGNhdC5jb206YWJjMTIz=\",\"Content-Type\":\"application/json\"}",
+              "notation": "jsight"
+            }
+          },
+          "body": {
+            "format": "json",
+            "schema": {
+              "content": {
+                "tokenType": "object",
+                "type": "object",
+                "children": [
+                  {
+                    "key": "foo",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "1",
+                    "optional": false
+                  }
+                ],
+                "optional": false
+              },
+              "example": "{\"foo\":\"1\"}",
+              "notation": "jsight"
+            }
+          }
+        },
+        {
+          "code": "404",
+          "headers": {
+            "schema": {
+              "content": {
+                "tokenType": "object",
+                "type": "object",
+                "children": [
+                  {
+                    "key": "Authorization",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "Basic dG9tQGNhdC5jb206YWJjMTIz=",
+                    "rules": [
+                      {
+                        "key": "regex",
+                        "tokenType": "string",
+                        "scalarValue": "Basic [A-Za-z0-9+/=]+"
+                      }
+                    ],
+                    "optional": false
+                  },
+                  {
+                    "key": "Content-Type",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "application/json",
+                    "rules": [
+                      {
+                        "key": "const",
+                        "tokenType": "boolean",
+                        "scalarValue": "true"
+                      }
+                    ],
+                    "optional": false
+                  }
+                ],
+                "optional": false
+              },
+              "example": "{\"Authorization\":\"Basic dG9tQGNhdC5jb206YWJjMTIz=\",\"Content-Type\":\"application/json\"}",
+              "notation": "jsight"
+            }
+          },
+          "body": {
+            "format": "json",
+            "schema": {
+              "content": {
+                "tokenType": "object",
+                "type": "object",
+                "children": [
+                  {
+                    "key": "foo",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "1",
+                    "optional": false
+                  }
+                ],
+                "optional": false
+              },
+              "example": "{\"foo\":\"1\"}",
+              "notation": "jsight"
+            }
+          }
+        }
+      ]
+    },
+    "http POST /post/{id}": {
+      "id": "http POST /post/{id}",
+      "protocol": "http",
+      "httpMethod": "POST",
+      "path": "/post/{id}",
+      "pathVariables": {
+        "schema": {
+          "content": {
+            "tokenType": "object",
+            "type": "object",
+            "children": [
+              {
+                "key": "id",
+                "tokenType": "number",
+                "type": "integer",
+                "scalarValue": "1",
+                "optional": false
+              }
+            ],
+            "optional": false
+          },
+          "notation": "jsight"
+        }
+      },
+      "tags": [
+        "@post"
+      ],
+      "description": "HTTP Method description",
+      "query": {
+        "example": "page=1",
+        "format": "htmlFormEncoded",
+        "schema": {
+          "content": {
+            "tokenType": "object",
+            "type": "object",
+            "children": [
+              {
+                "key": "page",
+                "tokenType": "number",
+                "type": "integer",
+                "scalarValue": "1",
+                "optional": false
+              }
+            ],
+            "optional": false
+          },
+          "example": "{\"page\":1}",
+          "notation": "jsight"
+        }
+      },
+      "request": {
+        "headers": {
+          "schema": {
+            "content": {
+              "tokenType": "object",
+              "type": "object",
+              "children": [
+                {
+                  "key": "Authorization",
+                  "tokenType": "string",
+                  "type": "string",
+                  "scalarValue": "Basic dG9tQGNhdC5jb206YWJjMTIz=",
+                  "rules": [
+                    {
+                      "key": "regex",
+                      "tokenType": "string",
+                      "scalarValue": "Basic [A-Za-z0-9+/=]+"
+                    }
+                  ],
+                  "optional": false
+                },
+                {
+                  "key": "Content-Type",
+                  "tokenType": "string",
+                  "type": "string",
+                  "scalarValue": "application/json",
+                  "rules": [
+                    {
+                      "key": "const",
+                      "tokenType": "boolean",
+                      "scalarValue": "true"
+                    }
+                  ],
+                  "optional": false
+                }
+              ],
+              "optional": false
+            },
+            "example": "{\"Authorization\":\"Basic dG9tQGNhdC5jb206YWJjMTIz=\",\"Content-Type\":\"application/json\"}",
+            "notation": "jsight"
+          }
+        },
+        "body": {
+          "format": "json",
+          "schema": {
+            "content": {
+              "tokenType": "object",
+              "type": "object",
+              "children": [
+                {
+                  "key": "foo",
+                  "tokenType": "string",
+                  "type": "string",
+                  "scalarValue": "1",
+                  "optional": false
+                }
+              ],
+              "optional": false
+            },
+            "example": "{\"foo\":\"1\"}",
+            "notation": "jsight"
+          }
+        }
+      },
+      "responses": [
+        {
+          "code": "200",
+          "headers": {
+            "schema": {
+              "content": {
+                "tokenType": "object",
+                "type": "object",
+                "children": [
+                  {
+                    "key": "Authorization",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "Basic dG9tQGNhdC5jb206YWJjMTIz=",
+                    "rules": [
+                      {
+                        "key": "regex",
+                        "tokenType": "string",
+                        "scalarValue": "Basic [A-Za-z0-9+/=]+"
+                      }
+                    ],
+                    "optional": false
+                  },
+                  {
+                    "key": "Content-Type",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "application/json",
+                    "rules": [
+                      {
+                        "key": "const",
+                        "tokenType": "boolean",
+                        "scalarValue": "true"
+                      }
+                    ],
+                    "optional": false
+                  }
+                ],
+                "optional": false
+              },
+              "example": "{\"Authorization\":\"Basic dG9tQGNhdC5jb206YWJjMTIz=\",\"Content-Type\":\"application/json\"}",
+              "notation": "jsight"
+            }
+          },
+          "body": {
+            "format": "json",
+            "schema": {
+              "content": {
+                "tokenType": "object",
+                "type": "object",
+                "children": [
+                  {
+                    "key": "foo",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "1",
+                    "optional": false
+                  }
+                ],
+                "optional": false
+              },
+              "example": "{\"foo\":\"1\"}",
+              "notation": "jsight"
+            }
+          }
+        },
+        {
+          "code": "201",
+          "headers": {
+            "schema": {
+              "content": {
+                "tokenType": "object",
+                "type": "object",
+                "children": [
+                  {
+                    "key": "Authorization",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "Basic dG9tQGNhdC5jb206YWJjMTIz=",
+                    "rules": [
+                      {
+                        "key": "regex",
+                        "tokenType": "string",
+                        "scalarValue": "Basic [A-Za-z0-9+/=]+"
+                      }
+                    ],
+                    "optional": false
+                  },
+                  {
+                    "key": "Content-Type",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "application/json",
+                    "rules": [
+                      {
+                        "key": "const",
+                        "tokenType": "boolean",
+                        "scalarValue": "true"
+                      }
+                    ],
+                    "optional": false
+                  }
+                ],
+                "optional": false
+              },
+              "example": "{\"Authorization\":\"Basic dG9tQGNhdC5jb206YWJjMTIz=\",\"Content-Type\":\"application/json\"}",
+              "notation": "jsight"
+            }
+          },
+          "body": {
+            "format": "json",
+            "schema": {
+              "content": {
+                "tokenType": "object",
+                "type": "object",
+                "children": [
+                  {
+                    "key": "foo",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "1",
+                    "optional": false
+                  }
+                ],
+                "optional": false
+              },
+              "example": "{\"foo\":\"1\"}",
+              "notation": "jsight"
+            }
+          }
+        },
+        {
+          "code": "404",
+          "headers": {
+            "schema": {
+              "content": {
+                "tokenType": "object",
+                "type": "object",
+                "children": [
+                  {
+                    "key": "Authorization",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "Basic dG9tQGNhdC5jb206YWJjMTIz=",
+                    "rules": [
+                      {
+                        "key": "regex",
+                        "tokenType": "string",
+                        "scalarValue": "Basic [A-Za-z0-9+/=]+"
+                      }
+                    ],
+                    "optional": false
+                  },
+                  {
+                    "key": "Content-Type",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "application/json",
+                    "rules": [
+                      {
+                        "key": "const",
+                        "tokenType": "boolean",
+                        "scalarValue": "true"
+                      }
+                    ],
+                    "optional": false
+                  }
+                ],
+                "optional": false
+              },
+              "example": "{\"Authorization\":\"Basic dG9tQGNhdC5jb206YWJjMTIz=\",\"Content-Type\":\"application/json\"}",
+              "notation": "jsight"
+            }
+          },
+          "body": {
+            "format": "json",
+            "schema": {
+              "content": {
+                "tokenType": "object",
+                "type": "object",
+                "children": [
+                  {
+                    "key": "foo",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "1",
+                    "optional": false
+                  }
+                ],
+                "optional": false
+              },
+              "example": "{\"foo\":\"1\"}",
+              "notation": "jsight"
+            }
+          }
+        }
+      ]
+    },
+    "http PUT /put": {
+      "id": "http PUT /put",
+      "protocol": "http",
+      "httpMethod": "PUT",
+      "path": "/put",
+      "tags": [
+        "@put"
+      ],
+      "description": "HTTP Method description",
+      "query": {
+        "example": "page=1",
+        "format": "htmlFormEncoded",
+        "schema": {
+          "content": {
+            "tokenType": "object",
+            "type": "object",
+            "children": [
+              {
+                "key": "page",
+                "tokenType": "number",
+                "type": "integer",
+                "scalarValue": "1",
+                "optional": false
+              }
+            ],
+            "optional": false
+          },
+          "example": "{\"page\":1}",
+          "notation": "jsight"
+        }
+      },
+      "request": {
+        "headers": {
+          "schema": {
+            "content": {
+              "tokenType": "object",
+              "type": "object",
+              "children": [
+                {
+                  "key": "Authorization",
+                  "tokenType": "string",
+                  "type": "string",
+                  "scalarValue": "Basic dG9tQGNhdC5jb206YWJjMTIz=",
+                  "rules": [
+                    {
+                      "key": "regex",
+                      "tokenType": "string",
+                      "scalarValue": "Basic [A-Za-z0-9+/=]+"
+                    }
+                  ],
+                  "optional": false
+                },
+                {
+                  "key": "Content-Type",
+                  "tokenType": "string",
+                  "type": "string",
+                  "scalarValue": "application/json",
+                  "rules": [
+                    {
+                      "key": "const",
+                      "tokenType": "boolean",
+                      "scalarValue": "true"
+                    }
+                  ],
+                  "optional": false
+                }
+              ],
+              "optional": false
+            },
+            "example": "{\"Authorization\":\"Basic dG9tQGNhdC5jb206YWJjMTIz=\",\"Content-Type\":\"application/json\"}",
+            "notation": "jsight"
+          }
+        },
+        "body": {
+          "format": "json",
+          "schema": {
+            "content": {
+              "tokenType": "object",
+              "type": "object",
+              "children": [
+                {
+                  "key": "foo",
+                  "tokenType": "string",
+                  "type": "string",
+                  "scalarValue": "1",
+                  "optional": false
+                }
+              ],
+              "optional": false
+            },
+            "example": "{\"foo\":\"1\"}",
+            "notation": "jsight"
+          }
+        }
+      },
+      "responses": [
+        {
+          "code": "200",
+          "headers": {
+            "schema": {
+              "content": {
+                "tokenType": "object",
+                "type": "object",
+                "children": [
+                  {
+                    "key": "Authorization",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "Basic dG9tQGNhdC5jb206YWJjMTIz=",
+                    "rules": [
+                      {
+                        "key": "regex",
+                        "tokenType": "string",
+                        "scalarValue": "Basic [A-Za-z0-9+/=]+"
+                      }
+                    ],
+                    "optional": false
+                  },
+                  {
+                    "key": "Content-Type",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "application/json",
+                    "rules": [
+                      {
+                        "key": "const",
+                        "tokenType": "boolean",
+                        "scalarValue": "true"
+                      }
+                    ],
+                    "optional": false
+                  }
+                ],
+                "optional": false
+              },
+              "example": "{\"Authorization\":\"Basic dG9tQGNhdC5jb206YWJjMTIz=\",\"Content-Type\":\"application/json\"}",
+              "notation": "jsight"
+            }
+          },
+          "body": {
+            "format": "json",
+            "schema": {
+              "content": {
+                "tokenType": "object",
+                "type": "object",
+                "children": [
+                  {
+                    "key": "foo",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "1",
+                    "optional": false
+                  }
+                ],
+                "optional": false
+              },
+              "example": "{\"foo\":\"1\"}",
+              "notation": "jsight"
+            }
+          }
+        },
+        {
+          "code": "201",
+          "headers": {
+            "schema": {
+              "content": {
+                "tokenType": "object",
+                "type": "object",
+                "children": [
+                  {
+                    "key": "Authorization",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "Basic dG9tQGNhdC5jb206YWJjMTIz=",
+                    "rules": [
+                      {
+                        "key": "regex",
+                        "tokenType": "string",
+                        "scalarValue": "Basic [A-Za-z0-9+/=]+"
+                      }
+                    ],
+                    "optional": false
+                  },
+                  {
+                    "key": "Content-Type",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "application/json",
+                    "rules": [
+                      {
+                        "key": "const",
+                        "tokenType": "boolean",
+                        "scalarValue": "true"
+                      }
+                    ],
+                    "optional": false
+                  }
+                ],
+                "optional": false
+              },
+              "example": "{\"Authorization\":\"Basic dG9tQGNhdC5jb206YWJjMTIz=\",\"Content-Type\":\"application/json\"}",
+              "notation": "jsight"
+            }
+          },
+          "body": {
+            "format": "json",
+            "schema": {
+              "content": {
+                "tokenType": "object",
+                "type": "object",
+                "children": [
+                  {
+                    "key": "foo",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "1",
+                    "optional": false
+                  }
+                ],
+                "optional": false
+              },
+              "example": "{\"foo\":\"1\"}",
+              "notation": "jsight"
+            }
+          }
+        },
+        {
+          "code": "404",
+          "headers": {
+            "schema": {
+              "content": {
+                "tokenType": "object",
+                "type": "object",
+                "children": [
+                  {
+                    "key": "Authorization",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "Basic dG9tQGNhdC5jb206YWJjMTIz=",
+                    "rules": [
+                      {
+                        "key": "regex",
+                        "tokenType": "string",
+                        "scalarValue": "Basic [A-Za-z0-9+/=]+"
+                      }
+                    ],
+                    "optional": false
+                  },
+                  {
+                    "key": "Content-Type",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "application/json",
+                    "rules": [
+                      {
+                        "key": "const",
+                        "tokenType": "boolean",
+                        "scalarValue": "true"
+                      }
+                    ],
+                    "optional": false
+                  }
+                ],
+                "optional": false
+              },
+              "example": "{\"Authorization\":\"Basic dG9tQGNhdC5jb206YWJjMTIz=\",\"Content-Type\":\"application/json\"}",
+              "notation": "jsight"
+            }
+          },
+          "body": {
+            "format": "json",
+            "schema": {
+              "content": {
+                "tokenType": "object",
+                "type": "object",
+                "children": [
+                  {
+                    "key": "foo",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "1",
+                    "optional": false
+                  }
+                ],
+                "optional": false
+              },
+              "example": "{\"foo\":\"1\"}",
+              "notation": "jsight"
+            }
+          }
+        }
+      ]
+    },
+    "http PUT /put/{id}": {
+      "id": "http PUT /put/{id}",
+      "protocol": "http",
+      "httpMethod": "PUT",
+      "path": "/put/{id}",
+      "pathVariables": {
+        "schema": {
+          "content": {
+            "tokenType": "object",
+            "type": "object",
+            "children": [
+              {
+                "key": "id",
+                "tokenType": "number",
+                "type": "integer",
+                "scalarValue": "1",
+                "optional": false
+              }
+            ],
+            "optional": false
+          },
+          "notation": "jsight"
+        }
+      },
+      "tags": [
+        "@put"
+      ],
+      "description": "HTTP Method description",
+      "query": {
+        "example": "page=1",
+        "format": "htmlFormEncoded",
+        "schema": {
+          "content": {
+            "tokenType": "object",
+            "type": "object",
+            "children": [
+              {
+                "key": "page",
+                "tokenType": "number",
+                "type": "integer",
+                "scalarValue": "1",
+                "optional": false
+              }
+            ],
+            "optional": false
+          },
+          "example": "{\"page\":1}",
+          "notation": "jsight"
+        }
+      },
+      "request": {
+        "headers": {
+          "schema": {
+            "content": {
+              "tokenType": "object",
+              "type": "object",
+              "children": [
+                {
+                  "key": "Authorization",
+                  "tokenType": "string",
+                  "type": "string",
+                  "scalarValue": "Basic dG9tQGNhdC5jb206YWJjMTIz=",
+                  "rules": [
+                    {
+                      "key": "regex",
+                      "tokenType": "string",
+                      "scalarValue": "Basic [A-Za-z0-9+/=]+"
+                    }
+                  ],
+                  "optional": false
+                },
+                {
+                  "key": "Content-Type",
+                  "tokenType": "string",
+                  "type": "string",
+                  "scalarValue": "application/json",
+                  "rules": [
+                    {
+                      "key": "const",
+                      "tokenType": "boolean",
+                      "scalarValue": "true"
+                    }
+                  ],
+                  "optional": false
+                }
+              ],
+              "optional": false
+            },
+            "example": "{\"Authorization\":\"Basic dG9tQGNhdC5jb206YWJjMTIz=\",\"Content-Type\":\"application/json\"}",
+            "notation": "jsight"
+          }
+        },
+        "body": {
+          "format": "json",
+          "schema": {
+            "content": {
+              "tokenType": "object",
+              "type": "object",
+              "children": [
+                {
+                  "key": "foo",
+                  "tokenType": "string",
+                  "type": "string",
+                  "scalarValue": "1",
+                  "optional": false
+                }
+              ],
+              "optional": false
+            },
+            "example": "{\"foo\":\"1\"}",
+            "notation": "jsight"
+          }
+        }
+      },
+      "responses": [
+        {
+          "code": "200",
+          "headers": {
+            "schema": {
+              "content": {
+                "tokenType": "object",
+                "type": "object",
+                "children": [
+                  {
+                    "key": "Authorization",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "Basic dG9tQGNhdC5jb206YWJjMTIz=",
+                    "rules": [
+                      {
+                        "key": "regex",
+                        "tokenType": "string",
+                        "scalarValue": "Basic [A-Za-z0-9+/=]+"
+                      }
+                    ],
+                    "optional": false
+                  },
+                  {
+                    "key": "Content-Type",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "application/json",
+                    "rules": [
+                      {
+                        "key": "const",
+                        "tokenType": "boolean",
+                        "scalarValue": "true"
+                      }
+                    ],
+                    "optional": false
+                  }
+                ],
+                "optional": false
+              },
+              "example": "{\"Authorization\":\"Basic dG9tQGNhdC5jb206YWJjMTIz=\",\"Content-Type\":\"application/json\"}",
+              "notation": "jsight"
+            }
+          },
+          "body": {
+            "format": "json",
+            "schema": {
+              "content": {
+                "tokenType": "object",
+                "type": "object",
+                "children": [
+                  {
+                    "key": "foo",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "1",
+                    "optional": false
+                  }
+                ],
+                "optional": false
+              },
+              "example": "{\"foo\":\"1\"}",
+              "notation": "jsight"
+            }
+          }
+        },
+        {
+          "code": "201",
+          "headers": {
+            "schema": {
+              "content": {
+                "tokenType": "object",
+                "type": "object",
+                "children": [
+                  {
+                    "key": "Authorization",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "Basic dG9tQGNhdC5jb206YWJjMTIz=",
+                    "rules": [
+                      {
+                        "key": "regex",
+                        "tokenType": "string",
+                        "scalarValue": "Basic [A-Za-z0-9+/=]+"
+                      }
+                    ],
+                    "optional": false
+                  },
+                  {
+                    "key": "Content-Type",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "application/json",
+                    "rules": [
+                      {
+                        "key": "const",
+                        "tokenType": "boolean",
+                        "scalarValue": "true"
+                      }
+                    ],
+                    "optional": false
+                  }
+                ],
+                "optional": false
+              },
+              "example": "{\"Authorization\":\"Basic dG9tQGNhdC5jb206YWJjMTIz=\",\"Content-Type\":\"application/json\"}",
+              "notation": "jsight"
+            }
+          },
+          "body": {
+            "format": "json",
+            "schema": {
+              "content": {
+                "tokenType": "object",
+                "type": "object",
+                "children": [
+                  {
+                    "key": "foo",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "1",
+                    "optional": false
+                  }
+                ],
+                "optional": false
+              },
+              "example": "{\"foo\":\"1\"}",
+              "notation": "jsight"
+            }
+          }
+        },
+        {
+          "code": "404",
+          "headers": {
+            "schema": {
+              "content": {
+                "tokenType": "object",
+                "type": "object",
+                "children": [
+                  {
+                    "key": "Authorization",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "Basic dG9tQGNhdC5jb206YWJjMTIz=",
+                    "rules": [
+                      {
+                        "key": "regex",
+                        "tokenType": "string",
+                        "scalarValue": "Basic [A-Za-z0-9+/=]+"
+                      }
+                    ],
+                    "optional": false
+                  },
+                  {
+                    "key": "Content-Type",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "application/json",
+                    "rules": [
+                      {
+                        "key": "const",
+                        "tokenType": "boolean",
+                        "scalarValue": "true"
+                      }
+                    ],
+                    "optional": false
+                  }
+                ],
+                "optional": false
+              },
+              "example": "{\"Authorization\":\"Basic dG9tQGNhdC5jb206YWJjMTIz=\",\"Content-Type\":\"application/json\"}",
+              "notation": "jsight"
+            }
+          },
+          "body": {
+            "format": "json",
+            "schema": {
+              "content": {
+                "tokenType": "object",
+                "type": "object",
+                "children": [
+                  {
+                    "key": "foo",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "1",
+                    "optional": false
+                  }
+                ],
+                "optional": false
+              },
+              "example": "{\"foo\":\"1\"}",
+              "notation": "jsight"
+            }
+          }
+        }
+      ]
+    },
+    "http PATCH /patch": {
+      "id": "http PATCH /patch",
+      "protocol": "http",
+      "httpMethod": "PATCH",
+      "path": "/patch",
+      "tags": [
+        "@patch"
+      ],
+      "description": "HTTP Method description",
+      "query": {
+        "example": "page=1",
+        "format": "htmlFormEncoded",
+        "schema": {
+          "content": {
+            "tokenType": "object",
+            "type": "object",
+            "children": [
+              {
+                "key": "page",
+                "tokenType": "number",
+                "type": "integer",
+                "scalarValue": "1",
+                "optional": false
+              }
+            ],
+            "optional": false
+          },
+          "example": "{\"page\":1}",
+          "notation": "jsight"
+        }
+      },
+      "request": {
+        "headers": {
+          "schema": {
+            "content": {
+              "tokenType": "object",
+              "type": "object",
+              "children": [
+                {
+                  "key": "Authorization",
+                  "tokenType": "string",
+                  "type": "string",
+                  "scalarValue": "Basic dG9tQGNhdC5jb206YWJjMTIz=",
+                  "rules": [
+                    {
+                      "key": "regex",
+                      "tokenType": "string",
+                      "scalarValue": "Basic [A-Za-z0-9+/=]+"
+                    }
+                  ],
+                  "optional": false
+                },
+                {
+                  "key": "Content-Type",
+                  "tokenType": "string",
+                  "type": "string",
+                  "scalarValue": "application/json",
+                  "rules": [
+                    {
+                      "key": "const",
+                      "tokenType": "boolean",
+                      "scalarValue": "true"
+                    }
+                  ],
+                  "optional": false
+                }
+              ],
+              "optional": false
+            },
+            "example": "{\"Authorization\":\"Basic dG9tQGNhdC5jb206YWJjMTIz=\",\"Content-Type\":\"application/json\"}",
+            "notation": "jsight"
+          }
+        },
+        "body": {
+          "format": "json",
+          "schema": {
+            "content": {
+              "tokenType": "object",
+              "type": "object",
+              "children": [
+                {
+                  "key": "foo",
+                  "tokenType": "string",
+                  "type": "string",
+                  "scalarValue": "1",
+                  "optional": false
+                }
+              ],
+              "optional": false
+            },
+            "example": "{\"foo\":\"1\"}",
+            "notation": "jsight"
+          }
+        }
+      },
+      "responses": [
+        {
+          "code": "200",
+          "headers": {
+            "schema": {
+              "content": {
+                "tokenType": "object",
+                "type": "object",
+                "children": [
+                  {
+                    "key": "Authorization",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "Basic dG9tQGNhdC5jb206YWJjMTIz=",
+                    "rules": [
+                      {
+                        "key": "regex",
+                        "tokenType": "string",
+                        "scalarValue": "Basic [A-Za-z0-9+/=]+"
+                      }
+                    ],
+                    "optional": false
+                  },
+                  {
+                    "key": "Content-Type",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "application/json",
+                    "rules": [
+                      {
+                        "key": "const",
+                        "tokenType": "boolean",
+                        "scalarValue": "true"
+                      }
+                    ],
+                    "optional": false
+                  }
+                ],
+                "optional": false
+              },
+              "example": "{\"Authorization\":\"Basic dG9tQGNhdC5jb206YWJjMTIz=\",\"Content-Type\":\"application/json\"}",
+              "notation": "jsight"
+            }
+          },
+          "body": {
+            "format": "json",
+            "schema": {
+              "content": {
+                "tokenType": "object",
+                "type": "object",
+                "children": [
+                  {
+                    "key": "foo",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "1",
+                    "optional": false
+                  }
+                ],
+                "optional": false
+              },
+              "example": "{\"foo\":\"1\"}",
+              "notation": "jsight"
+            }
+          }
+        },
+        {
+          "code": "201",
+          "headers": {
+            "schema": {
+              "content": {
+                "tokenType": "object",
+                "type": "object",
+                "children": [
+                  {
+                    "key": "Authorization",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "Basic dG9tQGNhdC5jb206YWJjMTIz=",
+                    "rules": [
+                      {
+                        "key": "regex",
+                        "tokenType": "string",
+                        "scalarValue": "Basic [A-Za-z0-9+/=]+"
+                      }
+                    ],
+                    "optional": false
+                  },
+                  {
+                    "key": "Content-Type",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "application/json",
+                    "rules": [
+                      {
+                        "key": "const",
+                        "tokenType": "boolean",
+                        "scalarValue": "true"
+                      }
+                    ],
+                    "optional": false
+                  }
+                ],
+                "optional": false
+              },
+              "example": "{\"Authorization\":\"Basic dG9tQGNhdC5jb206YWJjMTIz=\",\"Content-Type\":\"application/json\"}",
+              "notation": "jsight"
+            }
+          },
+          "body": {
+            "format": "json",
+            "schema": {
+              "content": {
+                "tokenType": "object",
+                "type": "object",
+                "children": [
+                  {
+                    "key": "foo",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "1",
+                    "optional": false
+                  }
+                ],
+                "optional": false
+              },
+              "example": "{\"foo\":\"1\"}",
+              "notation": "jsight"
+            }
+          }
+        },
+        {
+          "code": "404",
+          "headers": {
+            "schema": {
+              "content": {
+                "tokenType": "object",
+                "type": "object",
+                "children": [
+                  {
+                    "key": "Authorization",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "Basic dG9tQGNhdC5jb206YWJjMTIz=",
+                    "rules": [
+                      {
+                        "key": "regex",
+                        "tokenType": "string",
+                        "scalarValue": "Basic [A-Za-z0-9+/=]+"
+                      }
+                    ],
+                    "optional": false
+                  },
+                  {
+                    "key": "Content-Type",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "application/json",
+                    "rules": [
+                      {
+                        "key": "const",
+                        "tokenType": "boolean",
+                        "scalarValue": "true"
+                      }
+                    ],
+                    "optional": false
+                  }
+                ],
+                "optional": false
+              },
+              "example": "{\"Authorization\":\"Basic dG9tQGNhdC5jb206YWJjMTIz=\",\"Content-Type\":\"application/json\"}",
+              "notation": "jsight"
+            }
+          },
+          "body": {
+            "format": "json",
+            "schema": {
+              "content": {
+                "tokenType": "object",
+                "type": "object",
+                "children": [
+                  {
+                    "key": "foo",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "1",
+                    "optional": false
+                  }
+                ],
+                "optional": false
+              },
+              "example": "{\"foo\":\"1\"}",
+              "notation": "jsight"
+            }
+          }
+        }
+      ]
+    },
+    "http PATCH /patch/{id}": {
+      "id": "http PATCH /patch/{id}",
+      "protocol": "http",
+      "httpMethod": "PATCH",
+      "path": "/patch/{id}",
+      "pathVariables": {
+        "schema": {
+          "content": {
+            "tokenType": "object",
+            "type": "object",
+            "children": [
+              {
+                "key": "id",
+                "tokenType": "number",
+                "type": "integer",
+                "scalarValue": "1",
+                "optional": false
+              }
+            ],
+            "optional": false
+          },
+          "notation": "jsight"
+        }
+      },
+      "tags": [
+        "@patch"
+      ],
+      "description": "HTTP Method description",
+      "query": {
+        "example": "page=1",
+        "format": "htmlFormEncoded",
+        "schema": {
+          "content": {
+            "tokenType": "object",
+            "type": "object",
+            "children": [
+              {
+                "key": "page",
+                "tokenType": "number",
+                "type": "integer",
+                "scalarValue": "1",
+                "optional": false
+              }
+            ],
+            "optional": false
+          },
+          "example": "{\"page\":1}",
+          "notation": "jsight"
+        }
+      },
+      "request": {
+        "headers": {
+          "schema": {
+            "content": {
+              "tokenType": "object",
+              "type": "object",
+              "children": [
+                {
+                  "key": "Authorization",
+                  "tokenType": "string",
+                  "type": "string",
+                  "scalarValue": "Basic dG9tQGNhdC5jb206YWJjMTIz=",
+                  "rules": [
+                    {
+                      "key": "regex",
+                      "tokenType": "string",
+                      "scalarValue": "Basic [A-Za-z0-9+/=]+"
+                    }
+                  ],
+                  "optional": false
+                },
+                {
+                  "key": "Content-Type",
+                  "tokenType": "string",
+                  "type": "string",
+                  "scalarValue": "application/json",
+                  "rules": [
+                    {
+                      "key": "const",
+                      "tokenType": "boolean",
+                      "scalarValue": "true"
+                    }
+                  ],
+                  "optional": false
+                }
+              ],
+              "optional": false
+            },
+            "example": "{\"Authorization\":\"Basic dG9tQGNhdC5jb206YWJjMTIz=\",\"Content-Type\":\"application/json\"}",
+            "notation": "jsight"
+          }
+        },
+        "body": {
+          "format": "json",
+          "schema": {
+            "content": {
+              "tokenType": "object",
+              "type": "object",
+              "children": [
+                {
+                  "key": "foo",
+                  "tokenType": "string",
+                  "type": "string",
+                  "scalarValue": "1",
+                  "optional": false
+                }
+              ],
+              "optional": false
+            },
+            "example": "{\"foo\":\"1\"}",
+            "notation": "jsight"
+          }
+        }
+      },
+      "responses": [
+        {
+          "code": "200",
+          "headers": {
+            "schema": {
+              "content": {
+                "tokenType": "object",
+                "type": "object",
+                "children": [
+                  {
+                    "key": "Authorization",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "Basic dG9tQGNhdC5jb206YWJjMTIz=",
+                    "rules": [
+                      {
+                        "key": "regex",
+                        "tokenType": "string",
+                        "scalarValue": "Basic [A-Za-z0-9+/=]+"
+                      }
+                    ],
+                    "optional": false
+                  },
+                  {
+                    "key": "Content-Type",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "application/json",
+                    "rules": [
+                      {
+                        "key": "const",
+                        "tokenType": "boolean",
+                        "scalarValue": "true"
+                      }
+                    ],
+                    "optional": false
+                  }
+                ],
+                "optional": false
+              },
+              "example": "{\"Authorization\":\"Basic dG9tQGNhdC5jb206YWJjMTIz=\",\"Content-Type\":\"application/json\"}",
+              "notation": "jsight"
+            }
+          },
+          "body": {
+            "format": "json",
+            "schema": {
+              "content": {
+                "tokenType": "object",
+                "type": "object",
+                "children": [
+                  {
+                    "key": "foo",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "1",
+                    "optional": false
+                  }
+                ],
+                "optional": false
+              },
+              "example": "{\"foo\":\"1\"}",
+              "notation": "jsight"
+            }
+          }
+        },
+        {
+          "code": "201",
+          "headers": {
+            "schema": {
+              "content": {
+                "tokenType": "object",
+                "type": "object",
+                "children": [
+                  {
+                    "key": "Authorization",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "Basic dG9tQGNhdC5jb206YWJjMTIz=",
+                    "rules": [
+                      {
+                        "key": "regex",
+                        "tokenType": "string",
+                        "scalarValue": "Basic [A-Za-z0-9+/=]+"
+                      }
+                    ],
+                    "optional": false
+                  },
+                  {
+                    "key": "Content-Type",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "application/json",
+                    "rules": [
+                      {
+                        "key": "const",
+                        "tokenType": "boolean",
+                        "scalarValue": "true"
+                      }
+                    ],
+                    "optional": false
+                  }
+                ],
+                "optional": false
+              },
+              "example": "{\"Authorization\":\"Basic dG9tQGNhdC5jb206YWJjMTIz=\",\"Content-Type\":\"application/json\"}",
+              "notation": "jsight"
+            }
+          },
+          "body": {
+            "format": "json",
+            "schema": {
+              "content": {
+                "tokenType": "object",
+                "type": "object",
+                "children": [
+                  {
+                    "key": "foo",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "1",
+                    "optional": false
+                  }
+                ],
+                "optional": false
+              },
+              "example": "{\"foo\":\"1\"}",
+              "notation": "jsight"
+            }
+          }
+        },
+        {
+          "code": "404",
+          "headers": {
+            "schema": {
+              "content": {
+                "tokenType": "object",
+                "type": "object",
+                "children": [
+                  {
+                    "key": "Authorization",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "Basic dG9tQGNhdC5jb206YWJjMTIz=",
+                    "rules": [
+                      {
+                        "key": "regex",
+                        "tokenType": "string",
+                        "scalarValue": "Basic [A-Za-z0-9+/=]+"
+                      }
+                    ],
+                    "optional": false
+                  },
+                  {
+                    "key": "Content-Type",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "application/json",
+                    "rules": [
+                      {
+                        "key": "const",
+                        "tokenType": "boolean",
+                        "scalarValue": "true"
+                      }
+                    ],
+                    "optional": false
+                  }
+                ],
+                "optional": false
+              },
+              "example": "{\"Authorization\":\"Basic dG9tQGNhdC5jb206YWJjMTIz=\",\"Content-Type\":\"application/json\"}",
+              "notation": "jsight"
+            }
+          },
+          "body": {
+            "format": "json",
+            "schema": {
+              "content": {
+                "tokenType": "object",
+                "type": "object",
+                "children": [
+                  {
+                    "key": "foo",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "1",
+                    "optional": false
+                  }
+                ],
+                "optional": false
+              },
+              "example": "{\"foo\":\"1\"}",
+              "notation": "jsight"
+            }
+          }
+        }
+      ]
+    },
+    "http DELETE /delete": {
+      "id": "http DELETE /delete",
+      "protocol": "http",
+      "httpMethod": "DELETE",
+      "path": "/delete",
+      "tags": [
+        "@delete"
+      ],
+      "description": "HTTP Method description",
+      "query": {
+        "example": "page=1",
+        "format": "htmlFormEncoded",
+        "schema": {
+          "content": {
+            "tokenType": "object",
+            "type": "object",
+            "children": [
+              {
+                "key": "page",
+                "tokenType": "number",
+                "type": "integer",
+                "scalarValue": "1",
+                "optional": false
+              }
+            ],
+            "optional": false
+          },
+          "example": "{\"page\":1}",
+          "notation": "jsight"
+        }
+      },
+      "request": {
+        "headers": {
+          "schema": {
+            "content": {
+              "tokenType": "object",
+              "type": "object",
+              "children": [
+                {
+                  "key": "Authorization",
+                  "tokenType": "string",
+                  "type": "string",
+                  "scalarValue": "Basic dG9tQGNhdC5jb206YWJjMTIz=",
+                  "rules": [
+                    {
+                      "key": "regex",
+                      "tokenType": "string",
+                      "scalarValue": "Basic [A-Za-z0-9+/=]+"
+                    }
+                  ],
+                  "optional": false
+                },
+                {
+                  "key": "Content-Type",
+                  "tokenType": "string",
+                  "type": "string",
+                  "scalarValue": "application/json",
+                  "rules": [
+                    {
+                      "key": "const",
+                      "tokenType": "boolean",
+                      "scalarValue": "true"
+                    }
+                  ],
+                  "optional": false
+                }
+              ],
+              "optional": false
+            },
+            "example": "{\"Authorization\":\"Basic dG9tQGNhdC5jb206YWJjMTIz=\",\"Content-Type\":\"application/json\"}",
+            "notation": "jsight"
+          }
+        },
+        "body": {
+          "format": "json",
+          "schema": {
+            "content": {
+              "tokenType": "object",
+              "type": "object",
+              "children": [
+                {
+                  "key": "foo",
+                  "tokenType": "string",
+                  "type": "string",
+                  "scalarValue": "1",
+                  "optional": false
+                }
+              ],
+              "optional": false
+            },
+            "example": "{\"foo\":\"1\"}",
+            "notation": "jsight"
+          }
+        }
+      },
+      "responses": [
+        {
+          "code": "200",
+          "headers": {
+            "schema": {
+              "content": {
+                "tokenType": "object",
+                "type": "object",
+                "children": [
+                  {
+                    "key": "Authorization",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "Basic dG9tQGNhdC5jb206YWJjMTIz=",
+                    "rules": [
+                      {
+                        "key": "regex",
+                        "tokenType": "string",
+                        "scalarValue": "Basic [A-Za-z0-9+/=]+"
+                      }
+                    ],
+                    "optional": false
+                  },
+                  {
+                    "key": "Content-Type",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "application/json",
+                    "rules": [
+                      {
+                        "key": "const",
+                        "tokenType": "boolean",
+                        "scalarValue": "true"
+                      }
+                    ],
+                    "optional": false
+                  }
+                ],
+                "optional": false
+              },
+              "example": "{\"Authorization\":\"Basic dG9tQGNhdC5jb206YWJjMTIz=\",\"Content-Type\":\"application/json\"}",
+              "notation": "jsight"
+            }
+          },
+          "body": {
+            "format": "json",
+            "schema": {
+              "content": {
+                "tokenType": "object",
+                "type": "object",
+                "children": [
+                  {
+                    "key": "foo",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "1",
+                    "optional": false
+                  }
+                ],
+                "optional": false
+              },
+              "example": "{\"foo\":\"1\"}",
+              "notation": "jsight"
+            }
+          }
+        },
+        {
+          "code": "201",
+          "headers": {
+            "schema": {
+              "content": {
+                "tokenType": "object",
+                "type": "object",
+                "children": [
+                  {
+                    "key": "Authorization",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "Basic dG9tQGNhdC5jb206YWJjMTIz=",
+                    "rules": [
+                      {
+                        "key": "regex",
+                        "tokenType": "string",
+                        "scalarValue": "Basic [A-Za-z0-9+/=]+"
+                      }
+                    ],
+                    "optional": false
+                  },
+                  {
+                    "key": "Content-Type",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "application/json",
+                    "rules": [
+                      {
+                        "key": "const",
+                        "tokenType": "boolean",
+                        "scalarValue": "true"
+                      }
+                    ],
+                    "optional": false
+                  }
+                ],
+                "optional": false
+              },
+              "example": "{\"Authorization\":\"Basic dG9tQGNhdC5jb206YWJjMTIz=\",\"Content-Type\":\"application/json\"}",
+              "notation": "jsight"
+            }
+          },
+          "body": {
+            "format": "json",
+            "schema": {
+              "content": {
+                "tokenType": "object",
+                "type": "object",
+                "children": [
+                  {
+                    "key": "foo",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "1",
+                    "optional": false
+                  }
+                ],
+                "optional": false
+              },
+              "example": "{\"foo\":\"1\"}",
+              "notation": "jsight"
+            }
+          }
+        },
+        {
+          "code": "404",
+          "headers": {
+            "schema": {
+              "content": {
+                "tokenType": "object",
+                "type": "object",
+                "children": [
+                  {
+                    "key": "Authorization",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "Basic dG9tQGNhdC5jb206YWJjMTIz=",
+                    "rules": [
+                      {
+                        "key": "regex",
+                        "tokenType": "string",
+                        "scalarValue": "Basic [A-Za-z0-9+/=]+"
+                      }
+                    ],
+                    "optional": false
+                  },
+                  {
+                    "key": "Content-Type",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "application/json",
+                    "rules": [
+                      {
+                        "key": "const",
+                        "tokenType": "boolean",
+                        "scalarValue": "true"
+                      }
+                    ],
+                    "optional": false
+                  }
+                ],
+                "optional": false
+              },
+              "example": "{\"Authorization\":\"Basic dG9tQGNhdC5jb206YWJjMTIz=\",\"Content-Type\":\"application/json\"}",
+              "notation": "jsight"
+            }
+          },
+          "body": {
+            "format": "json",
+            "schema": {
+              "content": {
+                "tokenType": "object",
+                "type": "object",
+                "children": [
+                  {
+                    "key": "foo",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "1",
+                    "optional": false
+                  }
+                ],
+                "optional": false
+              },
+              "example": "{\"foo\":\"1\"}",
+              "notation": "jsight"
+            }
+          }
+        }
+      ]
+    },
+    "http DELETE /delete/{id}": {
+      "id": "http DELETE /delete/{id}",
+      "protocol": "http",
+      "httpMethod": "DELETE",
+      "path": "/delete/{id}",
+      "pathVariables": {
+        "schema": {
+          "content": {
+            "tokenType": "object",
+            "type": "object",
+            "children": [
+              {
+                "key": "id",
+                "tokenType": "number",
+                "type": "integer",
+                "scalarValue": "1",
+                "optional": false
+              }
+            ],
+            "optional": false
+          },
+          "notation": "jsight"
+        }
+      },
+      "tags": [
+        "@delete"
+      ],
+      "description": "HTTP Method description",
+      "query": {
+        "example": "page=1",
+        "format": "htmlFormEncoded",
+        "schema": {
+          "content": {
+            "tokenType": "object",
+            "type": "object",
+            "children": [
+              {
+                "key": "page",
+                "tokenType": "number",
+                "type": "integer",
+                "scalarValue": "1",
+                "optional": false
+              }
+            ],
+            "optional": false
+          },
+          "example": "{\"page\":1}",
+          "notation": "jsight"
+        }
+      },
+      "request": {
+        "headers": {
+          "schema": {
+            "content": {
+              "tokenType": "object",
+              "type": "object",
+              "children": [
+                {
+                  "key": "Authorization",
+                  "tokenType": "string",
+                  "type": "string",
+                  "scalarValue": "Basic dG9tQGNhdC5jb206YWJjMTIz=",
+                  "rules": [
+                    {
+                      "key": "regex",
+                      "tokenType": "string",
+                      "scalarValue": "Basic [A-Za-z0-9+/=]+"
+                    }
+                  ],
+                  "optional": false
+                },
+                {
+                  "key": "Content-Type",
+                  "tokenType": "string",
+                  "type": "string",
+                  "scalarValue": "application/json",
+                  "rules": [
+                    {
+                      "key": "const",
+                      "tokenType": "boolean",
+                      "scalarValue": "true"
+                    }
+                  ],
+                  "optional": false
+                }
+              ],
+              "optional": false
+            },
+            "example": "{\"Authorization\":\"Basic dG9tQGNhdC5jb206YWJjMTIz=\",\"Content-Type\":\"application/json\"}",
+            "notation": "jsight"
+          }
+        },
+        "body": {
+          "format": "json",
+          "schema": {
+            "content": {
+              "tokenType": "object",
+              "type": "object",
+              "children": [
+                {
+                  "key": "foo",
+                  "tokenType": "string",
+                  "type": "string",
+                  "scalarValue": "1",
+                  "optional": false
+                }
+              ],
+              "optional": false
+            },
+            "example": "{\"foo\":\"1\"}",
+            "notation": "jsight"
+          }
+        }
+      },
+      "responses": [
+        {
+          "code": "200",
+          "headers": {
+            "schema": {
+              "content": {
+                "tokenType": "object",
+                "type": "object",
+                "children": [
+                  {
+                    "key": "Authorization",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "Basic dG9tQGNhdC5jb206YWJjMTIz=",
+                    "rules": [
+                      {
+                        "key": "regex",
+                        "tokenType": "string",
+                        "scalarValue": "Basic [A-Za-z0-9+/=]+"
+                      }
+                    ],
+                    "optional": false
+                  },
+                  {
+                    "key": "Content-Type",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "application/json",
+                    "rules": [
+                      {
+                        "key": "const",
+                        "tokenType": "boolean",
+                        "scalarValue": "true"
+                      }
+                    ],
+                    "optional": false
+                  }
+                ],
+                "optional": false
+              },
+              "example": "{\"Authorization\":\"Basic dG9tQGNhdC5jb206YWJjMTIz=\",\"Content-Type\":\"application/json\"}",
+              "notation": "jsight"
+            }
+          },
+          "body": {
+            "format": "json",
+            "schema": {
+              "content": {
+                "tokenType": "object",
+                "type": "object",
+                "children": [
+                  {
+                    "key": "foo",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "1",
+                    "optional": false
+                  }
+                ],
+                "optional": false
+              },
+              "example": "{\"foo\":\"1\"}",
+              "notation": "jsight"
+            }
+          }
+        },
+        {
+          "code": "201",
+          "headers": {
+            "schema": {
+              "content": {
+                "tokenType": "object",
+                "type": "object",
+                "children": [
+                  {
+                    "key": "Authorization",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "Basic dG9tQGNhdC5jb206YWJjMTIz=",
+                    "rules": [
+                      {
+                        "key": "regex",
+                        "tokenType": "string",
+                        "scalarValue": "Basic [A-Za-z0-9+/=]+"
+                      }
+                    ],
+                    "optional": false
+                  },
+                  {
+                    "key": "Content-Type",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "application/json",
+                    "rules": [
+                      {
+                        "key": "const",
+                        "tokenType": "boolean",
+                        "scalarValue": "true"
+                      }
+                    ],
+                    "optional": false
+                  }
+                ],
+                "optional": false
+              },
+              "example": "{\"Authorization\":\"Basic dG9tQGNhdC5jb206YWJjMTIz=\",\"Content-Type\":\"application/json\"}",
+              "notation": "jsight"
+            }
+          },
+          "body": {
+            "format": "json",
+            "schema": {
+              "content": {
+                "tokenType": "object",
+                "type": "object",
+                "children": [
+                  {
+                    "key": "foo",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "1",
+                    "optional": false
+                  }
+                ],
+                "optional": false
+              },
+              "example": "{\"foo\":\"1\"}",
+              "notation": "jsight"
+            }
+          }
+        },
+        {
+          "code": "404",
+          "headers": {
+            "schema": {
+              "content": {
+                "tokenType": "object",
+                "type": "object",
+                "children": [
+                  {
+                    "key": "Authorization",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "Basic dG9tQGNhdC5jb206YWJjMTIz=",
+                    "rules": [
+                      {
+                        "key": "regex",
+                        "tokenType": "string",
+                        "scalarValue": "Basic [A-Za-z0-9+/=]+"
+                      }
+                    ],
+                    "optional": false
+                  },
+                  {
+                    "key": "Content-Type",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "application/json",
+                    "rules": [
+                      {
+                        "key": "const",
+                        "tokenType": "boolean",
+                        "scalarValue": "true"
+                      }
+                    ],
+                    "optional": false
+                  }
+                ],
+                "optional": false
+              },
+              "example": "{\"Authorization\":\"Basic dG9tQGNhdC5jb206YWJjMTIz=\",\"Content-Type\":\"application/json\"}",
+              "notation": "jsight"
+            }
+          },
+          "body": {
+            "format": "json",
+            "schema": {
+              "content": {
+                "tokenType": "object",
+                "type": "object",
+                "children": [
+                  {
+                    "key": "foo",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "1",
+                    "optional": false
+                  }
+                ],
+                "optional": false
+              },
+              "example": "{\"foo\":\"1\"}",
+              "notation": "jsight"
+            }
+          }
+        }
+      ]
+    },
+    "http GET /url": {
+      "id": "http GET /url",
+      "protocol": "http",
+      "httpMethod": "GET",
+      "path": "/url",
+      "tags": [
+        "@url"
+      ],
+      "description": "HTTP Method description",
+      "query": {
+        "example": "page=1",
+        "format": "htmlFormEncoded",
+        "schema": {
+          "content": {
+            "tokenType": "object",
+            "type": "object",
+            "children": [
+              {
+                "key": "page",
+                "tokenType": "number",
+                "type": "integer",
+                "scalarValue": "1",
+                "optional": false
+              }
+            ],
+            "optional": false
+          },
+          "example": "{\"page\":1}",
+          "notation": "jsight"
+        }
+      },
+      "request": {
+        "headers": {
+          "schema": {
+            "content": {
+              "tokenType": "object",
+              "type": "object",
+              "children": [
+                {
+                  "key": "Authorization",
+                  "tokenType": "string",
+                  "type": "string",
+                  "scalarValue": "Basic dG9tQGNhdC5jb206YWJjMTIz=",
+                  "rules": [
+                    {
+                      "key": "regex",
+                      "tokenType": "string",
+                      "scalarValue": "Basic [A-Za-z0-9+/=]+"
+                    }
+                  ],
+                  "optional": false
+                },
+                {
+                  "key": "Content-Type",
+                  "tokenType": "string",
+                  "type": "string",
+                  "scalarValue": "application/json",
+                  "rules": [
+                    {
+                      "key": "const",
+                      "tokenType": "boolean",
+                      "scalarValue": "true"
+                    }
+                  ],
+                  "optional": false
+                }
+              ],
+              "optional": false
+            },
+            "example": "{\"Authorization\":\"Basic dG9tQGNhdC5jb206YWJjMTIz=\",\"Content-Type\":\"application/json\"}",
+            "notation": "jsight"
+          }
+        },
+        "body": {
+          "format": "json",
+          "schema": {
+            "content": {
+              "tokenType": "object",
+              "type": "object",
+              "children": [
+                {
+                  "key": "foo",
+                  "tokenType": "string",
+                  "type": "string",
+                  "scalarValue": "1",
+                  "optional": false
+                }
+              ],
+              "optional": false
+            },
+            "example": "{\"foo\":\"1\"}",
+            "notation": "jsight"
+          }
+        }
+      },
+      "responses": [
+        {
+          "code": "200",
+          "headers": {
+            "schema": {
+              "content": {
+                "tokenType": "object",
+                "type": "object",
+                "children": [
+                  {
+                    "key": "Authorization",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "Basic dG9tQGNhdC5jb206YWJjMTIz=",
+                    "rules": [
+                      {
+                        "key": "regex",
+                        "tokenType": "string",
+                        "scalarValue": "Basic [A-Za-z0-9+/=]+"
+                      }
+                    ],
+                    "optional": false
+                  },
+                  {
+                    "key": "Content-Type",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "application/json",
+                    "rules": [
+                      {
+                        "key": "const",
+                        "tokenType": "boolean",
+                        "scalarValue": "true"
+                      }
+                    ],
+                    "optional": false
+                  }
+                ],
+                "optional": false
+              },
+              "example": "{\"Authorization\":\"Basic dG9tQGNhdC5jb206YWJjMTIz=\",\"Content-Type\":\"application/json\"}",
+              "notation": "jsight"
+            }
+          },
+          "body": {
+            "format": "json",
+            "schema": {
+              "content": {
+                "tokenType": "object",
+                "type": "object",
+                "children": [
+                  {
+                    "key": "foo",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "1",
+                    "optional": false
+                  }
+                ],
+                "optional": false
+              },
+              "example": "{\"foo\":\"1\"}",
+              "notation": "jsight"
+            }
+          }
+        },
+        {
+          "code": "201",
+          "headers": {
+            "schema": {
+              "content": {
+                "tokenType": "object",
+                "type": "object",
+                "children": [
+                  {
+                    "key": "Authorization",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "Basic dG9tQGNhdC5jb206YWJjMTIz=",
+                    "rules": [
+                      {
+                        "key": "regex",
+                        "tokenType": "string",
+                        "scalarValue": "Basic [A-Za-z0-9+/=]+"
+                      }
+                    ],
+                    "optional": false
+                  },
+                  {
+                    "key": "Content-Type",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "application/json",
+                    "rules": [
+                      {
+                        "key": "const",
+                        "tokenType": "boolean",
+                        "scalarValue": "true"
+                      }
+                    ],
+                    "optional": false
+                  }
+                ],
+                "optional": false
+              },
+              "example": "{\"Authorization\":\"Basic dG9tQGNhdC5jb206YWJjMTIz=\",\"Content-Type\":\"application/json\"}",
+              "notation": "jsight"
+            }
+          },
+          "body": {
+            "format": "json",
+            "schema": {
+              "content": {
+                "tokenType": "object",
+                "type": "object",
+                "children": [
+                  {
+                    "key": "foo",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "1",
+                    "optional": false
+                  }
+                ],
+                "optional": false
+              },
+              "example": "{\"foo\":\"1\"}",
+              "notation": "jsight"
+            }
+          }
+        },
+        {
+          "code": "404",
+          "headers": {
+            "schema": {
+              "content": {
+                "tokenType": "object",
+                "type": "object",
+                "children": [
+                  {
+                    "key": "Authorization",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "Basic dG9tQGNhdC5jb206YWJjMTIz=",
+                    "rules": [
+                      {
+                        "key": "regex",
+                        "tokenType": "string",
+                        "scalarValue": "Basic [A-Za-z0-9+/=]+"
+                      }
+                    ],
+                    "optional": false
+                  },
+                  {
+                    "key": "Content-Type",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "application/json",
+                    "rules": [
+                      {
+                        "key": "const",
+                        "tokenType": "boolean",
+                        "scalarValue": "true"
+                      }
+                    ],
+                    "optional": false
+                  }
+                ],
+                "optional": false
+              },
+              "example": "{\"Authorization\":\"Basic dG9tQGNhdC5jb206YWJjMTIz=\",\"Content-Type\":\"application/json\"}",
+              "notation": "jsight"
+            }
+          },
+          "body": {
+            "format": "json",
+            "schema": {
+              "content": {
+                "tokenType": "object",
+                "type": "object",
+                "children": [
+                  {
+                    "key": "foo",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "1",
+                    "optional": false
+                  }
+                ],
+                "optional": false
+              },
+              "example": "{\"foo\":\"1\"}",
+              "notation": "jsight"
+            }
+          }
+        }
+      ]
+    },
+    "http POST /url": {
+      "id": "http POST /url",
+      "protocol": "http",
+      "httpMethod": "POST",
+      "path": "/url",
+      "tags": [
+        "@url"
+      ],
+      "description": "HTTP Method description",
+      "query": {
+        "example": "page=1",
+        "format": "htmlFormEncoded",
+        "schema": {
+          "content": {
+            "tokenType": "object",
+            "type": "object",
+            "children": [
+              {
+                "key": "page",
+                "tokenType": "number",
+                "type": "integer",
+                "scalarValue": "1",
+                "optional": false
+              }
+            ],
+            "optional": false
+          },
+          "example": "{\"page\":1}",
+          "notation": "jsight"
+        }
+      },
+      "request": {
+        "headers": {
+          "schema": {
+            "content": {
+              "tokenType": "object",
+              "type": "object",
+              "children": [
+                {
+                  "key": "Authorization",
+                  "tokenType": "string",
+                  "type": "string",
+                  "scalarValue": "Basic dG9tQGNhdC5jb206YWJjMTIz=",
+                  "rules": [
+                    {
+                      "key": "regex",
+                      "tokenType": "string",
+                      "scalarValue": "Basic [A-Za-z0-9+/=]+"
+                    }
+                  ],
+                  "optional": false
+                },
+                {
+                  "key": "Content-Type",
+                  "tokenType": "string",
+                  "type": "string",
+                  "scalarValue": "application/json",
+                  "rules": [
+                    {
+                      "key": "const",
+                      "tokenType": "boolean",
+                      "scalarValue": "true"
+                    }
+                  ],
+                  "optional": false
+                }
+              ],
+              "optional": false
+            },
+            "example": "{\"Authorization\":\"Basic dG9tQGNhdC5jb206YWJjMTIz=\",\"Content-Type\":\"application/json\"}",
+            "notation": "jsight"
+          }
+        },
+        "body": {
+          "format": "json",
+          "schema": {
+            "content": {
+              "tokenType": "object",
+              "type": "object",
+              "children": [
+                {
+                  "key": "foo",
+                  "tokenType": "string",
+                  "type": "string",
+                  "scalarValue": "1",
+                  "optional": false
+                }
+              ],
+              "optional": false
+            },
+            "example": "{\"foo\":\"1\"}",
+            "notation": "jsight"
+          }
+        }
+      },
+      "responses": [
+        {
+          "code": "200",
+          "headers": {
+            "schema": {
+              "content": {
+                "tokenType": "object",
+                "type": "object",
+                "children": [
+                  {
+                    "key": "Authorization",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "Basic dG9tQGNhdC5jb206YWJjMTIz=",
+                    "rules": [
+                      {
+                        "key": "regex",
+                        "tokenType": "string",
+                        "scalarValue": "Basic [A-Za-z0-9+/=]+"
+                      }
+                    ],
+                    "optional": false
+                  },
+                  {
+                    "key": "Content-Type",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "application/json",
+                    "rules": [
+                      {
+                        "key": "const",
+                        "tokenType": "boolean",
+                        "scalarValue": "true"
+                      }
+                    ],
+                    "optional": false
+                  }
+                ],
+                "optional": false
+              },
+              "example": "{\"Authorization\":\"Basic dG9tQGNhdC5jb206YWJjMTIz=\",\"Content-Type\":\"application/json\"}",
+              "notation": "jsight"
+            }
+          },
+          "body": {
+            "format": "json",
+            "schema": {
+              "content": {
+                "tokenType": "object",
+                "type": "object",
+                "children": [
+                  {
+                    "key": "foo",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "1",
+                    "optional": false
+                  }
+                ],
+                "optional": false
+              },
+              "example": "{\"foo\":\"1\"}",
+              "notation": "jsight"
+            }
+          }
+        },
+        {
+          "code": "201",
+          "headers": {
+            "schema": {
+              "content": {
+                "tokenType": "object",
+                "type": "object",
+                "children": [
+                  {
+                    "key": "Authorization",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "Basic dG9tQGNhdC5jb206YWJjMTIz=",
+                    "rules": [
+                      {
+                        "key": "regex",
+                        "tokenType": "string",
+                        "scalarValue": "Basic [A-Za-z0-9+/=]+"
+                      }
+                    ],
+                    "optional": false
+                  },
+                  {
+                    "key": "Content-Type",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "application/json",
+                    "rules": [
+                      {
+                        "key": "const",
+                        "tokenType": "boolean",
+                        "scalarValue": "true"
+                      }
+                    ],
+                    "optional": false
+                  }
+                ],
+                "optional": false
+              },
+              "example": "{\"Authorization\":\"Basic dG9tQGNhdC5jb206YWJjMTIz=\",\"Content-Type\":\"application/json\"}",
+              "notation": "jsight"
+            }
+          },
+          "body": {
+            "format": "json",
+            "schema": {
+              "content": {
+                "tokenType": "object",
+                "type": "object",
+                "children": [
+                  {
+                    "key": "foo",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "1",
+                    "optional": false
+                  }
+                ],
+                "optional": false
+              },
+              "example": "{\"foo\":\"1\"}",
+              "notation": "jsight"
+            }
+          }
+        },
+        {
+          "code": "404",
+          "headers": {
+            "schema": {
+              "content": {
+                "tokenType": "object",
+                "type": "object",
+                "children": [
+                  {
+                    "key": "Authorization",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "Basic dG9tQGNhdC5jb206YWJjMTIz=",
+                    "rules": [
+                      {
+                        "key": "regex",
+                        "tokenType": "string",
+                        "scalarValue": "Basic [A-Za-z0-9+/=]+"
+                      }
+                    ],
+                    "optional": false
+                  },
+                  {
+                    "key": "Content-Type",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "application/json",
+                    "rules": [
+                      {
+                        "key": "const",
+                        "tokenType": "boolean",
+                        "scalarValue": "true"
+                      }
+                    ],
+                    "optional": false
+                  }
+                ],
+                "optional": false
+              },
+              "example": "{\"Authorization\":\"Basic dG9tQGNhdC5jb206YWJjMTIz=\",\"Content-Type\":\"application/json\"}",
+              "notation": "jsight"
+            }
+          },
+          "body": {
+            "format": "json",
+            "schema": {
+              "content": {
+                "tokenType": "object",
+                "type": "object",
+                "children": [
+                  {
+                    "key": "foo",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "1",
+                    "optional": false
+                  }
+                ],
+                "optional": false
+              },
+              "example": "{\"foo\":\"1\"}",
+              "notation": "jsight"
+            }
+          }
+        }
+      ]
+    },
+    "http PUT /url": {
+      "id": "http PUT /url",
+      "protocol": "http",
+      "httpMethod": "PUT",
+      "path": "/url",
+      "tags": [
+        "@url"
+      ],
+      "description": "HTTP Method description",
+      "query": {
+        "example": "page=1",
+        "format": "htmlFormEncoded",
+        "schema": {
+          "content": {
+            "tokenType": "object",
+            "type": "object",
+            "children": [
+              {
+                "key": "page",
+                "tokenType": "number",
+                "type": "integer",
+                "scalarValue": "1",
+                "optional": false
+              }
+            ],
+            "optional": false
+          },
+          "example": "{\"page\":1}",
+          "notation": "jsight"
+        }
+      },
+      "request": {
+        "headers": {
+          "schema": {
+            "content": {
+              "tokenType": "object",
+              "type": "object",
+              "children": [
+                {
+                  "key": "Authorization",
+                  "tokenType": "string",
+                  "type": "string",
+                  "scalarValue": "Basic dG9tQGNhdC5jb206YWJjMTIz=",
+                  "rules": [
+                    {
+                      "key": "regex",
+                      "tokenType": "string",
+                      "scalarValue": "Basic [A-Za-z0-9+/=]+"
+                    }
+                  ],
+                  "optional": false
+                },
+                {
+                  "key": "Content-Type",
+                  "tokenType": "string",
+                  "type": "string",
+                  "scalarValue": "application/json",
+                  "rules": [
+                    {
+                      "key": "const",
+                      "tokenType": "boolean",
+                      "scalarValue": "true"
+                    }
+                  ],
+                  "optional": false
+                }
+              ],
+              "optional": false
+            },
+            "example": "{\"Authorization\":\"Basic dG9tQGNhdC5jb206YWJjMTIz=\",\"Content-Type\":\"application/json\"}",
+            "notation": "jsight"
+          }
+        },
+        "body": {
+          "format": "json",
+          "schema": {
+            "content": {
+              "tokenType": "object",
+              "type": "object",
+              "children": [
+                {
+                  "key": "foo",
+                  "tokenType": "string",
+                  "type": "string",
+                  "scalarValue": "1",
+                  "optional": false
+                }
+              ],
+              "optional": false
+            },
+            "example": "{\"foo\":\"1\"}",
+            "notation": "jsight"
+          }
+        }
+      },
+      "responses": [
+        {
+          "code": "200",
+          "headers": {
+            "schema": {
+              "content": {
+                "tokenType": "object",
+                "type": "object",
+                "children": [
+                  {
+                    "key": "Authorization",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "Basic dG9tQGNhdC5jb206YWJjMTIz=",
+                    "rules": [
+                      {
+                        "key": "regex",
+                        "tokenType": "string",
+                        "scalarValue": "Basic [A-Za-z0-9+/=]+"
+                      }
+                    ],
+                    "optional": false
+                  },
+                  {
+                    "key": "Content-Type",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "application/json",
+                    "rules": [
+                      {
+                        "key": "const",
+                        "tokenType": "boolean",
+                        "scalarValue": "true"
+                      }
+                    ],
+                    "optional": false
+                  }
+                ],
+                "optional": false
+              },
+              "example": "{\"Authorization\":\"Basic dG9tQGNhdC5jb206YWJjMTIz=\",\"Content-Type\":\"application/json\"}",
+              "notation": "jsight"
+            }
+          },
+          "body": {
+            "format": "json",
+            "schema": {
+              "content": {
+                "tokenType": "object",
+                "type": "object",
+                "children": [
+                  {
+                    "key": "foo",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "1",
+                    "optional": false
+                  }
+                ],
+                "optional": false
+              },
+              "example": "{\"foo\":\"1\"}",
+              "notation": "jsight"
+            }
+          }
+        },
+        {
+          "code": "201",
+          "headers": {
+            "schema": {
+              "content": {
+                "tokenType": "object",
+                "type": "object",
+                "children": [
+                  {
+                    "key": "Authorization",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "Basic dG9tQGNhdC5jb206YWJjMTIz=",
+                    "rules": [
+                      {
+                        "key": "regex",
+                        "tokenType": "string",
+                        "scalarValue": "Basic [A-Za-z0-9+/=]+"
+                      }
+                    ],
+                    "optional": false
+                  },
+                  {
+                    "key": "Content-Type",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "application/json",
+                    "rules": [
+                      {
+                        "key": "const",
+                        "tokenType": "boolean",
+                        "scalarValue": "true"
+                      }
+                    ],
+                    "optional": false
+                  }
+                ],
+                "optional": false
+              },
+              "example": "{\"Authorization\":\"Basic dG9tQGNhdC5jb206YWJjMTIz=\",\"Content-Type\":\"application/json\"}",
+              "notation": "jsight"
+            }
+          },
+          "body": {
+            "format": "json",
+            "schema": {
+              "content": {
+                "tokenType": "object",
+                "type": "object",
+                "children": [
+                  {
+                    "key": "foo",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "1",
+                    "optional": false
+                  }
+                ],
+                "optional": false
+              },
+              "example": "{\"foo\":\"1\"}",
+              "notation": "jsight"
+            }
+          }
+        },
+        {
+          "code": "404",
+          "headers": {
+            "schema": {
+              "content": {
+                "tokenType": "object",
+                "type": "object",
+                "children": [
+                  {
+                    "key": "Authorization",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "Basic dG9tQGNhdC5jb206YWJjMTIz=",
+                    "rules": [
+                      {
+                        "key": "regex",
+                        "tokenType": "string",
+                        "scalarValue": "Basic [A-Za-z0-9+/=]+"
+                      }
+                    ],
+                    "optional": false
+                  },
+                  {
+                    "key": "Content-Type",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "application/json",
+                    "rules": [
+                      {
+                        "key": "const",
+                        "tokenType": "boolean",
+                        "scalarValue": "true"
+                      }
+                    ],
+                    "optional": false
+                  }
+                ],
+                "optional": false
+              },
+              "example": "{\"Authorization\":\"Basic dG9tQGNhdC5jb206YWJjMTIz=\",\"Content-Type\":\"application/json\"}",
+              "notation": "jsight"
+            }
+          },
+          "body": {
+            "format": "json",
+            "schema": {
+              "content": {
+                "tokenType": "object",
+                "type": "object",
+                "children": [
+                  {
+                    "key": "foo",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "1",
+                    "optional": false
+                  }
+                ],
+                "optional": false
+              },
+              "example": "{\"foo\":\"1\"}",
+              "notation": "jsight"
+            }
+          }
+        }
+      ]
+    },
+    "http PATCH /url": {
+      "id": "http PATCH /url",
+      "protocol": "http",
+      "httpMethod": "PATCH",
+      "path": "/url",
+      "tags": [
+        "@url"
+      ],
+      "description": "HTTP Method description",
+      "query": {
+        "example": "page=1",
+        "format": "htmlFormEncoded",
+        "schema": {
+          "content": {
+            "tokenType": "object",
+            "type": "object",
+            "children": [
+              {
+                "key": "page",
+                "tokenType": "number",
+                "type": "integer",
+                "scalarValue": "1",
+                "optional": false
+              }
+            ],
+            "optional": false
+          },
+          "example": "{\"page\":1}",
+          "notation": "jsight"
+        }
+      },
+      "request": {
+        "headers": {
+          "schema": {
+            "content": {
+              "tokenType": "object",
+              "type": "object",
+              "children": [
+                {
+                  "key": "Authorization",
+                  "tokenType": "string",
+                  "type": "string",
+                  "scalarValue": "Basic dG9tQGNhdC5jb206YWJjMTIz=",
+                  "rules": [
+                    {
+                      "key": "regex",
+                      "tokenType": "string",
+                      "scalarValue": "Basic [A-Za-z0-9+/=]+"
+                    }
+                  ],
+                  "optional": false
+                },
+                {
+                  "key": "Content-Type",
+                  "tokenType": "string",
+                  "type": "string",
+                  "scalarValue": "application/json",
+                  "rules": [
+                    {
+                      "key": "const",
+                      "tokenType": "boolean",
+                      "scalarValue": "true"
+                    }
+                  ],
+                  "optional": false
+                }
+              ],
+              "optional": false
+            },
+            "example": "{\"Authorization\":\"Basic dG9tQGNhdC5jb206YWJjMTIz=\",\"Content-Type\":\"application/json\"}",
+            "notation": "jsight"
+          }
+        },
+        "body": {
+          "format": "json",
+          "schema": {
+            "content": {
+              "tokenType": "object",
+              "type": "object",
+              "children": [
+                {
+                  "key": "foo",
+                  "tokenType": "string",
+                  "type": "string",
+                  "scalarValue": "1",
+                  "optional": false
+                }
+              ],
+              "optional": false
+            },
+            "example": "{\"foo\":\"1\"}",
+            "notation": "jsight"
+          }
+        }
+      },
+      "responses": [
+        {
+          "code": "200",
+          "headers": {
+            "schema": {
+              "content": {
+                "tokenType": "object",
+                "type": "object",
+                "children": [
+                  {
+                    "key": "Authorization",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "Basic dG9tQGNhdC5jb206YWJjMTIz=",
+                    "rules": [
+                      {
+                        "key": "regex",
+                        "tokenType": "string",
+                        "scalarValue": "Basic [A-Za-z0-9+/=]+"
+                      }
+                    ],
+                    "optional": false
+                  },
+                  {
+                    "key": "Content-Type",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "application/json",
+                    "rules": [
+                      {
+                        "key": "const",
+                        "tokenType": "boolean",
+                        "scalarValue": "true"
+                      }
+                    ],
+                    "optional": false
+                  }
+                ],
+                "optional": false
+              },
+              "example": "{\"Authorization\":\"Basic dG9tQGNhdC5jb206YWJjMTIz=\",\"Content-Type\":\"application/json\"}",
+              "notation": "jsight"
+            }
+          },
+          "body": {
+            "format": "json",
+            "schema": {
+              "content": {
+                "tokenType": "object",
+                "type": "object",
+                "children": [
+                  {
+                    "key": "foo",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "1",
+                    "optional": false
+                  }
+                ],
+                "optional": false
+              },
+              "example": "{\"foo\":\"1\"}",
+              "notation": "jsight"
+            }
+          }
+        },
+        {
+          "code": "201",
+          "headers": {
+            "schema": {
+              "content": {
+                "tokenType": "object",
+                "type": "object",
+                "children": [
+                  {
+                    "key": "Authorization",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "Basic dG9tQGNhdC5jb206YWJjMTIz=",
+                    "rules": [
+                      {
+                        "key": "regex",
+                        "tokenType": "string",
+                        "scalarValue": "Basic [A-Za-z0-9+/=]+"
+                      }
+                    ],
+                    "optional": false
+                  },
+                  {
+                    "key": "Content-Type",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "application/json",
+                    "rules": [
+                      {
+                        "key": "const",
+                        "tokenType": "boolean",
+                        "scalarValue": "true"
+                      }
+                    ],
+                    "optional": false
+                  }
+                ],
+                "optional": false
+              },
+              "example": "{\"Authorization\":\"Basic dG9tQGNhdC5jb206YWJjMTIz=\",\"Content-Type\":\"application/json\"}",
+              "notation": "jsight"
+            }
+          },
+          "body": {
+            "format": "json",
+            "schema": {
+              "content": {
+                "tokenType": "object",
+                "type": "object",
+                "children": [
+                  {
+                    "key": "foo",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "1",
+                    "optional": false
+                  }
+                ],
+                "optional": false
+              },
+              "example": "{\"foo\":\"1\"}",
+              "notation": "jsight"
+            }
+          }
+        },
+        {
+          "code": "404",
+          "headers": {
+            "schema": {
+              "content": {
+                "tokenType": "object",
+                "type": "object",
+                "children": [
+                  {
+                    "key": "Authorization",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "Basic dG9tQGNhdC5jb206YWJjMTIz=",
+                    "rules": [
+                      {
+                        "key": "regex",
+                        "tokenType": "string",
+                        "scalarValue": "Basic [A-Za-z0-9+/=]+"
+                      }
+                    ],
+                    "optional": false
+                  },
+                  {
+                    "key": "Content-Type",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "application/json",
+                    "rules": [
+                      {
+                        "key": "const",
+                        "tokenType": "boolean",
+                        "scalarValue": "true"
+                      }
+                    ],
+                    "optional": false
+                  }
+                ],
+                "optional": false
+              },
+              "example": "{\"Authorization\":\"Basic dG9tQGNhdC5jb206YWJjMTIz=\",\"Content-Type\":\"application/json\"}",
+              "notation": "jsight"
+            }
+          },
+          "body": {
+            "format": "json",
+            "schema": {
+              "content": {
+                "tokenType": "object",
+                "type": "object",
+                "children": [
+                  {
+                    "key": "foo",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "1",
+                    "optional": false
+                  }
+                ],
+                "optional": false
+              },
+              "example": "{\"foo\":\"1\"}",
+              "notation": "jsight"
+            }
+          }
+        }
+      ]
+    },
+    "http DELETE /url": {
+      "id": "http DELETE /url",
+      "protocol": "http",
+      "httpMethod": "DELETE",
+      "path": "/url",
+      "tags": [
+        "@url"
+      ],
+      "description": "HTTP Method description",
+      "query": {
+        "example": "page=1",
+        "format": "htmlFormEncoded",
+        "schema": {
+          "content": {
+            "tokenType": "object",
+            "type": "object",
+            "children": [
+              {
+                "key": "page",
+                "tokenType": "number",
+                "type": "integer",
+                "scalarValue": "1",
+                "optional": false
+              }
+            ],
+            "optional": false
+          },
+          "example": "{\"page\":1}",
+          "notation": "jsight"
+        }
+      },
+      "request": {
+        "headers": {
+          "schema": {
+            "content": {
+              "tokenType": "object",
+              "type": "object",
+              "children": [
+                {
+                  "key": "Authorization",
+                  "tokenType": "string",
+                  "type": "string",
+                  "scalarValue": "Basic dG9tQGNhdC5jb206YWJjMTIz=",
+                  "rules": [
+                    {
+                      "key": "regex",
+                      "tokenType": "string",
+                      "scalarValue": "Basic [A-Za-z0-9+/=]+"
+                    }
+                  ],
+                  "optional": false
+                },
+                {
+                  "key": "Content-Type",
+                  "tokenType": "string",
+                  "type": "string",
+                  "scalarValue": "application/json",
+                  "rules": [
+                    {
+                      "key": "const",
+                      "tokenType": "boolean",
+                      "scalarValue": "true"
+                    }
+                  ],
+                  "optional": false
+                }
+              ],
+              "optional": false
+            },
+            "example": "{\"Authorization\":\"Basic dG9tQGNhdC5jb206YWJjMTIz=\",\"Content-Type\":\"application/json\"}",
+            "notation": "jsight"
+          }
+        },
+        "body": {
+          "format": "json",
+          "schema": {
+            "content": {
+              "tokenType": "object",
+              "type": "object",
+              "children": [
+                {
+                  "key": "foo",
+                  "tokenType": "string",
+                  "type": "string",
+                  "scalarValue": "1",
+                  "optional": false
+                }
+              ],
+              "optional": false
+            },
+            "example": "{\"foo\":\"1\"}",
+            "notation": "jsight"
+          }
+        }
+      },
+      "responses": [
+        {
+          "code": "200",
+          "headers": {
+            "schema": {
+              "content": {
+                "tokenType": "object",
+                "type": "object",
+                "children": [
+                  {
+                    "key": "Authorization",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "Basic dG9tQGNhdC5jb206YWJjMTIz=",
+                    "rules": [
+                      {
+                        "key": "regex",
+                        "tokenType": "string",
+                        "scalarValue": "Basic [A-Za-z0-9+/=]+"
+                      }
+                    ],
+                    "optional": false
+                  },
+                  {
+                    "key": "Content-Type",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "application/json",
+                    "rules": [
+                      {
+                        "key": "const",
+                        "tokenType": "boolean",
+                        "scalarValue": "true"
+                      }
+                    ],
+                    "optional": false
+                  }
+                ],
+                "optional": false
+              },
+              "example": "{\"Authorization\":\"Basic dG9tQGNhdC5jb206YWJjMTIz=\",\"Content-Type\":\"application/json\"}",
+              "notation": "jsight"
+            }
+          },
+          "body": {
+            "format": "json",
+            "schema": {
+              "content": {
+                "tokenType": "object",
+                "type": "object",
+                "children": [
+                  {
+                    "key": "foo",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "1",
+                    "optional": false
+                  }
+                ],
+                "optional": false
+              },
+              "example": "{\"foo\":\"1\"}",
+              "notation": "jsight"
+            }
+          }
+        },
+        {
+          "code": "201",
+          "headers": {
+            "schema": {
+              "content": {
+                "tokenType": "object",
+                "type": "object",
+                "children": [
+                  {
+                    "key": "Authorization",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "Basic dG9tQGNhdC5jb206YWJjMTIz=",
+                    "rules": [
+                      {
+                        "key": "regex",
+                        "tokenType": "string",
+                        "scalarValue": "Basic [A-Za-z0-9+/=]+"
+                      }
+                    ],
+                    "optional": false
+                  },
+                  {
+                    "key": "Content-Type",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "application/json",
+                    "rules": [
+                      {
+                        "key": "const",
+                        "tokenType": "boolean",
+                        "scalarValue": "true"
+                      }
+                    ],
+                    "optional": false
+                  }
+                ],
+                "optional": false
+              },
+              "example": "{\"Authorization\":\"Basic dG9tQGNhdC5jb206YWJjMTIz=\",\"Content-Type\":\"application/json\"}",
+              "notation": "jsight"
+            }
+          },
+          "body": {
+            "format": "json",
+            "schema": {
+              "content": {
+                "tokenType": "object",
+                "type": "object",
+                "children": [
+                  {
+                    "key": "foo",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "1",
+                    "optional": false
+                  }
+                ],
+                "optional": false
+              },
+              "example": "{\"foo\":\"1\"}",
+              "notation": "jsight"
+            }
+          }
+        },
+        {
+          "code": "404",
+          "headers": {
+            "schema": {
+              "content": {
+                "tokenType": "object",
+                "type": "object",
+                "children": [
+                  {
+                    "key": "Authorization",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "Basic dG9tQGNhdC5jb206YWJjMTIz=",
+                    "rules": [
+                      {
+                        "key": "regex",
+                        "tokenType": "string",
+                        "scalarValue": "Basic [A-Za-z0-9+/=]+"
+                      }
+                    ],
+                    "optional": false
+                  },
+                  {
+                    "key": "Content-Type",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "application/json",
+                    "rules": [
+                      {
+                        "key": "const",
+                        "tokenType": "boolean",
+                        "scalarValue": "true"
+                      }
+                    ],
+                    "optional": false
+                  }
+                ],
+                "optional": false
+              },
+              "example": "{\"Authorization\":\"Basic dG9tQGNhdC5jb206YWJjMTIz=\",\"Content-Type\":\"application/json\"}",
+              "notation": "jsight"
+            }
+          },
+          "body": {
+            "format": "json",
+            "schema": {
+              "content": {
+                "tokenType": "object",
+                "type": "object",
+                "children": [
+                  {
+                    "key": "foo",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "1",
+                    "optional": false
+                  }
+                ],
+                "optional": false
+              },
+              "example": "{\"foo\":\"1\"}",
+              "notation": "jsight"
+            }
+          }
+        }
+      ]
+    },
+    "http GET /url/{id}": {
+      "id": "http GET /url/{id}",
+      "protocol": "http",
+      "httpMethod": "GET",
+      "path": "/url/{id}",
+      "pathVariables": {
+        "schema": {
+          "content": {
+            "tokenType": "object",
+            "type": "object",
+            "children": [
+              {
+                "key": "id",
+                "tokenType": "number",
+                "type": "integer",
+                "scalarValue": "1",
+                "optional": false
+              }
+            ],
+            "optional": false
+          },
+          "notation": "jsight"
+        }
+      },
+      "tags": [
+        "@url"
+      ],
+      "description": "HTTP Method description",
+      "query": {
+        "example": "page=1",
+        "format": "htmlFormEncoded",
+        "schema": {
+          "content": {
+            "tokenType": "object",
+            "type": "object",
+            "children": [
+              {
+                "key": "page",
+                "tokenType": "number",
+                "type": "integer",
+                "scalarValue": "1",
+                "optional": false
+              }
+            ],
+            "optional": false
+          },
+          "example": "{\"page\":1}",
+          "notation": "jsight"
+        }
+      },
+      "request": {
+        "headers": {
+          "schema": {
+            "content": {
+              "tokenType": "object",
+              "type": "object",
+              "children": [
+                {
+                  "key": "Authorization",
+                  "tokenType": "string",
+                  "type": "string",
+                  "scalarValue": "Basic dG9tQGNhdC5jb206YWJjMTIz=",
+                  "rules": [
+                    {
+                      "key": "regex",
+                      "tokenType": "string",
+                      "scalarValue": "Basic [A-Za-z0-9+/=]+"
+                    }
+                  ],
+                  "optional": false
+                },
+                {
+                  "key": "Content-Type",
+                  "tokenType": "string",
+                  "type": "string",
+                  "scalarValue": "application/json",
+                  "rules": [
+                    {
+                      "key": "const",
+                      "tokenType": "boolean",
+                      "scalarValue": "true"
+                    }
+                  ],
+                  "optional": false
+                }
+              ],
+              "optional": false
+            },
+            "example": "{\"Authorization\":\"Basic dG9tQGNhdC5jb206YWJjMTIz=\",\"Content-Type\":\"application/json\"}",
+            "notation": "jsight"
+          }
+        },
+        "body": {
+          "format": "json",
+          "schema": {
+            "content": {
+              "tokenType": "object",
+              "type": "object",
+              "children": [
+                {
+                  "key": "foo",
+                  "tokenType": "string",
+                  "type": "string",
+                  "scalarValue": "1",
+                  "optional": false
+                }
+              ],
+              "optional": false
+            },
+            "example": "{\"foo\":\"1\"}",
+            "notation": "jsight"
+          }
+        }
+      },
+      "responses": [
+        {
+          "code": "200",
+          "headers": {
+            "schema": {
+              "content": {
+                "tokenType": "object",
+                "type": "object",
+                "children": [
+                  {
+                    "key": "Authorization",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "Basic dG9tQGNhdC5jb206YWJjMTIz=",
+                    "rules": [
+                      {
+                        "key": "regex",
+                        "tokenType": "string",
+                        "scalarValue": "Basic [A-Za-z0-9+/=]+"
+                      }
+                    ],
+                    "optional": false
+                  },
+                  {
+                    "key": "Content-Type",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "application/json",
+                    "rules": [
+                      {
+                        "key": "const",
+                        "tokenType": "boolean",
+                        "scalarValue": "true"
+                      }
+                    ],
+                    "optional": false
+                  }
+                ],
+                "optional": false
+              },
+              "example": "{\"Authorization\":\"Basic dG9tQGNhdC5jb206YWJjMTIz=\",\"Content-Type\":\"application/json\"}",
+              "notation": "jsight"
+            }
+          },
+          "body": {
+            "format": "json",
+            "schema": {
+              "content": {
+                "tokenType": "object",
+                "type": "object",
+                "children": [
+                  {
+                    "key": "foo",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "1",
+                    "optional": false
+                  }
+                ],
+                "optional": false
+              },
+              "example": "{\"foo\":\"1\"}",
+              "notation": "jsight"
+            }
+          }
+        },
+        {
+          "code": "201",
+          "headers": {
+            "schema": {
+              "content": {
+                "tokenType": "object",
+                "type": "object",
+                "children": [
+                  {
+                    "key": "Authorization",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "Basic dG9tQGNhdC5jb206YWJjMTIz=",
+                    "rules": [
+                      {
+                        "key": "regex",
+                        "tokenType": "string",
+                        "scalarValue": "Basic [A-Za-z0-9+/=]+"
+                      }
+                    ],
+                    "optional": false
+                  },
+                  {
+                    "key": "Content-Type",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "application/json",
+                    "rules": [
+                      {
+                        "key": "const",
+                        "tokenType": "boolean",
+                        "scalarValue": "true"
+                      }
+                    ],
+                    "optional": false
+                  }
+                ],
+                "optional": false
+              },
+              "example": "{\"Authorization\":\"Basic dG9tQGNhdC5jb206YWJjMTIz=\",\"Content-Type\":\"application/json\"}",
+              "notation": "jsight"
+            }
+          },
+          "body": {
+            "format": "json",
+            "schema": {
+              "content": {
+                "tokenType": "object",
+                "type": "object",
+                "children": [
+                  {
+                    "key": "foo",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "1",
+                    "optional": false
+                  }
+                ],
+                "optional": false
+              },
+              "example": "{\"foo\":\"1\"}",
+              "notation": "jsight"
+            }
+          }
+        },
+        {
+          "code": "404",
+          "headers": {
+            "schema": {
+              "content": {
+                "tokenType": "object",
+                "type": "object",
+                "children": [
+                  {
+                    "key": "Authorization",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "Basic dG9tQGNhdC5jb206YWJjMTIz=",
+                    "rules": [
+                      {
+                        "key": "regex",
+                        "tokenType": "string",
+                        "scalarValue": "Basic [A-Za-z0-9+/=]+"
+                      }
+                    ],
+                    "optional": false
+                  },
+                  {
+                    "key": "Content-Type",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "application/json",
+                    "rules": [
+                      {
+                        "key": "const",
+                        "tokenType": "boolean",
+                        "scalarValue": "true"
+                      }
+                    ],
+                    "optional": false
+                  }
+                ],
+                "optional": false
+              },
+              "example": "{\"Authorization\":\"Basic dG9tQGNhdC5jb206YWJjMTIz=\",\"Content-Type\":\"application/json\"}",
+              "notation": "jsight"
+            }
+          },
+          "body": {
+            "format": "json",
+            "schema": {
+              "content": {
+                "tokenType": "object",
+                "type": "object",
+                "children": [
+                  {
+                    "key": "foo",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "1",
+                    "optional": false
+                  }
+                ],
+                "optional": false
+              },
+              "example": "{\"foo\":\"1\"}",
+              "notation": "jsight"
+            }
+          }
+        }
+      ]
+    },
+    "http POST /url/{id}": {
+      "id": "http POST /url/{id}",
+      "protocol": "http",
+      "httpMethod": "POST",
+      "path": "/url/{id}",
+      "pathVariables": {
+        "schema": {
+          "content": {
+            "tokenType": "object",
+            "type": "object",
+            "children": [
+              {
+                "key": "id",
+                "tokenType": "number",
+                "type": "integer",
+                "scalarValue": "1",
+                "optional": false
+              }
+            ],
+            "optional": false
+          },
+          "notation": "jsight"
+        }
+      },
+      "tags": [
+        "@url"
+      ],
+      "description": "HTTP Method description",
+      "query": {
+        "example": "page=1",
+        "format": "htmlFormEncoded",
+        "schema": {
+          "content": {
+            "tokenType": "object",
+            "type": "object",
+            "children": [
+              {
+                "key": "page",
+                "tokenType": "number",
+                "type": "integer",
+                "scalarValue": "1",
+                "optional": false
+              }
+            ],
+            "optional": false
+          },
+          "example": "{\"page\":1}",
+          "notation": "jsight"
+        }
+      },
+      "request": {
+        "headers": {
+          "schema": {
+            "content": {
+              "tokenType": "object",
+              "type": "object",
+              "children": [
+                {
+                  "key": "Authorization",
+                  "tokenType": "string",
+                  "type": "string",
+                  "scalarValue": "Basic dG9tQGNhdC5jb206YWJjMTIz=",
+                  "rules": [
+                    {
+                      "key": "regex",
+                      "tokenType": "string",
+                      "scalarValue": "Basic [A-Za-z0-9+/=]+"
+                    }
+                  ],
+                  "optional": false
+                },
+                {
+                  "key": "Content-Type",
+                  "tokenType": "string",
+                  "type": "string",
+                  "scalarValue": "application/json",
+                  "rules": [
+                    {
+                      "key": "const",
+                      "tokenType": "boolean",
+                      "scalarValue": "true"
+                    }
+                  ],
+                  "optional": false
+                }
+              ],
+              "optional": false
+            },
+            "example": "{\"Authorization\":\"Basic dG9tQGNhdC5jb206YWJjMTIz=\",\"Content-Type\":\"application/json\"}",
+            "notation": "jsight"
+          }
+        },
+        "body": {
+          "format": "json",
+          "schema": {
+            "content": {
+              "tokenType": "object",
+              "type": "object",
+              "children": [
+                {
+                  "key": "foo",
+                  "tokenType": "string",
+                  "type": "string",
+                  "scalarValue": "1",
+                  "optional": false
+                }
+              ],
+              "optional": false
+            },
+            "example": "{\"foo\":\"1\"}",
+            "notation": "jsight"
+          }
+        }
+      },
+      "responses": [
+        {
+          "code": "200",
+          "headers": {
+            "schema": {
+              "content": {
+                "tokenType": "object",
+                "type": "object",
+                "children": [
+                  {
+                    "key": "Authorization",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "Basic dG9tQGNhdC5jb206YWJjMTIz=",
+                    "rules": [
+                      {
+                        "key": "regex",
+                        "tokenType": "string",
+                        "scalarValue": "Basic [A-Za-z0-9+/=]+"
+                      }
+                    ],
+                    "optional": false
+                  },
+                  {
+                    "key": "Content-Type",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "application/json",
+                    "rules": [
+                      {
+                        "key": "const",
+                        "tokenType": "boolean",
+                        "scalarValue": "true"
+                      }
+                    ],
+                    "optional": false
+                  }
+                ],
+                "optional": false
+              },
+              "example": "{\"Authorization\":\"Basic dG9tQGNhdC5jb206YWJjMTIz=\",\"Content-Type\":\"application/json\"}",
+              "notation": "jsight"
+            }
+          },
+          "body": {
+            "format": "json",
+            "schema": {
+              "content": {
+                "tokenType": "object",
+                "type": "object",
+                "children": [
+                  {
+                    "key": "foo",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "1",
+                    "optional": false
+                  }
+                ],
+                "optional": false
+              },
+              "example": "{\"foo\":\"1\"}",
+              "notation": "jsight"
+            }
+          }
+        },
+        {
+          "code": "201",
+          "headers": {
+            "schema": {
+              "content": {
+                "tokenType": "object",
+                "type": "object",
+                "children": [
+                  {
+                    "key": "Authorization",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "Basic dG9tQGNhdC5jb206YWJjMTIz=",
+                    "rules": [
+                      {
+                        "key": "regex",
+                        "tokenType": "string",
+                        "scalarValue": "Basic [A-Za-z0-9+/=]+"
+                      }
+                    ],
+                    "optional": false
+                  },
+                  {
+                    "key": "Content-Type",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "application/json",
+                    "rules": [
+                      {
+                        "key": "const",
+                        "tokenType": "boolean",
+                        "scalarValue": "true"
+                      }
+                    ],
+                    "optional": false
+                  }
+                ],
+                "optional": false
+              },
+              "example": "{\"Authorization\":\"Basic dG9tQGNhdC5jb206YWJjMTIz=\",\"Content-Type\":\"application/json\"}",
+              "notation": "jsight"
+            }
+          },
+          "body": {
+            "format": "json",
+            "schema": {
+              "content": {
+                "tokenType": "object",
+                "type": "object",
+                "children": [
+                  {
+                    "key": "foo",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "1",
+                    "optional": false
+                  }
+                ],
+                "optional": false
+              },
+              "example": "{\"foo\":\"1\"}",
+              "notation": "jsight"
+            }
+          }
+        },
+        {
+          "code": "404",
+          "headers": {
+            "schema": {
+              "content": {
+                "tokenType": "object",
+                "type": "object",
+                "children": [
+                  {
+                    "key": "Authorization",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "Basic dG9tQGNhdC5jb206YWJjMTIz=",
+                    "rules": [
+                      {
+                        "key": "regex",
+                        "tokenType": "string",
+                        "scalarValue": "Basic [A-Za-z0-9+/=]+"
+                      }
+                    ],
+                    "optional": false
+                  },
+                  {
+                    "key": "Content-Type",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "application/json",
+                    "rules": [
+                      {
+                        "key": "const",
+                        "tokenType": "boolean",
+                        "scalarValue": "true"
+                      }
+                    ],
+                    "optional": false
+                  }
+                ],
+                "optional": false
+              },
+              "example": "{\"Authorization\":\"Basic dG9tQGNhdC5jb206YWJjMTIz=\",\"Content-Type\":\"application/json\"}",
+              "notation": "jsight"
+            }
+          },
+          "body": {
+            "format": "json",
+            "schema": {
+              "content": {
+                "tokenType": "object",
+                "type": "object",
+                "children": [
+                  {
+                    "key": "foo",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "1",
+                    "optional": false
+                  }
+                ],
+                "optional": false
+              },
+              "example": "{\"foo\":\"1\"}",
+              "notation": "jsight"
+            }
+          }
+        }
+      ]
+    },
+    "http PUT /url/{id}": {
+      "id": "http PUT /url/{id}",
+      "protocol": "http",
+      "httpMethod": "PUT",
+      "path": "/url/{id}",
+      "pathVariables": {
+        "schema": {
+          "content": {
+            "tokenType": "object",
+            "type": "object",
+            "children": [
+              {
+                "key": "id",
+                "tokenType": "number",
+                "type": "integer",
+                "scalarValue": "1",
+                "optional": false
+              }
+            ],
+            "optional": false
+          },
+          "notation": "jsight"
+        }
+      },
+      "tags": [
+        "@url"
+      ],
+      "description": "HTTP Method description",
+      "query": {
+        "example": "page=1",
+        "format": "htmlFormEncoded",
+        "schema": {
+          "content": {
+            "tokenType": "object",
+            "type": "object",
+            "children": [
+              {
+                "key": "page",
+                "tokenType": "number",
+                "type": "integer",
+                "scalarValue": "1",
+                "optional": false
+              }
+            ],
+            "optional": false
+          },
+          "example": "{\"page\":1}",
+          "notation": "jsight"
+        }
+      },
+      "request": {
+        "headers": {
+          "schema": {
+            "content": {
+              "tokenType": "object",
+              "type": "object",
+              "children": [
+                {
+                  "key": "Authorization",
+                  "tokenType": "string",
+                  "type": "string",
+                  "scalarValue": "Basic dG9tQGNhdC5jb206YWJjMTIz=",
+                  "rules": [
+                    {
+                      "key": "regex",
+                      "tokenType": "string",
+                      "scalarValue": "Basic [A-Za-z0-9+/=]+"
+                    }
+                  ],
+                  "optional": false
+                },
+                {
+                  "key": "Content-Type",
+                  "tokenType": "string",
+                  "type": "string",
+                  "scalarValue": "application/json",
+                  "rules": [
+                    {
+                      "key": "const",
+                      "tokenType": "boolean",
+                      "scalarValue": "true"
+                    }
+                  ],
+                  "optional": false
+                }
+              ],
+              "optional": false
+            },
+            "example": "{\"Authorization\":\"Basic dG9tQGNhdC5jb206YWJjMTIz=\",\"Content-Type\":\"application/json\"}",
+            "notation": "jsight"
+          }
+        },
+        "body": {
+          "format": "json",
+          "schema": {
+            "content": {
+              "tokenType": "object",
+              "type": "object",
+              "children": [
+                {
+                  "key": "foo",
+                  "tokenType": "string",
+                  "type": "string",
+                  "scalarValue": "1",
+                  "optional": false
+                }
+              ],
+              "optional": false
+            },
+            "example": "{\"foo\":\"1\"}",
+            "notation": "jsight"
+          }
+        }
+      },
+      "responses": [
+        {
+          "code": "200",
+          "headers": {
+            "schema": {
+              "content": {
+                "tokenType": "object",
+                "type": "object",
+                "children": [
+                  {
+                    "key": "Authorization",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "Basic dG9tQGNhdC5jb206YWJjMTIz=",
+                    "rules": [
+                      {
+                        "key": "regex",
+                        "tokenType": "string",
+                        "scalarValue": "Basic [A-Za-z0-9+/=]+"
+                      }
+                    ],
+                    "optional": false
+                  },
+                  {
+                    "key": "Content-Type",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "application/json",
+                    "rules": [
+                      {
+                        "key": "const",
+                        "tokenType": "boolean",
+                        "scalarValue": "true"
+                      }
+                    ],
+                    "optional": false
+                  }
+                ],
+                "optional": false
+              },
+              "example": "{\"Authorization\":\"Basic dG9tQGNhdC5jb206YWJjMTIz=\",\"Content-Type\":\"application/json\"}",
+              "notation": "jsight"
+            }
+          },
+          "body": {
+            "format": "json",
+            "schema": {
+              "content": {
+                "tokenType": "object",
+                "type": "object",
+                "children": [
+                  {
+                    "key": "foo",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "1",
+                    "optional": false
+                  }
+                ],
+                "optional": false
+              },
+              "example": "{\"foo\":\"1\"}",
+              "notation": "jsight"
+            }
+          }
+        },
+        {
+          "code": "201",
+          "headers": {
+            "schema": {
+              "content": {
+                "tokenType": "object",
+                "type": "object",
+                "children": [
+                  {
+                    "key": "Authorization",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "Basic dG9tQGNhdC5jb206YWJjMTIz=",
+                    "rules": [
+                      {
+                        "key": "regex",
+                        "tokenType": "string",
+                        "scalarValue": "Basic [A-Za-z0-9+/=]+"
+                      }
+                    ],
+                    "optional": false
+                  },
+                  {
+                    "key": "Content-Type",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "application/json",
+                    "rules": [
+                      {
+                        "key": "const",
+                        "tokenType": "boolean",
+                        "scalarValue": "true"
+                      }
+                    ],
+                    "optional": false
+                  }
+                ],
+                "optional": false
+              },
+              "example": "{\"Authorization\":\"Basic dG9tQGNhdC5jb206YWJjMTIz=\",\"Content-Type\":\"application/json\"}",
+              "notation": "jsight"
+            }
+          },
+          "body": {
+            "format": "json",
+            "schema": {
+              "content": {
+                "tokenType": "object",
+                "type": "object",
+                "children": [
+                  {
+                    "key": "foo",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "1",
+                    "optional": false
+                  }
+                ],
+                "optional": false
+              },
+              "example": "{\"foo\":\"1\"}",
+              "notation": "jsight"
+            }
+          }
+        },
+        {
+          "code": "404",
+          "headers": {
+            "schema": {
+              "content": {
+                "tokenType": "object",
+                "type": "object",
+                "children": [
+                  {
+                    "key": "Authorization",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "Basic dG9tQGNhdC5jb206YWJjMTIz=",
+                    "rules": [
+                      {
+                        "key": "regex",
+                        "tokenType": "string",
+                        "scalarValue": "Basic [A-Za-z0-9+/=]+"
+                      }
+                    ],
+                    "optional": false
+                  },
+                  {
+                    "key": "Content-Type",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "application/json",
+                    "rules": [
+                      {
+                        "key": "const",
+                        "tokenType": "boolean",
+                        "scalarValue": "true"
+                      }
+                    ],
+                    "optional": false
+                  }
+                ],
+                "optional": false
+              },
+              "example": "{\"Authorization\":\"Basic dG9tQGNhdC5jb206YWJjMTIz=\",\"Content-Type\":\"application/json\"}",
+              "notation": "jsight"
+            }
+          },
+          "body": {
+            "format": "json",
+            "schema": {
+              "content": {
+                "tokenType": "object",
+                "type": "object",
+                "children": [
+                  {
+                    "key": "foo",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "1",
+                    "optional": false
+                  }
+                ],
+                "optional": false
+              },
+              "example": "{\"foo\":\"1\"}",
+              "notation": "jsight"
+            }
+          }
+        }
+      ]
+    },
+    "http PATCH /url/{id}": {
+      "id": "http PATCH /url/{id}",
+      "protocol": "http",
+      "httpMethod": "PATCH",
+      "path": "/url/{id}",
+      "pathVariables": {
+        "schema": {
+          "content": {
+            "tokenType": "object",
+            "type": "object",
+            "children": [
+              {
+                "key": "id",
+                "tokenType": "number",
+                "type": "integer",
+                "scalarValue": "1",
+                "optional": false
+              }
+            ],
+            "optional": false
+          },
+          "notation": "jsight"
+        }
+      },
+      "tags": [
+        "@url"
+      ],
+      "description": "HTTP Method description",
+      "query": {
+        "example": "page=1",
+        "format": "htmlFormEncoded",
+        "schema": {
+          "content": {
+            "tokenType": "object",
+            "type": "object",
+            "children": [
+              {
+                "key": "page",
+                "tokenType": "number",
+                "type": "integer",
+                "scalarValue": "1",
+                "optional": false
+              }
+            ],
+            "optional": false
+          },
+          "example": "{\"page\":1}",
+          "notation": "jsight"
+        }
+      },
+      "request": {
+        "headers": {
+          "schema": {
+            "content": {
+              "tokenType": "object",
+              "type": "object",
+              "children": [
+                {
+                  "key": "Authorization",
+                  "tokenType": "string",
+                  "type": "string",
+                  "scalarValue": "Basic dG9tQGNhdC5jb206YWJjMTIz=",
+                  "rules": [
+                    {
+                      "key": "regex",
+                      "tokenType": "string",
+                      "scalarValue": "Basic [A-Za-z0-9+/=]+"
+                    }
+                  ],
+                  "optional": false
+                },
+                {
+                  "key": "Content-Type",
+                  "tokenType": "string",
+                  "type": "string",
+                  "scalarValue": "application/json",
+                  "rules": [
+                    {
+                      "key": "const",
+                      "tokenType": "boolean",
+                      "scalarValue": "true"
+                    }
+                  ],
+                  "optional": false
+                }
+              ],
+              "optional": false
+            },
+            "example": "{\"Authorization\":\"Basic dG9tQGNhdC5jb206YWJjMTIz=\",\"Content-Type\":\"application/json\"}",
+            "notation": "jsight"
+          }
+        },
+        "body": {
+          "format": "json",
+          "schema": {
+            "content": {
+              "tokenType": "object",
+              "type": "object",
+              "children": [
+                {
+                  "key": "foo",
+                  "tokenType": "string",
+                  "type": "string",
+                  "scalarValue": "1",
+                  "optional": false
+                }
+              ],
+              "optional": false
+            },
+            "example": "{\"foo\":\"1\"}",
+            "notation": "jsight"
+          }
+        }
+      },
+      "responses": [
+        {
+          "code": "200",
+          "headers": {
+            "schema": {
+              "content": {
+                "tokenType": "object",
+                "type": "object",
+                "children": [
+                  {
+                    "key": "Authorization",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "Basic dG9tQGNhdC5jb206YWJjMTIz=",
+                    "rules": [
+                      {
+                        "key": "regex",
+                        "tokenType": "string",
+                        "scalarValue": "Basic [A-Za-z0-9+/=]+"
+                      }
+                    ],
+                    "optional": false
+                  },
+                  {
+                    "key": "Content-Type",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "application/json",
+                    "rules": [
+                      {
+                        "key": "const",
+                        "tokenType": "boolean",
+                        "scalarValue": "true"
+                      }
+                    ],
+                    "optional": false
+                  }
+                ],
+                "optional": false
+              },
+              "example": "{\"Authorization\":\"Basic dG9tQGNhdC5jb206YWJjMTIz=\",\"Content-Type\":\"application/json\"}",
+              "notation": "jsight"
+            }
+          },
+          "body": {
+            "format": "json",
+            "schema": {
+              "content": {
+                "tokenType": "object",
+                "type": "object",
+                "children": [
+                  {
+                    "key": "foo",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "1",
+                    "optional": false
+                  }
+                ],
+                "optional": false
+              },
+              "example": "{\"foo\":\"1\"}",
+              "notation": "jsight"
+            }
+          }
+        },
+        {
+          "code": "201",
+          "headers": {
+            "schema": {
+              "content": {
+                "tokenType": "object",
+                "type": "object",
+                "children": [
+                  {
+                    "key": "Authorization",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "Basic dG9tQGNhdC5jb206YWJjMTIz=",
+                    "rules": [
+                      {
+                        "key": "regex",
+                        "tokenType": "string",
+                        "scalarValue": "Basic [A-Za-z0-9+/=]+"
+                      }
+                    ],
+                    "optional": false
+                  },
+                  {
+                    "key": "Content-Type",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "application/json",
+                    "rules": [
+                      {
+                        "key": "const",
+                        "tokenType": "boolean",
+                        "scalarValue": "true"
+                      }
+                    ],
+                    "optional": false
+                  }
+                ],
+                "optional": false
+              },
+              "example": "{\"Authorization\":\"Basic dG9tQGNhdC5jb206YWJjMTIz=\",\"Content-Type\":\"application/json\"}",
+              "notation": "jsight"
+            }
+          },
+          "body": {
+            "format": "json",
+            "schema": {
+              "content": {
+                "tokenType": "object",
+                "type": "object",
+                "children": [
+                  {
+                    "key": "foo",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "1",
+                    "optional": false
+                  }
+                ],
+                "optional": false
+              },
+              "example": "{\"foo\":\"1\"}",
+              "notation": "jsight"
+            }
+          }
+        },
+        {
+          "code": "404",
+          "headers": {
+            "schema": {
+              "content": {
+                "tokenType": "object",
+                "type": "object",
+                "children": [
+                  {
+                    "key": "Authorization",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "Basic dG9tQGNhdC5jb206YWJjMTIz=",
+                    "rules": [
+                      {
+                        "key": "regex",
+                        "tokenType": "string",
+                        "scalarValue": "Basic [A-Za-z0-9+/=]+"
+                      }
+                    ],
+                    "optional": false
+                  },
+                  {
+                    "key": "Content-Type",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "application/json",
+                    "rules": [
+                      {
+                        "key": "const",
+                        "tokenType": "boolean",
+                        "scalarValue": "true"
+                      }
+                    ],
+                    "optional": false
+                  }
+                ],
+                "optional": false
+              },
+              "example": "{\"Authorization\":\"Basic dG9tQGNhdC5jb206YWJjMTIz=\",\"Content-Type\":\"application/json\"}",
+              "notation": "jsight"
+            }
+          },
+          "body": {
+            "format": "json",
+            "schema": {
+              "content": {
+                "tokenType": "object",
+                "type": "object",
+                "children": [
+                  {
+                    "key": "foo",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "1",
+                    "optional": false
+                  }
+                ],
+                "optional": false
+              },
+              "example": "{\"foo\":\"1\"}",
+              "notation": "jsight"
+            }
+          }
+        }
+      ]
+    },
+    "http DELETE /url/{id}": {
+      "id": "http DELETE /url/{id}",
+      "protocol": "http",
+      "httpMethod": "DELETE",
+      "path": "/url/{id}",
+      "pathVariables": {
+        "schema": {
+          "content": {
+            "tokenType": "object",
+            "type": "object",
+            "children": [
+              {
+                "key": "id",
+                "tokenType": "number",
+                "type": "integer",
+                "scalarValue": "1",
+                "optional": false
+              }
+            ],
+            "optional": false
+          },
+          "notation": "jsight"
+        }
+      },
+      "tags": [
+        "@url"
+      ],
+      "description": "HTTP Method description",
+      "query": {
+        "example": "page=1",
+        "format": "htmlFormEncoded",
+        "schema": {
+          "content": {
+            "tokenType": "object",
+            "type": "object",
+            "children": [
+              {
+                "key": "page",
+                "tokenType": "number",
+                "type": "integer",
+                "scalarValue": "1",
+                "optional": false
+              }
+            ],
+            "optional": false
+          },
+          "example": "{\"page\":1}",
+          "notation": "jsight"
+        }
+      },
+      "request": {
+        "headers": {
+          "schema": {
+            "content": {
+              "tokenType": "object",
+              "type": "object",
+              "children": [
+                {
+                  "key": "Authorization",
+                  "tokenType": "string",
+                  "type": "string",
+                  "scalarValue": "Basic dG9tQGNhdC5jb206YWJjMTIz=",
+                  "rules": [
+                    {
+                      "key": "regex",
+                      "tokenType": "string",
+                      "scalarValue": "Basic [A-Za-z0-9+/=]+"
+                    }
+                  ],
+                  "optional": false
+                },
+                {
+                  "key": "Content-Type",
+                  "tokenType": "string",
+                  "type": "string",
+                  "scalarValue": "application/json",
+                  "rules": [
+                    {
+                      "key": "const",
+                      "tokenType": "boolean",
+                      "scalarValue": "true"
+                    }
+                  ],
+                  "optional": false
+                }
+              ],
+              "optional": false
+            },
+            "example": "{\"Authorization\":\"Basic dG9tQGNhdC5jb206YWJjMTIz=\",\"Content-Type\":\"application/json\"}",
+            "notation": "jsight"
+          }
+        },
+        "body": {
+          "format": "json",
+          "schema": {
+            "content": {
+              "tokenType": "object",
+              "type": "object",
+              "children": [
+                {
+                  "key": "foo",
+                  "tokenType": "string",
+                  "type": "string",
+                  "scalarValue": "1",
+                  "optional": false
+                }
+              ],
+              "optional": false
+            },
+            "example": "{\"foo\":\"1\"}",
+            "notation": "jsight"
+          }
+        }
+      },
+      "responses": [
+        {
+          "code": "200",
+          "headers": {
+            "schema": {
+              "content": {
+                "tokenType": "object",
+                "type": "object",
+                "children": [
+                  {
+                    "key": "Authorization",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "Basic dG9tQGNhdC5jb206YWJjMTIz=",
+                    "rules": [
+                      {
+                        "key": "regex",
+                        "tokenType": "string",
+                        "scalarValue": "Basic [A-Za-z0-9+/=]+"
+                      }
+                    ],
+                    "optional": false
+                  },
+                  {
+                    "key": "Content-Type",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "application/json",
+                    "rules": [
+                      {
+                        "key": "const",
+                        "tokenType": "boolean",
+                        "scalarValue": "true"
+                      }
+                    ],
+                    "optional": false
+                  }
+                ],
+                "optional": false
+              },
+              "example": "{\"Authorization\":\"Basic dG9tQGNhdC5jb206YWJjMTIz=\",\"Content-Type\":\"application/json\"}",
+              "notation": "jsight"
+            }
+          },
+          "body": {
+            "format": "json",
+            "schema": {
+              "content": {
+                "tokenType": "object",
+                "type": "object",
+                "children": [
+                  {
+                    "key": "foo",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "1",
+                    "optional": false
+                  }
+                ],
+                "optional": false
+              },
+              "example": "{\"foo\":\"1\"}",
+              "notation": "jsight"
+            }
+          }
+        },
+        {
+          "code": "201",
+          "headers": {
+            "schema": {
+              "content": {
+                "tokenType": "object",
+                "type": "object",
+                "children": [
+                  {
+                    "key": "Authorization",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "Basic dG9tQGNhdC5jb206YWJjMTIz=",
+                    "rules": [
+                      {
+                        "key": "regex",
+                        "tokenType": "string",
+                        "scalarValue": "Basic [A-Za-z0-9+/=]+"
+                      }
+                    ],
+                    "optional": false
+                  },
+                  {
+                    "key": "Content-Type",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "application/json",
+                    "rules": [
+                      {
+                        "key": "const",
+                        "tokenType": "boolean",
+                        "scalarValue": "true"
+                      }
+                    ],
+                    "optional": false
+                  }
+                ],
+                "optional": false
+              },
+              "example": "{\"Authorization\":\"Basic dG9tQGNhdC5jb206YWJjMTIz=\",\"Content-Type\":\"application/json\"}",
+              "notation": "jsight"
+            }
+          },
+          "body": {
+            "format": "json",
+            "schema": {
+              "content": {
+                "tokenType": "object",
+                "type": "object",
+                "children": [
+                  {
+                    "key": "foo",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "1",
+                    "optional": false
+                  }
+                ],
+                "optional": false
+              },
+              "example": "{\"foo\":\"1\"}",
+              "notation": "jsight"
+            }
+          }
+        },
+        {
+          "code": "404",
+          "headers": {
+            "schema": {
+              "content": {
+                "tokenType": "object",
+                "type": "object",
+                "children": [
+                  {
+                    "key": "Authorization",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "Basic dG9tQGNhdC5jb206YWJjMTIz=",
+                    "rules": [
+                      {
+                        "key": "regex",
+                        "tokenType": "string",
+                        "scalarValue": "Basic [A-Za-z0-9+/=]+"
+                      }
+                    ],
+                    "optional": false
+                  },
+                  {
+                    "key": "Content-Type",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "application/json",
+                    "rules": [
+                      {
+                        "key": "const",
+                        "tokenType": "boolean",
+                        "scalarValue": "true"
+                      }
+                    ],
+                    "optional": false
+                  }
+                ],
+                "optional": false
+              },
+              "example": "{\"Authorization\":\"Basic dG9tQGNhdC5jb206YWJjMTIz=\",\"Content-Type\":\"application/json\"}",
+              "notation": "jsight"
+            }
+          },
+          "body": {
+            "format": "json",
+            "schema": {
+              "content": {
+                "tokenType": "object",
+                "type": "object",
+                "children": [
+                  {
+                    "key": "foo",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "1",
+                    "optional": false
+                  }
+                ],
+                "optional": false
+              },
+              "example": "{\"foo\":\"1\"}",
+              "notation": "jsight"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "jsight": "0.3",
+  "jdocExchangeVersion": "2.0.0"
+}

@@ -1,0 +1,59 @@
+{
+  "tags": {},
+  "userTypes": {
+    "@emptyStringInRoot": {
+      "schema": {
+        "content": {
+          "tokenType": "string",
+          "type": "string",
+          "scalarValue": "",
+          "optional": false
+        },
+        "example": "\"\"",
+        "notation": "jsight"
+      }
+    },
+    "@emptyStringInArray": {
+      "schema": {
+        "content": {
+          "tokenType": "array",
+          "type": "array",
+          "children": [
+            {
+              "tokenType": "string",
+              "type": "string",
+              "scalarValue": "",
+              "optional": true
+            }
+          ],
+          "optional": false
+        },
+        "example": "[\"\"]",
+        "notation": "jsight"
+      }
+    },
+    "@emptyStringInProperty": {
+      "schema": {
+        "content": {
+          "tokenType": "object",
+          "type": "object",
+          "children": [
+            {
+              "key": "checkEmptyValue",
+              "tokenType": "string",
+              "type": "string",
+              "scalarValue": "",
+              "optional": false
+            }
+          ],
+          "optional": false
+        },
+        "example": "{\"checkEmptyValue\":\"\"}",
+        "notation": "jsight"
+      }
+    }
+  },
+  "interactions": {},
+  "jsight": "0.3",
+  "jdocExchangeVersion": "2.0.0"
+}

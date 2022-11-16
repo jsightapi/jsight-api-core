@@ -1,0 +1,36 @@
+{
+  "tags": {},
+  "userTypes": {
+    "@testRuleOrStandardTypes": {
+      "schema": {
+        "content": {
+          "tokenType": "string",
+          "type": "mixed",
+          "scalarValue": "A",
+          "rules": [
+            {
+              "key": "or",
+              "tokenType": "array",
+              "children": [
+                {
+                  "tokenType": "string",
+                  "scalarValue": "string"
+                },
+                {
+                  "tokenType": "string",
+                  "scalarValue": "integer"
+                }
+              ]
+            }
+          ],
+          "optional": false
+        },
+        "example": "\"A\"",
+        "notation": "jsight"
+      }
+    }
+  },
+  "interactions": {},
+  "jsight": "0.3",
+  "jdocExchangeVersion": "2.0.0"
+}

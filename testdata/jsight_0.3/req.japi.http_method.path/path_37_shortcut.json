@@ -1,0 +1,70 @@
+{
+  "tags": {
+    "@cats": {
+      "name": "@cats",
+      "title": "/cats",
+      "interactionGroups": [
+        {
+          "protocol": "http",
+          "interactions": [
+            "http GET /cats/{name}"
+          ]
+        }
+      ]
+    }
+  },
+  "userTypes": {
+    "@path": {
+      "schema": {
+        "content": {
+          "tokenType": "object",
+          "type": "object",
+          "children": [
+            {
+              "key": "name",
+              "tokenType": "string",
+              "type": "string",
+              "scalarValue": "Tom",
+              "optional": false
+            }
+          ],
+          "optional": false
+        },
+        "example": "{\"name\":\"Tom\"}",
+        "notation": "jsight"
+      }
+    }
+  },
+  "interactions": {
+    "http GET /cats/{name}": {
+      "id": "http GET /cats/{name}",
+      "protocol": "http",
+      "httpMethod": "GET",
+      "path": "/cats/{name}",
+      "pathVariables": {
+        "schema": {
+          "content": {
+            "tokenType": "object",
+            "type": "object",
+            "children": [
+              {
+                "key": "name",
+                "tokenType": "string",
+                "type": "string",
+                "scalarValue": "Tom",
+                "optional": false
+              }
+            ],
+            "optional": false
+          },
+          "notation": "jsight"
+        }
+      },
+      "tags": [
+        "@cats"
+      ]
+    }
+  },
+  "jsight": "0.3",
+  "jdocExchangeVersion": "2.0.0"
+}

@@ -1,0 +1,30 @@
+{
+  "tags": {
+    "@cats": {
+      "name": "@cats",
+      "title": "/cats",
+      "interactionGroups": [
+        {
+          "protocol": "http",
+          "interactions": [
+            "http POST /cats"
+          ]
+        }
+      ]
+    }
+  },
+  "interactions": {
+    "http POST /cats": {
+      "id": "http POST /cats",
+      "protocol": "http",
+      "path": "/cats",
+      "tags": [
+        "@cats"
+      ],
+      "description": "Using this method, you can get\na list of all the cats that are registered\non Catsbook.",
+      "httpMethod": "POST"
+    }
+  },
+  "jsight": "0.3",
+  "jdocExchangeVersion": "2.0.0"
+}

@@ -1,0 +1,112 @@
+{
+  "tags": {
+    "@cats": {
+      "name": "@cats",
+      "title": "/cats",
+      "interactionGroups": [
+        {
+          "protocol": "http",
+          "interactions": [
+            "http GET /cats/enemies"
+          ]
+        }
+      ]
+    }
+  },
+  "userTypes": {
+    "@dog": {
+      "schema": {
+        "content": {
+          "tokenType": "object",
+          "type": "object",
+          "children": [
+            {
+              "key": "ok",
+              "tokenType": "string",
+              "type": "string",
+              "scalarValue": "ok",
+              "optional": false
+            }
+          ],
+          "optional": false
+        },
+        "example": "{\"ok\":\"ok\"}",
+        "notation": "jsight"
+      }
+    },
+    "@pig": {
+      "schema": {
+        "content": {
+          "tokenType": "object",
+          "type": "object",
+          "children": [
+            {
+              "key": "ok",
+              "tokenType": "string",
+              "type": "string",
+              "scalarValue": "ok",
+              "optional": false
+            }
+          ],
+          "optional": false
+        },
+        "example": "{\"ok\":\"ok\"}",
+        "notation": "jsight"
+      }
+    }
+  },
+  "interactions": {
+    "http GET /cats/enemies": {
+      "id": "http GET /cats/enemies",
+      "protocol": "http",
+      "httpMethod": "GET",
+      "path": "/cats/enemies",
+      "tags": [
+        "@cats"
+      ],
+      "responses": [
+        {
+          "code": "200",
+          "body": {
+            "format": "json",
+            "schema": {
+              "content": {
+                "rules": [
+                  {
+                    "key": "type",
+                    "tokenType": "string",
+                    "scalarValue": "array"
+                  },
+                  {
+                    "key": "maxItems",
+                    "tokenType": "number",
+                    "scalarValue": "100"
+                  }
+                ],
+                "tokenType": "array",
+                "type": "array",
+                "children": [
+                  {
+                    "tokenType": "reference",
+                    "type": "mixed",
+                    "scalarValue": "@dog | @pig",
+                    "optional": true
+                  }
+                ],
+                "optional": false
+              },
+              "example": "[{\"ok\":\"ok\"}]",
+              "notation": "jsight",
+              "usedUserTypes": [
+                "@dog",
+                "@pig"
+              ]
+            }
+          }
+        }
+      ]
+    }
+  },
+  "jsight": "0.3",
+  "jdocExchangeVersion": "2.0.0"
+}

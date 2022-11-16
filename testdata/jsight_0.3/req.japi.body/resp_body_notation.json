@@ -1,0 +1,47 @@
+{
+  "tags": {
+    "@catName": {
+      "name": "@catName",
+      "title": "/catName",
+      "interactionGroups": [
+        {
+          "protocol": "http",
+          "interactions": [
+            "http GET /catName"
+          ]
+        }
+      ]
+    }
+  },
+  "interactions": {
+    "http GET /catName": {
+      "id": "http GET /catName",
+      "protocol": "http",
+      "httpMethod": "GET",
+      "path": "/catName",
+      "tags": [
+        "@catName"
+      ],
+      "responses": [
+        {
+          "code": "200",
+          "body": {
+            "format": "json",
+            "schema": {
+              "content": {
+                "tokenType": "string",
+                "type": "string",
+                "scalarValue": "Tom",
+                "optional": false
+              },
+              "example": "\"Tom\"",
+              "notation": "jsight"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "jsight": "0.3",
+  "jdocExchangeVersion": "2.0.0"
+}

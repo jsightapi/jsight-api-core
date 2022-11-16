@@ -1,0 +1,32 @@
+{
+  "tags": {},
+  "userTypes": {
+    "@t": {
+      "schema": {
+        "content": {
+          "tokenType": "number",
+          "type": "enum",
+          "scalarValue": "1",
+          "rules": [
+            {
+              "key": "enum",
+              "tokenType": "array",
+              "children": [
+                {
+                  "tokenType": "number",
+                  "scalarValue": "1"
+                }
+              ]
+            }
+          ],
+          "optional": false
+        },
+        "example": "1",
+        "notation": "jsight"
+      }
+    }
+  },
+  "interactions": {},
+  "jsight": "0.3",
+  "jdocExchangeVersion": "2.0.0"
+}

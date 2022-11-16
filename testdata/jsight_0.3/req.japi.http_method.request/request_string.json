@@ -1,0 +1,44 @@
+{
+  "tags": {
+    "@_": {
+      "name": "@_",
+      "title": "/",
+      "interactionGroups": [
+        {
+          "protocol": "http",
+          "interactions": [
+            "http POST /"
+          ]
+        }
+      ]
+    }
+  },
+  "interactions": {
+    "http POST /": {
+      "id": "http POST /",
+      "protocol": "http",
+      "httpMethod": "POST",
+      "path": "/",
+      "tags": [
+        "@_"
+      ],
+      "request": {
+        "body": {
+          "format": "json",
+          "schema": {
+            "content": {
+              "tokenType": "string",
+              "type": "string",
+              "scalarValue": "reg",
+              "optional": false
+            },
+            "example": "\"reg\"",
+            "notation": "jsight"
+          }
+        }
+      }
+    }
+  },
+  "jsight": "0.3",
+  "jdocExchangeVersion": "2.0.0"
+}

@@ -1,0 +1,48 @@
+{
+  "tags": {},
+  "userTypes": {
+    "@testRequiredFieldsMarks": {
+      "schema": {
+        "content": {
+          "tokenType": "object",
+          "type": "object",
+          "children": [
+            {
+              "rules": [
+                {
+                  "key": "optional",
+                  "tokenType": "boolean",
+                  "scalarValue": "true"
+                }
+              ],
+              "key": "optional3",
+              "tokenType": "array",
+              "type": "array",
+              "children": [
+                {
+                  "tokenType": "string",
+                  "type": "string",
+                  "scalarValue": "optionalItem1",
+                  "optional": true
+                },
+                {
+                  "tokenType": "string",
+                  "type": "string",
+                  "scalarValue": "optionalItem2",
+                  "optional": true
+                }
+              ],
+              "optional": true
+            }
+          ],
+          "optional": false
+        },
+        "example": "{\"optional3\":[\"optionalItem1\",\"optionalItem2\"]}",
+        "notation": "jsight"
+      }
+    }
+  },
+  "interactions": {},
+  "jsight": "0.3",
+  "jdocExchangeVersion": "2.0.0"
+}

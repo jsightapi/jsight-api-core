@@ -1,0 +1,86 @@
+{
+  "tags": {
+    "@pets": {
+      "name": "@pets",
+      "title": "/pets",
+      "interactionGroups": [
+        {
+          "protocol": "http",
+          "interactions": [
+            "http GET /pets"
+          ]
+        }
+      ]
+    }
+  },
+  "userTypes": {
+    "@standardQuery": {
+      "schema": {
+        "content": {
+          "tokenType": "object",
+          "type": "object",
+          "children": [
+            {
+              "key": "page",
+              "tokenType": "number",
+              "type": "integer",
+              "scalarValue": "1",
+              "optional": false
+            },
+            {
+              "key": "per_page",
+              "tokenType": "number",
+              "type": "integer",
+              "scalarValue": "10",
+              "optional": false
+            }
+          ],
+          "optional": false
+        },
+        "example": "{\"page\":1,\"per_page\":10}",
+        "notation": "jsight"
+      }
+    }
+  },
+  "interactions": {
+    "http GET /pets": {
+      "id": "http GET /pets",
+      "protocol": "http",
+      "httpMethod": "GET",
+      "path": "/pets",
+      "tags": [
+        "@pets"
+      ],
+      "query": {
+        "example": "page=1\u0026per_page=50",
+        "format": "htmlFormEncoded",
+        "schema": {
+          "content": {
+            "tokenType": "reference",
+            "type": "@standardQuery",
+            "scalarValue": "@standardQuery",
+            "optional": false
+          },
+          "example": "{\"page\":1,\"per_page\":10}",
+          "notation": "jsight",
+          "usedUserTypes": [
+            "@standardQuery"
+          ]
+        }
+      },
+      "responses": [
+        {
+          "code": "200",
+          "body": {
+            "format": "binary",
+            "schema": {
+              "notation": "any"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "jsight": "0.3",
+  "jdocExchangeVersion": "2.0.0"
+}

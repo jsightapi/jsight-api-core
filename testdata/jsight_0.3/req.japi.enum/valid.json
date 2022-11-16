@@ -1,0 +1,70 @@
+{
+  "tags": {},
+  "userTypes": {
+    "@foo": {
+      "schema": {
+        "content": {
+          "tokenType": "object",
+          "type": "object",
+          "children": [
+            {
+              "key": "foo",
+              "tokenType": "number",
+              "type": "enum",
+              "scalarValue": "42",
+              "rules": [
+                {
+                  "key": "enum",
+                  "tokenType": "reference",
+                  "scalarValue": "@enum"
+                }
+              ],
+              "optional": false
+            }
+          ],
+          "optional": false
+        },
+        "example": "{\"foo\":42}",
+        "notation": "jsight"
+      }
+    }
+  },
+  "userEnums": {
+    "@enum": {
+      "annotation": "",
+      "description": "",
+      "value": {
+        "tokenType": "array",
+        "children": [
+          {
+            "tokenType": "string",
+            "scalarValue": "foo"
+          },
+          {
+            "tokenType": "number",
+            "scalarValue": "42"
+          },
+          {
+            "tokenType": "number",
+            "scalarValue": "3.14"
+          },
+          {
+            "tokenType": "boolean",
+            "scalarValue": "true"
+          },
+          {
+            "tokenType": "boolean",
+            "scalarValue": "false"
+          },
+          {
+            "tokenType": "null",
+            "scalarValue": "null"
+          }
+        ]
+      }
+    }
+  },
+  "interactions": {},
+  "jsight": "0.3",
+  "jdocExchangeVersion": "2.0.0"
+}

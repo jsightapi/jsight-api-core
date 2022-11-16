@@ -1,0 +1,50 @@
+{
+  "tags": {
+    "@cat_23dog": {
+      "name": "@cat_23dog",
+      "title": "/cat#dog",
+      "interactionGroups": [
+        {
+          "protocol": "http",
+          "interactions": [
+            "http GET /cat#dog"
+          ]
+        }
+      ]
+    },
+    "@cat": {
+      "name": "@cat",
+      "title": "/cat",
+      "interactionGroups": [
+        {
+          "protocol": "http",
+          "interactions": [
+            "http POST /cat"
+          ]
+        }
+      ]
+    }
+  },
+  "interactions": {
+    "http GET /cat#dog": {
+      "id": "http GET /cat#dog",
+      "protocol": "http",
+      "path": "/cat#dog",
+      "tags": [
+        "@cat_23dog"
+      ],
+      "httpMethod": "GET"
+    },
+    "http POST /cat": {
+      "id": "http POST /cat",
+      "protocol": "http",
+      "path": "/cat",
+      "tags": [
+        "@cat"
+      ],
+      "httpMethod": "POST"
+    }
+  },
+  "jsight": "0.3",
+  "jdocExchangeVersion": "2.0.0"
+}

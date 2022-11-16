@@ -1,0 +1,71 @@
+{
+  "tags": {
+    "@scalar": {
+      "name": "@scalar",
+      "title": "/scalar",
+      "interactionGroups": [
+        {
+          "protocol": "http",
+          "interactions": [
+            "http POST /scalar/mixed"
+          ]
+        }
+      ]
+    }
+  },
+  "interactions": {
+    "http POST /scalar/mixed": {
+      "id": "http POST /scalar/mixed",
+      "protocol": "http",
+      "httpMethod": "POST",
+      "path": "/scalar/mixed",
+      "tags": [
+        "@scalar"
+      ],
+      "query": {
+        "format": "htmlFormEncoded",
+        "schema": {
+          "content": {
+            "note": "Scalar mixed.",
+            "tokenType": "string",
+            "type": "mixed",
+            "scalarValue": "A",
+            "rules": [
+              {
+                "key": "or",
+                "tokenType": "array",
+                "children": [
+                  {
+                    "tokenType": "object",
+                    "children": [
+                      {
+                        "key": "type",
+                        "tokenType": "string",
+                        "scalarValue": "integer"
+                      }
+                    ]
+                  },
+                  {
+                    "tokenType": "object",
+                    "children": [
+                      {
+                        "key": "type",
+                        "tokenType": "string",
+                        "scalarValue": "string"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "optional": false
+          },
+          "example": "\"A\"",
+          "notation": "jsight"
+        }
+      }
+    }
+  },
+  "jsight": "0.3",
+  "jdocExchangeVersion": "2.0.0"
+}

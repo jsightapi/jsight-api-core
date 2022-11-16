@@ -1,0 +1,133 @@
+{
+  "tags": {
+    "@cats": {
+      "name": "@cats",
+      "title": "/cats",
+      "interactionGroups": [
+        {
+          "protocol": "http",
+          "interactions": [
+            "http GET /cats"
+          ]
+        }
+      ]
+    }
+  },
+  "interactions": {
+    "http GET /cats": {
+      "id": "http GET /cats",
+      "protocol": "http",
+      "httpMethod": "GET",
+      "path": "/cats",
+      "tags": [
+        "@cats"
+      ],
+      "responses": [
+        {
+          "code": "200",
+          "headers": {
+            "schema": {
+              "content": {
+                "rules": [
+                  {
+                    "key": "additionalProperties",
+                    "tokenType": "boolean",
+                    "scalarValue": "true"
+                  }
+                ],
+                "tokenType": "object",
+                "type": "object",
+                "children": [
+                  {
+                    "rules": [
+                      {
+                        "key": "additionalProperties",
+                        "tokenType": "boolean",
+                        "scalarValue": "true"
+                      }
+                    ],
+                    "key": "X-Header",
+                    "tokenType": "object",
+                    "type": "object",
+                    "children": [
+                      {
+                        "key": "key",
+                        "tokenType": "string",
+                        "type": "string",
+                        "scalarValue": "value",
+                        "optional": false
+                      }
+                    ],
+                    "optional": false
+                  }
+                ],
+                "optional": false
+              },
+              "example": "{\"X-Header\":{\"key\":\"value\"}}",
+              "notation": "jsight"
+            }
+          },
+          "body": {
+            "format": "json",
+            "schema": {
+              "content": {
+                "rules": [
+                  {
+                    "key": "additionalProperties",
+                    "tokenType": "boolean",
+                    "scalarValue": "true"
+                  }
+                ],
+                "tokenType": "object",
+                "type": "object",
+                "children": [
+                  {
+                    "key": "id",
+                    "tokenType": "number",
+                    "type": "integer",
+                    "scalarValue": "4",
+                    "optional": false
+                  },
+                  {
+                    "key": "name",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "Tom",
+                    "optional": false
+                  },
+                  {
+                    "rules": [
+                      {
+                        "key": "additionalProperties",
+                        "tokenType": "boolean",
+                        "scalarValue": "true"
+                      }
+                    ],
+                    "key": "Extra",
+                    "tokenType": "object",
+                    "type": "object",
+                    "children": [
+                      {
+                        "key": "key",
+                        "tokenType": "string",
+                        "type": "string",
+                        "scalarValue": "value",
+                        "optional": false
+                      }
+                    ],
+                    "optional": false
+                  }
+                ],
+                "optional": false
+              },
+              "example": "{\"id\":4,\"name\":\"Tom\",\"Extra\":{\"key\":\"value\"}}",
+              "notation": "jsight"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "jsight": "0.3",
+  "jdocExchangeVersion": "2.0.0"
+}

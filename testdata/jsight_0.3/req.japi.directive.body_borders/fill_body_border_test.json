@@ -1,0 +1,339 @@
+{
+  "tags": {
+    "@cat": {
+      "name": "@cat",
+      "title": "/cat",
+      "interactionGroups": [
+        {
+          "protocol": "http",
+          "interactions": [
+            "http GET /cat/{id}",
+            "http POST /cat/{id}",
+            "http DELETE /cat/{id}"
+          ]
+        }
+      ]
+    }
+  },
+  "info": {
+    "title": "Catsbook API",
+    "version": "1.0",
+    "description": "API cats social\nnetwork."
+  },
+  "servers": {
+    "@CATS_API_SERVER": {
+      "annotation": "Main server catsbook.com API.",
+      "baseUrl": "https://catsbook.com/api/{locale}/"
+    }
+  },
+  "userTypes": {
+    "@cat": {
+      "schema": {
+        "content": {
+          "tokenType": "object",
+          "type": "object",
+          "children": [
+            {
+              "key": "id",
+              "tokenType": "number",
+              "type": "integer",
+              "scalarValue": "12",
+              "optional": false
+            },
+            {
+              "key": "name",
+              "tokenType": "string",
+              "type": "string",
+              "scalarValue": "Tom",
+              "optional": false
+            }
+          ],
+          "optional": false
+        },
+        "example": "{\"id\":12,\"name\":\"Tom\"}",
+        "notation": "jsight"
+      }
+    },
+    "@err": {
+      "schema": {
+        "content": {
+          "tokenType": "object",
+          "type": "object",
+          "children": [
+            {
+              "key": "error",
+              "tokenType": "string",
+              "type": "string",
+              "scalarValue": "str",
+              "optional": false
+            }
+          ],
+          "optional": false
+        },
+        "example": "{\"error\":\"str\"}",
+        "notation": "jsight"
+      }
+    }
+  },
+  "interactions": {
+    "http GET /cat/{id}": {
+      "id": "http GET /cat/{id}",
+      "protocol": "http",
+      "httpMethod": "GET",
+      "path": "/cat/{id}",
+      "pathVariables": {
+        "schema": {
+          "content": {
+            "tokenType": "object",
+            "type": "object",
+            "children": [
+              {
+                "note": "property annotation",
+                "key": "id",
+                "tokenType": "number",
+                "type": "integer",
+                "scalarValue": "12",
+                "optional": false
+              }
+            ],
+            "optional": false
+          },
+          "notation": "jsight"
+        }
+      },
+      "tags": [
+        "@cat"
+      ],
+      "annotation": "annotation of GET method",
+      "description": "With this method you can get\nlist of all cats that are registered\non Catsbook.",
+      "query": {
+        "example": "param=str",
+        "format": "htmlFormEncoded",
+        "schema": {
+          "content": {
+            "tokenType": "object",
+            "type": "object",
+            "children": [
+              {
+                "key": "param",
+                "tokenType": "string",
+                "type": "string",
+                "scalarValue": "str",
+                "optional": false
+              }
+            ],
+            "optional": false
+          },
+          "example": "{\"param\":\"str\"}",
+          "notation": "jsight"
+        }
+      },
+      "responses": [
+        {
+          "code": "200",
+          "body": {
+            "format": "json",
+            "schema": {
+              "content": {
+                "tokenType": "reference",
+                "type": "@cat",
+                "scalarValue": "@cat",
+                "optional": false
+              },
+              "example": "{\"id\":12,\"name\":\"Tom\"}",
+              "notation": "jsight",
+              "usedUserTypes": [
+                "@cat"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "http POST /cat/{id}": {
+      "id": "http POST /cat/{id}",
+      "protocol": "http",
+      "httpMethod": "POST",
+      "path": "/cat/{id}",
+      "pathVariables": {
+        "schema": {
+          "content": {
+            "tokenType": "object",
+            "type": "object",
+            "children": [
+              {
+                "note": "property annotation",
+                "key": "id",
+                "tokenType": "number",
+                "type": "integer",
+                "scalarValue": "12",
+                "optional": false
+              }
+            ],
+            "optional": false
+          },
+          "notation": "jsight"
+        }
+      },
+      "tags": [
+        "@cat"
+      ],
+      "request": {
+        "body": {
+          "format": "json",
+          "schema": {
+            "content": {
+              "tokenType": "object",
+              "type": "object",
+              "children": [
+                {
+                  "key": "id",
+                  "tokenType": "number",
+                  "type": "integer",
+                  "scalarValue": "1",
+                  "optional": false
+                },
+                {
+                  "key": "name",
+                  "tokenType": "string",
+                  "type": "string",
+                  "scalarValue": "Tom",
+                  "optional": false
+                }
+              ],
+              "optional": false
+            },
+            "example": "{\"id\":1,\"name\":\"Tom\"}",
+            "notation": "jsight"
+          }
+        }
+      },
+      "responses": [
+        {
+          "code": "200",
+          "annotation": "annotation of 200 response",
+          "headers": {
+            "schema": {
+              "content": {
+                "tokenType": "object",
+                "type": "object",
+                "children": [
+                  {
+                    "key": "Content-Type",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "application/json",
+                    "rules": [
+                      {
+                        "key": "const",
+                        "tokenType": "boolean",
+                        "scalarValue": "true"
+                      }
+                    ],
+                    "optional": false
+                  }
+                ],
+                "optional": false
+              },
+              "example": "{\"Content-Type\":\"application/json\"}",
+              "notation": "jsight"
+            }
+          },
+          "body": {
+            "format": "json",
+            "schema": {
+              "content": {
+                "tokenType": "string",
+                "type": "string",
+                "scalarValue": "ok",
+                "optional": false
+              },
+              "example": "\"ok\"",
+              "notation": "jsight"
+            }
+          }
+        },
+        {
+          "code": "400",
+          "body": {
+            "format": "binary",
+            "schema": {
+              "notation": "any"
+            }
+          }
+        }
+      ]
+    },
+    "http DELETE /cat/{id}": {
+      "id": "http DELETE /cat/{id}",
+      "protocol": "http",
+      "httpMethod": "DELETE",
+      "path": "/cat/{id}",
+      "pathVariables": {
+        "schema": {
+          "content": {
+            "tokenType": "object",
+            "type": "object",
+            "children": [
+              {
+                "note": "property annotation",
+                "key": "id",
+                "tokenType": "number",
+                "type": "integer",
+                "scalarValue": "12",
+                "optional": false
+              }
+            ],
+            "optional": false
+          },
+          "notation": "jsight"
+        }
+      },
+      "tags": [
+        "@cat"
+      ],
+      "responses": [
+        {
+          "code": "200",
+          "body": {
+            "format": "json",
+            "schema": {
+              "content": {
+                "tokenType": "reference",
+                "type": "@cat",
+                "scalarValue": "@cat",
+                "optional": false
+              },
+              "example": "{\"id\":12,\"name\":\"Tom\"}",
+              "notation": "jsight",
+              "usedUserTypes": [
+                "@cat"
+              ]
+            }
+          }
+        },
+        {
+          "code": "400",
+          "body": {
+            "format": "json",
+            "schema": {
+              "content": {
+                "tokenType": "reference",
+                "type": "@err",
+                "scalarValue": "@err",
+                "optional": false
+              },
+              "example": "{\"error\":\"str\"}",
+              "notation": "jsight",
+              "usedUserTypes": [
+                "@err"
+              ]
+            }
+          }
+        }
+      ]
+    }
+  },
+  "jsight": "0.3",
+  "jdocExchangeVersion": "2.0.0"
+}

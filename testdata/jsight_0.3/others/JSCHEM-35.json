@@ -1,0 +1,412 @@
+{
+  "tags": {},
+  "userTypes": {
+    "@additionalProperties": {
+      "schema": {
+        "content": {
+          "tokenType": "object",
+          "type": "object",
+          "children": [
+            {
+              "rules": [
+                {
+                  "key": "additionalProperties",
+                  "tokenType": "boolean",
+                  "scalarValue": "true"
+                },
+                {
+                  "key": "nullable",
+                  "tokenType": "boolean",
+                  "scalarValue": "false"
+                }
+              ],
+              "key": "enabled",
+              "tokenType": "object",
+              "type": "object",
+              "children": [],
+              "optional": false
+            },
+            {
+              "rules": [
+                {
+                  "key": "additionalProperties",
+                  "tokenType": "boolean",
+                  "scalarValue": "false"
+                },
+                {
+                  "key": "nullable",
+                  "tokenType": "boolean",
+                  "scalarValue": "false"
+                }
+              ],
+              "key": "disabled",
+              "tokenType": "object",
+              "type": "object",
+              "children": [],
+              "optional": false
+            },
+            {
+              "rules": [
+                {
+                  "key": "additionalProperties",
+                  "tokenType": "string",
+                  "scalarValue": "string"
+                },
+                {
+                  "key": "nullable",
+                  "tokenType": "boolean",
+                  "scalarValue": "false"
+                }
+              ],
+              "key": "string",
+              "tokenType": "object",
+              "type": "object",
+              "children": [],
+              "optional": false
+            },
+            {
+              "rules": [
+                {
+                  "key": "additionalProperties",
+                  "tokenType": "string",
+                  "scalarValue": "integer"
+                },
+                {
+                  "key": "nullable",
+                  "tokenType": "boolean",
+                  "scalarValue": "false"
+                }
+              ],
+              "key": "integer",
+              "tokenType": "object",
+              "type": "object",
+              "children": [],
+              "optional": false
+            },
+            {
+              "rules": [
+                {
+                  "key": "additionalProperties",
+                  "tokenType": "string",
+                  "scalarValue": "float"
+                },
+                {
+                  "key": "nullable",
+                  "tokenType": "boolean",
+                  "scalarValue": "false"
+                }
+              ],
+              "key": "float",
+              "tokenType": "object",
+              "type": "object",
+              "children": [],
+              "optional": false
+            },
+            {
+              "rules": [
+                {
+                  "key": "additionalProperties",
+                  "tokenType": "string",
+                  "scalarValue": "decimal"
+                },
+                {
+                  "key": "nullable",
+                  "tokenType": "boolean",
+                  "scalarValue": "false"
+                }
+              ],
+              "key": "decimal",
+              "tokenType": "object",
+              "type": "object",
+              "children": [],
+              "optional": false
+            },
+            {
+              "rules": [
+                {
+                  "key": "additionalProperties",
+                  "tokenType": "string",
+                  "scalarValue": "boolean"
+                },
+                {
+                  "key": "nullable",
+                  "tokenType": "boolean",
+                  "scalarValue": "false"
+                }
+              ],
+              "key": "boolean",
+              "tokenType": "object",
+              "type": "object",
+              "children": [],
+              "optional": false
+            },
+            {
+              "rules": [
+                {
+                  "key": "additionalProperties",
+                  "tokenType": "string",
+                  "scalarValue": "object"
+                },
+                {
+                  "key": "nullable",
+                  "tokenType": "boolean",
+                  "scalarValue": "false"
+                }
+              ],
+              "key": "object",
+              "tokenType": "object",
+              "type": "object",
+              "children": [],
+              "optional": false
+            },
+            {
+              "rules": [
+                {
+                  "key": "additionalProperties",
+                  "tokenType": "string",
+                  "scalarValue": "array"
+                },
+                {
+                  "key": "nullable",
+                  "tokenType": "boolean",
+                  "scalarValue": "false"
+                }
+              ],
+              "key": "array",
+              "tokenType": "object",
+              "type": "object",
+              "children": [],
+              "optional": false
+            },
+            {
+              "rules": [
+                {
+                  "key": "additionalProperties",
+                  "tokenType": "string",
+                  "scalarValue": "null"
+                },
+                {
+                  "key": "nullable",
+                  "tokenType": "boolean",
+                  "scalarValue": "false"
+                }
+              ],
+              "key": "null",
+              "tokenType": "object",
+              "type": "object",
+              "children": [],
+              "optional": false
+            },
+            {
+              "rules": [
+                {
+                  "key": "additionalProperties",
+                  "tokenType": "string",
+                  "scalarValue": "email"
+                },
+                {
+                  "key": "nullable",
+                  "tokenType": "boolean",
+                  "scalarValue": "false"
+                }
+              ],
+              "key": "email",
+              "tokenType": "object",
+              "type": "object",
+              "children": [],
+              "optional": false
+            },
+            {
+              "rules": [
+                {
+                  "key": "additionalProperties",
+                  "tokenType": "string",
+                  "scalarValue": "uri"
+                },
+                {
+                  "key": "nullable",
+                  "tokenType": "boolean",
+                  "scalarValue": "false"
+                }
+              ],
+              "key": "uri",
+              "tokenType": "object",
+              "type": "object",
+              "children": [],
+              "optional": false
+            },
+            {
+              "rules": [
+                {
+                  "key": "additionalProperties",
+                  "tokenType": "string",
+                  "scalarValue": "uuid"
+                },
+                {
+                  "key": "nullable",
+                  "tokenType": "boolean",
+                  "scalarValue": "false"
+                }
+              ],
+              "key": "uuid",
+              "tokenType": "object",
+              "type": "object",
+              "children": [],
+              "optional": false
+            },
+            {
+              "rules": [
+                {
+                  "key": "additionalProperties",
+                  "tokenType": "string",
+                  "scalarValue": "date"
+                },
+                {
+                  "key": "nullable",
+                  "tokenType": "boolean",
+                  "scalarValue": "false"
+                }
+              ],
+              "key": "date",
+              "tokenType": "object",
+              "type": "object",
+              "children": [],
+              "optional": false
+            },
+            {
+              "rules": [
+                {
+                  "key": "additionalProperties",
+                  "tokenType": "string",
+                  "scalarValue": "datetime"
+                },
+                {
+                  "key": "nullable",
+                  "tokenType": "boolean",
+                  "scalarValue": "false"
+                }
+              ],
+              "key": "datetime",
+              "tokenType": "object",
+              "type": "object",
+              "children": [],
+              "optional": false
+            },
+            {
+              "rules": [
+                {
+                  "key": "additionalProperties",
+                  "tokenType": "string",
+                  "scalarValue": "enum"
+                },
+                {
+                  "key": "nullable",
+                  "tokenType": "boolean",
+                  "scalarValue": "false"
+                }
+              ],
+              "key": "enum",
+              "tokenType": "object",
+              "type": "object",
+              "children": [],
+              "optional": false
+            },
+            {
+              "rules": [
+                {
+                  "key": "additionalProperties",
+                  "tokenType": "string",
+                  "scalarValue": "mixed"
+                },
+                {
+                  "key": "nullable",
+                  "tokenType": "boolean",
+                  "scalarValue": "false"
+                }
+              ],
+              "key": "mixed",
+              "tokenType": "object",
+              "type": "object",
+              "children": [],
+              "optional": false
+            },
+            {
+              "rules": [
+                {
+                  "key": "additionalProperties",
+                  "tokenType": "string",
+                  "scalarValue": "any"
+                },
+                {
+                  "key": "nullable",
+                  "tokenType": "boolean",
+                  "scalarValue": "false"
+                }
+              ],
+              "key": "any",
+              "tokenType": "object",
+              "type": "object",
+              "children": [],
+              "optional": false
+            },
+            {
+              "rules": [
+                {
+                  "key": "additionalProperties",
+                  "tokenType": "string",
+                  "scalarValue": "@cat"
+                },
+                {
+                  "key": "nullable",
+                  "tokenType": "boolean",
+                  "scalarValue": "false"
+                }
+              ],
+              "key": "userType",
+              "tokenType": "object",
+              "type": "object",
+              "children": [],
+              "optional": false
+            }
+          ],
+          "optional": false
+        },
+        "example": "{\"enabled\":{},\"disabled\":{},\"string\":{},\"integer\":{},\"float\":{},\"decimal\":{},\"boolean\":{},\"object\":{},\"array\":{},\"null\":{},\"email\":{},\"uri\":{},\"uuid\":{},\"date\":{},\"datetime\":{},\"enum\":{},\"mixed\":{},\"any\":{},\"userType\":{}}",
+        "notation": "jsight",
+        "usedUserTypes": [
+          "@cat"
+        ]
+      }
+    },
+    "@cat": {
+      "schema": {
+        "content": {
+          "tokenType": "object",
+          "type": "object",
+          "children": [
+            {
+              "key": "id",
+              "tokenType": "number",
+              "type": "integer",
+              "scalarValue": "1",
+              "optional": false
+            },
+            {
+              "key": "name",
+              "tokenType": "string",
+              "type": "string",
+              "scalarValue": "Tom",
+              "optional": false
+            }
+          ],
+          "optional": false
+        },
+        "example": "{\"id\":1,\"name\":\"Tom\"}",
+        "notation": "jsight"
+      }
+    }
+  },
+  "interactions": {},
+  "jsight": "0.3",
+  "jdocExchangeVersion": "2.0.0"
+}

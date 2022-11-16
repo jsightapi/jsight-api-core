@@ -1,0 +1,89 @@
+{
+  "tags": {
+    "@dogs": {
+      "name": "@dogs",
+      "title": "/dogs",
+      "interactionGroups": [
+        {
+          "protocol": "http",
+          "interactions": [
+            "http GET /dogs"
+          ]
+        }
+      ]
+    }
+  },
+  "interactions": {
+    "http GET /dogs": {
+      "id": "http GET /dogs",
+      "protocol": "http",
+      "httpMethod": "GET",
+      "path": "/dogs",
+      "tags": [
+        "@dogs"
+      ],
+      "query": {
+        "format": "htmlFormEncoded",
+        "schema": {
+          "content": {
+            "tokenType": "object",
+            "type": "object",
+            "children": [
+              {
+                "note": "Page number.",
+                "key": "page",
+                "tokenType": "number",
+                "type": "integer",
+                "scalarValue": "1",
+                "rules": [
+                  {
+                    "key": "optional",
+                    "tokenType": "boolean",
+                    "scalarValue": "true"
+                  }
+                ],
+                "optional": true
+              },
+              {
+                "note": "Filter by hunting ability.",
+                "key": "canHunt",
+                "tokenType": "boolean",
+                "type": "boolean",
+                "scalarValue": "true",
+                "rules": [
+                  {
+                    "key": "type",
+                    "tokenType": "string",
+                    "scalarValue": "boolean"
+                  },
+                  {
+                    "key": "optional",
+                    "tokenType": "boolean",
+                    "scalarValue": "true"
+                  }
+                ],
+                "optional": true
+              }
+            ],
+            "optional": false
+          },
+          "example": "{\"page\":1,\"canHunt\":true}",
+          "notation": "jsight"
+        }
+      },
+      "responses": [
+        {
+          "code": "200",
+          "body": {
+            "format": "binary",
+            "schema": {
+              "notation": "any"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "jsight": "0.3",
+  "jdocExchangeVersion": "2.0.0"
+}

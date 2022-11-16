@@ -1,0 +1,15 @@
+{
+  "tags": {},
+  "userTypes": {
+    "@t": {
+      "schema": {
+        "content": "reg\\/",
+        "example": "reg/",
+        "notation": "regex"
+      }
+    }
+  },
+  "interactions": {},
+  "jsight": "0.3",
+  "jdocExchangeVersion": "2.0.0"
+}

@@ -1,0 +1,111 @@
+{
+  "tags": {},
+  "userTypes": {
+    "@checkExpandAllForOr": {
+      "schema": {
+        "content": {
+          "tokenType": "object",
+          "type": "object",
+          "children": [
+            {
+              "key": "or",
+              "tokenType": "string",
+              "type": "mixed",
+              "scalarValue": "or",
+              "rules": [
+                {
+                  "key": "or",
+                  "tokenType": "array",
+                  "children": [
+                    {
+                      "tokenType": "object",
+                      "children": [
+                        {
+                          "key": "type",
+                          "tokenType": "string",
+                          "scalarValue": "string"
+                        }
+                      ]
+                    },
+                    {
+                      "tokenType": "object",
+                      "children": [
+                        {
+                          "key": "type",
+                          "tokenType": "string",
+                          "scalarValue": "boolean"
+                        }
+                      ]
+                    },
+                    {
+                      "tokenType": "object",
+                      "children": [
+                        {
+                          "key": "type",
+                          "tokenType": "string",
+                          "scalarValue": "integer"
+                        }
+                      ]
+                    },
+                    {
+                      "tokenType": "object",
+                      "children": [
+                        {
+                          "key": "type",
+                          "tokenType": "string",
+                          "scalarValue": "float"
+                        }
+                      ]
+                    },
+                    {
+                      "tokenType": "object",
+                      "children": [
+                        {
+                          "key": "type",
+                          "tokenType": "string",
+                          "scalarValue": "object"
+                        }
+                      ]
+                    },
+                    {
+                      "tokenType": "object",
+                      "children": [
+                        {
+                          "key": "type",
+                          "tokenType": "string",
+                          "scalarValue": "array"
+                        }
+                      ]
+                    },
+                    {
+                      "tokenType": "object",
+                      "children": [
+                        {
+                          "key": "type",
+                          "tokenType": "string",
+                          "scalarValue": "decimal"
+                        },
+                        {
+                          "key": "precision",
+                          "tokenType": "number",
+                          "scalarValue": "1"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "optional": false
+            }
+          ],
+          "optional": false
+        },
+        "example": "{\"or\":\"or\"}",
+        "notation": "jsight"
+      }
+    }
+  },
+  "interactions": {},
+  "jsight": "0.3",
+  "jdocExchangeVersion": "2.0.0"
+}

@@ -1,0 +1,27 @@
+{
+  "tags": {},
+  "userTypes": {
+    "@catId": {
+      "schema": {
+        "content": {
+          "tokenType": "number",
+          "type": "integer",
+          "scalarValue": "123",
+          "rules": [
+            {
+              "key": "min",
+              "tokenType": "number",
+              "scalarValue": "0"
+            }
+          ],
+          "optional": false
+        },
+        "example": "123",
+        "notation": "jsight"
+      }
+    }
+  },
+  "interactions": {},
+  "jsight": "0.3",
+  "jdocExchangeVersion": "2.0.0"
+}

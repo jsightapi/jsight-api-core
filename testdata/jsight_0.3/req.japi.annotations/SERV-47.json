@@ -1,0 +1,128 @@
+{
+  "tags": {
+    "@cats": {
+      "name": "@cats",
+      "title": "/cats",
+      "interactionGroups": [
+        {
+          "protocol": "http",
+          "interactions": [
+            "http GET /cats"
+          ]
+        }
+      ]
+    }
+  },
+  "info": {
+    "description": "Check all the annotations below in the main field and in details cards."
+  },
+  "servers": {
+    "@prod": {
+      "annotation": "This is a field with a very long note. It must be: 1) cutted with ... in th end in \"Collapse rules\" mode, 2) it must NOT have line breaks inside.",
+      "baseUrl": ""
+    }
+  },
+  "userTypes": {
+    "@testExtraLongAnnotationInObject": {
+      "annotation": "This is a field with a very long note. It must be: 1) cutted with ... in th end in \"Collapse rules\" mode, 2) it must NOT have line breaks inside.",
+      "schema": {
+        "content": {
+          "tokenType": "object",
+          "type": "object",
+          "children": [
+            {
+              "note": "This is a field with a very long note. It must be: 1) cutted with ... in th end in \"Collapse rules\" mode, 2) it must NOT have line breaks inside.",
+              "key": "key",
+              "tokenType": "string",
+              "type": "string",
+              "scalarValue": "value",
+              "rules": [
+                {
+                  "key": "optional",
+                  "tokenType": "boolean",
+                  "scalarValue": "true"
+                },
+                {
+                  "key": "nullable",
+                  "tokenType": "boolean",
+                  "scalarValue": "true"
+                }
+              ],
+              "optional": true
+            }
+          ],
+          "optional": false
+        },
+        "example": "{\"key\":\"value\"}",
+        "notation": "jsight"
+      }
+    },
+    "@testExtraLongAnnotationInArray": {
+      "annotation": "This is a field with a very long note. It must be: 1) cutted with ... in th end in \"Collapse rules\" mode, 2) it must NOT have line breaks inside.",
+      "schema": {
+        "content": {
+          "tokenType": "array",
+          "type": "array",
+          "children": [
+            {
+              "note": "This is a field with a very long note. It must be: 1) cutted with ... in th end in \"Collapse rules\" mode, 2) it must NOT have line breaks inside.",
+              "tokenType": "string",
+              "type": "string",
+              "scalarValue": "value",
+              "rules": [
+                {
+                  "key": "nullable",
+                  "tokenType": "boolean",
+                  "scalarValue": "true"
+                },
+                {
+                  "key": "minLength",
+                  "tokenType": "number",
+                  "scalarValue": "1"
+                }
+              ],
+              "optional": true
+            }
+          ],
+          "optional": false
+        },
+        "example": "[\"value\"]",
+        "notation": "jsight"
+      }
+    }
+  },
+  "interactions": {
+    "http GET /cats": {
+      "id": "http GET /cats",
+      "protocol": "http",
+      "httpMethod": "GET",
+      "path": "/cats",
+      "tags": [
+        "@cats"
+      ],
+      "annotation": "This is a field with a very long note. It must be: 1) cutted with ... in th end in \"Collapse rules\" mode, 2) it must NOT have line breaks inside.",
+      "responses": [
+        {
+          "code": "200",
+          "annotation": "This is a field with a very long note. It must be: 1) cutted with ... in th end in \"Collapse rules\" mode, 2) it must NOT have line breaks inside.",
+          "body": {
+            "format": "json",
+            "schema": {
+              "content": {
+                "note": "This is a field with a very long note. It must be: 1) cutted with ... in th end in \"Collapse rules\" mode, 2) it must NOT have line breaks inside.",
+                "tokenType": "string",
+                "type": "string",
+                "scalarValue": "OK",
+                "optional": false
+              },
+              "example": "\"OK\"",
+              "notation": "jsight"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "jsight": "0.3",
+  "jdocExchangeVersion": "2.0.0"
+}

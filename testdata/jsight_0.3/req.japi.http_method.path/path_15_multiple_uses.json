@@ -1,0 +1,91 @@
+{
+  "tags": {
+    "@_7Bid_7D": {
+      "name": "@_7Bid_7D",
+      "title": "/{id}",
+      "interactionGroups": [
+        {
+          "protocol": "http",
+          "interactions": [
+            "http GET /{id}/phone",
+            "http GET /{id}/name"
+          ]
+        }
+      ]
+    }
+  },
+  "interactions": {
+    "http GET /{id}/phone": {
+      "id": "http GET /{id}/phone",
+      "protocol": "http",
+      "path": "/{id}/phone",
+      "tags": [
+        "@_7Bid_7D"
+      ],
+      "pathVariables": {
+        "schema": {
+          "content": {
+            "tokenType": "object",
+            "type": "object",
+            "children": [
+              {
+                "key": "id",
+                "tokenType": "number",
+                "type": "integer",
+                "scalarValue": "1",
+                "rules": [
+                  {
+                    "key": "min",
+                    "tokenType": "number",
+                    "scalarValue": "1"
+                  }
+                ],
+                "optional": false
+              }
+            ],
+            "optional": false
+          },
+          "notation": "jsight"
+        }
+      },
+      "httpMethod": "GET"
+    },
+    "http GET /{id}/name": {
+      "id": "http GET /{id}/name",
+      "protocol": "http",
+      "path": "/{id}/name",
+      "tags": [
+        "@_7Bid_7D"
+      ],
+      "pathVariables": {
+        "schema": {
+          "content": {
+            "tokenType": "object",
+            "type": "object",
+            "children": [
+              {
+                "key": "id",
+                "tokenType": "number",
+                "type": "integer",
+                "scalarValue": "1",
+                "rules": [
+                  {
+                    "key": "min",
+                    "tokenType": "number",
+                    "scalarValue": "1"
+                  }
+                ],
+                "optional": false
+              }
+            ],
+            "optional": false
+          },
+          "notation": "jsight"
+        }
+      },
+      "httpMethod": "GET"
+    }
+  },
+  "jsight": "0.3",
+  "jdocExchangeVersion": "2.0.0"
+}

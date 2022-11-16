@@ -1,0 +1,57 @@
+{
+  "tags": {
+    "@arrayOfEverything": {
+      "name": "@arrayOfEverything",
+      "title": "/arrayOfEverything",
+      "interactionGroups": [
+        {
+          "protocol": "http",
+          "interactions": [
+            "http POST /arrayOfEverything"
+          ]
+        }
+      ]
+    }
+  },
+  "interactions": {
+    "http POST /arrayOfEverything": {
+      "id": "http POST /arrayOfEverything",
+      "protocol": "http",
+      "httpMethod": "POST",
+      "path": "/arrayOfEverything",
+      "tags": [
+        "@arrayOfEverything"
+      ],
+      "query": {
+        "format": "htmlFormEncoded",
+        "schema": {
+          "content": {
+            "tokenType": "object",
+            "type": "object",
+            "children": [
+              {
+                "key": "decimalField",
+                "tokenType": "number",
+                "type": "decimal",
+                "scalarValue": "1.23",
+                "rules": [
+                  {
+                    "key": "precision",
+                    "tokenType": "number",
+                    "scalarValue": "2"
+                  }
+                ],
+                "optional": false
+              }
+            ],
+            "optional": false
+          },
+          "example": "{\"decimalField\":1.23}",
+          "notation": "jsight"
+        }
+      }
+    }
+  },
+  "jsight": "0.3",
+  "jdocExchangeVersion": "2.0.0"
+}

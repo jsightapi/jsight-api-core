@@ -1,0 +1,48 @@
+{
+  "tags": {
+    "@users": {
+      "name": "@users",
+      "title": "/users",
+      "interactionGroups": [
+        {
+          "protocol": "http",
+          "interactions": [
+            "http GET /users/{id}"
+          ]
+        }
+      ]
+    }
+  },
+  "interactions": {
+    "http GET /users/{id}": {
+      "id": "http GET /users/{id}",
+      "protocol": "http",
+      "path": "/users/{id}",
+      "tags": [
+        "@users"
+      ],
+      "pathVariables": {
+        "schema": {
+          "content": {
+            "tokenType": "object",
+            "type": "object",
+            "children": [
+              {
+                "key": "id",
+                "tokenType": "number",
+                "type": "integer",
+                "scalarValue": "1",
+                "optional": false
+              }
+            ],
+            "optional": false
+          },
+          "notation": "jsight"
+        }
+      },
+      "httpMethod": "GET"
+    }
+  },
+  "jsight": "0.3",
+  "jdocExchangeVersion": "2.0.0"
+}

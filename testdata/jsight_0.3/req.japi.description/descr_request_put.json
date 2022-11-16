@@ -1,0 +1,30 @@
+{
+  "tags": {
+    "@cats": {
+      "name": "@cats",
+      "title": "/cats",
+      "interactionGroups": [
+        {
+          "protocol": "http",
+          "interactions": [
+            "http PUT /cats"
+          ]
+        }
+      ]
+    }
+  },
+  "interactions": {
+    "http PUT /cats": {
+      "id": "http PUT /cats",
+      "protocol": "http",
+      "path": "/cats",
+      "tags": [
+        "@cats"
+      ],
+      "description": "Using this method, you can get\na list of all the cats that are registered\non Catsbook.",
+      "httpMethod": "PUT"
+    }
+  },
+  "jsight": "0.3",
+  "jdocExchangeVersion": "2.0.0"
+}

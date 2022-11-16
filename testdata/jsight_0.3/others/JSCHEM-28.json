@@ -1,0 +1,34 @@
+{
+  "tags": {},
+  "userTypes": {
+    "@cat": {
+      "schema": {
+        "content": {
+          "tokenType": "array",
+          "type": "array",
+          "children": [
+            {
+              "tokenType": "array",
+              "type": "array",
+              "children": [],
+              "optional": true
+            },
+            {
+              "note": "Annotation",
+              "tokenType": "number",
+              "type": "integer",
+              "scalarValue": "2",
+              "optional": true
+            }
+          ],
+          "optional": false
+        },
+        "example": "[[],2]",
+        "notation": "jsight"
+      }
+    }
+  },
+  "interactions": {},
+  "jsight": "0.3",
+  "jdocExchangeVersion": "2.0.0"
+}

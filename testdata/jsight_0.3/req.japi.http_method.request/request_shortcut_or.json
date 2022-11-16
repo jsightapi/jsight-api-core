@@ -1,0 +1,74 @@
+{
+  "tags": {
+    "@_": {
+      "name": "@_",
+      "title": "/",
+      "interactionGroups": [
+        {
+          "protocol": "http",
+          "interactions": [
+            "http PUT /"
+          ]
+        }
+      ]
+    }
+  },
+  "userTypes": {
+    "@cat": {
+      "schema": {
+        "content": {
+          "tokenType": "number",
+          "type": "integer",
+          "scalarValue": "12",
+          "optional": false
+        },
+        "example": "12",
+        "notation": "jsight"
+      }
+    },
+    "@dog": {
+      "schema": {
+        "content": {
+          "tokenType": "string",
+          "type": "string",
+          "scalarValue": "funtic",
+          "optional": false
+        },
+        "example": "\"funtic\"",
+        "notation": "jsight"
+      }
+    }
+  },
+  "interactions": {
+    "http PUT /": {
+      "id": "http PUT /",
+      "protocol": "http",
+      "httpMethod": "PUT",
+      "path": "/",
+      "tags": [
+        "@_"
+      ],
+      "request": {
+        "body": {
+          "format": "json",
+          "schema": {
+            "content": {
+              "tokenType": "reference",
+              "type": "mixed",
+              "scalarValue": "@dog | @cat",
+              "optional": false
+            },
+            "example": "\"funtic\"",
+            "notation": "jsight",
+            "usedUserTypes": [
+              "@dog",
+              "@cat"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "jsight": "0.3",
+  "jdocExchangeVersion": "2.0.0"
+}

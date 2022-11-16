@@ -1,0 +1,57 @@
+{
+  "tags": {},
+  "userEnums": {
+    "@animalEnum": {
+      "annotation": "annotation",
+      "description": "",
+      "value": {
+        "tokenType": "array",
+        "children": [
+          {
+            "tokenType": "annotation",
+            "note": "My\n\t\t   Pets",
+            "scalarValue": ""
+          },
+          {
+            "tokenType": "string",
+            "note": "My\n\t\t          Cat",
+            "scalarValue": "CAT"
+          },
+          {
+            "tokenType": "string",
+            "note": "Dog",
+            "scalarValue": "DOG"
+          },
+          {
+            "tokenType": "string",
+            "note": "Pig",
+            "scalarValue": "PIG"
+          },
+          {
+            "tokenType": "annotation",
+            "note": "Wild animals",
+            "scalarValue": ""
+          },
+          {
+            "tokenType": "string",
+            "note": "Wolf",
+            "scalarValue": "WOLF"
+          },
+          {
+            "tokenType": "string",
+            "note": "Lion",
+            "scalarValue": "LION"
+          },
+          {
+            "tokenType": "string",
+            "note": "Tiger",
+            "scalarValue": "TIGER"
+          }
+        ]
+      }
+    }
+  },
+  "interactions": {},
+  "jsight": "0.3",
+  "jdocExchangeVersion": "2.0.0"
+}

@@ -1,0 +1,28 @@
+{
+  "tags": {},
+  "userTypes": {
+    "@t": {
+      "schema": {
+        "content": {
+          "rules": [
+            {
+              "key": "minItems",
+              "tokenType": "number",
+              "scalarValue": "0"
+            }
+          ],
+          "tokenType": "array",
+          "type": "array",
+          "note": "annotation",
+          "children": [],
+          "optional": false
+        },
+        "example": "[]",
+        "notation": "jsight"
+      }
+    }
+  },
+  "interactions": {},
+  "jsight": "0.3",
+  "jdocExchangeVersion": "2.0.0"
+}

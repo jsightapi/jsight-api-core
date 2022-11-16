@@ -1,0 +1,71 @@
+{
+  "tags": {
+    "@cats": {
+      "name": "@cats",
+      "title": "/cats",
+      "interactionGroups": [
+        {
+          "protocol": "http",
+          "interactions": [
+            "http GET /cats/{id}/{name}"
+          ]
+        }
+      ]
+    }
+  },
+  "userTypes": {
+    "@pathVars1": {
+      "schema": {
+        "content": {
+          "tokenType": "object",
+          "type": "object",
+          "children": [
+            {
+              "key": "id",
+              "tokenType": "number",
+              "type": "integer",
+              "scalarValue": "1",
+              "optional": false
+            }
+          ],
+          "optional": false
+        },
+        "example": "{\"id\":1}",
+        "notation": "jsight"
+      }
+    }
+  },
+  "interactions": {
+    "http GET /cats/{id}/{name}": {
+      "id": "http GET /cats/{id}/{name}",
+      "protocol": "http",
+      "httpMethod": "GET",
+      "path": "/cats/{id}/{name}",
+      "pathVariables": {
+        "schema": {
+          "content": {
+            "tokenType": "object",
+            "type": "object",
+            "children": [
+              {
+                "key": "id",
+                "tokenType": "number",
+                "type": "integer",
+                "scalarValue": "1",
+                "inheritedFrom": "@pathVars1",
+                "optional": false
+              }
+            ],
+            "optional": false
+          },
+          "notation": "jsight"
+        }
+      },
+      "tags": [
+        "@cats"
+      ]
+    }
+  },
+  "jsight": "0.3",
+  "jdocExchangeVersion": "2.0.0"
+}

@@ -1,0 +1,49 @@
+{
+  "tags": {},
+  "userTypes": {
+    "@foo": {
+      "schema": {
+        "content": {
+          "tokenType": "object",
+          "type": "object",
+          "children": [
+            {
+              "key": "optional",
+              "tokenType": "number",
+              "type": "integer",
+              "scalarValue": "42",
+              "rules": [
+                {
+                  "key": "optional",
+                  "tokenType": "boolean",
+                  "scalarValue": "true"
+                }
+              ],
+              "optional": true
+            },
+            {
+              "key": "non_optional",
+              "tokenType": "number",
+              "type": "integer",
+              "scalarValue": "42",
+              "rules": [
+                {
+                  "key": "optional",
+                  "tokenType": "boolean",
+                  "scalarValue": "false"
+                }
+              ],
+              "optional": false
+            }
+          ],
+          "optional": false
+        },
+        "example": "{\"optional\":42,\"non_optional\":42}",
+        "notation": "jsight"
+      }
+    }
+  },
+  "interactions": {},
+  "jsight": "0.3",
+  "jdocExchangeVersion": "2.0.0"
+}

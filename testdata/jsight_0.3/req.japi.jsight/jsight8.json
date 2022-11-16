@@ -1,0 +1,63 @@
+{
+    "tags": {},
+    "userTypes": {
+        "@dog": {
+            "schema": {
+                "content": {
+                    "tokenType": "object",
+                    "type": "object",
+                    "children": [
+                        {
+                            "key": "id",
+                            "tokenType": "string",
+                            "type": "string",
+                            "scalarValue": "DOG-123",
+                            "optional": false
+                        },
+                        {
+                            "key": "name",
+                            "tokenType": "string",
+                            "type": "string",
+                            "scalarValue": "Doggie",
+                            "optional": false
+                        },
+                        {
+                            "key": "birt_day",
+                            "tokenType": "string",
+                            "type": "date",
+                            "scalarValue": "2021-01-08",
+                            "rules": [
+                                {
+                                    "key": "type",
+                                    "tokenType": "string",
+                                    "scalarValue": "date"
+                                }
+                            ],
+                            "optional": false
+                        },
+                        {
+                            "key": "created_at",
+                            "tokenType": "string",
+                            "type": "datetime",
+                            "scalarValue": "2021-01-08T12:50:45Z",
+                            "rules": [
+                                {
+                                    "key": "type",
+                                    "tokenType": "string",
+                                    "scalarValue": "datetime"
+                                }
+                            ],
+                            "optional": false
+                        }
+                    ],
+                    "optional": false
+                },
+                "example": "{\"id\":\"DOG-123\",\"name\":\"Doggie\",\"birt_day\":\"2021-01-08\",\"created_at\":\"2021-01-08T12:50:45Z\"}",
+                "notation": "jsight"
+            }
+        }
+    },
+    "interactions": {},
+    "jsight": "0.3",
+    "jdocExchangeVersion": "2.0.0"
+}

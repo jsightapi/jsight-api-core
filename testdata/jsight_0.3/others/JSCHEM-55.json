@@ -1,0 +1,153 @@
+{
+  "tags": {},
+  "userTypes": {
+    "@rule": {
+      "schema": {
+        "content": {
+          "tokenType": "object",
+          "type": "object",
+          "children": [
+            {
+              "rules": [
+                {
+                  "key": "additionalProperties",
+                  "tokenType": "string",
+                  "scalarValue": "@ruleNameEnum"
+                },
+                {
+                  "key": "optional",
+                  "tokenType": "boolean",
+                  "scalarValue": "true"
+                }
+              ],
+              "key": "properties",
+              "tokenType": "object",
+              "type": "object",
+              "children": [
+                {
+                  "key": "@ruleNameEnum",
+                  "tokenType": "reference",
+                  "type": "@rule",
+                  "scalarValue": "@rule",
+                  "isKeyUserTypeRef": true,
+                  "optional": false
+                }
+              ],
+              "optional": true
+            }
+          ],
+          "optional": false
+        },
+        "example": "{\"properties\":{\"minLength\":{\"properties\":{\"minLength\":{\"properties\":{}}}}}}",
+        "notation": "jsight",
+        "usedUserTypes": [
+          "@ruleNameEnum",
+          "@rule"
+        ]
+      }
+    },
+    "@ruleNameEnum": {
+      "schema": {
+        "content": {
+          "tokenType": "string",
+          "type": "enum",
+          "scalarValue": "minLength",
+          "rules": [
+            {
+              "key": "enum",
+              "tokenType": "array",
+              "children": [
+                {
+                  "tokenType": "string",
+                  "scalarValue": "type"
+                },
+                {
+                  "tokenType": "string",
+                  "scalarValue": "optional"
+                },
+                {
+                  "tokenType": "string",
+                  "scalarValue": "nullable"
+                },
+                {
+                  "tokenType": "string",
+                  "scalarValue": "min"
+                },
+                {
+                  "tokenType": "string",
+                  "scalarValue": "max"
+                },
+                {
+                  "tokenType": "string",
+                  "scalarValue": "exclusiveMinimum"
+                },
+                {
+                  "tokenType": "string",
+                  "scalarValue": "exclusiveMaximum"
+                },
+                {
+                  "tokenType": "string",
+                  "scalarValue": "precision"
+                },
+                {
+                  "tokenType": "string",
+                  "scalarValue": "minLength"
+                },
+                {
+                  "tokenType": "string",
+                  "scalarValue": "maxLength"
+                },
+                {
+                  "tokenType": "string",
+                  "scalarValue": "regexp"
+                },
+                {
+                  "tokenType": "string",
+                  "scalarValue": "minItems"
+                },
+                {
+                  "tokenType": "string",
+                  "scalarValue": "maxItems"
+                },
+                {
+                  "tokenType": "string",
+                  "scalarValue": "or"
+                },
+                {
+                  "tokenType": "string",
+                  "scalarValue": "additionalProperties"
+                },
+                {
+                  "tokenType": "string",
+                  "scalarValue": "const"
+                },
+                {
+                  "tokenType": "string",
+                  "scalarValue": "serializeFormat"
+                },
+                {
+                  "tokenType": "string",
+                  "scalarValue": "serializedType"
+                },
+                {
+                  "tokenType": "string",
+                  "scalarValue": "enum"
+                },
+                {
+                  "tokenType": "string",
+                  "scalarValue": "allOf"
+                }
+              ]
+            }
+          ],
+          "optional": false
+        },
+        "example": "\"minLength\"",
+        "notation": "jsight"
+      }
+    }
+  },
+  "interactions": {},
+  "jsight": "0.3",
+  "jdocExchangeVersion": "2.0.0"
+}

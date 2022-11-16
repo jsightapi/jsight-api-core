@@ -1,0 +1,378 @@
+{
+  "tags": {
+    "@foo": {
+      "name": "@foo",
+      "title": "/foo",
+      "interactionGroups": [
+        {
+          "protocol": "http",
+          "interactions": [
+            "http PUT /foo",
+            "http DELETE /foo"
+          ]
+        }
+      ]
+    },
+    "@bar": {
+      "name": "@bar",
+      "title": "/bar",
+      "interactionGroups": [
+        {
+          "protocol": "http",
+          "interactions": [
+            "http GET /bar",
+            "http POST /bar"
+          ]
+        }
+      ]
+    },
+    "@mixins": {
+      "name": "@mixins",
+      "title": "/mixins",
+      "interactionGroups": [
+        {
+          "protocol": "http",
+          "interactions": [
+            "http GET /mixins",
+            "http POST /mixins"
+          ]
+        }
+      ]
+    }
+  },
+  "servers": {
+    "@FIZZ_API_SERVER": {
+      "annotation": "fizz server",
+      "baseUrl": "https://dogsbook.com/api/"
+    },
+    "@CATS_API_SERVER": {
+      "annotation": "Server catsbook.com API",
+      "baseUrl": "https://{env}.catsbook.com/api/{version}/{locale}/"
+    },
+    "@DOGS_API_SERVER": {
+      "annotation": "dog server",
+      "baseUrl": "https://dogsbook.com/api/"
+    }
+  },
+  "userTypes": {
+    "@foo": {
+      "schema": {
+        "content": {
+          "tokenType": "object",
+          "type": "object",
+          "children": [
+            {
+              "key": "foo",
+              "tokenType": "number",
+              "type": "integer",
+              "scalarValue": "1",
+              "optional": false
+            }
+          ],
+          "optional": false
+        },
+        "example": "{\"foo\":1}",
+        "notation": "jsight"
+      }
+    },
+    "@bar": {
+      "schema": {
+        "content": {
+          "tokenType": "object",
+          "type": "object",
+          "children": [
+            {
+              "key": "bar",
+              "tokenType": "number",
+              "type": "integer",
+              "scalarValue": "2",
+              "optional": false
+            }
+          ],
+          "optional": false
+        },
+        "example": "{\"bar\":2}",
+        "notation": "jsight"
+      }
+    }
+  },
+  "interactions": {
+    "http PUT /foo": {
+      "id": "http PUT /foo",
+      "protocol": "http",
+      "httpMethod": "PUT",
+      "path": "/foo",
+      "tags": [
+        "@foo"
+      ],
+      "responses": [
+        {
+          "code": "200",
+          "body": {
+            "format": "json",
+            "schema": {
+              "content": {
+                "tokenType": "reference",
+                "type": "@foo",
+                "scalarValue": "@foo",
+                "optional": false
+              },
+              "example": "{\"foo\":1}",
+              "notation": "jsight",
+              "usedUserTypes": [
+                "@foo"
+              ]
+            }
+          }
+        },
+        {
+          "code": "400",
+          "body": {
+            "format": "json",
+            "schema": {
+              "content": {
+                "tokenType": "reference",
+                "type": "@bar",
+                "scalarValue": "@bar",
+                "optional": false
+              },
+              "example": "{\"bar\":2}",
+              "notation": "jsight",
+              "usedUserTypes": [
+                "@bar"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "http DELETE /foo": {
+      "id": "http DELETE /foo",
+      "protocol": "http",
+      "httpMethod": "DELETE",
+      "path": "/foo",
+      "tags": [
+        "@foo"
+      ],
+      "responses": [
+        {
+          "code": "200",
+          "body": {
+            "format": "json",
+            "schema": {
+              "content": {
+                "tokenType": "reference",
+                "type": "@foo",
+                "scalarValue": "@foo",
+                "optional": false
+              },
+              "example": "{\"foo\":1}",
+              "notation": "jsight",
+              "usedUserTypes": [
+                "@foo"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "http GET /bar": {
+      "id": "http GET /bar",
+      "protocol": "http",
+      "httpMethod": "GET",
+      "path": "/bar",
+      "tags": [
+        "@bar"
+      ],
+      "responses": [
+        {
+          "code": "200",
+          "body": {
+            "format": "json",
+            "schema": {
+              "content": {
+                "tokenType": "reference",
+                "type": "@foo",
+                "scalarValue": "@foo",
+                "optional": false
+              },
+              "example": "{\"foo\":1}",
+              "notation": "jsight",
+              "usedUserTypes": [
+                "@foo"
+              ]
+            }
+          }
+        },
+        {
+          "code": "400",
+          "body": {
+            "format": "json",
+            "schema": {
+              "content": {
+                "tokenType": "reference",
+                "type": "@bar",
+                "scalarValue": "@bar",
+                "optional": false
+              },
+              "example": "{\"bar\":2}",
+              "notation": "jsight",
+              "usedUserTypes": [
+                "@bar"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "http POST /bar": {
+      "id": "http POST /bar",
+      "protocol": "http",
+      "httpMethod": "POST",
+      "path": "/bar",
+      "tags": [
+        "@bar"
+      ],
+      "responses": [
+        {
+          "code": "200",
+          "body": {
+            "format": "json",
+            "schema": {
+              "content": {
+                "tokenType": "reference",
+                "type": "@foo",
+                "scalarValue": "@foo",
+                "optional": false
+              },
+              "example": "{\"foo\":1}",
+              "notation": "jsight",
+              "usedUserTypes": [
+                "@foo"
+              ]
+            }
+          }
+        },
+        {
+          "code": "400",
+          "body": {
+            "format": "json",
+            "schema": {
+              "content": {
+                "tokenType": "reference",
+                "type": "@bar",
+                "scalarValue": "@bar",
+                "optional": false
+              },
+              "example": "{\"bar\":2}",
+              "notation": "jsight",
+              "usedUserTypes": [
+                "@bar"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "http GET /mixins": {
+      "id": "http GET /mixins",
+      "protocol": "http",
+      "httpMethod": "GET",
+      "path": "/mixins",
+      "tags": [
+        "@mixins"
+      ],
+      "responses": [
+        {
+          "code": "200",
+          "body": {
+            "format": "json",
+            "schema": {
+              "content": {
+                "tokenType": "reference",
+                "type": "@foo",
+                "scalarValue": "@foo",
+                "optional": false
+              },
+              "example": "{\"foo\":1}",
+              "notation": "jsight",
+              "usedUserTypes": [
+                "@foo"
+              ]
+            }
+          }
+        },
+        {
+          "code": "400",
+          "body": {
+            "format": "json",
+            "schema": {
+              "content": {
+                "tokenType": "reference",
+                "type": "@bar",
+                "scalarValue": "@bar",
+                "optional": false
+              },
+              "example": "{\"bar\":2}",
+              "notation": "jsight",
+              "usedUserTypes": [
+                "@bar"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "http POST /mixins": {
+      "id": "http POST /mixins",
+      "protocol": "http",
+      "httpMethod": "POST",
+      "path": "/mixins",
+      "tags": [
+        "@mixins"
+      ],
+      "responses": [
+        {
+          "code": "200",
+          "body": {
+            "format": "json",
+            "schema": {
+              "content": {
+                "tokenType": "reference",
+                "type": "@foo",
+                "scalarValue": "@foo",
+                "optional": false
+              },
+              "example": "{\"foo\":1}",
+              "notation": "jsight",
+              "usedUserTypes": [
+                "@foo"
+              ]
+            }
+          }
+        },
+        {
+          "code": "400",
+          "body": {
+            "format": "json",
+            "schema": {
+              "content": {
+                "tokenType": "reference",
+                "type": "@bar",
+                "scalarValue": "@bar",
+                "optional": false
+              },
+              "example": "{\"bar\":2}",
+              "notation": "jsight",
+              "usedUserTypes": [
+                "@bar"
+              ]
+            }
+          }
+        }
+      ]
+    }
+  },
+  "jsight": "0.3",
+  "jdocExchangeVersion": "2.0.0"
+}

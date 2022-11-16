@@ -1,0 +1,244 @@
+{
+  "tags": {
+    "@cat": {
+      "name": "@cat",
+      "title": "/cat",
+      "interactionGroups": [
+        {
+          "protocol": "http",
+          "interactions": [
+            "http GET /cat"
+          ]
+        }
+      ]
+    },
+    "@dog": {
+      "name": "@dog",
+      "title": "/dog",
+      "interactionGroups": [
+        {
+          "protocol": "http",
+          "interactions": [
+            "http GET /dog"
+          ]
+        }
+      ]
+    }
+  },
+  "interactions": {
+    "http GET /cat": {
+      "id": "http GET /cat",
+      "protocol": "http",
+      "path": "/cat",
+      "tags": [
+        "@cat"
+      ],
+      "responses": [
+        {
+          "code": "200",
+          "body": {
+            "format": "binary",
+            "schema": {
+              "notation": "any"
+            }
+          }
+        },
+        {
+          "code": "300",
+          "body": {
+            "format": "binary",
+            "schema": {
+              "notation": "any"
+            }
+          }
+        },
+        {
+          "code": "301",
+          "body": {
+            "format": "binary",
+            "schema": {
+              "notation": "any"
+            }
+          }
+        },
+        {
+          "code": "400",
+          "body": {
+            "format": "binary",
+            "schema": {
+              "notation": "any"
+            }
+          }
+        },
+        {
+          "code": "404",
+          "body": {
+            "format": "binary",
+            "schema": {
+              "notation": "any"
+            }
+          }
+        },
+        {
+          "code": "409",
+          "headers": {
+            "schema": {
+              "content": {
+                "tokenType": "object",
+                "type": "object",
+                "children": [
+                  {
+                    "key": "Authorization",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "Basic dG9tQGNhdC5jb206YWJjMTIz=",
+                    "rules": [
+                      {
+                        "key": "regex",
+                        "tokenType": "string",
+                        "scalarValue": "Basic [A-Za-z0-9+/=]+"
+                      }
+                    ],
+                    "optional": false
+                  },
+                  {
+                    "key": "Content-Type",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "application/json",
+                    "rules": [
+                      {
+                        "key": "const",
+                        "tokenType": "boolean",
+                        "scalarValue": "true"
+                      }
+                    ],
+                    "optional": false
+                  }
+                ],
+                "optional": false
+              },
+              "example": "{\"Authorization\":\"Basic dG9tQGNhdC5jb206YWJjMTIz=\",\"Content-Type\":\"application/json\"}",
+              "notation": "jsight"
+            }
+          },
+          "body": {
+            "format": "binary",
+            "schema": {
+              "notation": "any"
+            }
+          }
+        }
+      ],
+      "httpMethod": "GET"
+    },
+    "http GET /dog": {
+      "id": "http GET /dog",
+      "protocol": "http",
+      "path": "/dog",
+      "tags": [
+        "@dog"
+      ],
+      "responses": [
+        {
+          "code": "200",
+          "body": {
+            "format": "binary",
+            "schema": {
+              "notation": "any"
+            }
+          }
+        },
+        {
+          "code": "300",
+          "body": {
+            "format": "binary",
+            "schema": {
+              "notation": "any"
+            }
+          }
+        },
+        {
+          "code": "301",
+          "body": {
+            "format": "binary",
+            "schema": {
+              "notation": "any"
+            }
+          }
+        },
+        {
+          "code": "400",
+          "body": {
+            "format": "binary",
+            "schema": {
+              "notation": "any"
+            }
+          }
+        },
+        {
+          "code": "404",
+          "body": {
+            "format": "binary",
+            "schema": {
+              "notation": "any"
+            }
+          }
+        },
+        {
+          "code": "409",
+          "headers": {
+            "schema": {
+              "content": {
+                "tokenType": "object",
+                "type": "object",
+                "children": [
+                  {
+                    "key": "Authorization",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "Basic dG9tQGNhdC5jb206YWJjMTIz=",
+                    "rules": [
+                      {
+                        "key": "regex",
+                        "tokenType": "string",
+                        "scalarValue": "Basic [A-Za-z0-9+/=]+"
+                      }
+                    ],
+                    "optional": false
+                  },
+                  {
+                    "key": "Content-Type",
+                    "tokenType": "string",
+                    "type": "string",
+                    "scalarValue": "application/json",
+                    "rules": [
+                      {
+                        "key": "const",
+                        "tokenType": "boolean",
+                        "scalarValue": "true"
+                      }
+                    ],
+                    "optional": false
+                  }
+                ],
+                "optional": false
+              },
+              "example": "{\"Authorization\":\"Basic dG9tQGNhdC5jb206YWJjMTIz=\",\"Content-Type\":\"application/json\"}",
+              "notation": "jsight"
+            }
+          },
+          "body": {
+            "format": "binary",
+            "schema": {
+              "notation": "any"
+            }
+          }
+        }
+      ],
+      "httpMethod": "GET"
+    }
+  },
+  "jsight": "0.3",
+  "jdocExchangeVersion": "2.0.0"
+}

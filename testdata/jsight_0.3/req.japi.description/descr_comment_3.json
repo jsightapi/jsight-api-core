@@ -1,0 +1,51 @@
+{
+  "tags": {
+    "@_": {
+      "name": "@_",
+      "title": "/",
+      "interactionGroups": [
+        {
+          "protocol": "http",
+          "interactions": [
+            "http GET /"
+          ]
+        }
+      ]
+    },
+    "@user": {
+      "name": "@user",
+      "title": "/user",
+      "interactionGroups": [
+        {
+          "protocol": "http",
+          "interactions": [
+            "http GET /user"
+          ]
+        }
+      ]
+    }
+  },
+  "interactions": {
+    "http GET /": {
+      "id": "http GET /",
+      "protocol": "http",
+      "path": "/",
+      "tags": [
+        "@_"
+      ],
+      "description": "      API of Catsbook.\n\n# header",
+      "httpMethod": "GET"
+    },
+    "http GET /user": {
+      "id": "http GET /user",
+      "protocol": "http",
+      "path": "/user",
+      "tags": [
+        "@user"
+      ],
+      "httpMethod": "GET"
+    }
+  },
+  "jsight": "0.3",
+  "jdocExchangeVersion": "2.0.0"
+}

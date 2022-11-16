@@ -1,0 +1,92 @@
+{
+  "tags": {
+    "@cats": {
+      "name": "@cats",
+      "title": "/cats",
+      "interactionGroups": [
+        {
+          "protocol": "http",
+          "interactions": [
+            "http GET /cats/{name}"
+          ]
+        }
+      ]
+    }
+  },
+  "userTypes": {
+    "@catName": {
+      "schema": {
+        "content": {
+          "tokenType": "string",
+          "type": "string",
+          "scalarValue": "Tom",
+          "rules": [
+            {
+              "key": "minLength",
+              "tokenType": "number",
+              "scalarValue": "3"
+            }
+          ],
+          "optional": false
+        },
+        "example": "\"Tom\"",
+        "notation": "jsight"
+      }
+    },
+    "@dogName": {
+      "schema": {
+        "content": {
+          "tokenType": "string",
+          "type": "string",
+          "scalarValue": "Bo",
+          "rules": [
+            {
+              "key": "minLength",
+              "tokenType": "number",
+              "scalarValue": "2"
+            }
+          ],
+          "optional": false
+        },
+        "example": "\"Bo\"",
+        "notation": "jsight"
+      }
+    }
+  },
+  "interactions": {
+    "http GET /cats/{name}": {
+      "id": "http GET /cats/{name}",
+      "protocol": "http",
+      "httpMethod": "GET",
+      "path": "/cats/{name}",
+      "pathVariables": {
+        "schema": {
+          "content": {
+            "tokenType": "object",
+            "type": "object",
+            "children": [
+              {
+                "key": "name",
+                "tokenType": "reference",
+                "type": "mixed",
+                "scalarValue": "@catName | @dogName",
+                "optional": false
+              }
+            ],
+            "optional": false
+          },
+          "notation": "jsight",
+          "usedUserTypes": [
+            "@catName",
+            "@dogName"
+          ]
+        }
+      },
+      "tags": [
+        "@cats"
+      ]
+    }
+  },
+  "jsight": "0.3",
+  "jdocExchangeVersion": "2.0.0"
+}

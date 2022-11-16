@@ -1,0 +1,81 @@
+{
+  "tags": {
+    "@_": {
+      "name": "@_",
+      "title": "/",
+      "interactionGroups": [
+        {
+          "protocol": "http",
+          "interactions": [
+            "http GET /"
+          ]
+        }
+      ]
+    }
+  },
+  "userTypes": {
+    "@user": {
+      "schema": {
+        "content": {
+          "tokenType": "object",
+          "type": "object",
+          "children": [
+            {
+              "key": "name",
+              "tokenType": "string",
+              "type": "string",
+              "scalarValue": "John",
+              "optional": false
+            },
+            {
+              "key": "TYPE",
+              "tokenType": "string",
+              "type": "enum",
+              "scalarValue": "user",
+              "rules": [
+                {
+                  "key": "enum",
+                  "tokenType": "array",
+                  "children": [
+                    {
+                      "tokenType": "string",
+                      "scalarValue": "user"
+                    },
+                    {
+                      "tokenType": "string",
+                      "scalarValue": "admin"
+                    }
+                  ]
+                }
+              ],
+              "optional": false
+            },
+            {
+              "key": "age",
+              "tokenType": "number",
+              "type": "integer",
+              "scalarValue": "20",
+              "optional": false
+            }
+          ],
+          "optional": false
+        },
+        "example": "{\"name\":\"John\",\"TYPE\":\"user\",\"age\":20}",
+        "notation": "jsight"
+      }
+    }
+  },
+  "interactions": {
+    "http GET /": {
+      "id": "http GET /",
+      "protocol": "http",
+      "path": "/",
+      "tags": [
+        "@_"
+      ],
+      "httpMethod": "GET"
+    }
+  },
+  "jsight": "0.3",
+  "jdocExchangeVersion": "2.0.0"
+}

@@ -1,0 +1,13 @@
+{
+	"tags": {},
+	"userTypes": {
+		"@cat": {
+			"schema": {
+				"notation": "empty"
+			}
+		}
+	},
+	"interactions": {},
+	"jsight": "0.3",
+	"jdocExchangeVersion": "2.0.0"
+}

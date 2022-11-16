@@ -1,0 +1,85 @@
+{
+  "tags": {
+    "@cat": {
+      "name": "@cat",
+      "title": "/cat",
+      "interactionGroups": [
+        {
+          "protocol": "http",
+          "interactions": [
+            "http GET /cat"
+          ]
+        }
+      ]
+    }
+  },
+  "interactions": {
+    "http GET /cat": {
+      "id": "http GET /cat",
+      "protocol": "http",
+      "path": "/cat",
+      "tags": [
+        "@cat"
+      ],
+      "responses": [
+        {
+          "code": "200",
+          "body": {
+            "format": "binary",
+            "schema": {
+              "notation": "any"
+            }
+          }
+        },
+        {
+          "code": "300",
+          "body": {
+            "format": "binary",
+            "schema": {
+              "notation": "any"
+            }
+          }
+        },
+        {
+          "code": "301",
+          "body": {
+            "format": "binary",
+            "schema": {
+              "notation": "any"
+            }
+          }
+        },
+        {
+          "code": "400",
+          "body": {
+            "format": "binary",
+            "schema": {
+              "notation": "any"
+            }
+          }
+        },
+        {
+          "code": "404",
+          "body": {
+            "format": "binary",
+            "schema": {
+              "notation": "any"
+            }
+          }
+        },
+        {
+          "code": "409",
+          "body": {
+            "format": "binary",
+            "schema": {
+              "notation": "any"
+            }
+          }
+        }
+      ],
+      "httpMethod": "GET"
+    }
+  },
+  "jsight": "0.3",
+  "jdocExchangeVersion": "2.0.0"
+}

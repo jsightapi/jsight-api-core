@@ -1,0 +1,85 @@
+{
+  "tags": {
+    "@cats": {
+      "name": "@cats",
+      "title": "/cats",
+      "interactionGroups": [
+        {
+          "protocol": "http",
+          "interactions": [
+            "http GET /cats"
+          ]
+        }
+      ]
+    }
+  },
+  "userTypes": {
+    "@cat": {
+      "schema": {
+        "content": {
+          "tokenType": "object",
+          "type": "object",
+          "children": [
+            {
+              "key": "id",
+              "tokenType": "number",
+              "type": "integer",
+              "scalarValue": "1",
+              "optional": false
+            }
+          ],
+          "optional": false
+        },
+        "example": "{\"id\":1}",
+        "notation": "jsight"
+      }
+    }
+  },
+  "interactions": {
+    "http GET /cats": {
+      "id": "http GET /cats",
+      "protocol": "http",
+      "path": "/cats",
+      "tags": [
+        "@cats"
+      ],
+      "responses": [
+        {
+          "code": "200",
+          "body": {
+            "format": "json",
+            "schema": {
+              "content": {
+                "tokenType": "array",
+                "type": "array",
+                "children": [
+                  {
+                    "tokenType": "reference",
+                    "type": "@cat",
+                    "scalarValue": "@cat",
+                    "optional": true
+                  },
+                  {
+                    "tokenType": "reference",
+                    "type": "@cat",
+                    "scalarValue": "@cat",
+                    "optional": true
+                  }
+                ],
+                "optional": false
+              },
+              "example": "[{\"id\":1},{\"id\":1}]",
+              "notation": "jsight",
+              "usedUserTypes": [
+                "@cat"
+              ]
+            }
+          }
+        }
+      ],
+      "httpMethod": "GET"
+    }
+  },
+  "jsight": "0.3",
+  "jdocExchangeVersion": "2.0.0"
+}

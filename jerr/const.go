@@ -1,0 +1,33 @@
+package jerr
+
+const (
+	InternalServerError                                 = "internal server error" // should not occur
+	RequiredParameterNotSpecified                       = "required parameter(s) not specified"
+	ParametersAreForbiddenForTheDirective               = "parameters are forbidden for the directive"
+	AnnotationIsForbiddenForTheDirective                = "annotation is forbidden for the directive"
+	EmptyDescription                                    = "empty description"
+	EmptyBody                                           = "empty body"
+	HTTPResourceNotFound                                = "resource not found"
+	ResponsesIsEmpty                                    = "responses is empty"
+	RequestIsEmpty                                      = "request is empty"
+	NotUniqueDirective                                  = "not a unique directive"
+	IncorrectParameter                                  = "incorrect parameter"
+	BodyMustBeObject                                    = "body must be object"
+	IsNotHTTPRequestMethod                              = "directive is not a HTTP request method"
+	HTTPMethodNotFound                                  = "HTTP method not found"
+	PathNotFound                                        = "path not found"
+	IncorrectPath                                       = "incorrect path"
+	CannotUseTheTypeAndSchemaNotationParametersTogether = "cannot use the Type and SchemaNotation parameters together"
+	IncorrectContextOfDirective                         = "incorrect context of directive"
+	ThereIsNoExplicitContextForClosure                  = "there is no explicit context for closure"
+	DirectiveNotAllowed                                 = "directive not allowed"
+	JsonRpcMethodNotFound                               = "JSON-RPC method not found"
+	JsonRpcResourceNotFound                             = "resource not found"
+	ApartFromTheOpeningParenthesis                      = "apart from the opening parenthesis, there should be nothing else on this line" //nolint:lll
+	DuplicateNames                                      = "duplicate names are not allowed"
+	TagNotFound                                         = "tag not found"
+	UserTypeIsNotAnObject                               = "the user type is not an object"
+	UserTypeNotFound                                    = "user type not found"
+	NotAllowedToOverrideTheProperty                     = "it is not allowed to override the %q property from the user type %q" //nolint:lll
+	MultiLevelPropertyIsNotAllowed                      = "the multi-level property is not allowed in the Path directive"       //nolint:lll
+)

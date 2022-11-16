@@ -1,0 +1,77 @@
+{
+  "tags": {},
+  "userTypes": {
+    "@cat": {
+      "annotation": "A cat.",
+      "schema": {
+        "content": {
+          "tokenType": "object",
+          "type": "object",
+          "children": [
+            {
+              "rules": [
+                {
+                  "key": "additionalProperties",
+                  "tokenType": "boolean",
+                  "scalarValue": "true"
+                }
+              ],
+              "key": "topFriends",
+              "tokenType": "object",
+              "type": "object",
+              "children": [
+                {
+                  "key": "@petName",
+                  "tokenType": "reference",
+                  "type": "mixed",
+                  "scalarValue": "@cat | @pig",
+                  "isKeyUserTypeRef": true,
+                  "optional": false
+                }
+              ],
+              "optional": false
+            }
+          ],
+          "optional": false
+        },
+        "example": "{\"topFriends\":{\"C Yi\":{\"topFriends\":{\"C Yi\":{\"topFriends\":{}}}}}}",
+        "notation": "jsight",
+        "usedUserTypes": [
+          "@cat",
+          "@pig",
+          "@petName"
+        ]
+      }
+    },
+    "@pig": {
+      "schema": {
+        "content": {
+          "tokenType": "object",
+          "type": "object",
+          "children": [
+            {
+              "key": "name",
+              "tokenType": "string",
+              "type": "string",
+              "scalarValue": "Tom",
+              "optional": false
+            }
+          ],
+          "optional": false
+        },
+        "example": "{\"name\":\"Tom\"}",
+        "notation": "jsight"
+      }
+    },
+    "@petName": {
+      "schema": {
+        "content": "^[A-Z][a-z]*( [A-Z][a-z]*)*$",
+        "example": "C Yi",
+        "notation": "regex"
+      }
+    }
+  },
+  "interactions": {},
+  "jsight": "0.3",
+  "jdocExchangeVersion": "2.0.0"
+}

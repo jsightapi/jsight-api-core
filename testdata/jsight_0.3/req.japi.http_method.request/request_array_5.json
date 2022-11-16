@@ -1,0 +1,94 @@
+{
+  "tags": {
+    "@cats": {
+      "name": "@cats",
+      "title": "/cats",
+      "interactionGroups": [
+        {
+          "protocol": "http",
+          "interactions": [
+            "http POST /cats"
+          ]
+        }
+      ]
+    },
+    "@cat": {
+      "name": "@cat",
+      "title": "/cat",
+      "interactionGroups": [
+        {
+          "protocol": "http",
+          "interactions": [
+            "http GET /cat"
+          ]
+        }
+      ]
+    }
+  },
+  "interactions": {
+    "http POST /cats": {
+      "id": "http POST /cats",
+      "protocol": "http",
+      "httpMethod": "POST",
+      "path": "/cats",
+      "tags": [
+        "@cats"
+      ],
+      "request": {
+        "body": {
+          "format": "json",
+          "schema": {
+            "content": {
+              "tokenType": "array",
+              "type": "array",
+              "children": [
+                {
+                  "tokenType": "string",
+                  "type": "string",
+                  "scalarValue": "sinus",
+                  "optional": true
+                }
+              ],
+              "optional": false
+            },
+            "example": "[\"sinus\"]",
+            "notation": "jsight"
+          }
+        }
+      }
+    },
+    "http GET /cat": {
+      "id": "http GET /cat",
+      "protocol": "http",
+      "httpMethod": "GET",
+      "path": "/cat",
+      "tags": [
+        "@cat"
+      ],
+      "request": {
+        "body": {
+          "format": "json",
+          "schema": {
+            "content": {
+              "tokenType": "array",
+              "type": "array",
+              "children": [
+                {
+                  "tokenType": "number",
+                  "type": "integer",
+                  "scalarValue": "1",
+                  "optional": true
+                }
+              ],
+              "optional": false
+            },
+            "example": "[1]",
+            "notation": "jsight"
+          }
+        }
+      }
+    }
+  },
+  "jsight": "0.3",
+  "jdocExchangeVersion": "2.0.0"
+}

@@ -1,0 +1,58 @@
+{
+  "tags": {
+    "@dogs": {
+      "name": "@dogs",
+      "title": "/dogs",
+      "interactionGroups": [
+        {
+          "protocol": "http",
+          "interactions": [
+            "http GET /dogs"
+          ]
+        }
+      ]
+    }
+  },
+  "interactions": {
+    "http GET /dogs": {
+      "id": "http GET /dogs",
+      "protocol": "http",
+      "httpMethod": "GET",
+      "path": "/dogs",
+      "tags": [
+        "@dogs"
+      ],
+      "query": {
+        "format": "htmlFormEncoded",
+        "schema": {
+          "content": {
+            "tokenType": "object",
+            "type": "object",
+            "children": [
+              {
+                "note": "Filter by hunting ability.",
+                "key": "canHunt",
+                "tokenType": "boolean",
+                "type": "boolean",
+                "scalarValue": "true",
+                "rules": [
+                  {
+                    "key": "optional",
+                    "tokenType": "boolean",
+                    "scalarValue": "true"
+                  }
+                ],
+                "optional": true
+              }
+            ],
+            "optional": false
+          },
+          "example": "{\"canHunt\":true}",
+          "notation": "jsight"
+        }
+      }
+    }
+  },
+  "jsight": "0.3",
+  "jdocExchangeVersion": "2.0.0"
+}

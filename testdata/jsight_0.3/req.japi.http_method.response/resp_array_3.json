@@ -1,0 +1,73 @@
+{
+  "tags": {
+    "@cat": {
+      "name": "@cat",
+      "title": "/cat",
+      "interactionGroups": [
+        {
+          "protocol": "http",
+          "interactions": [
+            "http POST /cat"
+          ]
+        }
+      ]
+    }
+  },
+  "interactions": {
+    "http POST /cat": {
+      "id": "http POST /cat",
+      "protocol": "http",
+      "httpMethod": "POST",
+      "path": "/cat",
+      "tags": [
+        "@cat"
+      ],
+      "responses": [
+        {
+          "code": "200",
+          "body": {
+            "format": "json",
+            "schema": {
+              "content": {
+                "tokenType": "array",
+                "type": "array",
+                "children": [
+                  {
+                    "tokenType": "array",
+                    "type": "array",
+                    "children": [
+                      {
+                        "tokenType": "number",
+                        "type": "integer",
+                        "scalarValue": "1",
+                        "optional": true
+                      },
+                      {
+                        "tokenType": "number",
+                        "type": "integer",
+                        "scalarValue": "2",
+                        "optional": true
+                      },
+                      {
+                        "tokenType": "number",
+                        "type": "integer",
+                        "scalarValue": "3",
+                        "optional": true
+                      }
+                    ],
+                    "optional": true
+                  }
+                ],
+                "optional": false
+              },
+              "example": "[[1,2,3]]",
+              "notation": "jsight"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "jsight": "0.3",
+  "jdocExchangeVersion": "2.0.0"
+}

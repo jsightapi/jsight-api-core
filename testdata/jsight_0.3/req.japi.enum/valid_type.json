@@ -1,0 +1,77 @@
+{
+  "tags": {},
+  "userTypes": {
+    "@animal": {
+      "schema": {
+        "content": {
+          "tokenType": "object",
+          "type": "object",
+          "children": [
+            {
+              "key": "id",
+              "tokenType": "number",
+              "type": "integer",
+              "scalarValue": "1",
+              "optional": false
+            },
+            {
+              "key": "kind",
+              "tokenType": "string",
+              "type": "enum",
+              "scalarValue": "WOLF",
+              "rules": [
+                {
+                  "key": "enum",
+                  "tokenType": "reference",
+                  "scalarValue": "@animalKindEnum"
+                }
+              ],
+              "optional": false
+            }
+          ],
+          "optional": false
+        },
+        "example": "{\"id\":1,\"kind\":\"WOLF\"}",
+        "notation": "jsight"
+      }
+    }
+  },
+  "userEnums": {
+    "@animalKindEnum": {
+      "annotation": "",
+      "description": "",
+      "value": {
+        "tokenType": "array",
+        "children": [
+          {
+            "tokenType": "string",
+            "scalarValue": "CAT"
+          },
+          {
+            "tokenType": "string",
+            "scalarValue": "DOG"
+          },
+          {
+            "tokenType": "string",
+            "scalarValue": "PIG"
+          },
+          {
+            "tokenType": "string",
+            "scalarValue": "WOLF"
+          },
+          {
+            "tokenType": "string",
+            "scalarValue": "LION"
+          },
+          {
+            "tokenType": "string",
+            "scalarValue": "TIGER"
+          }
+        ]
+      }
+    }
+  },
+  "interactions": {},
+  "jsight": "0.3",
+  "jdocExchangeVersion": "2.0.0"
+}

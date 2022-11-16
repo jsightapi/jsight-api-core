@@ -1,0 +1,72 @@
+{
+  "tags": {
+    "@cats": {
+      "name": "@cats",
+      "title": "/cats",
+      "interactionGroups": [
+        {
+          "protocol": "http",
+          "interactions": [
+            "http POST /cats"
+          ]
+        }
+      ]
+    }
+  },
+  "interactions": {
+    "http POST /cats": {
+      "id": "http POST /cats",
+      "protocol": "http",
+      "httpMethod": "POST",
+      "path": "/cats",
+      "tags": [
+        "@cats"
+      ],
+      "request": {
+        "headers": {
+          "schema": {
+            "content": {
+              "tokenType": "object",
+              "type": "object",
+              "children": [
+                {
+                  "key": "Content-Type",
+                  "tokenType": "string",
+                  "type": "string",
+                  "scalarValue": "application/json",
+                  "optional": false
+                }
+              ],
+              "optional": false
+            },
+            "example": "{\"Content-Type\":\"application/json\"}",
+            "notation": "jsight"
+          }
+        },
+        "body": {
+          "format": "json",
+          "schema": {
+            "content": {
+              "tokenType": "object",
+              "type": "object",
+              "children": [
+                {
+                  "key": "cat",
+                  "tokenType": "number",
+                  "type": "integer",
+                  "scalarValue": "1",
+                  "optional": false
+                }
+              ],
+              "optional": false
+            },
+            "example": "{\"cat\":1}",
+            "notation": "jsight"
+          }
+        }
+      }
+    }
+  },
+  "jsight": "0.3",
+  "jdocExchangeVersion": "2.0.0"
+}

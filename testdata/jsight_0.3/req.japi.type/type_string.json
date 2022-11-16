@@ -1,0 +1,20 @@
+{
+	"tags": {},
+	"userTypes": {
+		"@cat": {
+			"schema": {
+				"content": {
+					"tokenType": "string",
+					"type": "string",
+					"scalarValue": "kusja",
+					"optional": false
+				},
+				"example": "\"kusja\"",
+				"notation": "jsight"
+			}
+		}
+	},
+	"interactions": {},
+	"jsight": "0.3",
+	"jdocExchangeVersion": "2.0.0"
+}

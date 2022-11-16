@@ -1,0 +1,27 @@
+{
+  "tags": {},
+  "userTypes": {
+    "@dogId": {
+      "schema": {
+        "content": {
+          "tokenType": "string",
+          "type": "string",
+          "scalarValue": "DOG-123",
+          "rules": [
+            {
+              "key": "regex",
+              "tokenType": "string",
+              "scalarValue": "DOG"
+            }
+          ],
+          "optional": false
+        },
+        "example": "\"DOG-123\"",
+        "notation": "jsight"
+      }
+    }
+  },
+  "interactions": {},
+  "jsight": "0.3",
+  "jdocExchangeVersion": "2.0.0"
+}

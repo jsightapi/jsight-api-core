@@ -1,0 +1,30 @@
+{
+  "tags": {
+    "@users": {
+      "name": "@users",
+      "title": "/users",
+      "interactionGroups": [
+        {
+          "protocol": "http",
+          "interactions": [
+            "http GET /users"
+          ]
+        }
+      ]
+    }
+  },
+  "interactions": {
+    "http GET /users": {
+      "id": "http GET /users",
+      "protocol": "http",
+      "path": "/users",
+      "tags": [
+        "@users"
+      ],
+      "annotation": "some annotation ### extra annotation ###",
+      "httpMethod": "GET"
+    }
+  },
+  "jsight": "0.3",
+  "jdocExchangeVersion": "2.0.0"
+}

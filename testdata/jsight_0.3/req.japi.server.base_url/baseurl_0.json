@@ -1,0 +1,12 @@
+{
+	"tags": {},
+	"servers": {
+		"@CATS_API_SERVER": {
+			"annotation": "Server catsbook.com API",
+			"baseUrl": "https://{env}.catsbook.com/api/{version}/{locale}/"
+		}
+	},
+	"interactions": {},
+	"jsight": "0.3",
+	"jdocExchangeVersion": "2.0.0"
+}
