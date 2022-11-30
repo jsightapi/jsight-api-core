@@ -36,21 +36,12 @@ func newExchangeJSightSchema(s *jschema.JSchema) *ExchangeJSightSchema {
 }
 
 func NewExchangeJSightSchema[T bytes.Byter](
-	name string,
 	b T,
 	coreUserTypes *UserSchemas,
 	coreRules map[string]schema.Rule,
 	catalogUserTypes *UserTypes,
 ) (*ExchangeJSightSchema, error) {
-	if s, ok := coreUserTypes.Get(name); ok {
-		if ss, ok := s.(*jschema.JSchema); ok {
-			es := newExchangeJSightSchema(ss)
-			es.catalogUserTypes = catalogUserTypes
-			return es, nil
-		}
-	}
-
-	es := newExchangeJSightSchema(jschema.New(name, b))
+	es := newExchangeJSightSchema(jschema.New("", b))
 	es.catalogUserTypes = catalogUserTypes
 
 	for n, v := range coreRules {

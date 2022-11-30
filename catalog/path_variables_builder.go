@@ -28,8 +28,11 @@ func (b PathVariablesBuilder) Build() *PathVariables {
 	uutNames := b.objectBuilder.UserTypeNames()
 	for _, name := range uutNames {
 		if ut, ok := b.catalogUserTypes.Get(name); ok {
-			if es, ok := ut.Schema.(*ExchangeJSightSchema); ok {
+			switch es := ut.Schema.(type) {
+			case *ExchangeJSightSchema:
 				b.objectBuilder.AddType(name, es.JSchema)
+			case *ExchangeRegexSchema:
+				b.objectBuilder.AddType(name, es.RSchema)
 			}
 		}
 	}

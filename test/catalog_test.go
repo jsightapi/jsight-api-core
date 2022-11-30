@@ -14,7 +14,7 @@ import (
 func TestGetAllTypesSchemas(t *testing.T) {
 	filename := filepath.Join(GetTestDataDir(), "jsight_0.3", "others", "full.jst")
 	f := reader.Read(filename)
-	japi := core.NewJApiCore(f, core.WithFixedSeedForRegex())
+	japi := core.NewJApiCore(f)
 	err := japi.BuildCatalog()
 	require.Nil(t, err)
 

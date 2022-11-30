@@ -6,7 +6,8 @@ import (
 
 	schema "github.com/jsightapi/jsight-schema-core"
 	"github.com/jsightapi/jsight-schema-core/bytes"
-	"github.com/jsightapi/jsight-schema-core/kit"
+	"github.com/jsightapi/jsight-schema-core/notations/jschema"
+	"github.com/jsightapi/jsight-schema-core/notations/regex"
 	"github.com/jsightapi/jsight-schema-core/rules/enum"
 
 	"github.com/jsightapi/jsight-api-core/directive"
@@ -407,8 +408,7 @@ func (c *Catalog) AddBaseURL(serverName, path string) error {
 
 func (c *Catalog) AddType(
 	d directive.Directive,
-	tt *UserSchemas,
-	rr map[string]schema.Rule,
+	coreUserTypes *UserSchemas,
 ) *jerr.JApiError {
 	name := d.NamedParameter("Name")
 
@@ -420,6 +420,7 @@ func (c *Catalog) AddType(
 		Annotation: d.Annotation,
 		Directive:  d,
 	}
+
 	typeNotation, err := notation.NewSchemaNotation(d.NamedParameter("SchemaNotation"))
 	if err != nil {
 		return d.KeywordError(err.Error())
@@ -427,21 +428,14 @@ func (c *Catalog) AddType(
 
 	switch typeNotation {
 	case notation.SchemaNotationJSight:
-		if !d.BodyCoords.IsSet() {
-			return d.KeywordError(jerr.EmptyBody)
-		}
-		userType.Schema, err = NewExchangeJSightSchema(name, d.BodyCoords.Read().Data(), tt, rr, c.UserTypes)
-		if err != nil {
-			return adoptErrorForAddType(d, err)
-		}
+		s, _ := coreUserTypes.Get(name)
+		es := newExchangeJSightSchema(s.(*jschema.JSchema))
+		es.catalogUserTypes = c.UserTypes
+		userType.Schema = es
 	case notation.SchemaNotationRegex:
-		if !d.BodyCoords.IsSet() {
-			return d.KeywordError(jerr.EmptyBody)
-		}
-		userType.Schema, err = PrepareRegexSchema(name, d.BodyCoords.Read())
-		if err != nil {
-			return adoptErrorForAddType(d, err)
-		}
+		s, _ := coreUserTypes.Get(name)
+		es := newExchangeRegexSchema(s.(*regex.RSchema))
+		userType.Schema = es
 	case notation.SchemaNotationAny, notation.SchemaNotationEmpty:
 		userType.Schema = NewExchangePseudoSchema(typeNotation)
 	}
@@ -636,12 +630,4 @@ func (*Catalog) enumDirectiveToUserRule(d *directive.Directive, e *enum.Enum) (*
 		Value:      r,
 		Directive:  d,
 	}, nil
-}
-
-func adoptErrorForAddType(d directive.Directive, err error) *jerr.JApiError {
-	var e kit.Error
-	if errors.As(err, &e) {
-		return d.BodyErrorIndex(e.Message(), e.Position())
-	}
-	return d.KeywordError(err.Error())
 }

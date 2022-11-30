@@ -12,7 +12,7 @@ import (
 
 func TestRegexMarshaller_Marshal(t *testing.T) {
 	t.Run("positive", func(t *testing.T) {
-		s, err := PrepareRegexSchema("foo", bytes.NewBytes("/bar-\\d/"))
+		s, err := NewExchangeRegexSchema(bytes.NewBytes("/bar-\\d/"))
 		require.NoError(t, err)
 
 		n, err := s.GetAST()
@@ -20,6 +20,7 @@ func TestRegexMarshaller_Marshal(t *testing.T) {
 		assert.Equal(t, schema.ASTNode{
 			TokenType:  schema.TokenTypeString,
 			SchemaType: schema.TokenTypeString,
+			Rules:      &schema.RuleASTNodes{},
 			Value:      "/bar-\\d/",
 		}, n)
 
@@ -29,7 +30,7 @@ func TestRegexMarshaller_Marshal(t *testing.T) {
 	})
 
 	t.Run("negative", func(t *testing.T) {
-		s, err := PrepareRegexSchema("", bytes.NewBytes("invalid"))
+		s, err := NewExchangeRegexSchema(bytes.NewBytes("invalid"))
 		require.NoError(t, err)
 
 		_, err = s.GetAST()

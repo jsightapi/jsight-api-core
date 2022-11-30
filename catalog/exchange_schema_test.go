@@ -40,7 +40,7 @@ func TestSchema_MarshalJSON_Order(t *testing.T) {
 
 	for _, c := range cc {
 		t.Run(c.schema, func(t *testing.T) {
-			s, err := NewExchangeJSightSchema("", []byte(c.schema), &UserSchemas{}, nil, &UserTypes{})
+			s, err := NewExchangeJSightSchema([]byte(c.schema), &UserSchemas{}, nil, &UserTypes{})
 			require.NoError(t, err)
 
 			err = s.Compile()

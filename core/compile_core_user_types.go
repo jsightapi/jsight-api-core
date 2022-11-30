@@ -40,24 +40,28 @@ func (core *JApiCore) compileUserTypes() *jerr.JApiError {
 }
 
 func (core *JApiCore) buildUserTypes() *jerr.JApiError {
-	core.rawUserTypes.EachSafe(func(k string, v *directive.Directive) {
-		switch notation.SchemaNotation(v.NamedParameter("SchemaNotation")) {
+	err := core.rawUserTypes.Each(func(k string, d *directive.Directive) error {
+		switch notation.SchemaNotation(d.NamedParameter("SchemaNotation")) {
 		case "", notation.SchemaNotationJSight:
-			if v.BodyCoords.IsSet() {
-				core.userTypes.Set(k, jschema.New(k, v.BodyCoords.Read()))
+			if !d.BodyCoords.IsSet() {
+				return d.KeywordError(jerr.EmptyBody)
 			}
+			core.userTypes.Set(k, jschema.New(k, d.BodyCoords.Read()))
 		case notation.SchemaNotationRegex:
-			var oo []regex.Option
-			if core.useFixedSeedForRegex {
-				oo = append(oo, regex.WithGeneratorSeed(0))
+			if !d.BodyCoords.IsSet() {
+				return d.KeywordError(jerr.EmptyBody)
 			}
-			core.userTypes.Set(k, regex.New(k, v.BodyCoords.Read(), oo...))
+			core.userTypes.Set(k, regex.New(k, d.BodyCoords.Read()))
 		default:
 			// nothing
 		}
+		return nil
 	})
+	if err != nil {
+		return adoptError(err)
+	}
 
-	err := core.userTypes.Each(func(n string, _ schema.Schema) error {
+	err = core.userTypes.Each(func(n string, _ schema.Schema) error {
 		return core.compileUserTypeWithAllDependencies(n)
 	})
 	return adoptError(err)

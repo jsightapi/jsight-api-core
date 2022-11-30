@@ -453,7 +453,7 @@
     "@petName": {
       "schema": {
         "content": "^[A-Z][a-z]*( [A-Z][a-z]*)*$",
-        "example": "C Yi",
+        "example": "U",
         "notation": "regex"
       }
     },

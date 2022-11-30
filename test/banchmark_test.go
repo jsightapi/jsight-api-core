@@ -4,7 +4,6 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/jsightapi/jsight-api-core/core"
 	"github.com/jsightapi/jsight-api-core/kit"
 )
 
@@ -15,7 +14,7 @@ func BenchmarkJAPI(b *testing.B) {
 	b.ResetTimer()
 
 	for i := 0; i < b.N; i++ {
-		j, je := kit.NewJapi(filename, core.WithFixedSeedForRegex())
+		j, je := kit.NewJapi(filename)
 		if je != nil {
 			b.Error(je)
 		}

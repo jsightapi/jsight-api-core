@@ -1,0 +1,10 @@
+JSIGHT 0.3
+
+GET /cats/{id}
+  Path
+  {
+    "id": @catId
+  }
+
+TYPE @catId regex
+  /CAT-\d+/

@@ -11,7 +11,6 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/jsightapi/jsight-api-core/core"
 	"github.com/jsightapi/jsight-api-core/jerr"
 	"github.com/jsightapi/jsight-api-core/kit"
 )
@@ -23,7 +22,7 @@ func TestValidateJapi(t *testing.T) {
 		positive := positiveJstFilenames(filenames)
 		for _, f := range positive {
 			t.Run(cutRepositoryPath(f), func(t *testing.T) {
-				_, je := kit.NewJapi(f, core.WithFixedSeedForRegex())
+				_, je := kit.NewJapi(f)
 				if je != nil {
 					logJAPIError(t, je)
 					t.FailNow()
@@ -36,7 +35,7 @@ func TestValidateJapi(t *testing.T) {
 		negative := negativeJstFilenames(filenames)
 		for _, f := range negative {
 			t.Run(cutRepositoryPath(f), func(t *testing.T) {
-				_, je := kit.NewJapi(f, core.WithFixedSeedForRegex())
+				_, je := kit.NewJapi(f)
 				require.NotNil(t, je)
 
 				logJAPIError(t, je)

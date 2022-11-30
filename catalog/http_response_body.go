@@ -38,12 +38,12 @@ func NewHTTPResponseBody(
 
 	switch f {
 	case SerializeFormatJSON:
-		s, err = NewExchangeJSightSchema("", b.Data(), tt, rr, catalogUserTypes)
+		s, err = NewExchangeJSightSchema(b.Data(), tt, rr, catalogUserTypes)
 		if err != nil {
 			return HTTPResponseBody{}, adoptErrorForResponseBody(d, err)
 		}
 	case SerializeFormatPlainString:
-		s, err = PrepareRegexSchema("", b)
+		s, err = NewExchangeRegexSchema(b)
 		if err != nil {
 			return HTTPResponseBody{}, adoptErrorForResponseBody(d, err)
 		}

@@ -639,7 +639,7 @@
     "@catId": {
       "schema": {
         "content": "CAT-\\d+",
-        "example": "CAT-4",
+        "example": "CAT-6",
         "notation": "regex"
       }
     },

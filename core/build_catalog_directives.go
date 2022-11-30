@@ -199,7 +199,7 @@ func (core *JApiCore) addType(d *directive.Directive) *jerr.JApiError {
 	if d.NamedParameter("Name") == "" {
 		return d.KeywordError(fmt.Sprintf("%s (%s)", jerr.RequiredParameterNotSpecified, "Name"))
 	}
-	return core.catalog.AddType(*d, core.userTypes, core.rules)
+	return core.catalog.AddType(*d, core.userTypes)
 }
 
 func (core *JApiCore) addURL(d *directive.Directive) *jerr.JApiError {
@@ -308,7 +308,6 @@ func (core *JApiCore) addQuery(d *directive.Directive) *jerr.JApiError {
 	}
 
 	s, err := catalog.NewExchangeJSightSchema(
-		"",
 		d.BodyCoords.Read(),
 		core.userTypes,
 		core.rules,
@@ -363,13 +362,13 @@ func (core *JApiCore) addRequest(d *directive.Directive) *jerr.JApiError {
 
 	switch {
 	case sn == notation.SchemaNotationJSight && typ != "" && !d.BodyCoords.IsSet():
-		if s, err = catalog.NewExchangeJSightSchema("", typ, core.userTypes, core.rules,
+		if s, err = catalog.NewExchangeJSightSchema(typ, core.userTypes, core.rules,
 			core.catalog.UserTypes); err == nil {
 			err = core.catalog.AddRequestBody(s, bodyFormat, *d)
 		}
 
 	case sn == notation.SchemaNotationJSight && typ == "" && d.BodyCoords.IsSet():
-		if s, err = catalog.NewExchangeJSightSchema("", d.BodyCoords.Read(), core.userTypes, core.rules, core.catalog.UserTypes); err == nil { //nolint:lll
+		if s, err = catalog.NewExchangeJSightSchema(d.BodyCoords.Read(), core.userTypes, core.rules, core.catalog.UserTypes); err == nil { //nolint:lll
 			err = core.catalog.AddRequestBody(s, bodyFormat, *d)
 		}
 		var e kit.Error
@@ -378,7 +377,7 @@ func (core *JApiCore) addRequest(d *directive.Directive) *jerr.JApiError {
 		}
 
 	case sn == notation.SchemaNotationRegex && typ == "" && d.BodyCoords.IsSet():
-		if s, err = catalog.PrepareRegexSchema("", d.BodyCoords.Read()); err == nil {
+		if s, err = catalog.NewExchangeRegexSchema(d.BodyCoords.Read()); err == nil {
 			err = core.catalog.AddRequestBody(s, bodyFormat, *d)
 		}
 		var e kit.Error
@@ -485,7 +484,7 @@ func (core *JApiCore) addHeaders(d *directive.Directive) *jerr.JApiError {
 	var s *catalog.ExchangeJSightSchema
 	var err error
 
-	s, err = catalog.NewExchangeJSightSchema("", d.BodyCoords.Read(), core.userTypes, core.rules, core.catalog.UserTypes) //nolint:lll
+	s, err = catalog.NewExchangeJSightSchema(d.BodyCoords.Read(), core.userTypes, core.rules, core.catalog.UserTypes) //nolint:lll
 	if err != nil {
 		var e kit.Error
 		if errors.As(err, &e) {
@@ -581,7 +580,7 @@ func (core *JApiCore) addJsonRpcSchema(
 	var s *catalog.ExchangeJSightSchema
 	var err error
 
-	s, err = catalog.NewExchangeJSightSchema("", d.BodyCoords.Read(), core.userTypes, core.rules, core.catalog.UserTypes) //nolint:lll
+	s, err = catalog.NewExchangeJSightSchema(d.BodyCoords.Read(), core.userTypes, core.rules, core.catalog.UserTypes) //nolint:lll
 	if err != nil {
 		var e kit.Error
 		if errors.As(err, &e) {

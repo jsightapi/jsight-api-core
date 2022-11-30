@@ -604,7 +604,7 @@ func TestNewExchangeJSightSchema(t *testing.T) {
 				}
 				rr := make(map[string]schema.Rule)
 
-				es, err := NewExchangeJSightSchema("", []byte(c.project), tt, rr, cut)
+				es, err := NewExchangeJSightSchema([]byte(c.project), tt, rr, cut)
 				require.NoError(t, err)
 
 				err = es.Compile()

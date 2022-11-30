@@ -6,6 +6,7 @@ import (
 	"github.com/jsightapi/jsight-schema-core/notations/jschema"
 	"github.com/jsightapi/jsight-schema-core/notations/jschema/ischema"
 	"github.com/jsightapi/jsight-schema-core/notations/jschema/loader"
+	"github.com/jsightapi/jsight-schema-core/notations/regex"
 	"github.com/jsightapi/jsight-schema-core/panics"
 )
 
@@ -52,10 +53,21 @@ func (b ObjectBuilder) UserTypeNames() []string {
 }
 
 func (b ObjectBuilder) AddType(name string, sc schema.Schema) {
-	if s, ok := sc.(*jschema.JSchema); ok {
+	switch s := sc.(type) {
+	case *jschema.JSchema:
 		b.schema.Inner.AddType(name, ischema.Type{
 			Schema:   s.Inner,
 			RootFile: s.File,
+		})
+
+	case *regex.RSchema:
+		js, err := jschema.FromRSchema(s)
+		if err != nil {
+			panic(err)
+		}
+		b.schema.Inner.AddType(name, ischema.Type{
+			Schema:   js.Inner,
+			RootFile: js.File,
 		})
 	}
 }

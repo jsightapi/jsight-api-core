@@ -3,7 +3,7 @@ module github.com/jsightapi/jsight-api-core
 go 1.19
 
 require (
-	github.com/jsightapi/jsight-schema-core v0.1.1
+	github.com/jsightapi/jsight-schema-core v0.1.2-0.20221130165047-275017002820
 	github.com/nsf/jsondiff v0.0.0-20210926074059-1e845ec5d249
 	github.com/stretchr/testify v1.8.1
 	golang.org/x/text v0.3.7
