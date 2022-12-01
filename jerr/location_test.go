@@ -15,16 +15,13 @@ func TestNewLocation(t *testing.T) {
 
 		l := NewLocation(file, index)
 
-		assert.Same(t, file, l.file)
+		assert.Same(t, file, l.File)
 
-		assert.Equal(t, index, l.index)
-		assert.Equal(t, index, l.Index())
+		assert.Equal(t, index, l.Index)
 
-		assert.Equal(t, "34", l.quote)
-		assert.Equal(t, "34", l.Quote())
+		assert.Equal(t, "34", l.Quote)
 
-		assert.Equal(t, bytes.Index(2), l.line)
-		assert.Equal(t, bytes.Index(2), l.Line())
+		assert.Equal(t, bytes.Index(2), l.Line)
 	})
 
 	t.Run("negative", func(t *testing.T) {

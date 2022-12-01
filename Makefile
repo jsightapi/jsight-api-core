@@ -1,5 +1,5 @@
-.PHONY: all
-all: generate fmt lint test
+.PHONY: dev
+dev: fmt lint test
 
 .PHONY: deps
 deps:

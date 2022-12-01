@@ -43,7 +43,7 @@ func TestValidateJapi(t *testing.T) {
 				want, err := wantIndex(f)
 				require.NoError(t, err)
 
-				assert.Equal(t, want, int(je.Index()))
+				assert.Equal(t, want, je.Index.Int())
 
 				expectedError, err := getExpectedError(f)
 				require.NoError(t, err)
@@ -116,10 +116,10 @@ func getActualErrorMessage(basePath string, je *jerr.JApiError) string {
 
 func logJAPIError(t *testing.T, e *jerr.JApiError) {
 	t.Log("Got:")
-	t.Log("- Line: " + strconv.Itoa(int(e.Line())))
-	t.Log("- Index: " + strconv.Itoa(int(e.Index())))
+	t.Log("- Line: " + e.Line.String())
+	t.Log("- Index: " + e.Index.String())
 	t.Log("- Message: " + e.Error())
-	t.Log("- Quote: " + e.Quote())
+	t.Log("- Quote: " + e.Quote)
 }
 
 func jstFilenames(dir string) []string {

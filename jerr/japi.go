@@ -33,7 +33,7 @@ func NewJApiError(msg string, f *fs.File, i bytes.Index) *JApiError {
 func (e *JApiError) OccurredInFile(f *fs.File, atByte bytes.Index) {
 	e.includeTrace = append(e.includeTrace, stackTraceItem{
 		path:   f.Name(),
-		atLine: NewLocation(f, atByte).line,
+		atLine: NewLocation(f, atByte).Line,
 	})
 }
 
@@ -54,7 +54,7 @@ func (e *JApiError) errorWithStackTrace() string {
 
 	buf.WriteString(e.Msg)
 
-	writeStackTraceLine(&buf, e.file.Name(), e.line)
+	writeStackTraceLine(&buf, e.File.Name(), e.Line)
 	for _, i := range e.includeTrace {
 		writeStackTraceLine(&buf, i.path, i.atLine)
 	}
