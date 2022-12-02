@@ -30,7 +30,7 @@ func (s *Scanner) readSchemaWithJsc() (uint, *jerr.JApiError) {
 	l, err := jschema.FromFile(file).Len()
 	if err != nil {
 		err := kit.ConvertError(file, err)
-		return 0, s.japiError(err.Message(), s.curIndex+bytes.Index(err.Position()))
+		return 0, s.japiError(err.Message(), s.curIndex+bytes.Index(err.Index()))
 	}
 	return l, nil
 }

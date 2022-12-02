@@ -316,7 +316,7 @@ func (core *JApiCore) addQuery(d *directive.Directive) *jerr.JApiError {
 	if err != nil {
 		var e kit.Error
 		if errors.As(err, &e) {
-			return d.BodyErrorIndex(e.Message(), e.Position())
+			return d.BodyErrorIndex(e.Message(), e.Index())
 		}
 		return d.BodyError(err.Error())
 	}
@@ -373,7 +373,7 @@ func (core *JApiCore) addRequest(d *directive.Directive) *jerr.JApiError {
 		}
 		var e kit.Error
 		if errors.As(err, &e) {
-			return d.BodyErrorIndex(e.Message(), e.Position())
+			return d.BodyErrorIndex(e.Message(), e.Index())
 		}
 
 	case sn == notation.SchemaNotationRegex && typ == "" && d.BodyCoords.IsSet():
@@ -382,7 +382,7 @@ func (core *JApiCore) addRequest(d *directive.Directive) *jerr.JApiError {
 		}
 		var e kit.Error
 		if errors.As(err, &e) {
-			return d.BodyErrorIndex(e.Message(), e.Position())
+			return d.BodyErrorIndex(e.Message(), e.Index())
 		}
 
 	case (sn == notation.SchemaNotationAny || sn == notation.SchemaNotationEmpty) && !d.BodyCoords.IsSet():
@@ -488,7 +488,7 @@ func (core *JApiCore) addHeaders(d *directive.Directive) *jerr.JApiError {
 	if err != nil {
 		var e kit.Error
 		if errors.As(err, &e) {
-			return d.BodyErrorIndex(e.Message(), e.Position())
+			return d.BodyErrorIndex(e.Message(), e.Index())
 		}
 		return d.BodyError(err.Error())
 	}
@@ -584,7 +584,7 @@ func (core *JApiCore) addJsonRpcSchema(
 	if err != nil {
 		var e kit.Error
 		if errors.As(err, &e) {
-			return d.BodyErrorIndex(e.Message(), e.Position())
+			return d.BodyErrorIndex(e.Message(), e.Index())
 		}
 		return d.BodyError(err.Error())
 	}

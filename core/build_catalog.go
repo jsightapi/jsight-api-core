@@ -5,7 +5,7 @@ import (
 	"fmt"
 
 	schema "github.com/jsightapi/jsight-schema-core"
-	"github.com/jsightapi/jsight-schema-core/errors"
+	"github.com/jsightapi/jsight-schema-core/errs"
 	"github.com/jsightapi/jsight-schema-core/kit"
 
 	"github.com/jsightapi/jsight-api-core/directive"
@@ -34,8 +34,8 @@ func adoptError(err error) (e *jerr.JApiError) {
 
 func safeAddType(curr schema.Schema, n string, ut schema.Schema) error {
 	err := curr.AddType(n, ut)
-	var e interface{ Code() errors.ErrorCode }
-	if stdErrors.As(err, &e) && e.Code() == errors.ErrDuplicationOfNameOfTypes {
+	var e interface{ Code() errs.Code }
+	if stdErrors.As(err, &e) && e.Code() == errs.ErrDuplicationOfNameOfTypes {
 		err = nil
 	}
 	return err
@@ -57,13 +57,13 @@ func (core *JApiCore) checkUserType(name string) *jerr.JApiError {
 		return core.checkUserType(e.IncorrectUserType())
 	}
 
-	return d.BodyErrorIndex(e.Message(), e.Position())
+	return d.BodyErrorIndex(e.Message(), e.Index())
 }
 
 func jschemaToJAPIError(err error, d *directive.Directive) *jerr.JApiError {
 	var e kit.Error
 	if stdErrors.As(err, &e) {
-		return d.BodyErrorIndex(e.Message(), e.Position())
+		return d.BodyErrorIndex(e.Message(), e.Index())
 	}
 	return d.KeywordError(err.Error())
 }

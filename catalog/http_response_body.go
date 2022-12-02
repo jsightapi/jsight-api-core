@@ -60,7 +60,7 @@ func adoptErrorForResponseBody(d directive.Directive, err error) *jerr.JApiError
 	var e kit.Error
 	if errors.As(err, &e) {
 		if d.BodyCoords.IsSet() {
-			return d.BodyErrorIndex(e.Message(), e.Position())
+			return d.BodyErrorIndex(e.Message(), e.Index())
 		}
 		return d.ParameterError(e.Message())
 	}
