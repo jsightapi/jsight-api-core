@@ -1,8 +1,9 @@
 package catalog
 
 import (
-	"fmt"
+	"errors"
 
+	"github.com/jsightapi/jsight-api-core/jerr"
 	"github.com/jsightapi/jsight-api-core/notation"
 )
 
@@ -27,6 +28,6 @@ func SchemaSerializeFormat(n notation.SchemaNotation) (SerializeFormat, error) {
 	case notation.SchemaNotationEmpty:
 		return SerializeFormatBinary, nil
 	default:
-		return "", fmt.Errorf(`unknown serialize format for schema notation "%s"`, n)
+		return "", errors.New(jerr.RuntimeFailure)
 	}
 }

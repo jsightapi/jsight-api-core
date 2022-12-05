@@ -20,8 +20,6 @@ type Stack struct {
 	hashes         []uint64
 }
 
-var ErrRecursionDetected = errors.New("recursion detected")
-
 type stackItem struct {
 	// The scanner which was pushed into stack.
 	scanner *Scanner
@@ -40,7 +38,7 @@ func (s *Stack) Push(scanner *Scanner, at bytes.Index) error {
 	name := scanner.file.Name()
 
 	if _, ok := s.uniqueFiles[name]; ok {
-		return ErrRecursionDetected
+		return errors.New(jerr.RecursionIsProhibited)
 	}
 
 	s.stack = append(s.stack, stackItem{
@@ -51,7 +49,7 @@ func (s *Stack) Push(scanner *Scanner, at bytes.Index) error {
 
 	hash, err := s.computeScannerHash(scanner)
 	if err != nil {
-		return fmt.Errorf("failed to compute scanner's hash: %w", err)
+		return fmt.Errorf("%s: %w", jerr.FailedToComputeScannersHash, err)
 	}
 	s.hashes = append(s.hashes, hash)
 
@@ -68,7 +66,7 @@ func (*Stack) computeScannerHash(scanner *Scanner) (uint64, error) {
 	}
 
 	if n != len(path) {
-		return 0, errors.New("written less bytes then expected")
+		return 0, errors.New(jerr.RuntimeFailure)
 	}
 
 	return hasher.Sum64(), nil

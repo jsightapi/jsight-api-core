@@ -5,6 +5,7 @@ import (
 	"strings"
 
 	"github.com/jsightapi/jsight-api-core/catalog"
+	"github.com/jsightapi/jsight-api-core/jerr"
 )
 
 type PathParameter struct {
@@ -48,11 +49,11 @@ func PathParameters(path string) ([]PathParameter, error) {
 	pp := pathParameters(path)
 
 	if hasEmptyPathParameters(pp) {
-		return pp, fmt.Errorf(`incorrect empty PATH parameter in "%s"`, path)
+		return pp, fmt.Errorf(`%s in %q`, jerr.PathEmptyParameter, path)
 	}
 
 	if s := duplicatedPathParameters(pp); s != "" {
-		return pp, fmt.Errorf(`the "%s" parameter is duplicated in the path "%s"`, s, path)
+		return pp, fmt.Errorf(`%s %q`, jerr.PathParameterIsDuplicatedInThePath, s)
 	}
 
 	return pp, nil

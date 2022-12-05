@@ -9,15 +9,13 @@ import (
 )
 
 func TestNewJApiError(t *testing.T) {
-	const (
-		msg   = "fake error"
-		index = 1
-	)
+	const index = 1
+
 	file := fs.NewFile("foo", "123456")
 
-	je := NewJApiError(msg, file, index)
+	je := NewJApiError(TestFakeError, file, index)
 
-	assert.Equal(t, msg, je.Msg)
+	assert.Equal(t, TestFakeError, je.Msg)
 	assert.Equal(t, NewLocation(file, index), je.Location)
 	assert.Nil(t, je.wrapped)
 }
@@ -127,15 +125,13 @@ func TestJApiError_HasStackTrace(t *testing.T) {
 
 func TestJApiError_Error(t *testing.T) {
 	t.Run("without stack trace", func(t *testing.T) {
-		const msg = "fake error"
+		je := NewJApiError(TestFakeError, fs.NewFile("foo", "123456"), 1)
 
-		je := NewJApiError(msg, fs.NewFile("foo", "123456"), 1)
-
-		assert.Equal(t, msg, je.Error())
+		assert.Equal(t, TestFakeError, je.Error())
 	})
 
 	t.Run("with stack trace", func(t *testing.T) {
-		je := NewJApiError("fake error", fs.NewFile("foo", "123456"), 1)
+		je := NewJApiError(TestFakeError, fs.NewFile("foo", "123456"), 1)
 
 		je.OccurredInFile(fs.NewFile("bar", "1\n2\n3\n4\n5\n6"), 4)
 		je.OccurredInFile(fs.NewFile("fizz", "123456"), 4)

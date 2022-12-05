@@ -15,6 +15,8 @@ import (
 	"github.com/jsightapi/jsight-api-core/kit"
 )
 
+const errorIndexIsNotSpecified = "the error index is not specified in the file name"
+
 func TestValidateJapi(t *testing.T) {
 	filenames := jstFilenames(GetTestDataDir())
 
@@ -86,11 +88,11 @@ func wantIndex(filename string) (int, error) {
 	name := strings.TrimSuffix(base, filepath.Ext(base))
 	s := strings.Split(name, "_")
 	if len(s) < 2 {
-		return 0, errors.New("the error index is not specified in the file name")
+		return 0, errors.New(errorIndexIsNotSpecified)
 	}
 	i, err := strconv.Atoi(s[1])
 	if err != nil {
-		return 0, errors.New("the error index is not specified in the file name")
+		return 0, errors.New(errorIndexIsNotSpecified)
 	}
 	return i, nil
 }

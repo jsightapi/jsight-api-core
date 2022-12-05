@@ -17,7 +17,7 @@ import (
 
 func (c *Catalog) AddTag(name, title string) error {
 	if c.Tags.Has(TagName(name)) {
-		return fmt.Errorf("%s (%q)", jerr.DuplicateNames, name)
+		return fmt.Errorf("%s %q", jerr.DuplicateNames, name)
 	}
 
 	if title == "" {
@@ -127,7 +127,7 @@ func (c *Catalog) AddDescriptionToTag(name, description string) error {
 
 	t, ok := c.Tags.Get(n)
 	if !ok {
-		return fmt.Errorf("%s (%q)", jerr.TagNotFound, n)
+		return fmt.Errorf("%s %q", jerr.TagNotFound, n)
 	}
 
 	if t.Description != nil {
@@ -142,21 +142,9 @@ func (c *Catalog) AddDescriptionToTag(name, description string) error {
 	return nil
 }
 
-func (c *Catalog) AddTagDescription(name, title string) error {
-	t := NewTag(name, title)
-
-	if _, ok := c.Tags.Get(t.Name); ok {
-		return errors.New("")
-	}
-
-	c.Tags.Set(t.Name, t)
-
-	return nil
-}
-
 func (c *Catalog) AddJSight(version string) error {
 	if c.JSightVersion != "" {
-		return errors.New("directive JSIGHT gotta be only one time")
+		return errors.New(jerr.DirectiveJSIGHTGottaBeOnlyOneTime)
 	}
 
 	c.JSightVersion = version
@@ -166,7 +154,7 @@ func (c *Catalog) AddJSight(version string) error {
 
 func (c *Catalog) AddInfo(d directive.Directive) error {
 	if c.Info != nil {
-		return errors.New("directive INFO gotta be only one time")
+		return errors.New(jerr.DirectiveINFOGottaBeOnlyOneTime)
 	}
 	c.Info = &Info{Directive: d}
 	return nil
@@ -205,7 +193,7 @@ func (c *Catalog) AddHTTPMethod(d directive.Directive) *jerr.JApiError {
 	}
 
 	if c.Interactions.Has(httpID) {
-		return d.KeywordError(fmt.Sprintf("method is already defined in resource %s", httpID.String()))
+		return d.KeywordError(fmt.Sprintf("%s %q", jerr.MethodIsAlreadyDefinedInResource, httpID.String()))
 	}
 
 	in := newHTTPInteraction(httpID, d.Annotation)
@@ -379,7 +367,7 @@ func (c *Catalog) AddResponseHeaders(s *ExchangeJSightSchema, d directive.Direct
 
 func (c *Catalog) AddServer(name, annotation string) error {
 	if c.Servers.Has(name) {
-		return fmt.Errorf("%s (%q)", jerr.DuplicateNames, name)
+		return fmt.Errorf("%s %q", jerr.DuplicateNames, name)
 	}
 
 	server := new(Server)
@@ -392,13 +380,13 @@ func (c *Catalog) AddServer(name, annotation string) error {
 
 func (c *Catalog) AddBaseURL(serverName, path string) error {
 	if !c.Servers.Has(serverName) {
-		return fmt.Errorf("server not found for %s", serverName)
+		return fmt.Errorf("%s for %q", jerr.ServerNotFound, serverName)
 	}
 
 	v := c.Servers.GetValue(serverName)
 
 	if v.BaseUrl != "" {
-		return errors.New("BaseURL already defined")
+		return errors.New(jerr.DirectiveBaseURLAlreadyDefined)
 	}
 
 	v.BaseUrl = path
@@ -413,7 +401,7 @@ func (c *Catalog) AddType(
 	name := d.NamedParameter("Name")
 
 	if c.UserTypes.Has(name) {
-		return d.KeywordError(fmt.Sprintf("%s (%q)", jerr.DuplicateNames, name))
+		return d.KeywordError(fmt.Sprintf("%s %q", jerr.DuplicateNames, name))
 	}
 
 	userType := &UserType{
@@ -526,7 +514,7 @@ func (c *Catalog) AddJsonRpcMethod(d directive.Directive) *jerr.JApiError {
 	}
 
 	if c.Interactions.Has(rpcId) {
-		return d.KeywordError(fmt.Sprintf("method is already defined in resource %s", rpcId.String()))
+		return d.KeywordError(fmt.Sprintf("%s %q", jerr.MethodIsAlreadyDefinedInResource, rpcId.String()))
 	}
 
 	in := newJsonRpcInteraction(rpcId, d.NamedParameter("MethodName"), d.Annotation)
@@ -595,7 +583,7 @@ func (c *Catalog) AddJsonRpcResult(s *ExchangeJSightSchema, d directive.Directiv
 func (c *Catalog) AddEnum(d *directive.Directive, e *enum.Enum) *jerr.JApiError {
 	name := d.NamedParameter("Name")
 	if c.UserEnums.Has(name) {
-		return d.KeywordError(fmt.Sprintf("%s (%q)", jerr.DuplicateNames, name))
+		return d.KeywordError(fmt.Sprintf("%s %q", jerr.DuplicateNames, name))
 	}
 
 	r, err := c.enumDirectiveToUserRule(d, e)

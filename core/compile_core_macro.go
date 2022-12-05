@@ -32,11 +32,11 @@ func (core *JApiCore) addMacro(d *directive.Directive) *jerr.JApiError {
 		return d.KeywordError(fmt.Sprintf("%s (%s)", jerr.RequiredParameterNotSpecified, "Name"))
 	}
 	if d.Children == nil {
-		return d.KeywordError("empty macro")
+		return d.KeywordError(jerr.MacroIsEmpty)
 	}
 
 	if _, ok := core.macro[name]; ok {
-		return d.KeywordError(fmt.Sprintf("%s (%q)", jerr.DuplicateNames, name))
+		return d.KeywordError(fmt.Sprintf("%s %q", jerr.DuplicateNames, name))
 	}
 
 	core.macro[name] = d
@@ -60,7 +60,7 @@ func findPaste(macroName string, d *directive.Directive) *jerr.JApiError {
 			return d.KeywordError(fmt.Sprintf("%s (%s)", jerr.RequiredParameterNotSpecified, "Name"))
 
 		case macroName:
-			return d.KeywordError("recursion is prohibited")
+			return d.KeywordError(jerr.RecursionIsProhibited)
 		}
 	} else if d.Children != nil {
 		for _, c := range d.Children {

@@ -34,7 +34,7 @@ func (core *JApiCore) validateInfo() *jerr.JApiError {
 		core.catalog.Info.Description == nil
 
 	if isEmpty {
-		return core.catalog.Info.Directive.KeywordError("empty info")
+		return core.catalog.Info.Directive.KeywordError(jerr.InfoIsEmpty)
 	}
 	return nil
 }
@@ -44,7 +44,9 @@ func (core *JApiCore) validateRequestBody() *jerr.JApiError {
 		if hi, ok := v.(*catalog.HTTPInteraction); ok {
 			r := hi.Request
 			if r != nil && r.HTTPRequestBody == nil {
-				return r.Directive.KeywordError(fmt.Sprintf(`undefined request body for resource %q`, k.String()))
+				return r.Directive.KeywordError(
+					fmt.Sprintf(`%s %q`, jerr.UndefinedRequestBodyForResource, k.String()),
+				)
 			}
 		}
 		return nil

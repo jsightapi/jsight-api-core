@@ -141,7 +141,7 @@ func TestDirective_SetNamedParameter(t *testing.T) {
 		require.NoError(t, err)
 
 		err = d.SetNamedParameter("foo", "bar")
-		assert.EqualError(t, err, `the "foo" parameter is already defined for the "INFO" directive`)
+		assert.EqualError(t, err, `the parameter is already defined for the directive "foo"`)
 
 		assert.Equal(t, map[string]string{
 			"foo": "bar",

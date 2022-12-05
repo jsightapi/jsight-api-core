@@ -16,7 +16,7 @@ func (core *JApiCore) processContext(d *directive.Directive, root *[]*directive.
 				core.currentContextDirective = d
 				return nil
 			}
-			return d.KeywordError(fmt.Sprintf("%s %q", jerr.IncorrectContextOfDirective, d.String()))
+			return d.KeywordError(fmt.Sprintf("%s %q", jerr.IncorrectDirectiveContext, d.String()))
 		}
 
 		// not the root context
@@ -29,7 +29,7 @@ func (core *JApiCore) processContext(d *directive.Directive, root *[]*directive.
 				if core.currentContextDirective.HasExplicitContext {
 					return d.KeywordError(fmt.Sprintf(
 						"%s %q with the \"Path\" parameter",
-						jerr.IncorrectContextOfDirective,
+						jerr.IncorrectDirectiveContext,
 						d.String(),
 					))
 				}
@@ -45,7 +45,7 @@ func (core *JApiCore) processContext(d *directive.Directive, root *[]*directive.
 		}
 
 		if core.currentContextDirective.HasExplicitContext {
-			return d.KeywordError(fmt.Sprintf("%s %q", jerr.IncorrectContextOfDirective, d.String()))
+			return d.KeywordError(fmt.Sprintf("%s %q", jerr.IncorrectDirectiveContext, d.String()))
 		}
 		core.currentContextDirective = core.currentContextDirective.Parent
 	}

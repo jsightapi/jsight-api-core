@@ -14,7 +14,7 @@ import (
 
 func (core *JApiCore) buildCatalog() *jerr.JApiError {
 	if len(core.directivesWithPastes) != 0 && core.directivesWithPastes[0].Type() != directive.Jsight {
-		return core.directivesWithPastes[0].KeywordError("JSIGHT should be the first directive")
+		return core.directivesWithPastes[0].KeywordError(jerr.DirectiveJSIGHTShouldBeTheFirst)
 	}
 
 	return core.addDirectives()

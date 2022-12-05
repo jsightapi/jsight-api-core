@@ -8,6 +8,8 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
+	"github.com/jsightapi/jsight-api-core/jerr"
+
 	"github.com/jsightapi/jsight-api-core/catalog"
 	"github.com/jsightapi/jsight-api-core/internal/mocks"
 )
@@ -35,10 +37,10 @@ func Test_fetchUsedUserTypes(t *testing.T) {
 
 	t.Run("negative", func(t *testing.T) {
 		s := mocks.NewSchema(t)
-		s.On("UsedUserTypes").Return(nil, errors.New("fake error"))
+		s.On("UsedUserTypes").Return(nil, errors.New(jerr.TestFakeError))
 
 		_, err := fetchUsedUserTypes(s, nil)
-		assert.EqualError(t, err, "fake error")
+		assert.EqualError(t, err, jerr.TestFakeError)
 	})
 }
 
@@ -131,10 +133,10 @@ func TestUsedUserTypeFetcher_fetch(t *testing.T) {
 			newSchema      func(*testing.T) schema.Schema
 			setupUserTypes func(*testing.T) *catalog.UserSchemas
 		}{
-			"fake error": {
+			jerr.TestFakeError: {
 				newSchema: func(t *testing.T) schema.Schema {
 					s := mocks.NewSchema(t)
-					s.On("UsedUserTypes").Return(nil, errors.New("fake error"))
+					s.On("UsedUserTypes").Return(nil, errors.New(jerr.TestFakeError))
 					return s
 				},
 				setupUserTypes: func(*testing.T) *catalog.UserSchemas {
@@ -152,7 +154,7 @@ func TestUsedUserTypeFetcher_fetch(t *testing.T) {
 					us := &catalog.UserSchemas{}
 
 					s := mocks.NewSchema(t)
-					s.On("UsedUserTypes").Return(nil, errors.New("fake error"))
+					s.On("UsedUserTypes").Return(nil, errors.New(jerr.TestFakeError))
 
 					us.Set("foo", s)
 					return us

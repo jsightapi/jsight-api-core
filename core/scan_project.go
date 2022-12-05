@@ -79,7 +79,7 @@ func (core *JApiCore) next(lexeme scanner.Lexeme) *jerr.JApiError {
 		return core.processContextEnd()
 
 	default:
-		return core.japiError("Unknown lexeme type ("+lexeme.Type().String()+")", lexeme.Begin())
+		panic(jerr.RuntimeFailure)
 	}
 }
 
@@ -92,7 +92,9 @@ func (core *JApiCore) processKeyword(lexeme scanner.Lexeme) *jerr.JApiError {
 	keyword := lexeme.Value().String()
 	coords := coordsFromLexeme(lexeme)
 	if !core.scannersStack.Empty() && keyword == directive.Jsight.String() {
-		return core.japiError(fmt.Sprintf("directive %q not allowed in included file", keyword), coords.Begin())
+		return core.japiError(
+			fmt.Sprintf("%s %q", jerr.IncludeDirectiveErr, keyword),
+			coords.Begin())
 	}
 
 	return core.setCurrentDirective(keyword, coords)
@@ -154,7 +156,7 @@ func (core *JApiCore) processEOF() *jerr.JApiError {
 		return je
 	}
 	if core.HasUnclosedExplicitContext() {
-		return core.japiError("not all explicit contexts are closed", core.scanner.CurrentIndex()-1)
+		return core.japiError(jerr.ContextNotClosed, core.scanner.CurrentIndex()-1)
 	}
 	return nil
 }
@@ -162,7 +164,7 @@ func (core *JApiCore) processEOF() *jerr.JApiError {
 func (core *JApiCore) setCurrentDirective(keyword string, keywordCoords directive.Coords) *jerr.JApiError {
 	de, err := directive.NewDirectiveType(keyword)
 	if err != nil {
-		return core.japiError(fmt.Sprintf("unknown directive %q", keyword), keywordCoords.Begin())
+		return core.japiError(fmt.Sprintf("%s %q", jerr.UnknownDirective, keyword), keywordCoords.Begin())
 	}
 
 	d := directive.NewWithCallStack(de, keywordCoords, core.scannersStack.ToDirectiveIncludeTracer())

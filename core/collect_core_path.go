@@ -32,7 +32,7 @@ func (core *JApiCore) collectPathVariables(d *directive.Directive) *jerr.JApiErr
 		return d.KeywordError(jerr.AnnotationIsForbiddenForTheDirective)
 	}
 	if !d.BodyCoords.IsSet() {
-		return d.KeywordError("there is no body for the Path directive")
+		return d.KeywordError(jerr.BodyIsEmpty)
 	}
 
 	s, err := newPathVariablesSchema(d.BodyCoords.Read(), core.UserTypesData())
@@ -51,7 +51,7 @@ func (core *JApiCore) collectPathVariables(d *directive.Directive) *jerr.JApiErr
 	}
 
 	if d.Parent == nil {
-		return d.KeywordError("parent directive not found")
+		return d.KeywordError(jerr.ParentNotFound)
 	}
 
 	parentDirective := *d.Parent

@@ -2,6 +2,8 @@ package notation
 
 import (
 	"errors"
+
+	"github.com/jsightapi/jsight-api-core/jerr"
 )
 
 // SchemaNotation represent available schema notations.
@@ -25,7 +27,7 @@ func NewSchemaNotation(sn string) (SchemaNotation, error) {
 	case "empty":
 		return SchemaNotationEmpty, nil
 	default:
-		return "", errors.New("unknown schema notation")
+		return "", errors.New(jerr.UnknownNotation)
 	}
 }
 

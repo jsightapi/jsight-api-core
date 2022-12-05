@@ -107,7 +107,7 @@ func (core *JApiCore) checkPathSchemaRoot(s *jschema.JSchema) error {
 	if s.ASTNode.TokenType == schema.TokenTypeShortcut {
 		typeName := s.ASTNode.SchemaType
 		if typeName == "mixed" {
-			return errors.New("The root schema object cannot have an OR rule")
+			return errors.New(jerr.PathOrErr)
 		}
 
 		ut, ok := core.catalog.UserTypes.Get(typeName)
@@ -119,23 +119,23 @@ func (core *JApiCore) checkPathSchemaRoot(s *jschema.JSchema) error {
 	}
 
 	if s.ASTNode.TokenType != schema.TokenTypeObject {
-		return errors.New("the body of the Path DIRECTIVE must be an object")
+		return errors.New(jerr.PathObjectErr)
 	}
 
 	if s.ASTNode.Rules.Has("additionalProperties") {
-		return errors.New(`the "additionalProperties" rule is invalid in the Path directive`)
+		return errors.New(jerr.PathAdditionalPropertiesErr)
 	}
 
 	if s.ASTNode.Rules.Has("nullable") {
-		return errors.New(`the "nullable" rule is invalid in the Path directive`)
+		return errors.New(jerr.PathNullableErr)
 	}
 
 	if s.ASTNode.Rules.Has("or") {
-		return errors.New(`the "or" rule is invalid in the Path directive`)
+		return errors.New(jerr.PathOrErr)
 	}
 
 	if len(s.ASTNode.Children) == 0 && !s.ASTNode.Rules.Has("allOf") {
-		return errors.New("an empty object in the Path directive")
+		return errors.New(jerr.PathEmptyErr)
 	}
 
 	if s.ASTNode.Rules.Has("allOf") {
@@ -179,7 +179,7 @@ func (core *JApiCore) checkPathSchemaPropertyInAllOf(typeName string) error {
 
 func (core *JApiCore) checkPathSchemaProperty(an schema.ASTNode) error {
 	if an.TokenType == schema.TokenTypeObject || an.TokenType == schema.TokenTypeArray {
-		return fmt.Errorf("%s (%s)", jerr.MultiLevelPropertyIsNotAllowed, an.Key)
+		return fmt.Errorf("%s (%s)", jerr.PathMultiLevelPropertyErr, an.Key)
 	}
 
 	rule, ok := an.Rules.Get("or")
@@ -194,7 +194,7 @@ func (core *JApiCore) checkPathSchemaProperty(an schema.ASTNode) error {
 				if t, ok := v.Properties.Get("type"); ok {
 					if t.TokenType == "string" &&
 						(t.Value == schema.TokenTypeObject || t.Value == schema.TokenTypeArray) {
-						return fmt.Errorf("%s (%s)", jerr.MultiLevelPropertyIsNotAllowed, an.Key)
+						return fmt.Errorf("%s (%s)", jerr.PathMultiLevelPropertyErr, an.Key)
 					}
 				}
 			}
@@ -216,7 +216,7 @@ func (core *JApiCore) checkPathSchemaPropertyUserType(typeName string) error {
 
 	rootNode, err := ut.Schema.GetAST()
 	if err != nil {
-		return errors.New(jerr.InternalServerError)
+		return errors.New(jerr.RuntimeFailure)
 	}
 
 	if err := core.checkPathSchemaProperty(rootNode); err != nil {

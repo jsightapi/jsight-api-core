@@ -2,9 +2,11 @@ package catalog
 
 import (
 	"encoding/json"
-	"fmt"
+	"errors"
 
 	schema "github.com/jsightapi/jsight-schema-core"
+
+	"github.com/jsightapi/jsight-api-core/jerr"
 
 	"github.com/jsightapi/jsight-api-core/notation"
 )
@@ -22,7 +24,7 @@ func NewExchangePseudoSchema(n notation.SchemaNotation) *ExchangePseudoSchema {
 
 func (e ExchangePseudoSchema) MarshalJSON() ([]byte, error) {
 	if e.Notation != notation.SchemaNotationAny && e.Notation != notation.SchemaNotationEmpty {
-		return nil, fmt.Errorf(`invalid schema notation "%s"`, e.Notation)
+		return nil, errors.New(jerr.RuntimeFailure)
 	}
 
 	data := struct {

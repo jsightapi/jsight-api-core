@@ -61,7 +61,7 @@ func (core *JApiCore) processPasteDirective(paste *directive.Directive) *jerr.JA
 
 	macro, ok := core.macro[name]
 	if !ok {
-		return paste.KeywordError("macro not found")
+		return paste.KeywordError(jerr.MacroNotFound)
 	}
 
 	if je := core.collectRulesFromDirectives(macro.Children); je != nil {

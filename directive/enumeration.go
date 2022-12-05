@@ -6,6 +6,8 @@ import (
 	"sync"
 
 	"github.com/jsightapi/jsight-schema-core/bytes"
+
+	"github.com/jsightapi/jsight-api-core/jerr"
 )
 
 type Enumeration int
@@ -107,7 +109,7 @@ func NewDirectiveType(s string) (Enumeration, error) {
 		return HTTPResponseCode, nil
 	}
 
-	return Jsight, errors.New("unknown directive type")
+	return Jsight, errors.New(jerr.UnknownDirective)
 }
 
 func (de Enumeration) IsHTTPRequestMethod() bool {

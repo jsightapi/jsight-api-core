@@ -35,7 +35,7 @@ func newExchangeJSightSchema(s *jschema.JSchema) *ExchangeJSightSchema {
 	}
 }
 
-func NewExchangeJSightSchema[T bytes.Byter](
+func NewExchangeJSightSchema[T bytes.ByteKeeper](
 	b T,
 	coreUserTypes *UserSchemas,
 	coreRules map[string]schema.Rule,

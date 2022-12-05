@@ -44,12 +44,12 @@ func (core *JApiCore) buildUserTypes() *jerr.JApiError {
 		switch notation.SchemaNotation(d.NamedParameter("SchemaNotation")) {
 		case "", notation.SchemaNotationJSight:
 			if !d.BodyCoords.IsSet() {
-				return d.KeywordError(jerr.EmptyBody)
+				return d.KeywordError(jerr.BodyIsEmpty)
 			}
 			core.userTypes.Set(k, jschema.New(k, d.BodyCoords.Read()))
 		case notation.SchemaNotationRegex:
 			if !d.BodyCoords.IsSet() {
-				return d.KeywordError(jerr.EmptyBody)
+				return d.KeywordError(jerr.BodyIsEmpty)
 			}
 			core.userTypes.Set(k, regex.New(k, d.BodyCoords.Read()))
 		default:

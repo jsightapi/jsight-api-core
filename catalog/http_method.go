@@ -31,7 +31,7 @@ func NewHTTPMethod(de directive.Enumeration) (HTTPMethod, error) {
 	case directive.Delete:
 		return DELETE, nil
 	default:
-		return GET, errors.New(jerr.IsNotHTTPRequestMethod)
+		return GET, errors.New(jerr.RuntimeFailure)
 	}
 }
 
@@ -48,7 +48,7 @@ func NewHTTPMethodFromString(s string) (HTTPMethod, error) {
 	case directive.Delete.String():
 		return DELETE, nil
 	default:
-		return GET, errors.New(jerr.IsNotHTTPRequestMethod)
+		return GET, errors.New(jerr.RuntimeFailure)
 	}
 }
 

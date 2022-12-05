@@ -12,8 +12,8 @@ import (
 func TestDirective_KeywordError(t *testing.T) {
 	coords := NewCoords(fs.NewFile("foo", "123456"), 1, 2)
 
-	je := New(Jsight, coords).KeywordError("fake error")
-	assert.Equal(t, jerr.NewJApiError("fake error", coords.file, coords.begin), je)
+	je := New(Jsight, coords).KeywordError(jerr.TestFakeError)
+	assert.Equal(t, jerr.NewJApiError(jerr.TestFakeError, coords.file, coords.begin), je)
 }
 
 func TestDirective_BodyError(t *testing.T) {
@@ -23,15 +23,15 @@ func TestDirective_BodyError(t *testing.T) {
 		d := New(Jsight, NewCoords(fs.NewFile("bar", "123456"), 5, 6))
 		d.BodyCoords = coords
 
-		je := d.BodyError("fake error")
-		assert.Equal(t, jerr.NewJApiError("fake error", coords.file, coords.begin), je)
+		je := d.BodyError(jerr.TestFakeError)
+		assert.Equal(t, jerr.NewJApiError(jerr.TestFakeError, coords.file, coords.begin), je)
 	})
 
 	t.Run("body coords isn't set", func(t *testing.T) {
 		d := New(Jsight, coords)
 
-		je := d.BodyError("fake error")
-		assert.Equal(t, jerr.NewJApiError("fake error", coords.file, coords.begin), je)
+		je := d.BodyError(jerr.TestFakeError)
+		assert.Equal(t, jerr.NewJApiError(jerr.TestFakeError, coords.file, coords.begin), je)
 	})
 }
 
@@ -42,15 +42,15 @@ func TestDirective_BodyErrorIndex(t *testing.T) {
 	d := New(Jsight, Coords{})
 	d.BodyCoords = coords
 
-	je := d.BodyErrorIndex("fake error", idx)
-	assert.Equal(t, jerr.NewJApiError("fake error", coords.file, coords.begin+idx), je)
+	je := d.BodyErrorIndex(jerr.TestFakeError, idx)
+	assert.Equal(t, jerr.NewJApiError(jerr.TestFakeError, coords.file, coords.begin+idx), je)
 }
 
 func TestDirective_ParameterError(t *testing.T) {
 	coords := NewCoords(fs.NewFile("foo", "123456"), 1, 2)
 
-	je := New(Jsight, coords).ParameterError("fake error")
-	assert.Equal(t, jerr.NewJApiError("fake error", coords.file, coords.begin), je)
+	je := New(Jsight, coords).ParameterError(jerr.TestFakeError)
+	assert.Equal(t, jerr.NewJApiError(jerr.TestFakeError, coords.file, coords.begin), je)
 }
 
 type makeErrorCallStack struct {
@@ -64,12 +64,12 @@ func (m makeErrorCallStack) AddIncludeTraceToError(je *jerr.JApiError) {
 
 func TestDirective_makeError(t *testing.T) {
 	coords := NewCoords(fs.NewFile("foo", "123456"), 1, 2)
-	expected := jerr.NewJApiError("fake error", coords.File(), coords.begin)
+	expected := jerr.NewJApiError(jerr.TestFakeError, coords.File(), coords.begin)
 
 	d := New(Jsight, coords)
 	d.includeTracer = makeErrorCallStack{t, expected}
 
-	je := d.makeError("fake error", coords.File(), coords.begin)
+	je := d.makeError(jerr.TestFakeError, coords.File(), coords.begin)
 
 	assert.Equal(t, expected, je)
 }

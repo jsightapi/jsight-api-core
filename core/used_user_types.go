@@ -5,6 +5,8 @@ import (
 
 	schema "github.com/jsightapi/jsight-schema-core"
 
+	"github.com/jsightapi/jsight-api-core/jerr"
+
 	"github.com/jsightapi/jsight-api-core/catalog"
 )
 
@@ -47,7 +49,7 @@ func (f *usedUserTypeFetcher) fetch(ut schema.Schema) error {
 		f.alreadyProcessed[t] = struct{}{}
 		f.usedUserTypes = append(f.usedUserTypes, t)
 		if err := f.fetch(f.userTypes.GetValue(t)); err != nil {
-			return fmt.Errorf("process type %q: %w", t, err)
+			return fmt.Errorf("%s %q: %w", jerr.ProcessTypeErr, t, err)
 		}
 	}
 	return nil

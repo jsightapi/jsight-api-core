@@ -93,7 +93,7 @@ func (c *ExchangeContent) inheritPropertiesFromUserType(
 
 	uts, ok := ut.Schema.(*ExchangeJSightSchema)
 	if !ok {
-		return fmt.Errorf(`the user type %q have wrong notation`, userTypeName)
+		return errors.New(jerr.RuntimeFailure)
 	}
 
 	err := uts.Compile()
@@ -102,7 +102,7 @@ func (c *ExchangeContent) inheritPropertiesFromUserType(
 	}
 
 	if uts.exchangeContent.TokenType != schema.TokenTypeObject {
-		return fmt.Errorf(`the user type %q is not an object`, userTypeName)
+		return fmt.Errorf("%s %q", jerr.UserTypeIsNotAnObject, userTypeName)
 	}
 
 	if c.Children == nil {
@@ -113,7 +113,7 @@ func (c *ExchangeContent) inheritPropertiesFromUserType(
 		cc := uts.exchangeContent.Children[i]
 
 		if cc.Key == nil {
-			return errors.New(jerr.InternalServerError)
+			return errors.New(jerr.RuntimeFailure)
 		}
 
 		p := c.ObjectProperty(*(cc.Key))

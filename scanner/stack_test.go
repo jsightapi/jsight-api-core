@@ -71,7 +71,7 @@ func TestIncludedFileStack_Push(t *testing.T) {
 		for _, c := range cc {
 			t.Run("", func(t *testing.T) {
 				err := c(t).Push(NewJApiScanner(newFile("/foo/bar")), 0)
-				assert.ErrorIs(t, err, ErrRecursionDetected)
+				assert.EqualError(t, err, jerr.RecursionIsProhibited)
 			})
 		}
 	})
@@ -120,12 +120,12 @@ func TestStack_AddIncludeTraceToError(t *testing.T) {
 		expected string
 	}{
 		"error without trace, empty stack": {
-			je:       jerr.NewJApiError("fake error", file, 4),
-			expected: "fake error",
+			je:       jerr.NewJApiError(jerr.TestFakeError, file, 4),
+			expected: jerr.TestFakeError,
 		},
 		"error with trace, empty stack": {
 			je: func() *jerr.JApiError {
-				je := jerr.NewJApiError("fake error", file, 4)
+				je := jerr.NewJApiError(jerr.TestFakeError, file, 4)
 				je.OccurredInFile(fs.NewFile("/fizz/buzz", "foo"), 1)
 				return je
 			}(),
@@ -134,7 +134,7 @@ func TestStack_AddIncludeTraceToError(t *testing.T) {
 /fizz/buzz:1`,
 		},
 		"error without trace, filled stack": {
-			je: jerr.NewJApiError("fake error", file, 4),
+			je: jerr.NewJApiError(jerr.TestFakeError, file, 4),
 			stack: []stackItem{
 				{NewJApiScanner(fs.NewFile("/from/tracer", "aa\nbb\ncc")), 7},
 			},
@@ -144,7 +144,7 @@ func TestStack_AddIncludeTraceToError(t *testing.T) {
 		},
 		"error with trace, filled stack": {
 			je: func() *jerr.JApiError {
-				je := jerr.NewJApiError("fake error", file, 4)
+				je := jerr.NewJApiError(jerr.TestFakeError, file, 4)
 				je.OccurredInFile(fs.NewFile("/fizz/buzz", "foo"), 1)
 				return je
 			}(),
@@ -232,12 +232,12 @@ func TestDirectiveIncludeTracer_AddIncludeTraceToError(t *testing.T) {
 		expected string
 	}{
 		"error without trace, empty stack": {
-			je:       jerr.NewJApiError("fake error", file, 4),
-			expected: "fake error",
+			je:       jerr.NewJApiError(jerr.TestFakeError, file, 4),
+			expected: jerr.TestFakeError,
 		},
 		"error with trace, empty stack": {
 			je: func() *jerr.JApiError {
-				je := jerr.NewJApiError("fake error", file, 4)
+				je := jerr.NewJApiError(jerr.TestFakeError, file, 4)
 				je.OccurredInFile(fs.NewFile("/fizz/buzz", "foo"), 1)
 				return je
 			}(),
@@ -246,7 +246,7 @@ func TestDirectiveIncludeTracer_AddIncludeTraceToError(t *testing.T) {
 /fizz/buzz:1`,
 		},
 		"error without trace, filled stack": {
-			je: jerr.NewJApiError("fake error", file, 4),
+			je: jerr.NewJApiError(jerr.TestFakeError, file, 4),
 			stack: []directiveIncludeTracerItem{
 				{fs.NewFile("/from/tracer", "aa\nbb\ncc"), 7},
 			},
@@ -256,7 +256,7 @@ func TestDirectiveIncludeTracer_AddIncludeTraceToError(t *testing.T) {
 		},
 		"error with trace, filled stack": {
 			je: func() *jerr.JApiError {
-				je := jerr.NewJApiError("fake error", file, 4)
+				je := jerr.NewJApiError(jerr.TestFakeError, file, 4)
 				je.OccurredInFile(fs.NewFile("/fizz/buzz", "foo"), 1)
 				return je
 			}(),

@@ -63,7 +63,7 @@ func (d Directive) NamedParameter(k string) string {
 
 func (d *Directive) SetNamedParameter(k, v string) error {
 	if _, ok := d.namedParameters[k]; ok {
-		return fmt.Errorf("the %q parameter is already defined for the %q directive", k, d)
+		return fmt.Errorf("%s %q", jerr.ParametersIsAlreadyDefined, k)
 	}
 	d.namedParameters[k] = v
 	return nil

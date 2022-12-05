@@ -103,7 +103,7 @@ func isIncludeKeyword(lex *scanner.Lexeme) bool {
 
 func validateIncludeFileName(s string) error {
 	if s[0] == '/' {
-		return errors.New("mustn't starts with '/'")
+		return errors.New(jerr.IncludeRootErr)
 	}
 
 	hasForbiddenParts := strings.Contains(s, "/./") ||
@@ -113,11 +113,11 @@ func validateIncludeFileName(s string) error {
 		strings.Contains(s, "../") ||
 		strings.Contains(s, "/..")
 	if hasForbiddenParts {
-		return errors.New("mustn't include '..' or '.'")
+		return errors.New(jerr.IncludeUpErr)
 	}
 
 	if strings.ContainsRune(s, '\\') {
-		return errors.New("the separator for directories and files should be the symbol '/'")
+		return errors.New(jerr.IncludeSeparatorErr)
 	}
 
 	return nil
