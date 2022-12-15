@@ -80,16 +80,7 @@ func (core *JApiCore) isJsightCastToObject(schema catalog.ExchangeSchema) bool {
 		return false
 	}
 
-	switch s.ASTNode.TokenType {
-	case "object":
-		return true
-	case "reference":
-		if userType, ok := core.catalog.UserTypes.Get(s.ASTNode.Value); ok {
-			return core.isJsightCastToObject(userType.Schema)
-		}
-	}
-
-	return false
+	return s.CastToObject() != nil
 }
 
 func (core *JApiCore) validateHeaders() *jerr.JApiError {

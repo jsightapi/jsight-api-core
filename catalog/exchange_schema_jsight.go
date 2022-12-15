@@ -89,6 +89,22 @@ func (e *ExchangeJSightSchema) buildContent() error {
 	return nil
 }
 
+func (e *ExchangeJSightSchema) CastToObject() *ExchangeJSightSchema {
+	switch e.ASTNode.TokenType {
+	case "object":
+		return e
+	case "reference":
+		if ut, ok := e.catalogUserTypes.Get(e.ASTNode.Value); ok {
+			if ee, ok := ut.Schema.(*ExchangeJSightSchema); ok {
+				return ee.CastToObject()
+			} else {
+				return nil
+			}
+		}
+	}
+	return nil
+}
+
 func (e *ExchangeJSightSchema) processAllOf(uut *StringSet) error {
 	return e.exchangeContent.processAllOf(uut, e.catalogUserTypes)
 }
