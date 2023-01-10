@@ -21,6 +21,11 @@
                       "tokenType": "object",
                       "children": [
                         {
+                          "key": "type",
+                          "tokenType": "string",
+                          "scalarValue": "integer"
+                        },
+                        {
                           "key": "min",
                           "tokenType": "number",
                           "scalarValue": "100"

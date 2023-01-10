@@ -26,6 +26,11 @@
                   "tokenType": "object",
                   "children": [
                     {
+                      "key": "type",
+                      "tokenType": "string",
+                      "scalarValue": "enum"
+                    },
+                    {
                       "key": "enum",
                       "tokenType": "reference",
                       "scalarValue": "@enum"
