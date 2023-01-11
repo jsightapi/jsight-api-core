@@ -49,7 +49,7 @@
                 ],
                 "optional": false
               },
-              "example": "{\"X-Header\":{\"header-property\":123}}",
+              "example": "{\"x-header\":{\"header-property\":123}}",
               "notation": "jsight"
             }
           },

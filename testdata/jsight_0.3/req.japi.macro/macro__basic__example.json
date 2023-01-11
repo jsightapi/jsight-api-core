@@ -118,7 +118,7 @@
                 ],
                 "optional": false
               },
-              "example": "{\"Authorization\":\"Basic dG9tQGNhdC5jb206YWJjMTIz=\",\"Content-Type\":\"application/json\"}",
+              "example": "{\"authorization\":\"Basic dG9tQGNhdC5jb206YWJjMTIz=\",\"content-type\":\"application/json\"}",
               "notation": "jsight"
             }
           },
@@ -224,7 +224,7 @@
                 ],
                 "optional": false
               },
-              "example": "{\"Authorization\":\"Basic dG9tQGNhdC5jb206YWJjMTIz=\",\"Content-Type\":\"application/json\"}",
+              "example": "{\"authorization\":\"Basic dG9tQGNhdC5jb206YWJjMTIz=\",\"content-type\":\"application/json\"}",
               "notation": "jsight"
             }
           },

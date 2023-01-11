@@ -63,7 +63,7 @@
                 ],
                 "optional": false
               },
-              "example": "{\"X-Header\":{\"key\":\"value\"}}",
+              "example": "{\"x-header\":{\"key\":\"value\"}}",
               "notation": "jsight"
             }
           },
