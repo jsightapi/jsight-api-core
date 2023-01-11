@@ -35,13 +35,20 @@ func newExchangeJSightSchema(s *jschema.JSchema) *ExchangeJSightSchema {
 	}
 }
 
+func KeysCaseInsensitive(s *jschema.JSchema) {
+	s.AreKeysCaseInsensitive = true
+}
+
 func NewExchangeJSightSchema[T bytes.ByteKeeper](
 	b T,
 	coreUserTypes *UserSchemas,
 	coreRules map[string]schema.Rule,
 	catalogUserTypes *UserTypes,
+	options ...jschema.Option,
 ) (*ExchangeJSightSchema, error) {
-	es := newExchangeJSightSchema(jschema.New("", b))
+	s := jschema.New("", b, options...)
+
+	es := newExchangeJSightSchema(s)
 	es.catalogUserTypes = catalogUserTypes
 
 	for n, v := range coreRules {

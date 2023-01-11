@@ -484,7 +484,13 @@ func (core *JApiCore) addHeaders(d *directive.Directive) *jerr.JApiError {
 	var s *catalog.ExchangeJSightSchema
 	var err error
 
-	s, err = catalog.NewExchangeJSightSchema(d.BodyCoords.Read(), core.userTypes, core.rules, core.catalog.UserTypes) //nolint:lll
+	s, err = catalog.NewExchangeJSightSchema(
+		d.BodyCoords.Read(),
+		core.userTypes,
+		core.rules,
+		core.catalog.UserTypes,
+		catalog.KeysCaseInsensitive,
+	)
 	if err != nil {
 		var e kit.Error
 		if errors.As(err, &e) {
