@@ -79,7 +79,7 @@ func (b ObjectBuilder) Build() *jschema.JSchema {
 			err = panics.Handle(recover(), err)
 		}()
 		s.ASTNode = s.BuildASTNode()
-		loader.CompileBasic(s.Inner, s.AreKeysOptionalByDefault, s.AreKeysCaseInsensitive)
+		loader.CompileBasic(s.Inner, s.AreKeysOptionalByDefault)
 		return nil
 	})
 

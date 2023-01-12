@@ -97,7 +97,7 @@
               ],
               "optional": false
             },
-            "example": "{\"content-type\":\"application/json\",\"authorization\":\"Basic dG9tQGNhdC5jb206YWJjMTIz=\"}",
+            "example": "{\"Content-Type\":\"application/json\",\"Authorization\":\"Basic dG9tQGNhdC5jb206YWJjMTIz=\"}",
             "notation": "jsight",
             "usedUserTypes": [
               "@auth"

@@ -57,7 +57,7 @@ func (s *pSchema) compilePathVariables() error {
 		defer func() {
 			err = panics.Handle(recover(), err)
 		}()
-		loader.CompileAllOf(s.Inner, s.AreKeysCaseInsensitive)
+		loader.CompileAllOf(s.Inner)
 		return nil
 	})
 }

@@ -29,6 +29,7 @@
     "http GET /cat": {
       "id": "http GET /cat",
       "protocol": "http",
+      "httpMethod": "GET",
       "path": "/cat",
       "tags": [
         "@cat"
@@ -118,7 +119,7 @@
                 ],
                 "optional": false
               },
-              "example": "{\"authorization\":\"Basic dG9tQGNhdC5jb206YWJjMTIz=\",\"content-type\":\"application/json\"}",
+              "example": "{\"Authorization\":\"Basic dG9tQGNhdC5jb206YWJjMTIz=\",\"Content-Type\":\"application/json\"}",
               "notation": "jsight"
             }
           },
@@ -129,12 +130,12 @@
             }
           }
         }
-      ],
-      "httpMethod": "GET"
+      ]
     },
     "http GET /dog": {
       "id": "http GET /dog",
       "protocol": "http",
+      "httpMethod": "GET",
       "path": "/dog",
       "tags": [
         "@dog"
@@ -224,7 +225,7 @@
                 ],
                 "optional": false
               },
-              "example": "{\"authorization\":\"Basic dG9tQGNhdC5jb206YWJjMTIz=\",\"content-type\":\"application/json\"}",
+              "example": "{\"Authorization\":\"Basic dG9tQGNhdC5jb206YWJjMTIz=\",\"Content-Type\":\"application/json\"}",
               "notation": "jsight"
             }
           },
@@ -235,8 +236,7 @@
             }
           }
         }
-      ],
-      "httpMethod": "GET"
+      ]
     }
   },
   "jsight": "0.3",

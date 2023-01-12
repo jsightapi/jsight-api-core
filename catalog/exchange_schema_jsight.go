@@ -35,10 +35,6 @@ func newExchangeJSightSchema(s *jschema.JSchema) *ExchangeJSightSchema {
 	}
 }
 
-func KeysCaseInsensitive(s *jschema.JSchema) {
-	s.AreKeysCaseInsensitive = true
-}
-
 func NewExchangeJSightSchema[T bytes.ByteKeeper](
 	b T,
 	coreUserTypes *UserSchemas,

@@ -17,6 +17,7 @@
     "http POST /cat": {
       "id": "http POST /cat",
       "protocol": "http",
+      "httpMethod": "POST",
       "path": "/cat",
       "tags": [
         "@cat"
@@ -59,7 +60,7 @@
               ],
               "optional": false
             },
-            "example": "{\"authorization\":\"Basic dG9tQGNhdC5jb206YWJjMTIz=\",\"content-type\":\"application/json\"}",
+            "example": "{\"Authorization\":\"Basic dG9tQGNhdC5jb206YWJjMTIz=\",\"Content-Type\":\"application/json\"}",
             "notation": "jsight"
           }
         },
@@ -76,8 +77,7 @@
             "notation": "jsight"
           }
         }
-      },
-      "httpMethod": "POST"
+      }
     }
   },
   "jsight": "0.3",

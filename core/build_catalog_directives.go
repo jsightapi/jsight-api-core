@@ -489,7 +489,6 @@ func (core *JApiCore) addHeaders(d *directive.Directive) *jerr.JApiError {
 		core.userTypes,
 		core.rules,
 		core.catalog.UserTypes,
-		catalog.KeysCaseInsensitive,
 	)
 	if err != nil {
 		var e kit.Error

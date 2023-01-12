@@ -39,7 +39,7 @@
               ],
               "optional": false
             },
-            "example": "{\"content-type\":\"application/json\"}",
+            "example": "{\"Content-Type\":\"application/json\"}",
             "notation": "jsight"
           }
         },

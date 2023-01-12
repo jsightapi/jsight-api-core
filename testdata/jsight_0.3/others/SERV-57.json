@@ -997,7 +997,7 @@
               ],
               "optional": false
             },
-            "example": "{\"x-header\":\"Some additional header\",\"content-type\":\"application/json\",\"authorization\":\"Basic dG9tQGNhdC5jb206YWJjMTIz=\"}",
+            "example": "{\"X-header\":\"Some additional header\",\"Content-Type\":\"application/json\",\"Authorization\":\"Basic dG9tQGNhdC5jb206YWJjMTIz=\"}",
             "notation": "jsight",
             "usedUserTypes": [
               "@commonRequestHeaders"
@@ -1041,7 +1041,7 @@
                 ],
                 "optional": false
               },
-              "example": "{\"x-header\":\"Some additional header\"}",
+              "example": "{\"X-header\":\"Some additional header\"}",
               "notation": "jsight"
             }
           },
