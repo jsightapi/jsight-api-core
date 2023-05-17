@@ -1,6 +1,8 @@
 package core
 
 import (
+	stdErrors "errors"
+
 	schema "github.com/jsightapi/jsight-schema-core"
 	"github.com/jsightapi/jsight-schema-core/notations/jschema"
 	"github.com/jsightapi/jsight-schema-core/notations/regex"
@@ -90,6 +92,11 @@ func (core *JApiCore) compileUserTypeWithAllDependencies(name string) error {
 
 	tt, err := fetchUsedUserTypes(currUT, core.userTypes)
 	if err != nil {
+		var ute userTypeError
+		if stdErrors.As(err, &ute) {
+			name = ute.userTypeName
+			err = ute.err
+		}
 		return jschemaToJAPIError(err, dd.GetValue(name))
 	}
 

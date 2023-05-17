@@ -49,7 +49,11 @@ func (f *usedUserTypeFetcher) fetch(ut schema.Schema) error {
 		f.alreadyProcessed[t] = struct{}{}
 		f.usedUserTypes = append(f.usedUserTypes, t)
 		if err := f.fetch(f.userTypes.GetValue(t)); err != nil {
-			return fmt.Errorf("%s %q: %w", jerr.ProcessTypeErr, t, err)
+			sErr := userTypeError{
+				err:          err,
+				userTypeName: t,
+			}
+			return fmt.Errorf("%s %q: %w", jerr.ProcessTypeErr, t, sErr)
 		}
 	}
 	return nil
