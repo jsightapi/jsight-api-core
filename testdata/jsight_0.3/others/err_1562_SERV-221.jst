@@ -1,0 +1,63 @@
+JSIGHT 0.3
+
+URL /main
+  Protocol json-rpc-2.0
+
+  Method address.archive
+    Params
+    {
+      "id": 1,
+      "date": 1665792000, // {type: "integer"}
+      "comment": "" // {type: "string", optional: true}
+    }
+    Result
+    {
+      "success":  true, // { type: "boolean" }
+      "conflicts": { // {optional: true}
+        "bid": @bid
+      }
+    }
+
+TYPE @act
+{
+  "bid": @bid
+}
+
+TYPE @bid
+{
+  "cargo": @Cargo,
+  "totalWeight": 2340000, // {type: "integer"}
+  "distance": 200, // {type: "integer"}
+  "costTon": 300, // {type: "integer"}
+  "costTonKm": 228, // {type: "integer"}
+  "costCargo": 250000, // {type: "integer"}
+  "loadingMethod": "Loader", // {type: "string"}
+  "unloadingMethod": "Loader", // {type: "string"}
+  "weighingScaleLength": 15, // {type: "integer"}
+  "weighingScaleMaxLoad": 80000, // {type: "integer"}
+  "plusTen": true, // {type: "boolean"}
+  "cargoOwner": "Owner", // {type: "string"}
+  "beginTs": 1657018646, // {type: "integer", optional: true}
+  "endTs": 1657882646, // {type: "integer", optional: true}
+  "freeSpace": [
+    {
+      "shipmentTs": 1659426649, // {type: "integer"}
+      "seats": 4, // {type: "integer"}
+      "totalSeats": 2000 // {type: "integer"}
+    }
+  ],
+  "statistics": { // {optional: true}
+    "seats": 50, // {type: "integer"}
+    "filledSeats": 10 // {type: "integer"}
+  }
+}
+
+TYPE @Cargo
+{
+  "slug": "wheat", // {type: "string"}
+  "name": "Wheat", // {type: "string"}
+  "num": "1234", // {type: "string", optional: true}
+  "externalId": "123457889", // {type: "string", optional: true}
+  "averageWeight": 24000, // {type: "string", optional: true}
+  "hidden": false // {type: "boolean", optional: true}
+}
