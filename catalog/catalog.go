@@ -5,9 +5,6 @@ import (
 
 	"github.com/jsightapi/jsight-schema-core/bytes"
 
-	"github.com/jsightapi/jsight-api-core/catalog/iface"
-	"github.com/jsightapi/jsight-api-core/catalog/ser/openapi"
-
 	"github.com/jsightapi/jsight-api-core/directive"
 )
 
@@ -40,26 +37,12 @@ type Catalog struct {
 
 var _ json.Marshaler = &Catalog{}
 
-func (c *Catalog) GetInfo() iface.Info {
-	return c.Info
-}
-
 func (c *Catalog) ToJson() ([]byte, error) {
 	return json.Marshal(c)
 }
 
 func (c *Catalog) ToJsonIndent() ([]byte, error) {
 	return json.MarshalIndent(c, "", "  ")
-}
-
-func (c *Catalog) ToOpenAPIJson() ([]byte, error) {
-	o := openapi.NewOpenAPI(c)
-	return json.Marshal(o)
-}
-
-func (c *Catalog) ToOpenAPIJsonIndent() ([]byte, error) {
-	o := openapi.NewOpenAPI(c)
-	return json.MarshalIndent(o, "", "  ")
 }
 
 func NewCatalog() *Catalog {
