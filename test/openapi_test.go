@@ -11,15 +11,15 @@ import (
 	"github.com/jsightapi/jsight-api-core/kit"
 )
 
-func TestJDocExchange(t *testing.T) {
-	jsonFilesPaths := jsonFilePaths(GetTestDataDir())
+func TestOpenAPI(t *testing.T) {
+	openapiFilesPaths := openapiFilePaths(GetTestDataDir())
 
-	for _, jsonPath := range jsonFilesPaths {
-		t.Run(cutRepositoryPath(jsonPath), func(t *testing.T) {
-			json, err := os.ReadFile(jsonPath)
+	for _, openapiPath := range openapiFilesPaths {
+		t.Run(cutRepositoryPath(openapiPath), func(t *testing.T) {
+			json, err := os.ReadFile(openapiPath)
 			require.NoError(t, err)
 
-			japiPath, err := japiFilePath(jsonPath)
+			japiPath, err := japiFilePath(openapiPath)
 			require.NoError(t, err)
 
 			j, je := kit.NewJapi(japiPath)
@@ -28,7 +28,7 @@ func TestJDocExchange(t *testing.T) {
 				t.FailNow()
 			}
 
-			actual, err := j.ToJsonIndent()
+			actual, err := j.ToOpenAPIJsonIndent()
 			require.NoError(t, err)
 
 			expected := string(json)
@@ -36,14 +36,14 @@ func TestJDocExchange(t *testing.T) {
 			ok := assert.JSONEq(t, expected, string(actual))
 
 			if !ok {
-				t.Log("Actual JSON:")
+				t.Log("Actual OpenAPI JSON:")
 				t.Log(string(actual))
 			}
 		})
 	}
 }
 
-func jsonFilePaths(dir string) []string {
+func openapiFilePaths(dir string) []string {
 	filenames := make([]string, 0, 30)
 
 	err := filepath.Walk(dir,
@@ -58,7 +58,7 @@ func jsonFilePaths(dir string) []string {
 				return filepath.SkipDir
 			}
 
-			if !info.IsDir() && filepath.Ext(path) == ".json" {
+			if !info.IsDir() && filepath.Ext(path) == ".openapi" {
 				filenames = append(filenames, path)
 			}
 			return nil
@@ -69,10 +69,4 @@ func jsonFilePaths(dir string) []string {
 	}
 
 	return filenames
-}
-
-func japiFilePath(resFilePath string) (string, error) {
-	ext := filepath.Ext(resFilePath)
-	japiFilePath := resFilePath[:len(resFilePath)-len(ext)] + ".jst"
-	return japiFilePath, nil
 }

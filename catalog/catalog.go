@@ -5,6 +5,8 @@ import (
 
 	"github.com/jsightapi/jsight-schema-core/bytes"
 
+	"github.com/jsightapi/jsight-api-core/ser/openapi"
+
 	"github.com/jsightapi/jsight-api-core/directive"
 )
 
@@ -43,6 +45,16 @@ func (c *Catalog) ToJson() ([]byte, error) {
 
 func (c *Catalog) ToJsonIndent() ([]byte, error) {
 	return json.MarshalIndent(c, "", "  ")
+}
+
+func (c *Catalog) ToOpenAPIJson() ([]byte, error) {
+	o := openapi.NewOpenAPI(c)
+	return json.Marshal(o)
+}
+
+func (c *Catalog) ToOpenAPIJsonIndent() ([]byte, error) {
+	o := openapi.NewOpenAPI(c)
+	return json.MarshalIndent(o, "", "  ")
 }
 
 func NewCatalog() *Catalog {

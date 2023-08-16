@@ -63,3 +63,11 @@ func (j *JApi) ToJson() ([]byte, error) {
 func (j *JApi) ToJsonIndent() ([]byte, error) {
 	return j.Catalog().ToJsonIndent()
 }
+
+func (j *JApi) ToOpenAPIJson() ([]byte, error) {
+	return j.Catalog().ToOpenAPIJson()
+}
+
+func (j *JApi) ToOpenAPIJsonIndent() ([]byte, error) {
+	return j.Catalog().ToOpenAPIJsonIndent()
+}
