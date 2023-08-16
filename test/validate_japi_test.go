@@ -4,6 +4,7 @@ import (
 	"errors"
 	"os"
 	"path/filepath"
+	"regexp"
 	"strconv"
 	"strings"
 	"testing"
@@ -113,7 +114,17 @@ func getActualErrorMessage(basePath string, je *jerr.JApiError) string {
 	if je == nil {
 		return ""
 	}
-	return strings.ReplaceAll(je.Error(), basePath, "")
+	// get rid of base path file paths for windows paths (considering `\` slashes)
+	escapedPath := strings.ReplaceAll(basePath, `\`, `\\`)
+	escapedPath = strings.ReplaceAll(escapedPath, `.`, `\.`)
+	m := regexp.MustCompile(`(` + escapedPath + `)(([^\s\\]+)\\)+`)
+	r := m.ReplaceAllStringFunc(je.Error(), func(s string) string {
+		r := strings.ReplaceAll(s, basePath, "")
+		return strings.ReplaceAll(r, `\`, `/`)
+	})
+	// get rid of basePath in linux file paths
+	r = strings.ReplaceAll(r, basePath, "")
+	return r
 }
 
 func logJAPIError(t *testing.T, e *jerr.JApiError) {
