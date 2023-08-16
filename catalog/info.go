@@ -11,3 +11,7 @@ type Info struct {
 	Description *string             `json:"description,omitempty"`
 	Directive   directive.Directive `json:"-"`
 }
+
+func (i *Info) GetTitle() string {
+	return i.Title
+}

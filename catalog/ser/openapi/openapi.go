@@ -1,19 +1,20 @@
 package openapi
 
 import (
-	"github.com/jsightapi/jsight-api-core/catalog"
+	"github.com/jsightapi/jsight-api-core/catalog/iface"
 )
 
 type OpenAPI struct {
-	catalog *catalog.Catalog
+	catalog iface.Catalog
 
 	OpenAPI string `json:"openapi"`
-	Info    string `json:"info"`
+	Info    *Info  `json:"info"`
 }
 
-func NewOpenAPI(c *catalog.Catalog) *OpenAPI {
+func NewOpenAPI(c iface.Catalog) *OpenAPI {
 	return &OpenAPI{
 		catalog: c,
 		OpenAPI: "3.1.0",
+		Info:    NewInfo(c.GetInfo()),
 	}
 }

@@ -1,15 +1,15 @@
 package openapi
 
 import (
-	"github.com/jsightapi/jsight-api-core/catalog"
+	"github.com/jsightapi/jsight-api-core/catalog/iface"
 )
 
 type Info struct {
 	Title string `json:"title"`
 }
 
-func NewInfo(i *catalog.Info) *Info {
+func NewInfo(i iface.Info) *Info {
 	return &Info{
-		Title: i.Title,
+		Title: i.GetTitle(),
 	}
 }
