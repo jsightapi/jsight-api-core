@@ -9,7 +9,13 @@ type Info struct {
 }
 
 func NewInfo(i *catalog.Info) *Info {
+	if i == nil {
+		return &Info{
+			Title: "",
+		}
+	}
+
 	return &Info{
-		Title: i.GetTitle(),
+		Title: i.Title,
 	}
 }
