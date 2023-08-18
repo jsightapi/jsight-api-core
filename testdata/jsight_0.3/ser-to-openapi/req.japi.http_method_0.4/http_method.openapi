@@ -1,0 +1,235 @@
+{
+    "openapi": "3.0.3",
+    "info": {
+      "title": "",
+      "version": ""
+    },
+    "paths": {
+      "/root-get-method-only": {
+        "get": {
+          "responses": {
+            "default": {
+              "description": "",
+              "content": {
+                "*": {}
+              }
+            }
+          }
+        }
+      },
+      "/root-post-method-only": {
+        "post": {
+          "responses": {
+            "default": {
+              "description": "",
+              "content": {
+                "*": {}
+              }
+            }
+          }
+        }
+      },
+      "/root-put-method-only": {
+        "put": {
+          "responses": {
+            "default": {
+              "description": "",
+              "content": {
+                "*": {}
+              }
+            }
+          }
+        }
+      },
+      "/root-patch-method-only": {
+        "patch": {
+          "responses": {
+            "default": {
+              "description": "",
+              "content": {
+                "*": {}
+              }
+            }
+          }
+        }
+      },
+      "/root-delete-method-only": {
+        "delete": {
+          "responses": {
+            "default": {
+              "description": "",
+              "content": {
+                "*": {}
+              }
+            }
+          }
+        }
+      },
+      "/root-get-method": {
+        "get": {
+          "responses": {
+            "200": {
+              "description": "",
+              "content": {
+                "*": {}
+              }
+            }
+          }
+        }
+      },
+      "/root-post-method": {
+        "post": {
+          "responses": {
+            "201": {
+              "description": "",
+              "content": {
+                "*": {}
+              }
+            }
+          }
+        }
+      },
+      "/root-put-method": {
+        "put": {
+          "responses": {
+            "202": {
+              "description": "",
+              "content": {
+                "*": {}
+              }
+            }
+          }
+        }
+      },
+      "/root-patch-method": {
+        "patch": {
+          "responses": {
+            "203": {
+              "description": "",
+              "content": {
+                "*": {}
+              }
+            }
+          }
+        }
+      },
+      "/root-delete-method": {
+        "delete": {
+          "responses": {
+            "204": {
+              "description": "",
+              "content": {
+                "*": {}
+              }
+            }
+          }
+        }
+      },
+      "/url-all-methods-only": {
+        "get": {
+          "responses": {
+            "default": {
+              "description": "",
+              "content": {
+                "*": {}
+              }
+            }
+          }
+        },
+        "post": {
+          "responses": {
+            "default": {
+              "description": "",
+              "content": {
+                "*": {}
+              }
+            }
+          }
+        },
+        "put": {
+          "responses": {
+            "default": {
+              "description": "",
+              "content": {
+                "*": {}
+              }
+            }
+          }
+        },
+        "patch": {
+          "responses": {
+            "default": {
+              "description": "",
+              "content": {
+                "*": {}
+              }
+            }
+          }
+        },
+        "delete": {
+          "responses": {
+            "default": {
+              "description": "",
+              "content": {
+                "*": {}
+              }
+            }
+          }
+        }
+      },
+      "/url-get-post-methods": {
+        "get": {
+          "responses": {
+            "300": {
+              "description": "",
+              "content": {
+                "*": {}
+              }
+            }
+          }
+        },
+        "post": {
+          "responses": {
+            "301": {
+              "description": "",
+              "content": {
+                "*": {}
+              }
+            }
+          }
+        }
+      },
+      "/url-put-patch-delete-methods": {
+        "put": {
+          "responses": {
+            "302": {
+              "description": "",
+              "content": {
+                "*": {}
+              }
+            }
+          }
+        },
+        "patch": {
+          "responses": {
+            "303": {
+              "description": "",
+              "content": {
+                "*": {}
+              }
+            }
+          }
+        },
+        "delete": {
+          "responses": {
+            "304": {
+              "description": "",
+              "content": {
+                "*": {}
+              }
+            }
+          }
+        }
+      }
+    }
+  }
