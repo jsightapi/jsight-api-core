@@ -11,7 +11,7 @@
             "default": {
               "description": "",
               "content": {
-                "*": {}
+                "*/*": {}
               }
             }
           }
@@ -23,7 +23,7 @@
             "default": {
               "description": "",
               "content": {
-                "*": {}
+                "*/*": {}
               }
             }
           }
@@ -35,7 +35,7 @@
             "default": {
               "description": "",
               "content": {
-                "*": {}
+                "*/*": {}
               }
             }
           }
@@ -47,7 +47,7 @@
             "default": {
               "description": "",
               "content": {
-                "*": {}
+                "*/*": {}
               }
             }
           }
@@ -59,7 +59,7 @@
             "default": {
               "description": "",
               "content": {
-                "*": {}
+                "*/*": {}
               }
             }
           }
@@ -71,7 +71,7 @@
             "200": {
               "description": "",
               "content": {
-                "*": {}
+                "*/*": {}
               }
             }
           }
@@ -83,7 +83,7 @@
             "201": {
               "description": "",
               "content": {
-                "*": {}
+                "*/*": {}
               }
             }
           }
@@ -95,7 +95,7 @@
             "202": {
               "description": "",
               "content": {
-                "*": {}
+                "*/*": {}
               }
             }
           }
@@ -107,7 +107,7 @@
             "203": {
               "description": "",
               "content": {
-                "*": {}
+                "*/*": {}
               }
             }
           }
@@ -119,7 +119,7 @@
             "204": {
               "description": "",
               "content": {
-                "*": {}
+                "*/*": {}
               }
             }
           }
@@ -131,7 +131,7 @@
             "default": {
               "description": "",
               "content": {
-                "*": {}
+                "*/*": {}
               }
             }
           }
@@ -141,7 +141,7 @@
             "default": {
               "description": "",
               "content": {
-                "*": {}
+                "*/*": {}
               }
             }
           }
@@ -151,7 +151,7 @@
             "default": {
               "description": "",
               "content": {
-                "*": {}
+                "*/*": {}
               }
             }
           }
@@ -161,7 +161,7 @@
             "default": {
               "description": "",
               "content": {
-                "*": {}
+                "*/*": {}
               }
             }
           }
@@ -171,7 +171,7 @@
             "default": {
               "description": "",
               "content": {
-                "*": {}
+                "*/*": {}
               }
             }
           }
@@ -183,7 +183,7 @@
             "300": {
               "description": "",
               "content": {
-                "*": {}
+                "*/*": {}
               }
             }
           }
@@ -193,7 +193,7 @@
             "301": {
               "description": "",
               "content": {
-                "*": {}
+                "*/*": {}
               }
             }
           }
@@ -205,7 +205,7 @@
             "302": {
               "description": "",
               "content": {
-                "*": {}
+                "*/*": {}
               }
             }
           }
@@ -215,7 +215,7 @@
             "303": {
               "description": "",
               "content": {
-                "*": {}
+                "*/*": {}
               }
             }
           }
@@ -225,7 +225,66 @@
             "304": {
               "description": "",
               "content": {
-                "*": {}
+                "*/*": {}
+              }
+            }
+          }
+        }
+      },
+      "/post-all-children/{path-par}": {
+        "parameters": [
+          {
+            "name": "path-par",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "example": 12
+            }
+          },
+          {
+            "name": "query-par",
+            "in": "query",
+            "style": "deepObject",
+            "explode": true,
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": "value"
+            }
+          }
+        ],
+        "post": {
+          "summary": "The annotation",
+          "description": "The description.",
+          "requestBody": {
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string",
+                  "example": "some request"
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "",
+              "content": {
+                "*/*": {
+                  "schema": {
+                    "oneOf": [
+                      {
+                        "type": "integer",
+                        "example": 12345
+                      },
+                      {
+                        "type": "string",
+                        "example": "some-string"
+                      }
+                    ]
+                  }
+                }
               }
             }
           }

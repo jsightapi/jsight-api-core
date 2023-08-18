@@ -47,3 +47,23 @@ URL /url-put-patch-delete-methods
     303 any
   DELETE
     304 any
+
+#--------------------------------------------------
+
+POST /post-all-children/{path-par} // The annotation
+  Description
+    The description.
+  Path
+    {
+      "path-par": 12
+    }
+  Query
+    {
+      "query-par": "value"
+    }
+  Request
+    "some request"
+  200
+    12345
+  200
+    "some-string"
