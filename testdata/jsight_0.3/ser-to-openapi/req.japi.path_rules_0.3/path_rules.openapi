@@ -1,0 +1,291 @@
+{
+    "openapi": "3.0.3",
+    "info": {
+      "title": "",
+      "version": ""
+    },
+    "paths": {
+      "/path-parameter-rules-transfer/1/{par1}": {
+        "parameters": [{
+          "name": "par1",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "description": "Type integer.",
+            "type": "integer",
+            "example": 1
+          }
+        }],
+        "post": {
+          "responses": {
+            "300": {
+              "description": "",
+              "content": {
+                "*/*": {}
+              }
+            }
+          }
+        },
+        "patch": {
+          "responses": {
+            "301": {
+              "description": "",
+              "content": {
+                "*/*": {}
+              }
+            }
+          }
+        },
+        "put": {
+          "responses": {
+            "302": {
+              "description": "",
+              "content": {
+                "*/*": {}
+              }
+            }
+          }
+        },
+        "get": {
+          "responses": {
+            "303": {
+              "description": "",
+              "content": {
+                "*/*": {}
+              }
+            }
+          }
+        },
+        "delete": {
+          "responses": {
+            "304": {
+              "description": "",
+              "content": {
+                "*/*": {}
+              }
+            }
+          }
+        }
+      },
+      "/path-parameter-rules-transfer/other1/{par1}": {
+        "parameters": [{
+          "name": "par1",
+          "in": "path",
+          "required": true,
+          "schema": {}
+        }],
+        "get": {
+          "responses": {
+            "200": {
+              "description": "",
+              "content": {
+                "*/*": {}
+              }
+            }
+          }
+        }
+      },
+      "/path-parameter-rules-transfer/2/{par1}/{par2}": {
+        "parameters": [
+          {
+            "name": "par1",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "number",
+              "minimum": -1,
+              "maximum": 1,
+              "example": -0.12
+            }
+          },
+          {
+            "name": "par2",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": ["right", "left"],
+              "example": "right"
+            }
+          }
+        ],
+        "post": {
+          "responses": {
+            "300": {
+              "description": "",
+              "content": {
+                "*/*": {}
+              }
+            }
+          }
+        },
+        "put": {
+          "responses": {
+            "301": {
+              "description": "",
+              "content": {
+                "*/*": {}
+              }
+            }
+          }
+        },
+        "patch": {
+          "responses": {
+            "302": {
+              "description": "",
+              "content": {
+                "*/*": {}
+              }
+            }
+          }
+        },
+        "get": {
+          "responses": {
+            "303": {
+              "description": "",
+              "content": {
+                "*/*": {}
+              }
+            }
+          }
+        },
+        "delete": {
+          "responses": {
+            "304": {
+              "description": "",
+              "content": {
+                "*/*": {}
+              }
+            }
+          }
+        }
+      },
+      "/path-parameter-rules-transfer/other2/{par1}/{par2}": {
+        "parameters": [
+          {
+            "name": "par1",
+            "in": "path",
+            "required": true,
+            "schema": {}
+          },
+          {
+            "name": "par2",
+            "in": "path",
+            "required": true,
+            "schema": {}
+          }
+        ],
+        "delete": {
+          "responses": {
+            "200": {
+              "description": "",
+              "content": {
+                "*/*": {}
+              }
+            }
+          }
+        }
+      },
+      "/path-parameter-rules-transfer/3/{par1}/{par2}": {
+        "parameters": [
+          {
+            "name": "par1",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "number",
+              "minimum": -1,
+              "maximum": 1,
+              "example": -0.12
+            }
+          },
+          {
+            "name": "par2",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": ["right", "left"],
+              "example": "right"
+            }
+          }
+        ],
+        "post": {
+          "responses": {
+            "400": {
+              "description": "",
+              "content": {
+                "*/*": {}
+              }
+            }
+          }
+        },
+        "put": {
+          "responses": {
+            "401": {
+              "description": "",
+              "content": {
+                "*/*": {}
+              }
+            }
+          }
+        },
+        "patch": {
+          "responses": {
+            "402": {
+              "description": "",
+              "content": {
+                "*/*": {}
+              }
+            }
+          }
+        },
+        "get": {
+          "responses": {
+            "403": {
+              "description": "",
+              "content": {
+                "*/*": {}
+              }
+            }
+          }
+        },
+        "delete": {
+          "responses": {
+            "404": {
+              "description": "",
+              "content": {
+                "*/*": {}
+              }
+            }
+          }
+        }
+      },
+      "/path-parameter-rules-transfer/other3/{par1}/{par2}": {
+        "parameters": [
+          {
+            "name": "par1",
+            "in": "path",
+            "required": true,
+            "schema": {}
+          },
+          {
+            "name": "par2",
+            "in": "path",
+            "required": true,
+            "schema": {}
+          }
+        ],
+        "delete": {
+          "responses": {
+            "200": {
+              "description": "",
+              "content": {
+                "*/*": {}
+              }
+            }
+          }
+        }
+      }
+    }
+  }

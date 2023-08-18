@@ -1,0 +1,153 @@
+JSIGHT 0.3
+
+URL /url-without-methods/{par1} # Must be not shown in OpenAPI.
+  Path
+    {
+      "par1": 1
+    }
+
+#--------------------------------------------------------------------------------------
+
+POST /path-parameter-rules-transfer/1/{par1} # par1 here must be of type integer
+  300 any
+
+URL /path-parameter-rules-transfer/1/{par1} # here we set the requirements to par1 parameter
+  Path
+    {
+      "par1": 1 // Type integer.
+    }
+  PATCH
+    301 any
+  PUT
+    302 any
+
+GET /path-parameter-rules-transfer/1/{par1} # par1 here must be of type integer
+  303 any
+
+DELETE /path-parameter-rules-transfer/1/{par1} # par1 here must be of type integer
+  304 any
+
+GET /path-parameter-rules-transfer/other1/{par1} # par1 here can be of any type
+  200 any
+
+#--------------------------------------------------------------------------------------
+
+POST /path-parameter-rules-transfer/2/{par1}/{par2}
+  300 any
+
+PUT /path-parameter-rules-transfer/2/{par1}/{par2} # here we set the requirements for par2
+  Path
+    {
+      "par2": "right" // {enum: ["right", "left"]}
+    }
+  301 any
+
+URL /path-parameter-rules-transfer/2/{par1}/{par2}
+  PATCH
+    302 any
+
+GET /path-parameter-rules-transfer/2/{par1}/{par2} # here we set the requirements for par1
+  Path
+    {
+      "par1": -0.12 // {min: -1, max: 1}
+    }
+  303 any
+
+DELETE /path-parameter-rules-transfer/2/{par1}/{par2}
+  304 any
+
+DELETE /path-parameter-rules-transfer/other2/{par1}/{par2} # must be of any type
+  200 any
+
+#--------------------------------------------------------------------------------------
+
+POST /path-parameter-rules-transfer/3/{par1}/{par2}
+  400 any
+
+PUT /path-parameter-rules-transfer/3/{par1}/{par2} # here we set the requirements for par2
+  Path
+    @pathObject
+  401 any
+
+TYPE @pathObject
+  {
+    "par2": "right" // {enum: ["right", "left"]}
+  }
+
+URL /path-parameter-rules-transfer/3/{par1}/{par2}
+  PATCH
+    402 any
+
+GET /path-parameter-rules-transfer/3/{par1}/{par2} # here we set the requirements for par1
+  Path
+    { // {allOf: "@allOfPathObject"}
+    }
+  403 any
+
+TYPE @allOfPathObject
+  {
+    "par1": -0.12 // {min: -1, max: 1}
+  }
+
+DELETE /path-parameter-rules-transfer/3/{par1}/{par2}
+  404 any
+
+DELETE /path-parameter-rules-transfer/other3/{par1}/{par2}
+  200 any
+  
+#--------------------------------------------------------------------------------------
+
+---> FINISHED HERE
+
+GET /{p1}/then/{p2}/and/{p3}
+  Path
+  {
+    "p1": false,
+    "p3": 12.12 // {precision: 2}
+  }
+  500
+    "OK"
+
+URL /{p1}
+  POST
+    Request any
+    200 any
+
+PUT    /{p1}/then
+  200 any
+PATCH  /{p1}/then/{p2}
+  200 any
+DELETE /{p1}/then/{p2}/and
+  Path
+  {
+    "p2": "AAA123" // {regex: "[A-Z]+\\d+"}
+  }
+  200 any
+
+#--------------------------------------------------------------------------------------
+
+GET /ambiguous-string-boolean/true
+  200
+    "`/ambiguous-string-boolean/true` was called" // {const: true}
+
+GET /ambiguous-string-boolean/{par1}
+  Path
+  {
+    "par1": true
+  }
+  200
+    "`/ambiguous-string-boolean/{par1}` was called" // {const: true}
+
+#--------------------------------------------------------------------------------------
+
+GET /ambiguous-boolean-string/{par1}
+  Path
+  {
+    "par1": true
+  }
+  200
+    "`/ambiguous-boolean-string/{par1}` was called" // {const: true}
+
+GET /ambiguous-boolean-string/true
+  200
+    "`/ambiguous-boolean-string/true` was called" // {const: true}
