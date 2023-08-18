@@ -1,0 +1,59 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "",
+    "version": ""
+  },
+  "paths": {
+    "/": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "integer",
+                  "nullable": true,
+                  "enum": [null]
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "null": {
+                      "type": "integer",
+                      "nullable": true,
+                      "enum": [null]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "202": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "integer",
+                    "nullable": true,
+                    "enum": [null]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
