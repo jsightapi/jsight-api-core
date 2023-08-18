@@ -14,7 +14,7 @@ type OpenAPI struct {
 func NewOpenAPI(c *catalog.Catalog) *OpenAPI {
 	return &OpenAPI{
 		catalog: c,
-		OpenAPI: "3.1.0",
+		OpenAPI: "3.0.3",
 		Info:    NewInfo(c.Info),
 	}
 }
