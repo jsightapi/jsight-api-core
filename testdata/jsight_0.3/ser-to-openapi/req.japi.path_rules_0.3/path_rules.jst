@@ -97,8 +97,6 @@ DELETE /path-parameter-rules-transfer/other3/{par1}/{par2}
   
 #--------------------------------------------------------------------------------------
 
----> FINISHED HERE
-
 GET /{p1}/then/{p2}/and/{p3}
   Path
   {
@@ -120,34 +118,6 @@ PATCH  /{p1}/then/{p2}
 DELETE /{p1}/then/{p2}/and
   Path
   {
-    "p2": "AAA123" // {regex: "[A-Z]+\\d+"}
+    "p2": "AAA123" // {regex: "^[A-Z]+\\d+$"}
   }
   200 any
-
-#--------------------------------------------------------------------------------------
-
-GET /ambiguous-string-boolean/true
-  200
-    "`/ambiguous-string-boolean/true` was called" // {const: true}
-
-GET /ambiguous-string-boolean/{par1}
-  Path
-  {
-    "par1": true
-  }
-  200
-    "`/ambiguous-string-boolean/{par1}` was called" // {const: true}
-
-#--------------------------------------------------------------------------------------
-
-GET /ambiguous-boolean-string/{par1}
-  Path
-  {
-    "par1": true
-  }
-  200
-    "`/ambiguous-boolean-string/{par1}` was called" // {const: true}
-
-GET /ambiguous-boolean-string/true
-  200
-    "`/ambiguous-boolean-string/true` was called" // {const: true}
