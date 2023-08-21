@@ -406,7 +406,7 @@
             "pattern": "^[A-Z]+\\d+$",
             "example": "AAA123"
           }
-        },      
+        }      
       ],
       "patch": {
         "responses": {
@@ -439,7 +439,7 @@
             "pattern": "^[A-Z]+\\d+$",
             "example": "AAA123"
           }
-        },      
+        }      
       ],
       "delete": {
         "responses": {
