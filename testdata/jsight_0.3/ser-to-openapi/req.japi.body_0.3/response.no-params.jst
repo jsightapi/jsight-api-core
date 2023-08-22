@@ -1,0 +1,68 @@
+JSIGHT 0.3
+
+INCLUDE types.jstl
+
+#---------- /response/no-params/root-scalar ----------------------
+POST /response/no-params/root-scalar/no-rules
+  200
+    Body
+      "root-string"
+  
+POST /response/no-params/root-scalar/with-rules
+  200
+    Body
+      "AAA123" // {minLength: 4, maxLength: 15, regex: "^[A-Z]+\\d+$", nullable: true}
+  
+#---------- /response/no-params/root-array ----------------------
+PUT /response/no-params/root-array/no-rules
+  200
+    Body
+    [
+      "string"
+    ]
+  
+PUT /response/no-params/root-array/with-rules
+  200
+    Body
+    [ // {minItems: 1, maxItems: 5, nullable: true}
+      "string"
+    ]
+  
+#---------- /response/no-params/root-object ----------------------
+PATCH /response/no-params/root-object/no-rules
+  200
+    Body
+    {
+      "string": "some-string"
+    }
+  
+PATCH /response/no-params/root-object/with-rules
+  200
+    Body
+    { // {additionalProperties: "@array", allOf: "@object", nullable: true}
+      "\u005C \uD834\uDD1E\" \\ \/ \b \f \n \r \t АБВГДЕЁЖЗабвгдеёжзABCDEFGabcdefg": "bar2",
+      "": "",
+      "optional": "field" // {optional: true}
+    }
+  
+#---------- /response/no-params/root-mixed ----------------------
+DELETE /response/no-params/root-mixed/two-scalars
+  200
+    Body
+      123 // {or: ["integer", "string"]}
+  
+DELETE /response/no-params/root-mixed/object-or-array
+  200
+    Body
+      @object | @array
+  
+#---------- /response/no-params/root-user-type ----------------------
+PUT /response/no-params/root-user-type/scalar
+  200
+    Body
+      @decimal
+  
+PUT /response/no-params/root-user-type/object
+  200
+    Body
+      @object

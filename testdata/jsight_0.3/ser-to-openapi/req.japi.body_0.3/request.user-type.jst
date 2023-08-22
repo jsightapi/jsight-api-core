@@ -3,7 +3,6 @@ JSIGHT 0.3
 INCLUDE types.jstl 
 
 #---------- /request/root-scalar ----------------------
-
 POST /request/root-scalar/no-rules
   Request
     Body @request_root_scalar_no_rules 
@@ -44,6 +43,7 @@ TYPE @request_root_array_with_rules
 [ // {minItems: 1, maxItems: 5, nullable: true}
   "string"
 ]
+
 #---------- /request/root-object ----------------------
 PATCH /request/root-object/no-rules
   Request
@@ -89,7 +89,6 @@ TYPE @request_root_mixed_object_or_array
   @object | @array
 
 #---------- /request/root-user-type ----------------------
-
 PUT /request/root-user-type/scalar
   Request
     Body @request_root_user_type_scalar
