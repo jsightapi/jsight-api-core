@@ -58,14 +58,14 @@ TYPE @response_root_object_with_rules
 }
 
 #---------- /response/user-type/root-mixed ----------------------
-DELETE /response/user-type/root-mixed/two-scalars
+PATCH /response/user-type/root-mixed/two-scalars
   200
     Body @response_root_mixed_two_scalars
   
 TYPE @response_root_mixed_two_scalars
   123 // {or: ["integer", "string"]}
 
-DELETE /response/user-type/root-mixed/object-or-array
+PATCH /response/user-type/root-mixed/object-or-array
   200
     Body @response_root_mixed_object_or_array
   

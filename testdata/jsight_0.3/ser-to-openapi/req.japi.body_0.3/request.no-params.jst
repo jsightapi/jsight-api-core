@@ -59,14 +59,14 @@ PATCH /request/no-params/root-object/with-rules
     "OK"
 
 #---------- /request/no-params/root-mixed ----------------------
-DELETE /request/no-params/root-mixed/two-scalars
+PATCH /request/no-params/root-mixed/two-scalars
   Request
     Body
       123 // {or: ["integer", "string"]}
   200
     "OK"
 
-DELETE /request/no-params/root-mixed/object-or-array
+PATCH /request/no-params/root-mixed/object-or-array
   Request
     Body
       @object | @array

@@ -46,12 +46,12 @@ PATCH /response/no-params/root-object/with-rules
     }
   
 #---------- /response/no-params/root-mixed ----------------------
-DELETE /response/no-params/root-mixed/two-scalars
+PATCH /response/no-params/root-mixed/two-scalars
   200
     Body
       123 // {or: ["integer", "string"]}
   
-DELETE /response/no-params/root-mixed/object-or-array
+PATCH /response/no-params/root-mixed/object-or-array
   200
     Body
       @object | @array

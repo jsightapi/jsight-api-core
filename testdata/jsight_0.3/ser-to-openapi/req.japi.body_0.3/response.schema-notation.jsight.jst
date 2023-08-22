@@ -46,12 +46,12 @@ PATCH /response/schema-notation/jsight/root-object/with-rules
     }
   
 #---------- /response/schema-notation/jsight/root-mixed ----------------------
-DELETE /response/schema-notation/jsight/root-mixed/two-scalars
+PATCH /response/schema-notation/jsight/root-mixed/two-scalars
   200
     Body jsight
       123 // {or: ["integer", "string"]}
   
-DELETE /response/schema-notation/jsight/root-mixed/object-or-array
+PATCH /response/schema-notation/jsight/root-mixed/object-or-array
   200
     Body jsight
       @object | @array

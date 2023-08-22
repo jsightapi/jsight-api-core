@@ -70,7 +70,7 @@ TYPE @request_root_object_with_rules
 }
 
 #---------- /request/user-type/root-mixed ----------------------
-DELETE /request/user-type/root-mixed/two-scalars
+PATCH /request/user-type/root-mixed/two-scalars
   Request
     Body @request_root_mixed_two_scalars
   200
@@ -79,7 +79,7 @@ DELETE /request/user-type/root-mixed/two-scalars
 TYPE @request_root_mixed_two_scalars
   123 // {or: ["integer", "string"]}
 
-DELETE /request/user-type/root-mixed/object-or-array
+PATCH /request/user-type/root-mixed/object-or-array
   Request
     Body @request_root_mixed_object_or_array
   200

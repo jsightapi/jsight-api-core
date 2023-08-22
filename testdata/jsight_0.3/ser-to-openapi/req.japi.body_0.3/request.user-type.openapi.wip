@@ -1,0 +1,376 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "",
+    "version": ""
+  },
+  "paths": {
+    "/request/user-type/root-scalar/no-rules": {
+      "post": {
+        "requestBody": {
+          "content": {
+            "*/*": {
+              "schema": {
+                "$ref": "/request/user-type/root-scalar/no-rules"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string",
+                  "example": "OK"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/request/user-type/root-scalar/with-rules": {
+      "post": {
+        "requestBody": {
+          "content": {
+            "*/*": {
+              "schema": {
+                "$ref": "/request/user-type/root-scalar/with-rules"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string",
+                  "example": "OK"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/request/user-type/root-array/no-rules": {
+      "put": {
+        "requestBody": {
+          "content": {
+            "*/*": {
+              "schema": {
+                "$ref": "/request/user-type/root-array/no-rules"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string",
+                  "example": "OK"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/request/user-type/root-array/with-rules": {
+      "put": {
+        "requestBody": {
+          "content": {
+            "*/*": {
+              "schema": {
+                "$ref": "/request/user-type/root-array/with-rules"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string",
+                  "example": "OK"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/request/user-type/root-object/no-rules": {
+      "patch": {
+        "requestBody": {
+          "content": {
+            "*/*": {
+              "schema": {
+                "$ref": "/request/user-type/root-object/no-rules"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string",
+                  "example": "OK"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/request/user-type/root-object/with-rules": {
+      "patch": {
+        "requestBody": {
+          "content": {
+            "*/*": {
+              "schema": {
+                "$ref": "/request/user-type/root-object/with-rules"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string",
+                  "example": "OK"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/request/user-type/root-mixed/two-scalars": {
+      "patch": {
+        "requestBody": {
+          "content": {
+            "*/*": {
+              "schema": {
+                "$ref": "/request/user-type/root-mixed/two-scalars"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string",
+                  "example": "OK"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/request/user-type/root-mixed/object-or-array": {
+      "patch": {
+        "requestBody": {
+          "content": {
+            "*/*": {
+              "schema": {
+                "$ref": "/request/user-type/root-mixed/object-or-array"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string",
+                  "example": "OK"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/request/user-type/root-user-type/scalar": {
+      "put": {
+        "requestBody": {
+          "content": {
+            "*/*": {
+              "schema": {
+                "$ref": "/request/user-type/root-user-type/scalar"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string",
+                  "example": "OK"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/request/user-type/root-user-type/object": {
+      "put": {
+        "requestBody": {
+          "content": {
+            "*/*": {
+              "schema": {
+                "$ref": "/request/user-type/root-user-type/object"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string",
+                  "example": "OK"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "request_root_scalar_no_rules": {
+        "type": "string",
+        "example": "root-string"
+      },
+      "request_root_scalar_with_rules": {
+        "type": "string",
+        "minLength": 4,
+        "maxLength": 15,
+        "pattern": "^[A-Z]+\\d+$",
+        "nullable": true,
+        "example": "AAA123"
+      },
+      "request_root_array_no_rules": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "example": "string"
+        }
+      },
+      "request_root_array_with_rules": {
+        "type": "array",
+        "minItems": 1,
+        "maxItems": 5,
+        "nullable": true,
+        "items": {
+          "type": "string",
+          "example": "string"
+        }
+      },
+      "request_root_object_no_rules": {
+        "type": "object",
+        "properties": {
+          "string": {
+            "type": "string",
+            "example": "some-string"
+          }
+        }
+      },
+      "request_root_object_with_rules": {
+        "type": "object",
+        "nullable": true,
+        "properties": {
+          "string": {
+            "type": "string",
+            "example": "some-string"
+          }
+        },
+        "additionalProperties": {
+          "$ref": "#/components/schemas/array"
+        },
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/object"
+          }
+        ]
+      },
+      "request_root_mixed_two_scalars": {
+        "oneOf": [
+          {
+            "type": "integer"
+          },
+          {
+            "type": "string"
+          }
+        ]
+      },
+      "request_root_mixed_object_or-array": {
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/object"
+          },
+          {
+            "$ref": "#/components/schemas/array"
+          }
+        ]
+      },
+      "request_root_scalar": {
+        "$ref": "#/components/schemas/decimal"
+      },
+      "request_root_object": {
+        "$ref": "#/components/schemas/object"
+      },
+      "array": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "example": "foo"
+        }
+      },
+      "object": {
+        "type": "object",
+        "properties": {
+          "foo": {
+            "type": "string",
+            "example": "bar"
+          }
+        }
+      },
+      "decimal": {
+        "type": "number",
+        "multipleOf": 0.1,
+        "example": 123.1
+      }
+    }
+  }
+}

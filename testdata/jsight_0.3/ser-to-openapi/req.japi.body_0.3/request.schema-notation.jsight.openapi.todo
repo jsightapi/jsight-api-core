@@ -64,7 +64,7 @@
       }
     },
     "/request/schema-notation/jsight/root-array/no-rules": {
-      "post": {
+      "put": {
         "requestBody": {
           "content": {
             "*/*": {
@@ -94,7 +94,7 @@
       }
     },
     "/request/schema-notation/jsight/root-array/with-rules": {
-      "post": {
+      "put": {
         "requestBody": {
           "content": {
             "*/*": {
@@ -127,7 +127,7 @@
       }
     },
     "/request/schema-notation/jsight/root-object/no-rules": {
-      "post": {
+      "patch": {
         "requestBody": {
           "content": {
             "*/*": {
@@ -159,7 +159,7 @@
       }
     },
     "/request/schema-notation/jsight/root-object/with-rules": {
-      "post": {
+      "patch": {
         "requestBody": {
           "content": {
             "*/*": {
@@ -198,7 +198,7 @@
       }
     },
     "/request/schema-notation/jsight/root-mixed/two-scalars": {
-      "post": {
+      "patch": {
         "requestBody": {
           "content": {
             "*/*": {
@@ -227,7 +227,7 @@
       }
     },
     "/request/schema-notation/jsight/root-mixed/object-or-array": {
-      "post": {
+      "patch": {
         "requestBody": {
           "content": {
             "*/*": {
@@ -256,7 +256,7 @@
       }
     },
     "/request/schema-notation/jsight/root-user-type/scalar": {
-      "post": {
+      "put": {
         "requestBody": {
           "content": {
             "*/*": {
@@ -282,7 +282,7 @@
       }
     },
     "/request/schema-notation/jsight/root-user-type/object": {
-      "post": {
+      "put": {
         "requestBody": {
           "content": {
             "*/*": {

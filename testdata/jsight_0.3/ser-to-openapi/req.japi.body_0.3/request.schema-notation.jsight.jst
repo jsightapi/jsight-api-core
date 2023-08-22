@@ -59,14 +59,14 @@ PATCH /request/schema-notation/jsight/root-object/with-rules
     "OK"
 
 #---------- /request/schema-notation/jsight/root-mixed ----------------------
-DELETE /request/schema-notation/jsight/root-mixed/two-scalars
+PATCH /request/schema-notation/jsight/root-mixed/two-scalars
   Request
     Body jsight
       123 // {or: ["integer", "string"]}
   200
     "OK"
 
-DELETE /request/schema-notation/jsight/root-mixed/object-or-array
+PATCH /request/schema-notation/jsight/root-mixed/object-or-array
   Request
     Body jsight
       @object | @array
