@@ -5,8 +5,7 @@ TYPE @object
 
 TYPE @array
 [
-  "foo",
-  "bar"
+  "foo"
 ]
 
 TYPE @decimal

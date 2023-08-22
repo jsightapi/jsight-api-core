@@ -1,10 +1,10 @@
 JSIGHT 0.3
 
-INCLUDE types.jst 
+INCLUDE types.jstl 
 
 #---------- /request/root-scalar ----------------------
 
-GET /request/root-scalar/no-rules
+POST /request/root-scalar/no-rules
   Request
     Body @request_root_scalar_no_rules 
   200
@@ -13,7 +13,7 @@ GET /request/root-scalar/no-rules
 TYPE @request_root_scalar_no_rules 
   "root-string"
 
-GET /request/root-scalar/with-rules
+POST /request/root-scalar/with-rules
   Request
     Body @request_root_scalar_with_rules
   200
@@ -41,8 +41,7 @@ PUT /request/root-array/with-rules
     "OK"
 
 TYPE @request_root_array_with_rules
-[ // {minItems: 2, maxItems: 5, nullable: true}
-  "string",
+[ // {minItems: 1, maxItems: 5, nullable: true}
   "string"
 ]
 #---------- /request/root-object ----------------------

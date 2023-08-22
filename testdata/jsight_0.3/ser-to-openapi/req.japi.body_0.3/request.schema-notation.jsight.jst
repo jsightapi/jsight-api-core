@@ -1,17 +1,17 @@
 JSIGHT 0.3
 
-INCLUDE types.jst 
+INCLUDE types.jstl
 
 #---------- /request/no-params/root-scalar ----------------------
 
-GET /request/no-params/root-scalar/no-rules
+POST /request/no-params/root-scalar/no-rules
   Request
     Body jsight
       "root-string"
   200
     "OK"
 
-GET /request/no-params/root-scalar/with-rules
+POST /request/no-params/root-scalar/with-rules
   Request
     Body jsight
       "AAA123" // {minLength: 4, maxLength: 15, regex: "^[A-Z]+\\d+$", nullable: true}
@@ -31,8 +31,7 @@ PUT /request/no-params/root-array/no-rules
 PUT /request/no-params/root-array/with-rules
   Request
     Body jsight
-    [ // {minItems: 2, maxItems: 5, nullable: true}
-      "string",
+    [ // {minItems: 1, maxItems: 5, nullable: true}
       "string"
     ]
   200
