@@ -2,23 +2,23 @@ JSIGHT 0.3
 
 INCLUDE types.jstl 
 
-#---------- /response/root-scalar ----------------------
-POST /response/root-scalar/no-rules
+#---------- /response/user-type/root-scalar ----------------------
+POST /response/user-type/root-scalar/no-rules
   200
     Body @response_root_scalar_no_rules 
   
 TYPE @response_root_scalar_no_rules 
   "root-string"
 
-POST /response/root-scalar/with-rules
+POST /response/user-type/root-scalar/with-rules
   200
     Body @response_root_scalar_with_rules
   
 TYPE @response_root_scalar_with_rules
   "AAA123" // {minLength: 4, maxLength: 15, regex: "^[A-Z]+\\d+$", nullable: true}
 
-#---------- /response/root-array ----------------------
-PUT /response/root-array/no-rules
+#---------- /response/user-type/root-array ----------------------
+PUT /response/user-type/root-array/no-rules
   200
     Body @response_root_array_no_rules
   
@@ -27,7 +27,7 @@ TYPE @response_root_array_no_rules
   "string"
 ]
 
-PUT /response/root-array/with-rules
+PUT /response/user-type/root-array/with-rules
   200
     Body @response_root_array_with_rules
   
@@ -36,8 +36,8 @@ TYPE @response_root_array_with_rules
   "string"
 ]
 
-#---------- /response/root-object ----------------------
-PATCH /response/root-object/no-rules
+#---------- /response/user-type/root-object ----------------------
+PATCH /response/user-type/root-object/no-rules
   200
     Body @response_root_object_no_rules
   
@@ -46,7 +46,7 @@ TYPE @response_root_object_no_rules
   "string": "some-string"
 }
 
-PATCH /response/root-object/with-rules
+PATCH /response/user-type/root-object/with-rules
   200
     Body @response_root_object_with_rules
   
@@ -57,30 +57,30 @@ TYPE @response_root_object_with_rules
   "optional": "field" // {optional: true}
 }
 
-#---------- /response/root-mixed ----------------------
-DELETE /response/root-mixed/two-scalars
+#---------- /response/user-type/root-mixed ----------------------
+DELETE /response/user-type/root-mixed/two-scalars
   200
     Body @response_root_mixed_two_scalars
   
 TYPE @response_root_mixed_two_scalars
   123 // {or: ["integer", "string"]}
 
-DELETE /response/root-mixed/object-or-array
+DELETE /response/user-type/root-mixed/object-or-array
   200
     Body @response_root_mixed_object_or_array
   
 TYPE @response_root_mixed_object_or_array
   @object | @array
 
-#---------- /response/root-user-type ----------------------
-PUT /response/root-user-type/scalar
+#---------- /response/user-type/root-user-type ----------------------
+PUT /response/user-type/root-user-type/scalar
   200
     Body @response_root_user_type_scalar
   
 TYPE @response_root_user_type_scalar
   @decimal
 
-PUT /response/root-user-type/object
+PUT /response/user-type/root-user-type/object
   200
     Body @response_root_user_type_object
   

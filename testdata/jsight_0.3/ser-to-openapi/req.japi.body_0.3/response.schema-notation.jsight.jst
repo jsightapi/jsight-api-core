@@ -2,41 +2,41 @@ JSIGHT 0.3
 
 INCLUDE types.jstl
 
-#---------- /response/no-params/root-scalar ----------------------
-POST /response/no-params/root-scalar/no-rules
+#---------- /response/schema-notation/jsight/root-scalar ----------------------
+POST /response/schema-notation/jsight/root-scalar/no-rules
   200
     Body jsight
       "root-string"
   
-POST /response/no-params/root-scalar/with-rules
+POST /response/schema-notation/jsight/root-scalar/with-rules
   200
     Body jsight
       "AAA123" // {minLength: 4, maxLength: 15, regex: "^[A-Z]+\\d+$", nullable: true}
   
-#---------- /response/no-params/root-array ----------------------
-PUT /response/no-params/root-array/no-rules
+#---------- /response/schema-notation/jsight/root-array ----------------------
+PUT /response/schema-notation/jsight/root-array/no-rules
   200
     Body jsight
     [
       "string"
     ]
   
-PUT /response/no-params/root-array/with-rules
+PUT /response/schema-notation/jsight/root-array/with-rules
   200
     Body jsight
     [ // {minItems: 1, maxItems: 5, nullable: true}
       "string"
     ]
   
-#---------- /response/no-params/root-object ----------------------
-PATCH /response/no-params/root-object/no-rules
+#---------- /response/schema-notation/jsight/root-object ----------------------
+PATCH /response/schema-notation/jsight/root-object/no-rules
   200
     Body jsight
     {
       "string": "some-string"
     }
   
-PATCH /response/no-params/root-object/with-rules
+PATCH /response/schema-notation/jsight/root-object/with-rules
   200
     Body jsight
     { // {additionalProperties: "@array", allOf: "@object", nullable: true}
@@ -45,24 +45,24 @@ PATCH /response/no-params/root-object/with-rules
       "optional": "field" // {optional: true}
     }
   
-#---------- /response/no-params/root-mixed ----------------------
-DELETE /response/no-params/root-mixed/two-scalars
+#---------- /response/schema-notation/jsight/root-mixed ----------------------
+DELETE /response/schema-notation/jsight/root-mixed/two-scalars
   200
     Body jsight
       123 // {or: ["integer", "string"]}
   
-DELETE /response/no-params/root-mixed/object-or-array
+DELETE /response/schema-notation/jsight/root-mixed/object-or-array
   200
     Body jsight
       @object | @array
   
-#---------- /response/no-params/root-user-type ----------------------
-PUT /response/no-params/root-user-type/scalar
+#---------- /response/schema-notation/jsight/root-user-type ----------------------
+PUT /response/schema-notation/jsight/root-user-type/scalar
   200
     Body jsight
       @decimal
   
-PUT /response/no-params/root-user-type/object
+PUT /response/schema-notation/jsight/root-user-type/object
   200
     Body jsight
       @object

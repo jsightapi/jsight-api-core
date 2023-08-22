@@ -2,8 +2,8 @@ JSIGHT 0.3
 
 INCLUDE types.jstl 
 
-#---------- /request/root-scalar ----------------------
-POST /request/root-scalar/no-rules
+#---------- /request/user-type/root-scalar ----------------------
+POST /request/user-type/root-scalar/no-rules
   Request
     Body @request_root_scalar_no_rules 
   200
@@ -12,7 +12,7 @@ POST /request/root-scalar/no-rules
 TYPE @request_root_scalar_no_rules 
   "root-string"
 
-POST /request/root-scalar/with-rules
+POST /request/user-type/root-scalar/with-rules
   Request
     Body @request_root_scalar_with_rules
   200
@@ -21,8 +21,8 @@ POST /request/root-scalar/with-rules
 TYPE @request_root_scalar_with_rules
   "AAA123" // {minLength: 4, maxLength: 15, regex: "^[A-Z]+\\d+$", nullable: true}
 
-#---------- /request/root-array ----------------------
-PUT /request/root-array/no-rules
+#---------- /request/user-type/root-array ----------------------
+PUT /request/user-type/root-array/no-rules
   Request
     Body @request_root_array_no_rules
   200
@@ -33,7 +33,7 @@ TYPE @request_root_array_no_rules
   "string"
 ]
 
-PUT /request/root-array/with-rules
+PUT /request/user-type/root-array/with-rules
   Request
     Body @request_root_array_with_rules
   200
@@ -44,8 +44,8 @@ TYPE @request_root_array_with_rules
   "string"
 ]
 
-#---------- /request/root-object ----------------------
-PATCH /request/root-object/no-rules
+#---------- /request/user-type/root-object ----------------------
+PATCH /request/user-type/root-object/no-rules
   Request
     Body @request_root_object_no_rules
   200
@@ -56,7 +56,7 @@ TYPE @request_root_object_no_rules
   "string": "some-string"
 }
 
-PATCH /request/root-object/with-rules
+PATCH /request/user-type/root-object/with-rules
   Request
     Body @request_root_object_with_rules
   200
@@ -69,8 +69,8 @@ TYPE @request_root_object_with_rules
   "optional": "field" // {optional: true}
 }
 
-#---------- /request/root-mixed ----------------------
-DELETE /request/root-mixed/two-scalars
+#---------- /request/user-type/root-mixed ----------------------
+DELETE /request/user-type/root-mixed/two-scalars
   Request
     Body @request_root_mixed_two_scalars
   200
@@ -79,7 +79,7 @@ DELETE /request/root-mixed/two-scalars
 TYPE @request_root_mixed_two_scalars
   123 // {or: ["integer", "string"]}
 
-DELETE /request/root-mixed/object-or-array
+DELETE /request/user-type/root-mixed/object-or-array
   Request
     Body @request_root_mixed_object_or_array
   200
@@ -88,8 +88,8 @@ DELETE /request/root-mixed/object-or-array
 TYPE @request_root_mixed_object_or_array
   @object | @array
 
-#---------- /request/root-user-type ----------------------
-PUT /request/root-user-type/scalar
+#---------- /request/user-type/root-user-type ----------------------
+PUT /request/user-type/root-user-type/scalar
   Request
     Body @request_root_user_type_scalar
   200
@@ -98,7 +98,7 @@ PUT /request/root-user-type/scalar
 TYPE @request_root_user_type_scalar
   @decimal
 
-PUT /request/root-user-type/object
+PUT /request/user-type/root-user-type/object
   Request
     Body @request_root_user_type_object
   200
