@@ -1,0 +1,12 @@
+TYPE @object
+{
+  "foo": "bar"
+}
+
+TYPE @array
+[
+  "foo"
+]
+
+TYPE @decimal
+  123.1 // {precision: 1}

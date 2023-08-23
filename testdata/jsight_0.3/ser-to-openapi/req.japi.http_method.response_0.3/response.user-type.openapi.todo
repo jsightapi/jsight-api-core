@@ -1,0 +1,276 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "",
+    "version": ""
+  },
+  "paths": {
+    "/response/user-type/root-scalar/no-rules": {
+      "post": {
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/response_root_scalar_no_rules"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/response/user-type/root-scalar/with-rules": {
+      "post": {
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/response_root_scalar_with_rules"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/response/user-type/root-array/no-rules": {
+      "put": {
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/response_root_array_no_rules"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/response/user-type/root-array/with-rules": {
+      "put": {
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/response_root_array_with_rules"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/response/user-type/root-object/no-rules": {
+      "patch": {
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/response_root_object_no_rules"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/response/user-type/root-object/with-rules": {
+      "patch": {
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/response_root_object_with_rules"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/response/user-type/root-mixed/two-scalars": {
+      "patch": {
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/response_root_mixed_two_scalars"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/response/user-type/root-mixed/object-or-array": {
+      "patch": {
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/response_root_mixed_object_or_array"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/response/user-type/root-user-type/scalar": {
+      "put": {
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/response_root_user_type_scalar"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/response/user-type/root-user-type/object": {
+      "put": {
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/response_root_user_type_object"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "response_root_scalar_no_rules": {
+        "type": "string",
+        "example": "root-string"
+      },
+      "response_root_scalar_with_rules": {
+        "type": "string",
+        "minLength": 4,
+        "maxLength": 15,
+        "pattern": "^[A-Z]+\\d+$",
+        "nullable": true,
+        "example": "AAA123"
+      },
+      "response_root_array_no_rules": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "example": "string"
+        }
+      },
+      "response_root_array_with_rules": {
+        "type": "array",
+        "minItems": 1,
+        "maxItems": 5,
+        "nullable": true,
+        "items": {
+          "type": "string",
+          "example": "string"
+        }
+      },
+      "response_root_object_no_rules": {
+        "type": "object",
+        "properties": {
+          "string": {
+            "type": "string",
+            "example": "some-string"
+          }
+        }
+      },
+      "response_root_object_with_rules": {
+        "type": "object",
+        "nullable": true,
+        "properties": {
+          "string": {
+            "type": "string",
+            "example": "some-string"
+          }
+        },
+        "additionalProperties": {
+          "$ref": "#/components/schemas/array"
+        },
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/object"
+          }
+        ]
+      },
+      "response_root_mixed_two_scalars": {
+        "oneOf": [
+          {
+            "type": "integer"
+          },
+          {
+            "type": "string"
+          }
+        ]
+      },
+      "response_root_mixed_object_or_array": {
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/object"
+          },
+          {
+            "$ref": "#/components/schemas/array"
+          }
+        ]
+      },
+      "response_root_user_type_scalar": {
+        "$ref": "#/components/schemas/decimal"
+      },
+      "response_root_user_type_object": {
+        "$ref": "#/components/schemas/object"
+      },
+      "array": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "example": "foo"
+        }
+      },
+      "object": {
+        "type": "object",
+        "properties": {
+          "foo": {
+            "type": "string",
+            "example": "bar"
+          }
+        }
+      },
+      "decimal": {
+        "type": "number",
+        "multipleOf": 0.1,
+        "example": 123.1
+      }
+    }
+  }
+}

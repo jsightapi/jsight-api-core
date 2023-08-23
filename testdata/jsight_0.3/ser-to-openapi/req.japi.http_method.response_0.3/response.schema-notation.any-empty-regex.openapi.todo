@@ -1,0 +1,48 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "",
+    "version": ""
+  },
+  "paths": {
+    "/request/schema-notation/any ": {
+      "post": {
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "*/*": {}
+            }
+          }
+        }
+      }
+    },
+    "/request/schema-notation/empty": {
+      "put": {
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {}
+          }
+        }
+      }
+    },
+    "/request/schema-notation/regex": {
+      "patch": {
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[A-Z]+\\s\\d+$"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

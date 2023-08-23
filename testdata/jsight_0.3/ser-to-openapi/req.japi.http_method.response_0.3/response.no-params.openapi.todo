@@ -1,0 +1,246 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "",
+    "version": ""
+  },
+  "paths": {
+    "/response/no-params/root-scalar/no-rules": {
+      "post": {
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string",
+                  "example": "root-string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/response/no-params/root-scalar/with-rules": {
+      "post": {
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string",
+                  "minLength": 4,
+                  "maxLength": 15,
+                  "pattern": "^[A-Z]+\\d+$",
+                  "nullable": true,
+                  "example": "AAA123"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/response/no-params/root-array/no-rules": {
+      "put": {
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "example": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/response/no-params/root-array/with-rules": {
+      "put": {
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "minItems": 1,
+                  "maxItems": 5,
+                  "nullable": true,
+                  "items": {
+                    "type": "string",
+                    "example": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/response/no-params/root-object/no-rules": {
+      "patch": {
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "string": {
+                      "type": "string",
+                      "example": "some-string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/response/no-params/root-object/with-rules": {
+      "patch": {
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "object",
+                  "nullable": true,
+                  "properties": {
+                    "string": {
+                      "type": "string",
+                      "example": "some-string"
+                    }
+                  },
+                  "additionalProperties": {
+                    "$ref": "#/components/schemas/array"
+                  },
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/object"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/response/no-params/root-mixed/two-scalars": {
+      "patch": {
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "oneOf": [
+                    {
+                      "type": "integer"
+                    },
+                    {
+                      "type": "string"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/response/no-params/root-mixed/object-or-array": {
+      "patch": {
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "oneOf": [
+                    {
+                      "$ref": "#/components/schemas/object"
+                    },
+                    {
+                      "$ref": "#/components/schemas/array"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/response/no-params/root-user-type/scalar": {
+      "put": {
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/decimal"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/response/no-params/root-user-type/object": {
+      "put": {
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/object"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "array": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "example": "foo"
+        }
+      },
+      "object": {
+        "type": "object",
+        "properties": {
+          "foo": {
+            "type": "string",
+            "example": "bar"
+          }
+        }
+      },
+      "decimal": {
+        "type": "number",
+        "multipleOf": 0.1,
+        "example": 123.1
+      }
+    }
+  }
+}
