@@ -1,0 +1,18 @@
+JSIGHT 0.3
+
+POST /body-only
+  Request
+    Body
+      "Body"
+
+POST /body-and-headers
+  Request
+    Headers
+      {
+        "X-Header": "header-value"
+      }
+    Body
+      {
+        "foo": "bar"
+      }
+  

@@ -1,0 +1,80 @@
+JSIGHT 0.3
+
+INCLUDE types.jstl
+
+#---------- /request/schema-notation/jsight/root-scalar ----------------------
+
+POST /request/schema-notation/jsight/root-scalar/no-rules
+  Request jsight
+    "root-string"
+  200
+    "OK"
+
+POST /request/schema-notation/jsight/root-scalar/with-rules
+  Request jsight
+    "AAA123" // {minLength: 4, maxLength: 15, regex: "^[A-Z]+\\d+$", nullable: true}
+  200
+    "OK"
+
+#---------- /request/schema-notation/jsight/root-array ----------------------
+PUT /request/schema-notation/jsight/root-array/no-rules
+  Request jsight
+    [
+      "string"
+    ]
+  200
+    "OK"
+
+PUT /request/schema-notation/jsight/root-array/with-rules
+  Request jsight
+    [ // {minItems: 1, maxItems: 5, nullable: true}
+      "string"
+    ]
+  200
+    "OK"
+
+#---------- /request/schema-notation/jsight/root-object ----------------------
+PATCH /request/schema-notation/jsight/root-object/no-rules
+  Request jsight
+    {
+      "string": "some-string"
+    }
+  200
+    "OK"
+
+PATCH /request/schema-notation/jsight/root-object/with-rules
+  Request jsight
+    { // {additionalProperties: "@array", allOf: "@object", nullable: true}
+      "\u005C \uD834\uDD1E\" \\ \/ \b \f \n \r \t АБВГДЕЁЖЗабвгдеёжзABCDEFGabcdefg": "bar2",
+      "": "",
+      "optional": "field" // {optional: true}
+    }
+  200
+    "OK"
+
+#---------- /request/schema-notation/jsight/root-mixed ----------------------
+PATCH /request/schema-notation/jsight/root-mixed/two-scalars
+  Request jsight
+    123 // {or: ["integer", "string"]}
+  200
+    "OK"
+
+PATCH /request/schema-notation/jsight/root-mixed/object-or-array
+  Request jsight
+    @object | @array
+  200
+    "OK"
+
+#---------- /request/schema-notation/jsight/root-user-type ----------------------
+
+PUT /request/schema-notation/jsight/root-user-type/scalar
+  Request jsight
+    @decimal
+  200
+    "OK"
+
+PUT /request/schema-notation/jsight/root-user-type/object
+  Request jsight
+    @object
+  200
+    "OK"

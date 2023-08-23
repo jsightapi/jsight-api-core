@@ -1,0 +1,68 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "",
+    "version": ""
+  },
+  "paths": {
+    "/body-only": {
+      "post": {
+        "requestBody": {
+          "content": {
+            "*/*": {
+              "schema": {
+                "type": "string",
+                "example": "Body"
+              }
+            }
+          }
+        },
+        "responses": {
+          "default": {
+            "description": "",
+            "content": {
+              "*/*": {}
+            }
+          }
+        }
+      }
+    },
+    "/body-and-headers": {
+      "post": {
+        "parameters": [
+          {
+            "name": "X-Header",
+            "in": "header",
+            "schema": {
+              "type": "string",
+              "example": "header-value"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "*/*": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "foo": {
+                    "type": "string",
+                    "example": "bar"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "default": {
+            "description": "",
+            "content": {
+              "*/*": {}
+            }
+          }
+        }
+      }
+    }
+  }
+}
