@@ -11,7 +11,7 @@
           "content": {
             "*/*": {
               "schema": {
-                "$ref": "/request/user-type/root-scalar/no-rules"
+                "$ref": "#/components/schemas/request_root_scalar_no_rules"
               }
             }
           }
@@ -37,7 +37,7 @@
           "content": {
             "*/*": {
               "schema": {
-                "$ref": "/request/user-type/root-scalar/with-rules"
+                "$ref": "#/components/schemas/request_root_scalar_with_rules"
               }
             }
           }
@@ -63,7 +63,7 @@
           "content": {
             "*/*": {
               "schema": {
-                "$ref": "/request/user-type/root-array/no-rules"
+                "$ref": "#/components/schemas/request_root_array_no_rules"
               }
             }
           }
@@ -89,7 +89,7 @@
           "content": {
             "*/*": {
               "schema": {
-                "$ref": "/request/user-type/root-array/with-rules"
+                "$ref": "#/components/schemas/request_root_array_with_rules"
               }
             }
           }
@@ -115,7 +115,7 @@
           "content": {
             "*/*": {
               "schema": {
-                "$ref": "/request/user-type/root-object/no-rules"
+                "$ref": "#/components/schemas/request_root_object_no_rules"
               }
             }
           }
@@ -141,7 +141,7 @@
           "content": {
             "*/*": {
               "schema": {
-                "$ref": "/request/user-type/root-object/with-rules"
+                "$ref": "#/components/schemas/request_root_object_with_rules"
               }
             }
           }
@@ -167,7 +167,7 @@
           "content": {
             "*/*": {
               "schema": {
-                "$ref": "/request/user-type/root-mixed/two-scalars"
+                "$ref": "#/components/schemas/request_root_mixed_two_scalars"
               }
             }
           }
@@ -193,7 +193,7 @@
           "content": {
             "*/*": {
               "schema": {
-                "$ref": "/request/user-type/root-mixed/object-or-array"
+                "$ref": "#/components/schemas/request_root_mixed_object_or_array"
               }
             }
           }
@@ -219,7 +219,7 @@
           "content": {
             "*/*": {
               "schema": {
-                "$ref": "/request/user-type/root-user-type/scalar"
+                "$ref": "#/components/schemas/request_root_user_type_scalar"
               }
             }
           }
@@ -245,7 +245,7 @@
           "content": {
             "*/*": {
               "schema": {
-                "$ref": "/request/user-type/root-user-type/object"
+                "$ref": "#/components/schemas/request_root_user_type_object"
               }
             }
           }
@@ -334,7 +334,7 @@
           }
         ]
       },
-      "request_root_mixed_object_or-array": {
+      "request_root_mixed_object_or_array": {
         "oneOf": [
           {
             "$ref": "#/components/schemas/object"
@@ -344,10 +344,10 @@
           }
         ]
       },
-      "request_root_scalar": {
+      "request_root_user_type_scalar": {
         "$ref": "#/components/schemas/decimal"
       },
-      "request_root_object": {
+      "request_root_user_type_object": {
         "$ref": "#/components/schemas/object"
       },
       "array": {
