@@ -1,14 +1,14 @@
 JSIGHT 0.3
 
-GET /response/schema-notation/any
+POST /response/schema-notation/any
   200
     Body any
 
-GET /response/schema-notation/empty
+PUT /response/schema-notation/empty
   200
     Body empty
 
-GET /response/schema-notation/regex
+PATCH /response/schema-notation/regex
   200
     Body regex
       /^[A-Z]+\s\d+$/

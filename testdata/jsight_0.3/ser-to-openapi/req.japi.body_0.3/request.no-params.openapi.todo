@@ -20,9 +20,9 @@
         "responses": {
           "200": {
             "description": "",
-              "content": {
-                "*/*": {
-                  "schema": {
+            "content": {
+              "*/*": {
+                "schema": {
                   "type": "string",
                   "example": "OK"
                 }
