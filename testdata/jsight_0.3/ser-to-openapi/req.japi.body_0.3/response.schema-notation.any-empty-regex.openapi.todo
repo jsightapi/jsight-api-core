@@ -7,21 +7,11 @@
   "paths": {
     "/request/schema-notation/any ": {
       "post": {
-        "requestBody": {
-          "content": {
-            "*/*": {}
-          }
-        },
         "responses": {
           "200": {
             "description": "",
             "content": {
-              "*/*": {
-                "schema": {
-                  "type": "string",
-                  "example": "OK"
-                }
-              }
+              "*/*": {}
             }
           }
         }
@@ -29,37 +19,16 @@
     },
     "/request/schema-notation/empty": {
       "put": {
-        "requestBody": {
-          "content": {
-          }
-        },
         "responses": {
           "200": {
             "description": "",
-            "content": {
-              "*/*": {
-                "schema": {
-                  "type": "string",
-                  "example": "OK"
-                }
-              }
-            }
+            "content": {}
           }
         }
       }
     },
     "/request/schema-notation/regex": {
       "patch": {
-        "requestBody": {
-          "content": {
-            "*/*": {
-              "schema": {
-                "type": "string",
-                "pattern": "^[A-Z]+\\s\\d+$"
-              }
-            }
-          }
-        },
         "responses": {
           "200": {
             "description": "",
@@ -67,7 +36,7 @@
               "*/*": {
                 "schema": {
                   "type": "string",
-                  "example": "OK"
+                  "pattern": "^[A-Z]+\\s\\d+$"
                 }
               }
             }
