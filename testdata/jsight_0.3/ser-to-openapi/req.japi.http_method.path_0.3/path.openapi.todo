@@ -1,1 +1,732 @@
-TODO: make tests
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "",
+    "version": ""
+  },
+  "paths": {
+    "/case/UPPER/lower": {
+      "post": {
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "*/*": {}
+            }
+          }
+        }
+      }
+    },
+    "/necessity/{parameter}": {
+      "post": {
+        "parameters": [
+          {
+            "name": "parameter",
+            "in": "path",
+            "required": true,
+            "description": "The rule `optional: true` must be ignored for path parameters.",
+            "schema": {
+              "description": "The rule `optional: true` must be ignored for path parameters.",
+              "type": "boolean",
+              "example": true
+            }
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "",
+            "content": {
+              "*/*": {}
+            }
+          }
+        }
+      }
+    },
+    "/annotation/{parameter}": {
+      "get": {
+        "parameters": [
+          {
+            "name": "parameter",
+            "in": "path",
+            "required": true,
+            "description": "This is the parameter annotation.",
+            "schema": {
+              "description": "This is the parameter annotation.",
+              "type": "string",
+              "example": true
+            }
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "",
+            "content": {
+              "*/*": {}
+            }
+          }
+        }
+      }
+    },
+    "/integer-parameter/no-rules/{integer-value}": {
+      "get": {
+        "parameters": [
+          {
+            "name": "integer-value",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "example": 1
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {}
+          }
+        }
+      }
+    },
+    "/integer-parameter/with-rules/{integer-value}": {
+      "get": {
+        "parameters": [
+          {
+            "name": "integer-value",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "example": 0,
+              "minimum": -1,
+              "maximum": 1,
+              "exclusiveMinimum": true,
+              "exclusiveMaximum": true
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {}
+          }
+        }
+      }
+    },
+    "/float-parameter/no-rules/{float-value}": {
+      "get": {
+        "parameters": [
+          {
+            "name": "float-value",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "number",
+              "example": 0.1
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {}
+          }
+        }
+      }
+    },
+    "/float-parameter/with-rules/{float-value}": {
+      "get": {
+        "parameters": [
+          {
+            "name": "float-value",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "number",
+              "nullable": true,
+              "example": -0.1
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {}
+          }
+        }
+      }
+    },
+    "/decimal-parameter/with-rules/{decimal-value}": {
+      "get": {
+        "parameters": [
+          {
+            "name": "decimal-value",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "number",
+              "multipleOf": 0.1,
+              "example": 0.1
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {}
+          }
+        }
+      }
+    },
+    "/string-parameter/no-rules/{string-value}": {
+      "get": {
+        "parameters": [
+          {
+            "name": "string-value",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": "some-string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {}
+          }
+        }
+      }
+    },
+    "/string-parameter/with-rules/{string-value}": {
+      "get": {
+        "parameters": [
+          {
+            "name": "string-value",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^\\d[a-z]\\d[a-z]\\d[a-z]$",
+              "nullable": true,
+              "example": "1q2w3e"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {}
+          }
+        }
+      }
+    },
+    "/email-parameter/no-rules/{email-value}": {
+      "get": {
+        "parameters": [
+          {
+            "name": "email-value",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "email",
+              "example": "tom@cat.com"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {}
+          }
+        }
+      }
+    },
+    "/email-parameter/with-rules/{email-value}": {
+      "get": {
+        "parameters": [
+          {
+            "name": "email-value",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "email",
+              "enum": ["tom@cat.com"],
+              "example": "tom@cat.com"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {}
+          }
+        }
+      }
+    },
+    "/uri-parameter/no-rules/{uri-value}": {
+      "get": {
+        "parameters": [
+          {
+            "name": "uri-value",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uri",
+              "example": "http://cat.com"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {}
+          }
+        }
+      }
+    },
+    "/uri-parameter/with-rules/{uri-value}": {
+      "get": {
+        "parameters": [
+          {
+            "name": "uri-value",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uri",
+              "enum": ["http://wierd.com/.././%2D?query:=; #%fragment/api"],
+              "example": "http://wierd.com/.././%2D?query:=; #%fragment/api"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {}
+          }
+        }
+      }
+    },
+    "/uri-parameter/ascii/{uri-value}": {
+      "get": {
+        "parameters": [
+          {
+            "name": "uri-value",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uri",
+              "enum": ["https://username@[1080:0:0:0:8:800:200C:417A]:80/ABCDEFGHIJKLMNOPQRSTUVWXYZ?abcdefghijklmnopqrstuvwxyz!$&'()*+,;=#0123456789-._~ "],
+              "example": "https://username@[1080:0:0:0:8:800:200C:417A]:80/ABCDEFGHIJKLMNOPQRSTUVWXYZ?abcdefghijklmnopqrstuvwxyz!$&'()*+,;=#0123456789-._~ "
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {}
+          }
+        }
+      }
+    },
+    "/uuid-parameter/no-rules/{uuid-value}": {
+      "get": {
+        "parameters": [
+          {
+            "name": "uuid-value",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid",
+              "example": "123e4567-e89b-12d3-a456-426614174000"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {}
+          }
+        }
+      }
+    },
+    "/uuid-parameter/with-rules/{uuid-value}": {
+      "get": {
+        "parameters": [
+          {
+            "name": "uuid-value",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid",
+              "enum": ["123e4567-e89b-12d3-a456-426614174000"],
+              "example": "123e4567-e89b-12d3-a456-426614174000"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {}
+          }
+        }
+      }
+    },
+    "/date-parameter/no-rules/{date-value}": {
+      "get": {
+        "parameters": [
+          {
+            "name": "date-value",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "date",
+              "example": "2012-12-31"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {}
+          }
+        }
+      }
+    },
+    "/date-parameter/with-rules/{date-value}": {
+      "get": {
+        "parameters": [
+          {
+            "name": "date-value",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "date",
+              "nullable": true,
+              "example": "2012-12-31"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {}
+          }
+        }
+      }
+    },
+    "/datetime-parameter/no-rules/{datetime-value}": {
+      "get": {
+        "parameters": [
+          {
+            "name": "datetime-value",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "date-time",
+              "example": "2012-12-31T23:59:59+04:00"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {}
+          }
+        }
+      }
+    },
+    "/datetime-parameter/with-rules/{datetime-value}": {
+      "get": {
+        "parameters": [
+          {
+            "name": "datetime-value",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "date-time",
+              "enum": ["2012-12-31T23:59:59+04:00"],
+              "example": "2012-12-31T23:59:59+04:00"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {}
+          }
+        }
+      }
+    },
+    "/boolean-parameter/no-rules/{boolean-value}": {
+      "post": {
+        "parameters": [
+          {
+            "name": "boolean-value",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "boolean",
+              "example": true
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {}
+          }
+        }
+      }
+    },
+    "/boolean-parameter/with-rules/{boolean-value}": {
+      "post": {
+        "parameters": [
+          {
+            "name": "boolean-value",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "boolean",
+              "enum": [false],
+              "example": false
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {}
+          }
+        }
+      }
+    },
+    "/null-parameter/no-rules/{null-value}": {
+      "patch": {
+        "parameters": [
+          {
+            "name": "null-value",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "nullable": true,
+              "enum": [null],
+              "example": null
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {}
+          }
+        }
+      }
+    },
+    "/null-parameter/with-rules/{null-value}": {
+      "patch": {
+        "parameters": [
+          {
+            "name": "null-value",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "nullable": true,
+              "enum": [null],
+              "example": null
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {}
+          }
+        }
+      }
+    },
+    "/enum-parameter/no-rules/{enum-parameter}": {
+      "delete": {
+        "parameters": [
+          {
+            "name": "enum-parameter",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "enum": [-3, -2.1, 0, 1.2, true, false, null, "-3", "0", "1.2", "string", "true", "null"],
+              "example": 1.2
+            }
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "",
+            "content": {
+              "*/*": {}
+            }
+          }
+        }
+      }
+    },
+    "/enum-parameter/no-string-values/{enum-parameter}": {
+      "delete": {
+        "parameters": [
+          {
+            "name": "enum-parameter",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "enum": [-3, -2.1, 0, 1.2, true, false, null],
+              "example": -3
+            }
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "",
+            "content": {
+              "*/*": {}
+            }
+          }
+        }
+      }
+    },
+    "/enum-parameter/string-ambiguous-values/{enum-parameter}": {
+      "delete": {
+        "parameters": [
+          {
+            "name": "enum-parameter",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "enum": ["-3", "-2.1", "0", "1.2", "true", "false", "null"],
+              "example": "-3"
+            }
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "",
+            "content": {
+              "*/*": {}
+            }
+          }
+        }
+      }
+    },
+    "/enum-parameter/empty-string/{enum-parameter}": {
+      "delete": {
+        "parameters": [
+          {
+            "name": "enum-parameter",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "enum": ["", "string"],
+              "example": ""
+            }
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "",
+            "content": {
+              "*/*": {}
+            }
+          }
+        }
+      }
+    },
+    "/enum-parameter/with-rules/{enum-parameter}": {
+      "delete": {
+        "parameters": [
+          {
+            "name": "enum-parameter",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "nullable": true,
+              "enum": [-3, -2.1, 1.2, true, false, "-3", "0", "1.2", "string", "true"],
+              "example": -2.1
+            }
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "",
+            "content": {
+              "*/*": {}
+            }
+          }
+        }
+      }
+    },
+    "/object-in-path/simple/{integer-parameter}/{string-parameter}": {
+      "put": {
+        "parameters": [
+          {
+            "name": "integer-parameter",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "minimum": 0,
+              "example": 21
+            }
+          },
+          {
+            "name": "string-parameter",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "minLength": 3,
+              "example": "string"
+            }
+          }        ],
+        "responses": {
+          "default": {
+            "description": "",
+            "content": {
+              "*/*": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "objectInPath": {
+        "type": "object",
+        "properties": {
+          "integer-parameter": {
+            "type": "integer",
+            "minimum": 0,
+            "example": 21
+          },
+          "string-parameter": {
+            "type": "string",
+            "minLength": 3,
+            "example": "string"
+          }
+        },
+        "required": ["integer-parameter", "string-parameter"]
+      }
+    }
+  }
+}

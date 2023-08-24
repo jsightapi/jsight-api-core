@@ -15,7 +15,8 @@
                 "schema": {
                   "type": "integer",
                   "nullable": true,
-                  "enum": [null]
+                  "enum": [null],
+                  "example": null
                 }
               }
             }
@@ -30,7 +31,8 @@
                     "null": {
                       "type": "integer",
                       "nullable": true,
-                      "enum": [null]
+                      "enum": [null],
+                      "example": null
                     }
                   }
                 }
@@ -46,7 +48,8 @@
                   "items": {
                     "type": "integer",
                     "nullable": true,
-                    "enum": [null]
+                    "enum": [null],
+                    "example": null
                   }
                 }
               }

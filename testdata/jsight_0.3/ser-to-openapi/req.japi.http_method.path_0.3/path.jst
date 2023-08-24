@@ -5,6 +5,21 @@ JSIGHT 0.3
 POST /case/UPPER/lower
   200 any
 
+#--------------------- necessity -------------------------
+
+POST /necessity/{parameter}
+  Path
+  {
+    "parameter": true /* {optional: true} - The rule `optional: true` must be ignored 
+                                            for path parameters. */
+  }
+
+GET /annotation/{parameter}
+  Path
+  {
+    "parameter": "value" // This is the parameter annotation.
+  }
+
 #--------------------- integer ------------------------------
 
 GET /integer-parameter/no-rules/{integer-value}
@@ -38,7 +53,7 @@ GET /float-parameter/no-rules/{float-value}
 GET /float-parameter/with-rules/{float-value}
   Path
     {
-      "float-value": 0.1 // {nullable: true}
+      "float-value": -0.1 // {nullable: true}
     }
   200 empty
 
@@ -146,7 +161,7 @@ URL /date-parameter/with-rules/{date-value}
     200 empty
   Path
     {
-      "date-value": "2012-12-31" // {type: "date", optional: true, nullable: true}
+      "date-value": "2012-12-31" // {type: "date", nullable: true}
     }
 
 #--------------------- datetime ------------------------------
@@ -267,6 +282,8 @@ TYPE @objectInPath
     "string-parameter": "string" // {minLength: 3}
   }
   
+FINISHED HERE!!!
+
 URL /object-in-path/double/{integer-parameter}/{string-parameter}
   Path
     @objectInPath2
