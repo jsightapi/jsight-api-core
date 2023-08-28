@@ -34,7 +34,8 @@
                       "enum": [null],
                       "example": null
                     }
-                  }
+                  },
+                  "required": ["null"]
                 }
               }
             }

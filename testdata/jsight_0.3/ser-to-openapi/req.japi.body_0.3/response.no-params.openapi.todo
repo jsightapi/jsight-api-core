@@ -100,7 +100,8 @@
                       "type": "string",
                       "example": "some-string"
                     }
-                  }
+                  },
+                  "required": ["string"]
                 }
               }
             }
@@ -118,12 +119,21 @@
                 "schema": {
                   "type": "object",
                   "nullable": true,
-                  "properties": {
-                    "string": {
-                      "type": "string",
-                      "example": "some-string"
-                    }
+                "properties": {
+                  "\u005C \uD834\uDD1E\" \\ \/ \b \f \n \r \t АБВГДЕЁЖЗабвгдеёжзABCDEFGabcdefg": {
+                    "type": "string",
+                    "example": "bar2"
                   },
+                  "": {
+                    "type": "string",
+                    "example": ""
+                  },
+                  "optional": {
+                    "type": "string",
+                    "example": "field"
+                  }
+                },
+                "required": ["\u005C \uD834\uDD1E\" \\ \/ \b \f \n \r \t АБВГДЕЁЖЗабвгдеёжзABCDEFGabcdefg", ""],
                   "additionalProperties": {
                     "$ref": "#/components/schemas/array"
                   },
@@ -234,7 +244,8 @@
             "type": "string",
             "example": "bar"
           }
-        }
+        },
+        "required": ["foo"]
       },
       "decimal": {
         "type": "number",

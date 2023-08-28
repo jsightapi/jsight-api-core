@@ -45,7 +45,8 @@
                       "type": "string",
                       "example": ""
                     }
-                  }
+                  },
+                  "required": ["scaryString", "emptyString"]
                 }
               }
             }

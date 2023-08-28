@@ -59,7 +59,8 @@
                       "type": "string",
                       "example": "bar"
                     }
-                  }
+                  },
+                  "required": ["foo"]
                 }
               }
             }

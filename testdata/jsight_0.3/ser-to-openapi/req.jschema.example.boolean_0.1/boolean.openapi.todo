@@ -45,7 +45,8 @@
                       "type": "boolean",
                       "example": false
                     }
-                  }
+                  },
+                  "required": ["true", "false"]
                 }
               }
             }
