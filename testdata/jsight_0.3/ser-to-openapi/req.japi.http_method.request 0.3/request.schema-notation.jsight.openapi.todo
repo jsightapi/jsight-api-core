@@ -213,7 +213,7 @@
           "content": {
             "*/*": {
               "schema": {
-                "oneOf": [
+                "anyOf": [
                   {"type": "integer"},
                   {"type": "string"}
                 ]
@@ -242,7 +242,7 @@
           "content": {
             "*/*": {
               "schema": {
-                "oneOf": [
+                "anyOf": [
                   {"$ref": "#/components/schemas/object"},
                   {"$ref": "#/components/schemas/array"}
                 ]

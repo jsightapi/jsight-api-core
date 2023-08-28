@@ -273,7 +273,7 @@
               "content": {
                 "*/*": {
                   "schema": {
-                    "oneOf": [
+                    "anyOf": [
                       {
                         "type": "integer",
                         "example": 12345

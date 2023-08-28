@@ -335,7 +335,7 @@
         ]
       },
       "request_root_mixed_two_scalars": {
-        "oneOf": [
+        "anyOf": [
           {
             "type": "integer"
           },
@@ -345,7 +345,7 @@
         ]
       },
       "request_root_mixed_object_or_array": {
-        "oneOf": [
+        "anyOf": [
           {
             "$ref": "#/components/schemas/object"
           },

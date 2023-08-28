@@ -157,7 +157,7 @@
             "content": {
               "*/*": {
                 "schema": {
-                  "oneOf": [
+                  "anyOf": [
                     {
                       "type": "integer"
                     },
@@ -180,7 +180,7 @@
             "content": {
               "*/*": {
                 "schema": {
-                  "oneOf": [
+                  "anyOf": [
                     {
                       "$ref": "#/components/schemas/object"
                     },

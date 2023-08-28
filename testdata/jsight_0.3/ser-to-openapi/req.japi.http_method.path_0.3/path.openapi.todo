@@ -573,7 +573,7 @@
           }
         ],
         "responses": {
-          "default": {
+          "200": {
             "description": "",
             "content": {
               "*/*": {}
@@ -596,7 +596,7 @@
           }
         ],
         "responses": {
-          "default": {
+          "200": {
             "description": "",
             "content": {
               "*/*": {}
@@ -619,7 +619,7 @@
           }
         ],
         "responses": {
-          "default": {
+          "200": {
             "description": "",
             "content": {
               "*/*": {}
@@ -642,7 +642,7 @@
           }
         ],
         "responses": {
-          "default": {
+          "200": {
             "description": "",
             "content": {
               "*/*": {}
@@ -666,7 +666,7 @@
           }
         ],
         "responses": {
-          "default": {
+          "200": {
             "description": "",
             "content": {
               "*/*": {}
@@ -697,13 +697,458 @@
               "minLength": 3,
               "example": "string"
             }
-          }        ],
+          }
+        ],
         "responses": {
-          "default": {
+          "200": {
             "description": "",
             "content": {
               "*/*": {}
             }
+          }
+        }
+      }
+    },
+    "/object-in-path/double/{integer-parameter}/{string-parameter}": {
+      "put": {
+        "parameters": [
+          {
+            "name": "integer-parameter",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "minimum": 0,
+              "example": 21
+            }
+          },
+          {
+            "name": "string-parameter",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "minLength": 3,
+              "example": "string"
+            }
+          }        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "*/*": {}
+            }
+          }
+        }
+      }
+    },
+    "/object-in-path/user-type/{boolean-parameter}/{email-parameter}": {
+      "put": {
+        "parameters": [
+          {
+            "name": "boolean-parameter",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/booleanInObject"
+            }
+          },
+          {
+            "name": "email-parameter",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/emailInObject"
+            }
+          }        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "*/*": {}
+            }
+          }
+        }
+      }
+    },
+    "/object-in-path/all-of/{integer-parameter}/{string-parameter}": {
+      "put": {
+        "parameters": [
+          {
+            "name": "integer-parameter",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "minimum": 0,
+              "example": 21
+            }
+          },
+          {
+            "name": "string-parameter",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "minLength": 3,
+              "example": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "*/*": {}
+            }
+          }
+        }
+      }
+    },
+    "/all-of-in-path/simple/{integer-parameter}/{string-parameter}": {
+      "get": {
+        "parameters": [
+          {
+            "name": "integer-parameter",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "minimum": 0,
+              "example": 123
+            }
+          },
+          {
+            "name": "string-parameter",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "minLength": 3,
+              "example": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "*/*": {}
+            }
+          }
+        }
+      }
+    },
+    "/all-of-in-path/empty/{integer-parameter}/{string-parameter}": {
+      "get": {
+        "parameters": [
+          {
+            "name": "integer-parameter",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "minimum": 0,
+              "example": 123
+            }
+          },
+          {
+            "name": "string-parameter",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "minLength": 3,
+              "example": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "*/*": {}
+            }
+          }
+        }
+      }
+    },
+    "/all-of-in-path/user-type/{integer-parameter}/{string-parameter}": {
+      "get": {
+        "parameters": [
+          {
+            "name": "integer-parameter",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/allOfInteger"
+            }
+          },
+          {
+            "name": "string-parameter",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/allOfString"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "*/*": {}
+            }
+          }
+        }
+      }
+    },
+    "/all-of-in-path/multiple/{integer-parameter}/{string-parameter}": {
+      "get": {
+        "parameters": [
+          {
+            "name": "integer-parameter",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/allOfInteger"
+            }
+          },
+          {
+            "name": "string-parameter",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/allOfString"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "*/*": {}
+            }
+          }
+        }
+      }
+    },
+    "/any-parameter/no-rules/{any-value}": {
+      "post": {
+        "parameters": [
+          {
+            "name": "any-value",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "example": true
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {}
+          }
+        }
+      }
+    },
+    "/any-parameter/with-rules/{any-value}": {
+      "post": {
+        "parameters": [
+          {
+            "name": "any-value",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "nullable": true,
+              "example": 123
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {}
+          }
+        }
+      }
+    },
+    "/no-schema-parameter/{no-schema-value}": {
+      "get": {
+        "parameters": [
+          {
+            "name": "no-schema-value",
+            "in": "path",
+            "required": true,
+            "schema": {}
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {}
+          }
+        }
+      }
+    },
+    "/mixed-parameter/embedded-types/no-rules/{mixed-value}": {
+      "get": {
+        "parameters": [
+          {
+            "name": "mixed-value",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "boolean"
+                },
+                {
+                  "type": "integer"
+                }
+              ],
+              "example": true
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {}
+          }
+        }
+      }
+    },
+    "/mixed-parameter/embedded-types/with-rules/{mixed-value}": {
+      "get": {
+        "parameters": [
+          {
+            "name": "mixed-value",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "boolean"
+                },
+                {
+                  "type": "integer"
+                }
+              ],
+              "nullable": true,
+              "example": true
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {}
+          }
+        }
+      }
+    },
+    "/mixed-parameter/user-types/{mixed-value}": {
+      "get": {
+        "parameters": [
+          {
+            "name": "mixed-value",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/booleanRef"
+                },
+                {
+                  "$ref": "#/components/schemas/integerRef"
+                }
+              ],
+              "example": true
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {}
+          }
+        }
+      }
+    },
+    "/mixed-parameter/rule-sets/{mixed-value}": {
+      "get": {
+        "parameters": [
+          {
+            "name": "mixed-value",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                {
+                  "type": "boolean"
+                }
+              ],
+              "example": true
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {}
+          }
+        }
+      }
+    },
+    "/mixed-parameter/multiple-reference/{mixed-value}": {
+      "get": {
+        "parameters": [
+          {
+            "name": "mixed-value",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/booleanRef"
+                },
+                {
+                  "$ref": "#/components/schemas/integerRef"
+                }
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {}
+          }
+        }
+      }
+    },
+    "/user-type-parameter/{integer-value}": {
+      "get": {
+        "parameters": [
+          {
+            "name": "integer-value",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {}
           }
         }
       }
@@ -726,6 +1171,121 @@
           }
         },
         "required": ["integer-parameter", "string-parameter"]
+      },
+      "objectInPath2": {
+        "$ref": "#/components/schemas/objectInPath"
+      },
+      "objectInPath3": {
+        "type": "object",
+        "properties": {
+          "email-parameter": {
+            "$ref": "#/components/schemas/emailInObject"
+          },
+          "boolean-parameter": {
+            "$ref": "#/components/schemas/booleanInObject"
+          }
+        },
+        "required": ["email-parameter", "boolean-parameter"]
+      },
+      "emailInObject": {
+        "type": "string",
+        "format": "email",
+        "example": "cat@mail.ru"
+      },
+      "booleanInObject": {
+        "type": "boolean",
+        "example": true
+      },
+      "allOfObjectInPath": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/objectInPath"
+          },
+          {
+            "type": "object"
+          }
+        ]
+      },
+      "integerPath": {
+        "type": "object",
+        "properties": {
+          "integer-parameter": {
+            "type": "integer",
+            "minimum": 0,
+            "example": 123
+          }
+        },
+        "required": ["integer-parameter"]
+      },
+      "allOfPath": {
+        "type": "object",
+        "properties": {
+          "string-parameter": {
+            "type": "string",
+            "minLength": 3,
+            "example": "some-string"
+          },
+          "integer-parameter": {
+            "type": "integer",
+            "minimum": 0,
+            "example": 123
+          }
+        },
+        "required": ["string-parameter", "integer-parameter"]
+      },
+      "allOfPath2": {
+        "type": "object",
+        "properties": {
+          "string-parameter": {
+            "$ref": "#/components/schemas/allOfString"
+          },
+          "integer-parameter": {
+            "$ref": "#/components/schemas/allOfInteger"
+          }
+        },
+        "required": ["string-parameter", "integer-parameter"]
+      },
+      "allOfString": {
+        "type": "string",
+        "minLength": 3,
+        "example": "some-string"
+      },
+      "allOfInteger": {
+        "type": "integer",
+        "minimum": 0,
+        "example": 1234
+      },
+      "allOfMultiplePath1": {
+        "type": "object",
+        "properties": {
+          "string-parameter": {
+            "$ref": "#/components/schemas/allOfString"
+          }
+        },
+        "required": ["string-parameter"]
+      },
+      "allOfMultiplePath2": {
+        "type": "object",
+        "properties": {
+          "integer-parameter": {
+            "$ref": "#/components/schemas/allOfInteger"
+          }
+        },
+        "required": ["integer-parameter"]
+      },
+      "booleanRef": {
+        "type": "boolean",
+        "example": true
+      },
+      "integerRef": {
+        "type": "integer",
+        "example": 123
+      },
+      "integer": {
+        "type": "integer",
+        "minimum": -1,
+        "maximum": 1,
+        "example": 1
       }
     }
   }
