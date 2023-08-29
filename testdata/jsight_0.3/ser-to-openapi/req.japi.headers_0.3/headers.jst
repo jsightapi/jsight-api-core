@@ -10,7 +10,7 @@ POST /request/simple
       "Regex"      : "ABC12", // {optional: true, regex: "[A-C]+\\d+"}
       "lower-case" : "value", // {optional: true, const: true}
       "UPPER-CASE" : "value", // {optional: true, const: true}
-      "Required"   : "value",
+      "Required"   : "value", // Required
       "Const"      : "HELLO", // {optional: true, const: true}
       "Min-Length" : "value", // {optional: true, minLength: 3}
       "Integer"    : 1234567, // {optional: true}
@@ -56,7 +56,7 @@ POST /request/allOf
       "Regex"      : "ABC12", // {optional: true, regex: "[A-C]+\\d+"}
       "lower-case" : "value", // {optional: true, const: true}
       "UPPER-CASE" : "value", // {optional: true, const: true}
-      "Required"   : "value",
+      "Required"   : "value", // Required
       "Const"      : "HELLO", // {optional: true, const: true}
       "Min-Length" : "value", // {optional: true, minLength: 3}
       "Integer"    : 1234567, // {optional: true}
@@ -105,7 +105,7 @@ TYPE @headers
   "Regex"      : "ABC12", // {optional: true, regex: "[A-C]+\\d+"}
   "lower-case" : "value", // {optional: true, const: true}
   "UPPER-CASE" : "value", // {optional: true, const: true}
-  "Required"   : "value",
+  "Required"   : "value", // Required
   "Const"      : "HELLO", // {optional: true, const: true}
   "Min-Length" : "value", // {optional: true, minLength: 3}
   "Integer"    : 1234567, // {optional: true}
@@ -163,7 +163,7 @@ TYPE @headersAllOfPart2
   "Regex"      : "ABC12", // {optional: true, regex: "[A-C]+\\d+"}
   "lower-case" : "value", // {optional: true, const: true}
   "UPPER-CASE" : "value", // {optional: true, const: true}
-  "Required"   : "value",
+  "Required"   : "value", // Required
   "Const"      : "HELLO", // {optional: true, const: true}
   "Min-Length" : "value", // {optional: true, minLength: 3}
   "Integer"    : 1234567, // {optional: true}
@@ -192,6 +192,10 @@ TYPE @headersProxy
   @headers
 
 #------------------------------- /request/additionalProperties -------------------------
+
+###
+TODO: uncomment this, when we understand how OpenAPI may forbid not specified custom headers. 
+Now it is not clear.
 
 POST /request/additionalProperties/simple
   Request
@@ -252,6 +256,7 @@ TYPE @additionalPropertiesReverse
   "Cache-Control": "no-cache, private",   // {optional: true}
   "Date": "Thu, 19 Jan 2023 08:30:32 GMT" // {optional: true}
 }
+###
 
 #------------------------------- /request/object-mixed -------------------------
 ### TODO: uncomment when bug fixed
@@ -282,7 +287,7 @@ GET /response/simple
       "Regex"      : "ABC12", // {optional: true, regex: "[A-C]+\\d+"}
       "lower-case" : "value", // {optional: true, const: true}
       "UPPER-CASE" : "value", // {optional: true, const: true}
-      "Required"   : "value",
+      "Required"   : "value", // Required
       "Const"      : "HELLO", // {optional: true, const: true}
       "Min-Length" : "value", // {optional: true, minLength: 3}
       "Integer"    : 1234567, // {optional: true}
@@ -321,7 +326,7 @@ GET /response/allOf
       "Regex"      : "ABC12", // {optional: true, regex: "[A-C]+\\d+"}
       "lower-case" : "value", // {optional: true, const: true}
       "UPPER-CASE" : "value", // {optional: true, const: true}
-      "Required"   : "value",
+      "Required"   : "value", // Required
       "Const"      : "HELLO", // {optional: true, const: true}
       "Min-Length" : "value", // {optional: true, minLength: 3}
       "Integer"    : 1234567, // {optional: true}
@@ -356,6 +361,10 @@ GET /response/object-proxy
 
 #------------------------------- /response/additionalProperties -------------------------
 
+###
+TODO: uncomment this, when we understand how OpenAPI may forbid not specified custom headers. 
+Now it is not clear.
+
 POST /response/additionalProperties/simple
   200
     Headers
@@ -382,6 +391,7 @@ POST /response/additionalProperties/reverse
     { // {allOf: "@additionalPropertiesReverse"}
     }
     Body any
+###
 
 #------------------------------- /response/object-mixed -------------------------
 ### TODO: uncomment when bug fixed

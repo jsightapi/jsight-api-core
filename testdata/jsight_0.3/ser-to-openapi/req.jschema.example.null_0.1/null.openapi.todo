@@ -13,8 +13,6 @@
             "content": {
               "*/*": {
                 "schema": {
-                  "type": "integer",
-                  "nullable": true,
                   "enum": [null],
                   "example": null
                 }
@@ -29,8 +27,6 @@
                   "type": "object",
                   "properties": {
                     "null": {
-                      "type": "integer",
-                      "nullable": true,
                       "enum": [null],
                       "example": null
                     }
@@ -47,8 +43,6 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "type": "integer",
-                    "nullable": true,
                     "enum": [null],
                     "example": null
                   }

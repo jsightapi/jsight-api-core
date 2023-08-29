@@ -521,8 +521,6 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "integer",
-              "nullable": true,
               "enum": [null],
               "example": null
             }
@@ -544,8 +542,6 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "integer",
-              "nullable": true,
               "enum": [null],
               "example": null
             }
