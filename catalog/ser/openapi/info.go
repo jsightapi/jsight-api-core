@@ -6,16 +6,23 @@ import (
 
 type Info struct {
 	Title string `json:"title"`
+  Version string `json:"version"`
+}
+
+func defaultInfo() *Info {
+	return &Info{
+		Title: "",
+    Version: "",
+	}
 }
 
 func NewInfo(i *catalog.Info) *Info {
 	if i == nil {
-		return &Info{
-			Title: "",
-		}
+		return defaultInfo()
 	}
 
 	return &Info{
 		Title: i.Title,
+    Version: i.Version,
 	}
 }
