@@ -8,14 +8,14 @@ type Path struct {
 
 }
 
-type Paths *map[string]*Path    // TODO: temp for stub
+type Paths map[string]*Path    // TODO: temp for stub
 
-func defaultPaths() Paths {
-	return &map[string]*Path{
+func defaultPaths() *Paths {
+	return &Paths{
     "/": &Path{},
   }
 }
 
-func NewPaths(ss *catalog.Catalog) Paths {
+func NewPaths(ss *catalog.Catalog) *Paths {
   return defaultPaths() // TODO: just a stub
 }

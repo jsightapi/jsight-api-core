@@ -10,7 +10,7 @@ type OpenAPI struct {
 	OpenAPI string    `json:"openapi"`
 	Info    *Info     `json:"info"`
 	Servers *[]Server `json:"servers"`
-	Paths Paths `json:"paths"`
+	Paths   *Paths     `json:"paths"`
 }
 
 func NewOpenAPI(c *catalog.Catalog) *OpenAPI {
@@ -19,6 +19,6 @@ func NewOpenAPI(c *catalog.Catalog) *OpenAPI {
 		OpenAPI: "3.0.3",
 		Info:    NewInfo(c.Info),
 		Servers: NewServers(c.Servers),
-    Paths: NewPaths(c),
+		Paths:   NewPaths(c),
 	}
 }
