@@ -4,18 +4,42 @@ import (
 	"github.com/jsightapi/jsight-api-core/catalog"
 )
 
-type Path struct {
 
-}
-
-type Paths map[string]*Path    // TODO: temp for stub
+type Paths map[string]*PathItem    // TODO: temp for stub
 
 func defaultPaths() *Paths {
 	return &Paths{
-    "/": &Path{},
+    "/": &PathItem{},
   }
 }
 
-func NewPaths(ss *catalog.Catalog) *Paths {
-  return defaultPaths() // TODO: just a stub
+func NewPaths(c *catalog.Catalog) *Paths {
+  if (c.Interactions.Len() == 0) { 
+    return defaultPaths()
+  }
+  
+  p := make(Paths, c.Interactions.Len())
+  p.readInteractions(c)
+
+  return &p
 }
+
+func (p Paths) readInteractions(c *catalog.Catalog) {
+  c.Interactions.Each(func(k catalog.InteractionID, v catalog.Interaction) error {
+    if k.Protocol() == catalog.HTTP {
+      i := v.(*catalog.HTTPInteraction)
+      p.addInteraction(i)
+    }
+    return nil
+  })
+}
+
+func (p Paths) addInteraction(i *catalog.HTTPInteraction) {
+  path := i.Path().String()
+  if _, exists := p[path]; !exists {
+    p[path] = NewPathItem(i)
+  } else {
+    p[path].assignOperation(i.HttpMethod, NewOperation(i))
+  }
+}
+
