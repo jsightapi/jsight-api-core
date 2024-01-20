@@ -11,11 +11,7 @@ type Server struct {
 }
 
 func defaultServers() *[]Server {
-	return &[]Server{
-		{
-			Url: "/",
-		},
-	}
+	return nil
 }
 
 func NewServers(ss *catalog.Servers) *[]Server {
