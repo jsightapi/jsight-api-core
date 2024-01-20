@@ -7,18 +7,20 @@ import (
 type OpenAPI struct {
 	catalog *catalog.Catalog
 
-	OpenAPI string    `json:"openapi"`
-	Info    *Info     `json:"info"`
-	Servers *[]Server `json:"servers,omitempty"`
-	Paths   *Paths     `json:"paths"`
+	OpenAPI    string      `json:"openapi"`
+	Info       *Info       `json:"info"`
+	Servers    *[]Server   `json:"servers,omitempty"`
+	Paths      *Paths      `json:"paths"`
+	Components *Components `json:"components,omitempty"`
 }
 
 func NewOpenAPI(c *catalog.Catalog) *OpenAPI {
 	return &OpenAPI{
-		catalog: c,
-		OpenAPI: "3.0.3",
-		Info:    NewInfo(c.Info),
-		Servers: NewServers(c.Servers),
-		Paths:   NewPaths(c),
+		catalog:    c,
+		OpenAPI:    "3.0.3",
+		Info:       NewInfo(c.Info),
+		Servers:    NewServers(c.Servers),
+		Paths:      NewPaths(c),
+		Components: NewComponents(c),
 	}
 }
