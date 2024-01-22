@@ -6,10 +6,14 @@ type Operation struct {
 	Summary     string `json:"summary,omitempty"`
 	Description string `json:"description,omitempty"`
   // Parameters 
-  // RequestBody
+  RequestBody *RequestBody `json:"requestBody,omitempty"`
   // Responses
 }
 
-func NewOperation(o *catalog.HTTPInteraction) *Operation {
-	return &Operation{}
+func NewOperation(i *catalog.HTTPInteraction) *Operation {
+	return &Operation{
+    Summary: *i.Annotation,
+    Description: *i.Description,
+    RequestBody: NewRequestBody(i.Request),
+  }
 }

@@ -3,25 +3,19 @@ package openapi
 import "github.com/jsightapi/jsight-api-core/catalog"
 
 type PathItem struct {
-	Summary     string              `json:"summary,omitempty"`
-	Description string              `json:"description,omitempty"`
 	Get         *Operation          `json:"get,omitempty"`
 	Put         *Operation          `json:"put,omitempty"`
 	Post        *Operation          `json:"post,omitempty"`
 	Patch       *Operation          `json:"patch,omitempty"`
 	Delete      *Operation          `json:"delete,omitempty"`
-	Parameters  *PathItemParameters `json:"parameters,omitempty"`
+	// Parameters  *PathItemParameters `json:"parameters,omitempty"`// TODO: deal with params
 }
 
-type PathItemParameters struct{}
+// type PathItemParameters struct{}
 
-// TODO: deal with params
 
 func NewPathItem(i *catalog.HTTPInteraction) *PathItem {
-	pi := PathItem{
-    Summary:     *i.Annotation, // TODO: this is wrong, only Operaion has this in JSight
-		Description: *i.Description, 
-	}
+	pi := PathItem{}
 
   pi.assignOperation(i.HttpMethod, NewOperation(i))
 
@@ -42,7 +36,6 @@ func (pi *PathItem) assignOperation(method catalog.HTTPMethod, o *Operation) {
 	case catalog.DELETE:
 		pi.Delete = o
 	default:
-		panic("Unsupported operation")
+		panic("Unsupported method")
 	}
-
 }

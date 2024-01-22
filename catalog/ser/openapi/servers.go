@@ -22,7 +22,7 @@ func NewServers(ss *catalog.Servers) *[]Server {
 	r := make([]Server, 0, ss.Len())
 	ss.Each(func(k string, v *catalog.Server) error {
 		r = append(r, NewServer(v))
-		return nil // TODO: what kind of error?
+		return nil
 	})
 
 	return &r
