@@ -1,0 +1,28 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "wip",
+    "version": "1"
+  },
+  "paths": {
+    "/test": {
+      "post": {
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {}
+              }
+            }
+          }
+        },
+        "responses": {
+          "default": {
+            "description": "any"
+          }
+        }
+      }
+    }
+  }
+}

@@ -18,11 +18,11 @@ func TestOpenAPI(t *testing.T) {
 		t.Run(cutRepositoryPath(openapiPath), func(t *testing.T) {
 			json, err := os.ReadFile(openapiPath)
 			require.NoError(t, err)
-      
+
 			japiPath, err := japiFilePath(openapiPath)
 			require.NoError(t, err)
-      
-      // TODO: throw error if file does not exist
+
+			// TODO: throw error if file does not exist
 
 			j, je := kit.NewJapi(japiPath)
 			if je != nil {

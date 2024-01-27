@@ -3,21 +3,20 @@ package openapi
 import "github.com/jsightapi/jsight-api-core/catalog"
 
 type PathItem struct {
-	Get         *Operation          `json:"get,omitempty"`
-	Put         *Operation          `json:"put,omitempty"`
-	Post        *Operation          `json:"post,omitempty"`
-	Patch       *Operation          `json:"patch,omitempty"`
-	Delete      *Operation          `json:"delete,omitempty"`
+	Get    *Operation `json:"get,omitempty"`
+	Put    *Operation `json:"put,omitempty"`
+	Post   *Operation `json:"post,omitempty"`
+	Patch  *Operation `json:"patch,omitempty"`
+	Delete *Operation `json:"delete,omitempty"`
 	// Parameters  *PathItemParameters `json:"parameters,omitempty"`// TODO: deal with params
 }
 
 // type PathItemParameters struct{}
 
-
 func NewPathItem(i *catalog.HTTPInteraction) *PathItem {
 	pi := PathItem{}
 
-  pi.assignOperation(i.HttpMethod, NewOperation(i))
+	pi.assignOperation(i.HttpMethod, NewOperation(i))
 
 	return &pi
 }

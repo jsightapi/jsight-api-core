@@ -12,7 +12,6 @@ type OpenAPI struct {
 	Servers    *[]Server   `json:"servers,omitempty"`
 	Paths      *Paths      `json:"paths"`
 	Components *Components `json:"components,omitempty"`
-  
 }
 
 func NewOpenAPI(c *catalog.Catalog) *OpenAPI {

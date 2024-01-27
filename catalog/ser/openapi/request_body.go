@@ -6,12 +6,21 @@ import "github.com/jsightapi/jsight-api-core/catalog"
 
 type RequestBody struct {
 	// Description string `json:"description,omitempty"` // not supported in JSight
-  Content Content `json:"content"`
-  Required bool `json:"required,omitempty"`
+	Content  *Content `json:"content"`
+	Required bool     `json:"required,omitempty"`
 }
 
 func NewRequestBody(r *catalog.HTTPRequest) *RequestBody {
-  return &RequestBody{
-    Required: r.,
-  }
+	if r == nil {
+		return nil
+	}
+
+	return &RequestBody{
+		Required: isRequestBodyRequired(r),
+		Content:  NewContent(r),
+	}
+}
+
+func isRequestBodyRequired(r *catalog.HTTPRequest) bool {
+	return false // TODO: discuss
 }
