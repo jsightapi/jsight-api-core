@@ -11,7 +11,7 @@ type MediaTypeObject struct {
 	// Encoding // irrelevant to currently supported media types
 }
 
-const defaultExampleName string = "example"
+// const defaultExampleName string = "example"
 
 func NewMediaTypeObject(es catalog.ExchangeSchema) *MediaTypeObject {
 	so := ExhangeSchemaToSchemaObject(es)
@@ -22,14 +22,14 @@ func NewMediaTypeObject(es catalog.ExchangeSchema) *MediaTypeObject {
 	}
 }
 
-func makeExample(es catalog.ExchangeSchema) map[string]*ExampleObject {
-	eb, err := es.Example()
-	if err != nil {
-		panic(err) // TODO: discuss
-	}
-
-	ex := make(map[string]*ExampleObject, 1)
-	ex[defaultExampleName] = NewExampleObject(eb)
-
-	return ex
-}
+// func makeExample(es catalog.ExchangeSchema) map[string]*ExampleObject {
+// 	eb, err := es.Example()
+// 	if err != nil {
+// 		panic(err) // TODO: discuss
+// 	}
+//
+// 	ex := make(map[string]*ExampleObject, 1)
+// 	ex[defaultExampleName] = NewExampleObject(eb)
+//
+// 	return ex
+// }
