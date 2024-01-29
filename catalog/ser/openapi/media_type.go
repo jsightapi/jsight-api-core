@@ -6,6 +6,7 @@ type mediaType string
 
 // JSIght 0.3 supports: "json", "plainString", "binary"
 const (
+	MediaTypeRangeAny    mediaType = "*/*"
 	MediaTypeJson        mediaType = "application/json"
 	MediaTypeTextPlain   mediaType = "text/plain"
 	MediaTypeOctetStream mediaType = "application/octet-stream" // TODO: discuss

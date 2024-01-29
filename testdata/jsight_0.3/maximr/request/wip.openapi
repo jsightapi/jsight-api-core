@@ -12,14 +12,22 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "properties": {}
+                "properties": {
+                  "one": {
+                    "type": "string",
+                    "example": "two"
+                  }
+                }
               }
             }
           }
         },
         "responses": {
           "default": {
-            "description": "any"
+            "description": "",
+            "content": {
+              "*/*": {}
+            }
           }
         }
       }

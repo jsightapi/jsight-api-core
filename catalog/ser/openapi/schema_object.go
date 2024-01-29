@@ -2,6 +2,7 @@ package openapi
 
 import (
 	"github.com/jsightapi/jsight-api-core/catalog"
+
 	openapiSchema "github.com/jsightapi/jsight-schema-core/openapi"
 )
 
@@ -26,14 +27,13 @@ func dummySchemaObject() SchemaObject {
 type DummySchemaObject struct{}
 
 func ExhangeSchemaToSchemaObject(e catalog.ExchangeSchema) SchemaObject {
-
 	// t.Schema is an ExchangeSchema iface.
 	// must cast to ExchangeJSightSchema
 	switch v := e.(type) {
 	case *catalog.ExchangeJSightSchema:
 		// pass to schema-core
 		// TODO: discuss interface
-		return (openapiSchema.New(v.JSchema))
+		return (openapiSchema.NewSchemaObject(v.JSchema))
 	case catalog.ExchangeRegexSchema:
 		// make SchemaObject appr. for regex
 		return dummySchemaObject() // TODO:

@@ -7,7 +7,7 @@ type Operation struct {
 	Description *string `json:"description,omitempty"`
 	// Parameters
 	RequestBody *RequestBody `json:"requestBody,omitempty"`
-	// Responses
+	Responses   *Responses   `json:"responses"`
 }
 
 func NewOperation(i *catalog.HTTPInteraction) *Operation {
@@ -15,5 +15,6 @@ func NewOperation(i *catalog.HTTPInteraction) *Operation {
 		Summary:     i.Annotation,
 		Description: i.Description,
 		RequestBody: NewRequestBody(i.Request), // TODO: is request enough?
+		Responses:   NewResponses(i),
 	}
 }
