@@ -13,8 +13,8 @@ func NewResponses(i *catalog.HTTPInteraction) *Responses {
 
 	r := make(Responses, 1)
 
-	for idx, _ := range i.Responses { // TODO: Order ?
-		resp := &i.Responses[idx]
+	for idx := range i.Responses {
+		resp := &i.Responses[idx] // safer way to get a pointer in this case
 		rc := responseCode(resp.Code)
 		if _, exists := r[rc]; exists {
 			r[rc] = MergeResponse(r[rc], resp)
@@ -27,14 +27,14 @@ func NewResponses(i *catalog.HTTPInteraction) *Responses {
 }
 
 func MergeResponse(r *Response, add *catalog.HTTPResponse) *Response {
-	// TODO: merge 
+	// TODO: merge
 
 	return nil
 }
 
 func NewResponse(resp *catalog.HTTPResponse) *Response {
 	return &Response{
-		Description: "", // TODO
+		Description: resp.Annotation,
 		Content:     NewContentFromResponse(resp),
 	}
 }

@@ -18,11 +18,6 @@
                       "description": "Annotation 200 - boolean",
                       "type": "boolean",
                       "example": false
-                    },
-                    {
-                      "description": "Annotation 200 - integer",
-                      "type": "integer",
-                      "example": 0
                     }
                   ]
                 }
