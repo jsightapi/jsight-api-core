@@ -1,7 +1,5 @@
 package openapi
 
-import "github.com/jsightapi/jsight-api-core/catalog"
-
 type Response struct {
 	Description string `json:"description"`
 	// Headers *Headers
@@ -9,15 +7,17 @@ type Response struct {
 	// Links // irrelevant to JSight
 }
 
-func NewResponse(resp *catalog.HTTPResponse) *Response {
+func defaultResponse() *Response {
 	return &Response{
-		Description: "", // TODO
-		Content:     NewContentFromResponse(resp),
+		Description: "",
+		Content:     defaultContent(),
 	}
 }
 
-func defaultResponses() *Responses {
-	r := make(Responses, 1)
-	r["default"] = defaultResponse()
-	return &r
+func defaultContent() *Content {
+	c := make(Content, 1)
+
+	c["*/*"] = &MediaTypeObject{}
+
+	return &c
 }

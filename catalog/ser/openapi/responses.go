@@ -13,30 +13,34 @@ func NewResponses(i *catalog.HTTPInteraction) *Responses {
 
 	r := make(Responses, 1)
 
-	for idx, resp := range i.Responses { // TODO: Order ?
+	for idx, _ := range i.Responses { // TODO: Order ?
+		resp := &i.Responses[idx]
 		rc := responseCode(resp.Code)
 		if _, exists := r[rc]; exists {
-			// if not in a map – add
+			r[rc] = MergeResponse(r[rc], resp)
 		} else {
-			// if in a map – rebuild in a
-			r[rc] = NewResponse(&i.Responses[idx])
+			r[rc] = NewResponse(resp)
 		}
 	}
 
 	return &r
 }
 
-func defaultResponse() *Response {
+func MergeResponse(r *Response, add *catalog.HTTPResponse) *Response {
+	// TODO: merge 
+
+	return nil
+}
+
+func NewResponse(resp *catalog.HTTPResponse) *Response {
 	return &Response{
-		Description: "",
-		Content:     defaultContent(),
+		Description: "", // TODO
+		Content:     NewContentFromResponse(resp),
 	}
 }
 
-func defaultContent() *Content {
-	c := make(Content, 1)
-
-	c["*/*"] = &MediaTypeObject{}
-
-	return &c
+func defaultResponses() *Responses {
+	r := make(Responses, 1)
+	r["default"] = defaultResponse()
+	return &r
 }
