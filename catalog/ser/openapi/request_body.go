@@ -17,7 +17,7 @@ func NewRequestBody(r *catalog.HTTPRequest) *RequestBody {
 
 	return &RequestBody{
 		Required: isRequestBodyRequired(r),
-		Content:  NewContent(r),
+		Content:  NewContentFromRequest(r),
 	}
 }
 

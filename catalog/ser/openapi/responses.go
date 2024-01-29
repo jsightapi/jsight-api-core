@@ -12,12 +12,17 @@ func NewResponses(i *catalog.HTTPInteraction) *Responses {
 	}
 
 	r := make(Responses, 1)
-	return &r
-}
 
-func defaultResponses() *Responses {
-	r := make(Responses, 1)
-	r["default"] = defaultResponse()
+	for idx, resp := range i.Responses { // TODO: Order ?
+		rc := responseCode(resp.Code)
+		if _, exists := r[rc]; exists {
+			// if not in a map – add
+		} else {
+			// if in a map – rebuild in a
+			r[rc] = NewResponse(&i.Responses[idx])
+		}
+	}
+
 	return &r
 }
 
