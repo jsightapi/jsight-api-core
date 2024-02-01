@@ -3,22 +3,53 @@ package openapi
 import "github.com/jsightapi/jsight-api-core/catalog"
 
 type PathItem struct {
-	Get    *Operation `json:"get,omitempty"`
-	Put    *Operation `json:"put,omitempty"`
-	Post   *Operation `json:"post,omitempty"`
-	Patch  *Operation `json:"patch,omitempty"`
-	Delete *Operation `json:"delete,omitempty"`
+	Parameters []*ParameterObject `json:"parameters,omitempty"`
+	Get        *Operation         `json:"get,omitempty"`
+	Put        *Operation         `json:"put,omitempty"`
+	Post       *Operation         `json:"post,omitempty"`
+	Patch      *Operation         `json:"patch,omitempty"`
+	Delete     *Operation         `json:"delete,omitempty"`
 	// Parameters  *PathItemParameters `json:"parameters,omitempty"`// TODO: deal with params
 }
 
-// type PathItemParameters struct{}
-
 func NewPathItem(i *catalog.HTTPInteraction) *PathItem {
-	pi := PathItem{}
-
+	pi := PathItem{
+		Parameters: FillPathParams(i),
+	}
 	pi.assignOperation(i.HttpMethod, NewOperation(i))
-
 	return &pi
+}
+
+func FillPathParams(i *catalog.HTTPInteraction) []*ParameterObject {
+	r := make([]*ParameterObject, 0)
+	AppendPathParams(r, i)
+	return r
+}
+
+func PathSchemaDefined(i *catalog.HTTPInteraction) bool {
+	return i.PathVariables != nil &&
+		i.PathVariables.Schema != nil
+}
+
+func AppendPathParams(p []*ParameterObject, i *catalog.HTTPInteraction) {
+	if PathSchemaDefined(i) {
+		_ = append(p, GetPathParams(i)...)
+	}
+}
+
+func GetPathParams(i *catalog.HTTPInteraction) []*ParameterObject {
+	r := make([]*ParameterObject, 0)
+	for _, ch := range i.PathVariables.Schema.ASTNode.Children { // first level params
+		pi := GetParamInfo(ch)
+		NewParameterObject(
+			ParameterLocationPath,
+			ch.Key,
+			pi.Required(),
+			pi.AllowEmptyValue(),
+			pi.Schema(),
+		)
+	}
+	return r
 }
 
 // TODO: deal with possible ovewriting of method (improbable)

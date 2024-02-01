@@ -3,10 +3,8 @@ package openapi
 import (
 	"github.com/jsightapi/jsight-api-core/catalog"
 
-	openapiSchema "github.com/jsightapi/jsight-schema-core/openapi"
+	sc "github.com/jsightapi/jsight-schema-core/openapi"
 )
-
-type SchemaObject interface{}
 
 /*
 TODO:
@@ -16,32 +14,29 @@ TODO:
 	If some notation affects higher level structure of OA,
 	this approach should be changed.
 */
-func SchemaObjectFromUserType(t *catalog.UserType) SchemaObject {
-	return ExhangeSchemaToSchemaObject(t.Schema)
+func SchemaObjectFromUserType(t *catalog.UserType) sc.SchemaObject {
+	// TODO: can we have UserType for any / empty ?
+
+	return SchemaObjectFromExchangeSchema(t.Schema)
 }
 
-func dummySchemaObject() SchemaObject {
-	return &DummySchemaObject{}
-}
-
-type DummySchemaObject struct{}
-
-func ExhangeSchemaToSchemaObject(e catalog.ExchangeSchema) SchemaObject {
-	// t.Schema is an ExchangeSchema iface.
-	// must cast to ExchangeJSightSchema
-	switch v := e.(type) {
+// TODO: might become unnecessary
+func SchemaObjectFromExchangeSchema(es catalog.ExchangeSchema) sc.SchemaObject {
+	// t.Schema is an ExchangeSchema iface nad must cast to a type
+	switch s := es.(type) {
 	case *catalog.ExchangeJSightSchema:
-		// pass to schema-core
-		// TODO: discuss interface
-		return (openapiSchema.NewSchemaObject(v.JSchema))
+		return sc.NewSchemaObject(s.JSchema)
 	case catalog.ExchangeRegexSchema:
 		// make SchemaObject appr. for regex
-		return dummySchemaObject() // TODO:
+		return sc.NewSchemaObject(s.RSchema)
 	case catalog.ExchangePseudoSchema:
-		// any - anything allowed. Srialize to empty object
-		// empty - must be empty
-		return dummySchemaObject() // TODO:
+		// should have been dealt with at the content level
+		panic("cannot convert pseudo schema to SchemaObject at this level")
 	default:
-		panic("UserType schema has unsupported type")
+		panic("unsupported ExchangeSchema type provided")
 	}
+}
+
+func SchemaObjectFromSchemaKeeper[T sc.SchemaKeeper](sk T) sc.SchemaObject {
+	return sc.NewSchemaObject(sk)
 }

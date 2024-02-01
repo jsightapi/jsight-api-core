@@ -9,7 +9,10 @@
   },
   "components": {
     "schemas": {
-      "@typeName": {}
+      "typeName": {
+        "type": "object",
+        "properties": {}
+      }
     }
   }
 }

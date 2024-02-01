@@ -2,7 +2,7 @@ package openapi
 
 import "github.com/jsightapi/jsight-api-core/catalog"
 
-type Responses map[responseCode]*Response
+type Responses map[responseCode]*ResponseObject
 
 type responseCode string
 
@@ -14,10 +14,18 @@ func NewResponses(i *catalog.HTTPInteraction) *Responses {
 	r := make(Responses, 1)
 
 	for idx := range i.Responses {
+
+		// TODO: rewrite
+
+		// sort responses to map[code][]Response.
+		// range this map
+		// if map[code] len > 1 , then merger responses into one
+		// else – make response
+
 		resp := &i.Responses[idx] // safer way to get a pointer in this case
 		rc := responseCode(resp.Code)
 		if _, exists := r[rc]; exists {
-			r[rc] = MergeResponse(r[rc], resp)
+			r[rc] = MergeResponseObjects(r[rc], resp)
 		} else {
 			r[rc] = NewResponse(resp)
 		}
@@ -26,17 +34,14 @@ func NewResponses(i *catalog.HTTPInteraction) *Responses {
 	return &r
 }
 
-func MergeResponse(r *Response, add *catalog.HTTPResponse) *Response {
+func MergeResponseObjects(r *ResponseObject, add *catalog.HTTPResponse) *ResponseObject {
 	// TODO: merge
 
-	return nil
-}
+	// take r Schema f@
 
-func NewResponse(resp *catalog.HTTPResponse) *Response {
-	return &Response{
-		Description: resp.Annotation,
-		Content:     NewContentFromResponse(resp),
-	}
+	//
+
+	return nil
 }
 
 func defaultResponses() *Responses {

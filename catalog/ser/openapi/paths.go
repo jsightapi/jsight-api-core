@@ -35,9 +35,9 @@ func (p Paths) readInteractions(c *catalog.Catalog) {
 
 func (p Paths) addInteraction(i *catalog.HTTPInteraction) {
 	path := i.Path().String()
-	if _, exists := p[path]; !exists {
-		p[path] = NewPathItem(i)
-	} else {
+	if _, exists := p[path]; exists {
 		p[path].assignOperation(i.HttpMethod, NewOperation(i))
+	} else {
+		p[path] = NewPathItem(i)
 	}
 }

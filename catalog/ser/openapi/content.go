@@ -2,38 +2,37 @@ package openapi
 
 import (
 	"github.com/jsightapi/jsight-api-core/catalog"
-)
 
-// TODO: make one constructor when var cases solved
+	sc "github.com/jsightapi/jsight-schema-core/openapi"
+)
 
 type Content map[mediaType]*MediaTypeObject
 
-/*
-	TODO:
+func defaultContent() *Content {
+	return ContentForAny()
+}
 
-Can content contain more than one media type? Which cases?
-*/
-func NewContentFromRequest(r *catalog.HTTPRequest) *Content {
+func NewContent(f catalog.SerializeFormat, s catalog.ExchangeSchema) *Content {
 	c := make(Content)
-
-	mt := FormatToMediaType(r.Format)
-
-	c[mt] = NewMediaTypeObject(r.HTTPRequestBody.Schema)
-
+	mt := FormatToMediaType(f)
+	c[mt] = NewMediaTypeObject(s)
 	return &c
 }
 
-/*
-	TODO:
+func ContentForAny() *Content {
+	c := make(Content, 1)
+	c[MediaTypeRangeAny] = &MediaTypeObject{}
+	return &c
+}
 
-Can content contain more than one media type? Which cases?
-*/
-func NewContentFromResponse(r *catalog.HTTPResponse) *Content {
+func ContentForEmpty() *Content {
+	c := make(Content, 0)
+	return &c
+}
+
+func NewContentFromSchemaKeeper[T sc.SchemaKeeper](f catalog.SerializeFormat, sk T) *Content {
 	c := make(Content)
-
-	mt := FormatToMediaType(r.Body.Format)
-
-	c[mt] = NewMediaTypeObject(r.Body.Schema)
-
+	mt := FormatToMediaType(f)
+	c[mt] = NewMediaTypeObjectFromSchemaKeeper(sk)
 	return &c
 }

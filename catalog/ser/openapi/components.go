@@ -22,3 +22,8 @@ func NewComponents(c *catalog.Catalog) *Components {
 func hasComponents(c *catalog.Catalog) bool {
 	return c.UserTypes.Len() > 0
 }
+
+// all types in JSight start with `@`
+func convertTypeName(n string) string {
+	return n[1:]
+}

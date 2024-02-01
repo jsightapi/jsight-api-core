@@ -1,11 +1,13 @@
 package openapi
 
-import "github.com/jsightapi/jsight-api-core/catalog"
+import (
+	"github.com/jsightapi/jsight-api-core/catalog"
+	"github.com/jsightapi/jsight-api-core/notation"
+)
 
 // import "github.com/jsightapi/jsight-api-core/catalog"
 
 type RequestBody struct {
-	// Description string `json:"description,omitempty"` // not supported in JSight
 	Content  *Content `json:"content"`
 	Required bool     `json:"required,omitempty"`
 }
@@ -15,9 +17,24 @@ func NewRequestBody(r *catalog.HTTPRequest) *RequestBody {
 		return nil
 	}
 
+	var c *Content
+	switch s := r.HTTPRequestBody.Schema.(type) {
+	case *catalog.ExchangeJSightSchema:
+		c = NewContentFromSchemaKeeper(r.Format, s.JSchema)
+	case catalog.ExchangeRegexSchema:
+		c = NewContentFromSchemaKeeper(r.Format, s.RSchema)
+	case catalog.ExchangePseudoSchema:
+		switch s.Notation {
+		case notation.SchemaNotationAny:
+			c = ContentForAny()
+		case notation.SchemaNotationEmpty:
+			c = ContentForEmpty()
+		}
+	}
+
 	return &RequestBody{
 		Required: isRequestBodyRequired(r),
-		Content:  NewContentFromRequest(r),
+		Content:  c,
 	}
 }
 
