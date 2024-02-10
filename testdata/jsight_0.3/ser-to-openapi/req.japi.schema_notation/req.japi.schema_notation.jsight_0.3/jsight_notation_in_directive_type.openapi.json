@@ -1,0 +1,86 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "",
+    "version": ""
+  },
+  "components": {
+    "schemas": {
+      "typeWithJsightAnnotation_object": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          }
+        }
+      },
+      "typeWithJsightAnnotation_string": {
+        "type": "string"
+      },
+      "typeWithJsightAnnotation_float": {
+        "type": "number",
+        "format": "float"
+      },
+      "typeWithJsightAnnotation_array": {
+        "type": "array",
+        "items": {
+          "type": "integer"
+        }
+      },
+      "typeWithJsightAnnotation_null": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "enum": [null],
+            "example": null
+          }
+        }
+      }
+    }
+  },
+  "paths": {
+    "/resource/with/types": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "oneOf": [
+                    {
+                      "$ref": "#/components/schemas/typeWithJsightAnnotation_object"
+                    },
+                    {
+                      "$ref": "#/components/schemas/typeWithJsightAnnotation_string"
+                    },
+                    {
+                      "$ref": "#/components/schemas/typeWithJsightAnnotation_float"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "oneOf": [
+                    {
+                      "$ref": "#/components/schemas/typeWithJsightAnnotation_array"
+                    },
+                    {
+                      "$ref": "#/components/schemas/typeWithJsightAnnotation_null"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
