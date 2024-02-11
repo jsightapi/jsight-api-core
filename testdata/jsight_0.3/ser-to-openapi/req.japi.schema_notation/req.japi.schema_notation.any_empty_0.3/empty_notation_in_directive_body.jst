@@ -1,0 +1,19 @@
+JSIGHT 0.3
+
+# DIRECTIVE "Body": DIRECTIVE Request
+
+PUT /notation/in/request/body/
+  Request
+    Body empty
+
+PUT /notation/in/request/no/body/directive
+  Request empty
+
+# DIRECTIVE "Body": DIRECTIVES-RESPONSES
+
+PUT /notation/in/response/body/
+  200
+    Body empty
+
+PUT /notation/in/response/no/body/directive/
+  200 empty
