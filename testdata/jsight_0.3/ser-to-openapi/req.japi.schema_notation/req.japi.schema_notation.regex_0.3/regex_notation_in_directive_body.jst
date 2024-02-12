@@ -1,0 +1,23 @@
+JSIGHT 0.3
+
+# DIRECTIVE "Body": DIRECTIVE Request
+
+POST /notation/in/request/body/
+  Request
+    Body regex
+      /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
+
+POST /notation/in/request/no/body/directive
+  Request regex
+      /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
+
+# DIRECTIVE "Body": DIRECTIVES-RESPONSES
+
+GET /notation/in/response/body/
+  200
+    Body regex
+      /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
+
+GET /notation/in/response/no/body/directive/
+  200 regex
+      /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
