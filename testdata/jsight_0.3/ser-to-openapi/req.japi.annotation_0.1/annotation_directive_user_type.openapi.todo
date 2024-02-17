@@ -66,55 +66,68 @@
     "schemas": {
       "typeWithAnnotationBrief": {
         "type": "string",
-        "description": "Brief description of the TYPE"
+        "description": "Brief description of the TYPE",
+        "example": "typeWithAnnotationBrief example"
       },
       "typeWithAnnotationLong": {
         "type": "string",
-        "description": "Long description with different symbols... tabs:\t\tascii: !\"$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~ spec:¹²³$‰↑∞←→—≠€®™ѣѵіѳ′[]≈§°£₽„“”‘’×©↓−«»…´“„•ẞˇ¢·¸¨‘⌀⌘˘˚ѢѴІѲ″{}±–〉〈¿ˆ¼⅓½¡ Cyrillic: йцукенгшщзФЫВАПРОЛДЖЭ Chinese: 你好世界"
+        "description": "Long description with different symbols... tabs:\t\tascii: !\"$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~ spec:¹²³$‰↑∞←→—≠€®™ѣѵіѳ′[]≈§°£₽„“”‘’×©↓−«»…´“„•ẞˇ¢·¸¨‘⌀⌘˘˚ѢѴІѲ″{}±–〉〈¿ˆ¼⅓½¡ Cyrillic: йцукенгшщзФЫВАПРОЛДЖЭ Chinese: 你好世界",
+        "example": "typeWithAnnotationLong example"
       },
       "typeWithAnnotationMultilineOneline": {
         "type": "string",
-        "description": "Multi-line description on one line"
+        "description": "Multi-line description on one line",
+        "example": "typeWithAnnotationMultilineOneline example"
       },
       "typeWithAnnotationMultilineSeverallines": {
         "type": "string",
-        "description": "Multi-line description\non\nseveral\nlines"
+        "description": "Multi-line description\non\nseveral\nlines",
+        "example": "typeWithAnnotationMultilineSeverallines example"
       },
       "typeWithAnnotationOnelineEmpty": {
         "type": "string",
-        "description": ""
+        "description": "",
+        "example": "typeWithAnnotationOnelineEmpty example"
       },
       "typeWithAnnotationMultilineEmpty": {
         "type": "string",
-        "description": ""
+        "description": "",
+        "example": "typeWithAnnotationMultilineEmpty example"
       },
       "typeWithAnnotationDirective": {
         "type": "string",
-        "description": "TYPE @typeWithAnnotationDirective"
+        "description": "TYPE @typeWithAnnotationDirective",
+        "example": "typeWithAnnotationDirective example"
       },
       "typeWithAnnotationPseudodoubleOneline": {
         "type": "string",
-        "description": "//"
+        "description": "//",
+        "example": "typeWithAnnotationPseudodoubleOneline example"
       },
       "typeWithAnnotationPseudodoubleMultiline": {
         "type": "string",
-        "description": "\\*\\/ \\*\\/"
+        "description": "\\*\\/ \\*\\/",
+        "example": "typeWithAnnotationPseudodoubleMultiline example"
       },
       "typeWithAnnotationDescriptionOneline1": {
         "type": "string",
-        "description": "description"
+        "description": "description",
+        "example": "typeWithAnnotationDescriptionOneline1 example"
       },
       "typeWithAnnotationDescriptionOneline2": {
         "type": "string",
-        "description": "\"description\""
+        "description": "\"description\"",
+        "example": "typeWithAnnotationDescriptionOneline2 example"
       },
       "typeWithAnnotationDescriptionMultiline1": {
         "type": "string",
-        "description": "description"
+        "description": "description",
+        "example": "typeWithAnnotationDescriptionMultiline1 example"
       },
       "typeWithAnnotationDescriptionMultiline2": {
         "type": "string",
-        "description": "\"description\""
+        "description": "\"description\"",
+        "example": "typeWithAnnotationDescriptionMultiline2 example"
       }
     }
   }

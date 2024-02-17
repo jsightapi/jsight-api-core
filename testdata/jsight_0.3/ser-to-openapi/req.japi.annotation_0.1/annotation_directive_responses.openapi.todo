@@ -13,7 +13,8 @@
             "content": {
               "*/*": {
                 "schema": {
-                  "type": "string"
+                  "type": "string",
+                  "example": "response"
                 }
               }
             }
@@ -29,7 +30,8 @@
             "content": {
               "*/*": {
                 "schema": {
-                  "type": "string"
+                  "type": "string",
+                  "example": "response"
                 }
               }
             }
@@ -45,7 +47,8 @@
             "content": {
               "*/*": {
                 "schema": {
-                  "type": "string"
+                  "type": "string",
+                  "example": "response"
                 }
               }
             }
@@ -61,7 +64,8 @@
             "content": {
               "*/*": {
                 "schema": {
-                  "type": "string"
+                  "type": "string",
+                  "example": "response"
                 }
               }
             }
@@ -77,7 +81,8 @@
             "content": {
               "*/*": {
                 "schema": {
-                  "type": "string"
+                  "type": "string",
+                  "example": "response"
                 }
               }
             }
@@ -93,7 +98,8 @@
             "content": {
               "*/*": {
                 "schema": {
-                  "type": "string"
+                  "type": "string",
+                  "example": "response"
                 }
               }
             }
@@ -109,7 +115,8 @@
             "content": {
               "*/*": {
                 "schema": {
-                  "type": "string"
+                  "type": "string",
+                  "example": "response"
                 }
               }
             }
@@ -125,7 +132,8 @@
             "content": {
               "*/*": {
                 "schema": {
-                  "type": "string"
+                  "type": "string",
+                  "example": "response"
                 }
               }
             }
@@ -141,7 +149,8 @@
             "content": {
               "*/*": {
                 "schema": {
-                  "type": "string"
+                  "type": "string",
+                  "example": "response"
                 }
               }
             }
@@ -157,7 +166,8 @@
             "content": {
               "*/*": {
                 "schema": {
-                  "type": "string"
+                  "type": "string",
+                  "example": "response"
                 }
               }
             }
@@ -173,7 +183,8 @@
             "content": {
               "*/*": {
                 "schema": {
-                  "type": "string"
+                  "type": "string",
+                  "example": "response"
                 }
               }
             }
@@ -189,7 +200,8 @@
             "content": {
               "*/*": {
                 "schema": {
-                  "type": "string"
+                  "type": "string",
+                  "example": "response"
                 }
               }
             }
@@ -205,7 +217,8 @@
             "content": {
               "*/*": {
                 "schema": {
-                  "type": "string"
+                  "type": "string",
+                  "example": "response"
                 }
               }
             }

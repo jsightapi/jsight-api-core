@@ -9,8 +9,11 @@
       "get": {
         "summary": "Brief description of the HTTP-METHOD",
         "responses": {
-          "200": {
-            "description": ""
+          "default": {
+            "description": "",
+            "content": {
+              "*/*": {}
+            }
           }
         }
       }
@@ -19,8 +22,11 @@
       "get": {
         "summary": "Long description with different symbols... tabs:\t\tascii: !\"$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~ spec:¹²³$‰↑∞←→—≠€®™ѣѵіѳ′[]≈§°£₽„“”‘’×©↓−«»…´“„•ẞˇ¢·¸¨‘⌀⌘˘˚ѢѴІѲ″{}±–〉〈¿ˆ¼⅓½¡ Cyrillic: йцукенгшщзФЫВАПРОЛДЖЭ Chinese: 你好世界",
         "responses": {
-          "200": {
-            "description": ""
+          "default": {
+            "description": "",
+            "content": {
+              "*/*": {}
+            }
           }
         }
       }
@@ -29,8 +35,11 @@
       "get": {
         "summary": "Multi-line description on one line",
         "responses": {
-          "200": {
-            "description": ""
+          "default": {
+            "description": "",
+            "content": {
+              "*/*": {}
+            }
           }
         }
       }
@@ -39,8 +48,11 @@
       "get": {
         "summary": "Multi-line description\non\nseveral\nlines",
         "responses": {
-          "200": {
-            "description": ""
+          "default": {
+            "description": "",
+            "content": {
+              "*/*": {}
+            }
           }
         }
       }
@@ -49,8 +61,11 @@
       "get": {
         "summary": "",
         "responses": {
-          "200": {
-            "description": ""
+          "default": {
+            "description": "",
+            "content": {
+              "*/*": {}
+            }
           }
         }
       }
@@ -59,8 +74,11 @@
       "get": {
         "summary": "",
         "responses": {
-          "200": {
-            "description": ""
+          "default": {
+            "description": "",
+            "content": {
+              "*/*": {}
+            }
           }
         }
       }
@@ -69,8 +87,11 @@
       "get": {
         "summary": "GET /resource/with/annotation/directive",
         "responses": {
-          "200": {
-            "description": ""
+          "default": {
+            "description": "",
+            "content": {
+              "*/*": {}
+            }
           }
         }
       }
@@ -79,8 +100,11 @@
       "get": {
         "summary": "//",
         "responses": {
-          "200": {
-            "description": ""
+          "default": {
+            "description": "",
+            "content": {
+              "*/*": {}
+            }
           }
         }
       }
@@ -89,8 +113,11 @@
       "get": {
         "summary": "\\*\\/ \\*\\/",
         "responses": {
-          "200": {
-            "description": ""
+          "default": {
+            "description": "",
+            "content": {
+              "*/*": {}
+            }
           }
         }
       }
@@ -99,8 +126,11 @@
       "get": {
         "summary": "summary",
         "responses": {
-          "200": {
-            "description": ""
+          "default": {
+            "description": "",
+            "content": {
+              "*/*": {}
+            }
           }
         }
       }
@@ -109,8 +139,11 @@
       "get": {
         "summary": "\"summary\"",
         "responses": {
-          "200": {
-            "description": ""
+          "default": {
+            "description": "",
+            "content": {
+              "*/*": {}
+            }
           }
         }
       }
@@ -119,8 +152,11 @@
       "get": {
         "summary": "/*summary*/",
         "responses": {
-          "200": {
-            "description": ""
+          "default": {
+            "description": "",
+            "content": {
+              "*/*": {}
+            }
           }
         }
       }
@@ -129,8 +165,11 @@
       "get": {
         "summary": "/*\"summary\"*/",
         "responses": {
-          "200": {
-            "description": ""
+          "default": {
+            "description": "",
+            "content": {
+              "*/*": {}
+            }
           }
         }
       }
