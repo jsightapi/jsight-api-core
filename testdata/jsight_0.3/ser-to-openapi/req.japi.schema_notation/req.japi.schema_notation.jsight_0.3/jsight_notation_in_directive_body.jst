@@ -2,7 +2,7 @@ JSIGHT 0.3
 
 # DIRECTIVE "Body": DIRECTIVE Request
 
-POST /notation/in/request/body/
+POST /notation/in/request/body
   Request
     Body jsight
       {
@@ -17,7 +17,7 @@ POST /notation/in/request/no/body/directive
 
 # DIRECTIVE "Body": DIRECTIVES-RESPONSES
 
-GET /notation/in/response/body/
+GET /notation/in/response/body
   200
     Body jsight
       {
@@ -25,7 +25,7 @@ GET /notation/in/response/body/
         "name": "John"
       }
 
-GET /notation/in/response/no/body/directive/
+GET /notation/in/response/no/body/directive
   200 jsight
       {
         "id"  : 1,
