@@ -26,7 +26,20 @@
       "typeWithJSightAnnotation_array": {
         "type": "array",
         "items": {
-          "type": "integer"
+          "anyOf": [
+            {
+              "type": "integer",
+              "example": 1
+            },
+            {
+              "type": "integer",
+              "example": 2
+            },
+            {
+              "type": "integer",
+              "example": 3
+            }
+          ]
         }
       },
       "typeWithJSightAnnotation_null": {
