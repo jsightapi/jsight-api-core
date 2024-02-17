@@ -59,10 +59,11 @@
         }
       }
     },
-    "/notation/in/response/body/{id}": {
+    "/notation/in/response/body": {
       "get": {
         "responses": {
           "200": {
+            "description": "",
             "content": {
               "application/json": {
                 "schema": {
@@ -80,27 +81,16 @@
                   "required": ["id", "name"]
                 }
               }
-            },
-            "description": ""
+            }
           }
-        },
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer"
-            },
-            "description": ""
-          }
-        ]
+        }
       }
     },
-    "/notation/in/response/no/body/directive/{id}": {
+    "/notation/in/response/no/body/directive": {
       "get": {
         "responses": {
           "200": {
+            "description": "",
             "content": {
               "application/json": {
                 "schema": {
@@ -118,21 +108,9 @@
                   "required": ["id", "name"]
                 }
               }
-            },
-            "description": ""
+            }
           }
-        },
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer"
-            },
-            "description": ""
-          }
-        ]
+        }
       }
     }
   }
