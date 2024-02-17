@@ -6,32 +6,36 @@
   },
   "components": {
     "schemas": {
-      "typeWithJsightAnnotation_object": {
+      "typeWithJSightAnnotation_object": {
         "type": "object",
         "properties": {
           "id": {
-            "type": "integer"
+            "type": "integer",
+            "example": 1
           }
         }
       },
-      "typeWithJsightAnnotation_string": {
-        "type": "string"
+      "typeWithJSightAnnotation_string": {
+        "type": "string",
+        "example": "just a string"
       },
-      "typeWithJsightAnnotation_float": {
+      "typeWithJSightAnnotation_float": {
         "type": "number",
-        "format": "float"
+        "example": 1.2345
       },
-      "typeWithJsightAnnotation_array": {
+      "typeWithJSightAnnotation_array": {
         "type": "array",
         "items": {
           "type": "integer"
         }
       },
-      "typeWithJsightAnnotation_null": {
+      "typeWithJSightAnnotation_null": {
         "type": "object",
         "properties": {
           "key": {
-            "enum": [null],
+            "enum": [
+              null
+            ],
             "example": null
           }
         }
@@ -49,13 +53,13 @@
                 "schema": {
                   "oneOf": [
                     {
-                      "$ref": "#/components/schemas/typeWithJsightAnnotation_object"
+                      "$ref": "#/components/schemas/typeWithJSightAnnotation_object"
                     },
                     {
-                      "$ref": "#/components/schemas/typeWithJsightAnnotation_string"
+                      "$ref": "#/components/schemas/typeWithJSightAnnotation_string"
                     },
                     {
-                      "$ref": "#/components/schemas/typeWithJsightAnnotation_float"
+                      "$ref": "#/components/schemas/typeWithJSightAnnotation_float"
                     }
                   ]
                 }
@@ -69,10 +73,10 @@
                 "schema": {
                   "oneOf": [
                     {
-                      "$ref": "#/components/schemas/typeWithJsightAnnotation_array"
+                      "$ref": "#/components/schemas/typeWithJSightAnnotation_array"
                     },
                     {
-                      "$ref": "#/components/schemas/typeWithJsightAnnotation_null"
+                      "$ref": "#/components/schemas/typeWithJSightAnnotation_null"
                     }
                   ]
                 }

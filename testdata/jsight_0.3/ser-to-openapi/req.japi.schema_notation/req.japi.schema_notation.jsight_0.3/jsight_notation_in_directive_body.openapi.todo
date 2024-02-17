@@ -14,7 +14,8 @@
                 "type": "object",
                 "properties": {
                   "name": {
-                    "type": "string"
+                    "type": "string",
+                    "example": "John"
                   }
                 }
               }
@@ -22,8 +23,11 @@
           }
         },
         "responses": {
-          "200": {
-            "description": ""
+          "default": {
+            "description": "",
+            "content": {
+              "*/*": {}
+            }
           }
         }
       }
@@ -37,7 +41,8 @@
                 "type": "object",
                 "properties": {
                   "name": {
-                    "type": "string"
+                    "type": "string",
+                    "example": "John"
                   }
                 }
               }
@@ -45,8 +50,11 @@
           }
         },
         "responses": {
-          "200": {
-            "description": ""
+          "default": {
+            "description": "",
+            "content": {
+              "*/*": {}
+            }
           }
         }
       }
@@ -61,10 +69,12 @@
                   "type": "object",
                   "properties": {
                     "id": {
-                      "type": "integer"
+                      "type": "integer",
+                      "example": 1
                     },
                     "name": {
-                      "type": "string"
+                      "type": "string",
+                      "example": "John"
                     }
                   },
                   "required": ["id", "name"]
@@ -97,10 +107,12 @@
                   "type": "object",
                   "properties": {
                     "id": {
-                      "type": "integer"
+                      "type": "integer",
+                      "example": 1
                     },
                     "name": {
-                      "type": "string"
+                      "type": "string",
+                      "example": "John"
                     }
                   },
                   "required": ["id", "name"]
