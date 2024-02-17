@@ -18,8 +18,11 @@
           }
         },
         "responses": {
-          "200": {
-            "description": ""
+          "default": {
+            "description": "",
+            "content": {
+              "*/*": {}
+            }
           }
         }
       }
@@ -37,8 +40,11 @@
           }
         },
         "responses": {
-          "200": {
-            "description": ""
+          "default": {
+            "description": "",
+            "content": {
+              "*/*": {}
+            }
           }
         }
       }
