@@ -1,0 +1,73 @@
+JSIGHT 0.3
+
+SERVER @SERVER_WITH_NO_URL_1
+SERVER @SERVER_WITH_NO_URL_2
+SERVER @SERVER_WITH_URL
+  BaseUrl "https://server-with-url.com/1"
+SERVER "@SERVER_WITH_URL_IN_QUOTES"
+  BaseUrl https://server-with-url.com/2
+SERVER @SERVER_WITH_NO_URL_3_AGAIN
+SERVER @SERVER_WITH_ANNOTATION // Server's annotation
+SERVER @SERVER_WITH_ANNOTATION_AND_URL  //  Server's annotation
+  BaseUrl https://server-with-annotation-and-url.com/
+
+SERVER @_
+SERVER @1
+SERVER @X
+SERVER @x
+
+SERVER @ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_
+SERVER "@ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_2"
+SERVER @SERVER
+SERVER @server
+SERVER "@SERVER_"
+SERVER @SERVER_EMPTY_ANNOTATION //
+SERVER @SERVER_QUOTES_ANNOTATION // ""
+SERVER @SERVER_ANNOTATION_ANNOTATION /////////////////////////////////
+SERVER @SERVER_MULTI_LINE_ANNOTATION /* Annotation line 1 '"quotes"'
+                                        Annotation line 2 ABCxyz123!@#$%^&*()_+}{|\?><,./\'~`±§:¼⅓½¡йЖ界
+                                        Annotation line 3 // inner pseudo-annotation
+                                        Annotation line 4 \\*\\/
+                                    */
+  BaseUrl https://server-with-multiline-annotation
+
+SERVER @SERVER_WITH_NON_URL_URL_1
+  BaseUrl abc
+SERVER @SERVER_WITH_NON_URL_URL_2
+  BaseUrl 1+2=3
+SERVER @SERVER_WITH_NON_URL_URL_3
+  BaseUrl "''"
+SERVER @SERVER_WITH_NON_URL_URL_4
+  BaseUrl BaseUrl
+SERVER @SERVER_WITH_NON_URL_URL_5
+  BaseUrl   ..BaseUrl   
+SERVER @SERVER_WITH_NON_URL_URL_6
+  BaseUrl @BaseUrl
+SERVER @SERVER_WITH_NON_URL_URL_7
+  BaseUrl "\"\\\"\\" 
+SERVER @SERVER_WITH_OPENAPI_URL_AND_DESCRIPTION // description
+  BaseUrl url 
+SERVER @SERVER_WITH_JSIGHT_URL_AND_DESCRIPTION // annotation
+  BaseUrl baseUrl
+
+PASTE @macroServer
+
+SERVER @ANOTHER_SERVER_AFTER_MACRO_SERVERS 
+              BaseUrl     ftp://baseurl.com/
+
+MACRO @macroServer
+  (
+    SERVER @SERVER_IN_MACRO_1
+    SERVER @SERVER_IN_MACRO_2
+      BaseUrl url.com
+    SERVER @SERVER_IN_MACRO_3  // Annotation
+      BaseUrl http://xyz123.com/456/abc%^_s$
+  )
+
+MACRO @macroServerWithDuplicatesUnused
+  (
+    SERVER @SERVER_WITH_NO_URL_1
+    SERVER @SERVER_WITH_URL
+  )
+
+GET /url

@@ -1,0 +1,131 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "",
+    "version": ""
+  },
+  "servers": [
+    {
+      "url": ""
+    },
+    {
+      "url": ""
+    },
+    {
+      "url": "https://server-with-url.com/1"
+    },
+    {
+      "url": "https://server-with-url.com/2"
+    },
+    {
+      "url": "https://server-with-url.com/2"
+    },
+    {
+      "url": "",
+      "description": "Server's annotation"
+    },
+    {
+      "url": "https://server-with-annotation-and-url.com/",
+      "description": "Server's annotation"
+    },
+    {
+      "url": ""
+    },
+    {
+      "url": ""
+    },
+    {
+      "url": ""
+    },
+    {
+      "url": ""
+    },
+    {
+      "url": ""
+    },
+    {
+      "url": ""
+    },
+    {
+      "url": ""
+    },
+    {
+      "url": ""
+    },
+    {
+      "url": ""
+    },
+    {
+      "url": "",
+      "description": ""
+    },
+    {
+      "url": "",
+      "description": "\"\""
+    },
+    {
+      "url": "",
+      "description": "///////////////////////////////"
+    },
+    {
+      "url": "https://server-with-multiline-annotation",
+      "description": "Annotation line 1 '\"quotes\"'\nAnnotation line 2 ABCxyz123!@#$%^&*()_+}{|\\?><,./\\'~`±§:¼⅓½¡йЖ界\nAnnotation line 3 // inner pseudo-annotation\nAnnotation line 4 \\\\*\\\\/"
+    },
+    {
+      "url": "abc"
+    },
+    {
+      "url": "1+2=3"
+    },
+    {
+      "url": "''"
+    },
+    {
+      "url": "BaseUrl"
+    },
+    {
+      "url": "..BaseUrl"
+    },
+    {
+      "url": "@BaseUrl"
+    },
+    {
+      "url": "\"\"\\"
+    },
+    {
+      "url": "url",
+      "description": "description"
+    },
+    {
+      "url": "baseUrl",
+      "description": "annotation"
+    },
+    {
+      "url": "" 
+    },
+    {
+      "url": "url.com" 
+    },
+    {
+      "url": "http://xyz123.com/456/abc%^_s$",
+      "description": "Annotation"
+    },
+    {
+      "url": "ftp://baseurl.com/"
+    }
+  ],
+  "paths": {
+    "/url": {
+      "get": {
+        "responses": {
+          "default": {
+            "description": "",
+            "content": {
+              "*/*": {}
+            }
+          }
+        }
+      }
+    }
+  }
+}
