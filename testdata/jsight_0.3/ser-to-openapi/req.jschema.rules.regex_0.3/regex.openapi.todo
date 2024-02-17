@@ -53,7 +53,8 @@
                         "example": "Русское слово!"
                       }
                     },
-                    "required": ["phone", "time", "url", "ccNumber", "utf"]
+                    "required": ["phone", "time", "url", "ccNumber", "utf"],
+                    "additionalProperties": false
                   }
                 }
               }

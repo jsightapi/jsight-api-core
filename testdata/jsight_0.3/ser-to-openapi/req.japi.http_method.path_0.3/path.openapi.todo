@@ -1168,7 +1168,8 @@
             "example": "string"
           }
         },
-        "required": ["integer-parameter", "string-parameter"]
+        "required": ["integer-parameter", "string-parameter"],
+        "additionalProperties": false
       },
       "objectInPath2": {
         "$ref": "#/components/schemas/objectInPath"
@@ -1183,7 +1184,8 @@
             "$ref": "#/components/schemas/booleanInObject"
           }
         },
-        "required": ["email-parameter", "boolean-parameter"]
+        "required": ["email-parameter", "boolean-parameter"],
+        "additionalProperties": false
       },
       "emailInObject": {
         "type": "string",
@@ -1213,7 +1215,8 @@
             "example": 123
           }
         },
-        "required": ["integer-parameter"]
+        "required": ["integer-parameter"],
+        "additionalProperties": false
       },
       "allOfPath": {
         "type": "object",
@@ -1229,7 +1232,8 @@
             "example": 123
           }
         },
-        "required": ["string-parameter", "integer-parameter"]
+        "required": ["string-parameter", "integer-parameter"],
+        "additionalProperties": false
       },
       "allOfPath2": {
         "type": "object",
@@ -1241,7 +1245,8 @@
             "$ref": "#/components/schemas/allOfInteger"
           }
         },
-        "required": ["string-parameter", "integer-parameter"]
+        "required": ["string-parameter", "integer-parameter"],
+        "additionalProperties": false
       },
       "allOfString": {
         "type": "string",
@@ -1260,7 +1265,8 @@
             "$ref": "#/components/schemas/allOfString"
           }
         },
-        "required": ["string-parameter"]
+        "required": ["string-parameter"],
+        "additionalProperties": false
       },
       "allOfMultiplePath2": {
         "type": "object",
@@ -1269,7 +1275,8 @@
             "$ref": "#/components/schemas/allOfInteger"
           }
         },
-        "required": ["integer-parameter"]
+        "required": ["integer-parameter"],
+        "additionalProperties": false
       },
       "booleanRef": {
         "type": "boolean",

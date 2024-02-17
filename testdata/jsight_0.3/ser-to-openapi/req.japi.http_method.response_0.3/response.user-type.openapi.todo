@@ -205,7 +205,8 @@
             "example": "some-string"
           }
         },
-        "required": ["string"]
+        "required": ["string"],
+        "additionalProperties": false
       },
       "response_root_object_with_rules": {
         "type": "object",
@@ -275,7 +276,8 @@
             "example": "bar"
           }
         },
-        "required": ["foo"]
+        "required": ["foo"],
+        "additionalProperties": false
       },
       "decimal": {
         "type": "number",

@@ -31,7 +31,8 @@
                       "example": null
                     }
                   },
-                  "required": ["null"]
+                  "required": ["null"],
+                  "additionalProperties": false
                 }
               }
             }
