@@ -1,0 +1,19 @@
+JSIGHT 0.3
+
+# DIRECTIVE "Body": DIRECTIVE Request
+
+POST /notation/in/request/body/
+  Request
+    Body any
+
+POST /notation/in/request/no/body/directive
+  Request any
+
+# DIRECTIVE "Body": DIRECTIVES-RESPONSES
+
+GET /notation/in/response/body/
+  200
+    Body any
+
+GET /notation/in/response/no/body/directive/
+  200 any

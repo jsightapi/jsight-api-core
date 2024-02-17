@@ -1,0 +1,63 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "",
+    "version": ""
+  },
+  "paths": {
+    "/notation/in/request/body/": {
+      "put": {
+        "requestBody": {
+          "content": {
+          }
+        },
+        "responses": {
+          "default": {
+            "description": "",
+            "content": {
+              "*/*": {}
+            }
+          }
+        }
+      }
+    },
+    "/notation/in/request/no/body/directive": {
+      "put": {
+        "requestBody": {
+          "content": {
+          }
+        },
+        "responses": {
+          "default": {
+            "description": "",
+            "content": {
+              "*/*": {}
+            }
+          }
+        }
+      }
+    },
+    "/notation/in/response/body/": {
+      "put": {
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+            }
+          }
+        }
+      }
+    },
+    "/notation/in/response/no/body/directive/": {
+      "put": {
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+            }
+          }
+        }
+      }
+    }
+  }
+}
