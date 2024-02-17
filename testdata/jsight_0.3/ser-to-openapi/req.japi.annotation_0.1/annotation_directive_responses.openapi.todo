@@ -1,0 +1,230 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "",
+    "version": ""
+  },
+  "paths": {
+    "/resource/with/annotation/brief": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Brief description of the RESPONSE",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string",
+                  "example": "response"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/resource/with/annotation/long": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Long description with different symbols... tabs:\t\tascii: !\"$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~ spec:¹²³$‰↑∞←→—≠€®™ѣѵіѳ′[]≈§°£₽„“”‘’×©↓−«»…´“„•ẞˇ¢·¸¨‘⌀⌘˘˚ѢѴІѲ″{}±–〉〈¿ˆ¼⅓½¡ Cyrillic: йцукенгшщзФЫВАПРОЛДЖЭ Chinese: 你好世界",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string",
+                  "example": "response"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/resource/with/annotation/multiline/oneline": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Multi-line description on one line",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string",
+                  "example": "response"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/resource/with/annotation/multiline/severallines": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Multi-line description\non\nseveral\nlines",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string",
+                  "example": "response"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/resource/with/annotation/oneline/empty": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string",
+                  "example": "response"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/resource/with/annotation/multiline/empty": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string",
+                  "example": "response"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/resource/with/annotation/directive": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "GET /resource/with/annotation/directive",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string",
+                  "example": "response"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/resource/with/annotation/pseudodouble/oneline": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "//",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string",
+                  "example": "response"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/resource/with/annotation/pseudodouble/multiline": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "\\*\\/ \\*\\/",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string",
+                  "example": "response"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/resource/with/annotation/description/oneline/1": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "description",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string",
+                  "example": "response"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/resource/with/annotation/description/oneline/2": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "\"description\"",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string",
+                  "example": "response"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/resource/with/annotation/description/multiline/1": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "/*description*/",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string",
+                  "example": "response"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/resource/with/annotation/description/multiline/2": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "/*\"description\"*/",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string",
+                  "example": "response"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

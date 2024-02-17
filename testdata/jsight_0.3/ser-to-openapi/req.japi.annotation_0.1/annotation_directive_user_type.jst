@@ -1,0 +1,38 @@
+JSIGHT 0.3
+
+# ANNOTATION in DIRECTIVE "TYPE"
+
+TYPE @typeWithAnnotationBrief // Brief description of the TYPE 
+    "typeWithAnnotationBrief example"
+TYPE @typeWithAnnotationLong  // Long description with different symbols... tabs:		ascii: !\"$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~ spec:¹²³$‰↑∞←→—≠€®™ѣѵіѳ′[]≈§°£₽„“”‘’×©↓−«»…´“„•ẞˇ¢·¸¨‘⌀⌘˘˚ѢѴІѲ″{}±–〉〈¿ˆ¼⅓½¡ Cyrillic: йцукенгшщзФЫВАПРОЛДЖЭ Chinese: 你好世界
+    "typeWithAnnotationLong example"
+TYPE @typeWithAnnotationMultilineOneline /* Multi-line description on one line */
+    "typeWithAnnotationMultilineOneline example"
+TYPE @typeWithAnnotationMultilineSeverallines /* Multi-line description 
+                                              on 
+                                              several 
+                                              lines 
+                                              */
+    "typeWithAnnotationMultilineSeverallines example"
+TYPE @typeWithAnnotationOnelineEmpty //   
+    "typeWithAnnotationOnelineEmpty example"
+TYPE @typeWithAnnotationMultilineEmpty /**/
+    "typeWithAnnotationMultilineEmpty example"
+TYPE @typeWithAnnotationDirective //TYPE @typeWithAnnotationDirective
+    "typeWithAnnotationDirective example"
+TYPE @typeWithAnnotationPseudodoubleOneline ////
+    "typeWithAnnotationPseudodoubleOneline example"
+TYPE @typeWithAnnotationPseudodoubleMultiline /* \*\/  \*\/ */
+    "typeWithAnnotationPseudodoubleMultiline example"
+TYPE @typeWithAnnotationDescriptionOneline1 //description
+    "typeWithAnnotationDescriptionOneline1 example"
+TYPE @typeWithAnnotationDescriptionOneline2 //"description"
+    "typeWithAnnotationDescriptionOneline2 example"
+TYPE @typeWithAnnotationDescriptionMultiline1 /*description*/
+    "typeWithAnnotationDescriptionMultiline1 example"
+TYPE @typeWithAnnotationDescriptionMultiline2 /*"description"*/
+    "typeWithAnnotationDescriptionMultiline2 example"
+
+GET /types
+    200 
+      @typeWithAnnotationBrief | @typeWithAnnotationLong | @typeWithAnnotationMultilineOneline | @typeWithAnnotationMultilineSeverallines | @typeWithAnnotationOnelineEmpty | @typeWithAnnotationMultilineEmpty | @typeWithAnnotationDirective | @typeWithAnnotationPseudodoubleOneline | @typeWithAnnotationPseudodoubleMultiline | @typeWithAnnotationDescriptionOneline1 | @typeWithAnnotationDescriptionOneline2 | @typeWithAnnotationDescriptionMultiline1 | @typeWithAnnotationDescriptionMultiline2

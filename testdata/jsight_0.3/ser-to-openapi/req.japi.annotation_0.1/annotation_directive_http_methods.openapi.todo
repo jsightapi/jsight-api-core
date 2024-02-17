@@ -1,0 +1,178 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "",
+    "version": ""
+  },
+  "paths": {
+    "/resource/with/annotation/brief": {
+      "get": {
+        "summary": "Brief description of the HTTP-METHOD",
+        "responses": {
+          "default": {
+            "description": "",
+            "content": {
+              "*/*": {}
+            }
+          }
+        }
+      }
+    },
+    "/resource/with/annotation/long": {
+      "get": {
+        "summary": "Long description with different symbols... tabs:\t\tascii: !\"$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~ spec:¹²³$‰↑∞←→—≠€®™ѣѵіѳ′[]≈§°£₽„“”‘’×©↓−«»…´“„•ẞˇ¢·¸¨‘⌀⌘˘˚ѢѴІѲ″{}±–〉〈¿ˆ¼⅓½¡ Cyrillic: йцукенгшщзФЫВАПРОЛДЖЭ Chinese: 你好世界",
+        "responses": {
+          "default": {
+            "description": "",
+            "content": {
+              "*/*": {}
+            }
+          }
+        }
+      }
+    },
+    "/resource/with/annotation/multiline/oneline": {
+      "get": {
+        "summary": "Multi-line description on one line",
+        "responses": {
+          "default": {
+            "description": "",
+            "content": {
+              "*/*": {}
+            }
+          }
+        }
+      }
+    },
+    "/resource/with/annotation/multiline/severallines": {
+      "get": {
+        "summary": "Multi-line description\non\nseveral\nlines",
+        "responses": {
+          "default": {
+            "description": "",
+            "content": {
+              "*/*": {}
+            }
+          }
+        }
+      }
+    },
+    "/resource/with/annotation/oneline/empty": {
+      "get": {
+        "summary": "",
+        "responses": {
+          "default": {
+            "description": "",
+            "content": {
+              "*/*": {}
+            }
+          }
+        }
+      }
+    },
+    "/resource/with/annotation/multiline/empty": {
+      "get": {
+        "summary": "",
+        "responses": {
+          "default": {
+            "description": "",
+            "content": {
+              "*/*": {}
+            }
+          }
+        }
+      }
+    },
+    "/resource/with/annotation/directive": {
+      "get": {
+        "summary": "GET /resource/with/annotation/directive",
+        "responses": {
+          "default": {
+            "description": "",
+            "content": {
+              "*/*": {}
+            }
+          }
+        }
+      }
+    },
+    "/resource/with/annotation/pseudodouble/oneline": {
+      "get": {
+        "summary": "//",
+        "responses": {
+          "default": {
+            "description": "",
+            "content": {
+              "*/*": {}
+            }
+          }
+        }
+      }
+    },
+    "/resource/with/annotation/pseudodouble/multiline": {
+      "get": {
+        "summary": "\\*\\/ \\*\\/",
+        "responses": {
+          "default": {
+            "description": "",
+            "content": {
+              "*/*": {}
+            }
+          }
+        }
+      }
+    },
+    "/resource/with/annotation/summary/oneline/1": {
+      "get": {
+        "summary": "summary",
+        "responses": {
+          "default": {
+            "description": "",
+            "content": {
+              "*/*": {}
+            }
+          }
+        }
+      }
+    },
+    "/resource/with/annotation/summary/oneline/2": {
+      "get": {
+        "summary": "\"summary\"",
+        "responses": {
+          "default": {
+            "description": "",
+            "content": {
+              "*/*": {}
+            }
+          }
+        }
+      }
+    },
+    "/resource/with/annotation/summary/multiline/1": {
+      "get": {
+        "summary": "/*summary*/",
+        "responses": {
+          "default": {
+            "description": "",
+            "content": {
+              "*/*": {}
+            }
+          }
+        }
+      }
+    },
+    "/resource/with/annotation/summary/multiline/2": {
+      "get": {
+        "summary": "/*\"summary\"*/",
+        "responses": {
+          "default": {
+            "description": "",
+            "content": {
+              "*/*": {}
+            }
+          }
+        }
+      }
+    }
+  }
+}
