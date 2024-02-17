@@ -1,0 +1,35 @@
+JSIGHT 0.3
+
+# ANNOTATION in DIRECTIVE "SERVER"
+
+SERVER @SERVER_WITH_ANNOTATION_BRIEF // Brief description of the SERVER
+SERVER @SERVER_WITH_ANNOTATION_LONG  // Long description with different symbols... tabs:		ascii: !\"$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~ spec:¹²³$‰↑∞←→—≠€®™ѣѵіѳ′[]≈§°£₽„“”‘’×©↓−«»…´“„•ẞˇ¢·¸¨‘⌀⌘˘˚ѢѴІѲ″{}±–〉〈¿ˆ¼⅓½¡ Cyrillic: йцукенгшщзФЫВАПРОЛДЖЭ Chinese: 你好世界
+SERVER @SERVER_WITH_ANNOTATION_MULTILINE_ONELINE /* Multi-line description on one line */
+SERVER @SERVER_WITH_ANNOTATION_MULTILINE_SEVERALLINES_1 /* Multi-line description 
+                                                        on 
+                                                        several 
+                                                        lines 
+                                                        */
+SERVER @SERVER_WITH_ANNOTATION_MULTILINE_SEVERALLINES_2 /* Annotation line 1 '"quotes"'
+                                                        Annotation line 2 ABCxyz123!@#$%^&*()_+}{|\?><,./\'~`±§:¼⅓½¡йЖ界
+                                                        Annotation line 3 // inner pseudo-annotation
+                                                        Annotation line 4 \\*\\/
+                                                        */
+SERVER @SERVER_WITH_ANNOTATION_ONELINE_EMPTY //
+    BaseUrl "https://server-with-annotation-oneline-empty.com"   
+SERVER @SERVER_WITH_ANNOTATION_ONELINE_QUOTES // ""
+SERVER @SERVER_WITH_ANNOTATION_MULTILINE_EMPTY /**/
+    BaseUrl "https://server-with-annotation-multiline-empty.com"
+SERVER @SERVER_WITH_ANNOTATION_DIRECTIVE //SERVER @SERVER_WITH_ANNOTATION_DIRECTIVE
+SERVER @SERVER_WITH_ANNOTATION_PSEUDODOUBLE_ONELINE ////
+SERVER @SERVER_WITH_ANNOTATION_PSEUDODOUBLE_MULTILINE /* \*\/  \*\/ */
+SERVER @SERVER_WITH_ANNOTATION_DESCRIPTION_ONELINE_1 //description
+    BaseUrl "https://server-with-annotation-description-online-1.com"
+SERVER @SERVER_WITH_ANNOTATION_DESCRIPTION_ONELINE_2 //"description"
+    BaseUrl "https://server-with-annotation-description-online-2.com"
+SERVER @SERVER_WITH_ANNOTATION_DESCRIPTION_MULTILINE_1 /*description*/
+    BaseUrl "https://server-with-annotation-description-multiline-1.com"
+SERVER @SERVER_WITH_ANNOTATION_DESCRIPTION_MULTILINE_2 /*"description"*/
+    BaseUrl "https://server-with-annotation-description-multiline-2.com"
+
+GET /

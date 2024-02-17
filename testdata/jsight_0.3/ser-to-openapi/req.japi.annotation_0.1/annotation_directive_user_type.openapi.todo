@@ -1,0 +1,121 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "",
+    "version": ""
+  },
+  "paths": {
+    "/types": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "anyOf": [
+                    {
+                      "$ref": "#/components/schemas/typeWithAnnotationBrief"
+                    },
+                    {
+                      "$ref": "#/components/schemas/typeWithAnnotationLong"
+                    },
+                    {
+                      "$ref": "#/components/schemas/typeWithAnnotationMultilineOneline"
+                    },
+                    {
+                      "$ref": "#/components/schemas/typeWithAnnotationMultilineSeverallines"
+                    },
+                    {
+                      "$ref": "#/components/schemas/typeWithAnnotationOnelineEmpty"
+                    },
+                    {
+                      "$ref": "#/components/schemas/typeWithAnnotationMultilineEmpty"
+                    },
+                    {
+                      "$ref": "#/components/schemas/typeWithAnnotationDirective"
+                    },
+                    {
+                      "$ref": "#/components/schemas/typeWithAnnotationPseudodoubleOneline"
+                    },
+                    {
+                      "$ref": "#/components/schemas/typeWithAnnotationPseudodoubleMultiline"
+                    },
+                    {
+                      "$ref": "#/components/schemas/typeWithAnnotationDescriptionOneline1"
+                    },
+                    {
+                      "$ref": "#/components/schemas/typeWithAnnotationDescriptionOneline2"
+                    },
+                    {
+                      "$ref": "#/components/schemas/typeWithAnnotationDescriptionMultiline1"
+                    },
+                    {
+                      "$ref": "#/components/schemas/typeWithAnnotationDescriptionMultiline2"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "typeWithAnnotationBrief": {
+        "type": "string",
+        "description": "Brief description of the TYPE"
+      },
+      "typeWithAnnotationLong": {
+        "type": "string",
+        "description": "Long description with different symbols... tabs:\t\tascii: !\"$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~ spec:¹²³$‰↑∞←→—≠€®™ѣѵіѳ′[]≈§°£₽„“”‘’×©↓−«»…´“„•ẞˇ¢·¸¨‘⌀⌘˘˚ѢѴІѲ″{}±–〉〈¿ˆ¼⅓½¡ Cyrillic: йцукенгшщзФЫВАПРОЛДЖЭ Chinese: 你好世界"
+      },
+      "typeWithAnnotationMultilineOneline": {
+        "type": "string",
+        "description": "Multi-line description on one line"
+      },
+      "typeWithAnnotationMultilineSeverallines": {
+        "type": "string",
+        "description": "Multi-line description\non\nseveral\nlines"
+      },
+      "typeWithAnnotationOnelineEmpty": {
+        "type": "string",
+        "description": ""
+      },
+      "typeWithAnnotationMultilineEmpty": {
+        "type": "string",
+        "description": ""
+      },
+      "typeWithAnnotationDirective": {
+        "type": "string",
+        "description": "TYPE @typeWithAnnotationDirective"
+      },
+      "typeWithAnnotationPseudodoubleOneline": {
+        "type": "string",
+        "description": "//"
+      },
+      "typeWithAnnotationPseudodoubleMultiline": {
+        "type": "string",
+        "description": "\\*\\/ \\*\\/"
+      },
+      "typeWithAnnotationDescriptionOneline1": {
+        "type": "string",
+        "description": "description"
+      },
+      "typeWithAnnotationDescriptionOneline2": {
+        "type": "string",
+        "description": "\"description\""
+      },
+      "typeWithAnnotationDescriptionMultiline1": {
+        "type": "string",
+        "description": "description"
+      },
+      "typeWithAnnotationDescriptionMultiline2": {
+        "type": "string",
+        "description": "\"description\""
+      }
+    }
+  }
+}
