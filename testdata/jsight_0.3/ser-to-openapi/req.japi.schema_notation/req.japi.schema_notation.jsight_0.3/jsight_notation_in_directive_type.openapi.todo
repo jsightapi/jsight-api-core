@@ -8,6 +8,7 @@
     "schemas": {
       "typeWithJSightAnnotation_object": {
         "type": "object",
+        "additionalProperties": false,
         "properties": {
           "id": {
             "type": "integer",
@@ -44,6 +45,7 @@
       },
       "typeWithJSightAnnotation_null": {
         "type": "object",
+        "additionalProperties": false,
         "properties": {
           "key": {
             "enum": [

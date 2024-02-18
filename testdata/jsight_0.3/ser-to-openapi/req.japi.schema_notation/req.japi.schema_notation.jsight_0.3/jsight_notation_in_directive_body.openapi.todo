@@ -12,6 +12,7 @@
             "application/json": {
               "schema": {
                 "type": "object",
+                "additionalProperties": false,
                 "properties": {
                   "name": {
                     "type": "string",
@@ -39,6 +40,7 @@
             "application/json": {
               "schema": {
                 "type": "object",
+                "additionalProperties": false,
                 "properties": {
                   "name": {
                     "type": "string",
@@ -68,6 +70,7 @@
               "application/json": {
                 "schema": {
                   "type": "object",
+                  "additionalProperties": false,
                   "properties": {
                     "id": {
                       "type": "integer",
@@ -95,6 +98,7 @@
               "application/json": {
                 "schema": {
                   "type": "object",
+                  "additionalProperties": false,
                   "properties": {
                     "id": {
                       "type": "integer",
