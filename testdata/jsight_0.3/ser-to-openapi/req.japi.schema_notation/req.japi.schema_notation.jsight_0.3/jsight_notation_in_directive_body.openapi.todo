@@ -18,7 +18,8 @@
                     "type": "string",
                     "example": "John"
                   }
-                }
+                },
+                "required": ["name"]
               }
             }
           }
@@ -46,7 +47,8 @@
                     "type": "string",
                     "example": "John"
                   }
-                }
+                },
+                "required": ["name"]
               }
             }
           }
