@@ -4,14 +4,14 @@ import (
 	"github.com/jsightapi/jsight-api-core/catalog"
 	schema "github.com/jsightapi/jsight-schema-core"
 
-	sc "github.com/jsightapi/jsight-schema-core/openapi"
+	_ "github.com/jsightapi/jsight-schema-core/openapi"
 )
 
 /*
 Other properties of OA MediaTypeObject are not used in JSight
 */
 type MediaTypeObject struct {
-	Schema sc.SchemaObject `json:"schema,omitempty"` // TODO: empty?
+	Schema interface{} `json:"schema,omitempty"` // TODO: empty?
 }
 
 func NewMediaTypeObjectFromExchangeSchema(es catalog.ExchangeSchema) *MediaTypeObject {

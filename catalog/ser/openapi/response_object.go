@@ -10,7 +10,7 @@ import (
 
 type ResponseObject struct {
 	Description string   `json:"description"`
-	Headers     *Headers `json:"headers"`
+	Headers     *Headers `json:"header,omitempty"`
 	Content     *Content `json:"content,omitempty"`
 }
 

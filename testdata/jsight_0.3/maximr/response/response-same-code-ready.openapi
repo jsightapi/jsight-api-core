@@ -9,6 +9,7 @@
       "get": {
         "responses": {
           "200": {
+            "description": "",
             "content": {
               "*/*": {
                 "schema": {
@@ -22,7 +23,7 @@
                       "description": "200-2 directive annotation: 200-2 body root annotation",
                       "type": "integer",
                       "example": 123
-                    }                   
+                    }
                   ]
                 }
               }
@@ -34,8 +35,16 @@
   },
   "components": {
     "schemas": {
-      "some": {},
-      "header1": {}
+      "body": {
+        "type": "object",
+        "properties": {},
+        "additionalProperties": false
+      },
+      "header1": {
+        "type": "object",
+        "properties": {},
+        "additionalProperties": false
+      }
     }
   }
 }
