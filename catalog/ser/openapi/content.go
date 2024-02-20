@@ -2,21 +2,14 @@ package openapi
 
 import (
 	"github.com/jsightapi/jsight-api-core/catalog"
-
-	sc "github.com/jsightapi/jsight-schema-core/openapi"
+	schema "github.com/jsightapi/jsight-schema-core"
+	scoa "github.com/jsightapi/jsight-schema-core/openapi"
 )
 
 type Content map[mediaType]*MediaTypeObject
 
 func defaultContent() *Content {
 	return ContentForAny()
-}
-
-func NewContent(f catalog.SerializeFormat, s catalog.ExchangeSchema) *Content {
-	c := make(Content)
-	mt := FormatToMediaType(f)
-	c[mt] = NewMediaTypeObject(s)
-	return &c
 }
 
 func ContentForAny() *Content {
@@ -30,9 +23,28 @@ func ContentForEmpty() *Content {
 	return &c
 }
 
-func NewContentFromSchemaKeeper[T sc.SchemaKeeper](f catalog.SerializeFormat, sk T) *Content {
+func ContentWithMediaTypeObject(mt mediaType, o *MediaTypeObject) *Content {
+	c := make(Content)
+	c[mt] = o
+	return &c
+}
+
+func NewContent(f catalog.SerializeFormat, s catalog.ExchangeSchema) *Content {
 	c := make(Content)
 	mt := FormatToMediaType(f)
-	c[mt] = NewMediaTypeObjectFromSchemaKeeper(sk)
+	c[mt] = NewMediaTypeObjectFromExchangeSchema(s)
+	return &c
+}
+
+func ContentForAnyOf(schemaObjects []scoa.SchemaObject) *Content {
+	c := make(Content, 1)
+	c[MediaTypeRangeAny] = &MediaTypeObject{SchemaObjectAnyOf(schemaObjects, "")}
+	return &c
+}
+
+func NewContentFromSchema(f catalog.SerializeFormat, s schema.Schema) *Content {
+	c := make(Content)
+	mt := FormatToMediaType(f)
+	c[mt] = NewMediaTypeObjectFromSchema(s)
 	return &c
 }

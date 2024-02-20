@@ -11,7 +11,8 @@
     "schemas": {
       "typeName": {
         "type": "object",
-        "properties": {}
+        "properties": {},
+        "additionalProperties": false
       }
     }
   }

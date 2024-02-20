@@ -12,7 +12,7 @@ type ReferenceObject struct {
 
 func NewReferenceObject(typeName string) *ReferenceObject {
 	return &ReferenceObject{
-		schemaReference(convertName(typeName)),
+		schemaReference(convertTypeName(typeName)),
 	}
 }
 
