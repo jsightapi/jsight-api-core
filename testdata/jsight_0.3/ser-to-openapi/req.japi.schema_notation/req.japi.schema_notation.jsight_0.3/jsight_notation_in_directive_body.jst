@@ -1,0 +1,33 @@
+JSIGHT 0.3
+
+# DIRECTIVE "Body": DIRECTIVE Request
+
+POST /notation/in/request/body
+  Request
+    Body jsight
+      {
+        "name": "John"
+      }
+
+POST /notation/in/request/no/body/directive
+  Request jsight
+      {
+        "name": "John"
+      }
+
+# DIRECTIVE "Body": DIRECTIVES-RESPONSES
+
+GET /notation/in/response/body
+  200
+    Body jsight
+      {
+        "id"  : 1,
+        "name": "John"
+      }
+
+GET /notation/in/response/no/body/directive
+  200 jsight
+      {
+        "id"  : 1,
+        "name": "John"
+      }

@@ -1,0 +1,25 @@
+JSIGHT 0.3
+
+TYPE @typeWithJSightAnnotation_object jsight
+  {
+    "id": 1
+  }
+
+TYPE @typeWithJSightAnnotation_string jsight
+  "just a string"
+
+TYPE @typeWithJSightAnnotation_float jsight
+  1.2345
+
+TYPE @typeWithJSightAnnotation_array jsight
+  [ 1, 2, 3 ]
+
+TYPE @typeWithJSightAnnotation_null jsight
+  null
+
+GET /resource/with/types
+  200
+    @typeWithJSightAnnotation_object | @typeWithJSightAnnotation_string | @typeWithJSightAnnotation_float 
+  400
+    @typeWithJSightAnnotation_array | @typeWithJSightAnnotation_null
+
