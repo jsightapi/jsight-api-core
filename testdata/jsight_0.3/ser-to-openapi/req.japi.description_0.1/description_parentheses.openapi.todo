@@ -1,0 +1,23 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "",
+    "version": "",
+    "description": "BaseUrl\nBody\nDescription\nHeaders\nGET\nPOST\nPUT\nPATCH\nDELETE\nINCLUDE\nINFO\nJSIGHT\nMACRO\nPASTE\nPath\nQuery\nRequest\n200\n400\n500\nSERVER\nTitle\nTYPE\nURL\nVersion\n(\n()\n\\)\n\\n)\n\\r\\n)"
+  },
+  "paths": {
+    "/url": {
+      "description": "BaseUrl\nBody\nDescription\nHeaders\nGET\nPOST\nPUT\nPATCH\nDELETE\nINCLUDE\nINFO\nJSIGHT\nMACRO\nPASTE\nPath\nQuery\nRequest\n200\n400\n500\nSERVER\nTitle\nTYPE\nURL\nVersion\n(\n()\n\\)\n\\n)\n\\r\\n)",
+      "get": {
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "*/*": {}
+            }
+          }
+        }
+      }
+    }
+  }
+}
