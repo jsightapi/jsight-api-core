@@ -1,0 +1,49 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "",
+    "version": "",
+    "description": "description\n\"Description\"\n'Description'\n\\\"Description\\\"\nDescriptio n\nD escription\n\\u0020Description\n\\u0044escription"
+  },
+  "paths": {
+    "/url1": {
+      "description": "description",
+      "get": {
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "*/*": {}
+            }
+          }
+        }
+      }
+    },
+    "/url2": {
+      "description": "\"description\"",
+      "get": {
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "*/*": {}
+            }
+          }
+        }
+      }
+    },
+    "/url3": {
+      "description": "\\\"description\\\"",
+      "get": {
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "*/*": {}
+            }
+          }
+        }
+      }
+    }
+  }
+}
