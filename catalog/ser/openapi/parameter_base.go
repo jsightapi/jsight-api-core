@@ -1,6 +1,6 @@
 package openapi
 
-import _ "github.com/jsightapi/jsight-schema-core/openapi"
+import sc "github.com/jsightapi/jsight-schema-core/openapi"
 
 /*
 	Common fields for HeaderObject and ParameterObject
@@ -12,5 +12,5 @@ type ParameterBase struct {
 	Required        bool            `json:"required"`
 	Deprecated      bool            `json:"deprecated,omitempty"`
 	AllowEmptyValue bool            `json:"allow_empty_value,omitempty"`
-	Schema          interface{}     `json:"schema"`
+	Schema          sc.SchemaObject `json:"schema"`
 }

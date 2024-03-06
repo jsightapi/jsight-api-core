@@ -1,13 +1,13 @@
 package openapi
 
-import _ "github.com/jsightapi/jsight-schema-core/openapi"
+import sc "github.com/jsightapi/jsight-schema-core/openapi"
 
 type HeaderObject struct {
 	ParameterBase
 }
 
 func NewHeaderObject(
-	required bool, allowEmptyValue bool, description string, schema interface{},
+	required bool, allowEmptyValue bool, description string, schema sc.SchemaObject,
 ) *HeaderObject {
 	return &HeaderObject{
 		ParameterBase{
