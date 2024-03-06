@@ -21,7 +21,6 @@ func TestOpenAPI(t *testing.T) {
 
 			japiPath, err := japiFilePath(openapiPath)
 			require.NoError(t, err)
-
 			// TODO: throw error if file does not exist
 
 			j, je := kit.NewJapi(japiPath)

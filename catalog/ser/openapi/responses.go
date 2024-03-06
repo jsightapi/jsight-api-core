@@ -26,7 +26,7 @@ func NewResponses(i *catalog.HTTPInteraction) *Responses {
 	r := make(Responses, 1)
 	for rc, respArr := range sortedResponses {
 		if len(respArr) == 1 {
-			r[rc] = NewResponse(respArr[1])
+			r[rc] = NewResponse(respArr[0])
 		} else {
 			r[rc] = NewResponseAnyOf(respArr)
 		}

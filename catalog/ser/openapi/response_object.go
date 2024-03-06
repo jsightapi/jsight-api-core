@@ -10,7 +10,7 @@ import (
 
 type ResponseObject struct {
 	Description string   `json:"description"`
-	Headers     *Headers `json:"header,omitempty"`
+	Headers     Headers `json:"headers,omitempty"`
 	Content     *Content `json:"content,omitempty"`
 }
 
@@ -30,7 +30,7 @@ func NewResponse(r *catalog.HTTPResponse) *ResponseObject {
 }
 
 func NewResponseAnyOf(responses []*catalog.HTTPResponse) *ResponseObject {
-	hh := make([]*catalog.HTTPResponseHeaders, len(responses))
+	hh := make([]*catalog.HTTPResponseHeaders, 0)
 	sos := make([]sc.SchemaObject, 0)
 
 	for _, response := range responses {

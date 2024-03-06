@@ -1,6 +1,8 @@
 package openapi
 
 import (
+	"fmt"
+
 	"github.com/jsightapi/jsight-api-core/catalog"
 
 	sc "github.com/jsightapi/jsight-schema-core/openapi"
@@ -10,7 +12,7 @@ import (
 type Headers map[string]*HeaderObject
 
 // TODO: may not be a schema, may be a literal | array
-func NewHeaders(h *catalog.HTTPResponseHeaders) *Headers {
+func NewHeaders(h *catalog.HTTPResponseHeaders) Headers {
 	if h == nil {
 		return nil
 	}
@@ -23,24 +25,22 @@ func NewHeaders(h *catalog.HTTPResponseHeaders) *Headers {
 		r[ch.Key] = NewHeaderObject(pi.Required(), pi.AllowEmptyValue(), pi.Description(), pi.Schema())
 	}
 
-	return &r
+	return r
 }
 
-
 type headerInfo struct {
-	schemaInfo sc.SchemaInfo
+	schemaInfo        sc.SchemaInfo
 	contextAnnotation string
 }
 
-func MakeResponseHeaders(headersArr []*catalog.HTTPResponseHeaders) *Headers {
+func MakeResponseHeaders(headersArr []*catalog.HTTPResponseHeaders) Headers {
 	r := make(Headers, 0)
-	for _, headers := range headersArr {
 
+	sortedHeaders := make(map[string][]headerInfo)
+	for _, headers := range headersArr {
 		if headers == nil {
 			continue
 		}
-
-		sortedHeaders := make(map[string][]headerInfo)
 
 		headersSchemaInfo := sc.NewSchemaInfo(headers.Schema.JSchema)
 		propIterator := headersSchemaInfo.PropertiesInfos()
@@ -53,22 +53,24 @@ func MakeResponseHeaders(headersArr []*catalog.HTTPResponseHeaders) *Headers {
 				},
 			)
 		}
-
-		for name, headerInfos := range sortedHeaders {
-			if len(headerInfos) == 1 {
-				i := headerInfos[1]
-				r[name] = NewHeaderObject(
-					!i.schemaInfo.Optional(), false,
-					combineHeaderDescription(i.contextAnnotation, i.schemaInfo.Annotation()),
-					i.schemaInfo.SchemaObject(),
-				)
-			} else {
-				r[name] = HeaderObjectForAnyOf(headerInfos)
-			}
-		}
-
 	}
-	return &r
+
+	for name, headerInfos := range sortedHeaders {
+		if len(headerInfos) == 1 {
+			i := headerInfos[0]
+			r[name] = NewHeaderObject(
+				!i.schemaInfo.Optional(), false,
+				combineHeaderDescription(i.contextAnnotation, i.schemaInfo.Annotation()),
+				i.schemaInfo.SchemaObject(),
+			)
+		} else {
+			r[name] = HeaderObjectForAnyOf(headerInfos)
+		}
+	}
+
+	fmt.Printf("\n headers len: %d", len(r))
+
+	return r
 }
 
 func combineHeaderDescription(schemaAnnotation string, propertyAnnotation string) string {
@@ -76,7 +78,7 @@ func combineHeaderDescription(schemaAnnotation string, propertyAnnotation string
 }
 
 func HeaderObjectForAnyOf(headersInfos []headerInfo) *HeaderObject {
-	schemaObjects := make([]sc.SchemaObject, len(headersInfos))
+	schemaObjects := make([]sc.SchemaObject, 0)
 	var required bool
 
 	for _, i := range headersInfos {
@@ -96,4 +98,3 @@ func HeaderObjectForAnyOf(headersInfos []headerInfo) *HeaderObject {
 		&schemaObjectAnyOf{schemaObjects, ""},
 	)
 }
-
