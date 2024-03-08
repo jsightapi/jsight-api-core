@@ -14,7 +14,9 @@ func defaultContent() *Content {
 
 func ContentForAny() *Content {
 	c := make(Content, 1)
-	c[MediaTypeRangeAny] = &MediaTypeObject{}
+	c[MediaTypeRangeAny] = &MediaTypeObject{
+		Schema: SchemaObjectAny(),
+	}
 	return &c
 }
 

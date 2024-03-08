@@ -12,6 +12,11 @@ func (s *schemaObjectAny) SetDescription(d string) {
 }
 
 func (s schemaObjectAny) MarshalJSON() (b []byte, err error) {
-	return json.Marshal(s)
+	type Alias schemaObjectAny
+	return json.Marshal(&struct {
+		Alias
+	}{
+		Alias:    Alias(s),
+	})
 }
 
