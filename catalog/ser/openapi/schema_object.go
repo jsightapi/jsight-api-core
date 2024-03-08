@@ -1,7 +1,7 @@
 package openapi
 
 import (
-	_ "fmt"
+	// "fmt"
 
 	"github.com/jsightapi/jsight-api-core/catalog"
 	"github.com/jsightapi/jsight-api-core/notation"
@@ -27,24 +27,31 @@ func SchemaObjectFromUserType(t *catalog.UserType) sc.SchemaObject {
 // TODO: might become unnecessary
 func SchemaObjectFromExchangeSchema(es catalog.ExchangeSchema) sc.SchemaObject {
 	// fmt.Printf("es type is %T\n", es)
-	switch s := es.(type) {
-	case *catalog.ExchangeJSightSchema:
-		return sc.NewSchemaObject(s.JSchema)
-	case *catalog.ExchangeRegexSchema: // TODO: may be a pointer here
-		return sc.NewSchemaObject(s.RSchema)
-	case *catalog.ExchangePseudoSchema:
-		switch s.Notation {
-		case notation.SchemaNotationAny:
+	switch es.Notation() {
+	case notation.SchemaNotationJSight, notation.SchemaNotationRegex:
+		return sc.NewSchemaObject(es)
+	case notation.SchemaNotationAny:
 			return SchemaObjectAny()
-		case notation.SchemaNotationEmpty:
-			// should have been dealt with at the content level
-			panic("cannot convert pseudo schema to SchemaObject at this level")
-		default:
-			panic("unsupported notation provided")
-		}
+	case notation.SchemaNotationEmpty:
+			panic("cannot convert notation any to SchemaObject")
 	default:
-		panic("unsupported ExchangeSchema type provided")
+		panic("unsupported schema notation")
 	}
+	//
+	// switch s := es.(type) {
+	// case *catalog.ExchangeJSightSchema, *catalog.ExchangeRegexSchema:
+	// 	return sc.NewSchemaObject(es)
+	// case *catalog.ExchangePseudoSchema:
+	// 	switch s.Notation {
+	// 	case notation.SchemaNotationAny:
+	// 	case notation.SchemaNotationEmpty:
+	// 		// should have been dealt with at the content level
+	// 	default:
+	// 		panic("unsupported notation provided")
+	// 	}
+	// default:
+	// 	panic("unsupported ExchangeSchema type provided")
+	// }
 }
 
 func SchemaObjectFromSchema(s schema.Schema) sc.SchemaObject {

@@ -10,7 +10,7 @@ import (
 
 type ResponseObject struct {
 	Description string   `json:"description"`
-	Headers     Headers `json:"headers,omitempty"`
+	Headers     Headers  `json:"headers,omitempty"`
 	Content     *Content `json:"content,omitempty"`
 }
 
@@ -44,27 +44,26 @@ func NewResponseAnyOf(responses []*catalog.HTTPResponse) *ResponseObject {
 			so = SchemaObjectAny()
 			so.SetDescription(respAnnotation)
 		} else {
-			switch s := response.Body.Schema.(type) {
-			case *catalog.ExchangeJSightSchema:
-				si := sc.NewSchemaInfo(s.JSchema)
+			s := response.Body.Schema
+			switch s.Notation() {
+			case notation.SchemaNotationJSight:
+				si := sc.NewSchemaInfo(s.(*catalog.ExchangeJSightSchema).JSchema)
 				so = si.SchemaObject()
-				desc = respAnnotation + ": " + si.Annotation()
-			case catalog.ExchangeRegexSchema:
-				so = sc.NewSchemaObject(s.RSchema)
+				desc = concatenateDescription(respAnnotation, si.Annotation())
+			case notation.SchemaNotationRegex:
+				so = sc.NewSchemaObject(s)
 				desc = respAnnotation
-			case catalog.ExchangePseudoSchema:
-				switch s.Notation {
-				case notation.SchemaNotationAny:
-					so = SchemaObjectAny()
-					desc = respAnnotation
-				case notation.SchemaNotationEmpty:
-					// TODO: probably needs to be ignored in any of.
-					//  if there are any valid schemas then adding an empty means nothing
-				}
+			case notation.SchemaNotationAny:
+				so = SchemaObjectAny()
+				desc = respAnnotation
+			case notation.SchemaNotationEmpty:
+				// TODO: probably needs to be ignored in any of.
+				//  if there are any valid schemas then adding an empty means nothing
 			}
+
+			so.SetDescription(desc)
+			sos = append(sos, so)
 		}
-		so.SetDescription(desc)
-		sos = append(sos, so)
 	}
 
 	mto := MediaTypeObject{
@@ -88,3 +87,4 @@ func responsesToSchemas(rr []*catalog.HTTPResponse) []catalog.ExchangeSchema {
 	}
 	return ss
 }
+

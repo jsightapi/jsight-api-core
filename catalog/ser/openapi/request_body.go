@@ -18,18 +18,16 @@ func NewRequestBody(r *catalog.HTTPRequest) *RequestBody {
 	}
 
 	var c *Content
-	switch s := r.HTTPRequestBody.Schema.(type) {
-	case *catalog.ExchangeJSightSchema:
-		c = NewContentFromSchema(r.Format, s.JSchema)
-	case catalog.ExchangeRegexSchema:
-		c = NewContentFromSchema(r.Format, s.RSchema)
-	case catalog.ExchangePseudoSchema:
-		switch s.Notation {
-		case notation.SchemaNotationAny:
-			c = ContentForAny()
-		case notation.SchemaNotationEmpty:
-			c = ContentForEmpty()
-		}
+	s := r.HTTPRequestBody.Schema
+	switch s.Notation() {
+	case notation.SchemaNotationJSight:
+		c = NewContentFromSchema(r.Format, s)
+	case notation.SchemaNotationRegex:
+		c = NewContentFromSchema(r.Format, s)
+	case notation.SchemaNotationAny:
+		c = ContentForAny()
+	case notation.SchemaNotationEmpty:
+		c = ContentForEmpty()
 	}
 
 	return &RequestBody{
