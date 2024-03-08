@@ -37,21 +37,6 @@ func SchemaObjectFromExchangeSchema(es catalog.ExchangeSchema) sc.SchemaObject {
 	default:
 		panic("unsupported schema notation")
 	}
-	//
-	// switch s := es.(type) {
-	// case *catalog.ExchangeJSightSchema, *catalog.ExchangeRegexSchema:
-	// 	return sc.NewSchemaObject(es)
-	// case *catalog.ExchangePseudoSchema:
-	// 	switch s.Notation {
-	// 	case notation.SchemaNotationAny:
-	// 	case notation.SchemaNotationEmpty:
-	// 		// should have been dealt with at the content level
-	// 	default:
-	// 		panic("unsupported notation provided")
-	// 	}
-	// default:
-	// 	panic("unsupported ExchangeSchema type provided")
-	// }
 }
 
 func SchemaObjectFromSchema(s schema.Schema) sc.SchemaObject {
