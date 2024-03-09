@@ -295,14 +295,18 @@
         ],
         "requestBody": {
           "content": {
-            "*/*": {}
+            "*/*": {
+              "schema": {}
+            }
           }
         },
         "responses": {
           "200": {
             "description": "",
             "content": {
-              "*/*": {}
+              "*/*": {
+                "schema": {}
+              }
             }
           }
         }
@@ -598,14 +602,18 @@
         ],
         "requestBody": {
           "content": {
-            "*/*": {}
+            "*/*": {
+              "schema": {}
+            }
           }
         },
         "responses": {
           "200": {
             "description": "",
             "content": {
-              "*/*": {}
+              "*/*": {
+                "schema": {}
+              }
             }
           }
         }
@@ -901,14 +909,18 @@
         ],
         "requestBody": {
           "content": {
-            "*/*": {}
+            "*/*": {
+              "schema": {}
+            }
           }
         },
         "responses": {
           "200": {
             "description": "",
             "content": {
-              "*/*": {}
+              "*/*": {
+                "schema": {}
+              }
             }
           }
         }
@@ -1204,14 +1216,18 @@
         ],
         "requestBody": {
           "content": {
-            "*/*": {}
+            "*/*": {
+              "schema": {}
+            }
           }
         },
         "responses": {
           "200": {
             "description": "",
             "content": {
-              "*/*": {}
+              "*/*": {
+                "schema": {}
+              }
             }
           }
         }
@@ -1507,14 +1523,18 @@
         ],
         "requestBody": {
           "content": {
-            "*/*": {}
+            "*/*": {
+              "schema": {}
+            }
           }
         },
         "responses": {
           "200": {
             "description": "",
             "content": {
-              "*/*": {}
+              "*/*": {
+                "schema": {}
+              }
             }
           }
         }
@@ -1778,7 +1798,9 @@
               }
             },
             "content": {
-              "*/*": {}
+              "*/*": {
+                "schema": {}
+              }
             }
           }
         }
@@ -2042,7 +2064,9 @@
               }
             },
             "content": {
-              "*/*": {}
+              "*/*": {
+                "schema": {}
+              }
             }
           }
         }
@@ -2306,7 +2330,9 @@
               }
             },
             "content": {
-              "*/*": {}
+              "*/*": {
+                "schema": {}
+              }
             }
           }
         }
@@ -2570,7 +2596,9 @@
               }
             },
             "content": {
-              "*/*": {}
+              "*/*": {
+                "schema": {}
+              }
             }
           }
         }
@@ -2834,7 +2862,9 @@
               }
             },
             "content": {
-              "*/*": {}
+              "*/*": {
+                "schema": {}
+              }
             }
           }
         }

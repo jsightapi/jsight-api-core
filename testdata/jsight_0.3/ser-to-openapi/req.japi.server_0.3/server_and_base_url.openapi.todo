@@ -121,7 +121,9 @@
           "default": {
             "description": "",
             "content": {
-              "*/*": {}
+              "*/*": {
+                "schema": {}
+              }
             }
           }
         }

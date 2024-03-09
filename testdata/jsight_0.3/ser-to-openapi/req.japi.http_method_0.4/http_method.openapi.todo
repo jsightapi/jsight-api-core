@@ -11,7 +11,9 @@
             "default": {
               "description": "",
               "content": {
-                "*/*": {}
+                "*/*": {
+                  "schema": {}
+                }
               }
             }
           }
@@ -23,7 +25,9 @@
             "default": {
               "description": "",
               "content": {
-                "*/*": {}
+                "*/*": {
+                  "schema": {}
+                }
               }
             }
           }
@@ -35,7 +39,9 @@
             "default": {
               "description": "",
               "content": {
-                "*/*": {}
+                "*/*": {
+                  "schema": {}
+                }
               }
             }
           }
@@ -47,7 +53,9 @@
             "default": {
               "description": "",
               "content": {
-                "*/*": {}
+                "*/*": {
+                  "schema": {}
+                }
               }
             }
           }
@@ -59,7 +67,9 @@
             "default": {
               "description": "",
               "content": {
-                "*/*": {}
+                "*/*": {
+                  "schema": {}
+                }
               }
             }
           }
@@ -71,7 +81,9 @@
             "200": {
               "description": "",
               "content": {
-                "*/*": {}
+                "*/*": {
+                  "schema": {}
+                }
               }
             }
           }
@@ -83,7 +95,9 @@
             "201": {
               "description": "",
               "content": {
-                "*/*": {}
+                "*/*": {
+                  "schema": {}
+                }
               }
             }
           }
@@ -95,7 +109,9 @@
             "202": {
               "description": "",
               "content": {
-                "*/*": {}
+                "*/*": {
+                  "schema": {}
+                }
               }
             }
           }
@@ -107,7 +123,9 @@
             "203": {
               "description": "",
               "content": {
-                "*/*": {}
+                "*/*": {
+                  "schema": {}
+                }
               }
             }
           }
@@ -119,7 +137,9 @@
             "204": {
               "description": "",
               "content": {
-                "*/*": {}
+                "*/*": {
+                  "schema": {}
+                }
               }
             }
           }
@@ -131,7 +151,9 @@
             "default": {
               "description": "",
               "content": {
-                "*/*": {}
+                "*/*": {
+                  "schema": {}
+                }
               }
             }
           }
@@ -141,7 +163,9 @@
             "default": {
               "description": "",
               "content": {
-                "*/*": {}
+                "*/*": {
+                  "schema": {}
+                }
               }
             }
           }
@@ -151,7 +175,9 @@
             "default": {
               "description": "",
               "content": {
-                "*/*": {}
+                "*/*": {
+                  "schema": {}
+                }
               }
             }
           }
@@ -161,7 +187,9 @@
             "default": {
               "description": "",
               "content": {
-                "*/*": {}
+                "*/*": {
+                  "schema": {}
+                }
               }
             }
           }
@@ -171,7 +199,9 @@
             "default": {
               "description": "",
               "content": {
-                "*/*": {}
+                "*/*": {
+                  "schema": {}
+                }
               }
             }
           }
@@ -183,7 +213,9 @@
             "300": {
               "description": "",
               "content": {
-                "*/*": {}
+                "*/*": {
+                  "schema": {}
+                }
               }
             }
           }
@@ -193,7 +225,9 @@
             "301": {
               "description": "",
               "content": {
-                "*/*": {}
+                "*/*": {
+                  "schema": {}
+                }
               }
             }
           }
@@ -205,7 +239,9 @@
             "302": {
               "description": "",
               "content": {
-                "*/*": {}
+                "*/*": {
+                  "schema": {}
+                }
               }
             }
           }
@@ -215,7 +251,9 @@
             "303": {
               "description": "",
               "content": {
-                "*/*": {}
+                "*/*": {
+                  "schema": {}
+                }
               }
             }
           }
@@ -225,7 +263,9 @@
             "304": {
               "description": "",
               "content": {
-                "*/*": {}
+                "*/*": {
+                  "schema": {}
+                }
               }
             }
           }

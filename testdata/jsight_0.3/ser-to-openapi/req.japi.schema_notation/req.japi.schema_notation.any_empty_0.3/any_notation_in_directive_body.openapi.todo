@@ -9,14 +9,18 @@
       "post": {
         "requestBody": {
           "content": {
-            "*/*": {}
+            "*/*": {
+              "schema": {}
+            }
           }
         },
         "responses": {
           "default": {
             "description": "",
             "content": {
-              "*/*": {}
+              "*/*": {
+                "schema": {}
+              }
             }
           }
         }
@@ -26,14 +30,18 @@
       "post": {
         "requestBody": {
           "content": {
-            "*/*": {}
+            "*/*": {
+              "schema": {}
+            }
           }
         },
         "responses": {
           "default": {
             "description": "",
             "content": {
-              "*/*": {}
+              "*/*": {
+                "schema": {}
+              }
             }
           }
         }
@@ -45,7 +53,9 @@
           "200": {
             "description": "",
             "content": {
-              "*/*": {}
+              "*/*": {
+                "schema": {}
+              }
             }
           }
         }
@@ -57,7 +67,9 @@
           "200": {
             "description": "",
             "content": {
-              "*/*": {}
+              "*/*": {
+                "schema": {}
+              }
             }
           }
         }

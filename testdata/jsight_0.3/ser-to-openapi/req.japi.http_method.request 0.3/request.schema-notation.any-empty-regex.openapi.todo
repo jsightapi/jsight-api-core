@@ -9,7 +9,9 @@
       "post": {
         "requestBody": {
           "content": {
-            "*/*": {}
+            "*/*": {
+              "schema": {}
+            }
           }
         },
         "responses": {
