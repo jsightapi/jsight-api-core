@@ -1,0 +1,30 @@
+JSIGHT 0.3
+
+# Regular user types
+
+GET /query/user-type-basic
+  Query "first=1&second=value"
+    @queryUserTypeBasic
+ 
+TYPE @queryUserTypeBasic
+  {
+    "first": 123,
+    "second": "value"
+  }
+
+GET /query/user-type-all-types-of-parameters
+  Query "prim1=1&prim2=value&arr=2&arr=3&obj[foo]=fooVal1&obj[bar]=45"
+    @queryUserTypeWithAllTypesOfParameters
+
+TYPE @queryUserTypeWithAllTypesOfParameters
+  {
+    "prim1": 1,
+    "prim2": "value",  
+    "arr": [ 
+      2, 3
+    ],
+    "obj": {      
+      "foo": "fooVal1", // {enum: ["fooVal1", "fooVal2", "fooVal3"]}
+      "bar" : 45
+    }
+  }
