@@ -12,34 +12,34 @@ type PathItem struct {
 	// Parameters  *PathItemParameters `json:"parameters,omitempty"`// TODO: deal with params
 }
 
-func NewPathItem(i *catalog.HTTPInteraction) *PathItem {
+func newPathItem(i *catalog.HTTPInteraction) *PathItem {
 	pi := PathItem{
-		Parameters: FillPathParams(i),
+		Parameters: fillPathParams(i),
 	}
-	pi.assignOperation(i.HttpMethod, NewOperation(i))
+	pi.assignOperation(i.HttpMethod, newOperation(i))
 	return &pi
 }
 
-func FillPathParams(i *catalog.HTTPInteraction) []*ParameterObject {
+func fillPathParams(i *catalog.HTTPInteraction) []*ParameterObject {
 	r := make([]*ParameterObject, 0)
-	AppendPathParams(r, i)
+	appendPathParams(r, i)
 	return r
 }
 
-func PathSchemaDefined(i *catalog.HTTPInteraction) bool {
+func pathSchemaDefined(i *catalog.HTTPInteraction) bool {
 	return i.PathVariables != nil &&
 		i.PathVariables.Schema != nil
 }
 
-func AppendPathParams(p []*ParameterObject, i *catalog.HTTPInteraction) {
-	if PathSchemaDefined(i) {
-		_ = append(p, GetPathParams(i)...)
+func appendPathParams(p []*ParameterObject, i *catalog.HTTPInteraction) {
+	if pathSchemaDefined(i) {
+		_ = append(p, getPathParams(i)...)
 	}
 }
 
 // TODO: test no path directive
-func GetPathParams(i *catalog.HTTPInteraction) []*ParameterObject {
-	return ParamsFromSchema(i.PathVariables.Schema, ParameterLocationPath)
+func getPathParams(i *catalog.HTTPInteraction) []*ParameterObject {
+	return paramsFromSchema(i.PathVariables.Schema, ParameterLocationPath)
 }
 
 // TODO: deal with possible ovewriting of method (improbable)

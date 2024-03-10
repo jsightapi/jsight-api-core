@@ -17,7 +17,7 @@ func defaultInfo() *Info {
 	}
 }
 
-func NewInfo(i *catalog.Info) *Info {
+func newInfo(i *catalog.Info) *Info {
 	if i == nil {
 		return defaultInfo()
 	}

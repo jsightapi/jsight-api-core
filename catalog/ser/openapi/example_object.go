@@ -10,7 +10,7 @@ type ExampleObject struct {
 	// ExternalValue string // irrelevant for JS 0.3
 }
 
-func NewExampleObject(b []byte) *ExampleObject {
+func newExampleObject(b []byte) *ExampleObject {
 	return &ExampleObject{
 		Value: toExampleValue(b),
 	}

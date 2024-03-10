@@ -21,15 +21,15 @@ func defaultResponse() *ResponseObject {
 	}
 }
 
-func NewResponse(r *catalog.HTTPResponse) *ResponseObject {
+func newResponse(r *catalog.HTTPResponse) *ResponseObject {
 	return &ResponseObject{
 		Description: r.Annotation,
-		Content:     ContentForSchema(r.Body.Format, r.Body.Schema),
-		Headers:     MakeResponseHeaders(r.Headers),
+		Content:     contentForSchema(r.Body.Format, r.Body.Schema),
+		Headers:     makeResponseHeaders(r.Headers),
 	}
 }
 
-func NewResponseAnyOf(responses []*catalog.HTTPResponse) *ResponseObject {
+func newResponseAnyOf(responses []*catalog.HTTPResponse) *ResponseObject {
 	hh := make([]*catalog.HTTPResponseHeaders, 0)
 	sos := make([]SchemaObject, 0)
 
@@ -41,7 +41,7 @@ func NewResponseAnyOf(responses []*catalog.HTTPResponse) *ResponseObject {
 		var so SchemaObject
 		var desc string
 		if response.Body == nil {
-			so = SchemaObjectAny()
+			so = schemaObjectForAny()
 			so.SetDescription(respAnnotation)
 		} else {
 			s := response.Body.Schema
@@ -54,7 +54,7 @@ func NewResponseAnyOf(responses []*catalog.HTTPResponse) *ResponseObject {
 				so = sc.NewSchemaObject(s)
 				desc = respAnnotation
 			case notation.SchemaNotationAny:
-				so = SchemaObjectAny()
+				so = schemaObjectForAny()
 				desc = respAnnotation
 			case notation.SchemaNotationEmpty:
 				// TODO: probably needs to be ignored in any of.
@@ -71,8 +71,8 @@ func NewResponseAnyOf(responses []*catalog.HTTPResponse) *ResponseObject {
 	// }
 	//
 	return &ResponseObject{
-		Headers: MakeResponseHeaders(hh...),
-		Content: ContentForAnyOf(sos),
+		Headers: makeResponseHeaders(hh...),
+		Content: contentForAnyOf(sos),
 	}
 }
 

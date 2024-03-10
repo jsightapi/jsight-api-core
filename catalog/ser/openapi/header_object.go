@@ -4,7 +4,7 @@ type HeaderObject struct {
 	ParameterBase
 }
 
-func NewHeaderObject(
+func newHeaderObject(
 	required bool, allowEmptyValue bool, description string, schema SchemaObject,
 ) *HeaderObject {
 	return &HeaderObject{

@@ -12,7 +12,7 @@ type RequestBody struct {
 	Required bool     `json:"required,omitempty"`
 }
 
-func NewRequestBody(r *catalog.HTTPRequest) *RequestBody {
+func newRequestBody(r *catalog.HTTPRequest) *RequestBody {
 	if r == nil {
 		return nil
 	}
@@ -21,11 +21,11 @@ func NewRequestBody(r *catalog.HTTPRequest) *RequestBody {
 	s := r.HTTPRequestBody.Schema
 	switch s.Notation() {
 	case notation.SchemaNotationJSight, notation.SchemaNotationRegex:
-		c = ContentForSchema(r.Format, s)
+		c = contentForSchema(r.Format, s)
 	case notation.SchemaNotationAny:
-		c = ContentForAny()
+		c = contentForAny()
 	case notation.SchemaNotationEmpty:
-		c = ContentForEmpty()
+		c = contentForEmpty()
 	}
 
 	return &RequestBody{

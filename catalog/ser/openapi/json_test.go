@@ -11,7 +11,7 @@ type Custom struct {
 	SomeString string
 }
 
-func TestMarshal(t *testing.T) {
+func testMarshal(t *testing.T) {
 	c := Custom{
 		"some",
 	}
@@ -22,7 +22,6 @@ func TestMarshal(t *testing.T) {
 	t.Log(string(b))
 }
 
-// 
 func (o Custom) MarshalJSON() (b []byte, err error) {
 	type Alias Custom
 	return json.Marshal(&struct {

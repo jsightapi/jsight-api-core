@@ -12,7 +12,7 @@ func defaultResponses() *Responses {
 	return &r
 }
 
-func NewResponses(i *catalog.HTTPInteraction) *Responses {
+func newResponses(i *catalog.HTTPInteraction) *Responses {
 	if len(i.Responses) == 0 {
 		return defaultResponses()
 	}
@@ -26,9 +26,9 @@ func NewResponses(i *catalog.HTTPInteraction) *Responses {
 	r := make(Responses, 1)
 	for rc, respArr := range sortedResponses {
 		if len(respArr) == 1 {
-			r[rc] = NewResponse(respArr[0])
+			r[rc] = newResponse(respArr[0])
 		} else {
-			r[rc] = NewResponseAnyOf(respArr)
+			r[rc] = newResponseAnyOf(respArr)
 		}
 	}
 	return &r

@@ -7,7 +7,7 @@ type ParameterObject struct {
 }
 
 // TODO: do we need a constructor?
-func NewParameterObject(
+func newParameterObject(
 	in parameterLocation,
 	name string,
 	required bool,

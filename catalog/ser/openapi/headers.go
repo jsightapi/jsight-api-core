@@ -27,13 +27,13 @@ type ResponseHeaders map[string]*HeaderObject
 //
 // 	return r
 // }
-//
+
 type headerInfo struct {
 	schemaInfo        sc.SchemaInfo
 	contextAnnotation string
 }
 
-func MakeResponseHeaders(headersArr ...*catalog.HTTPResponseHeaders) ResponseHeaders {
+func makeResponseHeaders(headersArr ...*catalog.HTTPResponseHeaders) ResponseHeaders {
 	r := make(ResponseHeaders, 0)
 
 	sortedHeaders := make(map[string][]headerInfo)
@@ -42,7 +42,7 @@ func MakeResponseHeaders(headersArr ...*catalog.HTTPResponseHeaders) ResponseHea
 			continue
 		}
 
-		headersSchemaInfo := GetSchemaInfo(headers.Schema.JSchema)
+		headersSchemaInfo := getSchemaInfo(headers.Schema.JSchema)
 		propIterator := headersSchemaInfo.PropertiesInfos()
 		for propIterator.Next() {
 			hName := propIterator.GetKey()
@@ -58,13 +58,13 @@ func MakeResponseHeaders(headersArr ...*catalog.HTTPResponseHeaders) ResponseHea
 	for name, headerInfos := range sortedHeaders {
 		if len(headerInfos) == 1 {
 			i := headerInfos[0]
-			r[name] = NewHeaderObject(
+			r[name] = newHeaderObject(
 				!i.schemaInfo.Optional(), false,
 				concatenateDescription(i.contextAnnotation, i.schemaInfo.Annotation()),
 				i.schemaInfo.SchemaObject(),
 			)
 		} else {
-			r[name] = HeaderObjectForAnyOf(headerInfos)
+			r[name] = headerObjectForAnyOf(headerInfos)
 		}
 	}
 
@@ -78,7 +78,7 @@ func MakeResponseHeaders(headersArr ...*catalog.HTTPResponseHeaders) ResponseHea
 // 	return context + ": " + propertyAnnotation
 // }
 
-func HeaderObjectForAnyOf(headersInfos []headerInfo) *HeaderObject {
+func headerObjectForAnyOf(headersInfos []headerInfo) *HeaderObject {
 	schemaObjects := make([]SchemaObject, 0)
 	var required bool
 
@@ -92,7 +92,7 @@ func HeaderObjectForAnyOf(headersInfos []headerInfo) *HeaderObject {
 		schemaObjects = append(schemaObjects, so)
 	}
 
-	return NewHeaderObject(
+	return newHeaderObject(
 		required,
 		false,
 		"",

@@ -18,9 +18,9 @@ func NewOpenAPI(c *catalog.Catalog) *OpenAPI {
 	return &OpenAPI{
 		catalog:    c,
 		OpenAPI:    "3.0.3",
-		Info:       NewInfo(c.Info),
-		Servers:    NewServers(c.Servers),
-		Paths:      NewPaths(c),
-		Components: NewComponents(c),
+		Info:       newInfo(c.Info),
+		Servers:    newServers(c.Servers),
+		Paths:      newPaths(c),
+		Components: newComponents(c),
 	}
 }

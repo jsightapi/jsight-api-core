@@ -5,18 +5,14 @@ import (
 	// schema "github.com/jsightapi/jsight-schema-core"
 )
 
-/*
-Other properties of OA MediaTypeObject are not used in JSight
-*/
+// Other properties of OA MediaTypeObject are not used in JSigh
 type MediaTypeObject struct {
 	Schema SchemaObject `json:"schema,omitempty"` // TODO: empty?
 }
 
-func MediaTypeObjectForSchema(es catalog.ExchangeSchema) *MediaTypeObject {
-	so := SchemaObjectFromExchangeSchema(es)
-
+func mediaTypeObjectForSchema(es catalog.ExchangeSchema) *MediaTypeObject {
 	return &MediaTypeObject{
-		Schema: so,
+		Schema: schemaObjectFromExchangeSchema(es),
 	}
 }
 

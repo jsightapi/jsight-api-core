@@ -12,12 +12,10 @@ const (
 	MediaTypeOctetStream mediaType = "application/octet-stream" // TODO: discuss
 )
 
-/*
-In JSight we currently can only provide one schema for a payload, so
-any payload regardles of media-type should be matched against this schema.
-In OAS terms it is described with a range wildcard "*\/*"
-*/
-func FormatToMediaType(f catalog.SerializeFormat) mediaType {
+// In JSight we currently can only provide one schema for a payload, so
+// any payload regardles of media-type should be matched against this schema.
+// In OAS terms it is described with a range wildcard "*\/*"
+func formatToMediaType(f catalog.SerializeFormat) mediaType {
 	switch f {
 	case catalog.SerializeFormatJSON:
 	case catalog.SerializeFormatPlainString:

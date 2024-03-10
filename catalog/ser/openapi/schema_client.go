@@ -5,6 +5,6 @@ import (
 	sc "github.com/jsightapi/jsight-schema-core/openapi"
 )
 
-func GetSchemaInfo(s *jschema.JSchema) sc.SchemaInfo {
+func getSchemaInfo(s *jschema.JSchema) sc.SchemaInfo {
 	return sc.NewSchemaInfo(s)
 }

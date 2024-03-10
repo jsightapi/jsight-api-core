@@ -12,7 +12,7 @@ func defaultPaths() *Paths {
 	}
 }
 
-func NewPaths(c *catalog.Catalog) *Paths {
+func newPaths(c *catalog.Catalog) *Paths {
 	if c.Interactions.Len() == 0 {
 		return defaultPaths()
 	}
@@ -36,8 +36,8 @@ func (p Paths) readInteractions(c *catalog.Catalog) {
 func (p Paths) addInteraction(i *catalog.HTTPInteraction) {
 	path := i.Path().String()
 	if _, exists := p[path]; exists {
-		p[path].assignOperation(i.HttpMethod, NewOperation(i))
+		p[path].assignOperation(i.HttpMethod, newOperation(i))
 	} else {
-		p[path] = NewPathItem(i)
+		p[path] = newPathItem(i)
 	}
 }

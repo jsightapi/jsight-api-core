@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 )
 
-func SchemaObjectAnyOf(anyOf []SchemaObject, rootDescription string) SchemaObject {
+func schemaObjectForAnyOf(anyOf []SchemaObject, rootDescription string) SchemaObject {
 	return &schemaObjectAnyOf{anyOf, rootDescription}
 }
 

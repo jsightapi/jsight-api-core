@@ -2,42 +2,39 @@ package openapi
 
 import (
 	"github.com/jsightapi/jsight-api-core/catalog"
-	// schema "github.com/jsightapi/jsight-schema-core"
 )
 
-/* Content is used in Responses and Requests
- */
+// Content is used in Responses and Requests
 type Content map[mediaType]*MediaTypeObject
 
 func defaultContent() *Content {
-	return ContentForAny()
+	return contentForAny()
 }
 
-func ContentForAny() *Content {
+func contentForAny() *Content {
 	c := make(Content, 1)
 	c[MediaTypeRangeAny] = &MediaTypeObject{
-		Schema: SchemaObjectAny(),
+		Schema: schemaObjectForAny(),
 	}
 	return &c
 }
 
-/* JSight's pseudo-notation empty is expressed via empty OA's content object. 
-*/
-func ContentForEmpty() *Content {
+// JSight's pseudo-notation empty is expressed via empty OA's content object.
+func contentForEmpty() *Content {
 	c := make(Content, 0)
 	return &c
 }
 
-func ContentForAnyOf(schemaObjects []SchemaObject) *Content {
+func contentForAnyOf(schemaObjects []SchemaObject) *Content {
 	c := make(Content, 1)
-	c[MediaTypeRangeAny] = &MediaTypeObject{SchemaObjectAnyOf(schemaObjects, "")}
+	c[MediaTypeRangeAny] = &MediaTypeObject{schemaObjectForAnyOf(schemaObjects, "")}
 	return &c
 }
 
-func ContentForSchema(f catalog.SerializeFormat, es catalog.ExchangeSchema) *Content {
+func contentForSchema(f catalog.SerializeFormat, es catalog.ExchangeSchema) *Content {
 	c := make(Content)
-	mt := FormatToMediaType(f)
-	c[mt] = MediaTypeObjectForSchema(es)
+	mt := formatToMediaType(f)
+	c[mt] = mediaTypeObjectForSchema(es)
 	return &c
 }
 

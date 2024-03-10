@@ -2,17 +2,17 @@ package openapi
 
 import "github.com/jsightapi/jsight-api-core/catalog"
 
-func ParamsFromSchema(es *catalog.ExchangeJSightSchema, loc parameterLocation) []*ParameterObject {
+func paramsFromSchema(es *catalog.ExchangeJSightSchema, loc parameterLocation) []*ParameterObject {
 	r := make([]*ParameterObject, 0)
 	if es == nil {
 		return r
 	}
 
-	schemaInfo := GetSchemaInfo(es.JSchema)
+	schemaInfo := getSchemaInfo(es.JSchema)
 	propIterator := schemaInfo.PropertiesInfos()
 	for propIterator.Next() {
 		pi := propIterator.GetInfo()
-		po := NewParameterObject(
+		po := newParameterObject(
 			loc,
 			propIterator.GetKey(),
 			pi.Optional(),

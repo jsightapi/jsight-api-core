@@ -12,51 +12,51 @@ type Operation struct {
 	Responses   *Responses         `json:"responses"`
 }
 
-func NewOperation(i *catalog.HTTPInteraction) *Operation {
+func newOperation(i *catalog.HTTPInteraction) *Operation {
 	return &Operation{
 		Summary:     i.Annotation,
 		Description: i.Description,
-		Parameters:  FillOperationParams(i),
-		RequestBody: NewRequestBody(i.Request), // TODO: is request enough?
-		Responses:   NewResponses(i),
+		Parameters:  fillOperationParams(i),
+		RequestBody: newRequestBody(i.Request), // TODO: is request enough?
+		Responses:   newResponses(i),
 	}
 }
 
-func FillOperationParams(i *catalog.HTTPInteraction) []*ParameterObject {
+func fillOperationParams(i *catalog.HTTPInteraction) []*ParameterObject {
 	r := make([]*ParameterObject, 0)
-	AppendQueryParams(r, i)
-	AppendHeaderParams(r, i)
+	appendQueryParams(r, i)
+	appendHeaderParams(r, i)
 	return r
 }
 
-func AppendQueryParams(p []*ParameterObject, i *catalog.HTTPInteraction) {
-	if QuerySchemaDefined(i) {
-		p = append(p, GetQueryParams(i)...)
+func appendQueryParams(p []*ParameterObject, i *catalog.HTTPInteraction) {
+	if querySchemaDefined(i) {
+		p = append(p, getQueryParams(i)...)
 	}
 }
 
-func AppendHeaderParams(p []*ParameterObject, i *catalog.HTTPInteraction) {
-	if HeaderSchemaDefined(i) {
-		p = append(p, GetHeaderParams(i)...)
+func appendHeaderParams(p []*ParameterObject, i *catalog.HTTPInteraction) {
+	if headerSchemaDefined(i) {
+		p = append(p, getHeaderParams(i)...)
 	}
 }
 
-func QuerySchemaDefined(i *catalog.HTTPInteraction) bool {
+func querySchemaDefined(i *catalog.HTTPInteraction) bool {
 	return i.Query != nil &&
 		i.Query.Schema != nil
 }
 
-func HeaderSchemaDefined(i *catalog.HTTPInteraction) bool {
+func headerSchemaDefined(i *catalog.HTTPInteraction) bool {
 	return i.Request != nil &&
 		i.Request.HTTPRequestHeaders != nil &&
 		i.Request.HTTPRequestHeaders.Schema != nil
 }
 
-func GetQueryParams(i *catalog.HTTPInteraction) []*ParameterObject {
+func getQueryParams(i *catalog.HTTPInteraction) []*ParameterObject {
 	// TODO: nil check
-	return ParamsFromSchema(i.Query.Schema, ParameterLocationQuery)
+	return paramsFromSchema(i.Query.Schema, ParameterLocationQuery)
 }
 
-func GetHeaderParams(i *catalog.HTTPInteraction) []*ParameterObject {
-	return ParamsFromSchema(i.Request.HTTPRequestHeaders.Schema, ParameterLocationHeader)
+func getHeaderParams(i *catalog.HTTPInteraction) []*ParameterObject {
+	return paramsFromSchema(i.Request.HTTPRequestHeaders.Schema, ParameterLocationHeader)
 }

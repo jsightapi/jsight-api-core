@@ -5,21 +5,19 @@ import (
 )
 
 type Components struct {
-	Schemas Schemas `json:"schemas,omitempty"`
+	Schemas ComponentsSchemas `json:"schemas,omitempty"`
 }
 
-func NewComponents(c *catalog.Catalog) *Components {
-	if !hasComponents(c) {
-		return nil
+func newComponents(c *catalog.Catalog) *Components {
+	if hasComponents(c) {
+		return &Components{
+			Schemas: newSchemas(c.UserTypes),
+		}
 	}
-
-	return &Components{
-		Schemas: *NewSchemas(c.UserTypes),
-	}
+	return nil
 }
 
-// TODO: think about other components. In JSS we have MACRO which is not convertable
+// Currently only UserTypes participate in components
 func hasComponents(c *catalog.Catalog) bool {
 	return c.UserTypes.Len() > 0
 }
-

@@ -8,6 +8,7 @@ import (
 
 func debugExchangeSchema(es catalog.ExchangeSchema) {
 	fmt.Printf("es type is %T\n", es)
+	fmt.Printf("es notation is %s\n", es.Notation())
 
 	switch s := es.(type) {
 	case *catalog.ExchangeJSightSchema:
