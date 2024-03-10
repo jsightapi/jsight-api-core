@@ -3,7 +3,7 @@ package openapi
 import (
 	"github.com/jsightapi/jsight-api-core/catalog"
 	"github.com/jsightapi/jsight-api-core/notation"
-	schema "github.com/jsightapi/jsight-schema-core"
+	// schema "github.com/jsightapi/jsight-schema-core"
 
 	sc "github.com/jsightapi/jsight-schema-core/openapi"
 )
@@ -27,7 +27,6 @@ TODO:
 // 	return SchemaObjectFromExchangeSchema(t.Schema)
 // }
 
-// TODO: might become unnecessary
 func SchemaObjectFromExchangeSchema(es catalog.ExchangeSchema) SchemaObject {
 
 	debugExchangeSchema(es)
@@ -44,9 +43,9 @@ func SchemaObjectFromExchangeSchema(es catalog.ExchangeSchema) SchemaObject {
 	}
 }
 
-func SchemaObjectFromSchema(s schema.Schema) SchemaObject {
-	return sc.NewSchemaObject(s)
-}
+// func SchemaObjectFromSchema(s schema.Schema) SchemaObject {
+// 	return sc.NewSchemaObject(s)
+// }
 
 func SchemaObjectAny() SchemaObject {
 	return &schemaObjectAny{}

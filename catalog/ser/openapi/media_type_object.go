@@ -2,7 +2,7 @@ package openapi
 
 import (
 	"github.com/jsightapi/jsight-api-core/catalog"
-	schema "github.com/jsightapi/jsight-schema-core"
+	// schema "github.com/jsightapi/jsight-schema-core"
 )
 
 /*
@@ -12,7 +12,7 @@ type MediaTypeObject struct {
 	Schema SchemaObject `json:"schema,omitempty"` // TODO: empty?
 }
 
-func NewMediaTypeObjectFromExchangeSchema(es catalog.ExchangeSchema) *MediaTypeObject {
+func MediaTypeObjectForSchema(es catalog.ExchangeSchema) *MediaTypeObject {
 	so := SchemaObjectFromExchangeSchema(es)
 
 	return &MediaTypeObject{
@@ -20,10 +20,10 @@ func NewMediaTypeObjectFromExchangeSchema(es catalog.ExchangeSchema) *MediaTypeO
 	}
 }
 
-func NewMediaTypeObjectFromSchema(s schema.Schema) *MediaTypeObject {
-	so := SchemaObjectFromSchema(s)
-
-	return &MediaTypeObject{
-		Schema: so,
-	}
-}
+// func NewMediaTypeObjectFromSchema(s schema.Schema) *MediaTypeObject {
+// 	so := SchemaObjectFromSchema(s)
+//
+// 	return &MediaTypeObject{
+// 		Schema: so,
+// 	}
+// }

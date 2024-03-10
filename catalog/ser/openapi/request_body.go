@@ -20,10 +20,8 @@ func NewRequestBody(r *catalog.HTTPRequest) *RequestBody {
 	var c *Content
 	s := r.HTTPRequestBody.Schema
 	switch s.Notation() {
-	case notation.SchemaNotationJSight:
-		c = NewContentFromSchema(r.Format, s)
-	case notation.SchemaNotationRegex:
-		c = NewContentFromSchema(r.Format, s)
+	case notation.SchemaNotationJSight, notation.SchemaNotationRegex:
+		c = ContentForSchema(r.Format, s)
 	case notation.SchemaNotationAny:
 		c = ContentForAny()
 	case notation.SchemaNotationEmpty:

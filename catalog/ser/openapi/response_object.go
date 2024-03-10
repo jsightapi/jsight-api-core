@@ -24,7 +24,7 @@ func defaultResponse() *ResponseObject {
 func NewResponse(r *catalog.HTTPResponse) *ResponseObject {
 	return &ResponseObject{
 		Description: r.Annotation,
-		Content:     NewContent(r.Body.Format, r.Body.Schema),
+		Content:     ContentForSchema(r.Body.Format, r.Body.Schema),
 		Headers:     MakeResponseHeaders(r.Headers),
 	}
 }
@@ -50,7 +50,7 @@ func NewResponseAnyOf(responses []*catalog.HTTPResponse) *ResponseObject {
 				si := sc.NewSchemaInfo(s.(*catalog.ExchangeJSightSchema).JSchema)
 				so = si.SchemaObject()
 				desc = concatenateDescription(respAnnotation, si.Annotation())
-			case notation.SchemaNotationRegex:
+			case notation.SchemaNotationRegex: // TODO: might have an annotation also. 
 				so = sc.NewSchemaObject(s)
 				desc = respAnnotation
 			case notation.SchemaNotationAny:
@@ -66,24 +66,24 @@ func NewResponseAnyOf(responses []*catalog.HTTPResponse) *ResponseObject {
 		}
 	}
 
-	mto := MediaTypeObject{
-		SchemaObjectAnyOf(sos, ""),
-	}
-
+	// mto := MediaTypeObject{
+	// 	SchemaObjectAnyOf(sos, ""),
+	// }
+	//
 	return &ResponseObject{
 		Headers: MakeResponseHeaders(hh...),
-		Content: ContentWithMediaTypeObject(MediaTypeRangeAny, &mto),
+		Content: ContentForAnyOf(sos),
 	}
 }
 
-func responsesToSchemas(rr []*catalog.HTTPResponse) []catalog.ExchangeSchema {
-	if rr == nil {
-		return nil
-	}
-
-	ss := make([]catalog.ExchangeSchema, len(rr))
-	for _, r := range rr {
-		ss = append(ss, r.Body.Schema)
-	}
-	return ss
-}
+// func responsesToSchemas(rr []*catalog.HTTPResponse) []catalog.ExchangeSchema {
+// 	if rr == nil {
+// 		return nil
+// 	}
+//
+// 	ss := make([]catalog.ExchangeSchema, len(rr))
+// 	for _, r := range rr {
+// 		ss = append(ss, r.Body.Schema)
+// 	}
+// 	return ss
+// }
