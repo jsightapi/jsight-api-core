@@ -13,10 +13,15 @@ func NewSchemas(tt *catalog.UserTypes) *Schemas {
 	}
 
 	ss := make(Schemas, tt.Len())
-	_ = tt.Each(func(name string, v *catalog.UserType) error {
-		ss[convertTypeName(name)] = SchemaObjectFromUserType(v)
+	_ = tt.Each(func(name string, ut *catalog.UserType) error {
+		ss[typeNameToSchemaName(name)] = SchemaObjectFromExchangeSchema(ut.Schema)
 		return nil
 	})
 
 	return &ss
+}
+
+// all types in JSight start with `@`
+func typeNameToSchemaName(n string) string {
+	return n[1:]
 }

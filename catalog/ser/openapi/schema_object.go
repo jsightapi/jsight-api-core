@@ -21,11 +21,11 @@ TODO:
 	If some notation affects higher level structure of OA,
 	this approach should be changed.
 */
-func SchemaObjectFromUserType(t *catalog.UserType) SchemaObject {
-	// TODO: can we have UserType for any / empty ?
-
-	return SchemaObjectFromExchangeSchema(t.Schema)
-}
+// func SchemaObjectFromUserType(t *catalog.UserType) SchemaObject {
+// 	// TODO: can we have UserType for any / empty ?
+//
+// 	return SchemaObjectFromExchangeSchema(t.Schema)
+// }
 
 // TODO: might become unnecessary
 func SchemaObjectFromExchangeSchema(es catalog.ExchangeSchema) SchemaObject {
