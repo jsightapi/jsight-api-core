@@ -9,9 +9,9 @@ import (
 )
 
 type ResponseObject struct {
-	Description string   `json:"description"`
-	Headers     Headers  `json:"headers,omitempty"`
-	Content     *Content `json:"content,omitempty"`
+	Description string          `json:"description"`
+	Headers     ResponseHeaders `json:"headers,omitempty"`
+	Content     *Content        `json:"content,omitempty"`
 }
 
 func defaultResponse() *ResponseObject {
@@ -25,20 +25,20 @@ func NewResponse(r *catalog.HTTPResponse) *ResponseObject {
 	return &ResponseObject{
 		Description: r.Annotation,
 		Content:     NewContent(r.Body.Format, r.Body.Schema),
-		Headers:     NewHeaders(r.Headers),
+		Headers:     MakeResponseHeaders(r.Headers),
 	}
 }
 
 func NewResponseAnyOf(responses []*catalog.HTTPResponse) *ResponseObject {
 	hh := make([]*catalog.HTTPResponseHeaders, 0)
-	sos := make([]sc.SchemaObject, 0)
+	sos := make([]SchemaObject, 0)
 
 	for _, response := range responses {
 		hh = append(hh, response.Headers)
 
 		respAnnotation := response.Body.Directive.Annotation
 
-		var so sc.SchemaObject
+		var so SchemaObject
 		var desc string
 		if response.Body == nil {
 			so = SchemaObjectAny()
@@ -71,7 +71,7 @@ func NewResponseAnyOf(responses []*catalog.HTTPResponse) *ResponseObject {
 	}
 
 	return &ResponseObject{
-		Headers: MakeResponseHeaders(hh),
+		Headers: MakeResponseHeaders(hh...),
 		Content: ContentWithMediaTypeObject(MediaTypeRangeAny, &mto),
 	}
 }
@@ -87,4 +87,3 @@ func responsesToSchemas(rr []*catalog.HTTPResponse) []catalog.ExchangeSchema {
 	}
 	return ss
 }
-

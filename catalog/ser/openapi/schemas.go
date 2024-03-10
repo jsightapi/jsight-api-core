@@ -2,12 +2,10 @@ package openapi
 
 import (
 	"github.com/jsightapi/jsight-api-core/catalog"
-
-	sc "github.com/jsightapi/jsight-schema-core/openapi"
 )
 
 // as part of the «components» object
-type Schemas map[string]sc.SchemaObject
+type Schemas map[string]SchemaObject
 
 func NewSchemas(tt *catalog.UserTypes) *Schemas {
 	if tt.Len() == 0 {

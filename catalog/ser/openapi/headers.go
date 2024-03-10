@@ -1,40 +1,40 @@
 package openapi
 
 import (
-	"fmt"
+	 _ "fmt"
 
 	"github.com/jsightapi/jsight-api-core/catalog"
 
 	sc "github.com/jsightapi/jsight-schema-core/openapi"
 )
 
-// Only for Response objects. For requests refer to "parameters"
-type Headers map[string]*HeaderObject
+// Only for Response objects. For request headers refer to "parameters"
+type ResponseHeaders map[string]*HeaderObject
 
 // TODO: may not be a schema, may be a literal | array
-func NewHeaders(h *catalog.HTTPResponseHeaders) Headers {
-	if h == nil {
-		return nil
-	}
-
-	r := make(Headers, 0)
-
-	// TODO: children may be nil if schema is literal
-	for _, ch := range h.Schema.ASTNode.Children {
-		pi := GetParamInfo(ch)
-		r[ch.Key] = NewHeaderObject(pi.Required(), pi.AllowEmptyValue(), pi.Description(), pi.Schema())
-	}
-
-	return r
-}
-
+// func NewHeaders(h *catalog.HTTPResponseHeaders) ResponseHeaders {
+// 	if h == nil {
+// 		return nil
+// 	}
+//
+// 	r := make(ResponseHeaders, 0)
+//
+// 	// TODO: children may be nil if schema is literal
+// 	for _, ch := range h.Schema.ASTNode.Children {
+// 		pi := GetParamInfo(ch)
+// 		r[ch.Key] = NewHeaderObject(pi.Required(), pi.AllowEmptyValue(), pi.Description(), pi.Schema())
+// 	}
+//
+// 	return r
+// }
+//
 type headerInfo struct {
 	schemaInfo        sc.SchemaInfo
 	contextAnnotation string
 }
 
-func MakeResponseHeaders(headersArr []*catalog.HTTPResponseHeaders) Headers {
-	r := make(Headers, 0)
+func MakeResponseHeaders(headersArr ...*catalog.HTTPResponseHeaders) ResponseHeaders {
+	r := make(ResponseHeaders, 0)
 
 	sortedHeaders := make(map[string][]headerInfo)
 	for _, headers := range headersArr {
@@ -42,7 +42,7 @@ func MakeResponseHeaders(headersArr []*catalog.HTTPResponseHeaders) Headers {
 			continue
 		}
 
-		headersSchemaInfo := sc.NewSchemaInfo(headers.Schema.JSchema)
+		headersSchemaInfo := GetSchemaInfo(headers.Schema.JSchema)
 		propIterator := headersSchemaInfo.PropertiesInfos()
 		for propIterator.Next() {
 			hName := propIterator.GetKey()
@@ -60,7 +60,7 @@ func MakeResponseHeaders(headersArr []*catalog.HTTPResponseHeaders) Headers {
 			i := headerInfos[0]
 			r[name] = NewHeaderObject(
 				!i.schemaInfo.Optional(), false,
-				combineHeaderDescription(i.contextAnnotation, i.schemaInfo.Annotation()),
+				concatenateDescription(i.contextAnnotation, i.schemaInfo.Annotation()),
 				i.schemaInfo.SchemaObject(),
 			)
 		} else {
@@ -68,17 +68,18 @@ func MakeResponseHeaders(headersArr []*catalog.HTTPResponseHeaders) Headers {
 		}
 	}
 
-	fmt.Printf("\n headers len: %d", len(r))
+	// fmt.Printf("\n headers len: %d", len(r))
 
 	return r
 }
 
-func combineHeaderDescription(schemaAnnotation string, propertyAnnotation string) string {
-	return schemaAnnotation + ": " + propertyAnnotation
-}
+// // TODO: use strings.go
+// func combineHeaderDescription(context string, propertyAnnotation string) string {
+// 	return context + ": " + propertyAnnotation
+// }
 
 func HeaderObjectForAnyOf(headersInfos []headerInfo) *HeaderObject {
-	schemaObjects := make([]sc.SchemaObject, 0)
+	schemaObjects := make([]SchemaObject, 0)
 	var required bool
 
 	for _, i := range headersInfos {
@@ -87,7 +88,7 @@ func HeaderObjectForAnyOf(headersInfos []headerInfo) *HeaderObject {
 		}
 
 		so := i.schemaInfo.SchemaObject()
-		so.SetDescription(combineHeaderDescription(i.contextAnnotation, i.schemaInfo.Annotation()))
+		so.SetDescription(concatenateDescription(i.contextAnnotation, i.schemaInfo.Annotation()))
 		schemaObjects = append(schemaObjects, so)
 	}
 

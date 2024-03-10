@@ -37,19 +37,9 @@ func AppendPathParams(p []*ParameterObject, i *catalog.HTTPInteraction) {
 	}
 }
 
+// TODO: test no path directive
 func GetPathParams(i *catalog.HTTPInteraction) []*ParameterObject {
-	r := make([]*ParameterObject, 0)
-	for _, ch := range i.PathVariables.Schema.ASTNode.Children { // first level params
-		pi := GetParamInfo(ch)
-		NewParameterObject(
-			ParameterLocationPath,
-			ch.Key,
-			pi.Required(),
-			pi.AllowEmptyValue(),
-			pi.Schema(),
-		)
-	}
-	return r
+	return ParamsFromSchema(i.PathVariables.Schema, ParameterLocationPath)
 }
 
 // TODO: deal with possible ovewriting of method (improbable)

@@ -3,7 +3,6 @@ package openapi
 import (
 	"github.com/jsightapi/jsight-api-core/catalog"
 	schema "github.com/jsightapi/jsight-schema-core"
-	scoa "github.com/jsightapi/jsight-schema-core/openapi"
 )
 
 type Content map[mediaType]*MediaTypeObject
@@ -38,7 +37,7 @@ func NewContent(f catalog.SerializeFormat, s catalog.ExchangeSchema) *Content {
 	return &c
 }
 
-func ContentForAnyOf(schemaObjects []scoa.SchemaObject) *Content {
+func ContentForAnyOf(schemaObjects []SchemaObject) *Content {
 	c := make(Content, 1)
 	c[MediaTypeRangeAny] = &MediaTypeObject{SchemaObjectAnyOf(schemaObjects, "")}
 	return &c

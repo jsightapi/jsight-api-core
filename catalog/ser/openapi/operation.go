@@ -53,31 +53,10 @@ func HeaderSchemaDefined(i *catalog.HTTPInteraction) bool {
 }
 
 func GetQueryParams(i *catalog.HTTPInteraction) []*ParameterObject {
-	r := make([]*ParameterObject, 0)
-	for _, ch := range i.Query.Schema.ASTNode.Children { // first level params
-		pi := GetParamInfo(ch)
-		NewParameterObject(
-			ParameterLocationQuery,
-			ch.Key,
-			pi.Required(),
-			pi.AllowEmptyValue(),
-			pi.Schema(),
-		)
-	}
-	return r
+	// TODO: nil check
+	return ParamsFromSchema(i.Query.Schema, ParameterLocationQuery)
 }
 
 func GetHeaderParams(i *catalog.HTTPInteraction) []*ParameterObject {
-	r := make([]*ParameterObject, 0)
-	for _, ch := range i.Request.HTTPRequestHeaders.Schema.ASTNode.Children { // first level params
-		pi := GetParamInfo(ch)
-		NewParameterObject(
-			ParameterLocationHeader,
-			ch.Key,
-			pi.Required(),
-			pi.AllowEmptyValue(),
-			pi.Schema(),
-		)
-	}
-	return r
+	return ParamsFromSchema(i.Request.HTTPRequestHeaders.Schema, ParameterLocationHeader)
 }

@@ -2,16 +2,14 @@ package openapi
 
 import (
 	"encoding/json"
-
-	sc "github.com/jsightapi/jsight-schema-core/openapi"
 )
 
-func SchemaObjectAnyOf(anyOf []sc.SchemaObject, rootDescription string) sc.SchemaObject {
+func SchemaObjectAnyOf(anyOf []SchemaObject, rootDescription string) SchemaObject {
 	return &schemaObjectAnyOf{anyOf, rootDescription}
 }
 
 type schemaObjectAnyOf struct {
-	AnyOf       []sc.SchemaObject `json:"anyOf"`
+	AnyOf       []SchemaObject `json:"anyOf"`
 	Description string            `json:"description,omitempty"`
 }
 
