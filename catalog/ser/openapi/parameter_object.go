@@ -11,7 +11,6 @@ func newParameterObject(
 	in parameterLocation,
 	name string,
 	required bool,
-	allowEmptyValue bool,
 	schema SchemaObject,
 ) *ParameterObject {
 	return &ParameterObject{
@@ -19,7 +18,6 @@ func newParameterObject(
 		Name: name,
 		ParameterBase: ParameterBase{
 			Required:        required,
-			AllowEmptyValue: allowEmptyValue,
 			Schema:          schema,
 		},
 	}

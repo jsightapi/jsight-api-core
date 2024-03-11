@@ -1,7 +1,7 @@
 package openapi
 
 import (
-	 _ "fmt"
+	_ "fmt"
 
 	"github.com/jsightapi/jsight-api-core/catalog"
 
@@ -59,7 +59,7 @@ func makeResponseHeaders(headersArr ...*catalog.HTTPResponseHeaders) ResponseHea
 		if len(headerInfos) == 1 {
 			i := headerInfos[0]
 			r[name] = newHeaderObject(
-				!i.schemaInfo.Optional(), false,
+				!i.schemaInfo.Optional(),
 				concatenateDescription(i.contextAnnotation, i.schemaInfo.Annotation()),
 				i.schemaInfo.SchemaObject(),
 			)
@@ -86,16 +86,10 @@ func headerObjectForAnyOf(headersInfos []headerInfo) *HeaderObject {
 		if i.schemaInfo.Optional() {
 			required = false
 		}
-
 		so := i.schemaInfo.SchemaObject()
 		so.SetDescription(concatenateDescription(i.contextAnnotation, i.schemaInfo.Annotation()))
 		schemaObjects = append(schemaObjects, so)
 	}
 
-	return newHeaderObject(
-		required,
-		false,
-		"",
-		&schemaObjectAnyOf{schemaObjects, ""},
-	)
+	return newHeaderObject(required, "", &schemaObjectAnyOf{schemaObjects, ""})
 }

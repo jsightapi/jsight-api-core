@@ -10,7 +10,7 @@ func schemaObjectForAnyOf(anyOf []SchemaObject, rootDescription string) SchemaOb
 
 type schemaObjectAnyOf struct {
 	AnyOf       []SchemaObject `json:"anyOf"`
-	Description string            `json:"description,omitempty"`
+	Description string         `json:"description,omitempty"`
 }
 
 func (s *schemaObjectAnyOf) SetDescription(d string) {

@@ -17,7 +17,7 @@ func newOperation(i *catalog.HTTPInteraction) *Operation {
 		Summary:     i.Annotation,
 		Description: i.Description,
 		Parameters:  fillOperationParams(i),
-		RequestBody: newRequestBody(i.Request), // TODO: is request enough?
+		RequestBody: newRequestBody(i.Request),
 		Responses:   newResponses(i),
 	}
 }

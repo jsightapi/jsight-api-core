@@ -10,7 +10,7 @@ type OpenAPI struct {
 	OpenAPI    string      `json:"openapi"`
 	Info       *Info       `json:"info"`
 	Servers    []Server    `json:"servers,omitempty"`
-	Paths      Paths      `json:"paths"`
+	Paths      Paths       `json:"paths"`
 	Components *Components `json:"components,omitempty"`
 }
 

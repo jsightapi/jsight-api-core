@@ -25,7 +25,6 @@ func paramsFromSchema(es *catalog.ExchangeJSightSchema, loc parameterLocation) [
 			loc,
 			propIterator.GetKey(),
 			!pi.Optional(),
-			false, // TODO: ?
 			pi.SchemaObject(),
 		)
 		r = append(r, po)
