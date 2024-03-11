@@ -1,6 +1,7 @@
 package openapi
 
 import (
+	"encoding/json"
 	"fmt"
 
 	"github.com/jsightapi/jsight-api-core/catalog"
@@ -22,4 +23,13 @@ func debugExchangeSchema(es catalog.ExchangeSchema) {
 		fmt.Printf("Not a JSchema\n")
 	}
 	fmt.Printf("Debug Over\n")
+}
+
+func schemaObjectToString(so SchemaObject) string {
+	b, err := json.Marshal(so)
+	if err == nil {
+		return string(b)
+	} else {
+		return "marshaling error"
+	}
 }

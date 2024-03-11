@@ -24,39 +24,31 @@ func newOperation(i *catalog.HTTPInteraction) *Operation {
 
 func fillOperationParams(i *catalog.HTTPInteraction) []*ParameterObject {
 	r := make([]*ParameterObject, 0)
-	appendQueryParams(r, i)
-	appendHeaderParams(r, i)
+	r = appendQueryParams(r, i)
+	r = appendHeaderParams(r, i)
 	return r
 }
 
-func appendQueryParams(p []*ParameterObject, i *catalog.HTTPInteraction) {
+func appendQueryParams(p []*ParameterObject, i *catalog.HTTPInteraction) []*ParameterObject {
 	if querySchemaDefined(i) {
-		p = append(p, getQueryParams(i)...)
+		return append(p, paramsFromSchema(i.Query.Schema, ParameterLocationQuery)...)
 	}
+	return p
 }
 
-func appendHeaderParams(p []*ParameterObject, i *catalog.HTTPInteraction) {
+func appendHeaderParams(p []*ParameterObject, i *catalog.HTTPInteraction) []*ParameterObject {
 	if headerSchemaDefined(i) {
-		p = append(p, getHeaderParams(i)...)
+		return append(p, paramsFromSchema(i.Request.HTTPRequestHeaders.Schema, ParameterLocationHeader)...)
 	}
+	return p
 }
 
 func querySchemaDefined(i *catalog.HTTPInteraction) bool {
-	return i.Query != nil &&
-		i.Query.Schema != nil
+	return i.Query != nil && i.Query.Schema != nil
 }
 
 func headerSchemaDefined(i *catalog.HTTPInteraction) bool {
 	return i.Request != nil &&
 		i.Request.HTTPRequestHeaders != nil &&
 		i.Request.HTTPRequestHeaders.Schema != nil
-}
-
-func getQueryParams(i *catalog.HTTPInteraction) []*ParameterObject {
-	// TODO: nil check
-	return paramsFromSchema(i.Query.Schema, ParameterLocationQuery)
-}
-
-func getHeaderParams(i *catalog.HTTPInteraction) []*ParameterObject {
-	return paramsFromSchema(i.Request.HTTPRequestHeaders.Schema, ParameterLocationHeader)
 }

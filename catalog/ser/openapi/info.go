@@ -7,7 +7,7 @@ import (
 type Info struct {
 	Title       string  `json:"title"`
 	Version     string  `json:"version"`
-	Description *string `json:"description,omitempty"` // TODO: is it right to pass a pointer here?
+	Description *string `json:"description,omitempty"`
 }
 
 func defaultInfo() *Info {

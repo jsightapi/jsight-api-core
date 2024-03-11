@@ -9,12 +9,15 @@
   },
   "servers": [
     {
-      "url": "https://pets.com/api/1.0",
-      "description": ""
+      "url": "https://pets.com/api/1.0"
     },
     {
       "url": "https://192.168.0.100/1.0",
       "description": "Test server"
+    },
+    {
+      "url": "",
+      "description": "No url server"
     }
   ]
 }
