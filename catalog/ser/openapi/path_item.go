@@ -39,7 +39,7 @@ func appendPathParams(p []*ParameterObject, i *catalog.HTTPInteraction) {
 
 // TODO: test no path directive
 func getPathParams(i *catalog.HTTPInteraction) []*ParameterObject {
-	return paramsFromSchema(i.PathVariables.Schema, ParameterLocationPath)
+	return paramsFromJSchema(i.PathVariables.Schema, ParameterLocationPath)
 }
 
 // TODO: deal with possible ovewriting of method (improbable)

@@ -31,14 +31,14 @@ func fillOperationParams(i *catalog.HTTPInteraction) []*ParameterObject {
 
 func appendQueryParams(p []*ParameterObject, i *catalog.HTTPInteraction) []*ParameterObject {
 	if querySchemaDefined(i) {
-		return append(p, paramsFromSchema(i.Query.Schema, ParameterLocationQuery)...)
+		return append(p, paramsFromJSchema(i.Query.Schema, ParameterLocationQuery)...)
 	}
 	return p
 }
 
 func appendHeaderParams(p []*ParameterObject, i *catalog.HTTPInteraction) []*ParameterObject {
 	if headerSchemaDefined(i) {
-		return append(p, paramsFromSchema(i.Request.HTTPRequestHeaders.Schema, ParameterLocationHeader)...)
+		return append(p, paramsFromJSchema(i.Request.HTTPRequestHeaders.Schema, ParameterLocationHeader)...)
 	}
 	return p
 }

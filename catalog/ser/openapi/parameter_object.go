@@ -12,13 +12,17 @@ func newParameterObject(
 	name string,
 	required bool,
 	schema SchemaObject,
+	style parameterStyle,
+	explode bool,
 ) *ParameterObject {
 	return &ParameterObject{
 		In:   in,
 		Name: name,
 		ParameterBase: ParameterBase{
-			Required:        required,
-			Schema:          schema,
+			Required: required,
+			Schema:   schema,
+			Style:    style,
+			Explode:  explode,
 		},
 	}
 }

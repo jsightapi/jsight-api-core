@@ -1,8 +1,8 @@
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c=
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
-github.com/jsightapi/jsight-schema-core v0.1.2-0.20240306192656-7ede2e200a71 h1:vRzbvhOdOAkkbPWC7n0AcwrF3Uy2wy6IWitJ8V7VaOA=
-github.com/jsightapi/jsight-schema-core v0.1.2-0.20240306192656-7ede2e200a71/go.mod h1:LARaGZOYbAnCd3Azckksdmb0gm8vUzJ94Kvg/JNOf1k=
+github.com/jsightapi/jsight-schema-core v0.1.2-0.20240311193805-d17cdb68fb5e h1:69pzt9a3U/ajYfB+RcO3ZQJufdd5na/5fbYTapH15xw=
+github.com/jsightapi/jsight-schema-core v0.1.2-0.20240311193805-d17cdb68fb5e/go.mod h1:LARaGZOYbAnCd3Azckksdmb0gm8vUzJ94Kvg/JNOf1k=
 github.com/lucasjones/reggen v0.0.0-20200904144131-37ba4fa293bb h1:w1g9wNDIE/pHSTmAaUhv4TZQuPBS6GV3mMz5hkgziIU=
 github.com/lucasjones/reggen v0.0.0-20200904144131-37ba4fa293bb/go.mod h1:5ELEyG+X8f+meRWHuqUOewBOhvHkl7M76pdGEansxW4=
 github.com/nsf/jsondiff v0.0.0-20210926074059-1e845ec5d249 h1:NHrXEjTNQY7P0Zfx1aMrNhpgxHmow66XQtm0aQLY0AE=

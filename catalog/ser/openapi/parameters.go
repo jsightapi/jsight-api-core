@@ -6,7 +6,9 @@ import (
 	"github.com/jsightapi/jsight-api-core/catalog"
 )
 
-func paramsFromSchema(es *catalog.ExchangeJSightSchema, loc parameterLocation) []*ParameterObject {
+// TODO: if schema is a referene?
+// if a reference to Regex
+func paramsFromJSchema(es *catalog.ExchangeJSightSchema, loc parameterLocation) []*ParameterObject {
 	r := make([]*ParameterObject, 0)
 	if es == nil {
 		return r
@@ -26,6 +28,8 @@ func paramsFromSchema(es *catalog.ExchangeJSightSchema, loc parameterLocation) [
 			propIterator.GetKey(),
 			!pi.Optional(),
 			pi.SchemaObject(),
+			ParameterStyleMatrix, // TODO: fix
+			false, // TODO fix
 		)
 		r = append(r, po)
 	}
