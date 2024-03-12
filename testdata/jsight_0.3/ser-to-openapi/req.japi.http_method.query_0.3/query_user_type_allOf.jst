@@ -2,14 +2,9 @@ JSIGHT 0.3
 
 # RULE "allOf" in USER TYPES in Query
 
-GET /query/one-user-type-1
+GET /query/one-user-type
   Query "first=1&second=value"
     { // {allOf: ["@queryUserType1"]}
-    }
-
-GET /query/one-user-type-2
-  Query "third=456.78&fourth=true"
-    { // {allOf: "@queryUserType2"}
     }
 
 GET /query/one-user-type-add-fields

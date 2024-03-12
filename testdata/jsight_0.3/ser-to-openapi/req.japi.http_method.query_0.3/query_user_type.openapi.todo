@@ -98,8 +98,7 @@
             "schema": {
               "type": "string",
               "example": "value"
-            },
-            "required": false
+            }
           }
         ],
         "responses": {
@@ -147,7 +146,16 @@
             "schema": {
               "type": "array",
               "items": {
-                "type": "integer"
+                "anyOf": [
+                  {
+                    "type": "integer",
+                    "example": 2
+                  },
+                  {
+                    "type": "integer",
+                    "example": 3
+                  }
+                ]
               }
             },
             "required": true
