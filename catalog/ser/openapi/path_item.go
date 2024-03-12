@@ -9,7 +9,6 @@ type PathItem struct {
 	Post       *Operation         `json:"post,omitempty"`
 	Patch      *Operation         `json:"patch,omitempty"`
 	Delete     *Operation         `json:"delete,omitempty"`
-	// Parameters  *PathItemParameters `json:"parameters,omitempty"`// TODO: deal with params
 }
 
 func newPathItem(i *catalog.HTTPInteraction) *PathItem {
@@ -22,7 +21,7 @@ func newPathItem(i *catalog.HTTPInteraction) *PathItem {
 
 func fillPathParams(i *catalog.HTTPInteraction) []*ParameterObject {
 	r := make([]*ParameterObject, 0)
-	appendPathParams(r, i)
+	r = appendPathParams(r, i)
 	return r
 }
 
@@ -31,18 +30,18 @@ func pathSchemaDefined(i *catalog.HTTPInteraction) bool {
 		i.PathVariables.Schema != nil
 }
 
-func appendPathParams(p []*ParameterObject, i *catalog.HTTPInteraction) {
+func appendPathParams(p []*ParameterObject, i *catalog.HTTPInteraction) []*ParameterObject {
 	if pathSchemaDefined(i) {
-		_ = append(p, getPathParams(i)...)
+		params := paramsFromJSchema(i.PathVariables.Schema, ParameterLocationPath)
+		for _, par := range params {
+			par.Required = true
+		}
+		return append(p, params...)
 	}
+	return p
 }
 
-// TODO: test no path directive
-func getPathParams(i *catalog.HTTPInteraction) []*ParameterObject {
-	return paramsFromJSchema(i.PathVariables.Schema, ParameterLocationPath)
-}
-
-// TODO: deal with possible ovewriting of method (improbable)
+// TODO: deal with possible overwriting of method (improbable)
 func (pi *PathItem) assignOperation(method catalog.HTTPMethod, o *Operation) {
 	switch method {
 	case catalog.GET:

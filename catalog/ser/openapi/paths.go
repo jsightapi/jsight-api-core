@@ -26,13 +26,13 @@ func fillPaths(p Paths, ii *catalog.Interactions) {
 	_ = ii.Each(func(k catalog.InteractionID, v catalog.Interaction) error {
 		if k.Protocol() == catalog.HTTP {
 			i := v.(*catalog.HTTPInteraction)
-			addInteraction(p, i)
+			addOperation(p, i)
 		}
 		return nil
 	})
 }
 
-func addInteraction(p Paths, i *catalog.HTTPInteraction) {
+func addOperation(p Paths, i *catalog.HTTPInteraction) {
 	path := i.Path().String()
 	if _, exists := p[path]; exists {
 		p[path].assignOperation(i.HttpMethod, newOperation(i))

@@ -9,38 +9,35 @@
       "get": {
         "parameters": [
           {
-            "in": "header",
-            "name": "h-mandatory",
-            "description": "",
+            "description": "necessary query",
             "required": true,
             "schema": {
               "type": "integer",
               "example": 1,
-              "description": ""
-            }
+              "description": "necessary query"
+            },
+            "name": "q-mandatory",
+            "in": "query"
           },
           {
-            "in": "header",
-            "name": "h-optional",
-            "description": "",
+            "description": "unnecessary query",
             "required": false,
             "schema": {
               "type": "integer",
               "example": 2,
-              "description": ""
-            }
+              "description": "unnecessary query"
+            },
+            "name": "q-not-mandarory",
+            "in": "query"
           }
         ],
         "requestBody": {
-          "required": true,
           "content": {
             "*/*": {
               "schema": {
                 "type": "object",
-                "description": "root annotation",
                 "properties": {
                   "k1": {
-                    "description": "key one",
                     "type": "string",
                     "example": "v1"
                   }
@@ -51,7 +48,8 @@
                 "additionalProperties": false
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "default": {

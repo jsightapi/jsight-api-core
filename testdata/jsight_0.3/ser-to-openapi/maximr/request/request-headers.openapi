@@ -9,25 +9,25 @@
       "get": {
         "parameters": [
           {
-            "in": "quer",
-            "name": "q-mandatory",
-            "description": "",
+            "in": "header",
+            "description":"necessary header",
+            "name": "h-mandatory",
             "required": true,
             "schema": {
               "type": "integer",
               "example": 1,
-              "description": ""
+              "description": "necessary header"
             }
           },
           {
-            "in": "query",
-            "name": "q-not-mandatory",
-            "description": "",
+            "in": "header",
+            "name": "h-optional",
+            "description": "unnecessary header",
             "required": false,
             "schema": {
               "type": "integer",
               "example": 2,
-              "description": ""
+              "description": "unnecessary header"
             }
           }
         ],
@@ -37,10 +37,8 @@
             "*/*": {
               "schema": {
                 "type": "object",
-                "description": "root annotation",
                 "properties": {
                   "k1": {
-                    "description": "key one",
                     "type": "string",
                     "example": "v1"
                   }

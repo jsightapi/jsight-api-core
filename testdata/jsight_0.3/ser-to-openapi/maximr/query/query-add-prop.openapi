@@ -25,12 +25,10 @@
           {
             "in": "query",
             "name": "q1",
-            "description": "",
             "required": true,
             "schema": {
               "type": "string",
-              "example": "v1",
-              "description": ""
+              "example": "v1"
             }
           }
         ],

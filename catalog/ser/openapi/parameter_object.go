@@ -6,10 +6,10 @@ type ParameterObject struct {
 	In   parameterLocation `json:"in"`
 }
 
-// TODO: do we need a constructor?
 func newParameterObject(
 	in parameterLocation,
 	name string,
+	description string,
 	required bool,
 	schema SchemaObject,
 	style parameterStyle,
@@ -19,10 +19,11 @@ func newParameterObject(
 		In:   in,
 		Name: name,
 		ParameterBase: ParameterBase{
-			Required: required,
-			Schema:   schema,
-			Style:    style,
-			Explode:  explode,
+			Description: description,
+			Required:    required,
+			Schema:      schema,
+			Style:       style,
+			Explode:     explode,
 		},
 	}
 }

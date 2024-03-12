@@ -1,14 +1,12 @@
 package openapi
 
 import (
-	// "fmt"
-
 	"github.com/jsightapi/jsight-api-core/catalog"
 )
 
-// TODO: if schema is a referene?
+// TODO: if schema is a reference?
 // if a reference to Regex
-func paramsFromJSchema(es *catalog.ExchangeJSightSchema, loc parameterLocation) []*ParameterObject {
+func paramsFromJSchema(es *catalog.ExchangeJSightSchema, in parameterLocation) []*ParameterObject {
 	r := make([]*ParameterObject, 0)
 	if es == nil {
 		return r
@@ -17,19 +15,15 @@ func paramsFromJSchema(es *catalog.ExchangeJSightSchema, loc parameterLocation) 
 	schemaInfo := getSchemaInfo(es.JSchema)
 	propIterator := schemaInfo.PropertiesInfos()
 	for propIterator.Next() {
-		// pk := propIterator.GetKey()
 		pi := propIterator.GetInfo()
-
-		// fmt.Printf("key: %s\n annot: %s\n opt: %t\n so: %s\n\n",
-			// pk, pi.Annotation(), pi.Optional(), schemaObjectToString(pi.SchemaObject()))
-
 		po := newParameterObject(
-			loc,
+			in,
 			propIterator.GetKey(),
+			pi.Annotation(),
 			!pi.Optional(),
 			pi.SchemaObject(),
-			ParameterStyleMatrix, // TODO: fix
-			false, // TODO fix
+			ParameterStyleDeepObject,
+			true,
 		)
 		r = append(r, po)
 	}
