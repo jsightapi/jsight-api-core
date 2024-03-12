@@ -12,8 +12,6 @@ func newParameterObject(
 	description string,
 	required bool,
 	schema SchemaObject,
-	style parameterStyle,
-	explode bool,
 ) *ParameterObject {
 	return &ParameterObject{
 		In:   in,
@@ -22,8 +20,6 @@ func newParameterObject(
 			Description: description,
 			Required:    required,
 			Schema:      schema,
-			Style:       style,
-			Explode:     explode,
 		},
 	}
 }

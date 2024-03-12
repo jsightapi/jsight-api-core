@@ -31,7 +31,12 @@ func fillOperationParams(i *catalog.HTTPInteraction) []*ParameterObject {
 
 func appendQueryParams(p []*ParameterObject, i *catalog.HTTPInteraction) []*ParameterObject {
 	if querySchemaDefined(i) {
-		return append(p, paramsFromJSchema(i.Query.Schema, ParameterLocationQuery)...)
+		params := paramsFromJSchema(i.Query.Schema, ParameterLocationQuery)
+		for _, par := range params {
+			par.Style = ParameterStyleDeepObject
+			par.Explode = true
+		}
+		return append(p, params...)
 	}
 	return p
 }

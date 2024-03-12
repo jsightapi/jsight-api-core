@@ -17,18 +17,21 @@
               "description": "necessary query"
             },
             "name": "q-mandatory",
-            "in": "query"
+            "in": "query",
+            "style": "deepObject",
+            "explode": true
           },
           {
             "description": "unnecessary query",
-            "required": false,
             "schema": {
               "type": "integer",
               "example": 2,
               "description": "unnecessary query"
             },
             "name": "q-not-mandarory",
-            "in": "query"
+            "in": "query",
+            "style": "deepObject",
+            "explode": true
           }
         ],
         "requestBody": {

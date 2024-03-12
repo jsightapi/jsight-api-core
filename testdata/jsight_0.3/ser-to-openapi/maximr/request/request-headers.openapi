@@ -10,7 +10,7 @@
         "parameters": [
           {
             "in": "header",
-            "description":"necessary header",
+            "description": "necessary header",
             "name": "h-mandatory",
             "required": true,
             "schema": {
@@ -23,7 +23,6 @@
             "in": "header",
             "name": "h-optional",
             "description": "unnecessary header",
-            "required": false,
             "schema": {
               "type": "integer",
               "example": 2,

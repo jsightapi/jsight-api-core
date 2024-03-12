@@ -1,8 +1,6 @@
 package openapi
 
 import (
-	_ "fmt"
-
 	"github.com/jsightapi/jsight-api-core/catalog"
 
 	sc "github.com/jsightapi/jsight-schema-core/openapi"
@@ -10,23 +8,6 @@ import (
 
 // Only for Response objects. For request headers refer to "parameters"
 type ResponseHeaders map[string]*HeaderObject
-
-// TODO: may not be a schema, may be a literal | array
-// func NewHeaders(h *catalog.HTTPResponseHeaders) ResponseHeaders {
-// 	if h == nil {
-// 		return nil
-// 	}
-//
-// 	r := make(ResponseHeaders, 0)
-//
-// 	// TODO: children may be nil if schema is literal
-// 	for _, ch := range h.Schema.ASTNode.Children {
-// 		pi := GetParamInfo(ch)
-// 		r[ch.Key] = NewHeaderObject(pi.Required(), pi.AllowEmptyValue(), pi.Description(), pi.Schema())
-// 	}
-//
-// 	return r
-// }
 
 type headerInfo struct {
 	schemaInfo        sc.SchemaInfo
@@ -67,16 +48,8 @@ func makeResponseHeaders(headersArr ...*catalog.HTTPResponseHeaders) ResponseHea
 			r[name] = headerObjectForAnyOf(headerInfos)
 		}
 	}
-
-	// fmt.Printf("\n headers len: %d", len(r))
-
 	return r
 }
-
-// // TODO: use strings.go
-// func combineHeaderDescription(context string, propertyAnnotation string) string {
-// 	return context + ": " + propertyAnnotation
-// }
 
 func headerObjectForAnyOf(headersInfos []headerInfo) *HeaderObject {
 	schemaObjects := make([]SchemaObject, 0)
@@ -91,5 +64,8 @@ func headerObjectForAnyOf(headersInfos []headerInfo) *HeaderObject {
 		schemaObjects = append(schemaObjects, so)
 	}
 
-	return newHeaderObject(required, "", &schemaObjectAnyOf{schemaObjects, ""})
+	return newHeaderObject(
+		required, "",
+		&schemaObjectAnyOf{schemaObjects, ""},
+	)
 }

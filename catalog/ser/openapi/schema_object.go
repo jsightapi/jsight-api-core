@@ -13,7 +13,7 @@ type SchemaObject interface {
 
 func schemaObjectFromExchangeSchema(es catalog.ExchangeSchema) SchemaObject {
 	// debugExchangeSchema(es)
-	
+
 	switch es.Notation() {
 	case notation.SchemaNotationJSight, notation.SchemaNotationRegex:
 		return schemaObjectFromSchema(es)
