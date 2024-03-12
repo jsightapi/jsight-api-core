@@ -46,7 +46,8 @@
                       "example": false
                     }
                   },
-                  "required": ["true", "false"]
+                  "required": ["true", "false"],
+                  "additionalProperties": false
                 }
               }
             }

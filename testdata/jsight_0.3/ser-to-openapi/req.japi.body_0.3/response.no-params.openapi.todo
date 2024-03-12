@@ -101,7 +101,8 @@
                       "example": "some-string"
                     }
                   },
-                  "required": ["string"]
+                  "required": ["string"],
+                  "additionalProperties": false
                 }
               }
             }
@@ -245,7 +246,8 @@
             "example": "bar"
           }
         },
-        "required": ["foo"]
+        "required": ["foo"],
+        "additionalProperties": false
       },
       "decimal": {
         "type": "number",

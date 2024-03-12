@@ -70,7 +70,8 @@
                       "example": -0.0
                     }
                   },
-                  "required": ["positiveInteger", "positiveFloat", "negativeInteger", "negativeFloat", "zeroEndPositiveFloat", "zeroEndNegativeFloat", "zeroPositiveFloat", "zeroNegativeFloat"]
+                  "required": ["positiveInteger", "positiveFloat", "negativeInteger", "negativeFloat", "zeroEndPositiveFloat", "zeroEndNegativeFloat", "zeroPositiveFloat", "zeroNegativeFloat"],
+                  "additionalProperties": false
                 }
               }
             }

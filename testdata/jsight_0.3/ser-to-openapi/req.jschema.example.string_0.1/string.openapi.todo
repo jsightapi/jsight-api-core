@@ -46,7 +46,8 @@
                       "example": ""
                     }
                   },
-                  "required": ["scaryString", "emptyString"]
+                  "required": ["scaryString", "emptyString"],
+                  "additionalProperties": false
                 }
               }
             }

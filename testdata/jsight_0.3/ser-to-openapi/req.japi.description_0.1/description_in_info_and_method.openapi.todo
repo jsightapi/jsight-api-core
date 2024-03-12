@@ -1,0 +1,25 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "",
+    "version": "",
+    "description": "# Markdown Features Example (DIRECTIVE \"INFO\")\n\nThis is an example of **Markdown** text that showcases various Markdown features.\n\n## Headings\n\n### Subheadings\n\n#### Subsubheadings\n\n## Text Formatting\n\nYou can use **bold**, *italic*, ~~strikethrough~~, and \u003cu\u003eunderlined\u003c/u\u003e text.\n\n## Superscript and Subscript\n\n- Superscript: X\u003csup\u003e2\u003c/sup\u003e (X^2^)\n- Subscript: H\u003csub\u003e2\u003c/sub\u003eO (H~2~O)\n\n## Highlight\n\n\u003cmark\u003eHighlight this text.\u003cmark\u003e\n==Highlight this text too.==\n\n## Lists\n\n### Unordered List\n\n- Item 1\n- Item 2\n    - Sub-item 2.1\n    - Sub-item 2.2\n\n### Ordered List\n\n1. First item\n2. Second item\n    1. Sub-item 2.1\n    2. Sub-item 2.2\n\n## Links and Images\n\n[JSight](https://jsight.io) is the new standard for API documentation.\n\n![Markdown Logo](https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Markdown-mark.svg/1920px-Markdown-mark.svg.png)\n\n## Blockquotes\n\n\u003e \"The greatest glory in living lies not in never falling, but in rising every time we fall.\" - *Nelson Mandela*\n\n## Inline Code\n\nUse backticks to highlight `inline code`.\n\n## Code Blocks\n\n```python\ndef greet(name):\n    print(f\"Hello, {name}!\")\n\ngreet(\"World\")\n```\n\n## Tables\n\n| Name  | Age | Occupation   |\n|-------|-----|--------------|\n| Alice | 30  | Programmer   |\n| Bob   | 35  | Data Analyst |\n| Carol | 28  | Designer     |\n\n## Horizontal Rule\n\n---\n\n## Escaping Characters\n\nTo escape special Markdown characters like \\*, \\_, or \\#, use a backslash: \\\\\\*, \\\\\\_, \\\\\\#.\n\n## Checkboxes\n\n- [x] Task 1\n- [ ] Task 2\n- [ ] Task 3\n\n## Emoji\n\nMarkdown supports emojis :smiley:, :rocket:, :heart_eyes:, and many more!\n\n## Math Equations\n\nYou can include math equations using LaTeX syntax:\n\n$$\nf(x) = ax^2 + bx + c\n$$\n\n## Footnotes\n\nHere's a footnote reference[^1].\n\n[^1]: This is the footnote content."
+  },
+  "paths": {
+    "/url": {
+      "description": "# Markdown Features Example (DIRECTIVES-HTTP-METHODS)\n\nThis is an example of **Markdown** text that showcases various Markdown features.\n\n## Headings\n\n### Subheadings\n\n#### Subsubheadings\n\n## Text Formatting\n\nYou can use **bold**, *italic*, ~~strikethrough~~, and \u003cu\u003eunderlined\u003c/u\u003e text.\n\n## Superscript and Subscript\n\n- Superscript: X\u003csup\u003e2\u003c/sup\u003e (X^2^)\n- Subscript: H\u003csub\u003e2\u003c/sub\u003eO (H~2~O)\n\n## Highlight\n\n\u003cmark\u003eHighlight this text.\u003cmark\u003e\n==Highlight this text too.==\n\n## Lists\n\n### Unordered List\n\n- Item 1\n- Item 2\n    - Sub-item 2.1\n    - Sub-item 2.2\n\n### Ordered List\n\n1. First item\n2. Second item\n    1. Sub-item 2.1\n    2. Sub-item 2.2\n\n## Links and Images\n\n[JSight](https://jsight.io) is the new standard for API documentation.\n\n![Markdown Logo](https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Markdown-mark.svg/1920px-Markdown-mark.svg.png)\n\n## Blockquotes\n\n\u003e \"The greatest glory in living lies not in never falling, but in rising every time we fall.\" - *Nelson Mandela*\n\n## Code Blocks\n\n```python\ndef greet(name):\n    print(f\"Hello, {name}!\")\n\ngreet(\"World\")\n```\n\n## Tables\n\n| Name  | Age | Occupation   |\n|-------|-----|--------------|\n| Alice | 30  | Programmer   |\n| Bob   | 35  | Data Analyst |\n| Carol | 28  | Designer     |\n\n## Horizontal Rule\n\n---\n\n## Inline Code\n\nUse backticks to highlight `inline code`.\n\n## Escaping Characters\n\nTo escape special Markdown characters like \\*, \\_, or \\#, use a backslash: \\\\\\*, \\\\\\_, \\\\\\#.\n\n## Checkboxes\n\n- [x] Task 1\n- [ ] Task 2\n- [ ] Task 3\n\n## Emoji\n\nMarkdown supports emojis :smiley:, :rocket:, :heart_eyes:, and many more!\n\n## Math Equations\n\nYou can include math equations using LaTeX syntax:\n\n$$\nf(x) = ax^2 + bx + c\n$$\n\n## Footnotes\n\nHere's a footnote reference[^1].\n\n[^1]: This is the footnote content.",
+      "get": {
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

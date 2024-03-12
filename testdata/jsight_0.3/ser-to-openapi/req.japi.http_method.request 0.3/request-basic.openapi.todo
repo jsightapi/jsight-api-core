@@ -21,7 +21,9 @@
           "default": {
             "description": "",
             "content": {
-              "*/*": {}
+              "*/*": {
+                "schema": {}
+              }
             }
           }
         }
@@ -50,7 +52,8 @@
                     "example": "bar"
                   }
                 },
-                "required": ["foo"]
+                "required": ["foo"],
+                "additionalProperties": false
               }
             }
           }
@@ -59,7 +62,9 @@
           "default": {
             "description": "",
             "content": {
-              "*/*": {}
+              "*/*": {
+                "schema": {}
+              }
             }
           }
         }
