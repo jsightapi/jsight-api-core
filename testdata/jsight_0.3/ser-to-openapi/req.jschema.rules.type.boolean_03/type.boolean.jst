@@ -1,0 +1,17 @@
+JSIGHT 0.3
+
+GET /request/jschema/rules/type/boolean
+  200
+    true // {type: "boolean"}
+  201
+    false // {type: "boolean"}
+  202
+    {
+      "true": true, // {type: "boolean"}
+      "false": false // {type: "boolean"}
+    }
+  203
+    [
+      true, // {type: "boolean"}
+      false // {type: "boolean"}
+    ]
