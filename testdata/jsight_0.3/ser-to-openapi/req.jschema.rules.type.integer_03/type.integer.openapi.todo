@@ -83,7 +83,7 @@
                       "example": 18446744073709551615
                     }
                   },
-                  "required": ["someString", "emptyString"],
+                  "required": ["zeroInteger", "negativeInteger", "positiveInteger"],
                   "additionalProperties": false
                 }
               }

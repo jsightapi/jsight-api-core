@@ -1,0 +1,33 @@
+JSIGHT 0.3
+
+GET /request/jschema/rules/type/float
+  200
+    12.2 // {type: "float"}
+  201
+    -987654321.12 // {type: "float"}
+  202
+    123.0 // {type: "float"}
+  203
+    -123.0 // {type: "float"}
+  204
+    0.0 // {type: "float"}
+  205
+    -0.0 // {type: "float"}
+  206
+    {
+      "positiveFloat": 12.2, // {type: "float"}
+      "negativeFloat": -987654321.12, // {type: "float"}
+      "zeroEndPositiveFloat": 123.0, // {type: "float"}
+      "zeroEndNegativeFloat": -123.0, // {type: "float"}
+      "zeroPositiveFloat": 0.0, // {type: "float"}
+      "zeroNegativeFloat": -0.0 // {type: "float"}
+    }
+  207
+    [
+      12.2, // {type: "float"}
+      -987654321.12, // {type: "float"}
+      123.0, // {type: "float"}
+      -123.0, // {type: "float"}
+      0.0, // {type: "float"}
+      -0.0 // {type: "float"}
+    ]
