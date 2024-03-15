@@ -1,0 +1,177 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "",
+    "version": ""
+  },
+  "paths": {
+    "/request/jschema/rules/type/decimal": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "number",
+                  "example": 0.12,
+                  "multipleOf": 0.01
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "number",
+                  "example": 0.9,
+                  "multipleOf": 0.1
+                }
+              }
+            }
+          },
+          "202": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "number",
+                  "example": 0.12,
+                  "multipleOf": 0.01
+                }
+              }
+            }
+          },
+          "203": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "number",
+                  "example": 0.9,
+                  "multipleOf": 0.1
+                }
+              }
+            }
+          },
+          "204": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "number",
+                  "example": 0.901,
+                  "multipleOf": 0.001
+                }
+              }
+            }
+          },
+          "205": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "number",
+                  "example": 0.900,
+                  "multipleOf": 0.1
+                }
+              }
+            }
+          },
+          "206": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "number",
+                  "example": -0.901,
+                  "multipleOf": 0.001
+                }
+              }
+            }
+          },
+          "207": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "decimal2": {
+                      "type": "number",
+                      "example": 0.12,
+                      "multipleOf": 0.01
+                    },
+                    "decimal1": {
+                      "type": "number",
+                      "example": 0.9,
+                      "multipleOf": 0.1
+                    },
+                    "decimal3": {
+                      "type": "number",
+                      "example": 0.901,
+                      "multipleOf": 0.001
+                    },
+                    "decimalZero1": {
+                      "type": "number",
+                      "example": 0.900,
+                      "multipleOf": 0.1
+                    },
+                    "negativeDecimal3": {
+                      "type": "number",
+                      "example": -0.901,
+                      "multipleOf": 0.001
+                    }
+                  },
+                  "required": ["decimal2", "decimal1","decimal3", "decimalZero1","negativeDecimal3"],
+                  "additionalProperties": false
+                }
+              }
+            }
+          },
+          "208": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "anyOf": [
+                      {
+                        "type": "number",
+                        "example": 0.12,
+                        "multipleOf": 0.01
+                      },
+                      {
+                        "type": "number",
+                        "example": 0.9,
+                        "multipleOf": 0.1
+                      },
+                      {
+                        "type": "number",
+                        "example": 0.901,
+                        "multipleOf": 0.001
+                      },
+                      {
+                        "type": "number",
+                        "example": 0.900,
+                        "multipleOf": 0.1
+                      },
+                      {
+                        "type": "number",
+                        "example": -0.901,
+                        "multipleOf": 0.001
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
