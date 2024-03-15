@@ -1,0 +1,122 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "",
+    "version": ""
+  },
+  "paths": {
+    "/request/jschema/rules/type/integer": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "integer",
+                  "example": 9
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "integer",
+                  "example": -9
+                }
+              }
+            }
+          },
+          "202": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "integer",
+                  "example": 0
+                }
+              }
+            }
+          },
+          "203": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "integer",
+                  "example": 18446744073709551615
+                }
+              }
+            }
+          },
+          "204": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "integer",
+                  "example": -18446744073709551615
+                }
+              }
+            }
+          },
+          "205": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "zeroInteger": {
+                      "type": "integer",
+                      "example": 0
+                    },
+                    "negativeInteger": {
+                      "type": "integer",
+                      "example": -18446744073709551615
+                    },
+                    "positiveInteger": {
+                      "type": "integer",
+                      "example": 18446744073709551615
+                    }
+                  },
+                  "required": ["someString", "emptyString"],
+                  "additionalProperties": false
+                }
+              }
+            }
+          },
+          "206": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "anyOf": [
+                      {
+                        "type": "integer",
+                        "example": 0
+                      },
+                      {
+                        "type": "integer",
+                        "example": -18446744073709551615
+                      },
+                      {
+                        "type": "integer",
+                        "example": 18446744073709551615
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
