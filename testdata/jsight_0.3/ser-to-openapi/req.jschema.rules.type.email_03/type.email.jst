@@ -1,0 +1,13 @@
+JSIGHT 0.3
+
+GET /request/jschema/rules/type/email
+  200
+    "tom@cats.com" // {type: "email"}
+  201
+    {
+      "someEmail": "tom@cats.com" // {type: "email"}
+    }
+  202
+    [
+      "tom@cats.com"  // {type: "email"}
+    ]

@@ -1,0 +1,157 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "",
+    "version": ""
+  },
+  "paths": {
+    "/request/jschema/rules/type/float": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "number",
+                  "example": 12.2
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "number",
+                  "example": -987654321.12
+                }
+              }
+            }
+          },
+          "202": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "number",
+                  "example": 123.0
+                }
+              }
+            }
+          },
+          "203": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "number",
+                  "example": -123.0
+                }
+              }
+            }
+          },
+          "204": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "number",
+                  "example": 0.0
+                }
+              }
+            }
+          },
+          "205": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "number",
+                  "example": -0.0
+                }
+              }
+            }
+          },
+          "206": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "positiveFloat": {
+                      "type": "number",
+                      "example": 12.2
+                    },
+                    "negativeFloat": {
+                      "type": "number",
+                      "example": -987654321.12
+                    },
+                    "zeroEndPositiveFloat": {
+                      "type": "number",
+                      "example": 123.0
+                    },
+                    "zeroEndNegativeFloat": {
+                      "type": "number",
+                      "example": -123.0
+                    },
+                    "zeroPositiveFloat": {
+                      "type": "number",
+                      "example": 0.0
+                    },
+                    "zeroNegativeFloat": {
+                      "type": "number",
+                      "example": -0.0
+                    }
+                  },
+                  "required": ["positiveFloat", "negativeFloat","zeroEndPositiveFloat", "zeroEndNegativeFloat","zeroPositiveFloat", "zeroNegativeFloat"],
+                  "additionalProperties": false
+                }
+              }
+            }
+          },
+          "207": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "anyOf": [
+                      {
+                        "type": "number",
+                        "example": 12.2
+                      },
+                      {
+                        "type": "number",
+                        "example": -987654321.12
+                      },
+                      {
+                        "type": "number",
+                        "example": 123.0
+                      },
+                      {
+                        "type": "number",
+                        "example": -123.0
+                      },
+                      {
+                        "type": "number",
+                        "example": 0.0
+                      },
+                      {
+                        "type": "number",
+                        "example": -0.0
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
