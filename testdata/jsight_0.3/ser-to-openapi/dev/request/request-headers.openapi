@@ -1,0 +1,66 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "",
+    "version": ""
+  },
+  "paths": {
+    "/some": {
+      "get": {
+        "parameters": [
+          {
+            "in": "header",
+            "description": "necessary header",
+            "name": "h-mandatory",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "example": 1,
+              "description": "necessary header"
+            }
+          },
+          {
+            "in": "header",
+            "name": "h-optional",
+            "description": "unnecessary header",
+            "schema": {
+              "type": "integer",
+              "example": 2,
+              "description": "unnecessary header"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "*/*": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "k1": {
+                    "type": "string",
+                    "example": "v1"
+                  }
+                },
+                "required": [
+                  "k1"
+                ],
+                "additionalProperties": false
+              }
+            }
+          }
+        },
+        "responses": {
+          "default": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

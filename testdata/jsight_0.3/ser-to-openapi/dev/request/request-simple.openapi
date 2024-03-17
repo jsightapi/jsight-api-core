@@ -1,0 +1,47 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "",
+    "version": ""
+  },
+  "paths": {
+    "/some": {
+      "get": {
+        "summary": "get some",
+        "description": "Full description",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "*/*": {
+              "schema": {
+                "type": "object",
+                "description": "root annotation",
+                "properties": {
+                  "k1": {
+                    "description": "key one",
+                    "type": "string",
+                    "example": "v1"
+                  }
+                },
+                "required": [
+                  "k1"
+                ],
+                "additionalProperties": false
+              }
+            }
+          }
+        },
+        "responses": {
+          "default": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

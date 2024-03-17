@@ -1,0 +1,28 @@
+JSIGHT 0.3
+
+INFO
+  Title wip
+  Version 1
+
+POST /test/{p1}/{p2}/{p3}
+  
+  Path
+    {
+      "p1": "p1_v",
+      "p2": true,
+      "p3": 123
+    }
+
+  Request
+    {
+      "one": "two"
+    }
+
+  200 
+    "ok"
+
+  400
+    {
+      "err": "error text",
+      "code": 1
+    }
