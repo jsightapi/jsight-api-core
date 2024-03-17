@@ -5,8 +5,8 @@ import (
 )
 
 type Operation struct {
-	Summary     *string            `json:"summary,omitempty"`
-	Description *string            `json:"description,omitempty"`
+	Summary			string            `json:"summary,omitempty"`
+	Description string            `json:"description,omitempty"`
 	Parameters  []*ParameterObject `json:"parameters,omitempty"`
 	RequestBody *RequestBody       `json:"requestBody,omitempty"`
 	Responses   *Responses         `json:"responses"`
@@ -14,12 +14,29 @@ type Operation struct {
 
 func newOperation(i *catalog.HTTPInteraction) *Operation {
 	return &Operation{
-		Summary:     i.Annotation,
-		Description: i.Description,
+		Summary:     processMethodSummary(i.Annotation),
+		Description: processMethodDescription(i.Description),
 		Parameters:  fillOperationParams(i),
 		RequestBody: newRequestBody(i.Request),
 		Responses:   newResponses(i),
 	}
+}
+
+func processMethodDescription(s *string) string {
+	if s == nil {
+		return ""
+	}
+	
+	return *s
+}
+
+func processMethodSummary(s *string) string {
+	if s == nil {
+		return ""
+	}
+	
+	r := *s
+	return r
 }
 
 func fillOperationParams(i *catalog.HTTPInteraction) []*ParameterObject {

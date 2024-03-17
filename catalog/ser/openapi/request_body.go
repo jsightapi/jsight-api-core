@@ -1,14 +1,10 @@
 package openapi
 
 import (
-	// "fmt"
-
 	"github.com/jsightapi/jsight-api-core/catalog"
 	"github.com/jsightapi/jsight-api-core/notation"
 	schema "github.com/jsightapi/jsight-schema-core"
 )
-
-// import "github.com/jsightapi/jsight-api-core/catalog"
 
 type RequestBody struct {
 	Content  *Content `json:"content"`
@@ -48,7 +44,7 @@ func requestBodyRequired(r *catalog.HTTPRequest) bool {
 	return true
 }
 
-// TODO: cannot be finished until parser bug if fixed and may be some extra in schemaInfo
+// TODO: cannot be finished until parser bug if fixed and may be smth extra in schemaInfo
 func schemaReferencesTypeAny(es catalog.ExchangeSchema) bool {
 	if es.Notation() == notation.SchemaNotationJSight {
 		// js := es.(*catalog.ExchangeJSightSchema)

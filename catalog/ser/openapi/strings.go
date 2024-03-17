@@ -1,6 +1,8 @@
 package openapi
 
-import "strings"
+import (
+	"strings"
+)
 
 
 func concatenateDescription(l string, r string) string {
@@ -15,4 +17,13 @@ func concatenateDescription(l string, r string) string {
 		sb.WriteString(r)
 	}
 	return sb.String()
+}
+
+
+func escapeTabs(s string) string {
+	return strings.ReplaceAll(s, "\t", "\\t")
+}
+
+func escapeNewLines(s string) string {
+	return strings.ReplaceAll(s, "\n", "\\n")
 }

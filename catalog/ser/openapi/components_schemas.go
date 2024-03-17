@@ -1,6 +1,8 @@
 package openapi
 
 import (
+	"fmt"
+
 	"github.com/jsightapi/jsight-api-core/catalog"
 )
 
@@ -13,8 +15,13 @@ func newSchemas(tt *catalog.UserTypes) ComponentsSchemas {
 
 	ss := make(ComponentsSchemas, tt.Len())
 	_ = tt.Each(func(name string, ut *catalog.UserType) error {
-		ss[typeNameToSchemaName(name)] = schemaObjectFromExchangeSchema(ut.Schema)
+		typeSchemaObject := schemaObjectFromExchangeSchema(ut.Schema)
+		typeSchemaObject.SetDescription(ut.Annotation)
 
+		fmt.Printf("Type annotation: %s\n", ut.Annotation)
+
+		ss[typeNameToSchemaName(name)] = typeSchemaObject
+		
 		return nil
 	})
 
