@@ -38,7 +38,16 @@
           "arr": {
             "type": "array",
             "items": {
-              "type": "integer"
+              "anyOf": [
+                {
+                  "type": "integer",
+                  "example": 2
+                },
+                {
+                  "type": "integer",
+                  "example": 3
+                }
+              ]
             }
           },
           "obj": {
