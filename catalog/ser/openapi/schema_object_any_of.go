@@ -4,8 +4,8 @@ import (
 	"encoding/json"
 )
 
-func schemaObjectForAnyOf(anyOf []SchemaObject, rootDescription string) SchemaObject {
-	return &schemaObjectAnyOf{anyOf, rootDescription}
+func schemaObjectForAnyOf(anyOf []SchemaObject) SchemaObject {
+	return &schemaObjectAnyOf{anyOf, ""}
 }
 
 type schemaObjectAnyOf struct {

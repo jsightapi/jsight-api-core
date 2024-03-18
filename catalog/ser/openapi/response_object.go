@@ -31,7 +31,7 @@ func newResponse(r *catalog.HTTPResponse) *ResponseObject {
 
 func newResponseAnyOf(responses []*catalog.HTTPResponse) *ResponseObject {
 	hh := make([]*catalog.HTTPResponseHeaders, 0)
-	sos := make([]SchemaObject, 0)
+	sos := make(map[mediaType][]SchemaObject, 0)
 
 	for _, response := range responses {
 		hh = append(hh, response.Headers)
@@ -40,9 +40,11 @@ func newResponseAnyOf(responses []*catalog.HTTPResponse) *ResponseObject {
 
 		var so SchemaObject
 		var desc string
+		var mt mediaType
 		if response.Body == nil {
 			so = schemaObjectForAny()
-			so.SetDescription(respAnnotation)
+			desc = respAnnotation
+			mt = MediaTypeRangeAny
 		} else {
 			s := response.Body.Schema
 			switch s.Notation() {
@@ -57,13 +59,13 @@ func newResponseAnyOf(responses []*catalog.HTTPResponse) *ResponseObject {
 				so = schemaObjectForAny()
 				desc = respAnnotation
 			case notation.SchemaNotationEmpty:
-				// TODO: probably needs to be ignored in any of.
-				//  if there are any valid schemas then adding an empty means nothing
+				// TODO: ???
+				//
 			}
-
-			so.SetDescription(desc)
-			sos = append(sos, so)
+			mt = formatToMediaType(response.Body.Format)
 		}
+		so.SetDescription(desc)
+		sos[mt] = append(sos[mt], so)
 	}
 
 	// mto := MediaTypeObject{
@@ -72,7 +74,7 @@ func newResponseAnyOf(responses []*catalog.HTTPResponse) *ResponseObject {
 	//
 	return &ResponseObject{
 		Headers: makeResponseHeaders(hh...),
-		Content: contentForAnyOf(sos),
+		Content: contentForVariousMediaTypes(sos),
 	}
 }
 

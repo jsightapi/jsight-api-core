@@ -25,9 +25,15 @@ func contentForEmpty() *Content {
 	return &c
 }
 
-func contentForAnyOf(schemaObjects []SchemaObject) *Content {
+func contentForVariousMediaTypes(schemaObjectsMap map[mediaType][]SchemaObject) *Content {
 	c := make(Content, 1)
-	c[MediaTypeRangeAny] = &MediaTypeObject{schemaObjectForAnyOf(schemaObjects, "")}
+	for mt, schemaObjects := range schemaObjectsMap {
+		if len(schemaObjects) == 1 {
+			c[mt] = &MediaTypeObject{schemaObjects[0]}
+		} else {
+			c[mt] = &MediaTypeObject{schemaObjectForAnyOf(schemaObjects)}
+		}
+	}
 	return &c
 }
 

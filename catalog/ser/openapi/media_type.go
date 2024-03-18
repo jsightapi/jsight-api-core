@@ -18,11 +18,12 @@ const (
 func formatToMediaType(f catalog.SerializeFormat) mediaType {
 	switch f {
 	case catalog.SerializeFormatJSON:
+		return MediaTypeJson
 	case catalog.SerializeFormatPlainString:
+		return MediaTypeTextPlain
 	case catalog.SerializeFormatBinary:
 		return MediaTypeRangeAny
 	default:
 		return MediaTypeRangeAny
 	}
-	return MediaTypeRangeAny
 }

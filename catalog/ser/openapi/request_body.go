@@ -1,6 +1,8 @@
 package openapi
 
 import (
+	"fmt"
+
 	"github.com/jsightapi/jsight-api-core/catalog"
 	"github.com/jsightapi/jsight-api-core/notation"
 	schema "github.com/jsightapi/jsight-schema-core"
@@ -20,6 +22,7 @@ func newRequestBody(r *catalog.HTTPRequest) *RequestBody {
 	s := r.HTTPRequestBody.Schema
 	switch s.Notation() {
 	case notation.SchemaNotationJSight, notation.SchemaNotationRegex:
+		fmt.Printf("FORMAT IS: %s", r.Format)
 		c = contentForSchema(r.Format, s)
 	case notation.SchemaNotationAny:
 		c = contentForAny()
