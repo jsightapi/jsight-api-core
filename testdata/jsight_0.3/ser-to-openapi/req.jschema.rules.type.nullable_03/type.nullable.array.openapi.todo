@@ -1,0 +1,64 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "",
+    "version": ""
+  },
+
+  "paths": {
+    "/request/jschema/rules/type/nullable/array": {
+      "get": {
+        "responses": {
+
+          "200": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "example": "sample"
+                  },
+                  "description": "some text",
+                  "minItems": 1,
+                  "nullable": true
+                }
+              }
+            }
+          },
+
+          "201": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "maxItems": 0,
+                  "items": {},
+                  "nullable": true
+                }
+              }
+            }
+          },
+
+          "202": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "minItems": 0,
+                  "maxItems": 0,
+                  "items": {},
+                  "nullable": true
+                }
+              }
+            }
+          }
+
+        }
+      }
+    }
+  }
+}

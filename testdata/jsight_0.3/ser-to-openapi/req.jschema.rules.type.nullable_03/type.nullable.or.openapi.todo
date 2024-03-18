@@ -1,0 +1,34 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "",
+    "version": ""
+  },
+
+  "paths": {
+    "/request/jschema/rules/type/nullable/or": {
+      "get": {
+        "responses": {
+
+          "200": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "anyOf": [
+                    { "type": "string", "format": "uuid" },
+                    { "type": "string", "format": "email" }
+                  ],
+                  "example": "cat@mail.com",
+                  "nullable": true,
+                  "description": "some text"
+                }
+              }
+            }
+          }
+
+        }
+      }
+    }
+  }
+}

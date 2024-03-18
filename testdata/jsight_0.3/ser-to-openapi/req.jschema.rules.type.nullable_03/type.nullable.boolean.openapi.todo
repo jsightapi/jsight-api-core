@@ -1,0 +1,82 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "",
+    "version": ""
+  },
+
+  "paths": {
+    "/request/jschema/rules/type/nullable/boolean": {
+      "get": {
+        "responses": {
+
+          "200": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "boolean",
+                  "example": true,
+                  "nullable": true
+                }
+              }
+            }
+          },
+
+          "201": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "sBoolean": {
+                      "type": "boolean",
+                      "example": true,
+                      "nullable": true
+                    }
+                  },
+                  "required": ["sBoolean"],
+                  "additionalProperties": false
+                }
+              }
+            }
+          },
+
+          "202": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "anyOf": [
+                      {
+                        "type": "boolean",
+                        "example": true,
+                        "nullable": true
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+
+          "203": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "example": false,
+                  "nullable": true
+                }
+              }
+            }
+          }
+
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+JSIGHT 0.3
+
+GET /request/jschema/rules/type/nullable/array
+  200
+    [ // {minItems: 1, nullable: true} - some text
+       "sample"
+    ]
+  201
+    [ // {type: "array", nullable: true}
+    ]
+  202
+    [ // {type: "array", nullable: true, minItems: 0}
+    ]
