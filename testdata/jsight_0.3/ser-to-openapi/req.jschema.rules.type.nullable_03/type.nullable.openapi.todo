@@ -1,0 +1,627 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "",
+    "version": ""
+  },
+
+  "paths": {
+    "/request/jschema/rules/type/nullable": {
+      "get": {
+        "responses": {
+
+          "200": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "boolean",
+                  "example": true,
+                  "nullable": true
+                }
+              }
+            }
+          },
+
+          "201": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string",
+                  "format": "date",
+                  "example": "2024-02-19",
+                  "nullable": true
+                }
+              }
+            }
+          },
+
+          "202": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string",
+                  "format": "date-time",
+                  "example": "2024-02-14T09:14:28+03:00",
+                  "nullable": true
+                }
+              }
+            }
+          },
+
+          "203": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "number",
+                  "example": 1.12,
+                  "multipleOf": 0.01,
+                  "nullable": true
+                }
+              }
+            }
+          },
+
+          "204": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string",
+                  "format": "email",
+                  "example": "test@example.com",
+                  "nullable": true
+                }
+              }
+            }
+          },
+
+          "205": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "example": "white",
+                  "enum": ["white", "blue", "red"],
+                  "nullable": true
+                }
+              }
+            }
+          },
+
+          "206": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "example": -2.1,
+                  "enum": [-3, -2.1, 1.2, true, false, "-3", "0", "1.2", "string", "true"],
+                  "nullable": true
+                }
+              }
+            }
+          },
+
+          "207": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "example": null,
+                  "enum": ["white", "blue", "red", null],
+                  "nullable": true
+                }
+              }
+            }
+          },
+
+          "208": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "example": null,
+                  "enum": ["white", "blue", "red"],
+                  "nullable": true
+                }
+              }
+            }
+          },
+
+          "209": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "number",
+                  "example": 12.34,
+                  "nullable": true
+                }
+              }
+            }
+          },
+
+          "210": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "integer",
+                  "example": 1,
+                  "nullable": true
+                }
+              }
+            }
+          },
+
+          "211": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "enum": [null],
+                  "example": null,
+                  "nullable": true
+                }
+              }
+            }
+          },
+
+          "212": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string",
+                  "example": "foo",
+                  "nullable": true
+                }
+              }
+            }
+          },
+
+          "213": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string",
+                  "example": "https://www.com",
+                  "format":"uri",
+                  "nullable": true
+                }
+              }
+            }
+          },
+
+          "214": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string",
+                  "example": "53496d7f-1374-4368-a829-74ccd47aec1c",
+                  "format":"uuid",
+                  "nullable": true
+                }
+              }
+            }
+          },
+
+          "215": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "sBoolean": {
+                      "type": "boolean",
+                      "example": true,
+                      "nullable": true
+                    },
+                    "sDate": {
+                      "type": "string",
+                      "format": "date",
+                      "example": "2024-02-19",
+                      "nullable": true
+                    },
+                    "sDatetime": {
+                      "type": "string",
+                      "format": "date-time",
+                      "example": "2024-02-14T09:14:28+03:00",
+                      "nullable": true
+                    },
+                    "sDecimal": {
+                      "type": "number",
+                      "example": 1.12,
+                      "multipleOf": 0.01,
+                      "nullable": true
+                    },
+                    "sEmail": {
+                      "type": "string",
+                      "format": "email",
+                      "example": "test@example.com",
+                      "nullable": true
+                    },
+                    "sEnum1": {
+                      "example": "white",
+                      "enum": ["white", "blue", "red"],
+                      "nullable": true
+                    },
+                    "sEnum2": {
+                      "example": -2.1,
+                      "enum": [-3, -2.1, 1.2, true, false, "-3", "0", "1.2", "string", "true"],
+                      "nullable": true
+                    },
+                    "sEnum3": {
+                      "example": null,
+                      "enum": ["white", "blue", "red", null],
+                      "nullable": true
+                    },
+                    "sEnum4": {
+                      "example": null,
+                      "enum": ["white", "blue", "red"],
+                      "nullable": true
+                    },
+                    "sFloat": {
+                      "type": "number",
+                      "example": 12.34,
+                      "nullable": true
+                    },
+                    "sInteger": {
+                      "type": "integer",
+                      "example": 1,
+                      "nullable": true
+                    },
+                    "sNull": {
+                      "enum": [null],
+                      "example": null,
+                      "nullable": true
+                    },
+                    "sString": {
+                      "type": "string",
+                      "example": "foo",
+                      "nullable": true
+                    },
+                    "sUri": {
+                      "type": "string",
+                      "example": "https://www.com",
+                      "format":"uri",
+                      "nullable": true
+                    },
+                    "sUuid": {
+                      "type": "string",
+                      "example": "53496d7f-1374-4368-a829-74ccd47aec1c",
+                      "format":"uuid",
+                      "nullable": true
+                    }
+                  },
+                  "required": ["sBoolean", "sDate", "sDatetime", "sDecimal", "sEmail", "sEnum1", "sEnum2", "sEnum3", "sEnum4", "sFloat", "sInteger", "sNull", "sString", "sUri", "sUuid"],
+                  "additionalProperties": false
+                }
+              }
+            }
+          },
+
+          "216": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "anyOf": [
+                      {
+                        "type": "boolean",
+                        "example": true,
+                        "nullable": true
+                      },
+                      {
+                        "type": "string",
+                        "format": "date",
+                        "example": "2024-02-19",
+                        "nullable": true
+                      },
+                      {
+                        "type": "string",
+                        "format": "date-time",
+                        "example": "2024-02-14T09:14:28+03:00",
+                        "nullable": true
+                      },
+                      {
+                        "type": "number",
+                        "example": 1.12,
+                        "multipleOf": 0.01,
+                        "nullable": true
+                      },
+                      {
+                        "type": "string",
+                        "format": "email",
+                        "example": "test@example.com",
+                        "nullable": true
+                      },
+                      {
+                        "example": "white",
+                        "enum": ["white", "blue", "red"],
+                        "nullable": true
+                      },
+                      {
+                        "example": -2.1,
+                        "enum": [-3, -2.1, 1.2, true, false, "-3", "0", "1.2", "string", "true"],
+                        "nullable": true
+                      },
+                      {
+                        "example": null,
+                        "enum": ["white", "blue", "red", null],
+                        "nullable": true
+                      },
+                      {
+                        "example": null,
+                        "enum": ["white", "blue", "red"],
+                        "nullable": true
+                      },
+                      {
+                        "type": "number",
+                        "example": 12.34,
+                        "nullable": true
+                      },
+                      {
+                        "type": "integer",
+                        "example": 1,
+                        "nullable": true
+                      },
+                      {
+                        "enum": [null],
+                        "example": null,
+                        "nullable": true
+                      },
+                      {
+                        "type": "string",
+                        "example": "foo",
+                        "nullable": true
+                      },
+                      {
+                        "type": "string",
+                        "example": "https://www.com",
+                        "format":"uri",
+                        "nullable": true
+                      },
+                      {
+                        "type": "string",
+                        "example": "53496d7f-1374-4368-a829-74ccd47aec1c",
+                        "format":"uuid",
+                        "nullable": true
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+
+          "217": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "example": false,
+                  "nullable": true
+                }
+              }
+            }
+          },
+
+          "218": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "example": "sample"
+                  },
+                  "description": "some text",
+                  "minItems": 1,
+                  "nullable": true
+                }
+              }
+            }
+          },
+
+          "219": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "maxItems": 0,
+                  "items": {},
+                  "nullable": true
+                }
+              }
+            }
+          },
+
+          "220": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "minItems": 0,
+                  "maxItems": 0,
+                  "items": {},
+                  "nullable": true
+                }
+              }
+            }
+          },
+
+          "221": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "additionalProperties": false,
+                  "nullable": true,
+                  "description": "some text"
+                }
+              }
+            }
+          },
+
+          "222": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "anyOf": [
+                    { "type": "string", "format": "uuid" },
+                    { "type": "string", "format": "email" }
+                  ],
+                  "example": "cat@mail.com",
+                  "nullable": true,
+                  "description": "some text"
+                }
+              }
+            }
+          },
+
+          "223": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "example": "1111 222222",
+                  "description": "Some text",
+                  "nullable": true,
+                  "allOf": [
+                    { "$ref": "#/components/schemas/passportNumber" }
+                  ]
+                }
+              }
+            }
+          },
+
+          "224": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "example": "1111 222222",
+                  "allOf": [
+                    { "$ref": "#/components/schemas/passportNumber" }
+                  ]
+                }
+              }
+            }
+          },
+
+          "225": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "description": "Some text",
+                  "nullable": true,
+                  "allOf": [
+                    { "$ref": "#/components/schemas/cat" }
+                  ]
+                }
+              }
+            }
+          },
+
+          "226": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "description": "Some text",
+                    "nullable": true,
+                    "allOf": [
+                      { "$ref": "#/components/schemas/cat" }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+
+          "227": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "key": {
+                      "nullable": true,
+                      "allOf": [
+                        { "$ref": "#/components/schemas/cat" }
+                      ]
+                    }
+                  },
+                  "additionalProperties": false
+                }
+              }
+            }
+          }
+
+        }
+      }
+    }
+  },
+
+  "components": {
+    "schemas": {
+      "passportNumber": {
+        "type": "string",
+        "pattern": "^\\d{4} \\d{6}$",
+        "example": "1234 567890"
+      },
+      "testUserType": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "jsight": {
+            "type": "string"
+          }
+        }
+      },
+      "catUserType": {
+        "type": "object",
+        "allOf": [
+          { "$ref": "#/components/schemas/testUserType" }
+        ],
+        "properties": {
+          "name": {
+            "type": "string",
+            "example": "@cat"
+          },
+          "jsight": {
+            "type": "string",
+            "example": "{ \"catName\": \"Tom\" }"
+          }
+        }
+      },
+      "cat": {
+        "type": "object",
+        "allOf": [
+          { "$ref": "#/components/schemas/catUserType" }
+        ]
+      }
+    }
+  }
+}
