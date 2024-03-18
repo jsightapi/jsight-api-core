@@ -1,0 +1,111 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "",
+    "version": ""
+  },
+
+  "paths": {
+    "/request/jschema/rules/type/optional": {
+      "get": {
+        "responses": {
+
+          "200": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "required1": {"type": "integer", "example": 111},
+                    "required2": {"type": "integer", "example": 222},
+                    "optional1": {"type": "integer", "example": 333}
+                  },
+                  "additionalProperties": false,
+                  "required": [ "required1", "required2" ]
+                }
+              }
+            }
+          },
+
+          "201": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "anyOf": [
+                      {
+                        "type": "object",
+                        "properties": {
+                          "required1": { "type": "integer", "example": 111 },
+                          "required2": { "type": "integer", "example": 222 },
+                          "optional1": { "type": "integer", "example": 333 }
+                        },
+                        "additionalProperties": false,
+                        "required": [ "required1", "required2" ]
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+
+          "202": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "key": {
+                      "$ref": "#/components/schemas/cat"
+                    }
+                  },
+                  "additionalProperties": false
+                }
+              }
+            }
+          },
+
+          "203": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "key": {
+                      "nullable": true,
+                      "allOf": [
+                        { "$ref": "#/components/schemas/cat" }
+                      ]
+                    }
+                  },
+                  "additionalProperties": false
+                }
+              }
+            }
+          }
+
+        }
+      }
+    }
+  },
+
+  "components": {
+    "schemas": {
+      "cat": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "example": "Tom"
+          }
+        }
+      }
+    }
+  }
+}

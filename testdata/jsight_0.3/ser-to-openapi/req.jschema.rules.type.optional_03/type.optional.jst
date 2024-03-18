@@ -1,0 +1,30 @@
+JSIGHT 0.3
+
+TYPE @cat // A cat.
+{
+  "name": "Tom"
+}
+
+GET /request/jschema/rules/type/optional
+  200
+    {
+      "required1": 111,
+      "required2": 222, // {optional: false}
+      "optional1": 333  // {optional: true}
+    }
+  201
+    [
+      {
+        "required1": 111,
+        "required2": 222, // {optional: false}
+        "optional1": 333  // {optional: true}
+      }
+    ]
+  202
+    {
+      "key": @cat // { optional: true }
+    }
+  203
+    {
+      "key": @cat // { optional: true, nullable: true }
+    }
