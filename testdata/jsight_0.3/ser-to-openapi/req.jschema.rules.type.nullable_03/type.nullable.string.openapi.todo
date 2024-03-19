@@ -13,7 +13,7 @@
           "200": {
             "description": "",
             "content": {
-              "*/*": {
+              "application/json": {
                 "schema": {
                   "type": "string",
                   "format": "date",
@@ -27,7 +27,7 @@
           "201": {
             "description": "",
             "content": {
-              "*/*": {
+              "application/json": {
                 "schema": {
                   "type": "string",
                   "format": "date-time",
@@ -41,7 +41,7 @@
           "202": {
             "description": "",
             "content": {
-              "*/*": {
+              "application/json": {
                 "schema": {
                   "type": "string",
                   "format": "email",
@@ -55,7 +55,7 @@
           "203": {
             "description": "",
             "content": {
-              "*/*": {
+              "application/json": {
                 "schema": {
                   "type": "string",
                   "example": "foo",
@@ -68,7 +68,7 @@
           "204": {
             "description": "",
             "content": {
-              "*/*": {
+              "application/json": {
                 "schema": {
                   "type": "string",
                   "example": "https://www.com",
@@ -82,7 +82,7 @@
           "205": {
             "description": "",
             "content": {
-              "*/*": {
+              "application/json": {
                 "schema": {
                   "type": "string",
                   "example": "53496d7f-1374-4368-a829-74ccd47aec1c",
@@ -96,7 +96,7 @@
           "206": {
             "description": "",
             "content": {
-              "*/*": {
+              "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
@@ -146,7 +146,7 @@
           "207": {
             "description": "",
             "content": {
-              "*/*": {
+              "application/json": {
                 "schema": {
                   "type": "array",
                   "items": {

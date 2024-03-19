@@ -13,7 +13,7 @@
           "200": {
             "description": "",
             "content": {
-              "*/*": {
+              "application/json": {
                 "schema": {
                   "type": "integer",
                   "example": 9,
@@ -27,7 +27,7 @@
           "201": {
             "description": "",
             "content": {
-              "*/*": {
+              "application/json": {
                 "schema": {
                   "type": "integer",
                   "example": -11,
@@ -41,7 +41,7 @@
           "202": {
             "description": "",
             "content": {
-              "*/*": {
+              "application/json": {
                 "schema": {
                   "type": "number",
                   "example": 9.999,
@@ -55,7 +55,7 @@
           "203": {
             "description": "",
             "content": {
-              "*/*": {
+              "application/json": {
                 "schema": {
                   "type": "number",
                   "example": -10.001,
@@ -69,7 +69,7 @@
           "204": {
             "description": "",
             "content": {
-              "*/*": {
+              "application/json": {
                 "schema": {
                   "type": "number",
                   "multipleOf": 0.01,
@@ -84,7 +84,7 @@
           "205": {
             "description": "",
             "content": {
-              "*/*": {
+              "application/json": {
                 "schema": {
                   "type": "number",
                   "multipleOf": 0.01,
@@ -99,7 +99,7 @@
           "206": {
             "description": "",
             "content": {
-              "*/*": {
+              "application/json": {
                 "schema": {
                   "type": "integer",
                   "example": 10,
@@ -112,7 +112,7 @@
           "207": {
             "description": "",
             "content": {
-              "*/*": {
+              "application/json": {
                 "schema": {
                   "type": "integer",
                   "example": -10,
@@ -125,7 +125,7 @@
           "208": {
             "description": "",
             "content": {
-              "*/*": {
+              "application/json": {
                 "schema": {
                   "type": "number",
                   "example": 10.000,
@@ -138,7 +138,7 @@
           "209": {
             "description": "",
             "content": {
-              "*/*": {
+              "application/json": {
                 "schema": {
                   "type": "number",
                   "example": -10.000,
@@ -151,7 +151,7 @@
           "210": {
             "description": "",
             "content": {
-              "*/*": {
+              "application/json": {
                 "schema": {
                   "type": "number",
                   "multipleOf": 0.01,
@@ -165,7 +165,7 @@
           "211": {
             "description": "",
             "content": {
-              "*/*": {
+              "application/json": {
                 "schema": {
                   "type": "number",
                   "multipleOf": 0.01,
@@ -179,7 +179,7 @@
           "212": {
             "description": "",
             "content": {
-              "*/*": {
+              "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
@@ -206,7 +206,7 @@
           "213": {
             "description": "",
             "content": {
-              "*/*": {
+              "application/json": {
                 "schema": {
                   "type": "array",
                   "items": {

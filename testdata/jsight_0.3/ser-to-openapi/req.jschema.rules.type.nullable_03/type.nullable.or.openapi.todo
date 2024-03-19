@@ -13,7 +13,7 @@
           "200": {
             "description": "",
             "content": {
-              "*/*": {
+              "application/json": {
                 "schema": {
                   "anyOf": [
                     { "type": "string", "format": "uuid" },

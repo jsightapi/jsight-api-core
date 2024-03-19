@@ -12,7 +12,7 @@
           "200": {
             "description": "",
             "content": {
-              "*/*": {
+              "application/json": {
                 "schema": {
                   "type": "number",
                   "example": 1.12,
@@ -25,7 +25,7 @@
           "202": {
             "description": "",
             "content": {
-              "*/*": {
+              "application/json": {
                 "schema": {
                   "type": "number",
                   "example": 12.34,
@@ -37,7 +37,7 @@
           "203": {
             "description": "",
             "content": {
-              "*/*": {
+              "application/json": {
                 "schema": {
                   "type": "integer",
                   "example": 1,
@@ -49,7 +49,7 @@
           "204": {
             "description": "",
             "content": {
-              "*/*": {
+              "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
@@ -83,7 +83,7 @@
           "205": {
             "description": "",
             "content": {
-              "*/*": {
+              "application/json": {
                 "schema": {
                   "type": "array",
                   "items": {

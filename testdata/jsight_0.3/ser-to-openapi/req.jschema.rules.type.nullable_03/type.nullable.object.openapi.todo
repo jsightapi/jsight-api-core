@@ -13,7 +13,7 @@
           "200": {
             "description": "",
             "content": {
-              "*/*": {
+              "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {},
@@ -28,7 +28,7 @@
           "201": {
             "description": "",
             "content": {
-              "*/*": {
+              "application/json": {
                 "schema": {
                   "example": "1111 222222",
                   "description": "Some text",
@@ -44,7 +44,7 @@
           "202": {
             "description": "",
             "content": {
-              "*/*": {
+              "application/json": {
                 "schema": {
                   "example": "1111 222222",
                   "allOf": [
@@ -58,7 +58,7 @@
           "203": {
             "description": "",
             "content": {
-              "*/*": {
+              "application/json": {
                 "schema": {
                   "description": "Some text",
                   "nullable": true,
@@ -73,7 +73,7 @@
           "204": {
             "description": "",
             "content": {
-              "*/*": {
+              "application/json": {
                 "schema": {
                   "type": "array",
                   "items": {
@@ -91,7 +91,7 @@
           "205": {
             "description": "",
             "content": {
-              "*/*": {
+              "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {

@@ -13,7 +13,7 @@
           "200": {
             "description": "",
             "content": {
-              "*/*": {
+              "application/json": {
                 "schema": {
                   "example": "white",
                   "enum": ["white", "blue", "red"],
@@ -26,7 +26,7 @@
           "201": {
             "description": "",
             "content": {
-              "*/*": {
+              "application/json": {
                 "schema": {
                   "example": -2.1,
                   "enum": [-3, -2.1, 1.2, true, false, "-3", "0", "1.2", "string", "true"],
@@ -39,7 +39,7 @@
           "202": {
             "description": "",
             "content": {
-              "*/*": {
+              "application/json": {
                 "schema": {
                   "example": null,
                   "enum": ["white", "blue", "red", null],
@@ -52,7 +52,7 @@
           "203": {
             "description": "",
             "content": {
-              "*/*": {
+              "application/json": {
                 "schema": {
                   "example": null,
                   "enum": ["white", "blue", "red"],
@@ -65,7 +65,7 @@
           "204": {
             "description": "",
             "content": {
-              "*/*": {
+              "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
@@ -100,7 +100,7 @@
           "205": {
             "description": "",
             "content": {
-              "*/*": {
+              "application/json": {
                 "schema": {
                   "type": "array",
                   "items": {
