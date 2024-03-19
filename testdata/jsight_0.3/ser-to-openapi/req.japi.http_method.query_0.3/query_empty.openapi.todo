@@ -1,0 +1,111 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "",
+    "version": ""
+  },
+  "components": {
+    "schemas": {
+      "queryUserTypeEmptyPrimitive": {
+        "type": "string",
+        "example": ""
+      },
+      "queryUserTypeEmptyObject": {
+        "type": "object",
+        "properties": {
+        },
+        "additionalProperties": false
+      },
+      "queryUserTypeEmptyArray": {
+        "type": "array",
+        "items": {}
+      }
+    }
+  },
+  "paths": {
+    "/query/body-empty-primitive": {
+      "get": {
+        "responses": {
+          "default": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/query/body-empty-object": {
+      "get": {
+        "responses": {
+          "default": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/query/body-empty-array": {
+      "get": {
+        "responses": {
+          "default": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/query/user-type-empty-primitive": {
+      "get": {
+        "responses": {
+          "default": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/query/user-type-empty-object": {
+      "get": {
+        "responses": {
+          "default": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/query/user-type-empty-array": {
+      "get": {
+        "responses": {
+          "default": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

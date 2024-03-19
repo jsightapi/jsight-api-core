@@ -1,0 +1,370 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "",
+    "version": ""
+  },
+  "components": {
+    "schemas": {
+      "queryUserType1": {
+        "type": "object",
+        "properties": {
+          "first": {
+            "type": "integer",
+            "example": 123
+          },
+          "second": {
+            "type": "string",
+            "example": "value"
+          }
+        },
+        "required": [
+          "first",
+          "second"
+        ],
+        "additionalProperties": false
+      },
+      "queryUserType2": {
+        "type": "object",
+        "properties": {
+          "third": {
+            "type": "number",
+            "example": 456.78
+          },
+          "fourth": {
+            "type": "boolean",
+            "example": true
+          }
+        },
+        "required": [
+          "third",
+          "fourth"
+        ],
+        "additionalProperties": false
+      },
+      "queryUserTypeAllOf": {
+        "type": "object",
+        "properties": {
+          "fifth": {
+            "type": "string",
+            "example": "5"
+          }
+        },
+        "required": [
+          "fifth"
+        ],
+        "additionalProperties": false,
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/queryUserType1"
+          },
+          {
+            "$ref": "#/components/schemas/queryUserType2"
+          }
+        ]
+      }
+    }
+  },
+  "paths": {
+    "/query/one-user-type": {
+      "get": {
+        "parameters": [
+          {
+            "in": "query",
+            "name": "first",
+            "style": "deepObject",
+            "explode": true,
+            "schema": {
+              "type": "integer",
+              "example": 123
+            },
+            "required": true
+          },
+          {
+            "in": "query",
+            "name": "second",
+            "style": "deepObject",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "value"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/query/one-user-type-add-fields": {
+      "get": {
+        "parameters": [
+          {
+            "in": "query",
+            "name": "first",
+            "style": "deepObject",
+            "explode": true,
+            "schema": {
+              "type": "integer",
+              "example": 123
+            },
+            "required": true
+          },
+          {
+            "in": "query",
+            "name": "second",
+            "style": "deepObject",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "value"
+            },
+            "required": true
+          },
+          {
+            "in": "query",
+            "name": "addField",
+            "style": "deepObject",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "addFieldValue"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/query/two-user-types": {
+      "get": {
+        "parameters": [
+          {
+            "in": "query",
+            "name": "first",
+            "style": "deepObject",
+            "explode": true,
+            "schema": {
+              "type": "integer",
+              "example": 123
+            },
+            "required": true
+          },
+          {
+            "in": "query",
+            "name": "second",
+            "style": "deepObject",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "value"
+            },
+            "required": true
+          },
+          {
+            "in": "query",
+            "name": "third",
+            "style": "deepObject",
+            "explode": true,
+            "schema": {
+              "type": "number",
+              "example": 456.78
+            },
+            "required": true
+          },
+          {
+            "in": "query",
+            "name": "fourth",
+            "style": "deepObject",
+            "explode": true,
+            "schema": {
+              "type": "boolean",
+              "example": true
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/query/two-user-types-add-fields": {
+      "get": {
+        "parameters": [
+          {
+            "in": "query",
+            "name": "first",
+            "style": "deepObject",
+            "explode": true,
+            "schema": {
+              "type": "integer",
+              "example": 123
+            },
+            "required": true
+          },
+          {
+            "in": "query",
+            "name": "second",
+            "style": "deepObject",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "value"
+            },
+            "required": true
+          },
+          {
+            "in": "query",
+            "name": "third",
+            "style": "deepObject",
+            "explode": true,
+            "schema": {
+              "type": "number",
+              "example": 456.78
+            },
+            "required": true
+          },
+          {
+            "in": "query",
+            "name": "fourth",
+            "style": "deepObject",
+            "explode": true,
+            "schema": {
+              "type": "boolean",
+              "example": true
+            },
+            "required": true
+          },
+          {
+            "in": "query",
+            "name": "addField",
+            "style": "deepObject",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "addFieldValue"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/query/one-user-type-with-allOf-inside-add-fields": {
+      "get": {
+        "parameters": [
+          {
+            "in": "query",
+            "name": "first",
+            "style": "deepObject",
+            "explode": true,
+            "schema": {
+              "type": "integer",
+              "example": 123
+            },
+            "required": true
+          },
+          {
+            "in": "query",
+            "name": "second",
+            "style": "deepObject",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "value"
+            },
+            "required": true
+          },
+          {
+            "in": "query",
+            "name": "third",
+            "style": "deepObject",
+            "explode": true,
+            "schema": {
+              "type": "number",
+              "example": 456.78
+            },
+            "required": true
+          },
+          {
+            "in": "query",
+            "name": "fourth",
+            "style": "deepObject",
+            "explode": true,
+            "schema": {
+              "type": "boolean",
+              "example": true
+            },
+            "required": true
+          },
+          {
+            "in": "query",
+            "name": "fifth",
+            "style": "deepObject",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "5"
+            },
+            "required": true
+          },
+          {
+            "in": "query",
+            "name": "addField",
+            "style": "deepObject",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "addFieldValue"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
