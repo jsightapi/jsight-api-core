@@ -4,22 +4,25 @@
     "title": "",
     "version": ""
   },
+
   "paths": {
-    "/request/jschema/rules/type/uuid": {
+    "/request/jschema/rules/type/nullable/boolean": {
       "get": {
         "responses": {
+
           "200": {
             "description": "",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "string",
-                  "example": "550e8400-e29b-41d4-a716-446655440000",
-                  "format": "uuid"
+                  "type": "boolean",
+                  "example": true,
+                  "nullable": true
                 }
               }
             }
           },
+
           "201": {
             "description": "",
             "content": {
@@ -27,18 +30,19 @@
                 "schema": {
                   "type": "object",
                   "properties": {
-                    "someUuid": {
-                      "type": "string",
-                      "example": "550e8400-e29b-41d4-a716-446655440000",
-                      "format": "uuid"
+                    "sBoolean": {
+                      "type": "boolean",
+                      "example": true,
+                      "nullable": true
                     }
                   },
-                  "required": ["someUuid"],
+                  "required": ["sBoolean"],
                   "additionalProperties": false
                 }
               }
             }
           },
+
           "202": {
             "description": "",
             "content": {
@@ -46,14 +50,31 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "type": "string",
-                    "example": "550e8400-e29b-41d4-a716-446655440000",
-                    "format": "uuid"
+                    "anyOf": [
+                      {
+                        "type": "boolean",
+                        "example": true,
+                        "nullable": true
+                      }
+                    ]
                   }
                 }
               }
             }
+          },
+
+          "203": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "example": false,
+                  "nullable": true
+                }
+              }
+            }
           }
+
         }
       }
     }

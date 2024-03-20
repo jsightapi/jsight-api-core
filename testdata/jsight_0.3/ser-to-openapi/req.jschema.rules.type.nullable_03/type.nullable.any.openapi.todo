@@ -1,0 +1,27 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "",
+    "version": ""
+  },
+
+  "paths": {
+    "/request/jschema/rules/type/nullable/any": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "example": false,
+                  "nullable": true
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
