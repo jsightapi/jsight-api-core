@@ -1,0 +1,33 @@
+JSIGHT 0.3
+
+GET /request/jschema/rules/type/decimal
+  200
+    0.12 // {precision: 2}
+  201
+    0.9 // {precision: 1}
+  202
+    0.12 // {type: "decimal", precision: 2}
+  203
+    0.9 // {type: "decimal", precision: 1}
+  204
+    0.901 // {type: "decimal", precision: 3}
+  205
+    0.900 // {type: "decimal", precision: 1}
+  206
+    -0.901 // {type: "decimal", precision: 3}
+  207
+    {
+      "decimal2": 0.12, // {precision: 2}
+      "decimal1": 0.9, // {precision: 1}
+      "decimal3": 0.901, // {type: "decimal", precision: 3}
+      "decimalZero1": 0.900, // {type: "decimal", precision: 1}
+      "negativeDecimal3": -0.901 // {precision: 3}
+    }
+  208
+    [
+      0.12, // {precision: 2}
+      0.9, // {precision: 1}
+      0.901, // {type: "decimal", precision: 3}
+      0.900, // {type: "decimal", precision: 1}
+      -0.901 // {precision: 3}
+    ]

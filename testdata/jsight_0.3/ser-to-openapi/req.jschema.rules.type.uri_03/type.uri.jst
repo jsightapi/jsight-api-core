@@ -1,0 +1,13 @@
+JSIGHT 0.3
+
+GET /request/jschema/rules/type/uri
+  200
+    "https://www.com" // {type: "uri"}
+  201
+    {
+      "someUri": "https://www.com" // {type: "uri"}
+    }
+  202
+    [
+      "https://www.com"  // {type: "uri"}
+    ]

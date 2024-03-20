@@ -1,0 +1,81 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "",
+    "version": ""
+  },
+  "paths": {
+    "/request/jschema/rules/type/boolean": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "boolean",
+                  "example": true
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "boolean",
+                  "example": false
+                }
+              }
+            }
+          },
+          "202": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "true": {
+                      "type": "boolean",
+                      "example": true
+                    },
+                    "false": {
+                      "type": "boolean",
+                      "example": false
+                    }
+                  },
+                  "required": ["true", "false"],
+                  "additionalProperties": false
+                }
+              }
+            }
+          },
+          "203": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "anyOf": [
+                      {
+                        "type": "boolean",
+                        "example": true
+                      },
+                      {
+                        "type": "boolean",
+                        "example": false
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
