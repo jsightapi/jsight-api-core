@@ -38,7 +38,6 @@ func makeResponseHeaders(headersArr ...*catalog.HTTPResponseHeaders) ResponseHea
 			i := headerInfos[0]
 			r[name] = newHeaderObject(
 				!i.optional(),
-				// concatenateDescription(i.contextAnnotation, i.annotation()),
 				i.annotation(),
 				i.schemaObject(),
 			)
