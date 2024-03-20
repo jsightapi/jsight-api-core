@@ -54,7 +54,7 @@
       "patch": {
         "requestBody": {
           "content": {
-            "*/*": {
+            "text/plain": {
               "schema": {
                 "type": "string",
                 "pattern": "^[A-Z]+\\s\\d+$"
