@@ -8,7 +8,7 @@ import (
 type ResponseHeaders map[string]*HeaderObject
 
 type headerInfo struct {
-	schemaInfo        schemaPropertyInfo
+	parameterInfo
 	contextAnnotation string
 }
 
@@ -20,16 +20,16 @@ func makeResponseHeaders(headersArr ...*catalog.HTTPResponseHeaders) ResponseHea
 		if headers == nil {
 			continue
 		}
-
-		headersSchemaInfo := getSchemaObjectInfo(headers.Schema.JSchema)
-		for _, pi := range headersSchemaInfo.PropertiesInfos() {
-			hName := pi.Key()
+		
+		headersRootAnnotation := getSchemaObjectInfo(headers.Schema.JSchema).Annotation()
+		headersInfos := getParamInfo(headers.Schema.JSchema)
+		for _, hi := range headersInfos {
+			hName := hi.name()
 			sortedHeaders[hName] = append(sortedHeaders[hName],
 				headerInfo{
-					pi,
-					headers.Directive.Annotation,
-				},
-			)
+					hi,
+					headersRootAnnotation,
+				})
 		}
 	}
 
@@ -37,9 +37,10 @@ func makeResponseHeaders(headersArr ...*catalog.HTTPResponseHeaders) ResponseHea
 		if len(headerInfos) == 1 {
 			i := headerInfos[0]
 			r[name] = newHeaderObject(
-				!i.schemaInfo.Optional(),
-				concatenateDescription(i.contextAnnotation, i.schemaInfo.Annotation()),
-				i.schemaInfo.SchemaObject(),
+				!i.optional(),
+				// concatenateDescription(i.contextAnnotation, i.annotation()),
+				i.annotation(),
+				i.schemaObject(),
 			)
 		} else {
 			r[name] = headerObjectForAnyOf(headerInfos)
@@ -49,15 +50,15 @@ func makeResponseHeaders(headersArr ...*catalog.HTTPResponseHeaders) ResponseHea
 }
 
 func headerObjectForAnyOf(headersInfos []headerInfo) *HeaderObject {
-	schemaObjects := make([]SchemaObject, 0)
-	var required bool
+	schemaObjects := make([]schemaObject, 0)
+	required := true
 
 	for _, i := range headersInfos {
-		if i.schemaInfo.Optional() {
+		if i.optional() {
 			required = false
 		}
-		so := i.schemaInfo.SchemaObject()
-		so.SetDescription(concatenateDescription(i.contextAnnotation, i.schemaInfo.Annotation()))
+		so := i.schemaObject()
+		so.SetDescription(concatenateDescription(i.contextAnnotation, i.annotation()))
 		schemaObjects = append(schemaObjects, so)
 	}
 

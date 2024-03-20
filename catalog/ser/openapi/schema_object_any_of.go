@@ -4,12 +4,12 @@ import (
 	"encoding/json"
 )
 
-func schemaObjectForAnyOf(anyOf []SchemaObject) SchemaObject {
+func schemaObjectForAnyOf(anyOf []schemaObject) schemaObject {
 	return &schemaObjectAnyOf{anyOf, ""}
 }
 
 type schemaObjectAnyOf struct {
-	AnyOf       []SchemaObject `json:"anyOf"`
+	AnyOf       []schemaObject `json:"anyOf"`
 	Description string         `json:"description,omitempty"`
 }
 

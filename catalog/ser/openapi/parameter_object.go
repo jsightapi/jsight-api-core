@@ -11,7 +11,7 @@ func newParameterObject(
 	name string,
 	description string,
 	required bool,
-	schema SchemaObject,
+	schema schemaObject,
 ) *ParameterObject {
 	return &ParameterObject{
 		In:   in,

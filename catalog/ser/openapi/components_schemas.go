@@ -1,12 +1,10 @@
 package openapi
 
 import (
-	"fmt"
-
 	"github.com/jsightapi/jsight-api-core/catalog"
 )
 
-type ComponentsSchemas map[string]SchemaObject
+type ComponentsSchemas map[string]schemaObject
 
 func newSchemas(tt *catalog.UserTypes) ComponentsSchemas {
 	if tt.Len() == 0 {
@@ -17,8 +15,6 @@ func newSchemas(tt *catalog.UserTypes) ComponentsSchemas {
 	_ = tt.Each(func(name string, ut *catalog.UserType) error {
 		typeSchemaObject := schemaObjectFromExchangeSchema(ut.Schema)
 		typeSchemaObject.SetDescription(ut.Annotation)
-
-		fmt.Printf("Type annotation: %s\n", ut.Annotation)
 
 		ss[typeNameToSchemaName(name)] = typeSchemaObject
 		

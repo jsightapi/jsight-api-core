@@ -25,7 +25,7 @@ func contentForEmpty() *Content {
 	return &c
 }
 
-func contentForVariousMediaTypes(schemaObjectsMap map[mediaType][]SchemaObject) *Content {
+func contentForVariousMediaTypes(schemaObjectsMap map[mediaType][]schemaObject) *Content {
 	c := make(Content, 1)
 	for mt, schemaObjects := range schemaObjectsMap {
 		if len(schemaObjects) == 1 {

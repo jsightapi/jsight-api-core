@@ -25,7 +25,7 @@ func debugExchangeSchema(es catalog.ExchangeSchema) {
 	fmt.Printf("Debug Over\n")
 }
 
-func schemaObjectToString(so SchemaObject) string {
+func schemaObjectToString(so schemaObject) string {
 	b, err := json.Marshal(so)
 	if err == nil {
 		return string(b)

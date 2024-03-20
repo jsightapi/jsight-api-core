@@ -28,14 +28,13 @@ func newResponse(r *catalog.HTTPResponse) *ResponseObject {
 
 func newResponseAnyOf(responses []*catalog.HTTPResponse) *ResponseObject {
 	hh := make([]*catalog.HTTPResponseHeaders, 0)
-	sos := make(map[mediaType][]SchemaObject, 0)
+	sos := make(map[mediaType][]schemaObject, 0)
 
 	for _, response := range responses {
 		hh = append(hh, response.Headers)
+		respAnnotation := response.Annotation
 
-		respAnnotation := response.Body.Directive.Annotation
-
-		var so SchemaObject
+		var so schemaObject
 		var desc string
 		var mt mediaType
 		if response.Body == nil {

@@ -6,7 +6,7 @@ import (
 )
 
 
-func schemaObjectFromExchangeSchema(es catalog.ExchangeSchema) SchemaObject {
+func schemaObjectFromExchangeSchema(es catalog.ExchangeSchema) schemaObject {
 	// debugExchangeSchema(es)
 
 	switch es.Notation() {
@@ -21,7 +21,7 @@ func schemaObjectFromExchangeSchema(es catalog.ExchangeSchema) SchemaObject {
 	}
 }
 
-func schemaObjectFromSchema(es catalog.ExchangeSchema) SchemaObject {
+func schemaObjectFromSchema(es catalog.ExchangeSchema) schemaObject {
 	switch s := es.(type) {
 	case *catalog.ExchangeJSightSchema:
 		return getJSchemaInfo(s.JSchema).SchemaObject()
@@ -32,6 +32,6 @@ func schemaObjectFromSchema(es catalog.ExchangeSchema) SchemaObject {
 	}
 }
 
-func schemaObjectForAny() SchemaObject {
+func schemaObjectForAny() schemaObject {
 	return &schemaObjectAny{}
 }

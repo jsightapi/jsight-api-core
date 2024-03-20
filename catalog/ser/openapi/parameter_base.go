@@ -7,5 +7,5 @@ type ParameterBase struct {
 	Required    bool           `json:"required,omitempty"`
 	Style       parameterStyle `json:"style,omitempty"`
 	Explode     bool           `json:"explode,omitempty"`
-	Schema      SchemaObject   `json:"schema"`
+	Schema      schemaObject   `json:"schema"`
 }

@@ -6,8 +6,7 @@ import (
 	sc "github.com/jsightapi/jsight-schema-core/openapi"
 )
 
-
-type SchemaObject interface {
+type schemaObject interface {
 	sc.SchemaObject
 }
 
@@ -21,6 +20,32 @@ type schemaObjectInfo interface {
 
 type schemaInfo interface {
 	sc.SchemaInformer
+}
+
+func getParamInfo(s *jschema.JSchema) []parameterInfo {
+	r := make([]parameterInfo, 0)
+	schemaInfos := dereferenceJSchema(s)
+	if len(schemaInfos) > 1 {
+		panic("or-references conversion not supported for parameter directives")
+	} else {
+		si := schemaInfos[0]
+		switch si.Type() {
+		case sc.SchemaInfoTypeObject: // TODO: get rid of sc. import?
+			properties := si.(sc.ObjectInformer).PropertiesInfos()
+			for _, pi := range properties {
+				r = append(r, paramInfo{
+					pi.Key(),
+					pi.Optional(),
+					pi.SchemaObject(),
+					pi.Annotation(),
+				})
+			}
+		default:
+			panic("parameters directive's schema is not an object")
+		}
+	}
+
+	return r
 }
 
 func getSchemaObjectInfo(s *jschema.JSchema) schemaObjectInfo {
