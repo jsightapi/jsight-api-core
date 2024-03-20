@@ -11,7 +11,7 @@
           "200": {
             "description": "",
             "content": {
-              "*/*": {
+              "application/json": {
                 "schema": {
                   "anyOf": [
                     {
@@ -32,7 +32,7 @@
           "301": {
             "description": "Body only",
             "content": {
-              "*/*": {
+              "application/json": {
                 "schema": {
                   "type": "string",
                   "example": "Body"
@@ -51,7 +51,7 @@
               }
             },            
             "content": {
-              "*/*": {
+              "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
