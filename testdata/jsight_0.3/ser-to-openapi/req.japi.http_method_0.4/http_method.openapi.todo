@@ -299,7 +299,7 @@
           "description": "The description.",
           "requestBody": {
             "content": {
-              "*/*": {
+              "application/json": {
                 "schema": {
                   "type": "string",
                   "example": "some request"
@@ -311,7 +311,7 @@
             "200": {
               "description": "",
               "content": {
-                "*/*": {
+                "application/json": {
                   "schema": {
                     "anyOf": [
                       {

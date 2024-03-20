@@ -18,7 +18,7 @@
           "200": {
             "description": "",
             "content": {
-              "*/*": {
+              "application/json": {
                 "schema": {
                   "type": "string",
                   "example": "OK"
@@ -39,7 +39,7 @@
           "200": {
             "description": "",
             "content": {
-              "*/*": {
+              "application/json": {
                 "schema": {
                   "type": "string",
                   "example": "OK"
@@ -54,7 +54,7 @@
       "patch": {
         "requestBody": {
           "content": {
-            "*/*": {
+            "text/plain": {
               "schema": {
                 "type": "string",
                 "pattern": "^[A-Z]+\\s\\d+$"
@@ -66,7 +66,7 @@
           "200": {
             "description": "",
             "content": {
-              "*/*": {
+              "application/json": {
                 "schema": {
                   "type": "string",
                   "example": "OK"

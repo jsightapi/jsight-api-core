@@ -9,7 +9,7 @@
       "post": {
         "requestBody": {
           "content": {
-            "*/*": {
+            "application/json": {
               "schema": {
                 "type": "string",
                 "example": "root-string"
@@ -21,7 +21,7 @@
           "200": {
             "description": "",
             "content": {
-              "*/*": {
+              "application/json": {
                 "schema": {
                   "type": "string",
                   "example": "OK"
@@ -36,7 +36,7 @@
       "post": {
         "requestBody": {
           "content": {
-            "*/*": {
+            "application/json": {
               "schema": {
                 "type": "string",
                 "minLength": 4, 
@@ -52,7 +52,7 @@
           "200": {
             "description": "",
             "content": {
-              "*/*": {
+              "application/json": {
                 "schema": {
                   "type": "string",
                   "example": "OK"
@@ -67,7 +67,7 @@
       "put": {
         "requestBody": {
           "content": {
-            "*/*": {
+            "application/json": {
               "schema": {
                 "type": "array",
                 "items": {
@@ -82,7 +82,7 @@
           "200": {
             "description": "",
             "content": {
-              "*/*": {
+              "application/json": {
                 "schema": {
                   "type": "string",
                   "example": "OK"
@@ -97,7 +97,7 @@
       "put": {
         "requestBody": {
           "content": {
-            "*/*": {
+            "application/json": {
               "schema": {
                 "type": "array",
                 "minItems": 1, 
@@ -115,7 +115,7 @@
           "200": {
             "description": "",
             "content": {
-              "*/*": {
+              "application/json": {
                 "schema": {
                   "type": "string",
                   "example": "OK"
@@ -130,7 +130,7 @@
       "patch": {
         "requestBody": {
           "content": {
-            "*/*": {
+            "application/json": {
               "schema": {
                 "type": "object",
                 "properties": {
@@ -149,7 +149,7 @@
           "200": {
             "description": "",
             "content": {
-              "*/*": {
+              "application/json": {
                 "schema": {
                   "type": "string",
                   "example": "OK"
@@ -164,7 +164,7 @@
       "patch": {
         "requestBody": {
           "content": {
-            "*/*": {
+            "application/json": {
               "schema": {
                 "type": "object",
                 "nullable": true,
@@ -197,7 +197,7 @@
           "200": {
             "description": "",
             "content": {
-              "*/*": {
+              "application/json": {
                 "schema": {
                   "type": "string",
                   "example": "OK"
@@ -212,7 +212,7 @@
       "patch": {
         "requestBody": {
           "content": {
-            "*/*": {
+            "application/json": {
               "schema": {
                 "anyOf": [
                   {"type": "integer"},
@@ -226,7 +226,7 @@
           "200": {
             "description": "",
             "content": {
-              "*/*": {
+              "application/json": {
                 "schema": {
                   "type": "string",
                   "example": "OK"
@@ -241,7 +241,7 @@
       "patch": {
         "requestBody": {
           "content": {
-            "*/*": {
+            "application/json": {
               "schema": {
                 "anyOf": [
                   {"$ref": "#/components/schemas/object"},
@@ -255,7 +255,7 @@
           "200": {
             "description": "",
             "content": {
-              "*/*": {
+              "application/json": {
                 "schema": {
                   "type": "string",
                   "example": "OK"
@@ -270,7 +270,7 @@
       "put": {
         "requestBody": {
           "content": {
-            "*/*": {
+            "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/decimal"
               }
@@ -281,7 +281,7 @@
           "200": {
             "description": "",
             "content": {
-              "*/*": {
+              "application/json": {
                 "schema": {
                   "type": "string",
                   "example": "OK"
@@ -296,7 +296,7 @@
       "put": {
         "requestBody": {
           "content": {
-            "*/*": {
+            "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/object"
               }
@@ -307,7 +307,7 @@
           "200": {
             "description": "",
             "content": {
-              "*/*": {
+              "application/json": {
                 "schema": {
                   "type": "string",
                   "example": "OK"

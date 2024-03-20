@@ -1,0 +1,117 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "",
+    "version": ""
+  },
+
+  "paths": {
+    "/request/jschema/rules/type/nullable/number": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "number",
+                  "example": 1.12,
+                  "multipleOf": 0.01,
+                  "nullable": true
+                }
+              }
+            }
+          },
+          "202": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "number",
+                  "example": 12.34,
+                  "nullable": true
+                }
+              }
+            }
+          },
+          "203": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "integer",
+                  "example": 1,
+                  "nullable": true
+                }
+              }
+            }
+          },
+          "204": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "sDecimal": {
+                      "type": "number",
+                      "example": 1.12,
+                      "multipleOf": 0.01,
+                      "nullable": true
+                    },
+                    "sFloat": {
+                      "type": "number",
+                      "example": 12.34,
+                      "nullable": true
+                    },
+                    "sInteger": {
+                      "type": "integer",
+                      "example": 1,
+                      "nullable": true
+                    }
+                  },
+                  "required": [
+                    "sDecimal",
+                    "sFloat",
+                    "sInteger"
+                  ],
+                  "additionalProperties": false
+                }
+              }
+            }
+          },
+          "205": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "anyOf": [
+                      {
+                        "type": "number",
+                        "example": 1.12,
+                        "multipleOf": 0.01,
+                        "nullable": true
+                      },
+                      {
+                        "type": "number",
+                        "example": 12.34,
+                        "nullable": true
+                      },
+                      {
+                        "type": "integer",
+                        "example": 1,
+                        "nullable": true
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
