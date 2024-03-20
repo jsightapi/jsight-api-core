@@ -3,9 +3,6 @@ package openapi
 import (
 	"github.com/jsightapi/jsight-api-core/catalog"
 	"github.com/jsightapi/jsight-api-core/notation"
-
-	// "github.com/jsightapi/jsight-schema-core/notations/jschema"
-	sc "github.com/jsightapi/jsight-schema-core/openapi"
 )
 
 type ResponseObject struct {
@@ -49,18 +46,19 @@ func newResponseAnyOf(responses []*catalog.HTTPResponse) *ResponseObject {
 			s := response.Body.Schema
 			switch s.Notation() {
 			case notation.SchemaNotationJSight:
-				si := sc.NewSchemaInfo(s.(*catalog.ExchangeJSightSchema).JSchema)
+				si := getJSchemaInfo(s.(*catalog.ExchangeJSightSchema).JSchema)
 				so = si.SchemaObject()
 				desc = concatenateDescription(respAnnotation, si.Annotation())
-			case notation.SchemaNotationRegex: // TODO: might have an annotation also.
-				so = sc.NewSchemaObject(s)
-				desc = respAnnotation
+			case notation.SchemaNotationRegex: 
+				si := getRSchemaInfo(s.(*catalog.ExchangeRegexSchema).RSchema)
+				so = si.SchemaObject()
+				desc = concatenateDescription(respAnnotation, si.Annotation())
 			case notation.SchemaNotationAny:
 				so = schemaObjectForAny()
 				desc = respAnnotation
 			case notation.SchemaNotationEmpty:
 				// TODO: ???
-				//
+				panic("TODO: empty response body in same-code responses: not decided")
 			}
 			mt = formatToMediaType(response.Body.Format)
 		}
@@ -68,24 +66,8 @@ func newResponseAnyOf(responses []*catalog.HTTPResponse) *ResponseObject {
 		sos[mt] = append(sos[mt], so)
 	}
 
-	// mto := MediaTypeObject{
-	// 	SchemaObjectAnyOf(sos, ""),
-	// }
-	//
 	return &ResponseObject{
 		Headers: makeResponseHeaders(hh...),
 		Content: contentForVariousMediaTypes(sos),
 	}
 }
-
-// func responsesToSchemas(rr []*catalog.HTTPResponse) []catalog.ExchangeSchema {
-// 	if rr == nil {
-// 		return nil
-// 	}
-//
-// 	ss := make([]catalog.ExchangeSchema, len(rr))
-// 	for _, r := range rr {
-// 		ss = append(ss, r.Body.Schema)
-// 	}
-// 	return ss
-// }

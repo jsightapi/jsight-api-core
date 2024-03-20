@@ -3,13 +3,8 @@ package openapi
 import (
 	"github.com/jsightapi/jsight-api-core/catalog"
 	"github.com/jsightapi/jsight-api-core/notation"
-
-	sc "github.com/jsightapi/jsight-schema-core/openapi"
 )
 
-type SchemaObject interface {
-	sc.SchemaObject
-}
 
 func schemaObjectFromExchangeSchema(es catalog.ExchangeSchema) SchemaObject {
 	// debugExchangeSchema(es)
@@ -29,9 +24,9 @@ func schemaObjectFromExchangeSchema(es catalog.ExchangeSchema) SchemaObject {
 func schemaObjectFromSchema(es catalog.ExchangeSchema) SchemaObject {
 	switch s := es.(type) {
 	case *catalog.ExchangeJSightSchema:
-		return sc.NewSchemaObject(s.JSchema)
+		return getJSchemaInfo(s.JSchema).SchemaObject()
 	case *catalog.ExchangeRegexSchema:
-		return sc.NewSchemaObject(s.RSchema)
+		return getRSchemaInfo(s.RSchema).SchemaObject()
 	default:
 		panic("unsupported ExchangeSchema type for this method")
 	}

@@ -2,15 +2,13 @@ package openapi
 
 import (
 	"github.com/jsightapi/jsight-api-core/catalog"
-
-	sc "github.com/jsightapi/jsight-schema-core/openapi"
 )
 
 // Only for Response objects. For request headers refer to "parameters"
 type ResponseHeaders map[string]*HeaderObject
 
 type headerInfo struct {
-	schemaInfo        sc.SchemaInfo
+	schemaInfo        schemaPropertyInfo
 	contextAnnotation string
 }
 
@@ -23,13 +21,12 @@ func makeResponseHeaders(headersArr ...*catalog.HTTPResponseHeaders) ResponseHea
 			continue
 		}
 
-		headersSchemaInfo := getSchemaInfo(headers.Schema.JSchema)
-		propIterator := headersSchemaInfo.PropertiesInfos()
-		for propIterator.Next() {
-			hName := propIterator.GetKey()
+		headersSchemaInfo := getSchemaObjectInfo(headers.Schema.JSchema)
+		for _, pi := range headersSchemaInfo.PropertiesInfos() {
+			hName := pi.Key()
 			sortedHeaders[hName] = append(sortedHeaders[hName],
 				headerInfo{
-					propIterator.GetInfo(),
+					pi,
 					headers.Directive.Annotation,
 				},
 			)
