@@ -1,0 +1,17 @@
+JSIGHT 0.3
+
+# Basic example with 2 different primitive parameters, 1 array, and 1 object
+ 
+GET /url
+  Query "prim1=1&prim2=value&arr=2&arr=3&obj[foo]=fooVal1&obj[bar]=45"
+    {
+      "prim1": 1,
+      "prim2": "value",  // {optional: true}
+      "arr": [ // {optional: true}
+        2, 3
+      ],
+      "obj": {      // {optional: true}
+        "foo": "fooVal1", // {optional: false, enum: ["fooVal1", "fooVal2", "fooVal3"]}
+        "bar" : 45     // {optional: true}
+      }
+    }
