@@ -1,0 +1,21 @@
+JSIGHT 0.3
+
+INFO
+  Title "Same-code responses"
+  Version 1
+
+GET /
+
+  200 // 200-1 directive annotation
+    "ok" // 200-1 body root annotation
+  
+  200 // 200-2 directive annotation
+    123 // 200-2 body root annotation
+
+  200 any // 200-3 directive annotation
+
+TYPE @body
+{} # only testing reference
+
+TYPE @header1
+{}

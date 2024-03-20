@@ -1,0 +1,54 @@
+JSIGHT 0.3
+
+INFO
+  Title "Same-code responses"
+  Version 1
+
+GET /
+
+  200 // 200-1 directive annotation
+    "ok" // 200-1 body root annotation
+
+  200 // 200-2 directive annotation
+    Headers
+    { // 200-2 headers body root annotation
+      "h1": "h1-1", // h1-1 local annotation
+      "h2": {  // h2-1 local annotation
+        "h2p1": "h2p1"
+      }
+    }
+
+    Body any
+
+  200 // 200-3 directive annotation
+    Headers
+    { // 200-3 headers body root annotation
+      "h1": @header1, // h1-2 local annotation
+      "h2": 2, // h2-2 local annotation
+      "h3": "header three" // h3 local annotation
+    }
+
+    Body 
+      @body // 200-3 body root annotation?
+    
+  200 @body // 200-4 directive annotation
+
+  200 // 200-5 directive annotation
+    @body // 200-5 body root annotation
+
+    
+  200 regex // 200-6 directive annotation
+    /.*/
+
+  200 empty // 200-7 directive annotation
+  
+  200 // 200-8 directive annotation
+    {
+      "b1": "b1"
+    }
+
+TYPE @body
+{} # only testing reference
+
+TYPE @header1
+{}
