@@ -48,7 +48,7 @@ func newResponseAnyOf(responses []*catalog.HTTPResponse) *ResponseObject {
 				si := getJSchemaInfo(s.(*catalog.ExchangeJSightSchema).JSchema)
 				so = si.SchemaObject()
 				desc = concatenateDescription(respAnnotation, si.Annotation())
-			case notation.SchemaNotationRegex: 
+			case notation.SchemaNotationRegex:
 				si := getRSchemaInfo(s.(*catalog.ExchangeRegexSchema).RSchema)
 				so = si.SchemaObject()
 				desc = concatenateDescription(respAnnotation, si.Annotation())

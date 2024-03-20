@@ -4,8 +4,7 @@ import (
 	"strings"
 )
 
-
-func concatenateDescription(l string, r string) string {
+func concatenateDescription(l, r string) string {
 	var sb strings.Builder
 	if l != "" {
 		sb.WriteString(l)
@@ -19,11 +18,12 @@ func concatenateDescription(l string, r string) string {
 	return sb.String()
 }
 
-
+//nolint:unused
 func escapeTabs(s string) string {
 	return strings.ReplaceAll(s, "\t", "\\t")
 }
 
+//nolint:unused
 func escapeNewLines(s string) string {
 	return strings.ReplaceAll(s, "\n", "\\n")
 }

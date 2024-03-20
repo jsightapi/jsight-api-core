@@ -20,7 +20,7 @@ func makeResponseHeaders(headersArr ...*catalog.HTTPResponseHeaders) ResponseHea
 		if headers == nil {
 			continue
 		}
-		
+
 		headersRootAnnotation := getSchemaObjectInfo(headers.Schema.JSchema).Annotation()
 		headersInfos := getParamInfo(headers.Schema.JSchema)
 		for _, hi := range headersInfos {

@@ -11,12 +11,13 @@ type Custom struct {
 	SomeString string
 }
 
+//nolint:unused
 func testMarshal(t *testing.T) {
 	c := Custom{
 		"some",
 	}
 	b, err := json.Marshal(c)
-	
+
 	require.NoError(t, err)
 
 	t.Log(string(b))
@@ -27,6 +28,6 @@ func (o Custom) MarshalJSON() (b []byte, err error) {
 	return json.Marshal(&struct {
 		Alias
 	}{
-		Alias:    (Alias)(o),
+		Alias: (Alias)(o),
 	})
 }

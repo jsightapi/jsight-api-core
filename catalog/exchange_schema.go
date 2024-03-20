@@ -2,6 +2,7 @@ package catalog
 
 import (
 	"github.com/jsightapi/jsight-api-core/notation"
+
 	schema "github.com/jsightapi/jsight-schema-core"
 )
 

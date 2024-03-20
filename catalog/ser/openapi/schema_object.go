@@ -5,10 +5,7 @@ import (
 	"github.com/jsightapi/jsight-api-core/notation"
 )
 
-
 func schemaObjectFromExchangeSchema(es catalog.ExchangeSchema) schemaObject {
-	// debugExchangeSchema(es)
-
 	switch es.Notation() {
 	case notation.SchemaNotationJSight, notation.SchemaNotationRegex:
 		return schemaObjectFromSchema(es)

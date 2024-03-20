@@ -3,7 +3,6 @@ package openapi
 import (
 	"github.com/jsightapi/jsight-api-core/catalog"
 	"github.com/jsightapi/jsight-api-core/notation"
-	schema "github.com/jsightapi/jsight-schema-core"
 )
 
 type RequestBody struct {
@@ -44,16 +43,7 @@ func requestBodyRequired(r *catalog.HTTPRequest) bool {
 	return true
 }
 
-// TODO: cannot be finished until parser bug if fixed and may be smth extra in schemaInfo
+// TODO: cannot be finished until parser bug is fixed and may be smth extra in schemaInfo
 func schemaReferencesTypeAny(es catalog.ExchangeSchema) bool {
-	if es.Notation() == notation.SchemaNotationJSight {
-		// js := es.(*catalog.ExchangeJSightSchema)
-		ast, _ := es.GetAST()
-		if ast.TokenType == schema.TokenTypeShortcut {
-			// types, _ := es.UsedUserTypes()
-			// fmt.Printf("\nTypes %v", types)
-			// typeName := types[0]
-		}
-	}
 	return false
 }

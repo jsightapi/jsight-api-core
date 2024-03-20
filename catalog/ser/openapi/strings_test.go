@@ -1,7 +1,6 @@
 package openapi
 
 import (
-	// "fmt"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
@@ -25,4 +24,3 @@ func TestConcatenateDescription(t *testing.T) {
 		assert.Equal(t, test.exp, concatenateDescription(test.l, test.r))
 	}
 }
-

@@ -7,6 +7,7 @@ import (
 	"github.com/jsightapi/jsight-api-core/catalog"
 )
 
+//nolint:unused
 func debugExchangeSchema(es catalog.ExchangeSchema) {
 	fmt.Printf("es type is %T\n", es)
 	fmt.Printf("es notation is %s\n", es.Notation())
@@ -25,6 +26,7 @@ func debugExchangeSchema(es catalog.ExchangeSchema) {
 	fmt.Printf("Debug Over\n")
 }
 
+//nolint:unused
 func schemaObjectToString(so schemaObject) string {
 	b, err := json.Marshal(so)
 	if err == nil {

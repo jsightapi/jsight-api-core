@@ -17,7 +17,7 @@ func newSchemas(tt *catalog.UserTypes) ComponentsSchemas {
 		typeSchemaObject.SetDescription(ut.Annotation)
 
 		ss[typeNameToSchemaName(name)] = typeSchemaObject
-		
+
 		return nil
 	})
 

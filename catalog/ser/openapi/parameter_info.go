@@ -8,10 +8,10 @@ type parameterInfo interface {
 }
 
 type paramInfo struct {
-	name_ string
-	optional_ bool
+	name_         string
+	optional_     bool
 	schemaObject_ schemaObject
-	annotation_ string
+	annotation_   string
 }
 
 func (p paramInfo) name() string {

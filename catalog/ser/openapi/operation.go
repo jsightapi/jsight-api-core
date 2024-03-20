@@ -5,8 +5,8 @@ import (
 )
 
 type Operation struct {
-	Summary			string            `json:"summary,omitempty"`
-	Description string            `json:"description,omitempty"`
+	Summary     string             `json:"summary,omitempty"`
+	Description string             `json:"description,omitempty"`
 	Parameters  []*ParameterObject `json:"parameters,omitempty"`
 	RequestBody *RequestBody       `json:"requestBody,omitempty"`
 	Responses   *Responses         `json:"responses"`
@@ -26,7 +26,7 @@ func processMethodDescription(s *string) string {
 	if s == nil {
 		return ""
 	}
-	
+
 	return *s
 }
 
@@ -34,7 +34,7 @@ func processMethodSummary(s *string) string {
 	if s == nil {
 		return ""
 	}
-	
+
 	r := *s
 	return r
 }

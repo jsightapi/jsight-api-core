@@ -10,6 +10,7 @@ type schemaObject interface {
 	sc.SchemaObject
 }
 
+//nolint:unused
 type schemaPropertyInfo interface {
 	sc.PropertyInformer
 }
