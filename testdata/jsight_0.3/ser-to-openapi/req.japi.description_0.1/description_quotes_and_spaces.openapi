@@ -7,8 +7,8 @@
   },
   "paths": {
     "/url1": {
-      "description": "description",
       "get": {
+      "description": "description",
         "responses": {
           "200": {
             "description": "",
@@ -22,8 +22,8 @@
       }
     },
     "/url2": {
-      "description": "\"description\"",
       "get": {
+      "description": "\"description\"",
         "responses": {
           "200": {
             "description": "",
@@ -37,8 +37,8 @@
       }
     },
     "/url3": {
-      "description": "\\\"description\\\"",
       "get": {
+      "description": "\\\"description\\\"",
         "responses": {
           "200": {
             "description": "",

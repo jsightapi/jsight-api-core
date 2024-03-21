@@ -22,7 +22,7 @@
     },
     "/resource/with/annotation/long": {
       "get": {
-        "summary": "Long description with different symbols... tabs:\t\tascii: !\"$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~ spec:¹²³$‰↑∞←→—≠€®™ѣѵіѳ′[]≈§°£₽„“”‘’×©↓−«»…´“„•ẞˇ¢·¸¨‘⌀⌘˘˚ѢѴІѲ″{}±–〉〈¿ˆ¼⅓½¡ Cyrillic: йцукенгшщзФЫВАПРОЛДЖЭ Chinese: 你好世界",
+        "summary": "Long description with different symbols... tabs: ascii: !\\\"$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\\\]^_`abcdefghijklmnopqrstuvwxyz{|}~ spec:¹²³$‰↑∞←→—≠€®™ѣѵіѳ′[]≈§°£₽„“”‘’×©↓−«»…´“„•ẞˇ¢·¸¨‘⌀⌘˘˚ѢѴІѲ″{}±–〉〈¿ˆ¼⅓½¡ Cyrillic: йцукенгшщзФЫВАПРОЛДЖЭ Chinese: 你好世界",
         "responses": {
           "default": {
             "description": "",
@@ -52,7 +52,7 @@
     },
     "/resource/with/annotation/multiline/severallines": {
       "get": {
-        "summary": "Multi-line description\non\nseveral\nlines",
+        "summary": "Multi-line description on several lines",
         "responses": {
           "default": {
             "description": "",
@@ -67,7 +67,6 @@
     },
     "/resource/with/annotation/oneline/empty": {
       "get": {
-        "summary": "",
         "responses": {
           "default": {
             "description": "",
@@ -82,7 +81,6 @@
     },
     "/resource/with/annotation/multiline/empty": {
       "get": {
-        "summary": "",
         "responses": {
           "default": {
             "description": "",
@@ -172,7 +170,7 @@
     },
     "/resource/with/annotation/summary/multiline/1": {
       "get": {
-        "summary": "/*summary*/",
+        "summary": "summary",
         "responses": {
           "default": {
             "description": "",
@@ -187,7 +185,7 @@
     },
     "/resource/with/annotation/summary/multiline/2": {
       "get": {
-        "summary": "/*\"summary\"*/",
+        "summary": "\"summary\"",
         "responses": {
           "default": {
             "description": "",

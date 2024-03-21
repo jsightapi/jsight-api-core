@@ -22,7 +22,7 @@
           }
         }
       },
-      "/scary/ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!$&'()*+,;=#0123456789-._~%20": {
+      "/scary/ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!$&'()*+,;=": {
         "post": {
           "responses": {
             "301": {
