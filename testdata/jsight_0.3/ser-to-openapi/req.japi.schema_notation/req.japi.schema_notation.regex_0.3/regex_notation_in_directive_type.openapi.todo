@@ -25,6 +25,18 @@
       "typeWithRegexAnnotation_null_lookalike": {
         "type": "string",
         "pattern": "null"
+      },
+      "typeWithRegexAnnotation_frontSlash": {
+        "type": "string",
+        "pattern": "\\/\\/"
+      },
+      "typeWithRegexAnnotation_backSlash": {
+        "type": "string",
+        "pattern": "\\\\"
+      },
+      "typeWithRegexAnnotation_pattern": {
+        "type": "string",
+        "pattern": "pattern"
       }
     }
   },
@@ -63,6 +75,26 @@
                     },
                     {
                       "$ref": "#/components/schemas/typeWithRegexAnnotation_null_lookalike"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "oneOf": [
+                    {
+                      "$ref": "#/components/schemas/typeWithRegexAnnotation_frontSlash"
+                    },
+                    {
+                      "$ref": "#/components/schemas/typeWithRegexAnnotation_backSlash"
+                    },
+                    {
+                      "$ref": "#/components/schemas/typeWithRegexAnnotation_pattern"
                     }
                   ]
                 }

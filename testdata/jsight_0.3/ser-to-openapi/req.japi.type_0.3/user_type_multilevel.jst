@@ -1,0 +1,18 @@
+JSIGHT 0.3
+
+# Multi-level User Types
+
+TYPE @queryUserTypeParent
+  {
+    "childLevel1": @queryUserTypeChildLevel1
+  }
+
+TYPE @queryUserTypeChildLevel1
+  {
+    "childLevel2": @queryUserTypeChildLevel2
+  }
+
+TYPE @queryUserTypeChildLevel2
+  {
+    "foo": "bar"
+  }
