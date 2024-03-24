@@ -7,9 +7,7 @@ import (
 type Paths map[string]*PathItem
 
 func defaultPaths() Paths {
-	return Paths{
-		// "/": &PathItem{},
-	}
+	return Paths{}
 }
 
 func newPaths(c *catalog.Catalog) Paths {
