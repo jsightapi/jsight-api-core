@@ -8,7 +8,7 @@ type Paths map[string]*PathItem
 
 func defaultPaths() Paths {
 	return Paths{
-		"/": &PathItem{},
+		// "/": &PathItem{},
 	}
 }
 

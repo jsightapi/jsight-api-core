@@ -4,9 +4,7 @@
     "title": "",
     "version": ""
   },
-  "paths": {
-    "/": {}
-  },
+  "paths": {},
   "components": {
     "schemas": {
       "typeName": {

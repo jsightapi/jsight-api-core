@@ -4,9 +4,7 @@
     "title": "",
     "version": ""
   },
-  "paths": {
-    "/": {}
-  },
+  "paths": {},
   "servers": [
     {
       "url": "https://server-with-url.com/2"
