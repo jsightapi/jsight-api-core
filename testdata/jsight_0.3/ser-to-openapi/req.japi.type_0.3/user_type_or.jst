@@ -1,0 +1,46 @@
+JSIGHT 0.3
+
+# Basic and complex user types in combinations of OR
+
+TYPE @userType1Self
+  @userType1
+  
+TYPE @userType1Or2
+  @userType1 | @userType2
+
+TYPE @userType1Or2Or3
+  @userType1 | @userType2 | @userType3
+
+TYPE @userType1Or2_Or_userType3
+  @userType1Or2 | @userType3
+
+TYPE @userType1Or2___Or___userType1Or2Or3___userType1Or2_Or_userType3
+  @userType1Or2 | @userType1Or2Or3 | @userType1Or2_Or_userType3
+  
+TYPE @userTypeAllInArray
+  [ @userType1, @userType2, @userType3 ]
+  
+TYPE @userTypeAsValueInObject
+  {
+    "userTypeWithOrArray": [ @userType1 | @userType2 | @userType3 ],
+    "userTypeWithOrObject": @userType1 | @userType2 | @userType3,
+    "userType1": @userType1,
+    "userType1Again": @userType1
+  }
+
+# Basic user types
+
+TYPE @userType1 
+  {
+    "one": 1
+  }
+
+TYPE @userType2
+  {
+    "two": "2"
+  }
+
+TYPE @userType3
+  {
+    "three": 3.0004
+  }

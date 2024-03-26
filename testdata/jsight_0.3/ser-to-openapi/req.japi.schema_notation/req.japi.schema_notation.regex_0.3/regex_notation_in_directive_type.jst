@@ -15,8 +15,19 @@ TYPE @typeWithRegexAnnotation_any_lookalike regex
 TYPE @typeWithRegexAnnotation_null_lookalike regex
   /null/
 
+TYPE @typeWithRegexAnnotation_frontSlash regex
+  /\/\//
+
+TYPE @typeWithRegexAnnotation_backSlash regex
+  /\\/
+
+TYPE @typeWithRegexAnnotation_pattern regex
+  /pattern/
+
 GET /resource/with/types
   200
     @typeWithRegexAnnotation_simple | @typeWithRegexAnnotation_complex | @typeWithRegexAnnotation_json_lookalike
   400
     @typeWithRegexAnnotation_any_lookalike | @typeWithRegexAnnotation_null_lookalike
+  500
+    @typeWithRegexAnnotation_frontSlash | @typeWithRegexAnnotation_backSlash | @typeWithRegexAnnotation_pattern
