@@ -1,0 +1,243 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "",
+    "version": ""
+  },
+
+  "paths": {
+    "/request/jschema/rules/exclusiveMinimum": {
+      "get": {
+        "responses": {
+
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "integer",
+                  "example": 11,
+                  "minimum": 10,
+                  "exclusiveMinimum": true
+                }
+              }
+            }
+          },
+
+          "201": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "integer",
+                  "example": -9,
+                  "minimum": -10,
+                  "exclusiveMinimum": true
+                }
+              }
+            }
+          },
+
+          "202": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "number",
+                  "example": 10.001,
+                  "minimum": 10,
+                  "exclusiveMinimum": true
+                }
+              }
+            }
+          },
+
+          "203": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "number",
+                  "example": -9.999,
+                  "minimum": -10,
+                  "exclusiveMinimum": true
+                }
+              }
+            }
+          },
+
+          "204": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "number",
+                  "multipleOf": 0.01,
+                  "example": 10.01,
+                  "minimum": 10,
+                  "exclusiveMinimum": true
+                }
+              }
+            }
+          },
+
+          "205": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "number",
+                  "multipleOf": 0.01,
+                  "example": -9.99,
+                  "minimum": -10,
+                  "exclusiveMinimum": true
+                }
+              }
+            }
+          },
+
+          "206": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "integer",
+                  "example": 10,
+                  "minimum": 10
+                }
+              }
+            }
+          },
+
+          "207": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "integer",
+                  "example": -10,
+                  "minimum": -10
+                }
+              }
+            }
+          },
+
+          "208": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "number",
+                  "example": 10.000,
+                  "minimum": 10
+                }
+              }
+            }
+          },
+
+          "209": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "number",
+                  "example": -10.000,
+                  "minimum": -10
+                }
+              }
+            }
+          },
+
+          "210": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "number",
+                  "multipleOf": 0.01,
+                  "example": 10.00,
+                  "minimum": 10
+                }
+              }
+            }
+          },
+
+          "211": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "number",
+                  "multipleOf": 0.01,
+                  "example": -10.00,
+                  "minimum": -10
+                }
+              }
+            }
+          },
+
+          "212": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "someDecimal": {
+                      "type": "number",
+                      "multipleOf": 0.01,
+                      "example": 10.01,
+                      "minimum": 10,
+                      "exclusiveMinimum": true
+                    },
+                    "someFloat": {
+                      "type": "number",
+                      "example": -10.000,
+                      "minimum": -10
+                    }
+                  },
+                  "required": ["someDecimal", "someFloat"],
+                  "additionalProperties": false
+                }
+              }
+            }
+          },
+
+          "213": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "anyOf": [
+                      {
+                        "type": "integer",
+                        "example": -9,
+                        "minimum": -10,
+                        "exclusiveMinimum": true
+                      },
+                      {
+                        "type": "number",
+                        "example": 10.000,
+                        "minimum": 10
+                      },
+                      {
+                        "type": "number",
+                        "multipleOf": 0.01,
+                        "example": -9.99,
+                        "minimum": -10,
+                        "exclusiveMinimum": true
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+
+        }
+      }
+    }
+  }
+}
