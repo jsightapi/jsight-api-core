@@ -1,0 +1,27 @@
+JSIGHT 0.3
+
+GET /request/jschema/rules/maxItems
+  200
+    [ // {maxItems: 1}
+        "str"
+    ]
+  201
+    [ // { maxItems: 2 }
+        "str", 1
+    ]
+  202
+    [ // { type: "array", maxItems: 3 }
+        1,
+    	2.3,
+    	"abc"
+    ]
+  203
+    [ // {maxItems: 3}
+        1, 2
+    ]
+  204
+    [ // { type: "array" }
+    ]
+  205
+    [ // { type: "array", nullable: true }
+    ]
