@@ -2999,7 +2999,6 @@
             "example": "a@a.com"
           }
         },
-        "required": ["Required"],
         "additionalProperties": false
       },
       "headers": {
@@ -3249,7 +3248,6 @@
             "example": "a@a.com"
           }
         },
-        "required": ["Required"],
         "additionalProperties": false,
         "allOf": [{
           "$ref": "#/components/schemas/headersAllOfPart2"

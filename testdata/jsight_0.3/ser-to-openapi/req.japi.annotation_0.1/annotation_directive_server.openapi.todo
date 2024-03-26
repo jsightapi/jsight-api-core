@@ -10,7 +10,7 @@
       "url": ""
     },
     {
-      "description": "Long description with different symbols... tabs:\t\tascii: !\"$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~ spec:¹²³$‰↑∞←→—≠€®™ѣѵіѳ′[]≈§°£₽„“”‘’×©↓−«»…´“„•ẞˇ¢·¸¨‘⌀⌘˘˚ѢѴІѲ″{}±–〉〈¿ˆ¼⅓½¡ Cyrillic: йцукенгшщзФЫВАПРОЛДЖЭ Chinese: 你好世界",
+      "description": "Long description with different symbols... tabs: ascii: !\\\"$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\\\]^_`abcdefghijklmnopqrstuvwxyz{|}~ spec:¹²³$‰↑∞←→—≠€®™ѣѵіѳ′[]≈§°£₽„“”‘’×©↓−«»…´“„•ẞˇ¢·¸¨‘⌀⌘˘˚ѢѴІѲ″{}±–〉〈¿ˆ¼⅓½¡ Cyrillic: йцукенгшщзФЫВАПРОЛДЖЭ Chinese: 你好世界",
       "url": ""
     },
     {
@@ -18,15 +18,14 @@
       "url": ""
     },
     {
-      "description": "Multi-line description\non\nseveral\nlines",
+      "description": "Multi-line description on several lines",
       "url": ""
     },
     {
-      "description": "Annotation line 1 '\"quotes\"'\nAnnotation line 2 ABCxyz123!@#$%^&*()_+}{|\\?><,./\\'~`±§:¼⅓½¡йЖ界\nAnnotation line 3 // inner pseudo-annotation\nAnnotation line 4 \\\\*\\\\/",
+      "description": "Annotation line 1 '\"quotes\"' Annotation line 2 ABCxyz123!@#$%^&*()_+}{|\\?><,./\\'~`±§:¼⅓½¡йЖ界 Annotation line 3 // inner pseudo-annotation Annotation line 4 \\\\*\\\\/",
       "url": ""
     },
     {
-      "description": "",
       "url": "https://server-with-annotation-oneline-empty.com"
     },
     {
@@ -34,7 +33,6 @@
       "description": "\"\""
     },
     {
-      "description": "",
       "url": "https://server-with-annotation-multiline-empty.com"
     },
     {
