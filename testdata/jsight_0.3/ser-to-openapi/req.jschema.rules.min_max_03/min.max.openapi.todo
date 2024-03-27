@@ -1,0 +1,167 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "",
+    "version": ""
+  },
+
+  "paths": {
+    "/request/jschema/rules/minmax": {
+      "get": {
+        "responses": {
+
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "integer",
+                  "example": 1,
+                  "minimum": 0
+                }
+              }
+            }
+          },
+
+          "201": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "number",
+                  "example": 1.12,
+                  "minimum": 0
+                }
+              }
+            }
+          },
+
+          "202": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "integer",
+                  "example": 1,
+                  "maximum": 10
+                }
+              }
+            }
+          },
+
+          "203": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "number",
+                  "example": 1.12,
+                  "maximum": 3.4
+                }
+              }
+            }
+          },
+
+          "204": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "minInteger": {
+                      "type": "integer",
+                      "example": 1,
+                      "minimum": 0
+                    },
+                    "minNumber": {
+                      "type": "number",
+                      "example": 1.12,
+                      "minimum": 0
+                    },
+                    "maxInteger": {
+                      "type": "integer",
+                      "example": 1,
+                      "maximum": 10
+                    },
+                    "maxNumber": {
+                      "type": "number",
+                      "example": 1.12,
+                      "maximum": 3.4
+                    }
+                  },
+                  "required": ["minInteger", "minNumber", "maxInteger", "maxNumber"],
+                  "additionalProperties": false
+                }
+              }
+            }
+          },
+
+          "205": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "anyOf": [
+                      {
+                        "type": "integer",
+                        "example": 1,
+                        "minimum": 0
+                      },
+                      {
+                        "type": "number",
+                        "example": 1.12,
+                        "minimum": 0
+                      },
+                      {
+                        "type": "integer",
+                        "example": 1,
+                        "maximum": 10
+                      },
+                      {
+                        "type": "number",
+                        "example": 1.12,
+                        "maximum": 3.4
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+
+          "206": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "integer",
+                  "example": 1,
+                  "minimum": 0,
+                  "maximum": 10
+                }
+              }
+            }
+          },
+
+          "207": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "number",
+                  "example": 1.12,
+                  "minimum": 1.0,
+                  "maximum": 3.4
+                }
+              }
+            }
+          }
+
+        }
+      }
+    }
+  }
+}

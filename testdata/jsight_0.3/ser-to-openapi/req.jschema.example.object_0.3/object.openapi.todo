@@ -1,0 +1,144 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "",
+    "version": ""
+  },
+  "paths": {
+    "/request/jschema/example/object": {
+      "get": {
+        "responses": {
+
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "additionalProperties": false
+                }
+              }
+            }
+          },
+
+          "201": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "additionalProperties": false,
+                  "description": "some text"
+                }
+              }
+            }
+          },
+
+          "202": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "additionalProperties": false,
+                  "nullable": true,
+                  "description": "some text"
+                }
+              }
+            }
+          },
+
+          "203": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "str": {"type": "string", "example": "abc"}
+                  },
+                  "additionalProperties": false,
+                  "required": [ "str" ]
+                }
+              }
+            }
+          },
+
+          "204": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "required1": {"type": "integer", "example": 111},
+                    "required2": {"type": "integer", "example": 222},
+                    "optional1": {"type": "integer", "example": 333}
+                  },
+                  "additionalProperties": false,
+                  "required": [ "required1", "required2" ]
+                }
+              }
+            }
+          },
+
+          "205": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "str": {"type": "string", "example": "abc"}
+                  },
+                  "additionalProperties": false,
+                  "required": [ "str" ]
+                }
+              }
+            }
+          },
+
+          "206": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "str": {"type": "string", "example": "some string"},
+                    "int": {"type": "integer", "example": 123},
+                    "num": {"type": "number", "example": 12.3},
+                    "bool": {"type": "boolean", "example": true},
+                    "arr": {
+                      "type": "array",
+                      "items": {
+                        "anyOf": [
+                          {"type": "integer", "example": 1},
+                          {"type": "integer", "example": 2}
+                        ]
+                      }
+                    },
+                    "obj": {
+                      "type": "object",
+                      "properties": {
+                        "key": {"type": "string", "example": "val"}
+                      },
+                      "additionalProperties": false,
+                      "required": [ "key" ]
+                    }
+                  },
+                  "additionalProperties": false,
+                  "required": [ "str", "int", "num", "bool", "arr", "obj" ]
+                }
+              }
+            }
+          }
+
+        }
+      }
+    }
+  }
+}

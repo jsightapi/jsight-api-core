@@ -1,0 +1,118 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "",
+    "version": ""
+  },
+
+  "paths": {
+    "/request/jschema/rules/minItems": {
+      "get": {
+        "responses": {
+
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "minItems": 1,
+                  "items": {
+                    "type": "string",
+                    "example": "str"
+                  }
+                }
+              }
+            }
+          },
+
+          "201": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "minItems": 2,
+                  "items": {
+                    "anyOf": [
+                      {"type": "string", "example": "str"},
+                      {"type":"integer", "example": 1}
+                    ]
+                  }
+                }
+              }
+            }
+          },
+
+          "202": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "minItems": 3,
+                  "items": {
+                    "anyOf": [
+                      {"type": "integer", "example": 1},
+                      {"type": "number", "example": 2.3},
+                      {"type": "string", "example": "abc"}
+                    ]
+                  }
+                }
+              }
+            }
+          },
+
+          "203": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "minItems": 1,
+                  "items": {
+                    "anyOf": [
+                      {
+                        "type": "integer",
+                        "example": 1
+                      },
+                      {
+                        "type": "integer",
+                        "example": 2
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+
+          "204": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "minItems": 1,
+                  "items": {
+                    "anyOf": [
+                      {
+                        "type": "integer",
+                        "example": 1
+                      },
+                      {
+                        "type": "integer",
+                        "example": 2
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+
+        }
+      }
+    }
+  }
+}

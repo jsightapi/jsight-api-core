@@ -1,0 +1,11 @@
+JSIGHT 0.3
+
+GET /request/jschema/rules/minmaxlength
+  200
+    "Any string" // { minLength: 3 }
+  201
+    "" // { minLength: 0 }
+  202
+    "" // { maxLength: 0 }
+  203
+    "Any string" // { maxLength: 18446744073709551615 }

@@ -1,0 +1,32 @@
+JSIGHT 0.3
+
+GET /request/jschema/example/object
+  200
+    {}
+  201
+    {} // some text
+  202
+    {} // {nullable: true} - some text
+  203
+    {
+      "str": "abc"
+    }
+  204
+    {
+      "required1": 111,
+      "required2": 222, // {optional: false}
+      "optional1": 333  // {optional: true}
+    }
+  205
+    { // { type: "object" }
+      "str": "abc"
+    }
+  206
+    {
+      "str": "some string",
+      "int": 123,
+      "num": 12.3,
+      "bool": true,
+      "arr": [1,2],
+      "obj": {"key": "val"}
+    }

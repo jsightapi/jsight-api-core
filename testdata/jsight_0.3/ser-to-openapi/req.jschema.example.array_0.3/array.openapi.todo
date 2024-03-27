@@ -1,0 +1,203 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "",
+    "version": ""
+  },
+  "paths": {
+    "/request/jschema/example/array": {
+      "get": {
+        "responses": {
+
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {},
+                  "maxItems": 0
+                }
+              }
+            }
+          },
+
+          "201": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "example": "str"
+                  }
+                }
+              }
+            }
+          },
+
+          "202": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "example": "str"
+                  },
+                  "description": "some text"
+                }
+              }
+            }
+          },
+
+          "203": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "example": "str"
+                  },
+                  "description": "some text",
+                  "minItems": 1,
+                  "nullable": true
+                }
+              }
+            }
+          },
+
+          "204": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "anyOf": [
+                      {"type": "string", "example": "str"},
+                      {"type": "integer", "example": 1}
+                    ]
+                  }
+                }
+              }
+            }
+          },
+
+          "205": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "anyOf": [
+                      {
+                        "type": "integer",
+                        "example": 1
+                      },
+                      {
+                        "type": "number",
+                        "example": 2.3
+                      },
+                      {
+                        "type": "string",
+                        "example": "abc"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+
+          "206": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "anyOf": [
+                      {"type": "integer", "example": 1},
+                      {"type": "number", "example": 2.3},
+                      {"type": "string", "example": "abc"}
+                    ]
+                  }
+                }
+              }
+            }
+          },
+
+          "207": {
+              "description": "",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "anyOf": [
+                        {"type": "integer", "example": 1},
+                        {"type": "integer", "example": 2}
+                      ]
+                    }
+                  }
+                }
+              }
+            },
+
+          "208": {
+              "description": "",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "array",
+                    "minItems": 2,
+                    "maxItems": 10,
+                    "items": {
+                      "anyOf": [
+                        {"type": "integer", "example": 1},
+                        {"type": "integer", "example": 2}
+                      ]
+                    }
+                  }
+                }
+              }
+            },
+
+          "209": {
+              "description": "",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "array",
+                    "maxItems": 0,
+                    "items": {}
+                  }
+                }
+              }
+            },
+
+          "210": {
+              "description": "",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "array",
+                    "maxItems": 0,
+                    "items": {},
+                    "nullable": true
+                  }
+                }
+              }
+            }
+
+        }
+      }
+    }
+  }
+}
