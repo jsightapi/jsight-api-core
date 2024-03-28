@@ -1,0 +1,44 @@
+JSIGHT 0.3
+
+TYPE @stringId
+  "abc-123"
+
+TYPE @integerId
+  123
+
+GET /request/jschema/rules/type/mixed
+  200
+    "abc" // { type: "mixed", or: [{type: "integer"}, {type: "string"}] }
+  201
+    "cat@mail.com" // {type: "mixed", or: ["email", "integer"]}
+  202
+    "abc" /* {or: [
+        {type: "string" , maxLength: 3},
+    	{type: "integer", min: 0}
+    ]} */
+  203
+    "cat@mail.com" // {or: ["uuid", "email"]}
+  204
+    "cat@mail.com" // {or: [ {type: "uuid"}, {type: "email"} ]}
+  205
+    "cat@mail.com" // {or: [ {type: "null"}, {type: "email"} ]}
+  206
+    "cat@mail.com" // {or: [ {type: "any"}, {type: "email"} ]}
+  207
+    "cat@mail.com" // {or: ["uuid", "email"], nullable: true} - some text
+  208
+    "abc" // {or: [ "string", "object", "array" ]}
+  209
+    1.2 // {or: [ {type: "decimal", precision: 1}, {type: "object"}, {type: "array"} ]}
+  210
+    123 // {or: [ {type: "@stringId"}, {type: "@integerId"} ]}
+  211
+    123 // {or: ["@stringId", "@integerId"]}
+  212
+    123 // {or: [ "@stringId", {type: "integer"} ]}
+  213
+    @stringId | @integerId
+
+
+
+
