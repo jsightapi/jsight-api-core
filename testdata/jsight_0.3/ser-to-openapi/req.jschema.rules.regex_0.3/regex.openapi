@@ -5,7 +5,7 @@
       "version": ""
     },
     "paths": {
-      "/": {
+      "/request/jschema/rules/regex": {
         "get": {
           "responses": {
             "200": {
@@ -73,9 +73,31 @@
                   }
                 }
               }
+            },
+            "203": {
+              "description": "",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "string",
+                    "example": "Any string",
+                    "pattern": "[A-Za-z ]+"
+                  }
+                }
+              }
             }
+
           }
         }
       }
+    },
+    "components": {
+      "schemas": {
+        "catEmailUserType": {
+          "type": "string",
+          "example": "abc@cat.com",
+          "pattern": "^[a-z]+@cat.com$"
+        }
+      }
     }
-  }
+}
