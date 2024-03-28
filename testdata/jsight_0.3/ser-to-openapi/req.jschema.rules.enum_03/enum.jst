@@ -1,0 +1,13 @@
+JSIGHT 0.3
+
+GET /request/jschema/rules/enum
+  200
+    "white" // { type: "enum", enum: ["white", "blue", "red", ""] }
+  201
+    "white" // { enum: ["white", "blue", "red"] }
+  202
+    -2.1 // { type: "enum", enum: [-3, -2.1, 1.2, true, false, "-3", "0", "1.2", "string", "true", null, "null"] }
+  203
+    "http://wierd.com/.././%2D?query:=; #%fragment/api" // { "enum": ["http://wierd.com/.././%2D?query:=; #%fragment/api"] }
+  204
+    "https://username@[1080:0:0:0:8:800:200C:417A]:80/ABCDEFGHIJKLMNOPQRSTUVWXYZ?abcdefghijklmnopqrstuvwxyz!$&'()*+,;=#0123456789-._~ " // { "enum": ["https://username@[1080:0:0:0:8:800:200C:417A]:80/ABCDEFGHIJKLMNOPQRSTUVWXYZ?abcdefghijklmnopqrstuvwxyz!$&'()*+,;=#0123456789-._~ "] }
