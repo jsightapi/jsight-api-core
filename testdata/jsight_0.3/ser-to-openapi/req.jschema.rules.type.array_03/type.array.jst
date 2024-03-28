@@ -1,0 +1,27 @@
+JSIGHT 0.3
+
+GET /request/jschema/rules/type/array
+  200
+    [// { type: "array" }
+        1,
+        2.3,
+        "abc"
+    ]
+  201
+    [ // { type: "array" }
+    ]
+  202
+    [ // { type: "array", nullable: true }
+    ]
+  203
+    [] // { type: "array" }
+  204
+    [ // { type: "array", nullable: true, minItems: 0 }
+    ]
+  205
+    [ // { type: "array", maxItems: 3 }
+      1,
+      2.3,
+      "abc"
+    ]
+
