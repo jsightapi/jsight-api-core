@@ -1,0 +1,38 @@
+JSIGHT 0.3
+
+GET /request/jschema/rules/type/any
+  200
+    "some string" // {type: "any"}
+  201
+    "some string" // {type: "any"} - some text
+  202
+    123 // {type: "any"}
+  203
+    12.34  // {type: "any"}
+  204
+    true // {type: "any"}
+  205
+    false // {type: "any"}
+  206
+    false // {type: "any", nullable: true}
+  207
+    null // { type: "any" }
+  208
+    null // { type: "any" } - some text
+  209
+    {} // { type: "any" }
+  210
+    "" // { type: "any" }
+  211
+    {} // { type: "any" } - some text
+  212
+    [] // { type: "any" }
+  213
+    [] // { type: "any" } - some text
+  214
+    [
+      1, // {type: "any"}
+	  "abc@def.com", // {type: "any"}
+	  3.14, // {type: "any"}
+	  true // {type: "any"}
+	]
