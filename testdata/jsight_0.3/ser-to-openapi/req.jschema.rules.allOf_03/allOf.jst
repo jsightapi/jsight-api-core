@@ -1,0 +1,21 @@
+JSIGHT 0.3
+
+TYPE @cat
+{
+  "catName": "Tom"
+}
+
+TYPE @dog
+{
+  "dogName": "Bruno"
+}
+
+GET /request/jschema/rules/allOf
+  200
+    { // { allOf: "@cat" }
+      "foo": "bar"
+    }
+  201
+    { // { allOf: [ "@cat", "@dog" ] }
+      "foo": "bar"
+    }
