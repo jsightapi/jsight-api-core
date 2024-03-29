@@ -45,7 +45,7 @@
         ],
         "additionalProperties": false
       },
-      "userType1SelfRef": {
+      "userType1Self": {
         "type": "object",
         "anyOf": [
           {

@@ -6,7 +6,7 @@
   },
   "components": {
     "schemas": {
-      "cat": {
+      "userTypeBasic": {
         "type": "object",
         "properties": {
           "id": {
