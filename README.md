@@ -1529,7 +1529,7 @@ To run only OpenAPI converter tests, do the following:
 make oas_test
 ```
 
-If testing tool finds any errors in OpenAPI tests, it will create two temporal files
+If the testing tool finds any errors in OpenAPI tests, it will create two temporal files
 (`.ACTUAL.json` and `.EXPECTED.json`) right at the folder, where the test was failed. Compare these
 two files with any diff tool to find the error.
 
