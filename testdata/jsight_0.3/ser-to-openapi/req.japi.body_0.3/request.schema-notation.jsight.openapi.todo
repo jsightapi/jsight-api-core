@@ -8,6 +8,7 @@
     "/request/schema-notation/jsight/root-scalar/no-rules": {
       "post": {
         "requestBody": {
+          "required": true,
           "content": {
             "application/json": {
               "schema": {
@@ -35,6 +36,7 @@
     "/request/schema-notation/jsight/root-scalar/with-rules": {
       "post": {
         "requestBody": {
+          "required": true,
           "content": {
             "application/json": {
               "schema": {
@@ -66,6 +68,7 @@
     "/request/schema-notation/jsight/root-array/no-rules": {
       "put": {
         "requestBody": {
+          "required": true,
           "content": {
             "application/json": {
               "schema": {
@@ -96,6 +99,7 @@
     "/request/schema-notation/jsight/root-array/with-rules": {
       "put": {
         "requestBody": {
+          "required": true,
           "content": {
             "application/json": {
               "schema": {
@@ -129,6 +133,7 @@
     "/request/schema-notation/jsight/root-object/no-rules": {
       "patch": {
         "requestBody": {
+          "required": true,
           "content": {
             "application/json": {
               "schema": {
@@ -163,6 +168,7 @@
     "/request/schema-notation/jsight/root-object/with-rules": {
       "patch": {
         "requestBody": {
+          "required": true,
           "content": {
             "application/json": {
               "schema": {
@@ -211,6 +217,7 @@
     "/request/schema-notation/jsight/root-mixed/two-scalars": {
       "patch": {
         "requestBody": {
+          "required": true,
           "content": {
             "application/json": {
               "schema": {
@@ -240,6 +247,7 @@
     "/request/schema-notation/jsight/root-mixed/object-or-array": {
       "patch": {
         "requestBody": {
+          "required": true,
           "content": {
             "application/json": {
               "schema": {
@@ -269,6 +277,7 @@
     "/request/schema-notation/jsight/root-user-type/scalar": {
       "put": {
         "requestBody": {
+          "required": true,
           "content": {
             "application/json": {
               "schema": {
@@ -295,6 +304,7 @@
     "/request/schema-notation/jsight/root-user-type/object": {
       "put": {
         "requestBody": {
+          "required": true,
           "content": {
             "application/json": {
               "schema": {
