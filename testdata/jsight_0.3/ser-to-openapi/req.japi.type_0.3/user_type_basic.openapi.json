@@ -8,6 +8,7 @@
     "schemas": {
       "userTypeBasic": {
         "type": "object",
+        "description": "User's type annotation",
         "properties": {
           "one": {
             "type": "integer",
