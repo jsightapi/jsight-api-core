@@ -5,7 +5,7 @@
     "version": ""
   },
   "paths": {
-    "/response/no-params/root-scalar/no-rules": {
+    "/response/schema-notation/jsight/root-scalar/no-rules": {
       "post": {
         "responses": {
           "200": {
@@ -22,7 +22,7 @@
         }
       }
     },
-    "/response/no-params/root-scalar/with-rules": {
+    "/response/schema-notation/jsight/root-scalar/with-rules": {
       "post": {
         "responses": {
           "200": {
@@ -43,7 +43,7 @@
         }
       }
     },
-    "/response/no-params/root-array/no-rules": {
+    "/response/schema-notation/jsight/root-array/no-rules": {
       "put": {
         "responses": {
           "200": {
@@ -63,7 +63,7 @@
         }
       }
     },
-    "/response/no-params/root-array/with-rules": {
+    "/response/schema-notation/jsight/root-array/with-rules": {
       "put": {
         "responses": {
           "200": {
@@ -86,7 +86,7 @@
         }
       }
     },
-    "/response/no-params/root-object/no-rules": {
+    "/response/schema-notation/jsight/root-object/no-rules": {
       "patch": {
         "responses": {
           "200": {
@@ -110,7 +110,7 @@
         }
       }
     },
-    "/response/no-params/root-object/with-rules": {
+    "/response/schema-notation/jsight/root-object/with-rules": {
       "patch": {
         "responses": {
           "200": {
@@ -150,7 +150,7 @@
         }
       }
     },
-    "/response/no-params/root-mixed/two-scalars": {
+    "/response/schema-notation/jsight/root-mixed/two-scalars": {
       "patch": {
         "responses": {
           "200": {
@@ -174,7 +174,7 @@
         }
       }
     },
-    "/response/no-params/root-mixed/object-or-array": {
+    "/response/schema-notation/jsight/root-mixed/object-or-array": {
       "patch": {
         "responses": {
           "200": {
@@ -197,7 +197,7 @@
         }
       }
     },
-    "/response/no-params/root-user-type/scalar": {
+    "/response/schema-notation/jsight/root-user-type/scalar": {
       "put": {
         "responses": {
           "200": {
@@ -213,7 +213,7 @@
         }
       }
     },
-    "/response/no-params/root-user-type/object": {
+    "/response/schema-notation/jsight/root-user-type/object": {
       "put": {
         "responses": {
           "200": {

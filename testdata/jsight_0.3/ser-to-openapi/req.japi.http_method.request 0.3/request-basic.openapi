@@ -36,6 +36,7 @@
           {
             "name": "X-Header",
             "in": "header",
+            "required": true,
             "schema": {
               "type": "string",
               "example": "header-value"
