@@ -165,7 +165,8 @@
                     {
                       "type": "string"
                     }
-                  ]
+                  ],
+                  "example": 123
                 }
               }
             }

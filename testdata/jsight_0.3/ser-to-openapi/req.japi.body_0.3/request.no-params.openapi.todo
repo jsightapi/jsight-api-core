@@ -224,7 +224,8 @@
                 "anyOf": [
                   {"type": "integer"},
                   {"type": "string"}
-                ]
+                ],
+                "example": 123
               }
             }
           }
