@@ -243,7 +243,8 @@
           {
             "type": "string"
           }
-        ]
+        ],
+        "example": 123
       },
       "response_root_mixed_object_or_array": {
         "anyOf": [
