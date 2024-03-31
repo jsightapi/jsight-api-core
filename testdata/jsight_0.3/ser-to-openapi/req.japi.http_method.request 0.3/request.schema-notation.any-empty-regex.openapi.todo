@@ -8,6 +8,7 @@
     "/request/schema-notation/any ": {
       "post": {
         "requestBody": {
+          "required": true,
           "content": {
             "*/*": {
               "schema": {}
@@ -32,6 +33,7 @@
     "/request/schema-notation/empty": {
       "put": {
         "requestBody": {
+          "required": true,
           "content": {
           }
         },
@@ -53,6 +55,7 @@
     "/request/schema-notation/regex": {
       "patch": {
         "requestBody": {
+          "required": true,
           "content": {
             "text/plain": {
               "schema": {

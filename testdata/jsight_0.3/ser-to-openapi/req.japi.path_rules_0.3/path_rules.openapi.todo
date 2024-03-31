@@ -385,6 +385,7 @@
       ],
       "post": {
         "requestBody": {
+          "required": true,
           "content": {
             "*/*": {
               "schema": {}

@@ -5,25 +5,15 @@
     "version": ""
   },
   "paths": {
-    "/request/user-type/root-scalar/no-rules": {
+    "/response/user-type/root-scalar/no-rules": {
       "post": {
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/request_root_scalar_no_rules"
-              }
-            }
-          }
-        },
         "responses": {
           "200": {
             "description": "",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "string",
-                  "example": "OK"
+                  "$ref": "#/components/schemas/response_root_scalar_no_rules"
                 }
               }
             }
@@ -31,25 +21,15 @@
         }
       }
     },
-    "/request/user-type/root-scalar/with-rules": {
+    "/response/user-type/root-scalar/with-rules": {
       "post": {
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/request_root_scalar_with_rules"
-              }
-            }
-          }
-        },
         "responses": {
           "200": {
             "description": "",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "string",
-                  "example": "OK"
+                  "$ref": "#/components/schemas/response_root_scalar_with_rules"
                 }
               }
             }
@@ -57,25 +37,15 @@
         }
       }
     },
-    "/request/user-type/root-array/no-rules": {
+    "/response/user-type/root-array/no-rules": {
       "put": {
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/request_root_array_no_rules"
-              }
-            }
-          }
-        },
         "responses": {
           "200": {
             "description": "",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "string",
-                  "example": "OK"
+                  "$ref": "#/components/schemas/response_root_array_no_rules"
                 }
               }
             }
@@ -83,25 +53,15 @@
         }
       }
     },
-    "/request/user-type/root-array/with-rules": {
+    "/response/user-type/root-array/with-rules": {
       "put": {
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/request_root_array_with_rules"
-              }
-            }
-          }
-        },
         "responses": {
           "200": {
             "description": "",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "string",
-                  "example": "OK"
+                  "$ref": "#/components/schemas/response_root_array_with_rules"
                 }
               }
             }
@@ -109,25 +69,15 @@
         }
       }
     },
-    "/request/user-type/root-object/no-rules": {
+    "/response/user-type/root-object/no-rules": {
       "patch": {
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/request_root_object_no_rules"
-              }
-            }
-          }
-        },
         "responses": {
           "200": {
             "description": "",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "string",
-                  "example": "OK"
+                  "$ref": "#/components/schemas/response_root_object_no_rules"
                 }
               }
             }
@@ -135,25 +85,15 @@
         }
       }
     },
-    "/request/user-type/root-object/with-rules": {
+    "/response/user-type/root-object/with-rules": {
       "patch": {
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/request_root_object_with_rules"
-              }
-            }
-          }
-        },
         "responses": {
           "200": {
             "description": "",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "string",
-                  "example": "OK"
+                  "$ref": "#/components/schemas/response_root_object_with_rules"
                 }
               }
             }
@@ -161,25 +101,15 @@
         }
       }
     },
-    "/request/user-type/root-mixed/two-scalars": {
+    "/response/user-type/root-mixed/two-scalars": {
       "patch": {
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/request_root_mixed_two_scalars"
-              }
-            }
-          }
-        },
         "responses": {
           "200": {
             "description": "",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "string",
-                  "example": "OK"
+                  "$ref": "#/components/schemas/response_root_mixed_two_scalars"
                 }
               }
             }
@@ -187,25 +117,15 @@
         }
       }
     },
-    "/request/user-type/root-mixed/object-or-array": {
+    "/response/user-type/root-mixed/object-or-array": {
       "patch": {
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/request_root_mixed_object_or_array"
-              }
-            }
-          }
-        },
         "responses": {
           "200": {
             "description": "",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "string",
-                  "example": "OK"
+                  "$ref": "#/components/schemas/response_root_mixed_object_or_array"
                 }
               }
             }
@@ -213,25 +133,15 @@
         }
       }
     },
-    "/request/user-type/root-user-type/scalar": {
+    "/response/user-type/root-user-type/scalar": {
       "put": {
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/request_root_user_type_scalar"
-              }
-            }
-          }
-        },
         "responses": {
           "200": {
             "description": "",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "string",
-                  "example": "OK"
+                  "$ref": "#/components/schemas/response_root_user_type_scalar"
                 }
               }
             }
@@ -239,25 +149,15 @@
         }
       }
     },
-    "/request/user-type/root-user-type/object": {
+    "/response/user-type/root-user-type/object": {
       "put": {
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/request_root_user_type_object"
-              }
-            }
-          }
-        },
         "responses": {
           "200": {
             "description": "",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "string",
-                  "example": "OK"
+                  "$ref": "#/components/schemas/response_root_user_type_object"
                 }
               }
             }
@@ -268,11 +168,11 @@
   },
   "components": {
     "schemas": {
-      "request_root_scalar_no_rules": {
+      "response_root_scalar_no_rules": {
         "type": "string",
         "example": "root-string"
       },
-      "request_root_scalar_with_rules": {
+      "response_root_scalar_with_rules": {
         "type": "string",
         "minLength": 4,
         "maxLength": 15,
@@ -280,14 +180,14 @@
         "nullable": true,
         "example": "AAA123"
       },
-      "request_root_array_no_rules": {
+      "response_root_array_no_rules": {
         "type": "array",
         "items": {
           "type": "string",
           "example": "string"
         }
       },
-      "request_root_array_with_rules": {
+      "response_root_array_with_rules": {
         "type": "array",
         "minItems": 1,
         "maxItems": 5,
@@ -297,7 +197,7 @@
           "example": "string"
         }
       },
-      "request_root_object_no_rules": {
+      "response_root_object_no_rules": {
         "type": "object",
         "properties": {
           "string": {
@@ -308,7 +208,7 @@
         "required": ["string"],
         "additionalProperties": false
       },
-      "request_root_object_with_rules": {
+      "response_root_object_with_rules": {
         "type": "object",
         "nullable": true,
         "properties": {
@@ -335,7 +235,7 @@
           }
         ]
       },
-      "request_root_mixed_two_scalars": {
+      "response_root_mixed_two_scalars": {
         "anyOf": [
           {
             "type": "integer"
@@ -343,9 +243,10 @@
           {
             "type": "string"
           }
-        ]
+        ],
+        "example": 123
       },
-      "request_root_mixed_object_or_array": {
+      "response_root_mixed_object_or_array": {
         "anyOf": [
           {
             "$ref": "#/components/schemas/object"
@@ -355,10 +256,10 @@
           }
         ]
       },
-      "request_root_user_type_scalar": {
+      "response_root_user_type_scalar": {
         "$ref": "#/components/schemas/decimal"
       },
-      "request_root_user_type_object": {
+      "response_root_user_type_object": {
         "$ref": "#/components/schemas/object"
       },
       "array": {
