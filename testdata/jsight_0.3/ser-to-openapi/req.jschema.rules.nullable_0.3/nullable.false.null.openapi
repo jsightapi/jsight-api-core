@@ -6,7 +6,7 @@
   },
 
   "paths": {
-    "/request/jschema/rules/nullable/boolean": {
+    "/request/jschema/rules/nullable/null": {
       "get": {
         "responses": {
 
@@ -15,9 +15,8 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "boolean",
-                  "example": true,
-                  "nullable": true
+                  "enum": [null],
+                  "example": null
                 }
               }
             }
@@ -30,13 +29,12 @@
                 "schema": {
                   "type": "object",
                   "properties": {
-                    "sBoolean": {
-                      "type": "boolean",
-                      "example": true,
-                      "nullable": true
+                    "sNull": {
+                      "enum": [null],
+                      "example": null
                     }
                   },
-                  "required": ["sBoolean"],
+                  "required": ["sNull"],
                   "additionalProperties": false
                 }
               }
@@ -50,26 +48,9 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "anyOf": [
-                      {
-                        "type": "boolean",
-                        "example": true,
-                        "nullable": true
-                      }
-                    ]
+                    "enum": [null],
+                    "example": null
                   }
-                }
-              }
-            }
-          },
-
-          "203": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "example": false,
-                  "nullable": true
                 }
               }
             }

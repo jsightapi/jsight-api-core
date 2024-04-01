@@ -31,7 +31,7 @@
                 "schema": {
                   "type": "string",
                   "format": "date-time",
-                  "example": "2024-02-14T09:14:28+03:00",
+                  "example": "2024-02-19T09:14:28+03:00",
                   "nullable": true
                 }
               }
@@ -109,7 +109,7 @@
                     "sDatetime": {
                       "type": "string",
                       "format": "date-time",
-                      "example": "2024-02-14T09:14:28+03:00",
+                      "example": "2024-02-19T09:14:28+03:00",
                       "nullable": true
                     },
                     "sEmail": {
@@ -160,7 +160,7 @@
                       {
                         "type": "string",
                         "format": "date-time",
-                        "example": "2024-02-14T09:14:28+03:00",
+                        "example": "2024-02-19T09:14:28+03:00",
                         "nullable": true
                       },
                       {
