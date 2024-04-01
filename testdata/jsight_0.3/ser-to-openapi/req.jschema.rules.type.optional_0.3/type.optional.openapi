@@ -35,8 +35,6 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "anyOf": [
-                      {
                         "type": "object",
                         "properties": {
                           "required1": { "type": "integer", "example": 111 },
@@ -45,8 +43,6 @@
                         },
                         "additionalProperties": false,
                         "required": [ "required1", "required2" ]
-                      }
-                    ]
                   }
                 }
               }
@@ -99,12 +95,17 @@
     "schemas": {
       "cat": {
         "type": "object",
+        "description": "A cat.",
         "properties": {
           "name": {
             "type": "string",
             "example": "Tom"
           }
-        }
+        },
+        "additionalProperties": false,
+        "required": [
+          "name"
+        ]
       }
     }
   }
