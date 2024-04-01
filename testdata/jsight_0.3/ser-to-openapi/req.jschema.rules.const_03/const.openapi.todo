@@ -262,6 +262,60 @@
                 }
               }
             }
+          },
+
+
+          "212": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string",
+                  "format": "date-time",
+                  "example": "2024-04-01T11:05:05+03:00",
+                  "enum": ["2024-04-01T11:05:05+03:00"]
+                }
+              }
+            }
+          },
+          "213": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string",
+                  "format": "email",
+                  "example": "tom@cat.com",
+                  "enum": ["tom@cat.com"]
+                }
+              }
+            }
+          },
+          "214": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string",
+                  "format": "uri",
+                  "example": "https://example.com",
+                  "enum": ["https://example.com"]
+                }
+              }
+            }
+          },
+          "215": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string",
+                  "format": "uuid",
+                  "example": "550e8400-e29b-41d4-a716-446655440000",
+                  "enum": ["550e8400-e29b-41d4-a716-446655440000"]
+                }
+              }
+            }
           }
 
         }
