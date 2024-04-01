@@ -9,3 +9,9 @@ GET /request/jschema/rules/minmaxlength
     "" // { maxLength: 0 }
   203
     "Any string" // { maxLength: 18446744073709551615 }
+  204
+    "Any string" // { minLength: 3, maxLength: 10 }
+  205
+    "" // { minLength: 0, maxLength: 10  }
+  206
+    "Any string" // { minLength: 10, maxLength: 18446744073709551615 }

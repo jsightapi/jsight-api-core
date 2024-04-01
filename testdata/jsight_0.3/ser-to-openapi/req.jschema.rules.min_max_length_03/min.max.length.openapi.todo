@@ -60,6 +60,48 @@
                 }
               }
             }
+          },
+
+          "204": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string",
+                  "example": "Any string",
+                  "minLength": 3,
+                  "maxLength": 10
+                }
+              }
+            }
+          },
+
+          "205": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string",
+                  "example": "",
+                  "minLength": 0,
+                  "maxLength": 10
+                }
+              }
+            }
+          },
+
+          "206": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string",
+                  "example": "Any string",
+                  "minLength": 10,
+                  "maxLength": 18446744073709551615
+                }
+              }
+            }
           }
 
         }
