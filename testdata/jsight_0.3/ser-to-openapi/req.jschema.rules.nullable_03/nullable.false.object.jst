@@ -1,0 +1,27 @@
+JSIGHT 0.3
+
+TYPE @passportNumber // Passport ID.
+  "1234 567890" // { regex: "^\\d{4} \\d{6}$" }
+
+TYPE @cat // A cat.
+{
+  "name": "Tom"
+}
+
+GET /request/jschema/rules/nullable/object
+  200
+    {} // {nullable: false} - some text
+  201
+    "1111 222222" // {type: "@passportNumber", nullable: false} - some text
+  202
+    "1111 222222" // {type: "@passportNumber", nullable: false}
+  203
+    @cat // {nullable: false} - Some text
+  204
+    [
+      @cat // {nullable: false} - Some text
+    ]
+  205
+    {
+      "key": @cat // {optional: true, nullable: false}
+    }

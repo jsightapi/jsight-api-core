@@ -1,0 +1,108 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "",
+    "version": ""
+  },
+
+  "paths": {
+    "/request/jschema/rules/nullable/number": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "number",
+                  "example": 1.12,
+                  "multipleOf": 0.01
+                }
+              }
+            }
+          },
+          "202": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "number",
+                  "example": 12.34
+                }
+              }
+            }
+          },
+          "203": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "integer",
+                  "example": 1
+                }
+              }
+            }
+          },
+          "204": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "sDecimal": {
+                      "type": "number",
+                      "example": 1.12,
+                      "multipleOf": 0.01
+                    },
+                    "sFloat": {
+                      "type": "number",
+                      "example": 12.34
+                    },
+                    "sInteger": {
+                      "type": "integer",
+                      "example": 1
+                    }
+                  },
+                  "required": [
+                    "sDecimal",
+                    "sFloat",
+                    "sInteger"
+                  ],
+                  "additionalProperties": false
+                }
+              }
+            }
+          },
+          "205": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "anyOf": [
+                      {
+                        "type": "number",
+                        "example": 1.12,
+                        "multipleOf": 0.01
+                      },
+                      {
+                        "type": "number",
+                        "example": 12.34
+                      },
+                      {
+                        "type": "integer",
+                        "example": 1
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
