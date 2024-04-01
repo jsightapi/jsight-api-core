@@ -1,0 +1,180 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "",
+    "version": ""
+  },
+  "components": {
+    "schemas": {
+      "userType1": {
+        "type": "object",
+        "properties": {
+          "one": {
+            "type": "integer",
+            "example": 1
+          }
+        },
+        "required": [
+          "one"
+        ],
+        "additionalProperties": false
+      },
+      "userType2": {
+        "type": "object",
+        "properties": {
+          "two": {
+            "type": "string",
+            "example": "2"
+          }
+        },
+        "required": [
+          "two"
+        ],
+        "additionalProperties": false
+      },
+      "userType3": {
+        "type": "object",
+        "properties": {
+          "three": {
+            "type": "number",
+            "example": 3.0004
+          }
+        },
+        "required": [
+          "three"
+        ],
+        "additionalProperties": false
+      },
+      "userType1Self": {
+        "type": "object",
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/userType1"
+          }
+        ],
+        "additionalProperties": false
+      },
+      "userType1Or2": {
+        "type": "object",
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/userType1"
+          },
+          {
+            "$ref": "#/components/schemas/userType2"
+          }
+        ],
+        "additionalProperties": false
+      },
+      "userType1Or2Or3": {
+        "type": "object",
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/userType1"
+          },
+          {
+            "$ref": "#/components/schemas/userType2"
+          },
+          {
+            "$ref": "#/components/schemas/userType3"
+          }
+        ],
+        "additionalProperties": false
+      },
+      "userType1Or2_Or_userType3": {
+        "type": "object",
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/userType1Or2"
+          },
+          {
+            "$ref": "#/components/schemas/userType3"
+          }
+        ],
+        "additionalProperties": false
+      },
+      "userType1Or2___Or___userType1Or2Or3___userType1Or2_Or_userType3": {
+        "type": "object",
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/userType1Or2"
+          },
+          {
+            "$ref": "#/components/schemas/userType1Or2Or3"
+          },
+          {
+            "$ref": "#/components/schemas/userType1Or2_Or_userType3"
+          }
+        ],
+        "additionalProperties": false
+      },
+      "userTypeAllInArray": {
+        "type": "array",
+        "items": {
+          "anyOf": [
+            {
+              "$ref": "#/components/schemas/userType1"
+            },
+            {
+              "$ref": "#/components/schemas/userType2"
+            },
+            {
+              "$ref": "#/components/schemas/userType3"
+            }
+          ]
+        }
+      },
+      "userTypeAsValueInObject": {
+        "type": "object",
+        "properties": {
+          "userTypeWithOrArray": {
+            "type": "array",
+            "items": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/userType1"
+                },
+                {
+                  "$ref": "#/components/schemas/userType2"
+                },
+                {
+                  "$ref": "#/components/schemas/userType3"
+                }
+              ]
+            }
+          },
+          "userTypeWithOrObject": {
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/userType1"
+              },
+              {
+                "$ref": "#/components/schemas/userType2"
+              },
+              {
+                "$ref": "#/components/schemas/userType3"
+              }
+            ],
+            "additionalProperties": false
+          },
+          "userType1": {
+            "$ref": "#/components/schemas/userType1"
+          },
+          "userType1Again": {
+            "$ref": "#/components/schemas/userType1"
+          }
+        },
+        "required": [
+          "userTypeWithOrArray",
+          "userTypeWithOrObject",
+          "userType1",
+          "userType1Again"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "paths": {
+  }
+}

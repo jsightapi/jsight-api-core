@@ -21,6 +21,10 @@ lint:
 test:
 	go test -cover ./...
 
+.PHONY: oas_test
+oas_test:
+	go test -v ./test -count=1 -run "TestOpenAPI"
+
 .PHONY: bench
 bench:
 	go test -run XXXX -bench . -benchmem ./...

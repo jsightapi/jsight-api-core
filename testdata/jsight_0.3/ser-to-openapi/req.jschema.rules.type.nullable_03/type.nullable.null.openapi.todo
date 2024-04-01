@@ -1,0 +1,70 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "",
+    "version": ""
+  },
+
+  "paths": {
+    "/request/jschema/rules/type/nullable/null": {
+      "get": {
+        "responses": {
+
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "enum": [null],
+                  "example": null,
+                  "nullable": true
+                }
+              }
+            }
+          },
+
+          "201": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "sNull": {
+                      "enum": [null],
+                      "example": null,
+                      "nullable": true
+                    }
+                  },
+                  "required": ["sNull"],
+                  "additionalProperties": false
+                }
+              }
+            }
+          },
+
+          "202": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "anyOf": [
+                      {
+                        "enum": [null],
+                        "example": null,
+                        "nullable": true
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+
+        }
+      }
+    }
+  }
+}

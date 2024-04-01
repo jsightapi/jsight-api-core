@@ -8,6 +8,7 @@
     "/request/schema-notation/any ": {
       "post": {
         "requestBody": {
+          "required": true,
           "content": {
             "*/*": {
               "schema": {}
@@ -18,7 +19,7 @@
           "200": {
             "description": "",
             "content": {
-              "*/*": {
+              "application/json": {
                 "schema": {
                   "type": "string",
                   "example": "OK"
@@ -32,6 +33,7 @@
     "/request/schema-notation/empty": {
       "put": {
         "requestBody": {
+          "required": true,
           "content": {
           }
         },
@@ -39,7 +41,7 @@
           "200": {
             "description": "",
             "content": {
-              "*/*": {
+              "application/json": {
                 "schema": {
                   "type": "string",
                   "example": "OK"
@@ -53,8 +55,9 @@
     "/request/schema-notation/regex": {
       "patch": {
         "requestBody": {
+          "required": true,
           "content": {
-            "*/*": {
+            "text/plain": {
               "schema": {
                 "type": "string",
                 "pattern": "^[A-Z]+\\s\\d+$"
@@ -66,7 +69,7 @@
           "200": {
             "description": "",
             "content": {
-              "*/*": {
+              "application/json": {
                 "schema": {
                   "type": "string",
                   "example": "OK"

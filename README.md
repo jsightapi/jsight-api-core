@@ -1521,6 +1521,20 @@ To run automated tests, run the following command in the repository root folder:
 go test -cover ./...
 ```
 
+### OpenAPI converter testing
+
+To run only OpenAPI converter tests, do the following:
+
+```
+make oas_test
+```
+
+If the testing tool finds any errors in OpenAPI tests, it will create two temporal files
+(`.ACTUAL.json` and `.EXPECTED.json`) right at the folder, where the test was failed. Compare these
+two files with any diff tool to find the error.
+
+After you fix the bug, run tests again, and these two files fill be automatically removed.
+
 <div>
   &nbsp;
 </div>

@@ -1,0 +1,200 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "",
+    "version": ""
+  },
+
+  "paths": {
+    "/request/jschema/rules/type/nullable/string": {
+      "get": {
+        "responses": {
+
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string",
+                  "format": "date",
+                  "example": "2024-02-19",
+                  "nullable": true
+                }
+              }
+            }
+          },
+
+          "201": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string",
+                  "format": "date-time",
+                  "example": "2024-02-14T09:14:28+03:00",
+                  "nullable": true
+                }
+              }
+            }
+          },
+
+          "202": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string",
+                  "format": "email",
+                  "example": "test@example.com",
+                  "nullable": true
+                }
+              }
+            }
+          },
+
+          "203": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string",
+                  "example": "foo",
+                  "nullable": true
+                }
+              }
+            }
+          },
+
+          "204": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string",
+                  "example": "https://www.com",
+                  "format":"uri",
+                  "nullable": true
+                }
+              }
+            }
+          },
+
+          "205": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string",
+                  "example": "53496d7f-1374-4368-a829-74ccd47aec1c",
+                  "format":"uuid",
+                  "nullable": true
+                }
+              }
+            }
+          },
+
+          "206": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "sDate": {
+                      "type": "string",
+                      "format": "date",
+                      "example": "2024-02-19",
+                      "nullable": true
+                    },
+                    "sDatetime": {
+                      "type": "string",
+                      "format": "date-time",
+                      "example": "2024-02-14T09:14:28+03:00",
+                      "nullable": true
+                    },
+                    "sEmail": {
+                      "type": "string",
+                      "format": "email",
+                      "example": "test@example.com",
+                      "nullable": true
+                    },
+                    "sString": {
+                      "type": "string",
+                      "example": "foo",
+                      "nullable": true
+                    },
+                    "sUri": {
+                      "type": "string",
+                      "example": "https://www.com",
+                      "format":"uri",
+                      "nullable": true
+                    },
+                    "sUuid": {
+                      "type": "string",
+                      "example": "53496d7f-1374-4368-a829-74ccd47aec1c",
+                      "format":"uuid",
+                      "nullable": true
+                    }
+                  },
+                  "required": ["sDate", "sDatetime", "sEmail", "sString", "sUri", "sUuid"],
+                  "additionalProperties": false
+                }
+              }
+            }
+          },
+
+          "207": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "format": "date",
+                        "example": "2024-02-19",
+                        "nullable": true
+                      },
+                      {
+                        "type": "string",
+                        "format": "date-time",
+                        "example": "2024-02-14T09:14:28+03:00",
+                        "nullable": true
+                      },
+                      {
+                        "type": "string",
+                        "format": "email",
+                        "example": "test@example.com",
+                        "nullable": true
+                      },
+                      {
+                        "type": "string",
+                        "example": "foo",
+                        "nullable": true
+                      },
+                      {
+                        "type": "string",
+                        "example": "https://www.com",
+                        "format":"uri",
+                        "nullable": true
+                      },
+                      {
+                        "type": "string",
+                        "example": "53496d7f-1374-4368-a829-74ccd47aec1c",
+                        "format":"uuid",
+                        "nullable": true
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+
+        }
+      }
+    }
+  }
+}

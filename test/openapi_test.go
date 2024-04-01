@@ -1,6 +1,7 @@
 package test
 
 import (
+	"encoding/json"
 	"os"
 	"path/filepath"
 	"testing"
@@ -16,11 +17,12 @@ func TestOpenAPI(t *testing.T) {
 
 	for _, openapiPath := range openapiFilesPaths {
 		t.Run(cutRepositoryPath(openapiPath), func(t *testing.T) {
-			json, err := os.ReadFile(openapiPath)
+			openapiJsonBytes, err := os.ReadFile(openapiPath)
 			require.NoError(t, err)
 
 			japiPath, err := japiFilePath(openapiPath)
 			require.NoError(t, err)
+			// TODO: throw error if file does not exist
 
 			j, je := kit.NewJapi(japiPath)
 			if je != nil {
@@ -31,16 +33,60 @@ func TestOpenAPI(t *testing.T) {
 			actual, err := j.ToOpenAPIJsonIndent()
 			require.NoError(t, err)
 
-			expected := string(json)
+			ok := assert.JSONEq(t, string(openapiJsonBytes), string(actual))
 
-			ok := assert.JSONEq(t, expected, string(actual))
+			dir := filepath.Dir(openapiPath)
+			openapiFileName := filepath.Base(openapiPath)
+			actualFilePath := filepath.Join(dir, openapiFileName+".ACTUAL.json")
+			expectedFilePath := filepath.Join(dir, openapiFileName+".EXPECTED.json")
 
-			if !ok {
-				t.Log("Actual OpenAPI JSON:")
-				t.Log(string(actual))
+			if ok {
+				if os.Remove(actualFilePath) == nil {
+					t.Log("Bug fixed, ACTUAL OpenApi JSON removed: " + actualFilePath)
+				}
+				if os.Remove(expectedFilePath) == nil {
+					t.Log("Bug fixed, ACTUAL OpenApi JSON removed: " + expectedFilePath)
+				}
+			} else {
+				/*oa, err := openapi.NewOpenAPI(nil)
+				t.Log("OpenApi: ")
+				t.Log(oa)
+				t.Log(err)
+				json.Unmarshal([]byte(openapiJsonBytes), oa)
+				expected, _ := json.MarshalIndent(oa, "", "  ")
+				*/
+
+				expectedAligned, err := alignJSON(openapiJsonBytes)
+				if err != nil {
+					t.Logf("Expected openapi file alignment failed: %s", err)
+				}
+
+				actualAligned, err := alignJSON(actual)
+				if err != nil {
+					t.Logf("Actual openapi file alignment failed: %s", err)
+				}
+
+				os.WriteFile(actualFilePath, actualAligned, 0644)
+				os.WriteFile(expectedFilePath, expectedAligned, 0644)
+				t.Log("ACTUAL OpenApi JSON written to: " + actualFilePath)
+				t.Log("EXPECTED OpenApi JSON written to: " + expectedFilePath)
 			}
 		})
 	}
+}
+
+func alignJSON(j []byte) ([]byte, error) {
+	var JSONAsInterface interface{}
+
+	if err := json.Unmarshal(j, &JSONAsInterface); err != nil {
+		return []byte{}, err
+	}
+
+	alignedJson, err := json.MarshalIndent(&JSONAsInterface, "", "  ")
+	if err != nil {
+		return []byte{}, err
+	}
+	return alignedJson, nil
 }
 
 func openapiFilePaths(dir string) []string {

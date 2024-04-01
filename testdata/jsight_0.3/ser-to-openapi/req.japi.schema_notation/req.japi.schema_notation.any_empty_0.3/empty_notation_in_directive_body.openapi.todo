@@ -8,6 +8,7 @@
     "/notation/in/request/body/": {
       "put": {
         "requestBody": {
+          "required": true,
           "content": {
           }
         },
@@ -26,6 +27,7 @@
     "/notation/in/request/no/body/directive": {
       "put": {
         "requestBody": {
+          "required": true,
           "content": {
           }
         },

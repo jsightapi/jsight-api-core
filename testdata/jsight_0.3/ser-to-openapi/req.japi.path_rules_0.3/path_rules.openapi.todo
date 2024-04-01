@@ -360,7 +360,7 @@
           "500": {
             "description": "",
             "content": {
-              "*/*": {
+              "application/json": {
                 "schema": {
                   "type": "string",
                   "example": "OK"
@@ -385,6 +385,7 @@
       ],
       "post": {
         "requestBody": {
+          "required": true,
           "content": {
             "*/*": {
               "schema": {}

@@ -294,6 +294,7 @@
           }
         ],
         "requestBody": {
+          "required": true,
           "content": {
             "*/*": {
               "schema": {}
@@ -601,6 +602,7 @@
           }
         ],
         "requestBody": {
+          "required": true,
           "content": {
             "*/*": {
               "schema": {}
@@ -908,6 +910,7 @@
           }
         ],
         "requestBody": {
+          "required": true,
           "content": {
             "*/*": {
               "schema": {}
@@ -1215,6 +1218,7 @@
           }
         ],
         "requestBody": {
+          "required": true,
           "content": {
             "*/*": {
               "schema": {}
@@ -1522,6 +1526,7 @@
           }
         ],
         "requestBody": {
+          "required": true,
           "content": {
             "*/*": {
               "schema": {}
@@ -2999,7 +3004,6 @@
             "example": "a@a.com"
           }
         },
-        "required": ["Required"],
         "additionalProperties": false
       },
       "headers": {
@@ -3249,7 +3253,6 @@
             "example": "a@a.com"
           }
         },
-        "required": ["Required"],
         "additionalProperties": false,
         "allOf": [{
           "$ref": "#/components/schemas/headersAllOfPart2"

@@ -11,7 +11,7 @@
           "200": {
             "description": "",
             "content": {
-              "*/*": {
+              "application/json": {
                 "schema": {
                   "anyOf": [
                     {
@@ -71,7 +71,7 @@
       },
       "typeWithAnnotationLong": {
         "type": "string",
-        "description": "Long description with different symbols... tabs:\t\tascii: !\"$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~ spec:¹²³$‰↑∞←→—≠€®™ѣѵіѳ′[]≈§°£₽„“”‘’×©↓−«»…´“„•ẞˇ¢·¸¨‘⌀⌘˘˚ѢѴІѲ″{}±–〉〈¿ˆ¼⅓½¡ Cyrillic: йцукенгшщзФЫВАПРОЛДЖЭ Chinese: 你好世界",
+        "description": "Long description with different symbols... tabs: ascii: !\\\"$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\\\]^_`abcdefghijklmnopqrstuvwxyz{|}~ spec:¹²³$‰↑∞←→—≠€®™ѣѵіѳ′[]≈§°£₽„“”‘’×©↓−«»…´“„•ẞˇ¢·¸¨‘⌀⌘˘˚ѢѴІѲ″{}±–〉〈¿ˆ¼⅓½¡ Cyrillic: йцукенгшщзФЫВАПРОЛДЖЭ Chinese: 你好世界",
         "example": "typeWithAnnotationLong example"
       },
       "typeWithAnnotationMultilineOneline": {
@@ -81,17 +81,15 @@
       },
       "typeWithAnnotationMultilineSeverallines": {
         "type": "string",
-        "description": "Multi-line description\non\nseveral\nlines",
+        "description": "Multi-line description on several lines",
         "example": "typeWithAnnotationMultilineSeverallines example"
       },
       "typeWithAnnotationOnelineEmpty": {
         "type": "string",
-        "description": "",
         "example": "typeWithAnnotationOnelineEmpty example"
       },
       "typeWithAnnotationMultilineEmpty": {
         "type": "string",
-        "description": "",
         "example": "typeWithAnnotationMultilineEmpty example"
       },
       "typeWithAnnotationDirective": {

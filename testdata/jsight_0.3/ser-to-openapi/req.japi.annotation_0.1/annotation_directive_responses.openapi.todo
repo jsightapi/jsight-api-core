@@ -11,7 +11,7 @@
           "200": {
             "description": "Brief description of the RESPONSE",
             "content": {
-              "*/*": {
+              "application/json": {
                 "schema": {
                   "type": "string",
                   "example": "response"
@@ -26,9 +26,9 @@
       "get": {
         "responses": {
           "200": {
-            "description": "Long description with different symbols... tabs:\t\tascii: !\"$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~ spec:¹²³$‰↑∞←→—≠€®™ѣѵіѳ′[]≈§°£₽„“”‘’×©↓−«»…´“„•ẞˇ¢·¸¨‘⌀⌘˘˚ѢѴІѲ″{}±–〉〈¿ˆ¼⅓½¡ Cyrillic: йцукенгшщзФЫВАПРОЛДЖЭ Chinese: 你好世界",
+            "description": "Long description with different symbols... tabs: ascii: !\\\"$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\\\]^_`abcdefghijklmnopqrstuvwxyz{|}~ spec:¹²³$‰↑∞←→—≠€®™ѣѵіѳ′[]≈§°£₽„“”‘’×©↓−«»…´“„•ẞˇ¢·¸¨‘⌀⌘˘˚ѢѴІѲ″{}±–〉〈¿ˆ¼⅓½¡ Cyrillic: йцукенгшщзФЫВАПРОЛДЖЭ Chinese: 你好世界",
             "content": {
-              "*/*": {
+              "application/json": {
                 "schema": {
                   "type": "string",
                   "example": "response"
@@ -45,7 +45,7 @@
           "200": {
             "description": "Multi-line description on one line",
             "content": {
-              "*/*": {
+              "application/json": {
                 "schema": {
                   "type": "string",
                   "example": "response"
@@ -60,9 +60,9 @@
       "get": {
         "responses": {
           "200": {
-            "description": "Multi-line description\non\nseveral\nlines",
+            "description": "Multi-line description on several lines",
             "content": {
-              "*/*": {
+              "application/json": {
                 "schema": {
                   "type": "string",
                   "example": "response"
@@ -79,7 +79,7 @@
           "200": {
             "description": "",
             "content": {
-              "*/*": {
+              "application/json": {
                 "schema": {
                   "type": "string",
                   "example": "response"
@@ -96,7 +96,7 @@
           "200": {
             "description": "",
             "content": {
-              "*/*": {
+              "application/json": {
                 "schema": {
                   "type": "string",
                   "example": "response"
@@ -113,7 +113,7 @@
           "200": {
             "description": "GET /resource/with/annotation/directive",
             "content": {
-              "*/*": {
+              "application/json": {
                 "schema": {
                   "type": "string",
                   "example": "response"
@@ -130,7 +130,7 @@
           "200": {
             "description": "//",
             "content": {
-              "*/*": {
+              "application/json": {
                 "schema": {
                   "type": "string",
                   "example": "response"
@@ -147,7 +147,7 @@
           "200": {
             "description": "\\*\\/ \\*\\/",
             "content": {
-              "*/*": {
+              "application/json": {
                 "schema": {
                   "type": "string",
                   "example": "response"
@@ -164,7 +164,7 @@
           "200": {
             "description": "description",
             "content": {
-              "*/*": {
+              "application/json": {
                 "schema": {
                   "type": "string",
                   "example": "response"
@@ -181,7 +181,7 @@
           "200": {
             "description": "\"description\"",
             "content": {
-              "*/*": {
+              "application/json": {
                 "schema": {
                   "type": "string",
                   "example": "response"
@@ -196,9 +196,9 @@
       "get": {
         "responses": {
           "200": {
-            "description": "/*description*/",
+            "description": "description",
             "content": {
-              "*/*": {
+              "application/json": {
                 "schema": {
                   "type": "string",
                   "example": "response"
@@ -213,9 +213,9 @@
       "get": {
         "responses": {
           "200": {
-            "description": "/*\"description\"*/",
+            "description": "\"description\"",
             "content": {
-              "*/*": {
+              "application/json": {
                 "schema": {
                   "type": "string",
                   "example": "response"

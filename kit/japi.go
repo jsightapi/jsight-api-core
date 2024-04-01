@@ -67,11 +67,17 @@ func (j *JApi) ToJsonIndent() ([]byte, error) {
 }
 
 func (j *JApi) ToOpenAPIJson() ([]byte, error) {
-	o := openapi.NewOpenAPI(j.Catalog())
+	o, err := openapi.NewOpenAPI(j.Catalog())
+	if err != nil {
+		return nil, err
+	}
 	return json.Marshal(o)
 }
 
 func (j *JApi) ToOpenAPIJsonIndent() ([]byte, error) {
-	o := openapi.NewOpenAPI(j.Catalog())
+	o, err := openapi.NewOpenAPI(j.Catalog())
+	if err != nil {
+		return nil, err
+	}
 	return json.MarshalIndent(o, "", "  ")
 }

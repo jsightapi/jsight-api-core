@@ -1,0 +1,55 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Same-code responses",
+    "version": "1"
+  },
+  "paths": {
+    "/": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "anyOf": [
+                    {
+                      "description": "200-1 directive annotation: 200-1 body root annotation",
+                      "type": "string",
+                      "example": "ok"
+                    },
+                    {
+                      "description": "200-2 directive annotation: 200-2 body root annotation",
+                      "type": "integer",
+                      "example": 123
+                    }
+                  ]
+                }
+              },
+              "*/*": {
+                "schema": {
+                  "description": "200-3 directive annotation"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "body": {
+        "type": "object",
+        "properties": {},
+        "additionalProperties": false
+      },
+      "header1": {
+        "type": "object",
+        "properties": {},
+        "additionalProperties": false
+      }
+    }
+  }
+}

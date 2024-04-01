@@ -1,0 +1,13 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "",
+    "version": ""
+  },
+  "paths": {},
+  "servers": [
+    {
+      "url": "https://server-with-url.com/2"
+    }
+  ]
+}
