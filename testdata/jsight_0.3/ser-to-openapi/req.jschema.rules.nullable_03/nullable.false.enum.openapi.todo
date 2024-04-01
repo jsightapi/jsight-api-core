@@ -55,18 +55,15 @@
                   "properties": {
                     "sEnum1": {
                       "example": "white",
-                      "enum": ["white", "blue", "red"],
-                      "nullable": true
+                      "enum": ["white", "blue", "red"]
                     },
                     "sEnum2": {
                       "example": -2.1,
-                      "enum": [-3, -2.1, 1.2, true, false, "-3", "0", "1.2", "string", "true"],
-                      "nullable": true
+                      "enum": [-3, -2.1, 1.2, true, false, "-3", "0", "1.2", "string", "true"]
                     },
                     "sEnum3": {
                       "example": null,
-                      "enum": ["white", "blue", "red", null],
-                      "nullable": true
+                      "enum": ["white", "blue", "red", null]
                     }
                   },
                   "required": ["sEnum1", "sEnum2", "sEnum3"],
@@ -86,18 +83,15 @@
                     "anyOf": [
                       {
                         "example": "white",
-                        "enum": ["white", "blue", "red"],
-                        "nullable": true
+                        "enum": ["white", "blue", "red"]
                       },
                       {
                         "example": -2.1,
-                        "enum": [-3, -2.1, 1.2, true, false, "-3", "0", "1.2", "string", "true"],
-                        "nullable": true
+                        "enum": [-3, -2.1, 1.2, true, false, "-3", "0", "1.2", "string", "true"]
                       },
                       {
                         "example": null,
-                        "enum": ["white", "blue", "red", null],
-                        "nullable": true
+                        "enum": ["white", "blue", "red", null]
                       }
                     ]
                   }
