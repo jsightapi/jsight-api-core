@@ -1,0 +1,31 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "",
+    "version": ""
+  },
+  "components": {
+    "schemas": {
+      "userTypeMinimalJSchemaEmptyObject": {
+        "type": "object",
+        "properties": {
+        },
+        "additionalProperties": false
+      },
+      "userTypeMinimalJSchemaEmptyArray": {
+        "type": "array",
+        "maxItems": 0,
+        "items": {
+        }
+      },
+      "userTypeMinimalJSchemaEmptyString": {
+        "type": "string",
+        "example": ""
+      },
+      "userTypeMinimalAny": {
+      }
+    }
+  },
+  "paths": {
+  }
+}
