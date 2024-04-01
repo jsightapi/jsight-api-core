@@ -88,9 +88,23 @@
                       "type": "number",
                       "example": 1.12,
                       "maximum": 3.4
+                    },
+
+                    "p1": {
+                      "type": "number",
+                      "example": 0.12,
+                      "maximum": 3.4,
+                      "multipleOf": 0.01
+                    },
+                    "p2": {
+                      "type": "number",
+                      "example": 0.901,
+                      "minimum": 0,
+                      "multipleOf": 0.001
                     }
+
                   },
-                  "required": ["minInteger", "minNumber", "maxInteger", "maxNumber"],
+                  "required": ["minInteger", "minNumber", "maxInteger", "maxNumber", "p1", "p2"],
                   "additionalProperties": false
                 }
               }
@@ -124,7 +138,15 @@
                         "type": "number",
                         "example": 1.12,
                         "maximum": 3.4
+                      },
+
+                      {
+                        "type": "number",
+                        "example": 0.900,
+                        "maximum": 10,
+                        "multipleOf": 0.1
                       }
+
                     ]
                   }
                 }
@@ -155,6 +177,51 @@
                   "example": 1.12,
                   "minimum": 1.0,
                   "maximum": 3.4
+                }
+              }
+            }
+          },
+
+          "208": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "number",
+                  "example": 1.12,
+                  "minimum": 1.0,
+                  "maximum": 3.4,
+                  "multipleOf": 0.01
+                }
+              }
+            }
+          },
+
+          "209": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "number",
+                  "example": 0.9,
+                  "minimum": 0.5,
+                  "maximum": 3.4,
+                  "multipleOf": 0.1
+                }
+              }
+            }
+          },
+          
+          "210": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "number",
+                  "example": 0.901,
+                  "minimum": 0.901,
+                  "maximum": 0.901,
+                  "multipleOf": 0.001
                 }
               }
             }
