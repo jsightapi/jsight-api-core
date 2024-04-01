@@ -35,18 +35,14 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "anyOf": [
-                      {
-                        "type": "object",
-                        "properties": {
-                          "required1": { "type": "integer", "example": 111 },
-                          "required2": { "type": "integer", "example": 222 },
-                          "optional1": { "type": "integer", "example": 333 }
-                        },
-                        "additionalProperties": false,
-                        "required": [ "required1", "required2" ]
-                      }
-                    ]
+                    "type": "object",
+                    "properties": {
+                      "required1": { "type": "integer", "example": 111 },
+                      "required2": { "type": "integer", "example": 222 },
+                      "optional1": { "type": "integer", "example": 333 }
+                    },
+                    "additionalProperties": false,
+                    "required": [ "required1", "required2" ]
                   }
                 }
               }
@@ -98,13 +94,18 @@
   "components": {
     "schemas": {
       "cat": {
-        "type": "object",
+        "additionalProperties": false,
+        "description": "A cat.",
         "properties": {
           "name": {
-            "type": "string",
-            "example": "Tom"
+            "example": "Tom",
+            "type": "string"
           }
-        }
+        },
+        "required": [
+          "name"
+        ],
+        "type": "object"
       }
     }
   }
