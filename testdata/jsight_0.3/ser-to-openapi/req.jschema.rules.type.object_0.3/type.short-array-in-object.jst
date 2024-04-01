@@ -1,0 +1,20 @@
+JSIGHT 0.3
+
+GET /request/jschema/rules/type/short_array_in_object
+  200
+    {
+        "short-array-in-object": [
+              "foo",
+              { // first object in short array
+                "str": "abc",
+                "obj": { // { type: "object" } - second object
+                  "str": "abc"
+                }
+              },
+              [ // short-array-in-short-array
+                "abc",
+                123,
+                true
+              ]
+            ]
+    }
