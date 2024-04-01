@@ -1,0 +1,141 @@
+{
+  "components": {
+    "schemas": {
+      "cat": {
+        "additionalProperties": false,
+        "description": "A cat.",
+        "properties": {
+          "name": {
+            "example": "Tom",
+            "type": "string"
+          }
+        },
+        "required": [
+          "name"
+        ],
+        "type": "object"
+      },
+      "passportNumber": {
+        "description": "Passport ID.",
+        "example": "1234 567890",
+        "pattern": "^\\d{4} \\d{6}$",
+        "type": "string"
+      }
+    }
+  },
+  "info": {
+    "title": "",
+    "version": ""
+  },
+  "openapi": "3.0.3",
+  "paths": {
+    "/request/jschema/rules/type/nullable/object": {
+      "get": {
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "additionalProperties": false,
+                  "description": "some text",
+                  "nullable": true,
+                  "properties": {},
+                  "type": "object"
+                }
+              }
+            },
+            "description": ""
+          },
+          "201": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/passportNumber"
+                    }
+                  ],
+                  "description": "some text",
+                  "example": "1111 222222",
+                  "nullable": true
+                }
+              }
+            },
+            "description": ""
+          },
+          "202": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/passportNumber"
+                    }
+                  ],
+                  "example": "1111 222222"
+                }
+              }
+            },
+            "description": ""
+          },
+          "203": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/cat"
+                    }
+                  ],
+                  "description": "Some text",
+                  "nullable": true
+                }
+              }
+            },
+            "description": ""
+          },
+          "204": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "allOf": [
+                      {
+                        "$ref": "#/components/schemas/cat"
+                      }
+                    ],
+                    "description": "Some text",
+                    "nullable": true
+                  },
+                  "type": "array"
+                }
+              }
+            },
+            "description": ""
+          },
+          "205": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "key": {
+                      "allOf": [
+                        {
+                          "$ref": "#/components/schemas/cat"
+                        }
+                      ],
+                      "nullable": true
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": ""
+          }
+        }
+      }
+    }
+  }
+}
