@@ -1,0 +1,42 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "",
+    "version": ""
+  },
+  "components": {
+    "schemas": {
+      "userTypeObject": {
+        "type": "object",
+        "properties": {
+          "one": {
+            "type": "integer",
+            "example": 1
+          }
+        },
+        "required": [
+          "one"
+        ],
+        "additionalProperties": false
+      },
+      "userTypeString": {
+        "type": "string",
+        "example": "userType_string_value"
+      },
+      "userTypeReferenceToTypeInPropertyKey": {
+        "type": "object",
+        "properties": {
+          "userType_string_value": {
+            "$ref": "#/components/schemas/userTypeObject"
+          }
+        },
+        "required": [
+          "userType_string_value"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "paths": {
+  }
+}

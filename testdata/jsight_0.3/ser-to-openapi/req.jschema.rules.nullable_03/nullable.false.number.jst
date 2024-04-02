@@ -1,0 +1,21 @@
+JSIGHT 0.3
+
+GET /request/jschema/rules/nullable/number
+  200
+    1.12 // {type: "decimal", precision: 2, nullable: false}
+  202
+    12.34 // { type: "float", nullable: false }
+  203
+    1 // { type: "integer", nullable: false }
+  204
+    {
+      "sDecimal": 1.12, // {type: "decimal", precision: 2, nullable: false}
+      "sFloat": 12.34, // { type: "float", nullable: false }
+      "sInteger": 1 // { type: "integer", nullable: false }
+    }
+  205
+    [
+      1.12, // {type: "decimal", precision: 2, nullable: false}
+      12.34, // { type: "float", nullable: false }
+      1 // { type: "integer", nullable: false }
+    ]

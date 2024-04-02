@@ -1,0 +1,68 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "",
+    "version": ""
+  },
+  "components": {
+    "schemas": {
+      "userTypeBasic": {
+        "type": "object",
+        "description": "User's type annotation",
+        "properties": {
+          "one": {
+            "type": "integer",
+            "example": 1
+          },
+          "two": {
+            "type": "string",
+            "example": "2"
+          },
+          "three": {
+            "type": "array",
+            "items": {
+              "anyOf": [
+                {
+                  "type": "number",
+                  "example": 3.4
+                },
+                {
+                  "type": "integer",
+                  "example": 5
+                }
+              ]
+            }
+          },
+          "four": {
+            "type": "object",
+            "properties": {
+              "five": {
+                "type": "boolean",
+                "example": true
+              },
+              "six": {
+                "enum": [
+                  null
+                ],
+                "example": null
+              }
+            },
+            "required": [
+              "five",
+              "six"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "one",
+          "two",
+          "three",
+          "four"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "paths": {}
+}
