@@ -40,6 +40,20 @@
                   }
                 ],
                 "optional": false
+              },
+              {
+                "key": "unknown",
+                "tokenType": "string",
+                "type": "any",
+                "scalarValue": "",
+                "rules": [
+                  {
+                    "key": "type",
+                    "tokenType": "string",
+                    "scalarValue": "any"
+                  }
+                ],
+                "optional": false
               }
             ],
             "optional": false

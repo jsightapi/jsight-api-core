@@ -36,21 +36,28 @@ func (core *JApiCore) collectPiecesOfPathVariables() *jerr.JApiError {
 		schemaProps := obj.ObjectFirstLevelProperties(ut)
 		types := core.rawPathVariables[i].schema.InnerTypesList()
 
+		// pathOnly piece should not participate in duplicate definition validation
 		for _, pp := range core.rawPathVariables[i].parameters {
-			if v, ok := schemaProps[pp.parameter]; ok {
-				if _, ok := core.piecesOfPathVariables[pp]; ok {
+			piece, registered := core.piecesOfPathVariables[pp]
+			if registered && !piece.pathOnly {
+				if _, ok := schemaProps[pp.parameter]; ok {
 					return core.rawPathVariables[i].pathDirective.KeywordError(
 						fmt.Sprintf("The parameter %q has already been defined earlier",
 							pp.path))
 				}
+			}
 
+			if v, ok := schemaProps[pp.parameter]; ok {
 				core.piecesOfPathVariables[pp] = PieceOfPathVariable{
 					node:  v,
 					types: types,
 				}
+				delete(schemaProps, pp.parameter)
+			} else {
+				if !registered {
+					core.piecesOfPathVariables[pp] = PieceOfPathVariablePathOnly()
+				}
 			}
-
-			delete(schemaProps, pp.parameter)
 		}
 
 		if len(schemaProps) != 0 {
