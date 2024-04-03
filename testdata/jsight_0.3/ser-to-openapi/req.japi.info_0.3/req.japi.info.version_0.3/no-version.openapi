@@ -8,8 +8,13 @@
     "/": {
       "get": {
         "responses": {
-          "200": {
-            "description": ""
+          "default": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {}
+              }
+            }
           }
         }
       }
