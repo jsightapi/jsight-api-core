@@ -8,7 +8,6 @@
     "/notation/in/request/body/": {
       "post": {
         "requestBody": {
-          "required": true,
           "content": {
             "*/*": {
               "schema": {}
@@ -30,7 +29,6 @@
     "/notation/in/request/no/body/directive": {
       "post": {
         "requestBody": {
-          "required": true,
           "content": {
             "*/*": {
               "schema": {}
