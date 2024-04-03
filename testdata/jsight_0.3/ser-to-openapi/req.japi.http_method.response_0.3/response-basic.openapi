@@ -9,7 +9,7 @@
       "get": {
         "responses": {
           "200": {
-            "description": "Здесь придется склеить",
+            "description": "",
             "content": {
               "application/json": {
                 "schema": {
@@ -47,7 +47,8 @@
                 "schema": {
                   "type": "string",
                   "example": "header-value"
-                }
+                },
+                "required": true
               }
             },            
             "content": {
