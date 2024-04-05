@@ -8,6 +8,7 @@
     "/": {
       "get": {
         "responses": {
+
           "200": {
             "content": {
               "application/json": {
@@ -19,6 +20,7 @@
             },
             "description": ""
           },
+
           "201": {
             "content": {
               "application/json": {
@@ -30,42 +32,43 @@
             },
             "description": ""
           },
+
           "202": {
             "content": {
               "application/json": {
                 "schema": {
                   "additionalProperties": false,
                   "properties": {
-                    "negativeFloat": {
-                      "example": -987654321.12,
-                      "type": "number"
-                    },
-                    "negativeInteger": {
-                      "example": -23,
+                    "positiveInteger": {
+                      "example": 123,
                       "type": "integer"
                     },
                     "positiveFloat": {
                       "example": 12.2,
                       "type": "number"
                     },
-                    "positiveInteger": {
-                      "example": 123,
+                    "negativeInteger": {
+                      "example": -23,
                       "type": "integer"
                     },
-                    "zeroEndNegativeFloat": {
-                      "example": -123,
+                    "negativeFloat": {
+                      "example": -987654321.12,
                       "type": "number"
                     },
                     "zeroEndPositiveFloat": {
                       "example": 123,
                       "type": "number"
                     },
-                    "zeroNegativeFloat": {
-                      "example": -0,
+                    "zeroEndNegativeFloat": {
+                      "example": -123,
                       "type": "number"
                     },
                     "zeroPositiveFloat": {
                       "example": 0,
+                      "type": "number"
+                    },
+                    "zeroNegativeFloat": {
+                      "example": -0,
                       "type": "number"
                     }
                   },
@@ -85,6 +88,7 @@
             },
             "description": ""
           },
+
           "203": {
             "content": {
               "application/json": {
@@ -99,6 +103,7 @@
             },
             "description": ""
           },
+
           "204": {
             "content": {
               "application/json": {
@@ -113,6 +118,7 @@
             },
             "description": ""
           }
+
         }
       }
     }
