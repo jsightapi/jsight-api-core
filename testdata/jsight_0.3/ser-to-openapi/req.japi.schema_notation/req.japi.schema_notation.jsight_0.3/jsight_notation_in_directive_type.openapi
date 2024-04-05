@@ -45,16 +45,10 @@
         }
       },
       "typeWithJSightAnnotation_null": {
-        "type": "object",
-        "additionalProperties": false,
-        "properties": {
-          "key": {
-            "enum": [
-              null
-            ],
-            "example": null
-          }
-        }
+        "enum": [
+          null
+        ],
+        "example": null
       }
     }
   },
@@ -67,7 +61,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "oneOf": [
+                  "anyOf": [
                     {
                       "$ref": "#/components/schemas/typeWithJSightAnnotation_object"
                     },
@@ -87,7 +81,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "oneOf": [
+                  "anyOf": [
                     {
                       "$ref": "#/components/schemas/typeWithJSightAnnotation_array"
                     },
