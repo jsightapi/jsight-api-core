@@ -54,7 +54,6 @@
             "type": "object",
             "properties": {
               "foo": {
-                "type": "string",
                 "enum": [
                   "fooVal1",
                   "fooVal2",
@@ -107,7 +106,8 @@
             "schema": {
               "type": "string",
               "example": "value"
-            }
+            },
+            "required": true
           }
         ],
         "responses": {
@@ -178,7 +178,6 @@
               "type": "object",
               "properties": {
                 "foo": {
-                  "type": "string",
                   "enum": [
                     "fooVal1",
                     "fooVal2",
