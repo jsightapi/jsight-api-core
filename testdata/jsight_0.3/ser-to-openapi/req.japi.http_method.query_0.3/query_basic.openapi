@@ -59,7 +59,6 @@
               "type": "object",
               "properties": {
                 "foo": {
-                  "type": "string",
                   "enum": [
                     "fooVal1",
                     "fooVal2",
