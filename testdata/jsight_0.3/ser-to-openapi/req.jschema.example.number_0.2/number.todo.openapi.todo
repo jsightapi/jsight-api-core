@@ -1,0 +1,68 @@
+{
+  "info": {
+    "title": "",
+    "version": ""
+  },
+  "openapi": "3.0.3",
+  "paths": {
+    "/": {
+      "get": {
+        "responses": {
+
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "additionalProperties": false,
+                  "properties": {
+
+                    "zeroEndPositiveFloat": {
+                      "example": 123,
+                      "type": "number"
+                    },
+                    "zeroEndNegativeFloat": {
+                      "example": -123,
+                      "type": "number"
+                    },
+                    "zeroPositiveFloat": {
+                      "example": 0,
+                      "type": "number"
+                    },
+                    "zeroNegativeFloat": {
+                      "example": -0,
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "zeroEndPositiveFloat",
+                    "zeroEndNegativeFloat",
+                    "zeroPositiveFloat",
+                    "zeroNegativeFloat"
+                  ],
+                  "type": "object"
+                }
+              }
+            },
+            "description": ""
+          },
+
+          "201": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "example": 234,
+                    "type": "number"
+                  },
+                  "type": "array"
+                }
+              }
+            },
+            "description": ""
+          }
+
+        }
+      }
+    }
+  }
+}

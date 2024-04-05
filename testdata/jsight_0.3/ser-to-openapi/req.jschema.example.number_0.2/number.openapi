@@ -54,33 +54,13 @@
                     "negativeFloat": {
                       "example": -987654321.12,
                       "type": "number"
-                    },
-                    "zeroEndPositiveFloat": {
-                      "example": 123,
-                      "type": "number"
-                    },
-                    "zeroEndNegativeFloat": {
-                      "example": -123,
-                      "type": "number"
-                    },
-                    "zeroPositiveFloat": {
-                      "example": 0,
-                      "type": "number"
-                    },
-                    "zeroNegativeFloat": {
-                      "example": -0,
-                      "type": "number"
                     }
                   },
                   "required": [
                     "positiveInteger",
                     "positiveFloat",
                     "negativeInteger",
-                    "negativeFloat",
-                    "zeroEndPositiveFloat",
-                    "zeroEndNegativeFloat",
-                    "zeroPositiveFloat",
-                    "zeroNegativeFloat"
+                    "negativeFloat"
                   ],
                   "type": "object"
                 }
@@ -96,21 +76,6 @@
                   "items": {
                     "example": -500,
                     "type": "integer"
-                  },
-                  "type": "array"
-                }
-              }
-            },
-            "description": ""
-          },
-
-          "204": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "items": {
-                    "example": 234,
-                    "type": "number"
                   },
                   "type": "array"
                 }
