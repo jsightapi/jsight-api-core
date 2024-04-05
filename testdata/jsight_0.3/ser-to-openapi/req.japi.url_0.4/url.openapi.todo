@@ -5,6 +5,7 @@
       "version": ""
     },
     "paths": {
+
       "/": {
         "get": {
           "responses": {
@@ -22,6 +23,7 @@
           }
         }
       },
+
       "/scary/ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!$&'()*+,;=": {
         "post": {
           "responses": {
@@ -39,6 +41,7 @@
           }
         }
       },
+
       "/parameter/{id}": {
         "parameters": [{
           "name": "id",
@@ -46,7 +49,7 @@
           "required": true,
           "schema": {}
         }],
-        "get": {
+        "post": {
           "responses": {
             "302": {
               "description": "",
@@ -61,6 +64,7 @@
             }
           }
         }
-      }    
+      }
+
     }
   }
