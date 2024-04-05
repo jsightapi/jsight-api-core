@@ -1,0 +1,51 @@
+JSIGHT 0.3
+
+GET /request/jschema/rules/type/long_array_in_object
+  200
+    {
+        "long-array-in-object": [
+              "foo",
+              { // first object in long array
+                "str": "abc",
+                "obj": { // { type: "object" } - second object
+                  "str": "abc"
+                }
+              },
+              { // third object
+                "obj": { // { type: "object" } - fourth object
+                  "str": "abc",
+                  "obj": { // fifth object
+                    "str": "abc"
+                  }
+                }
+              },
+              { // six object
+                "str": "abc"
+              },
+              [ // short-array-in-long-array
+                { // object-in-short-array
+                  "foo": "bar",
+                  "obj": { // { type: "object" } - object inside object-in-short-array
+                    "str": "abc"
+                  }
+                }
+              ],
+              [
+                "foo",
+                [ // short-array-in-long-array
+                    { // object-in-short-array
+                        "foo": "bar",
+                        "obj": { // { type: "object" } - object inside object-in-short-array
+                            "str": "abc"
+                        }
+                    }
+                ],
+                { // first object inside short array in very_long-array
+                  "str": "abc",
+                  "obj": { // { type: "object" } - second object inside short array in very_long-array
+                    "str": "abc"
+                  }
+                }
+              ]
+            ]
+    }

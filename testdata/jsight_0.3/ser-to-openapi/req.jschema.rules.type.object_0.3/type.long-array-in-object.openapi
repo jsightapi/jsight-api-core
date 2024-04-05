@@ -1,0 +1,230 @@
+{
+  "info": {
+    "title": "",
+    "version": ""
+  },
+  "openapi": "3.0.3",
+  "paths": {
+    "/request/jschema/rules/type/long_array_in_object": {
+      "get": {
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "long-array-in-object": {
+                      "type": "array",
+                      "items": {
+                        "anyOf": [
+                          {
+                            "example": "foo",
+                            "type": "string"
+                          },
+                          {
+                            "type": "object",
+                            "description": "first object in long array",
+                            "properties": {
+                              "obj": {
+                                "type": "object",
+                                "description": "second object",
+                                "properties": {
+                                  "str": {
+                                    "example": "abc",
+                                    "type": "string"
+                                  }
+                                },
+                                "additionalProperties": false,
+                                "required": [
+                                  "str"
+                                ]
+                              },
+                              "str": {
+                                "example": "abc",
+                                "type": "string"
+                              }
+                            },
+                            "additionalProperties": false,
+                            "required": [
+                              "str",
+                              "obj"
+                            ]
+                          },
+                          {
+                            "type": "object",
+                            "description": "third object",
+                            "properties": {
+                              "obj": {
+                                "type": "object",
+                                "description": "fourth object",
+                                "properties": {
+                                  "obj": {
+                                    "type": "object",
+                                    "description": "fifth object",
+                                    "properties": {
+                                      "str": {
+                                        "example": "abc",
+                                        "type": "string"
+                                      }
+                                    },
+                                    "additionalProperties": false,
+                                    "required": [
+                                      "str"
+                                    ]
+                                  },
+                                  "str": {
+                                    "example": "abc",
+                                    "type": "string"
+                                  }
+                                },
+                                "additionalProperties": false,
+                                "required": [
+                                  "str",
+                                  "obj"
+                                ]
+                              }
+                            },
+                            "additionalProperties": false,
+                            "required": [
+                              "obj"
+                            ]
+                          },
+                          {
+                            "type": "object",
+                            "description": "six object",
+                            "properties": {
+                              "str": {
+                                "example": "abc",
+                                "type": "string"
+                              }
+                            },
+                            "additionalProperties": false,
+                            "required": [
+                              "str"
+                            ]
+                          },
+                          {
+                            "type": "array",
+                            "description": "short-array-in-long-array",
+                            "items": {
+                              "type": "object",
+                              "description": "object-in-short-array",
+                              "properties": {
+                                "foo": {
+                                  "example": "bar",
+                                  "type": "string"
+                                },
+                                "obj": {
+                                  "type": "object",
+                                  "description": "object inside object-in-short-array",
+                                  "properties": {
+                                    "str": {
+                                      "example": "abc",
+                                      "type": "string"
+                                    }
+                                  },
+                                  "additionalProperties": false,
+                                  "required": [
+                                    "str"
+                                  ]
+                                }
+                              },
+                              "additionalProperties": false,
+                              "required": [
+                                "foo",
+                                "obj"
+                              ]
+                            }
+                          },
+                          {
+                            "items": {
+                              "anyOf": [
+                                {
+                                  "example": "foo",
+                                  "type": "string"
+                                },
+                                {
+                                  "type": "array",
+                                  "description": "short-array-in-long-array",
+                                  "items": {
+                                    "type": "object",
+                                    "description": "object-in-short-array",
+                                    "properties": {
+                                      "foo": {
+                                        "example": "bar",
+                                        "type": "string"
+                                      },
+                                      "obj": {
+                                        "type": "object",
+                                        "description": "object inside object-in-short-array",
+                                        "properties": {
+                                          "str": {
+                                            "example": "abc",
+                                            "type": "string"
+                                          }
+                                        },
+                                        "additionalProperties": false,
+                                        "required": [
+                                          "str"
+                                        ]
+                                      }
+                                    },
+                                    "additionalProperties": false,
+                                    "required": [
+                                      "foo",
+                                      "obj"
+                                    ]
+                                  }
+                                },
+                                {
+                                  "type": "object",
+                                  "description": "first object inside short array in very_long-array",
+                                  "properties": {
+                                    "obj": {
+                                      "type": "object",
+                                      "description": "second object inside short array in very_long-array",
+                                      "properties": {
+                                        "str": {
+                                          "example": "abc",
+                                          "type": "string"
+                                        }
+                                      },
+                                      "additionalProperties": false,
+                                      "required": [
+                                        "str"
+                                      ]
+                                    },
+                                    "str": {
+                                      "example": "abc",
+                                      "type": "string"
+                                    }
+                                  },
+                                  "additionalProperties": false,
+                                  "required": [
+                                    "str",
+                                    "obj"
+                                  ]
+                                }
+                              ]
+                            },
+                            "type": "array"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "required": [
+                    "long-array-in-object"
+                  ]
+                }
+              }
+            },
+            "description": ""
+          }
+        }
+      }
+    }
+  }
+}
