@@ -56,7 +56,7 @@
           "schema": {
             "description": "This is the parameter annotation.",
             "type": "string",
-            "example": true
+            "example": "value"
           }
         }
       ],
@@ -742,7 +742,7 @@
           "schema": {
             "type": "string",
             "minLength": 3,
-            "example": "string"
+            "example": "some-string"
           }
         }        
       ],
@@ -846,7 +846,7 @@
           "schema": {
             "type": "string",
             "minLength": 3,
-            "example": "string"
+            "example": "some-string"
           }
         }
       ],
@@ -882,7 +882,7 @@
           "schema": {
             "type": "string",
             "minLength": 3,
-            "example": "string"
+            "example": "some-string"
           }
         }
       ],
@@ -1229,6 +1229,9 @@
         "example": true
       },
       "allOfObjectInPath": {
+        "type": "object",
+        "properties": {},
+        "additionalProperties": false,
         "allOf": [
           {
             "$ref": "#/components/schemas/objectInPath"
