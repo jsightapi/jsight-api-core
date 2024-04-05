@@ -17,19 +17,19 @@
                   "properties": {
 
                     "zeroEndPositiveFloat": {
-                      "example": 123,
+                      "example": 123.0,
                       "type": "number"
                     },
                     "zeroEndNegativeFloat": {
-                      "example": -123,
+                      "example": -123.0,
                       "type": "number"
                     },
                     "zeroPositiveFloat": {
-                      "example": 0,
+                      "example": 0.0,
                       "type": "number"
                     },
                     "zeroNegativeFloat": {
-                      "example": -0,
+                      "example": -0.0,
                       "type": "number"
                     }
                   },
@@ -51,7 +51,7 @@
               "application/json": {
                 "schema": {
                   "items": {
-                    "example": 234,
+                    "example": 234.0,
                     "type": "number"
                   },
                   "type": "array"
