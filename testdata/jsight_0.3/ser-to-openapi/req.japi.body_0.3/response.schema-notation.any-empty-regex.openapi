@@ -5,7 +5,7 @@
     "version": ""
   },
   "paths": {
-    "/request/schema-notation/any ": {
+    "/response/schema-notation/any": {
       "post": {
         "responses": {
           "200": {
@@ -19,7 +19,7 @@
         }
       }
     },
-    "/request/schema-notation/empty": {
+    "/response/schema-notation/empty": {
       "put": {
         "responses": {
           "200": {
@@ -29,7 +29,7 @@
         }
       }
     },
-    "/request/schema-notation/regex": {
+    "/response/schema-notation/regex": {
       "patch": {
         "responses": {
           "200": {
