@@ -55,12 +55,8 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "anyOf": [
-                      {
-                        "enum": [null],
-                        "example": null
-                      }
-                    ]
+                    "enum": [null],
+                    "example": null
                   }
                 }
               }
