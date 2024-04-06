@@ -1,0 +1,14 @@
+JSIGHT 0.3
+
+#FIXME: 123.0 must converts to 123.0, not 123
+
+GET /
+  200
+    {
+      "zeroEndPositiveFloat": 123.0,
+      "zeroEndNegativeFloat": -123.0,
+      "zeroPositiveFloat": 0.0,
+      "zeroNegativeFloat": -0.0
+    }
+  201
+    [234.0]
