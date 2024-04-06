@@ -1,70 +1,12 @@
 JSIGHT 0.3
 
-#------------------------------- /request/simple -------------------------
-POST /request/simple
-  Request
-    Headers
-    {
-      "Simple"     : "value", // {optional: true}
-      "Two-Words"  : "value", // {optional: true}
-      "Regex"      : "ABC12", // {optional: true, regex: "[A-C]+\\d+"}
-      "lower-case" : "value", // {optional: true, const: true}
-      "UPPER-CASE" : "value", // {optional: true, const: true}
-      "Required"   : "value", // Required
-      "Const"      : "HELLO", // {optional: true, const: true}
-      "Min-Length" : "value", // {optional: true, minLength: 3}
-      "Integer"    : 1234567, // {optional: true}
-      "Boolean"    : true,    // {optional: true}
-      "Float"      : 1.11239, // {optional: true}
-      "Null"       : null,    // {optional: true}
-      "Enum"       : "one",   // {optional: true, enum: ["one", "1", 2, true]}
-      "Ascii-20-2f": "! \"#$%&'()*+,-./",      // {optional: true, const: true}
-      "Ascii-30-3f": "0123456789:;<=>?",       // {optional: true, const: true}
-      "Ascii-40-4f": "@ABCDEFGHIJKLMNO",       // {optional: true, const: true}
-      "Ascii-50-5f": "PQRSTUVWXYZ[\\]^_",      // {optional: true, const: true}
-      "Ascii-60-6f": "`abcdefghijklmno",       // {optional: true, const: true}
-      "Ascii-70-7e": "pqrstuvwxyz{|}~",        // {optional: true, const: true}
-      "Ascii-Tab"  : "tab-\t-tab-\t-tab",      // {optional: true, const: true}
-      "Uri"        : "https://cats.com/api",   // {optional: true, type: "uri"}
-      "Email"      : "cat@email.com",          // {optional: true, type: "email"}
-      "Any"        : true,                     // {optional: true, type: "any"}
-      "J-Date"       : "2022-01-01",             // {optional: true, type: "date"}
-      "Datetime"   : "2022-01-01T00:00:00Z",   // {optional: true, type: "datetime"}
-      "Usertype-Date"   : @date,               // {optional: true}
-      "Date-Or-Datetime": @date | @datetime,   // {optional: true}
-      "Uuid-Or-Email"   : "cat@mail.com", // {optional: true, type: "mixed", or: ["uuid", "email"]}
-      "Uuid": "00112233-4455-6677-8899-aabbccddeeff", // {optional: true, type: "uuid"}
-      "Date-Or-Email-Or-Datetime": "a@a.com" // {optional: true, or: ["@date", "email", "@datetime"]}
-    }
-    Body any
-  200 any
+#TODO: uncomment this, when we understand how OpenAPI may forbid not specified custom headers.
 
 TYPE @date
   "2022-01-01" // {type: "date"}
 
 TYPE @datetime
   "2022-01-01T00:00:00Z" // {type: "datetime"}
-
-#------------------------------- /request/allOf -------------------------
-
-POST /request/allOf
-  Request
-    Headers
-    { // {allOf: "@additionalHeaders"}
-      "Simple"     : "value", // {optional: true}
-      "Two-Words"  : "value", // {optional: true}
-      "Regex"      : "ABC12", // {optional: true, regex: "[A-C]+\\d+"}
-      "lower-case" : "value", // {optional: true, const: true}
-      "UPPER-CASE" : "value", // {optional: true, const: true}
-      "Required"   : "value", // Required
-      "Const"      : "HELLO", // {optional: true, const: true}
-      "Min-Length" : "value", // {optional: true, minLength: 3}
-      "Integer"    : 1234567, // {optional: true}
-      "Boolean"    : true,    // {optional: true}
-      "Float"      : 1.11239  // {optional: true}
-    }
-    Body any
-  200 any
 
 TYPE @additionalHeaders
 {
@@ -88,15 +30,6 @@ TYPE @additionalHeaders
   "Uuid": "00112233-4455-6677-8899-aabbccddeeff", // {optional: true, type: "uuid"}
   "Date-Or-Email-Or-Datetime": "a@a.com" // {optional: true, or: ["@date", "email", "@datetime"]}  
 }
-
-#------------------------------- /request/object -------------------------
-
-POST /request/object
-  Request
-    Headers
-      @headers
-    Body any
-  200 any
 
 TYPE @headers
 {
@@ -131,15 +64,6 @@ TYPE @headers
   "Uuid": "00112233-4455-6677-8899-aabbccddeeff", // {optional: true, type: "uuid"}
   "Date-Or-Email-Or-Datetime": "a@a.com" // {optional: true, or: ["@date", "email", "@datetime"]}
 }
-
-#------------------------------- /request/object-allOf -------------------------
-
-POST /request/object-allOf
-  Request
-    Headers
-      @headersAllOf
-    Body any
-  200 any
 
 TYPE @headersAllOf
 { // {allOf: "@headersAllOfPart2"}
@@ -178,15 +102,6 @@ TYPE @headersAllOfPart2
   "Ascii-60-6f": "`abcdefghijklmno",       // {optional: true, const: true}
   "Ascii-70-7e": "pqrstuvwxyz{|}~"         // {optional: true, const: true}
 }
-
-#------------------------------- /request/object-proxy -------------------------
-
-POST /request/object-proxy
-  Request
-    Headers
-      @headersProxy
-    Body any
-  200 any
 
 TYPE @headersProxy
   @headers
@@ -277,87 +192,6 @@ TYPE @headersMixed2
   "Header-2": "value2" // {const: true}
 }
 ###
-#------------------------------- /response/simple -------------------------
-GET /response/simple
-  200
-    Headers
-    {
-      "Simple"     : "value", // {optional: true}
-      "Two-Words"  : "value", // {optional: true}
-      "Regex"      : "ABC12", // {optional: true, regex: "[A-C]+\\d+"}
-      "lower-case" : "value", // {optional: true, const: true}
-      "UPPER-CASE" : "value", // {optional: true, const: true}
-      "Required"   : "value", // Required
-      "Const"      : "HELLO", // {optional: true, const: true}
-      "Min-Length" : "value", // {optional: true, minLength: 3}
-      "Integer"    : 1234567, // {optional: true}
-      "Boolean"    : true,    // {optional: true}
-      "Float"      : 1.11239, // {optional: true}
-      "Null"       : null,    // {optional: true}
-      "Enum"       : "one",   // {optional: true, enum: ["one", "1", 2, true]}
-      "Ascii-20-2f": "! \"#$%&'()*+,-./",      // {optional: true, const: true}
-      "Ascii-30-3f": "0123456789:;<=>?",       // {optional: true, const: true}
-      "Ascii-40-4f": "@ABCDEFGHIJKLMNO",       // {optional: true, const: true}
-      "Ascii-50-5f": "PQRSTUVWXYZ[\\]^_",      // {optional: true, const: true}
-      "Ascii-60-6f": "`abcdefghijklmno",       // {optional: true, const: true}
-      "Ascii-70-7e": "pqrstuvwxyz{|}~",        // {optional: true, const: true}
-      "Ascii-Tab"  : "tab-\t-tab-\t-tab",      // {optional: true, const: true}
-      "Uri"        : "https://cats.com/api",   // {optional: true, type: "uri"}
-      "Email"      : "cat@email.com",          // {optional: true, type: "email"}
-      "Any"        : true,                     // {optional: true, type: "any"}
-      "J-Date"       : "2022-01-01",             // {optional: true, type: "date"}
-      "Datetime"   : "2022-01-01T00:00:00Z",   // {optional: true, type: "datetime"}
-      "Usertype-Date"   : @date,               // {optional: true}
-      "Date-Or-Datetime": @date | @datetime,   // {optional: true}
-      "Uuid-Or-Email"   : "cat@mail.com", // {optional: true, type: "mixed", or: ["uuid", "email"]}
-      "Uuid": "00112233-4455-6677-8899-aabbccddeeff", // {optional: true, type: "uuid"}
-      "Date-Or-Email-Or-Datetime": "a@a.com" // {optional: true, or: ["@date", "email", "@datetime"]}
-    }
-    Body any
-
-#------------------------------- /response/allOf -------------------------
-
-GET /response/allOf
-  200
-    Headers
-    { // {allOf: "@additionalHeaders"}
-      "Simple"     : "value", // {optional: true}
-      "Two-Words"  : "value", // {optional: true}
-      "Regex"      : "ABC12", // {optional: true, regex: "[A-C]+\\d+"}
-      "lower-case" : "value", // {optional: true, const: true}
-      "UPPER-CASE" : "value", // {optional: true, const: true}
-      "Required"   : "value", // Required
-      "Const"      : "HELLO", // {optional: true, const: true}
-      "Min-Length" : "value", // {optional: true, minLength: 3}
-      "Integer"    : 1234567, // {optional: true}
-      "Boolean"    : true,    // {optional: true}
-      "Float"      : 1.11239  // {optional: true}
-    }
-    Body any
-
-#------------------------------- /response/object -------------------------
-
-GET /response/object
-  200
-    Headers
-      @headers
-    Body any
-
-#------------------------------- /response/object-allOf -------------------------
-
-GET /response/object-allOf
-  200
-    Headers
-      @headersAllOf
-    Body any
-
-#------------------------------- /response/object-proxy -------------------------
-
-GET /response/object-proxy
-  200
-    Headers
-      @headersProxy
-    Body any
 
 #------------------------------- /response/additionalProperties -------------------------
 
