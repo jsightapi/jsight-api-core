@@ -25,7 +25,7 @@ GET /request/jschema/rules/or
   206
     "cat@mail.com" // {or: ["uuid", "email"], nullable: true} - some text
   207
-    "abc" // {or: [ "string", "object", "array" ]}
+    "abc" // {or: [ "string", "object", "array", "@stringId" ]}
   208
     1.2 // {or: [ {type: "decimal", precision: 1}, {type: "object"}, {type: "array"} ]}
   209
@@ -36,3 +36,19 @@ GET /request/jschema/rules/or
     123 // {or: [ "@stringId", {type: "integer"} ]}
   212
     @stringId | @integerId
+  213
+      {
+        "foo": "bar" /* {
+                          type: "mixed",
+                          or: [
+                            { type: "string" , maxLength: 3 },
+                            { type: "integer", min: 0 },
+                            "@stringId",
+                            "string",
+                            "email"
+                          ],
+                          optional: true,
+                          nullable: true
+                        } 
+                      */
+      }
