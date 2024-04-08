@@ -10,7 +10,7 @@
         "additionalProperties": false,
         "properties": {},
         "type": "object",
-        "description": "Short description. TODO: Fix bug with long description, task SERV-374"
+        "description": "Long description with different symbols... tabs: ascii: !\\\"$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\\\]^_`abcdefghijklmnopqrstuvwxyz{|}~ spec:¹²³$‰↑∞←→—≠€®™ѣѵіѳ′[]≈§°£₽„“”‘’×©↓−«»…´“„•ẞˇ¢·¸¨‘⌀⌘˘˚ѢѴІѲ″{}±–〉〈¿ˆ¼⅓½¡ Cyrillic: йцукенгшщзФЫВАПРОЛДЖЭ Chinese: 你好世界！"
       },
       "_": {
         "additionalProperties": false,
