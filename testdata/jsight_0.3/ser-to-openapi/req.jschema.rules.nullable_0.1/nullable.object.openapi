@@ -4,7 +4,30 @@
     "title": "",
     "version": ""
   },
-
+  "components": {
+    "schemas": {
+      "cat": {
+        "additionalProperties": false,
+        "description": "A cat.",
+        "properties": {
+          "name": {
+            "example": "Tom",
+            "type": "string"
+          }
+        },
+        "required": [
+          "name"
+        ],
+        "type": "object"
+      },
+      "passportNumber": {
+        "description": "Passport ID.",
+        "example": "1234 567890",
+        "pattern": "^\\d{4} \\d{6}$",
+        "type": "string"
+      }
+    }
+  },
   "paths": {
     "/request/jschema/rules/nullable/object": {
       "get": {
@@ -109,31 +132,6 @@
           }
 
         }
-      }
-    }
-  },
-
-  "components": {
-    "schemas": {
-      "cat": {
-        "additionalProperties": false,
-        "description": "A cat.",
-        "properties": {
-          "name": {
-            "example": "Tom",
-            "type": "string"
-          }
-        },
-        "required": [
-          "name"
-        ],
-        "type": "object"
-      },
-      "passportNumber": {
-        "description": "Passport ID.",
-        "example": "1234 567890",
-        "pattern": "^\\d{4} \\d{6}$",
-        "type": "string"
       }
     }
   }

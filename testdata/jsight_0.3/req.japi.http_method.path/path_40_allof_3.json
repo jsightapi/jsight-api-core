@@ -54,6 +54,20 @@
                 "scalarValue": "1",
                 "inheritedFrom": "@pathVars1",
                 "optional": false
+              },
+              {
+                "key": "name",
+                "tokenType": "string",
+                "scalarValue": "",
+                "type": "any",
+                "optional": false,
+                "rules": [
+                  {
+                    "key": "type",
+                    "tokenType": "string",
+                    "scalarValue": "any"
+                  }
+                ]
               }
             ],
             "optional": false

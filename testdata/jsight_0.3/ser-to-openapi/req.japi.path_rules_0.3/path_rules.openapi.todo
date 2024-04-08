@@ -11,7 +11,6 @@
         "in": "path",
         "required": true,
         "schema": {
-          "description": "Type integer.",
           "type": "integer",
           "example": 1
         }
@@ -95,6 +94,7 @@
             }
           }
         }
+        }
       }
     },
     "/path-parameter-rules-transfer/2/{par1}/{par2}": {
@@ -115,7 +115,6 @@
           "in": "path",
           "required": true,
           "schema": {
-            "type": "string",
             "enum": ["right", "left"],
             "example": "right"
           }
@@ -228,7 +227,6 @@
           "in": "path",
           "required": true,
           "schema": {
-            "type": "string",
             "enum": ["right", "left"],
             "example": "right"
           }
@@ -351,7 +349,7 @@
           "schema": {
             "type": "number",
             "multipleOf": 0.01,
-            "example": "12.12"
+            "example": 12.12
           }
         }          
       ],
@@ -385,7 +383,6 @@
       ],
       "post": {
         "requestBody": {
-          "required": true,
           "content": {
             "*/*": {
               "schema": {}
@@ -497,6 +494,41 @@
             }
           }
         }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "allOfPathObject": {
+        "additionalProperties": false,
+        "properties": {
+          "par1": {
+            "example": -0.12,
+            "maximum": 1,
+            "minimum": -1,
+            "type": "number"
+          }
+        },
+        "required": [
+          "par1"
+        ],
+        "type": "object"
+      },
+      "pathObject": {
+        "additionalProperties": false,
+        "properties": {
+          "par2": {
+            "enum": [
+              "right",
+              "left"
+            ],
+            "example": "right"
+          }
+        },
+        "required": [
+          "par2"
+        ],
+        "type": "object"
       }
     }
   }

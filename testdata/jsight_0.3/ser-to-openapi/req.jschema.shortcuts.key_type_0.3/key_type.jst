@@ -1,0 +1,124 @@
+JSIGHT 0.3
+
+TYPE @stringId
+  "abc-123"
+
+TYPE @catEmail
+  "abc@cat.com" // { regex: "^[a-z]+@cat.com$" }
+
+TYPE @dogEmail
+  "abc@dog.com" // { regex: "^[a-z]+@dog.com$" }
+
+TYPE @cat
+{
+  "name": "Tom"
+}
+
+GET /request/jschema/shortcuts/keyType
+  200
+    {
+      "foo": "bar",
+      @stringId : "str"
+    }
+  201
+    {
+      "foo": "bar",
+      @catEmail : 1,
+      @dogEmail : "str"
+    }
+  202
+    { // { additionalProperties: false }
+      "foo": "bar",
+      @catEmail : 1,
+      @dogEmail : "str"
+    }
+  203
+    { // { additionalProperties: true }
+      "foo": "bar",
+      @catEmail : 1,
+      @dogEmail : "str"
+    }
+  204
+    { // { additionalProperties: "any" }
+      "foo": "bar",
+      @catEmail : 1,
+      @dogEmail : "str"
+    }
+  205
+    { // { additionalProperties: "string" }
+      "foo": "bar",
+      @catEmail : 1,
+      @dogEmail : "str"
+    }
+  206
+    { // { additionalProperties: "integer"}
+      "foo": "bar",
+      @catEmail : 1,
+      @dogEmail : "str"
+    }
+  207
+    { // { additionalProperties: "array"}
+      "foo": "bar",
+      @catEmail : 1,
+      @dogEmail : "str"
+    }
+  208
+    { // { additionalProperties: "boolean"}
+      "foo": "bar",
+      @catEmail : 1,
+      @dogEmail : "str"
+    }
+  209
+    { // { additionalProperties: "float"}
+      "foo": "bar",
+      @catEmail : 1,
+      @dogEmail : "str"
+    }
+  210
+    { // { additionalProperties: "object"}
+      "foo": "bar",
+      @catEmail : 1,
+      @dogEmail : "str"
+    }
+  211
+    { // { additionalProperties: "null"}
+  	  "foo": "bar",
+  	  @catEmail : 1,
+  	  @dogEmail : "str"
+  	}
+  212
+    { // { additionalProperties: "date"}
+      "foo": "bar",
+      @catEmail : 1,
+      @dogEmail : "str"
+    }
+  213
+    { // { additionalProperties: "datetime"}
+      "foo": "bar",
+      @catEmail : 1,
+      @dogEmail : "str"
+    }
+  214
+    { // { additionalProperties: "email"}
+      "foo": "bar",
+      @catEmail : 1,
+      @dogEmail : "str"
+    }
+  215
+    { // { additionalProperties: "uri"}
+      "foo": "bar",
+      @catEmail : 1,
+      @dogEmail : "str"
+    }
+  216
+    { // { additionalProperties: "uuid"}
+  	  "foo": "bar",
+  	  @catEmail : 1,
+  	  @dogEmail : "str"
+    }
+  217
+    { // { additionalProperties: "@cat"}
+      "foo": "bar",
+      @catEmail : 1,
+      @dogEmail : "str"
+    }
