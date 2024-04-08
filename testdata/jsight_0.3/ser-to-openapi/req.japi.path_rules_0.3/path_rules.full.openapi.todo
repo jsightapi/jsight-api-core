@@ -1,0 +1,535 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "",
+    "version": ""
+  },
+  "paths": {
+    "/path-parameter-rules-transfer/1/{par1}": {
+      "parameters": [{
+        "name": "par1",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "type": "integer",
+          "example": 1
+        }
+      }],
+      "post": {
+        "responses": {
+          "300": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "responses": {
+          "301": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "responses": {
+          "302": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "responses": {
+          "303": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "responses": {
+          "304": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/path-parameter-rules-transfer/other1/{par1}": {
+      "parameters": [{
+        "name": "par1",
+        "in": "path",
+        "required": true,
+        "schema": {}
+      }],
+      "get": {
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {}
+              }
+            }
+          }
+        }
+        }
+      }
+    },
+    "/path-parameter-rules-transfer/2/{par1}/{par2}": {
+      "parameters": [
+        {
+          "name": "par1",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "number",
+            "minimum": -1,
+            "maximum": 1,
+            "example": -0.12
+          }
+        },
+        {
+          "name": "par2",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "enum": ["right", "left"],
+            "example": "right"
+          }
+        }
+      ],
+      "post": {
+        "responses": {
+          "300": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "responses": {
+          "301": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "responses": {
+          "302": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "responses": {
+          "303": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "responses": {
+          "304": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/path-parameter-rules-transfer/other2/{par1}/{par2}": {
+      "parameters": [
+        {
+          "name": "par1",
+          "in": "path",
+          "required": true,
+          "schema": {}
+        },
+        {
+          "name": "par2",
+          "in": "path",
+          "required": true,
+          "schema": {}
+        }
+      ],
+      "delete": {
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/path-parameter-rules-transfer/3/{par1}/{par2}": {
+      "parameters": [
+        {
+          "name": "par1",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "number",
+            "minimum": -1,
+            "maximum": 1,
+            "example": -0.12
+          }
+        },
+        {
+          "name": "par2",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "enum": ["right", "left"],
+            "example": "right"
+          }
+        }
+      ],
+      "post": {
+        "responses": {
+          "400": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "responses": {
+          "401": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "responses": {
+          "402": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "responses": {
+          "403": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "responses": {
+          "404": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/path-parameter-rules-transfer/other3/{par1}/{par2}": {
+      "parameters": [
+        {
+          "name": "par1",
+          "in": "path",
+          "required": true,
+          "schema": {}
+        },
+        {
+          "name": "par2",
+          "in": "path",
+          "required": true,
+          "schema": {}
+        }
+      ],
+      "delete": {
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{p1}/then/{p2}/and/{p3}": {
+      "parameters": [
+        {
+          "name": "p1",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "boolean",
+            "example": false
+          }
+        },
+        {
+          "name": "p2",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "pattern": "^[A-Z]+\\d+$",
+            "example": "AAA123"
+          }
+        },
+        {
+          "name": "p3",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "number",
+            "multipleOf": 0.01,
+            "example": 12.12
+          }
+        }          
+      ],
+      "get": {
+        "responses": {
+          "500": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string",
+                  "example": "OK"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{p1}": {
+      "parameters": [
+        {
+          "name": "p1",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "boolean",
+            "example": false
+          }
+        }    
+      ],
+      "post": {
+        "requestBody": {
+          "content": {
+            "*/*": {
+              "schema": {}
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{p1}/then": {
+      "parameters": [
+        {
+          "name": "p1",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "boolean",
+            "example": false
+          }
+        }    
+      ],
+      "put": {
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{p1}/then/{p2}": {
+      "parameters": [
+        {
+          "name": "p1",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "boolean",
+            "example": false
+          }
+        }, 
+        {
+          "name": "p2",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "pattern": "^[A-Z]+\\d+$",
+            "example": "AAA123"
+          }
+        }      
+      ],
+      "patch": {
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{p1}/then/{p2}/and": {
+      "parameters": [
+        {
+          "name": "p1",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "boolean",
+            "example": false
+          }
+        }, 
+        {
+          "name": "p2",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "pattern": "^[A-Z]+\\d+$",
+            "example": "AAA123"
+          }
+        }      
+      ],
+      "delete": {
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "allOfPathObject": {
+        "additionalProperties": false,
+        "properties": {
+          "par1": {
+            "example": -0.12,
+            "maximum": 1,
+            "minimum": -1,
+            "type": "number"
+          }
+        },
+        "required": [
+          "par1"
+        ],
+        "type": "object"
+      },
+      "pathObject": {
+        "additionalProperties": false,
+        "properties": {
+          "par2": {
+            "enum": [
+              "right",
+              "left"
+            ],
+            "example": "right"
+          }
+        },
+        "required": [
+          "par2"
+        ],
+        "type": "object"
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+JSIGHT 0.3
+
+#--------------------------------------------------------------------------------------
+
+POST /path-parameter-rules-transfer/1/{par1} # par1 here must be of type integer
+  300 any
+
+URL /path-parameter-rules-transfer/1/{par1} # here we set the requirements to par1 parameter
+  Path
+    {
+      "par1": 1 // Type integer.
+    }
+  PATCH
+    301 any
+  PUT
+    302 any
+
+GET /path-parameter-rules-transfer/1/{par1} # par1 here must be of type integer
+  303 any
+
+DELETE /path-parameter-rules-transfer/1/{par1} # par1 here must be of type integer
+  304 any

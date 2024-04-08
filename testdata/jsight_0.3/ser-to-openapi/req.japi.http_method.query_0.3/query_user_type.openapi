@@ -1,0 +1,215 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "",
+    "version": ""
+  },
+  "components": {
+    "schemas": {
+      "queryUserTypeBasic": {
+        "type": "object",
+        "properties": {
+          "first": {
+            "type": "integer",
+            "example": 123
+          },
+          "second": {
+            "type": "string",
+            "example": "value"
+          }
+        },
+        "required": [
+          "first",
+          "second"
+        ],
+        "additionalProperties": false
+      },
+      "queryUserTypeWithAllTypesOfParameters": {
+        "type": "object",
+        "properties": {
+          "prim1": {
+            "type": "integer",
+            "example": 1
+          },
+          "prim2": {
+            "type": "string",
+            "example": "value"
+          },
+          "arr": {
+            "type": "array",
+            "items": {
+              "anyOf": [
+                {
+                  "type": "integer",
+                  "example": 2
+                },
+                {
+                  "type": "integer",
+                  "example": 3
+                }
+              ]
+            }
+          },
+          "obj": {
+            "type": "object",
+            "properties": {
+              "foo": {
+                "enum": [
+                  "fooVal1",
+                  "fooVal2",
+                  "fooVal3"
+                ],
+                "example": "fooVal1"
+              },
+              "bar": {
+                "type": "integer",
+                "example": 45
+              }
+            },
+            "required": [
+              "foo",
+              "bar"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "prim1",
+          "prim2",
+          "arr",
+          "obj"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "paths": {
+    "/query/user-type-basic": {
+      "get": {
+        "parameters": [
+          {
+            "in": "query",
+            "name": "first",
+            "style": "deepObject",
+            "explode": true,
+            "schema": {
+              "type": "integer",
+              "example": 123
+            },
+            "required": true
+          },
+          {
+            "in": "query",
+            "name": "second",
+            "style": "deepObject",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "value"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/query/user-type-all-types-of-parameters": {
+      "get": {
+        "parameters": [
+          {
+            "in": "query",
+            "name": "prim1",
+            "style": "deepObject",
+            "explode": true,
+            "schema": {
+              "type": "integer",
+              "example": 1
+            },
+            "required": true
+          },
+          {
+            "in": "query",
+            "name": "prim2",
+            "style": "deepObject",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "value"
+            },
+            "required": true
+          },
+          {
+            "in": "query",
+            "name": "arr",
+            "style": "deepObject",
+            "explode": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "anyOf": [
+                  {
+                    "type": "integer",
+                    "example": 2
+                  },
+                  {
+                    "type": "integer",
+                    "example": 3
+                  }
+                ]
+              }
+            },
+            "required": true
+          },
+          {
+            "in": "query",
+            "name": "obj",
+            "style": "deepObject",
+            "explode": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "foo": {
+                  "enum": [
+                    "fooVal1",
+                    "fooVal2",
+                    "fooVal3"
+                  ],
+                  "example": "fooVal1"
+                },
+                "bar": {
+                  "type": "integer",
+                  "example": 45
+                }
+              },
+              "required": [
+                "foo",
+                "bar"
+              ],
+              "additionalProperties": false
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

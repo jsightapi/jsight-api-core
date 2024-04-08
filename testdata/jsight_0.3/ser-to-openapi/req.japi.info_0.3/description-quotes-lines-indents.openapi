@@ -1,0 +1,24 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "",
+    "version": "",
+    "description": "\"Line 1 with double quotes\"\n'Line 2 with single quotes'\nLine 3 no quotes\n\tLine 4 (with 1 tab indent, left and right)\t\n\t\tLine 5 (with 2 tab indents,  left and right)\t\t\n  Line 6 (with 2 space indents, left and right)"
+  },
+  "paths": {
+    "/": {
+      "get": {
+        "responses": {
+          "default": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

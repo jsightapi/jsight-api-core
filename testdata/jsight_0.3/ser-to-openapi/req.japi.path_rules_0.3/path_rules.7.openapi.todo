@@ -1,0 +1,37 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "",
+    "version": ""
+  },
+  "paths": {
+    "/path-parameter-rules-transfer/other3/{par1}/{par2}": {
+      "parameters": [
+        {
+          "name": "par1",
+          "in": "path",
+          "required": true,
+          "schema": {}
+        },
+        {
+          "name": "par2",
+          "in": "path",
+          "required": true,
+          "schema": {}
+        }
+      ],
+      "delete": {
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
