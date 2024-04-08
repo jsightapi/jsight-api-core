@@ -1,0 +1,46 @@
+JSIGHT 0.3
+
+TYPE @stringId
+  "abc-123"
+
+TYPE @integerId
+  123
+
+TYPE @typeObject
+  {
+    "1": 1,
+    "2": "2"
+  }
+
+GET /request/jschema/shortcuts/value_type/complex
+  200
+    {
+      "1": {
+        "1.1": {
+          "1.1.1": [
+            {
+              "1.1.1.1": {
+                "1.1.1.1.1": @typeObject
+              },
+              "1.1.1.2": @stringId  //  { optional: true, nullable: true } -   description    of  the object's property  1  ...
+            },
+            @integerId, //  { nullable: true } -  description    of  the array element  ...
+            @stringId
+          ],
+          "1.1.2": @stringId,
+          "1.1.3": @integerId
+        },
+        "1.2": {
+          "1.2.1": @typeObject
+        }
+      },
+      "2": @integerId, ////    { type: "@integerId" } - description    of  the object's property  2   ...
+      "3": [
+        @typeObject,
+        @typeObject,
+        @stringId,
+        "@stringId"
+      ],
+      "4": "@integerId", //  { type: "@stringId" }
+      "5": "@stringId" //  { type: "@stringId" }
+    }
