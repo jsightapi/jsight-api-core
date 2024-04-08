@@ -1,0 +1,17 @@
+JSIGHT 0.3
+
+GET /some
+  Request
+    Headers
+    { // {allOf: "@baseHeaders"}
+      "h3": 3
+    }
+
+    Body
+    {}
+
+  TYPE @baseHeaders
+  {
+    "h1": 1,
+    "h2": 2
+  }
