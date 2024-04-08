@@ -9,7 +9,7 @@
       "get": {
         "responses": {
           "200": {
-            "description": "Здесь придется склеить",
+            "description": "",
             "content": {
               "application/json": {
                 "schema": {

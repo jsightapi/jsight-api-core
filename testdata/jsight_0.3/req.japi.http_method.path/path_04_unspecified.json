@@ -1,0 +1,145 @@
+{
+  "tags": {
+    "@1": {
+      "name": "@1",
+      "title": "/1",
+      "interactionGroups": [
+        {
+          "protocol": "http",
+          "interactions": [
+            "http POST /1/{id}",
+            "http GET /1/{id}",
+            "http PUT /1/{id}/2/{name}/3/{age}"
+          ]
+        }
+      ]
+    }
+  },
+  "interactions": {
+    "http POST /1/{id}": {
+      "id": "http POST /1/{id}",
+      "protocol": "http",
+      "httpMethod": "POST",
+      "path": "/1/{id}",
+      "pathVariables": {
+        "schema": {
+          "content": {
+            "tokenType": "object",
+            "type": "object",
+            "children": [
+              {
+                "key": "id",
+                "tokenType": "number",
+                "type": "integer",
+                "scalarValue": "1",
+                "optional": false
+              }
+            ],
+            "optional": false
+          },
+          "notation": "jsight"
+        }
+      },
+      "tags": [
+        "@1"
+      ],
+      "responses": [
+        {
+          "code": "302",
+          "body": {
+            "format": "json",
+            "schema": {
+              "content": {
+                "tokenType": "string",
+                "type": "string",
+                "scalarValue": "yet another response",
+                "optional": false
+              },
+              "example": "\"yet another response\"",
+              "notation": "jsight"
+            }
+          }
+        }
+      ]
+    },
+    "http GET /1/{id}": {
+      "id": "http GET /1/{id}",
+      "protocol": "http",
+      "httpMethod": "GET",
+      "path": "/1/{id}",
+      "pathVariables": {
+        "schema": {
+          "content": {
+            "tokenType": "object",
+            "type": "object",
+            "children": [
+              {
+                "key": "id",
+                "tokenType": "number",
+                "type": "integer",
+                "scalarValue": "1",
+                "optional": false
+              }
+            ],
+            "optional": false
+          },
+          "notation": "jsight"
+        }
+      },
+      "tags": [
+        "@1"
+      ]
+    },
+    "http PUT /1/{id}/2/{name}/3/{age}": {
+      "id": "http PUT /1/{id}/2/{name}/3/{age}",
+      "protocol": "http",
+      "httpMethod": "PUT",
+      "path": "/1/{id}/2/{name}/3/{age}",
+      "pathVariables": {
+        "schema": {
+          "content": {
+            "tokenType": "object",
+            "type": "object",
+            "children": [
+              {
+                "key": "id",
+                "tokenType": "number",
+                "type": "integer",
+                "scalarValue": "1",
+                "optional": false
+              },
+              {
+                "key": "name",
+                "tokenType": "string",
+                "type": "string",
+                "scalarValue": "name",
+                "optional": false
+              },
+              {
+                "key": "age",
+                "tokenType": "string",
+                "type": "any",
+                "scalarValue": "",
+                "rules": [
+                  {
+                    "key": "type",
+                    "tokenType": "string",
+                    "scalarValue": "any"
+                  }
+                ],
+                "optional": false
+              }
+            ],
+            "optional": false
+          },
+          "notation": "jsight"
+        }
+      },
+      "tags": [
+        "@1"
+      ]
+    }
+  },
+  "jsight": "0.3",
+  "jdocExchangeVersion": "2.0.0"
+}
