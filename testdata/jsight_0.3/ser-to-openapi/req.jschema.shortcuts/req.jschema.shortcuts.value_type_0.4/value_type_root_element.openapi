@@ -80,7 +80,7 @@
                       "$ref": "#/components/schemas/integerId"
                     }
                   ],
-                  "description": "/  { type: \"@integerId\" }"
+                  "description": "/ { type: \"@integerId\" }"
                 }
               }
             }
@@ -101,7 +101,7 @@
               "text/plain": {
                 "schema": {
                   "type": "string",
-                  "format": "@integerId"
+                  "pattern": "@integerId"
                 }
               }
             }

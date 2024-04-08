@@ -157,7 +157,7 @@
                           "$ref": "#/components/schemas/stringId"
                         }
                       ],
-                      "description": "/  { type: \"@stringId\" }"
+                      "description": "/ { type: \"@stringId\" }"
                     },
                     "8": {
                       "$ref": "#/components/schemas/stringId"

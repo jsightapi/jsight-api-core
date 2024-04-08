@@ -47,7 +47,7 @@
                                           }
                                         ],
                                         "nullable": true,
-                                        "description": "description    of  the object's property  1  ..."
+                                        "description": "description of the object's property 1 ..."
                                       }
                                     },
                                     "additionalProperties": false,
@@ -62,7 +62,7 @@
                                       }
                                     ],
                                     "nullable": true,
-                                    "description": "description    of  the array element  ..."
+                                    "description": "description of the array element ..."
                                   },
                                   {
                                     "$ref": "#/components/schemas/stringId"
@@ -109,7 +109,7 @@
                           "$ref": "#/components/schemas/integerId"
                         }
                       ],
-                      "description": "//    { type: \"@integerId\" } - description    of  the object's property  2   ..."
+                      "description": "// { type: \"@integerId\" } - description of the object's property 2 ..."
                     },
                     "3": {
                       "type": "array",

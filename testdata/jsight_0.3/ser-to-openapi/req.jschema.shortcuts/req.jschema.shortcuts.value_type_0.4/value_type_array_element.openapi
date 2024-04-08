@@ -94,7 +94,7 @@
                           }
                         ],
                         "nullable": true,
-                        "description": "description   1"
+                        "description": "description 1"
                       },
                       {
                         "example": "abc-123",
@@ -104,7 +104,7 @@
                           }
                         ],
                         "nullable": true,
-                        "description": "description   2"
+                        "description": "description 2"
                       }
                     ]
                   }
