@@ -1,0 +1,184 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "",
+    "version": ""
+  },
+  "paths": {
+    "/{p1}/then/{p2}/and/{p3}": {
+      "parameters": [
+        {
+          "name": "p1",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "boolean",
+            "example": false
+          }
+        },
+        {
+          "name": "p2",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "pattern": "^[A-Z]+\\d+$",
+            "example": "AAA123"
+          }
+        },
+        {
+          "name": "p3",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "number",
+            "multipleOf": 0.01,
+            "example": 12.12
+          }
+        }          
+      ],
+      "get": {
+        "responses": {
+          "500": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string",
+                  "example": "OK"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{p1}": {
+      "parameters": [
+        {
+          "name": "p1",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "boolean",
+            "example": false
+          }
+        }    
+      ],
+      "post": {
+        "requestBody": {
+          "content": {
+            "*/*": {
+              "schema": {}
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{p1}/then": {
+      "parameters": [
+        {
+          "name": "p1",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "boolean",
+            "example": false
+          }
+        }    
+      ],
+      "put": {
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{p1}/then/{p2}": {
+      "parameters": [
+        {
+          "name": "p1",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "boolean",
+            "example": false
+          }
+        }, 
+        {
+          "name": "p2",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "pattern": "^[A-Z]+\\d+$",
+            "example": "AAA123"
+          }
+        }      
+      ],
+      "patch": {
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{p1}/then/{p2}/and": {
+      "parameters": [
+        {
+          "name": "p1",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "boolean",
+            "example": false
+          }
+        }, 
+        {
+          "name": "p2",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "pattern": "^[A-Z]+\\d+$",
+            "example": "AAA123"
+          }
+        }      
+      ],
+      "delete": {
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
