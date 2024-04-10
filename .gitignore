@@ -5,3 +5,5 @@
 /vendor
 /local
 .DS_Store
+*.ACTUAL.json
+*.EXPECTED.json

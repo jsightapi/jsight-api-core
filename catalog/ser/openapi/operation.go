@@ -10,6 +10,7 @@ type Operation struct {
 	Parameters  []*ParameterObject `json:"parameters,omitempty"`
 	RequestBody *RequestBody       `json:"requestBody,omitempty"`
 	Responses   *Responses         `json:"responses"`
+	Tags        []string           `json:"tags,omitempty"`
 }
 
 func newOperation(i *catalog.HTTPInteraction) *Operation {
@@ -19,7 +20,16 @@ func newOperation(i *catalog.HTTPInteraction) *Operation {
 		Parameters:  fillOperationParams(i),
 		RequestBody: newRequestBody(i.Request),
 		Responses:   newResponses(i),
+		Tags:        getTags(i),
 	}
+}
+
+func getTags(i *catalog.HTTPInteraction) []string {
+	r := make([]string, 0, len(i.Tags))
+	for _, t := range i.Tags {
+		r = append(r, string(t))
+	}
+	return r
 }
 
 func processMethodDescription(s *string) string {
