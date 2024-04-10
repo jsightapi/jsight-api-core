@@ -68,12 +68,12 @@
                     "11": {
                       "type": "integer",
                       "example": 11,
-                      "description": ".   { \"11\" : 11 }"
+                      "description": ". { \"11\" : 11 }"
                     },
                     "12": {
                       "type": "integer",
                       "example": 12,
-                      "description": "\"     { \"12\" : 12 } \""
+                      "description": "\" { \"12\" : 12 } \""
                     },
                     "13": {
                       "type": "integer",
