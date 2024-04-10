@@ -1,0 +1,51 @@
+
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "",
+    "version": ""
+  },
+  "paths": {
+    "/parameter/{id}": {
+      "parameters": [
+        {
+          "in": "path",
+          "name": "id",
+          "required": true,
+          "schema": {
+            "example": 1,
+            "type": "integer"
+          }
+        }
+      ],
+      "get": {
+        "responses": {
+          "default": {
+            "content": {
+              "*/*": {
+                "schema": {}
+              }
+            },
+            "description": ""
+          }
+        }
+      },
+      "post": {
+        "responses": {
+          "302": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "example": "yet another response",
+                  "type": "string"
+                }
+              }
+            },
+            "description": ""
+          }
+        }
+      }
+    }
+  }
+}
+

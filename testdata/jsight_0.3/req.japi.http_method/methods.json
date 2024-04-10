@@ -35,6 +35,32 @@
       "tags": [
         "@cats"
       ],
+      "pathVariables": {
+        "schema": {
+          "content": {
+            "tokenType": "object",
+            "type": "object",
+            "children": [
+              {
+                "key": "id",
+                "tokenType": "string",
+                "type": "any",
+                "scalarValue": "",
+                "rules": [
+                  {
+                    "key": "type",
+                    "tokenType": "string",
+                    "scalarValue": "any"
+                  }
+                ],
+                "optional": false
+              }
+            ],
+            "optional": false
+          },
+          "notation": "jsight"
+        }
+      },
       "annotation": "Get a cat.",
       "httpMethod": "GET"
     },
@@ -45,6 +71,32 @@
       "tags": [
         "@cats"
       ],
+      "pathVariables": {
+        "schema": {
+          "content": {
+            "tokenType": "object",
+            "type": "object",
+            "children": [
+              {
+                "key": "id",
+                "tokenType": "string",
+                "type": "any",
+                "scalarValue": "",
+                "rules": [
+                  {
+                    "key": "type",
+                    "tokenType": "string",
+                    "scalarValue": "any"
+                  }
+                ],
+                "optional": false
+              }
+            ],
+            "optional": false
+          },
+          "notation": "jsight"
+        }
+      },
       "annotation": "Update the whole cat.",
       "httpMethod": "PUT"
     },
@@ -55,6 +107,32 @@
       "tags": [
         "@cats"
       ],
+      "pathVariables": {
+        "schema": {
+          "content": {
+            "tokenType": "object",
+            "type": "object",
+            "children": [
+              {
+                "key": "id",
+                "tokenType": "string",
+                "type": "any",
+                "scalarValue": "",
+                "rules": [
+                  {
+                    "key": "type",
+                    "tokenType": "string",
+                    "scalarValue": "any"
+                  }
+                ],
+                "optional": false
+              }
+            ],
+            "optional": false
+          },
+          "notation": "jsight"
+        }
+      },
       "annotation": "Change the status of the cat.",
       "httpMethod": "PATCH"
     },
@@ -65,6 +143,32 @@
       "tags": [
         "@cats"
       ],
+      "pathVariables": {
+        "schema": {
+          "content": {
+            "tokenType": "object",
+            "type": "object",
+            "children": [
+              {
+                "key": "id",
+                "tokenType": "string",
+                "type": "any",
+                "scalarValue": "",
+                "rules": [
+                  {
+                    "key": "type",
+                    "tokenType": "string",
+                    "scalarValue": "any"
+                  }
+                ],
+                "optional": false
+              }
+            ],
+            "optional": false
+          },
+          "notation": "jsight"
+        }
+      },
       "annotation": "Remove the cat.",
       "httpMethod": "DELETE"
     }
