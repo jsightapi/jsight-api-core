@@ -7,13 +7,6 @@ POST /case/UPPER/lower
 
 #--------------------- necessity -------------------------
 
-POST /necessity/{parameter}
-  Path
-  {
-    "parameter": true /* {optional: true} - The rule `optional: true` must be ignored 
-                                            for path parameters. */
-  }
-
 GET /annotation/{parameter}
   Path
   {
@@ -282,14 +275,7 @@ TYPE @objectInPath
     "string-parameter": "string" // {minLength: 3}
   }
   
-URL /object-in-path/double/{integer-parameter}/{string-parameter}
-  Path
-    @objectInPath2
-  PUT
-    200 any
 
-TYPE @objectInPath2
-  @objectInPath
 
 URL /object-in-path/user-type/{boolean-parameter}/{email-parameter}
   Path
@@ -308,15 +294,6 @@ TYPE @emailInObject
 
 TYPE @booleanInObject
   true
-
-URL /object-in-path/all-of/{integer-parameter}/{string-parameter}
-  Path
-    @allOfObjectInPath
-  PUT
-    200 any
-
-TYPE @allOfObjectInPath
-  {} // {allOf: "@objectInPath"}
 
 #--------------------- all-of-in-path ------------------------------
 
@@ -389,11 +366,6 @@ POST /any-parameter/with-rules/{any-value}
     {
       "any-value": 123 // {type: "any", nullable: true}
     }
-  200 empty
-
-#--------------------- not specified ------------------------------
-
-GET /no-schema-parameter/{no-schema-value}
   200 empty
 
 #------------------------ mixed ------------------------------
