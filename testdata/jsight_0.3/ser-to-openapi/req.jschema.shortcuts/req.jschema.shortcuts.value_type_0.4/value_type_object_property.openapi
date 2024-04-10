@@ -1,0 +1,229 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "",
+    "version": ""
+  },
+  "paths": {
+    "/request/jschema/shortcuts/value_type/object_property": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "1": {
+                      "$ref": "#/components/schemas/stringId"
+                    }
+                  },
+                  "required": [
+                    "1"
+                  ],
+                  "additionalProperties": false
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "1": {
+                      "$ref": "#/components/schemas/stringId"
+                    },
+                    "2": {
+                      "$ref": "#/components/schemas/integerId"
+                    },
+                    "3": {
+                      "$ref": "#/components/schemas/typeObject"
+                    }
+                  },
+                  "required": [
+                    "1",
+                    "2",
+                    "3"
+                  ],
+                  "additionalProperties": false
+                }
+              }
+            }
+          },
+          "202": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "1": {
+                      "example": "xyz-456",
+                      "allOf": [
+                        {
+                          "$ref": "#/components/schemas/stringId"
+                        }
+                      ]
+                    },
+                    "2": {
+                      "example": 789,
+                      "allOf": [
+                        {
+                          "$ref": "#/components/schemas/integerId"
+                        }
+                      ]
+                    },
+                    "3": {
+                      "$ref": "#/components/schemas/typeObject"
+                    },
+                    "4": {
+                      "example": "abc-123",
+                      "nullable": true,
+                      "allOf": [
+                        {
+                          "$ref": "#/components/schemas/stringId"
+                        }
+                      ]
+                    }
+                  },
+                  "required": [
+                    "1",
+                    "2",
+                    "3"
+                  ],
+                  "additionalProperties": false
+                }
+              }
+            }
+          },
+          "203": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "1": {
+                      "type": "string",
+                      "example": "abc-123"
+                    },
+                    "2": {
+                      "example": "abc-123",
+                      "allOf": [
+                        {
+                          "$ref": "#/components/schemas/stringId"
+                        }
+                      ]
+                    },
+                    "3": {
+                      "$ref": "#/components/schemas/stringId"
+                    },
+                    "3.1": {
+                      "allOf": [
+                        {
+                          "$ref": "#/components/schemas/stringId"
+                        }
+                      ],
+                      "description": "description",
+                      "nullable": true
+                    },
+                    "4": {
+                      "type": "string",
+                      "example": "@stringId"
+                    },
+                    "5": {
+                      "example": "@stringId",
+                      "allOf": [
+                        {
+                          "$ref": "#/components/schemas/stringId"
+                        }
+                      ]
+                    },
+                    "6": {
+                      "example": "stringId",
+                      "allOf": [
+                        {
+                          "$ref": "#/components/schemas/stringId"
+                        }
+                      ]
+                    },
+                    "7": {
+                      "allOf": [
+                        {
+                          "$ref": "#/components/schemas/stringId"
+                        }
+                      ],
+                      "description": "/ { type: \"@stringId\" }"
+                    },
+                    "8": {
+                      "$ref": "#/components/schemas/stringId"
+                    },
+                    "9": {
+                      "type": "string",
+                      "example": "@stringId"
+                    },
+                    "10": {
+                      "example": "@integerId",
+                      "allOf": [
+                        {
+                          "$ref": "#/components/schemas/stringId"
+                        }
+                      ]
+                    }
+                  },
+                  "required": [
+                    "1",
+                    "2",
+                    "3",
+                    "4",
+                    "5",
+                    "6",
+                    "7",
+                    "8",
+                    "9",
+                    "10"
+                  ],
+                  "additionalProperties": false
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "stringId": {
+        "type": "string",
+        "example": "abc-123"
+      },
+      "integerId": {
+        "type": "integer",
+        "example": 123
+      },
+      "typeObject": {
+        "type": "object",
+        "properties": {
+          "1": {
+            "type": "integer",
+            "example": 1
+          },
+          "2": {
+            "type": "string",
+            "example": "2"
+          }
+        },
+        "required": [
+          "1",
+          "2"
+        ],
+        "additionalProperties": false
+      }
+    }
+  }
+}
