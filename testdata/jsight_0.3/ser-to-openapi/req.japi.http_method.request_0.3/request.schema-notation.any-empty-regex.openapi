@@ -5,10 +5,9 @@
     "version": ""
   },
   "paths": {
-    "/request/schema-notation/any ": {
+    "/request/schema-notation/any": {
       "post": {
         "requestBody": {
-          "required": true,
           "content": {
             "*/*": {
               "schema": {}
