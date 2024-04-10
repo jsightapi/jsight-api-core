@@ -30,7 +30,7 @@
               "application/json": {
                 "schema": {
                   "example": "1111 222222",
-                  "description": "Some text",
+                  "description": "some text",
                   "allOf": [
                     { "$ref": "#/components/schemas/passportNumber" }
                   ]
@@ -92,9 +92,7 @@
                   "type": "object",
                   "properties": {
                     "key": {
-                      "allOf": [
-                        { "$ref": "#/components/schemas/cat" }
-                      ]
+                      "$ref": "#/components/schemas/cat"
                     }
                   },
                   "additionalProperties": false
@@ -110,21 +108,26 @@
 
   "components": {
     "schemas": {
-      "passportNumber": {
-        "type": "string",
-        "pattern": "^\\d{4} \\d{6}$",
-        "example": "1234 567890"
-      },
       "cat": {
-        "type": "object",
+        "additionalProperties": false,
+        "description": "A cat.",
         "properties": {
           "name": {
-            "type": "string",
-            "example": "Tom"
+            "example": "Tom",
+            "type": "string"
           }
-        }
+        },
+        "required": [
+          "name"
+        ],
+        "type": "object"
+      },
+      "passportNumber": {
+        "description": "Passport ID.",
+        "example": "1234 567890",
+        "pattern": "^\\d{4} \\d{6}$",
+        "type": "string"
       }
     }
   }
-
 }

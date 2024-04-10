@@ -6,7 +6,7 @@
   },
 
   "paths": {
-    "/request/jschema/rules/type/nullable/null": {
+    "/request/jschema/rules/nullable/null": {
       "get": {
         "responses": {
 
