@@ -109,6 +109,17 @@
         "parameters": [
           {
             "in": "query",
+            "name": "addField",
+            "style": "deepObject",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "addFieldValue"
+            },
+            "required": true
+          },
+          {
+            "in": "query",
             "name": "first",
             "style": "deepObject",
             "explode": true,
@@ -126,17 +137,6 @@
             "schema": {
               "type": "string",
               "example": "value"
-            },
-            "required": true
-          },
-          {
-            "in": "query",
-            "name": "addField",
-            "style": "deepObject",
-            "explode": true,
-            "schema": {
-              "type": "string",
-              "example": "addFieldValue"
             },
             "required": true
           }
@@ -218,6 +218,17 @@
         "parameters": [
           {
             "in": "query",
+            "name": "addField",
+            "style": "deepObject",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "addFieldValue"
+            },
+            "required": true
+          },
+          {
+            "in": "query",
             "name": "first",
             "style": "deepObject",
             "explode": true,
@@ -257,17 +268,6 @@
             "schema": {
               "type": "boolean",
               "example": true
-            },
-            "required": true
-          },
-          {
-            "in": "query",
-            "name": "addField",
-            "style": "deepObject",
-            "explode": true,
-            "schema": {
-              "type": "string",
-              "example": "addFieldValue"
             },
             "required": true
           }
@@ -289,6 +289,28 @@
         "parameters": [
           {
             "in": "query",
+            "name": "addField",
+            "style": "deepObject",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "addFieldValue"
+            },
+            "required": true
+          },
+          {
+            "in": "query",
+            "name": "fifth",
+            "style": "deepObject",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "5"
+            },
+            "required": true
+          },
+          {
+            "in": "query",
             "name": "first",
             "style": "deepObject",
             "explode": true,
@@ -328,28 +350,6 @@
             "schema": {
               "type": "boolean",
               "example": true
-            },
-            "required": true
-          },
-          {
-            "in": "query",
-            "name": "fifth",
-            "style": "deepObject",
-            "explode": true,
-            "schema": {
-              "type": "string",
-              "example": "5"
-            },
-            "required": true
-          },
-          {
-            "in": "query",
-            "name": "addField",
-            "style": "deepObject",
-            "explode": true,
-            "schema": {
-              "type": "string",
-              "example": "addFieldValue"
             },
             "required": true
           }
