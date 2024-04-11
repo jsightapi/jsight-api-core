@@ -8,7 +8,6 @@
     "/request/jschema/rules/or": {
       "get": {
         "responses": {
-
           "200": {
             "description": "",
             "content": {
@@ -117,7 +116,8 @@
                   "anyOf": [
                     { "type": "string" },
                     { "type": "object", "properties": {}, "additionalProperties": false },
-                    { "type": "array", "items": {}, "maxItems": 0 }
+                    { "type": "array", "items": {}, "maxItems": 0 },
+                    { "$ref": "#/components/schemas/stringId" }
                   ],
                   "example": "abc"
                 }
@@ -193,13 +193,35 @@
                 }
               }
             }
+          },
+          "213": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "foo": {
+                      "anyOf": [
+                        { "type": "string", "maxLength": 3 },
+                        { "type": "integer", "minimum": 0 },
+                        { "$ref": "#/components/schemas/stringId" },
+                        { "type": "string" },
+                        { "type": "string", "format": "email" }
+                      ],
+                      "example": "bar",
+                      "nullable": true
+                    }
+                  },
+                  "additionalProperties": false
+                }
+              }
+            }
           }
-
         }
       }
     }
   },
-
   "components": {
     "schemas": {
       "stringId": {

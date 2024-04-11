@@ -1,198 +1,177 @@
 {
-  "openapi": "3.0.3",
   "info": {
     "title": "",
     "version": ""
   },
-
+  "openapi": "3.0.3",
   "paths": {
     "/request/jschema/rules/nullable/string": {
       "get": {
         "responses": {
-
           "200": {
-            "description": "",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "string",
-                  "format": "date",
                   "example": "2024-02-19",
-                  "nullable": true
+                  "format": "date",
+                  "type": "string"
                 }
               }
-            }
+            },
+            "description": ""
           },
-
           "201": {
-            "description": "",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "string",
+                  "example": "2024-02-19T09:14:28+03:00",
                   "format": "date-time",
-                  "example": "2024-02-14T09:14:28+03:00",
-                  "nullable": true
+                  "type": "string"
                 }
               }
-            }
+            },
+            "description": ""
           },
-
           "202": {
-            "description": "",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "string",
-                  "format": "email",
                   "example": "test@example.com",
-                  "nullable": true
+                  "format": "email",
+                  "type": "string"
                 }
               }
-            }
+            },
+            "description": ""
           },
-
           "203": {
-            "description": "",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "string",
                   "example": "foo",
-                  "nullable": true
+                  "type": "string"
                 }
               }
-            }
+            },
+            "description": ""
           },
-
           "204": {
-            "description": "",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "string",
                   "example": "https://www.com",
-                  "format":"uri",
-                  "nullable": true
+                  "format": "uri",
+                  "type": "string"
                 }
               }
-            }
+            },
+            "description": ""
           },
-
           "205": {
-            "description": "",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "string",
                   "example": "53496d7f-1374-4368-a829-74ccd47aec1c",
-                  "format":"uuid",
-                  "nullable": true
+                  "format": "uuid",
+                  "type": "string"
                 }
               }
-            }
+            },
+            "description": ""
           },
-
           "206": {
-            "description": "",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
+                  "additionalProperties": false,
                   "properties": {
                     "sDate": {
-                      "type": "string",
-                      "format": "date",
                       "example": "2024-02-19",
-                      "nullable": true
+                      "format": "date",
+                      "type": "string"
                     },
                     "sDatetime": {
-                      "type": "string",
+                      "example": "2024-02-19T09:14:28+03:00",
                       "format": "date-time",
-                      "example": "2024-02-14T09:14:28+03:00",
-                      "nullable": true
+                      "type": "string"
                     },
                     "sEmail": {
-                      "type": "string",
-                      "format": "email",
                       "example": "test@example.com",
-                      "nullable": true
+                      "format": "email",
+                      "type": "string"
                     },
                     "sString": {
-                      "type": "string",
                       "example": "foo",
-                      "nullable": true
+                      "type": "string"
                     },
                     "sUri": {
-                      "type": "string",
                       "example": "https://www.com",
-                      "format":"uri",
-                      "nullable": true
+                      "format": "uri",
+                      "type": "string"
                     },
                     "sUuid": {
-                      "type": "string",
                       "example": "53496d7f-1374-4368-a829-74ccd47aec1c",
-                      "format":"uuid",
-                      "nullable": true
+                      "format": "uuid",
+                      "type": "string"
                     }
                   },
-                  "required": ["sDate", "sDatetime", "sEmail", "sString", "sUri", "sUuid"],
-                  "additionalProperties": false
+                  "required": [
+                    "sDate",
+                    "sDatetime",
+                    "sEmail",
+                    "sString",
+                    "sUri",
+                    "sUuid"
+                  ],
+                  "type": "object"
                 }
               }
-            }
+            },
+            "description": ""
           },
-
           "207": {
-            "description": "",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
                   "items": {
                     "anyOf": [
                       {
-                        "type": "string",
-                        "format": "date",
                         "example": "2024-02-19",
-                        "nullable": true
+                        "format": "date",
+                        "type": "string"
                       },
                       {
-                        "type": "string",
+                        "example": "2024-02-19T09:14:28+03:00",
                         "format": "date-time",
-                        "example": "2024-02-14T09:14:28+03:00",
-                        "nullable": true
+                        "type": "string"
                       },
                       {
-                        "type": "string",
-                        "format": "email",
                         "example": "test@example.com",
-                        "nullable": true
+                        "format": "email",
+                        "type": "string"
                       },
                       {
-                        "type": "string",
                         "example": "foo",
-                        "nullable": true
+                        "type": "string"
                       },
                       {
-                        "type": "string",
                         "example": "https://www.com",
-                        "format":"uri",
-                        "nullable": true
+                        "format": "uri",
+                        "type": "string"
                       },
                       {
-                        "type": "string",
                         "example": "53496d7f-1374-4368-a829-74ccd47aec1c",
-                        "format":"uuid",
-                        "nullable": true
+                        "format": "uuid",
+                        "type": "string"
                       }
                     ]
-                  }
+                  },
+                  "type": "array"
                 }
               }
-            }
+            },
+            "description": ""
           }
-
         }
       }
     }

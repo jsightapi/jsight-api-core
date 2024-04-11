@@ -23,17 +23,17 @@
         "type": "string",
         "example": "userType_string_value"
       },
+
       "userTypeReferenceToTypeInPropertyKey": {
         "type": "object",
-        "properties": {
-          "userType_string_value": {
-            "$ref": "#/components/schemas/userTypeObject"
-          }
-        },
-        "required": [
-          "userType_string_value"
-        ],
-        "additionalProperties": false
+        "properties": {},
+        "additionalProperties": {
+          "anyOf": [
+            {
+              "$ref": "#/components/schemas/userTypeObject"
+            }
+          ]
+        }
       }
     }
   },

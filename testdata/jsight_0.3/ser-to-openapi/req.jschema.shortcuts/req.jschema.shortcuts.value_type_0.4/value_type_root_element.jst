@@ -1,0 +1,38 @@
+JSIGHT 0.3
+
+TYPE @stringId
+  "abc-123"
+
+TYPE @integerId
+  123
+
+TYPE @typeObject
+  {
+    "1": 1,
+    "2": "2"
+  }
+
+GET /request/jschema/shortcuts/value_type/root_element
+  200
+    @stringId
+  
+  201
+    @stringId //  { nullable: true} - description
+
+  202
+    @typeObject
+  
+  203
+    "@stringId"
+  
+  204
+    "@integerId" //  { type: "@stringId" }
+  
+  205
+    @integerId ///  { type: "@integerId" }
+  
+  206
+    @integerId #  { type: "@integerId" }
+  
+  207 regex
+    /@integerId/

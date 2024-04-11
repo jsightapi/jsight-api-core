@@ -7,25 +7,52 @@
   "components": {
     "schemas": {
       "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789___1_-_-_1": {
+        "additionalProperties": false,
+        "properties": {},
+        "type": "object",
         "description": "Long description with different symbols... tabs: ascii: !\\\"$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\\\]^_`abcdefghijklmnopqrstuvwxyz{|}~ spec:¹²³$‰↑∞←→—≠€®™ѣѵіѳ′[]≈§°£₽„“”‘’×©↓−«»…´“„•ẞˇ¢·¸¨‘⌀⌘˘˚ѢѴІѲ″{}±–〉〈¿ˆ¼⅓½¡ Cyrillic: йцукенгшщзФЫВАПРОЛДЖЭ Chinese: 你好世界！"
       },
       "_": {
+        "additionalProperties": false,
+        "properties": {},
+        "type": "object"
       },
       "-": {
+        "additionalProperties": false,
+        "properties": {},
+        "type": "object"
       },
       "empty": {
+        "additionalProperties": false,
+        "properties": {},
+        "type": "object"
       },
       "schema": {
+        "additionalProperties": false,
+        "properties": {},
+        "type": "object"
       },
       "typeWithDescription": {
+        "additionalProperties": false,
+        "properties": {},
+        "type": "object",
         "description": "description"
       },
       "typeWithEmptyDescription": {
+        "additionalProperties": false,
+        "properties": {},
+        "type": "object"
       },
       "typeWithMultilineDescription": {
+        "additionalProperties": false,
+        "properties": {},
+        "type": "object",
         "description": "Line 1 Line 2 Line 3"
       },
       "typeWithMultilineEmptyDescription": {
+        "additionalProperties": false,
+        "properties": {},
+        "type": "object"
       }
     }
   },

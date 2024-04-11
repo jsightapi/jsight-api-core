@@ -6,7 +6,7 @@
   },
 
   "paths": {
-    "/request/jschema/rules/type/nullable/boolean": {
+    "/request/jschema/rules/nullable/boolean": {
       "get": {
         "responses": {
 

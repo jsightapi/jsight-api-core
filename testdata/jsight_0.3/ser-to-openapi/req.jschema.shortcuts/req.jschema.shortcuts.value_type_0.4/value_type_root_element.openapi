@@ -1,0 +1,143 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "",
+    "version": ""
+  },
+  "paths": {
+    "/request/jschema/shortcuts/value_type/root_element": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/stringId"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/stringId"
+                    }
+                  ],
+                  "nullable": true,
+                  "description": "description"
+                }
+              }
+            }
+          },
+          "202": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/typeObject"
+                }
+              }
+            }
+          },
+          "203": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string",
+                  "example": "@stringId"
+                }
+              }
+            }
+          },
+          "204": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/stringId"
+                    }
+                  ],
+                  "example": "@integerId"
+                }
+              }
+            }
+          },
+          "205": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/integerId"
+                    }
+                  ],
+                  "description": "/ { type: \"@integerId\" }"
+                }
+              }
+            }
+          },
+          "206": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/integerId"
+                }
+              }
+            }
+          },
+          "207": {
+            "description": "",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string",
+                  "pattern": "@integerId"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "stringId": {
+        "type": "string",
+        "example": "abc-123"
+      },
+      "integerId": {
+        "type": "integer",
+        "example": 123
+      },
+      "typeObject": {
+        "type": "object",
+        "properties": {
+          "1": {
+            "type": "integer",
+            "example": 1
+          },
+          "2": {
+            "type": "string",
+            "example": "2"
+          }
+        },
+        "required": [
+          "1",
+          "2"
+        ],
+        "additionalProperties": false
+      }
+    }
+  }
+}

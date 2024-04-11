@@ -46,16 +46,9 @@
         "additionalProperties": false
       },
       "userType1Self": {
-        "type": "object",
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/userType1"
-          }
-        ],
-        "additionalProperties": false
+        "$ref": "#/components/schemas/userType1"
       },
       "userType1Or2": {
-        "type": "object",
         "anyOf": [
           {
             "$ref": "#/components/schemas/userType1"
@@ -63,11 +56,9 @@
           {
             "$ref": "#/components/schemas/userType2"
           }
-        ],
-        "additionalProperties": false
+        ]
       },
       "userType1Or2Or3": {
-        "type": "object",
         "anyOf": [
           {
             "$ref": "#/components/schemas/userType1"
@@ -78,11 +69,9 @@
           {
             "$ref": "#/components/schemas/userType3"
           }
-        ],
-        "additionalProperties": false
+        ]
       },
       "userType1Or2_Or_userType3": {
-        "type": "object",
         "anyOf": [
           {
             "$ref": "#/components/schemas/userType1Or2"
@@ -90,11 +79,9 @@
           {
             "$ref": "#/components/schemas/userType3"
           }
-        ],
-        "additionalProperties": false
+        ]
       },
       "userType1Or2___Or___userType1Or2Or3___userType1Or2_Or_userType3": {
-        "type": "object",
         "anyOf": [
           {
             "$ref": "#/components/schemas/userType1Or2"
@@ -105,8 +92,7 @@
           {
             "$ref": "#/components/schemas/userType1Or2_Or_userType3"
           }
-        ],
-        "additionalProperties": false
+        ]
       },
       "userTypeAllInArray": {
         "type": "array",
@@ -144,7 +130,6 @@
             }
           },
           "userTypeWithOrObject": {
-            "type": "object",
             "anyOf": [
               {
                 "$ref": "#/components/schemas/userType1"
@@ -155,8 +140,7 @@
               {
                 "$ref": "#/components/schemas/userType3"
               }
-            ],
-            "additionalProperties": false
+            ]
           },
           "userType1": {
             "$ref": "#/components/schemas/userType1"

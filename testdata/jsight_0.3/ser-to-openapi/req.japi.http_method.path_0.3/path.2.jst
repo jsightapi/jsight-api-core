@@ -1,0 +1,57 @@
+JSIGHT 0.3
+
+#--------------------- necessity -------------------------
+
+POST /necessity/{parameter}
+  Path
+  {
+    "parameter": true /* {optional: true} - The rule `optional: true` must be ignored
+                                            for path parameters. */
+  }
+
+#--------------------- not specified ------------------------------
+
+GET /no-schema-parameter/{no-schema-value}
+  200 empty
+
+#--------------------------------------------------
+
+URL /object-in-path/double/{integer-parameter}/{string-parameter}
+  Path
+    @objectInPath2
+  PUT
+    200 any
+
+TYPE @objectInPath
+  {
+    "integer-parameter": 21, // {min: 0}
+    "string-parameter": "string" // {minLength: 3}
+  }
+
+TYPE @objectInPath2
+  @objectInPath
+
+#--------------------------------------------------
+
+URL /object-in-path/all-of/{integer-parameter}/{string-parameter}
+  Path
+    @allOfObjectInPath
+  PUT
+    200 any
+
+TYPE @allOfObjectInPath
+  {} // {allOf: "@objectInPath"}
+
+#--------------------------------------------------
+
+### TODO: uncomment when the bug is fixed
+GET /mixed-parameter/multiple-reference-object/{mixed-value}
+  Path
+  {
+    "mixed-value": @multipleRefObject
+  }
+  200 empty
+
+TYPE @multipleRefObject
+  @booleanRef | @integerRef
+###

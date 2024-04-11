@@ -19,33 +19,6 @@
         }
       }
     },
-    "/necessity/{parameter}": {
-      "parameters": [
-        {
-          "name": "parameter",
-          "in": "path",
-          "required": true,
-          "description": "The rule `optional: true` must be ignored for path parameters.",
-          "schema": {
-            "description": "The rule `optional: true` must be ignored for path parameters.",
-            "type": "boolean",
-            "example": true
-          }
-        }
-      ],
-      "post": {
-        "responses": {
-          "default": {
-            "description": "",
-            "content": {
-              "*/*": {
-                "schema": {}
-              }
-            }
-          }
-        }
-      }
-    },
     "/annotation/{parameter}": {
       "parameters": [
         {
@@ -723,42 +696,7 @@
         }
       }
     },
-    "/object-in-path/double/{integer-parameter}/{string-parameter}": {
-      "parameters": [
-        {
-          "name": "integer-parameter",
-          "in": "path",
-          "required": true,
-          "schema": {
-            "type": "integer",
-            "minimum": 0,
-            "example": 21
-          }
-        },
-        {
-          "name": "string-parameter",
-          "in": "path",
-          "required": true,
-          "schema": {
-            "type": "string",
-            "minLength": 3,
-            "example": "some-string"
-          }
-        }        
-      ],
-      "put": {
-        "responses": {
-          "200": {
-            "description": "",
-            "content": {
-              "*/*": {
-                "schema": {}
-              }
-            }
-          }
-        }
-      }
-    },
+
     "/object-in-path/user-type/{boolean-parameter}/{email-parameter}": {
       "parameters": [
         {
@@ -775,42 +713,6 @@
           "required": true,
           "schema": {
             "$ref": "#/components/schemas/emailInObject"
-          }
-        }        
-      ],
-      "put": {
-        "responses": {
-          "200": {
-            "description": "",
-            "content": {
-              "*/*": {
-                "schema": {}
-              }
-            }
-          }
-        }
-      }
-    },
-    "/object-in-path/all-of/{integer-parameter}/{string-parameter}": {
-      "parameters": [
-        {
-          "name": "integer-parameter",
-          "in": "path",
-          "required": true,
-          "schema": {
-            "type": "integer",
-            "minimum": 0,
-            "example": 21
-          }
-        },
-        {
-          "name": "string-parameter",
-          "in": "path",
-          "required": true,
-          "schema": {
-            "type": "string",
-            "minLength": 3,
-            "example": "string"
           }
         }
       ],
@@ -1004,24 +906,6 @@
         }
       }
     },
-    "/no-schema-parameter/{no-schema-value}": {
-      "parameters": [
-        {
-          "name": "no-schema-value",
-          "in": "path",
-          "required": true,
-          "schema": {}
-        }
-      ],
-      "get": {
-        "responses": {
-          "200": {
-            "description": "",
-            "content": {}
-          }
-        }
-      }
-    },
     "/mixed-parameter/embedded-types/no-rules/{mixed-value}": {
       "parameters": [
         {
@@ -1203,9 +1087,6 @@
         "required": ["integer-parameter", "string-parameter"],
         "additionalProperties": false
       },
-      "objectInPath2": {
-        "$ref": "#/components/schemas/objectInPath"
-      },
       "objectInPath3": {
         "type": "object",
         "properties": {
@@ -1227,19 +1108,6 @@
       "booleanInObject": {
         "type": "boolean",
         "example": true
-      },
-      "allOfObjectInPath": {
-        "type": "object",
-        "properties": {},
-        "additionalProperties": false,
-        "allOf": [
-          {
-            "$ref": "#/components/schemas/objectInPath"
-          },
-          {
-            "type": "object"
-          }
-        ]
       },
       "integerPath": {
         "type": "object",
