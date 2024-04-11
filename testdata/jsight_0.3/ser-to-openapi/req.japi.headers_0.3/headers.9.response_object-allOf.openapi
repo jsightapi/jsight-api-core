@@ -49,6 +49,7 @@
                 }
               },
               "Required": {
+                "description": "Required",
                 "schema": {
                   "type": "string",
                   "description": "Required",
