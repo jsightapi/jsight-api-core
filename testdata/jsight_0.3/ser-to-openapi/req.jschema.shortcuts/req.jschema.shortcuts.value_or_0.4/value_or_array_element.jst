@@ -1,0 +1,52 @@
+JSIGHT 0.3
+
+TYPE @stringId
+  "abc-123"
+
+TYPE @integerId
+  123
+
+TYPE @typeObject
+  {
+    "1": 1,
+    "2": "2"
+  }
+
+GET /request/jschema/shortcuts/value_or/array_element
+  200
+    [
+      @stringId | @integerId
+    ]
+  
+  201
+    [
+      @stringId | @integerId | @typeObject
+    ]
+  
+  202
+    [
+      @stringId | @stringId
+    ]
+  
+  203
+    [
+      @stringId | @integerId,
+      @stringId | @integerId,
+      @stringId | @integerId | @typeObject,
+      @stringId | @stringId
+    ]
+  
+  204
+    [
+      @stringId | @integerId, // { nullable: true } - description  1
+      @stringId | @integerId, // { nullable: false } - description  2
+      @stringId |   @typeObject, // { nullable: false }   -     
+      @integerId | @typeObject // { } -    description-3
+    ]
+  
+  205
+    [
+      @integerId | @typeObject, /// @integerId | @typeObject
+      @integerId | @typeObject, /// { or: [ "@integerId", "@typeObject" ] }
+      "@typeObject | @integerId" // "@typeObject | @integerId"
+    ]
