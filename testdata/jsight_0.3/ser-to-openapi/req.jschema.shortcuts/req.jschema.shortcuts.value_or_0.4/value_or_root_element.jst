@@ -1,0 +1,44 @@
+JSIGHT 0.3
+
+TYPE @stringId
+  "abc-123"
+
+TYPE @integerId
+  123
+
+TYPE @typeObject
+  {
+    "1": 1,
+    "2": "2"
+  }
+
+GET /request/jschema/shortcuts/value_or/root_element
+  200
+    @stringId | @integerId
+  
+  201
+    @stringId | @integerId | @typeObject
+  
+  202
+    @stringId | @integerId | @typeObject //  { nullable: true } - description 1
+
+  203
+    @stringId | @typeObject //  { nullable: false } -   
+
+  204
+    @typeObject | @typeObject
+  
+  205
+    "@stringId | @integerId"
+  
+  206
+    "@stringId | @integerId" //  { or: ["@stringId", "@integerId"] } - { or: ["@stringId", "@integerId"] }
+  
+  207
+    @stringId | @integerId ///  { or: ["@stringId", "@integerId"] }
+  
+  208
+    @stringId | @integerId #  { or: ["@stringId", "@integerId"] }
+  
+  209 regex
+    /@stringId | @integerId | @typeObject/

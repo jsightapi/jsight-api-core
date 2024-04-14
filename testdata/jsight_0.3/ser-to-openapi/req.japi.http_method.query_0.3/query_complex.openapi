@@ -71,50 +71,6 @@
         "parameters": [
           {
             "in": "query",
-            "name": "first",
-            "style": "deepObject",
-            "explode": true,
-            "schema": {
-              "type": "integer",
-              "example": 123
-            },
-            "required": true
-          },
-          {
-            "in": "query",
-            "name": "second",
-            "style": "deepObject",
-            "explode": true,
-            "schema": {
-              "type": "string",
-              "example": "value"
-            },
-            "required": true
-          },
-          {
-            "in": "query",
-            "name": "third",
-            "style": "deepObject",
-            "explode": true,
-            "schema": {
-              "type": "number",
-              "example": 456.78
-            },
-            "required": true
-          },
-          {
-            "in": "query",
-            "name": "fourth",
-            "style": "deepObject",
-            "explode": true,
-            "schema": {
-              "type": "boolean",
-              "example": true
-            },
-            "required": true
-          },
-          {
-            "in": "query",
             "name": "prim1",
             "style": "deepObject",
             "explode": true,
@@ -167,6 +123,7 @@
           {
             "in": "query",
             "name": "obj",
+            "required": true,
             "style": "deepObject",
             "explode": true,
             "schema": {
@@ -214,6 +171,50 @@
                 }
               ]
             }
+          },
+          {
+            "in": "query",
+            "name": "first",
+            "style": "deepObject",
+            "explode": true,
+            "schema": {
+              "type": "integer",
+              "example": 123
+            },
+            "required": true
+          },
+          {
+            "in": "query",
+            "name": "second",
+            "style": "deepObject",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "value"
+            },
+            "required": true
+          },
+          {
+            "in": "query",
+            "name": "third",
+            "style": "deepObject",
+            "explode": true,
+            "schema": {
+              "type": "number",
+              "example": 456.78
+            },
+            "required": true
+          },
+          {
+            "in": "query",
+            "name": "fourth",
+            "style": "deepObject",
+            "explode": true,
+            "schema": {
+              "type": "boolean",
+              "example": true
+            },
+            "required": true
           }
         ],
         "responses": {
