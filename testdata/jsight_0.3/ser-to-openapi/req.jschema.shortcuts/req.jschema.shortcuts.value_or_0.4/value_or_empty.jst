@@ -1,0 +1,28 @@
+JSIGHT 0.3
+
+TYPE @emptyObject
+  {}
+
+TYPE @emptyArray
+  []
+
+TYPE @emptyString 
+  ""
+ 
+TYPE @nullType
+  null
+
+GET /request/jschema/shortcuts/value_or/empty
+  200
+    {
+      "1": @emptyObject | @emptyArray | @emptyString | @nullType
+    }
+  
+  201
+    [
+      @emptyObject | @emptyArray | @emptyString | @nullType
+    ]
+  
+  202
+    @emptyObject | @emptyArray | @emptyString | @nullType
+  

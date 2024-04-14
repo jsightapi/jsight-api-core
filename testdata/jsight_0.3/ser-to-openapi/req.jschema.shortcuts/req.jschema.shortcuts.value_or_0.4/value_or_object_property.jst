@@ -1,0 +1,29 @@
+JSIGHT 0.3
+
+TYPE @stringId
+  "abc-123"
+
+TYPE @integerId
+  123
+
+TYPE @typeObject
+  {
+    "1": 1,
+    "2": "2"
+  }
+
+GET /request/jschema/shortcuts/value_or/object_property
+  200
+    {
+      "1": @stringId | @integerId,
+      "2": @stringId | @integerId | @typeObject,
+      "3": @stringId | @stringId ,
+      "4": @stringId    |      @integerId  ,
+      "5": @integerId | @typeObject, // { optional: true, nullable: true } -   description  for   rule.  .
+      "6": @integerId | @stringId, // { optional: false, nullable: false } -     
+      "7": @integerId | @stringId, /* { nullable: true}  - description__ 2 */ 
+      "8": @integerId | @stringId,  ///    { or: [ "@integerId", "@stringId" ] } - description-3
+      "9": @stringId | @integerId,  //  @stringId | @integerId
+      "10": @typeObject | @stringId,  //  "{ @typeObject | @stringId }"
+      "11": "@stringId | @integerId | @typeObject"
+    }
