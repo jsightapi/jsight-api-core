@@ -86,6 +86,7 @@
   "paths": {
     "/query/user-type-basic": {
       "get": {
+        "tags": ["/query"],
         "parameters": [
           {
             "in": "query",
@@ -124,6 +125,7 @@
     },
     "/query/user-type-all-types-of-parameters": {
       "get": {
+        "tags": ["/query"],
         "parameters": [
           {
             "in": "query",

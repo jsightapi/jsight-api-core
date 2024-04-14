@@ -7,6 +7,7 @@
   "paths": {
     "/body-only": {
       "post": {
+        "tags": ["/body-only"],
         "requestBody": {
           "required": true,
           "content": {
@@ -32,6 +33,7 @@
     },
     "/body-and-headers": {
       "post": {
+        "tags": ["/body-and-headers"],
         "parameters": [
           {
             "name": "X-Header",

@@ -7,6 +7,7 @@
   "paths": {
     "/request/jschema/shortcuts/keyType": {
       "get": {
+        "tags": ["/request"],
         "responses": {
           "200": {
             "description": "",

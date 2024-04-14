@@ -7,6 +7,7 @@
   "paths": {
     "/case/UPPER/lower": {
       "post": {
+        "tags": ["/case"],
         "responses": {
           "200": {
             "description": "",
@@ -34,6 +35,7 @@
         }
       ],
       "get": {
+        "tags": ["/annotation"],
         "responses": {
           "default": {
             "description": "",
@@ -59,6 +61,7 @@
         }
       ],
       "get": {
+        "tags": ["/integer-parameter"],
         "responses": {
           "200": {
             "description": "",
@@ -84,6 +87,7 @@
         }
       ],
       "get": {
+        "tags": ["/integer-parameter"],
         "responses": {
           "200": {
             "description": "",
@@ -105,6 +109,7 @@
         }
       ],
       "get": {
+        "tags": ["/float-parameter"],
         "responses": {
           "200": {
             "description": "",
@@ -127,6 +132,7 @@
         }
       ],
       "get": {
+        "tags": ["/float-parameter"],
         "responses": {
           "200": {
             "description": "",
@@ -149,6 +155,7 @@
         }
       ],
       "get": {
+        "tags": ["/decimal-parameter"],
         "responses": {
           "200": {
             "description": "",
@@ -170,6 +177,7 @@
         }
       ],
       "get": {
+        "tags": ["/string-parameter"],
         "responses": {
           "200": {
             "description": "",
@@ -193,6 +201,7 @@
         }
       ],
       "get": {
+        "tags": ["/string-parameter"],
         "responses": {
           "200": {
             "description": "",
@@ -215,6 +224,7 @@
         }
       ],
       "get": {
+        "tags": ["/email-parameter"],
         "responses": {
           "200": {
             "description": "",
@@ -238,6 +248,7 @@
         }
       ],
       "get": {
+        "tags": ["/email-parameter"],
         "responses": {
           "200": {
             "description": "",
@@ -260,6 +271,7 @@
         }
       ],
       "get": {
+        "tags": ["/uri-parameter"],
         "responses": {
           "200": {
             "description": "",
@@ -283,6 +295,7 @@
         }
       ],
       "get": {
+        "tags": ["/uri-parameter"],
         "responses": {
           "200": {
             "description": "",
@@ -306,6 +319,7 @@
         }
       ],
       "get": {
+        "tags": ["/uri-parameter"],
         "responses": {
           "200": {
             "description": "",
@@ -328,6 +342,7 @@
         }
       ],
       "get": {
+        "tags": ["/uuid-parameter"],
         "responses": {
           "200": {
             "description": "",
@@ -351,6 +366,7 @@
         }
       ],
       "get": {
+        "tags": ["/uuid-parameter"],
         "responses": {
           "200": {
             "description": "",
@@ -373,6 +389,7 @@
         }
       ],
       "get": {
+        "tags": ["/date-parameter"],
         "responses": {
           "200": {
             "description": "",
@@ -396,6 +413,7 @@
         }
       ],
       "get": {
+        "tags": ["/date-parameter"],
         "responses": {
           "200": {
             "description": "",
@@ -418,6 +436,7 @@
         }
       ],
       "get": {
+        "tags": ["/datetime-parameter"],
         "responses": {
           "200": {
             "description": "",
@@ -441,6 +460,7 @@
         }
       ],
       "get": {
+        "tags": ["/datetime-parameter"],
         "responses": {
           "200": {
             "description": "",
@@ -462,6 +482,7 @@
         }
       ],
       "post": {
+        "tags": ["/boolean-parameter"],
         "responses": {
           "200": {
             "description": "",
@@ -484,6 +505,7 @@
         }
       ],
       "post": {
+        "tags": ["/boolean-parameter"],
         "responses": {
           "200": {
             "description": "",
@@ -505,6 +527,7 @@
         }
       ],
       "patch": {
+        "tags": ["/null-parameter"],
         "responses": {
           "200": {
             "description": "",
@@ -526,6 +549,7 @@
         }
       ],
       "patch": {
+        "tags": ["/null-parameter"],
         "responses": {
           "200": {
             "description": "",
@@ -547,6 +571,7 @@
         }
       ],
       "delete": {
+        "tags": ["/enum-parameter"],
         "responses": {
           "200": {
             "description": "",
@@ -572,6 +597,7 @@
         }
       ],
       "delete": {
+        "tags": ["/enum-parameter"],
         "responses": {
           "200": {
             "description": "",
@@ -597,6 +623,7 @@
         }
       ],
       "delete": {
+        "tags": ["/enum-parameter"],
         "responses": {
           "200": {
             "description": "",
@@ -622,6 +649,7 @@
         }
       ],
       "delete": {
+        "tags": ["/enum-parameter"],
         "responses": {
           "200": {
             "description": "",
@@ -648,6 +676,7 @@
         }
       ],
       "delete": {
+        "tags": ["/enum-parameter"],
         "responses": {
           "200": {
             "description": "",
@@ -684,6 +713,7 @@
         }
       ],
       "put": {
+        "tags": ["/object-in-path"],
         "responses": {
           "200": {
             "description": "",
@@ -717,6 +747,7 @@
         }
       ],
       "put": {
+        "tags": ["/object-in-path"],
         "responses": {
           "200": {
             "description": "",
@@ -753,6 +784,7 @@
         }
       ],
       "get": {
+        "tags": ["/all-of-in-path"],
         "responses": {
           "200": {
             "description": "",
@@ -789,6 +821,7 @@
         }
       ],
       "get": {
+        "tags": ["/all-of-in-path"],
         "responses": {
           "200": {
             "description": "",
@@ -821,6 +854,7 @@
         }
       ],
       "get": {
+        "tags": ["/all-of-in-path"],
         "responses": {
           "200": {
             "description": "",
@@ -853,6 +887,7 @@
         }
       ],
       "get": {
+        "tags": ["/all-of-in-path"],
         "responses": {
           "200": {
             "description": "",
@@ -877,6 +912,7 @@
         }
       ],
       "post": {
+        "tags": ["/any-parameter"],
         "responses": {
           "200": {
             "description": "",
@@ -898,6 +934,7 @@
         }
       ],
       "post": {
+        "tags": ["/any-parameter"],
         "responses": {
           "200": {
             "description": "",
@@ -926,6 +963,7 @@
         }
       ],
       "get": {
+        "tags": ["/mixed-parameter"],
         "responses": {
           "200": {
             "description": "",
@@ -955,6 +993,7 @@
         }
       ],
       "get": {
+        "tags": ["/mixed-parameter"],
         "responses": {
           "200": {
             "description": "",
@@ -983,6 +1022,7 @@
         }
       ],
       "get": {
+        "tags": ["/mixed-parameter"],
         "responses": {
           "200": {
             "description": "",
@@ -1012,6 +1052,7 @@
         }
       ],
       "get": {
+        "tags": ["/mixed-parameter"],
         "responses": {
           "200": {
             "description": "",
@@ -1039,6 +1080,7 @@
         }
       ],
       "get": {
+        "tags": ["/mixed-parameter"],
         "responses": {
           "200": {
             "description": "",
@@ -1059,6 +1101,7 @@
         }
       ],
       "get": {
+        "tags": ["/user-type-parameter"],
         "responses": {
           "200": {
             "description": "",

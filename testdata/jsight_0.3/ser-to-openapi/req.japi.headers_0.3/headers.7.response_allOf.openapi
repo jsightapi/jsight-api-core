@@ -7,6 +7,7 @@
   "paths": {
     "/response/allOf": {
       "get": {
+        "tags": ["/response"],
         "responses": {
           "200": {
             "description": "",

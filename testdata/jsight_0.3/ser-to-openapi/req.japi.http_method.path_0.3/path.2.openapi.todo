@@ -20,6 +20,7 @@
         }
       ],
       "post": {
+        "tags": ["/necessity"],
         "responses": {
           "default": {
             "description": "",
@@ -42,6 +43,7 @@
         }
       ],
       "get": {
+        "tags": ["/no-schema-parameter"],
         "responses": {
           "200": {
             "description": "",
@@ -74,6 +76,7 @@
         }
       ],
       "put": {
+        "tags": ["/object-in-path"],
         "responses": {
           "200": {
             "description": "",
@@ -110,6 +113,7 @@
         }
       ],
       "put": {
+        "tags": ["/object-in-path"],
         "responses": {
           "200": {
             "description": "",

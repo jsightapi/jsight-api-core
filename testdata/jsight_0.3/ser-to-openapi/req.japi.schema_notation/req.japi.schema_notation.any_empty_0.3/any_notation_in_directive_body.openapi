@@ -7,6 +7,7 @@
   "paths": {
     "/notation/in/request/body/": {
       "post": {
+        "tags": ["/notation"],
         "requestBody": {
           "content": {
             "*/*": {
@@ -28,6 +29,7 @@
     },
     "/notation/in/request/no/body/directive": {
       "post": {
+        "tags": ["/notation"],
         "requestBody": {
           "content": {
             "*/*": {
@@ -49,6 +51,7 @@
     },
     "/notation/in/response/body/": {
       "get": {
+        "tags": ["/notation"],
         "responses": {
           "200": {
             "description": "",
@@ -63,6 +66,7 @@
     },
     "/notation/in/response/no/body/directive/": {
       "get": {
+        "tags": ["/notation"],
         "responses": {
           "200": {
             "description": "",

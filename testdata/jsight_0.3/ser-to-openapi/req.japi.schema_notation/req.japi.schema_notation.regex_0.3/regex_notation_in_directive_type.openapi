@@ -43,6 +43,7 @@
   "paths": {
     "/resource/with/types": {
       "get": {
+        "tags": ["/resource"],
         "responses": {
           "200": {
             "description": "",

@@ -7,6 +7,7 @@
   "paths": {
     "/request/no-params/root-scalar/no-rules": {
       "post": {
+        "tags": ["/request"],
         "requestBody": {
           "required": true,
           "content": {
@@ -35,6 +36,7 @@
     },
     "/request/no-params/root-scalar/with-rules": {
       "post": {
+        "tags": ["/request"],
         "requestBody": {
           "required": true,
           "content": {
@@ -67,6 +69,7 @@
     },
     "/request/no-params/root-array/no-rules": {
       "put": {
+        "tags": ["/request"],
         "requestBody": {
           "required": true,
           "content": {
@@ -98,6 +101,7 @@
     },
     "/request/no-params/root-array/with-rules": {
       "put": {
+        "tags": ["/request"],
         "requestBody": {
           "required": true,
           "content": {
@@ -132,6 +136,7 @@
     },
     "/request/no-params/root-object/no-rules": {
       "patch": {
+        "tags": ["/request"],
         "requestBody": {
           "required": true,
           "content": {
@@ -167,6 +172,7 @@
     },
     "/request/no-params/root-object/with-rules": {
       "patch": {
+        "tags": ["/request"],
         "requestBody": {
           "required": true,
           "content": {
@@ -216,6 +222,7 @@
     },
     "/request/no-params/root-mixed/two-scalars": {
       "patch": {
+        "tags": ["/request"],
         "requestBody": {
           "required": true,
           "content": {
@@ -247,6 +254,7 @@
     },
     "/request/no-params/root-mixed/object-or-array": {
       "patch": {
+        "tags": ["/request"],
         "requestBody": {
           "required": true,
           "content": {
@@ -277,6 +285,7 @@
     },
     "/request/no-params/root-user-type/scalar": {
       "put": {
+        "tags": ["/request"],
         "requestBody": {
           "required": true,
           "content": {
@@ -304,6 +313,7 @@
     },
     "/request/no-params/root-user-type/object": {
       "put": {
+        "tags": ["/request"],
         "requestBody": {
           "required": true,
           "content": {

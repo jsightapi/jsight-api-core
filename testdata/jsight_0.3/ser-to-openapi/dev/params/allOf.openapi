@@ -29,6 +29,7 @@
   "paths": {
     "/some": {
       "get": {
+        "tags": ["/some"],
         "parameters": [
           {
             "in": "header",

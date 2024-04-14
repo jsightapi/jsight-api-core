@@ -24,6 +24,7 @@
         }
       ],
       "get": {
+        "tags": ["/{mentioned}"],
         "responses": {
           "default": {
             "description": "",

@@ -7,6 +7,7 @@
   "paths": {
     "/request/schema-notation/any": {
       "post": {
+        "tags": ["/request"],
         "requestBody": {
           "content": {
             "*/*": {
@@ -31,6 +32,7 @@
     },
     "/request/schema-notation/empty": {
       "put": {
+        "tags": ["/request"],
         "requestBody": {
           "required": true,
           "content": {
@@ -53,6 +55,7 @@
     },
     "/request/schema-notation/regex": {
       "patch": {
+        "tags": ["/request"],
         "requestBody": {
           "required": true,
           "content": {

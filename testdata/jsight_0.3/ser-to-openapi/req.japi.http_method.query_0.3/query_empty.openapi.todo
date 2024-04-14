@@ -25,6 +25,7 @@
   "paths": {
     "/query/body-empty-primitive": {
       "get": {
+        "tags": ["/query"],
         "responses": {
           "default": {
             "description": "",
@@ -39,6 +40,7 @@
     },
     "/query/body-empty-object": {
       "get": {
+        "tags": ["/query"],
         "responses": {
           "default": {
             "description": "",
@@ -53,6 +55,7 @@
     },
     "/query/body-empty-array": {
       "get": {
+        "tags": ["/query"],
         "responses": {
           "default": {
             "description": "",
@@ -67,6 +70,7 @@
     },
     "/query/user-type-empty-primitive": {
       "get": {
+        "tags": ["/query"],
         "responses": {
           "default": {
             "description": "",
@@ -81,6 +85,7 @@
     },
     "/query/user-type-empty-object": {
       "get": {
+        "tags": ["/query"],
         "responses": {
           "default": {
             "description": "",
@@ -95,6 +100,7 @@
     },
     "/query/user-type-empty-array": {
       "get": {
+        "tags": ["/query"],
         "responses": {
           "default": {
             "description": "",

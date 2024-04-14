@@ -7,6 +7,7 @@
   "paths": {
     "/response/no-params/root-scalar/no-rules": {
       "post": {
+        "tags": ["/response"],
         "responses": {
           "200": {
             "description": "",
@@ -24,6 +25,7 @@
     },
     "/response/no-params/root-scalar/with-rules": {
       "post": {
+        "tags": ["/response"],
         "responses": {
           "200": {
             "description": "",
@@ -45,6 +47,7 @@
     },
     "/response/no-params/root-array/no-rules": {
       "put": {
+        "tags": ["/response"],
         "responses": {
           "200": {
             "description": "",
@@ -65,6 +68,7 @@
     },
     "/response/no-params/root-array/with-rules": {
       "put": {
+        "tags": ["/response"],
         "responses": {
           "200": {
             "description": "",
@@ -88,6 +92,7 @@
     },
     "/response/no-params/root-object/no-rules": {
       "patch": {
+        "tags": ["/response"],
         "responses": {
           "200": {
             "description": "",
@@ -112,6 +117,7 @@
     },
     "/response/no-params/root-object/with-rules": {
       "patch": {
+        "tags": ["/response"],
         "responses": {
           "200": {
             "description": "",
@@ -152,6 +158,7 @@
     },
     "/response/no-params/root-mixed/two-scalars": {
       "patch": {
+        "tags": ["/response"],
         "responses": {
           "200": {
             "description": "",
@@ -176,6 +183,7 @@
     },
     "/response/no-params/root-mixed/object-or-array": {
       "patch": {
+        "tags": ["/response"],
         "responses": {
           "200": {
             "description": "",
@@ -199,6 +207,7 @@
     },
     "/response/no-params/root-user-type/scalar": {
       "put": {
+        "tags": ["/response"],
         "responses": {
           "200": {
             "description": "",
@@ -215,6 +224,7 @@
     },
     "/response/no-params/root-user-type/object": {
       "put": {
+        "tags": ["/response"],
         "responses": {
           "200": {
             "description": "",
