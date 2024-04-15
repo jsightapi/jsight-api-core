@@ -7,6 +7,7 @@
   "paths": {
     "/response/schema-notation/any": {
       "post": {
+        "tags": ["/response"],
         "responses": {
           "200": {
             "description": "",
@@ -21,6 +22,7 @@
     },
     "/response/schema-notation/empty": {
       "put": {
+        "tags": ["/response"],
         "responses": {
           "200": {
             "description": "",
@@ -31,6 +33,7 @@
     },
     "/response/schema-notation/regex": {
       "patch": {
+        "tags": ["/response"],
         "responses": {
           "200": {
             "description": "",

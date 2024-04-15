@@ -68,6 +68,7 @@
   "paths": {
     "/query/one-user-type": {
       "get": {
+        "tags": ["/query"],
         "parameters": [
           {
             "in": "query",
@@ -106,6 +107,7 @@
     },
     "/query/one-user-type-add-fields": {
       "get": {
+        "tags": ["/query"],
         "parameters": [
           {
             "in": "query",
@@ -155,6 +157,7 @@
     },
     "/query/two-user-types": {
       "get": {
+        "tags": ["/query"],
         "parameters": [
           {
             "in": "query",
@@ -215,6 +218,7 @@
     },
     "/query/two-user-types-add-fields": {
       "get": {
+        "tags": ["/query"],
         "parameters": [
           {
             "in": "query",
@@ -286,6 +290,7 @@
     },
     "/query/one-user-type-with-allOf-inside-add-fields": {
       "get": {
+        "tags": ["/query"],
         "parameters": [
           {
             "in": "query",

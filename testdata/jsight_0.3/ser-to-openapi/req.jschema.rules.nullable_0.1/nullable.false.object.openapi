@@ -8,6 +8,7 @@
   "paths": {
     "/request/jschema/rules/nullable/object": {
       "get": {
+        "tags": ["/request"],
         "responses": {
 
           "200": {

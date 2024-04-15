@@ -8,6 +8,7 @@
   "paths": {
     "/request/jschema/rules/const": {
       "get": {
+        "tags": ["/request"],
         "responses": {
 
           "200": {

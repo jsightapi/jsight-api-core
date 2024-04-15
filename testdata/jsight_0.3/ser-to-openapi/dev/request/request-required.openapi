@@ -7,6 +7,7 @@
   "paths": {
     "/request-required-1": {
       "get": {
+        "tags": ["/request-required-1"],
         "requestBody": {
           "required": true,
           "content": {
@@ -33,6 +34,7 @@
     },
     "/request-required-2": {
       "get": {
+        "tags": ["/request-required-2"],
         "requestBody": {
           "required": true,
           "content": {
@@ -58,6 +60,7 @@
     },
     "/request-required-3": {
       "get": {
+        "tags": ["/request-required-3"],
         "requestBody": {
           "required": true,
           "content": {
@@ -83,6 +86,7 @@
     },
     "/request-required-4": {
       "get": {
+        "tags": ["/request-required-4"],
         "requestBody": {
           "required": true,
           "content": {
@@ -107,6 +111,7 @@
     },
     "/request-not-required-2": {
       "get": {
+        "tags": ["/request-not-required-2"],
         "requestBody": {
           "content": {
             "*/*": {

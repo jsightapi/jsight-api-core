@@ -7,6 +7,7 @@
   "paths": {
     "/req/jschema/rules/notes": {
       "get": {
+        "tags": ["/req"],
         "responses": {
           "200": {
             "description": "",

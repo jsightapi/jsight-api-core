@@ -19,6 +19,7 @@
         }
       ],
       "get": {
+        "tags": ["/parameter"],
         "responses": {
           "default": {
             "content": {

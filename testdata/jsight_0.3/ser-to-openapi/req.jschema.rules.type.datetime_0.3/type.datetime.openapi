@@ -7,6 +7,7 @@
   "paths": {
     "/request/jschema/rules/type/datetime": {
       "get": {
+        "tags": ["/request"],
         "responses": {
 
           "200": {

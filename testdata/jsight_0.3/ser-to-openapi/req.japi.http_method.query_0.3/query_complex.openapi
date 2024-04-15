@@ -68,6 +68,7 @@
   "paths": {
     "/query/complex": {
       "get": {
+        "tags": ["/query"],
         "parameters": [
           {
             "in": "query",

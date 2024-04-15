@@ -7,6 +7,7 @@
   "paths": {
     "/request/jschema/shortcuts/value_type/object_property": {
       "get": {
+        "tags": ["/request"],
         "responses": {
           "200": {
             "description": "",

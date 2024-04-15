@@ -18,6 +18,7 @@
         }
       }],
       "post": {
+        "tags": ["/path-parameter-rules-transfer"],
         "responses": {
           "300": {
             "description": "",

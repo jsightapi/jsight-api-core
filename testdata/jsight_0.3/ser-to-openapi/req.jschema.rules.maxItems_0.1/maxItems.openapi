@@ -8,6 +8,7 @@
   "paths": {
     "/request/jschema/rules/maxItems": {
       "get": {
+        "tags": ["/request"],
         "responses": {
 
           "200": {

@@ -48,6 +48,7 @@
   "paths": {
     "/query/user-type-multi-level": {
       "get": {
+        "tags": ["/query"],
         "parameters": [
           {
             "in": "query",
