@@ -13,24 +13,17 @@ type Operation struct {
 	Tags        []string           `json:"tags,omitempty"`
 }
 
-func newOperation(i *catalog.HTTPInteraction) *Operation {
+func newOperation(i *catalog.HTTPInteraction, tags []string) *Operation {
 	return &Operation{
 		Summary:     processMethodSummary(i.Annotation),
 		Description: processMethodDescription(i.Description),
 		Parameters:  fillOperationParams(i),
 		RequestBody: newRequestBody(i.Request),
 		Responses:   newResponses(i),
-		Tags:        getTags(i),
+		Tags:        tags,
 	}
 }
 
-func getTags(i *catalog.HTTPInteraction) []string {
-	r := make([]string, 0, len(i.Tags))
-	for _, t := range i.Tags {
-		r = append(r, string(t))
-	}
-	return r
-}
 
 func processMethodDescription(s *string) string {
 	if s == nil {

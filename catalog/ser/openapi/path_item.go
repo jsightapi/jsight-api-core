@@ -11,11 +11,11 @@ type PathItem struct {
 	Delete     *Operation         `json:"delete,omitempty"`
 }
 
-func newPathItem(i *catalog.HTTPInteraction) *PathItem {
+func newPathItem(i *catalog.HTTPInteraction, operationTags []string) *PathItem {
 	pi := PathItem{
 		Parameters: fillPathParams(i),
 	}
-	pi.assignOperation(i.HttpMethod, newOperation(i))
+	pi.assignOperation(i.HttpMethod, newOperation(i, operationTags))
 	return &pi
 }
 
