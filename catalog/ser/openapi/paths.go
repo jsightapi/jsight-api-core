@@ -40,21 +40,3 @@ func addOperation(p Paths, i *catalog.HTTPInteraction, c *catalog.Catalog) {
 		p[path] = newPathItem(i, tagTitles)
 	}
 }
-
-func gatherTags(c *catalog.Catalog, names []catalog.TagName) []*catalog.Tag {
-	tags := make([]*catalog.Tag, len(names))
-	for _, n := range names {
-		if t, ok := c.Tags.Get(n); ok {
-			tags = append(tags, t)
-		}
-	}
-	return tags
-}
-
-func getTagTitles(tags []*catalog.Tag) []string {
-	titles := make([]string, len(tags))
-	for _, t := range tags {
-		titles = append(titles, t.Title)
-	}
-	return titles
-}

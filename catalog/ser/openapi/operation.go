@@ -24,7 +24,6 @@ func newOperation(i *catalog.HTTPInteraction, tags []string) *Operation {
 	}
 }
 
-
 func processMethodDescription(s *string) string {
 	if s == nil {
 		return ""
