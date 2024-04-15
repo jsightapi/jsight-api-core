@@ -32,6 +32,7 @@
         }
       },
       "post": {
+        "tags": ["/parameter"],
         "responses": {
           "302": {
             "content": {

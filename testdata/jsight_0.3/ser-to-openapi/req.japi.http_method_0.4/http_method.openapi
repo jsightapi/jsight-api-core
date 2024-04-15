@@ -170,6 +170,7 @@
         }
       },
       "post": {
+        "tags": ["/url-all-methods-only"],
         "responses": {
           "default": {
             "description": "",
@@ -182,6 +183,7 @@
         }
       },
       "put": {
+        "tags": ["/url-all-methods-only"],
         "responses": {
           "default": {
             "description": "",
@@ -194,6 +196,7 @@
         }
       },
       "patch": {
+        "tags": ["/url-all-methods-only"],
         "responses": {
           "default": {
             "description": "",
@@ -206,6 +209,7 @@
         }
       },
       "delete": {
+        "tags": ["/url-all-methods-only"],
         "responses": {
           "default": {
             "description": "",
@@ -233,6 +237,7 @@
         }
       },
       "post": {
+        "tags": ["/url-get-post-methods"],
         "responses": {
           "301": {
             "description": "",
@@ -260,6 +265,7 @@
         }
       },
       "patch": {
+        "tags": ["/url-put-patch-delete-methods"],
         "responses": {
           "303": {
             "description": "",
@@ -272,6 +278,7 @@
         }
       },
       "delete": {
+        "tags": ["/url-put-patch-delete-methods"],
         "responses": {
           "304": {
             "description": "",
