@@ -14,11 +14,18 @@ type Operation struct {
 }
 
 func newOperation(i *catalog.HTTPInteraction, tags []string) *Operation {
+	var requestBody *RequestBody
+	if i.HttpMethod == catalog.GET || i.HttpMethod == catalog.DELETE {
+		requestBody = nil
+	} else {
+		requestBody = newRequestBody(i.Request)
+	}
+
 	return &Operation{
 		Summary:     processMethodSummary(i.Annotation),
 		Description: processMethodDescription(i.Description),
 		Parameters:  fillOperationParams(i),
-		RequestBody: newRequestBody(i.Request),
+		RequestBody: requestBody,
 		Responses:   newResponses(i),
 		Tags:        tags,
 	}

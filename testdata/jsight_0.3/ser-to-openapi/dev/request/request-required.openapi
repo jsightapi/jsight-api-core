@@ -6,7 +6,7 @@
   },
   "paths": {
     "/request-required-1": {
-      "get": {
+      "post": {
         "tags": ["/request-required-1"],
         "requestBody": {
           "required": true,
@@ -33,7 +33,7 @@
       }
     },
     "/request-required-2": {
-      "get": {
+      "post": {
         "tags": ["/request-required-2"],
         "requestBody": {
           "required": true,
@@ -59,7 +59,7 @@
       }
     },
     "/request-required-3": {
-      "get": {
+      "post": {
         "tags": ["/request-required-3"],
         "requestBody": {
           "required": true,
@@ -85,7 +85,7 @@
       }
     },
     "/request-required-4": {
-      "get": {
+      "post": {
         "tags": ["/request-required-4"],
         "requestBody": {
           "required": true,
@@ -110,7 +110,7 @@
       }
     },
     "/request-not-required-2": {
-      "get": {
+      "post": {
         "tags": ["/request-not-required-2"],
         "requestBody": {
           "content": {

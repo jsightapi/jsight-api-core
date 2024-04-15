@@ -6,7 +6,7 @@
   },
   "paths": {
     "/some": {
-      "get": {
+      "post": {
         "tags": ["/some"],
         "summary": "get some",
         "description": "Full description",
