@@ -69,7 +69,7 @@
           "schema": {
             "type": "string",
             "minLength": 3,
-            "example": "some-string"
+            "example": "string"
           }
         }
       ],
