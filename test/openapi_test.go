@@ -20,7 +20,7 @@ func TestOpenAPI(t *testing.T) {
 }
 
 func TestOpenAPISpecific(t *testing.T) {
-	// path := filepath.Join(GetTestDataDir(), "/jsight_0.3/ser-to-openapi/dev/params/annotations_serv-378.openapi")
+	// path := filepath.Join(GetTestDataDir(), "testdata/jsight_0.3/ser-to-openapi/dev/url/no-methods.openapi")
 	// runOpenapiTest(t, path)
 }
 
