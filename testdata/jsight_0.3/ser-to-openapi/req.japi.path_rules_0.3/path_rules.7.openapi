@@ -21,6 +21,7 @@
         }
       ],
       "delete": {
+        "tags": ["/path-parameter-rules-transfer"],
         "responses": {
           "200": {
             "description": "",

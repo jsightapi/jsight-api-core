@@ -8,6 +8,7 @@
   "paths": {
     "/url1": {
       "get": {
+        "tags": ["/url1"],
       "description": "description",
         "responses": {
           "200": {
@@ -23,6 +24,7 @@
     },
     "/url2": {
       "get": {
+        "tags": ["/url2"],
       "description": "\"description\"",
         "responses": {
           "200": {
@@ -38,6 +40,7 @@
     },
     "/url3": {
       "get": {
+        "tags": ["/url3"],
       "description": "\\\"description\\\"",
         "responses": {
           "200": {

@@ -6,7 +6,8 @@
   },
   "paths": {
     "/some": {
-      "get": {
+      "post": {
+        "tags": ["/some"],
         "parameters": [
           {
             "description": "necessary query",

@@ -8,6 +8,7 @@
 
       "/": {
         "get": {
+          "tags": ["/"],
           "responses": {
             "300": {
               "description": "",
@@ -26,6 +27,7 @@
 
       "/scary/ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!$&'()*+,;=": {
         "post": {
+          "tags": ["/scary"],
           "responses": {
             "301": {
               "description": "",
@@ -50,6 +52,7 @@
           "schema": {}
         }],
         "post": {
+          "tags": ["/parameter"],
           "responses": {
             "302": {
               "description": "",

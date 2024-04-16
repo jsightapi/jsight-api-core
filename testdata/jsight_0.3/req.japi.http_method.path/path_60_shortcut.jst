@@ -1,0 +1,13 @@
+JSIGHT 0.3
+
+TYPE @type1
+    @type2
+
+TYPE @type2
+    {
+        "name": "Tom"
+    }
+
+GET /cats/{name}
+    Path
+        @type1

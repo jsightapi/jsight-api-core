@@ -8,6 +8,7 @@
   "paths": {
     "/request/jschema/rules/type/optional": {
       "get": {
+        "tags": ["/request"],
         "responses": {
 
           "200": {

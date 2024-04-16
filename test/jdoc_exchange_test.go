@@ -14,7 +14,7 @@ import (
 func TestJDocExchange(t *testing.T) {
 	jsonFilesPaths := jsonFilePaths(GetTestDataDir())
 	for _, jsonPath := range jsonFilesPaths {
-		runJDocExchangeTests(t, jsonPath)
+		runJDocExchangeTest(t, jsonPath)
 	}
 }
 
@@ -23,7 +23,7 @@ func TestJDocExchangeSpecific(t *testing.T) {
 	// runJDocExchangeTests(t, path)
 }
 
-func runJDocExchangeTests(t *testing.T, jsonFilePath string) {
+func runJDocExchangeTest(t *testing.T, jsonFilePath string) {
 	t.Run(cutRepositoryPath(jsonFilePath), func(t *testing.T) {
 		json, err := os.ReadFile(jsonFilePath)
 		require.NoError(t, err)

@@ -67,6 +67,7 @@
   "paths": {
     "/url": {
       "get": {
+        "tags": ["/url"],
         "responses": {
           "default": {
             "description": "",

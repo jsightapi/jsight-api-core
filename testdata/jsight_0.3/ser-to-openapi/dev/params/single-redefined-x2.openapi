@@ -18,6 +18,7 @@
         }
       ],
       "get": {
+        "tags": ["/parameter"],
         "responses": {
           "default": {
             "content": {
@@ -30,6 +31,7 @@
         }
       },
       "post": {
+        "tags": ["/parameter"],
         "responses": {
           "302": {
             "content": {
@@ -73,6 +75,7 @@
         }
       ],
       "put": {
+        "tags": ["/parameter"],
         "responses": {
           "default": {
             "content": {

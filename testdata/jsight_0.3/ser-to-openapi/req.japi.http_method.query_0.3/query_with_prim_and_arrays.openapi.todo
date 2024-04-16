@@ -7,6 +7,7 @@
   "paths": {
     "/query/prim-value-string": {
       "get": {
+        "tags": ["/query"],
         "responses": {
           "default": {
             "description": "",
@@ -21,6 +22,7 @@
     },
     "/query/prim-value-number": {
       "get": {
+        "tags": ["/query"],
         "responses": {
           "default": {
             "description": "",
@@ -35,6 +37,7 @@
     },
     "/query/array": {
       "get": {
+        "tags": ["/query"],
         "responses": {
           "default": {
             "description": "",

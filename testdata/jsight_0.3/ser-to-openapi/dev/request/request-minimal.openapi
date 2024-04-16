@@ -7,6 +7,7 @@
   "paths": {
     "/some": {
       "get": {
+        "tags": ["/some"],
         "responses": {
           "default": {
             "description": "",

@@ -16,6 +16,7 @@
         }
       }],
       "post": {
+        "tags": ["/path-parameter-rules-transfer"],
         "responses": {
           "300": {
             "description": "",
@@ -28,6 +29,7 @@
         }
       },
       "patch": {
+        "tags": ["/path-parameter-rules-transfer"],
         "responses": {
           "301": {
             "description": "",
@@ -40,6 +42,7 @@
         }
       },
       "put": {
+        "tags": ["/path-parameter-rules-transfer"],
         "responses": {
           "302": {
             "description": "",
@@ -52,6 +55,7 @@
         }
       },
       "get": {
+        "tags": ["/path-parameter-rules-transfer"],
         "responses": {
           "303": {
             "description": "",
@@ -64,6 +68,7 @@
         }
       },
       "delete": {
+        "tags": ["/path-parameter-rules-transfer"],
         "responses": {
           "304": {
             "description": "",
@@ -84,6 +89,7 @@
         "schema": {}
       }],
       "get": {
+        "tags": ["/path-parameter-rules-transfer"],
         "responses": {
           "200": {
             "description": "",
@@ -120,6 +126,7 @@
         }
       ],
       "post": {
+        "tags": ["/path-parameter-rules-transfer"],
         "responses": {
           "300": {
             "description": "",
@@ -132,6 +139,7 @@
         }
       },
       "put": {
+        "tags": ["/path-parameter-rules-transfer"],
         "responses": {
           "301": {
             "description": "",
@@ -144,6 +152,7 @@
         }
       },
       "patch": {
+        "tags": ["/path-parameter-rules-transfer"],
         "responses": {
           "302": {
             "description": "",
@@ -156,6 +165,7 @@
         }
       },
       "get": {
+        "tags": ["/path-parameter-rules-transfer"],
         "responses": {
           "303": {
             "description": "",
@@ -168,6 +178,7 @@
         }
       },
       "delete": {
+        "tags": ["/path-parameter-rules-transfer"],
         "responses": {
           "304": {
             "description": "",
@@ -196,6 +207,7 @@
         }
       ],
       "delete": {
+        "tags": ["/path-parameter-rules-transfer"],
         "responses": {
           "200": {
             "description": "",
@@ -232,6 +244,7 @@
         }
       ],
       "post": {
+        "tags": ["/path-parameter-rules-transfer"],
         "responses": {
           "400": {
             "description": "",
@@ -244,6 +257,7 @@
         }
       },
       "put": {
+        "tags": ["/path-parameter-rules-transfer"],
         "responses": {
           "401": {
             "description": "",
@@ -256,6 +270,7 @@
         }
       },
       "patch": {
+        "tags": ["/path-parameter-rules-transfer"],
         "responses": {
           "402": {
             "description": "",
@@ -268,6 +283,7 @@
         }
       },
       "get": {
+        "tags": ["/path-parameter-rules-transfer"],
         "responses": {
           "403": {
             "description": "",
@@ -280,6 +296,7 @@
         }
       },
       "delete": {
+        "tags": ["/path-parameter-rules-transfer"],
         "responses": {
           "404": {
             "description": "",
@@ -308,6 +325,7 @@
         }
       ],
       "delete": {
+        "tags": ["/path-parameter-rules-transfer"],
         "responses": {
           "200": {
             "description": "",
@@ -353,6 +371,7 @@
         }
       ],
       "get": {
+        "tags": ["/{p1}"],
         "responses": {
           "500": {
             "description": "",
@@ -381,6 +400,7 @@
         }
       ],
       "post": {
+        "tags": ["/{p1}"],
         "requestBody": {
           "content": {
             "*/*": {
@@ -413,6 +433,7 @@
         }
       ],
       "put": {
+        "tags": ["/{p1}"],
         "responses": {
           "200": {
             "description": "",
@@ -448,6 +469,7 @@
         }
       ],
       "patch": {
+        "tags": ["/{p1}"],
         "responses": {
           "200": {
             "description": "",
@@ -483,6 +505,7 @@
         }
       ],
       "delete": {
+        "tags": ["/{p1}"],
         "responses": {
           "200": {
             "description": "",

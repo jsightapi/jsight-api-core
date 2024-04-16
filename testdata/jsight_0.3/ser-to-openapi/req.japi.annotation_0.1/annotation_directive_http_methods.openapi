@@ -7,6 +7,7 @@
   "paths": {
     "/resource/with/annotation/brief": {
       "get": {
+        "tags": ["/resource"],
         "summary": "Brief description of the HTTP-METHOD",
         "responses": {
           "default": {
@@ -22,6 +23,7 @@
     },
     "/resource/with/annotation/long": {
       "get": {
+        "tags": ["/resource"],
         "summary": "Long description with different symbols... tabs: ascii: !\\\"$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\\\]^_`abcdefghijklmnopqrstuvwxyz{|}~ spec:¹²³$‰↑∞←→—≠€®™ѣѵіѳ′[]≈§°£₽„“”‘’×©↓−«»…´“„•ẞˇ¢·¸¨‘⌀⌘˘˚ѢѴІѲ″{}±–〉〈¿ˆ¼⅓½¡ Cyrillic: йцукенгшщзФЫВАПРОЛДЖЭ Chinese: 你好世界",
         "responses": {
           "default": {
@@ -37,6 +39,7 @@
     },
     "/resource/with/annotation/multiline/oneline": {
       "get": {
+        "tags": ["/resource"],
         "summary": "Multi-line description on one line",
         "responses": {
           "default": {
@@ -52,6 +55,7 @@
     },
     "/resource/with/annotation/multiline/severallines": {
       "get": {
+        "tags": ["/resource"],
         "summary": "Multi-line description on several lines",
         "responses": {
           "default": {
@@ -67,6 +71,7 @@
     },
     "/resource/with/annotation/oneline/empty": {
       "get": {
+        "tags": ["/resource"],
         "responses": {
           "default": {
             "description": "",
@@ -81,6 +86,7 @@
     },
     "/resource/with/annotation/multiline/empty": {
       "get": {
+        "tags": ["/resource"],
         "responses": {
           "default": {
             "description": "",
@@ -95,6 +101,7 @@
     },
     "/resource/with/annotation/directive": {
       "get": {
+        "tags": ["/resource"],
         "summary": "GET /resource/with/annotation/directive",
         "responses": {
           "default": {
@@ -110,6 +117,7 @@
     },
     "/resource/with/annotation/pseudodouble/oneline": {
       "get": {
+        "tags": ["/resource"],
         "summary": "//",
         "responses": {
           "default": {
@@ -125,6 +133,7 @@
     },
     "/resource/with/annotation/pseudodouble/multiline": {
       "get": {
+        "tags": ["/resource"],
         "summary": "\\*\\/ \\*\\/",
         "responses": {
           "default": {
@@ -140,6 +149,7 @@
     },
     "/resource/with/annotation/summary/oneline/1": {
       "get": {
+        "tags": ["/resource"],
         "summary": "summary",
         "responses": {
           "default": {
@@ -155,6 +165,7 @@
     },
     "/resource/with/annotation/summary/oneline/2": {
       "get": {
+        "tags": ["/resource"],
         "summary": "\"summary\"",
         "responses": {
           "default": {
@@ -170,6 +181,7 @@
     },
     "/resource/with/annotation/summary/multiline/1": {
       "get": {
+        "tags": ["/resource"],
         "summary": "summary",
         "responses": {
           "default": {
@@ -185,6 +197,7 @@
     },
     "/resource/with/annotation/summary/multiline/2": {
       "get": {
+        "tags": ["/resource"],
         "summary": "\"summary\"",
         "responses": {
           "default": {

@@ -1,21 +1,21 @@
 JSIGHT 0.3
 
 
-GET /request-required-1
+POST /request-required-1
   Request
     {}
 
-GET /request-required-2
+POST /request-required-2
   Request
     123
 
 
-GET /request-required-3
+POST /request-required-3
   Request
     "string"
 
 
-GET /request-required-4
+POST /request-required-4
   Request
     @someType
 
@@ -23,11 +23,11 @@ TYPE @someType
 {}
 
 
-GET /request-not-required-2
+POST /request-not-required-2
   Request any
 
 ###
-GET /request-not-required-1
+POST /request-not-required-1
   Request
     Headers 
       {}

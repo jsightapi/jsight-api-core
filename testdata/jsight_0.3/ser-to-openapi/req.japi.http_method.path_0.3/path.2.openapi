@@ -20,6 +20,7 @@
         }
       ],
       "post": {
+        "tags": ["/necessity"],
         "responses": {
           "default": {
             "description": "",
@@ -42,6 +43,7 @@
         }
       ],
       "get": {
+        "tags": ["/no-schema-parameter"],
         "responses": {
           "200": {
             "description": "",
@@ -69,11 +71,12 @@
           "schema": {
             "type": "string",
             "minLength": 3,
-            "example": "some-string"
+            "example": "string"
           }
         }
       ],
       "put": {
+        "tags": ["/object-in-path"],
         "responses": {
           "200": {
             "description": "",
@@ -110,6 +113,7 @@
         }
       ],
       "put": {
+        "tags": ["/object-in-path"],
         "responses": {
           "200": {
             "description": "",
@@ -152,9 +156,6 @@
         "allOf": [
           {
             "$ref": "#/components/schemas/objectInPath"
-          },
-          {
-            "type": "object"
           }
         ]
       }

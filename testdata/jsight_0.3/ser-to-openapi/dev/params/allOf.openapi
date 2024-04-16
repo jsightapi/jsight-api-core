@@ -28,7 +28,8 @@
   "openapi": "3.0.3",
   "paths": {
     "/some": {
-      "get": {
+      "post": {
+        "tags": ["/some"],
         "parameters": [
           {
             "in": "header",

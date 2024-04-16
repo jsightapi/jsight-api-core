@@ -18,6 +18,7 @@
         }
       }],
       "post": {
+        "tags": ["/path-parameter-rules-transfer"],
         "responses": {
           "300": {
             "description": "",
@@ -30,6 +31,7 @@
         }
       },
       "patch": {
+        "tags": ["/path-parameter-rules-transfer"],
         "responses": {
           "301": {
             "description": "",
@@ -42,6 +44,7 @@
         }
       },
       "put": {
+        "tags": ["/path-parameter-rules-transfer"],
         "responses": {
           "302": {
             "description": "",
@@ -54,6 +57,7 @@
         }
       },
       "get": {
+        "tags": ["/path-parameter-rules-transfer"],
         "responses": {
           "303": {
             "description": "",
@@ -66,6 +70,7 @@
         }
       },
       "delete": {
+        "tags": ["/path-parameter-rules-transfer"],
         "responses": {
           "304": {
             "description": "",
