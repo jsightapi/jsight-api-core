@@ -156,9 +156,6 @@
         "allOf": [
           {
             "$ref": "#/components/schemas/objectInPath"
-          },
-          {
-            "type": "object"
           }
         ]
       }

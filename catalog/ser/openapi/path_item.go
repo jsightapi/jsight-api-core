@@ -41,7 +41,6 @@ func appendPathParams(p []*ParameterObject, i *catalog.HTTPInteraction) []*Param
 	return p
 }
 
-// TODO: deal with possible overwriting of method (improbable)
 func (pi *PathItem) assignOperation(method catalog.HTTPMethod, o *Operation) {
 	switch method {
 	case catalog.GET:
