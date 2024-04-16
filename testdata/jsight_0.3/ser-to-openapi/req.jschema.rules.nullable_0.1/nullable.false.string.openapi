@@ -1,0 +1,180 @@
+{
+  "info": {
+    "title": "",
+    "version": ""
+  },
+  "openapi": "3.0.3",
+  "paths": {
+    "/request/jschema/rules/nullable/string": {
+      "get": {
+        "tags": ["/request"],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "example": "2024-02-19",
+                  "format": "date",
+                  "type": "string"
+                }
+              }
+            },
+            "description": ""
+          },
+          "201": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "example": "2024-02-19T09:14:28+03:00",
+                  "format": "date-time",
+                  "type": "string"
+                }
+              }
+            },
+            "description": ""
+          },
+          "202": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "example": "test@example.com",
+                  "format": "email",
+                  "type": "string"
+                }
+              }
+            },
+            "description": ""
+          },
+          "203": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "example": "foo",
+                  "type": "string"
+                }
+              }
+            },
+            "description": ""
+          },
+          "204": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "example": "https://www.com",
+                  "format": "uri",
+                  "type": "string"
+                }
+              }
+            },
+            "description": ""
+          },
+          "205": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "example": "53496d7f-1374-4368-a829-74ccd47aec1c",
+                  "format": "uuid",
+                  "type": "string"
+                }
+              }
+            },
+            "description": ""
+          },
+          "206": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "sDate": {
+                      "example": "2024-02-19",
+                      "format": "date",
+                      "type": "string"
+                    },
+                    "sDatetime": {
+                      "example": "2024-02-19T09:14:28+03:00",
+                      "format": "date-time",
+                      "type": "string"
+                    },
+                    "sEmail": {
+                      "example": "test@example.com",
+                      "format": "email",
+                      "type": "string"
+                    },
+                    "sString": {
+                      "example": "foo",
+                      "type": "string"
+                    },
+                    "sUri": {
+                      "example": "https://www.com",
+                      "format": "uri",
+                      "type": "string"
+                    },
+                    "sUuid": {
+                      "example": "53496d7f-1374-4368-a829-74ccd47aec1c",
+                      "format": "uuid",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "sDate",
+                    "sDatetime",
+                    "sEmail",
+                    "sString",
+                    "sUri",
+                    "sUuid"
+                  ],
+                  "type": "object"
+                }
+              }
+            },
+            "description": ""
+          },
+          "207": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "anyOf": [
+                      {
+                        "example": "2024-02-19",
+                        "format": "date",
+                        "type": "string"
+                      },
+                      {
+                        "example": "2024-02-19T09:14:28+03:00",
+                        "format": "date-time",
+                        "type": "string"
+                      },
+                      {
+                        "example": "test@example.com",
+                        "format": "email",
+                        "type": "string"
+                      },
+                      {
+                        "example": "foo",
+                        "type": "string"
+                      },
+                      {
+                        "example": "https://www.com",
+                        "format": "uri",
+                        "type": "string"
+                      },
+                      {
+                        "example": "53496d7f-1374-4368-a829-74ccd47aec1c",
+                        "format": "uuid",
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  "type": "array"
+                }
+              }
+            },
+            "description": ""
+          }
+        }
+      }
+    }
+  }
+}

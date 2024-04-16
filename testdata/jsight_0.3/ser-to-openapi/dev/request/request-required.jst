@@ -1,0 +1,41 @@
+JSIGHT 0.3
+
+
+POST /request-required-1
+  Request
+    {}
+
+POST /request-required-2
+  Request
+    123
+
+
+POST /request-required-3
+  Request
+    "string"
+
+
+POST /request-required-4
+  Request
+    @someType
+
+TYPE @someType
+{}
+
+
+POST /request-not-required-2
+  Request any
+
+###
+POST /request-not-required-1
+  Request
+    Headers 
+      {}
+
+#GET /request-not-required-3
+#  Request @typeAny
+
+
+# TYPE @typeAny any
+
+###

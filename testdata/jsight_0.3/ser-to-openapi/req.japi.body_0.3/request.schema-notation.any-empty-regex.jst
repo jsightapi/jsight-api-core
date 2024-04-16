@@ -1,0 +1,20 @@
+JSIGHT 0.3
+
+POST /request/schema-notation/any
+  Request
+    Body any
+  200
+    "OK"
+
+PUT /request/schema-notation/empty
+  Request
+    Body empty
+  200
+    "OK"
+
+PATCH /request/schema-notation/regex
+  Request
+    Body regex
+      /^[A-Z]+\s\d+$/
+  200
+    "OK"

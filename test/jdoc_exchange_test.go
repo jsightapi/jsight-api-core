@@ -13,34 +13,42 @@ import (
 
 func TestJDocExchange(t *testing.T) {
 	jsonFilesPaths := jsonFilePaths(GetTestDataDir())
-
 	for _, jsonPath := range jsonFilesPaths {
-		t.Run(cutRepositoryPath(jsonPath), func(t *testing.T) {
-			json, err := os.ReadFile(jsonPath)
-			require.NoError(t, err)
-
-			japiPath, err := japiFilePath(jsonPath)
-			require.NoError(t, err)
-
-			j, je := kit.NewJapi(japiPath)
-			if je != nil {
-				logJAPIError(t, je)
-				t.FailNow()
-			}
-
-			actual, err := j.ToJsonIndent()
-			require.NoError(t, err)
-
-			expected := string(json)
-
-			ok := assert.JSONEq(t, expected, string(actual))
-
-			if !ok {
-				t.Log("Actual JSON:")
-				t.Log(string(actual))
-			}
-		})
+		runJDocExchangeTest(t, jsonPath)
 	}
+}
+
+func TestJDocExchangeSpecific(t *testing.T) {
+	// path := filepath.Join(GetTestDataDir(), "/jsight_0.3/req.japi.http_method.path/path_04_undefined.json")
+	// runJDocExchangeTests(t, path)
+}
+
+func runJDocExchangeTest(t *testing.T, jsonFilePath string) {
+	t.Run(cutRepositoryPath(jsonFilePath), func(t *testing.T) {
+		json, err := os.ReadFile(jsonFilePath)
+		require.NoError(t, err)
+
+		japiPath, err := japiFilePath(jsonFilePath)
+		require.NoError(t, err)
+
+		j, je := kit.NewJapi(japiPath)
+		if je != nil {
+			logJAPIError(t, je)
+			t.FailNow()
+		}
+
+		actual, err := j.ToJsonIndent()
+		require.NoError(t, err)
+
+		expected := string(json)
+
+		ok := assert.JSONEq(t, expected, string(actual))
+
+		if !ok {
+			t.Log("Actual JSON:")
+			t.Log(string(actual))
+		}
+	})
 }
 
 func jsonFilePaths(dir string) []string {
@@ -71,8 +79,8 @@ func jsonFilePaths(dir string) []string {
 	return filenames
 }
 
-func japiFilePath(japiPath string) (string, error) {
-	ext := filepath.Ext(japiPath)
-	jsonPath := japiPath[:len(japiPath)-len(ext)] + ".jst"
-	return jsonPath, nil
+func japiFilePath(resFilePath string) (string, error) {
+	ext := filepath.Ext(resFilePath)
+	japiFilePath := resFilePath[:len(resFilePath)-len(ext)] + ".jst"
+	return japiFilePath, nil
 }

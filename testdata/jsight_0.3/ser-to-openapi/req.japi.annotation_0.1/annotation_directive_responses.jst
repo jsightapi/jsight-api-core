@@ -1,0 +1,59 @@
+JSIGHT 0.3
+
+# ANNOTATION in DIRECTIVES-RESPONSES (HTTP status codes)
+
+GET /resource/with/annotation/brief 
+  200 // Brief description of the RESPONSE
+    "response"
+
+GET /resource/with/annotation/long  
+  200 // Long description with different symbols... tabs:		ascii: !\"$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~ spec:¹²³$‰↑∞←→—≠€®™ѣѵіѳ′[]≈§°£₽„“”‘’×©↓−«»…´“„•ẞˇ¢·¸¨‘⌀⌘˘˚ѢѴІѲ″{}±–〉〈¿ˆ¼⅓½¡ Cyrillic: йцукенгшщзФЫВАПРОЛДЖЭ Chinese: 你好世界
+    "response"
+
+GET /resource/with/annotation/multiline/oneline 
+  200 /* Multi-line description on one line */
+    "response"
+
+GET /resource/with/annotation/multiline/severallines 
+  200 /* Multi-line description 
+      on 
+      several 
+      lines 
+      */
+      "response"
+
+GET /resource/with/annotation/oneline/empty
+  200 //
+    "response"   
+
+GET /resource/with/annotation/multiline/empty 
+  200 /**/
+    "response"
+
+GET /resource/with/annotation/directive 
+  200 //GET /resource/with/annotation/directive
+    "response"
+
+GET /resource/with/annotation/pseudodouble/oneline
+  200 ////
+    "response"
+
+GET /resource/with/annotation/pseudodouble/multiline 
+  200 /* \*\/  \*\/ */
+    "response"
+
+GET /resource/with/annotation/description/oneline/1 
+  200 //description
+    "response"
+
+GET /resource/with/annotation/description/oneline/2 
+  200 //"description"
+    "response"
+
+GET /resource/with/annotation/description/multiline/1 
+  200 /*description*/
+    "response"
+
+GET /resource/with/annotation/description/multiline/2 
+  200 /*"description"*/
+    "response"

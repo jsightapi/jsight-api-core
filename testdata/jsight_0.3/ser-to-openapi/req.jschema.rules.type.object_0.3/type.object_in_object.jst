@@ -1,0 +1,18 @@
+JSIGHT 0.3
+
+GET /request/jschema/rules/type/object_in_object
+  200
+    { // { type: "object" } - first object
+      "obj": { // { type: "object" } - second object
+        "str": "abc",
+        "obj": { // { type: "object" } - third object
+          "str": "abc",
+          "obj": { // fourth object
+            "str": "abc",
+            "obj": { // - fifth object
+              "str": "abc"
+            }
+          }
+        }
+      }
+    }

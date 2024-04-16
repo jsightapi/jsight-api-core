@@ -1,0 +1,71 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "",
+    "version": ""
+  },
+  "paths": {
+    "/some": {
+      "post": {
+        "tags": ["/some"],
+        "parameters": [
+          {
+            "description": "necessary query",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "example": 1,
+              "description": "necessary query"
+            },
+            "name": "q-mandatory",
+            "in": "query",
+            "style": "deepObject",
+            "explode": true
+          },
+          {
+            "description": "unnecessary query",
+            "schema": {
+              "type": "integer",
+              "example": 2,
+              "description": "unnecessary query"
+            },
+            "name": "q-not-mandarory",
+            "in": "query",
+            "style": "deepObject",
+            "explode": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "k1": {
+                    "type": "string",
+                    "example": "v1"
+                  }
+                },
+                "required": [
+                  "k1"
+                ],
+                "additionalProperties": false
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "default": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

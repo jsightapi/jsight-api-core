@@ -1,0 +1,140 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "",
+    "version": ""
+  },
+
+  "paths": {
+    "/request/jschema/rules/nullable/enum": {
+      "get": {
+        "tags": ["/request"],
+        "responses": {
+
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "example": "white",
+                  "enum": ["white", "blue", "red"],
+                  "nullable": true
+                }
+              }
+            }
+          },
+
+          "201": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "example": -2.1,
+                  "enum": [-3, -2.1, 1.2, true, false, "-3", "0", "1.2", "string", "true"],
+                  "nullable": true
+                }
+              }
+            }
+          },
+
+          "202": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "example": null,
+                  "enum": ["white", "blue", "red", null],
+                  "nullable": true
+                }
+              }
+            }
+          },
+
+          "203": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "example": null,
+                  "enum": ["white", "blue", "red"],
+                  "nullable": true
+                }
+              }
+            }
+          },
+
+          "204": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "sEnum1": {
+                      "example": "white",
+                      "enum": ["white", "blue", "red"],
+                      "nullable": true
+                    },
+                    "sEnum2": {
+                      "example": -2.1,
+                      "enum": [-3, -2.1, 1.2, true, false, "-3", "0", "1.2", "string", "true"],
+                      "nullable": true
+                    },
+                    "sEnum3": {
+                      "example": null,
+                      "enum": ["white", "blue", "red", null],
+                      "nullable": true
+                    },
+                    "sEnum4": {
+                      "example": null,
+                      "enum": ["white", "blue", "red"],
+                      "nullable": true
+                    }
+                  },
+                  "required": ["sEnum1", "sEnum2", "sEnum3", "sEnum4"],
+                  "additionalProperties": false
+                }
+              }
+            }
+          },
+
+          "205": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "anyOf": [
+                      {
+                        "example": "white",
+                        "enum": ["white", "blue", "red"],
+                        "nullable": true
+                      },
+                      {
+                        "example": -2.1,
+                        "enum": [-3, -2.1, 1.2, true, false, "-3", "0", "1.2", "string", "true"],
+                        "nullable": true
+                      },
+                      {
+                        "example": null,
+                        "enum": ["white", "blue", "red", null],
+                        "nullable": true
+                      },
+                      {
+                        "example": null,
+                        "enum": ["white", "blue", "red"],
+                        "nullable": true
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+
+        }
+      }
+    }
+  }
+}

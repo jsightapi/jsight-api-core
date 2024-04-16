@@ -1,0 +1,164 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "",
+    "version": ""
+  },
+  "paths": {
+    "/necessity/{parameter}": {
+      "parameters": [
+        {
+          "name": "parameter",
+          "in": "path",
+          "required": true,
+          "description": "The rule `optional: true` must be ignored for path parameters.",
+          "schema": {
+            "description": "The rule `optional: true` must be ignored for path parameters.",
+            "type": "boolean",
+            "example": true
+          }
+        }
+      ],
+      "post": {
+        "tags": ["/necessity"],
+        "responses": {
+          "default": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/no-schema-parameter/{no-schema-value}": {
+      "parameters": [
+        {
+          "name": "no-schema-value",
+          "in": "path",
+          "required": true,
+          "schema": {}
+        }
+      ],
+      "get": {
+        "tags": ["/no-schema-parameter"],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {}
+          }
+        }
+      }
+    },
+    "/object-in-path/double/{integer-parameter}/{string-parameter}": {
+      "parameters": [
+        {
+          "name": "integer-parameter",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "integer",
+            "minimum": 0,
+            "example": 21
+          }
+        },
+        {
+          "name": "string-parameter",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "minLength": 3,
+            "example": "string"
+          }
+        }
+      ],
+      "put": {
+        "tags": ["/object-in-path"],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/object-in-path/all-of/{integer-parameter}/{string-parameter}": {
+      "parameters": [
+        {
+          "name": "integer-parameter",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "integer",
+            "minimum": 0,
+            "example": 21
+          }
+        },
+        {
+          "name": "string-parameter",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "minLength": 3,
+            "example": "string"
+          }
+        }
+      ],
+      "put": {
+        "tags": ["/object-in-path"],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "objectInPath": {
+        "type": "object",
+        "properties": {
+          "integer-parameter": {
+            "type": "integer",
+            "minimum": 0,
+            "example": 21
+          },
+          "string-parameter": {
+            "type": "string",
+            "minLength": 3,
+            "example": "string"
+          }
+        },
+        "required": ["integer-parameter", "string-parameter"],
+        "additionalProperties": false
+      },
+      "objectInPath2": {
+        "$ref": "#/components/schemas/objectInPath"
+      },
+      "allOfObjectInPath": {
+        "type": "object",
+        "properties": {},
+        "additionalProperties": false,
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/objectInPath"
+          }
+        ]
+      }
+    }
+  }
+}

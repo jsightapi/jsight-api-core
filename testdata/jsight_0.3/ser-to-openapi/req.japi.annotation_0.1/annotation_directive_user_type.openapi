@@ -1,0 +1,133 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "",
+    "version": ""
+  },
+  "paths": {
+    "/types": {
+      "get": {
+        "tags": ["/types"],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "anyOf": [
+                    {
+                      "$ref": "#/components/schemas/typeWithAnnotationBrief"
+                    },
+                    {
+                      "$ref": "#/components/schemas/typeWithAnnotationLong"
+                    },
+                    {
+                      "$ref": "#/components/schemas/typeWithAnnotationMultilineOneline"
+                    },
+                    {
+                      "$ref": "#/components/schemas/typeWithAnnotationMultilineSeverallines"
+                    },
+                    {
+                      "$ref": "#/components/schemas/typeWithAnnotationOnelineEmpty"
+                    },
+                    {
+                      "$ref": "#/components/schemas/typeWithAnnotationMultilineEmpty"
+                    },
+                    {
+                      "$ref": "#/components/schemas/typeWithAnnotationDirective"
+                    },
+                    {
+                      "$ref": "#/components/schemas/typeWithAnnotationPseudodoubleOneline"
+                    },
+                    {
+                      "$ref": "#/components/schemas/typeWithAnnotationPseudodoubleMultiline"
+                    },
+                    {
+                      "$ref": "#/components/schemas/typeWithAnnotationDescriptionOneline1"
+                    },
+                    {
+                      "$ref": "#/components/schemas/typeWithAnnotationDescriptionOneline2"
+                    },
+                    {
+                      "$ref": "#/components/schemas/typeWithAnnotationDescriptionMultiline1"
+                    },
+                    {
+                      "$ref": "#/components/schemas/typeWithAnnotationDescriptionMultiline2"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "typeWithAnnotationBrief": {
+        "type": "string",
+        "description": "Brief description of the TYPE",
+        "example": "typeWithAnnotationBrief example"
+      },
+      "typeWithAnnotationLong": {
+        "type": "string",
+        "description": "Long description with different symbols... tabs: ascii: !\\\"$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\\\]^_`abcdefghijklmnopqrstuvwxyz{|}~ spec:¹²³$‰↑∞←→—≠€®™ѣѵіѳ′[]≈§°£₽„“”‘’×©↓−«»…´“„•ẞˇ¢·¸¨‘⌀⌘˘˚ѢѴІѲ″{}±–〉〈¿ˆ¼⅓½¡ Cyrillic: йцукенгшщзФЫВАПРОЛДЖЭ Chinese: 你好世界",
+        "example": "typeWithAnnotationLong example"
+      },
+      "typeWithAnnotationMultilineOneline": {
+        "type": "string",
+        "description": "Multi-line description on one line",
+        "example": "typeWithAnnotationMultilineOneline example"
+      },
+      "typeWithAnnotationMultilineSeverallines": {
+        "type": "string",
+        "description": "Multi-line description on several lines",
+        "example": "typeWithAnnotationMultilineSeverallines example"
+      },
+      "typeWithAnnotationOnelineEmpty": {
+        "type": "string",
+        "example": "typeWithAnnotationOnelineEmpty example"
+      },
+      "typeWithAnnotationMultilineEmpty": {
+        "type": "string",
+        "example": "typeWithAnnotationMultilineEmpty example"
+      },
+      "typeWithAnnotationDirective": {
+        "type": "string",
+        "description": "TYPE @typeWithAnnotationDirective",
+        "example": "typeWithAnnotationDirective example"
+      },
+      "typeWithAnnotationPseudodoubleOneline": {
+        "type": "string",
+        "description": "//",
+        "example": "typeWithAnnotationPseudodoubleOneline example"
+      },
+      "typeWithAnnotationPseudodoubleMultiline": {
+        "type": "string",
+        "description": "\\*\\/ \\*\\/",
+        "example": "typeWithAnnotationPseudodoubleMultiline example"
+      },
+      "typeWithAnnotationDescriptionOneline1": {
+        "type": "string",
+        "description": "description",
+        "example": "typeWithAnnotationDescriptionOneline1 example"
+      },
+      "typeWithAnnotationDescriptionOneline2": {
+        "type": "string",
+        "description": "\"description\"",
+        "example": "typeWithAnnotationDescriptionOneline2 example"
+      },
+      "typeWithAnnotationDescriptionMultiline1": {
+        "type": "string",
+        "description": "description",
+        "example": "typeWithAnnotationDescriptionMultiline1 example"
+      },
+      "typeWithAnnotationDescriptionMultiline2": {
+        "type": "string",
+        "description": "\"description\"",
+        "example": "typeWithAnnotationDescriptionMultiline2 example"
+      }
+    }
+  }
+}

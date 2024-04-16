@@ -1,0 +1,20 @@
+JSIGHT 0.3
+
+GET /request/jschema/rules/type/string
+  200
+    "" // {type: "string"}
+  201
+    "some string" // {type: "string"}
+  202
+    "11" // {type: "string"}
+  203
+    "11.11" // {type: "string"}
+  204
+    {
+      "someString": "some string", // {type: "string"}
+      "emptyString": "" // {type: "string"}
+    }
+  205
+    [
+      "some string"  // {type: "string"}
+    ]

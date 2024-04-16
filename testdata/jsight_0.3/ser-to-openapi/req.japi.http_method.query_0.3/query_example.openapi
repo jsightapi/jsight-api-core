@@ -1,0 +1,205 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "",
+    "version": ""
+  },
+  "paths": {
+    "/query-no-example": {
+      "get": {
+        "tags": ["/query-no-example"],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "page",
+            "style": "deepObject",
+            "explode": true,
+            "schema": {
+              "type": "integer",
+              "example": 1
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/query-contradicting-example": {
+      "get": {
+        "tags": ["/query-contradicting-example"],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "offset",
+            "style": "deepObject",
+            "explode": true,
+            "schema": {
+              "type": "integer",
+              "example": 500
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/query-long-example": {
+      "get": {
+        "tags": ["/query-long-example"],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "one",
+            "style": "deepObject",
+            "explode": true,
+            "schema": {
+              "type": "integer",
+              "example": 1
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/query-example-htmlFormEncoded": {
+      "get": {
+        "tags": ["/query-example-htmlFormEncoded"],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "id",
+            "style": "deepObject",
+            "explode": true,
+            "schema": {
+              "type": "integer",
+              "example": 123
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/query-no-example-htmlFormEncoded": {
+      "get": {
+        "tags": ["/query-no-example-htmlFormEncoded"],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "id",
+            "style": "deepObject",
+            "explode": true,
+            "schema": {
+              "type": "integer",
+              "example": 123
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/query-example-no-format": {
+      "get": {
+        "tags": ["/query-example-no-format"],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "name",
+            "style": "deepObject",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "John"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/query-no-example-no-format": {
+      "get": {
+        "tags": ["/query-no-example-no-format"],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "name",
+            "style": "deepObject",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "John"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

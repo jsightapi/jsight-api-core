@@ -1,0 +1,230 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "",
+    "version": ""
+  },
+  "paths": {
+    "/request/jschema/rules/type/mixed": {
+      "get": {
+        "tags": ["/request"],
+        "responses": {
+
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "anyOf":[
+                    {"type":"integer"},
+                    {"type":"string"}
+                  ],
+                  "example":"abc"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "anyOf": [
+                    { "type": "string", "format": "email" },
+                    { "type": "integer" }
+                  ],
+                  "example": "cat@mail.com"
+                }
+              }
+            }
+          },
+          "202": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "anyOf": [
+                    { "type": "string", "maxLength": 3 },
+                    { "type": "integer", "minimum": 0 }
+                  ],
+                  "example": "abc"
+                }
+              }
+            }
+          },
+          "203": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "anyOf": [
+                    { "type": "string", "format": "uuid" },
+                    { "type": "string", "format": "email" }
+                  ],
+                  "example": "cat@mail.com"
+                }
+              }
+            }
+          },
+          "204": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "anyOf": [
+                    { "type": "string", "format": "uuid" },
+                    { "type": "string", "format": "email" }
+                  ],
+                  "example": "cat@mail.com"
+                }
+              }
+            }
+          },
+          "205": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "anyOf": [
+                    {"enum": [null], "example": null},
+                    { "type": "string", "format": "email" }
+                  ],
+                  "example": "cat@mail.com"
+                }
+              }
+            }
+          },
+          "206": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "anyOf": [
+                    {},
+                    { "type": "string", "format": "email" }
+                  ],
+                  "example": "cat@mail.com"
+                }
+              }
+            }
+          },
+          "207": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "anyOf": [
+                    { "type": "string", "format": "uuid" },
+                    { "type": "string", "format": "email" }
+                  ],
+                  "example": "cat@mail.com",
+                  "nullable": true,
+                  "description": "some text"
+                }
+              }
+            }
+          },
+          "208": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "anyOf": [
+                    { "type": "string" },
+                    { "type": "object", "properties": {}, "additionalProperties": false },
+                    { "type": "array", "items": {}, "maxItems": 0 }
+                  ],
+                  "example": "abc"
+                }
+              }
+            }
+          },
+          "209": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "anyOf": [
+                    { "type": "number", "multipleOf": 0.1 },
+                    { "type": "object", "properties": {}, "additionalProperties": false },
+                    { "type": "array", "items": {}, "maxItems": 0 }
+                  ],
+                  "example": 1.2
+                }
+              }
+            }
+          },
+          "210": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "anyOf": [
+                    { "$ref": "#/components/schemas/stringId" },
+                    { "$ref": "#/components/schemas/integerId" }
+                  ],
+                  "example": 123
+                }
+              }
+            }
+          },
+          "211": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "anyOf": [
+                    { "$ref": "#/components/schemas/stringId" },
+                    { "$ref": "#/components/schemas/integerId" }
+                  ],
+                  "example": 123
+                }
+              }
+            }
+          },
+          "212": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "anyOf": [
+                    { "$ref": "#/components/schemas/stringId" },
+                    { "type": "integer" }
+                  ],
+                  "example": 123
+                }
+              }
+            }
+          },
+          "213": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "anyOf": [
+                    { "$ref": "#/components/schemas/stringId" },
+                    { "$ref": "#/components/schemas/integerId" }
+                  ]
+                }
+              }
+            }
+          }
+
+        }
+      }
+    }
+  },
+
+  "components": {
+    "schemas": {
+      "stringId": {
+        "type": "string",
+        "example": "abc-123"
+      },
+      "integerId": {
+        "type": "integer",
+        "example": 123
+      }
+    }
+  }
+}

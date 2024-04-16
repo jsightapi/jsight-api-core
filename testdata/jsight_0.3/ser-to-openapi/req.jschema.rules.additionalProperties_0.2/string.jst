@@ -1,0 +1,64 @@
+JSIGHT 0.3
+
+TYPE @cat
+{
+  "name": "Tom"
+}
+
+GET /request/jschema/rules/additionalProperties/string
+  200
+    { // {additionalProperties: "any"}
+      "foo": "bar"
+    }
+  201
+    { // {additionalProperties: "array"}
+      "foo": "bar"
+    }
+  202
+    { // {additionalProperties: "boolean"}
+      "foo": "bar"
+    }
+  203
+    { // {additionalProperties: "float"}
+      "foo": "bar"
+    }
+  204
+    { // {additionalProperties: "integer"}
+      "foo": "bar"
+    }
+  205
+    { // {additionalProperties: "object"}
+      "foo": "bar"
+    }
+  206
+    { // {additionalProperties: "string"}
+      "foo": "bar"
+    }
+  207
+    { // {additionalProperties: "null"}
+      "foo": "bar"
+    }
+  208
+    { // {additionalProperties: "date"}
+      "foo": "bar"
+    }
+  209
+    { // {additionalProperties: "datetime"}
+      "foo": "bar"
+    }
+  210
+    { // {additionalProperties: "email"}
+      "foo": "bar"
+    }
+  211
+    { // {additionalProperties: "uri"}
+      "foo": "bar"
+    }
+  212
+    { // {additionalProperties: "uuid"}
+      "foo": "bar"
+    }
+  213
+    { // {additionalProperties: "@cat"}
+      "foo": "bar"
+    }

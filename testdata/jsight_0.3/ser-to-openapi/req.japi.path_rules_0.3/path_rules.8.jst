@@ -1,0 +1,26 @@
+JSIGHT 0.3
+
+GET /{p1}/then/{p2}/and/{p3}
+  Path
+  {
+    "p1": false,
+    "p3": 12.12 // {precision: 2}
+  }
+  500
+    "OK"
+
+URL /{p1}
+  POST
+    Request any
+    200 any
+
+PUT    /{p1}/then
+  200 any
+PATCH  /{p1}/then/{p2}
+  200 any
+DELETE /{p1}/then/{p2}/and
+  Path
+  {
+    "p2": "AAA123" // {regex: "^[A-Z]+\\d+$"}
+  }
+  200 any

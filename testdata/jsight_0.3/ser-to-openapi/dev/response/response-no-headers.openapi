@@ -1,0 +1,27 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "",
+    "version": ""
+  },
+  "paths": {
+    "/": {
+      "get": {
+        "tags": ["/"],
+        "responses": {
+          "200": {
+            "description": "Annotation 200 - boolean",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "boolean",
+                  "example": false
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

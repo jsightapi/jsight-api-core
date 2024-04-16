@@ -1,0 +1,21 @@
+JSIGHT 0.3
+
+# ANNOTATION in DIRECTIVES-HTTP-METHODS (GET, POST, PUT, PATCH, DELETE)
+
+GET /resource/with/annotation/brief // Brief description of the HTTP-METHOD
+GET /resource/with/annotation/long  // Long description with different symbols... tabs:		ascii: !\"$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~ spec:¹²³$‰↑∞←→—≠€®™ѣѵіѳ′[]≈§°£₽„“”‘’×©↓−«»…´“„•ẞˇ¢·¸¨‘⌀⌘˘˚ѢѴІѲ″{}±–〉〈¿ˆ¼⅓½¡ Cyrillic: йцукенгшщзФЫВАПРОЛДЖЭ Chinese: 你好世界
+GET /resource/with/annotation/multiline/oneline /* Multi-line description on one line */
+GET /resource/with/annotation/multiline/severallines /* Multi-line description 
+                                                        on 
+                                                        several 
+                                                        lines 
+                                                        */
+GET /resource/with/annotation/oneline/empty //   
+GET /resource/with/annotation/multiline/empty /**/
+GET /resource/with/annotation/directive //GET /resource/with/annotation/directive
+GET /resource/with/annotation/pseudodouble/oneline ////
+GET /resource/with/annotation/pseudodouble/multiline /* \*\/  \*\/ */
+GET /resource/with/annotation/summary/oneline/1 //summary
+GET /resource/with/annotation/summary/oneline/2 //"summary"
+GET /resource/with/annotation/summary/multiline/1 /*summary*/
+GET /resource/with/annotation/summary/multiline/2 /*"summary"*/

@@ -1,0 +1,215 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "",
+    "version": ""
+  },
+  "paths": {
+    "/request/jschema/shortcuts/value_or/root_element": {
+      "get": {
+        "tags": ["/request"],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "anyOf": [
+                    {
+                      "$ref": "#/components/schemas/stringId"
+                    },
+                    {
+                      "$ref": "#/components/schemas/integerId"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "anyOf": [
+                    {
+                      "$ref": "#/components/schemas/stringId"
+                    },
+                    {
+                      "$ref": "#/components/schemas/integerId"
+                    },
+                    {
+                      "$ref": "#/components/schemas/typeObject"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "202": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "anyOf": [
+                    {
+                      "$ref": "#/components/schemas/stringId"
+                    },
+                    {
+                      "$ref": "#/components/schemas/integerId"
+                    },
+                    {
+                      "$ref": "#/components/schemas/typeObject"
+                    }
+                  ],
+                  "description": "description 1",
+                  "nullable": true
+                }
+              }
+            }
+          },
+          "203": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "anyOf": [
+                    {
+                      "$ref": "#/components/schemas/stringId"
+                    },
+                    {
+                      "$ref": "#/components/schemas/typeObject"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "204": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "anyOf": [
+                    {
+                      "$ref": "#/components/schemas/typeObject"
+                    },
+                    {
+                      "$ref": "#/components/schemas/typeObject"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "205": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string",
+                  "example": "@stringId | @integerId"
+                }
+              }
+            },
+            "description": ""
+          },
+          "206": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "anyOf": [
+                    {
+                      "$ref": "#/components/schemas/stringId"
+                    },
+                    {
+                      "$ref": "#/components/schemas/integerId"
+                    }
+                  ],
+                  "example": "@stringId | @integerId",
+                  "description": "{ or: [\"@stringId\", \"@integerId\"] }"
+                }
+              }
+            }
+          },
+          "207": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "anyOf": [
+                    {
+                      "$ref": "#/components/schemas/stringId"
+                    },
+                    {
+                      "$ref": "#/components/schemas/integerId"
+                    }
+                  ],
+                  "description": "/ { or: [\"@stringId\", \"@integerId\"] }"
+                }
+              }
+            }
+          },
+          "208": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "anyOf": [
+                    {
+                      "$ref": "#/components/schemas/stringId"
+                    },
+                    {
+                      "$ref": "#/components/schemas/integerId"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "209": {
+            "description": "",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string",
+                  "pattern": "@stringId | @integerId | @typeObject"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "stringId": {
+        "type": "string",
+        "example": "abc-123"
+      },
+      "integerId": {
+        "type": "integer",
+        "example": 123
+      },
+      "typeObject": {
+        "type": "object",
+        "properties": {
+          "1": {
+            "type": "integer",
+            "example": 1
+          },
+          "2": {
+            "type": "string",
+            "example": "2"
+          }
+        },
+        "required": [
+          "1",
+          "2"
+        ],
+        "additionalProperties": false
+      }
+    }
+  }
+}

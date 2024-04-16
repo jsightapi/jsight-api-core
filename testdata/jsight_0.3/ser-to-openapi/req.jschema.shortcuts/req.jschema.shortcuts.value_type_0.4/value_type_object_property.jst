@@ -1,0 +1,49 @@
+JSIGHT 0.3
+
+TYPE @stringId
+  "abc-123"
+
+TYPE @integerId
+  123
+
+TYPE @typeObject
+  {
+    "1": 1,
+    "2": "2"
+  }
+
+GET /request/jschema/shortcuts/value_type/object_property
+  200
+    {
+      "1": @stringId
+    }
+  
+  201
+    {
+      "1": @stringId,
+      "2": @integerId,
+      "3": @typeObject
+    }
+  
+  202
+    {
+      "1": "xyz-456", // { type: "@stringId" }
+      "2": 789, // { type: "@integerId" }
+      "3": @typeObject,
+      "4": "abc-123" //  { type: "@stringId", nullable: true, optional: true }
+    }
+  
+  203
+    {
+      "1": "abc-123",
+      "2": "abc-123", //  { type: "@stringId" }
+      "3": @stringId,
+      "3.1": @stringId, //  { optional: true, nullable: true} - description
+      "4": "@stringId",
+      "5": "@stringId", //  { type: "@stringId"}
+      "6": "stringId",  //  { type: "@stringId"}
+      "7": @stringId, ///  { type: "@stringId" }
+      "8": @stringId, #  { type: "@stringId" }
+      "9": "@stringId", //  { type: "string" }
+      "10": "@integerId" // { type: "@stringId"}
+    }

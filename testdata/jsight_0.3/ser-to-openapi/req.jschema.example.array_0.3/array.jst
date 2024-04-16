@@ -1,0 +1,37 @@
+JSIGHT 0.3
+
+GET /request/jschema/example/array
+  200
+    []
+  201
+    [ "str" ]
+  202
+    [ // some text
+      "str"
+    ]
+  203
+    [ // {minItems: 1, nullable: true} - some text
+      "str"
+    ]
+  204
+    [ "str", 1 ]
+  205
+    [1, 2.3, "abc"]
+  206
+    [ // { type: "array" }
+      1,
+      2.3,
+      "abc"
+    ]
+  207
+    [ 1, 2 ]
+  208
+    [ // { maxItems: 10, minItems: 2 }
+      1, 2
+    ]
+  209
+    [ // { type: "array" }
+    ]
+  210
+    [ // { type: "array", nullable: true }
+    ]

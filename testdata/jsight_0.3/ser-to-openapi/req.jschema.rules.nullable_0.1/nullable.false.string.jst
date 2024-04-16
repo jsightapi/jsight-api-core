@@ -1,0 +1,33 @@
+JSIGHT 0.3
+
+GET /request/jschema/rules/nullable/string
+  200
+    "2024-02-19" // {type: "date", nullable: false}
+  201
+    "2024-02-19T09:14:28+03:00" // {type: "datetime", nullable: false}
+  202
+    "test@example.com" // {type: "email", nullable: false}
+  203
+    "foo" // { type: "string", nullable: false }
+  204
+    "https://www.com" // { type: "uri", nullable: false }
+  205
+    "53496d7f-1374-4368-a829-74ccd47aec1c" // { type: "uuid", nullable: false }
+  206
+    {
+      "sDate": "2024-02-19", // {type: "date", nullable: false}
+      "sDatetime": "2024-02-19T09:14:28+03:00", // {type: "datetime", nullable: false}
+      "sEmail": "test@example.com", // {type: "email", nullable: false}
+      "sString": "foo", // { type: "string", nullable: false }
+      "sUri": "https://www.com", // { type: "uri", nullable: false }
+      "sUuid": "53496d7f-1374-4368-a829-74ccd47aec1c" // { type: "uuid", nullable: false }
+    }
+  207
+    [
+      "2024-02-19", // {type: "date", nullable: false}
+      "2024-02-19T09:14:28+03:00", // {type: "datetime", nullable: false}
+      "test@example.com", // {type: "email", nullable: false}
+      "foo", // { type: "string", nullable: false }
+      "https://www.com", // { type: "uri", nullable: false }
+      "53496d7f-1374-4368-a829-74ccd47aec1c" // { type: "uuid", nullable: false }
+    ]

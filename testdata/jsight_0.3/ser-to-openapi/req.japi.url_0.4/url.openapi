@@ -1,0 +1,73 @@
+{
+    "openapi": "3.0.3",
+    "info": {
+      "title": "",
+      "version": ""
+    },
+    "paths": {
+
+      "/": {
+        "get": {
+          "tags": ["/"],
+          "responses": {
+            "300": {
+              "description": "",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "string",
+                    "example": "some response"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+
+      "/scary/ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!$&'()*+,;=": {
+        "post": {
+          "tags": ["/scary"],
+          "responses": {
+            "301": {
+              "description": "",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "string",
+                    "example": "another response"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+
+      "/parameter/{id}": {
+        "parameters": [{
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": {}
+        }],
+        "post": {
+          "tags": ["/parameter"],
+          "responses": {
+            "302": {
+              "description": "",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "string",
+                    "example": "yet another response"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+    }
+  }

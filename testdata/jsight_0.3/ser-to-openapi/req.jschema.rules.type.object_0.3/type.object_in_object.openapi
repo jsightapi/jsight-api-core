@@ -1,0 +1,92 @@
+{
+  "info": {
+    "title": "",
+    "version": ""
+  },
+  "openapi": "3.0.3",
+  "paths": {
+    "/request/jschema/rules/type/object_in_object": {
+      "get": {
+        "tags": ["/request"],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "additionalProperties": false,
+                  "description": "first object",
+                  "properties": {
+                    "obj": {
+                      "additionalProperties": false,
+                      "description": "second object",
+                      "properties": {
+                        "obj": {
+                          "additionalProperties": false,
+                          "description": "third object",
+                          "properties": {
+                            "obj": {
+                              "additionalProperties": false,
+                              "description": "fourth object",
+                              "properties": {
+                                "obj": {
+                                  "additionalProperties": false,
+                                  "description": "- fifth object",
+                                  "properties": {
+                                    "str": {
+                                      "example": "abc",
+                                      "type": "string"
+                                    }
+                                  },
+                                  "required": [
+                                    "str"
+                                  ],
+                                  "type": "object"
+                                },
+                                "str": {
+                                  "example": "abc",
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "str",
+                                "obj"
+                              ],
+                              "type": "object"
+                            },
+                            "str": {
+                              "example": "abc",
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "str",
+                            "obj"
+                          ],
+                          "type": "object"
+                        },
+                        "str": {
+                          "example": "abc",
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "str",
+                        "obj"
+                      ],
+                      "type": "object"
+                    }
+                  },
+                  "required": [
+                    "obj"
+                  ],
+                  "type": "object"
+                }
+              }
+            },
+            "description": ""
+          }
+        }
+      }
+    }
+  }
+}

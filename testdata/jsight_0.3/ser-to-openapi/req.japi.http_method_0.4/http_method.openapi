@@ -1,0 +1,358 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "",
+    "version": ""
+  },
+  "paths": {
+    "/root-get-method-only": {
+      "get": {
+        "tags": ["/root-get-method-only"],
+        "responses": {
+          "default": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/root-post-method-only": {
+      "post": {
+        "tags": ["/root-post-method-only"],
+        "responses": {
+          "default": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/root-put-method-only": {
+      "put": {
+        "tags": ["/root-put-method-only"],
+        "responses": {
+          "default": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/root-patch-method-only": {
+      "patch": {
+        "tags": ["/root-patch-method-only"],
+        "responses": {
+          "default": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/root-delete-method-only": {
+      "delete": {
+        "tags": ["/root-delete-method-only"],
+        "responses": {
+          "default": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/root-get-method": {
+      "get": {
+        "tags": ["/root-get-method"],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/root-post-method": {
+      "post": {
+        "tags": ["/root-post-method"],
+        "responses": {
+          "201": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/root-put-method": {
+      "put": {
+        "tags": ["/root-put-method"],
+        "responses": {
+          "202": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/root-patch-method": {
+      "patch": {
+        "tags": ["/root-patch-method"],
+        "responses": {
+          "203": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/root-delete-method": {
+      "delete": {
+        "tags": ["/root-delete-method"],
+        "responses": {
+          "204": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/url-all-methods-only": {
+      "get": {
+        "tags": ["/url-all-methods-only"],
+        "responses": {
+          "default": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": ["/url-all-methods-only"],
+        "responses": {
+          "default": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": ["/url-all-methods-only"],
+        "responses": {
+          "default": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "tags": ["/url-all-methods-only"],
+        "responses": {
+          "default": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": ["/url-all-methods-only"],
+        "responses": {
+          "default": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/url-get-post-methods": {
+      "get": {
+        "tags": ["/url-get-post-methods"],
+        "responses": {
+          "300": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": ["/url-get-post-methods"],
+        "responses": {
+          "301": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/url-put-patch-delete-methods": {
+      "put": {
+        "tags": ["/url-put-patch-delete-methods"],
+        "responses": {
+          "302": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "tags": ["/url-put-patch-delete-methods"],
+        "responses": {
+          "303": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": ["/url-put-patch-delete-methods"],
+        "responses": {
+          "304": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/post-all-children/{path-par}": {
+      "parameters": [
+        {
+          "name": "path-par",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "integer",
+            "example": 12
+          }
+        }
+      ],
+      "post": {
+        "tags": ["/post-all-children"],
+        "summary": "The annotation",
+        "description": "The description.",
+        "parameters": [
+          {
+            "name": "query-par",
+            "in": "query",
+            "style": "deepObject",
+            "explode": true,
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": "value"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "string",
+                "example": "some request"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "anyOf": [
+                    {
+                      "type": "integer",
+                      "example": 12345
+                    },
+                    {
+                      "type": "string",
+                      "example": "some-string"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

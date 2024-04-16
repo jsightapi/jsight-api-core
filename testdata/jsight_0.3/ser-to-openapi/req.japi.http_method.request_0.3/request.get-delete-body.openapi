@@ -1,0 +1,58 @@
+{
+  "components": {
+    "schemas": {
+      "type": {
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "example": "2",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ],
+        "type": "object"
+      }
+    }
+  },
+  "info": {
+    "title": "",
+    "version": ""
+  },
+  "openapi": "3.0.3",
+  "paths": {
+    "/body-should-be-removed": {
+      "delete": {
+        "responses": {
+          "default": {
+            "content": {
+              "*/*": {
+                "schema": {}
+              }
+            },
+            "description": ""
+          }
+        },
+        "tags": [
+          "/body-should-be-removed"
+        ]
+      },
+      "get": {
+        "responses": {
+          "default": {
+            "content": {
+              "*/*": {
+                "schema": {}
+              }
+            },
+            "description": ""
+          }
+        },
+        "tags": [
+          "/body-should-be-removed"
+        ]
+      }
+    }
+  }
+}

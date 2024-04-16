@@ -1,0 +1,73 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "",
+    "version": ""
+  },
+  "paths": {
+    "/notation/in/request/body/": {
+      "put": {
+        "tags": ["/notation"],
+        "requestBody": {
+          "required": true,
+          "content": {
+          }
+        },
+        "responses": {
+          "default": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/notation/in/request/no/body/directive": {
+      "put": {
+        "tags": ["/notation"],
+        "requestBody": {
+          "required": true,
+          "content": {
+          }
+        },
+        "responses": {
+          "default": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/notation/in/response/body/": {
+      "put": {
+        "tags": ["/notation"],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+            }
+          }
+        }
+      }
+    },
+    "/notation/in/response/no/body/directive/": {
+      "put": {
+        "tags": ["/notation"],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+            }
+          }
+        }
+      }
+    }
+  }
+}

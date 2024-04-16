@@ -1,0 +1,265 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "",
+    "version": ""
+  },
+  "paths": {
+    "/request/jschema/shortcuts/value_or/array_element": {
+      "get": {
+        "tags": ["/request"],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "anyOf": [
+                      {
+                        "$ref": "#/components/schemas/stringId"
+                      },
+                      {
+                        "$ref": "#/components/schemas/integerId"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "anyOf": [
+                      {
+                        "$ref": "#/components/schemas/stringId"
+                      },
+                      {
+                        "$ref": "#/components/schemas/integerId"
+                      },
+                      {
+                        "$ref": "#/components/schemas/typeObject"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "202": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "anyOf": [
+                      {
+                        "$ref": "#/components/schemas/stringId"
+                      },
+                      {
+                        "$ref": "#/components/schemas/stringId"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "203": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "anyOf": [
+                      {
+                        "anyOf": [
+                          {
+                            "$ref": "#/components/schemas/stringId"
+                          },
+                          {
+                            "$ref": "#/components/schemas/integerId"
+                          }
+                        ]
+                      },
+                      {
+                        "anyOf": [
+                          {
+                            "$ref": "#/components/schemas/stringId"
+                          },
+                          {
+                            "$ref": "#/components/schemas/integerId"
+                          }
+                        ]
+                      },
+                      {
+                        "anyOf": [
+                          {
+                            "$ref": "#/components/schemas/stringId"
+                          },
+                          {
+                            "$ref": "#/components/schemas/integerId"
+                          },
+                          {
+                            "$ref": "#/components/schemas/typeObject"
+                          }
+                        ]
+                      },
+                      {
+                        "anyOf": [
+                          {
+                            "$ref": "#/components/schemas/stringId"
+                          },
+                          {
+                            "$ref": "#/components/schemas/stringId"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "204": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "anyOf": [
+                      {
+                        "anyOf": [
+                          {
+                            "$ref": "#/components/schemas/stringId"
+                          },
+                          {
+                            "$ref": "#/components/schemas/integerId"
+                          }
+                        ],
+                        "description": "description 1",
+                        "nullable": true
+                      },
+                      {
+                        "anyOf": [
+                          {
+                            "$ref": "#/components/schemas/stringId"
+                          },
+                          {
+                            "$ref": "#/components/schemas/integerId"
+                          }
+                        ],
+                        "description": "description 2"
+                      },
+                      {
+                        "anyOf": [
+                          {
+                            "$ref": "#/components/schemas/stringId"
+                          },
+                          {
+                            "$ref": "#/components/schemas/typeObject"
+                          }
+                        ]
+                      },
+                      {
+                        "anyOf": [
+                          {
+                            "$ref": "#/components/schemas/integerId"
+                          },
+                          {
+                            "$ref": "#/components/schemas/typeObject"
+                          }
+                        ],
+                        "description": "description-3"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "205": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "anyOf": [
+                      {
+                        "anyOf": [
+                          {
+                            "$ref": "#/components/schemas/integerId"
+                          },
+                          {
+                            "$ref": "#/components/schemas/typeObject"
+                          }
+                        ],
+                        "description": "/ @integerId | @typeObject"
+                      },
+                      {
+                        "anyOf": [
+                          {
+                            "$ref": "#/components/schemas/integerId"
+                          },
+                          {
+                            "$ref": "#/components/schemas/typeObject"
+                          }
+                        ],
+                        "description": "/ { or: [ \"@integerId\", \"@typeObject\" ] }"
+                      },
+                      {
+                        "type": "string",
+                        "example": "@typeObject | @integerId",
+                        "description": "\"@typeObject | @integerId\""
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "stringId": {
+        "type": "string",
+        "example": "abc-123"
+      },
+      "integerId": {
+        "type": "integer",
+        "example": 123
+      },
+      "typeObject": {
+        "type": "object",
+        "properties": {
+          "1": {
+            "type": "integer",
+            "example": 1
+          },
+          "2": {
+            "type": "string",
+            "example": "2"
+          }
+        },
+        "required": [
+          "1",
+          "2"
+        ],
+        "additionalProperties": false
+      }
+    }
+  }
+}

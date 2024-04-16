@@ -1,0 +1,89 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "",
+    "version": ""
+  },
+  "paths": {
+    "/request/jschema/rules/allOf": {
+      "get": {
+        "tags": ["/request"],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "foo": { "type": "string", "example": "bar" }
+                  },
+                  "required": ["foo"],
+                  "additionalProperties": false,
+                  "allOf": [{
+                    "$ref": "#/components/schemas/cat"
+                  }]
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "foo": { "type": "string", "example": "bar" }
+                  },
+                  "required": ["foo"],
+                  "additionalProperties": false,
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/cat"
+                    },
+                    {
+                      "$ref": "#/components/schemas/dog"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+
+        }
+      }
+    }
+  },
+
+  "components": {
+    "schemas": {
+      "cat": {
+        "type": "object",
+        "properties": {
+          "catName": {
+            "type": "string",
+            "example": "Tom"
+          }
+        },
+        "required": [
+          "catName"
+        ],
+        "additionalProperties": false
+      },
+      "dog": {
+        "type": "object",
+        "properties": {
+          "dogName": {
+            "type": "string",
+            "example": "Bruno"
+          }
+        },
+        "required": [
+          "dogName"
+        ],
+        "additionalProperties": false
+      }
+    }
+  }
+}

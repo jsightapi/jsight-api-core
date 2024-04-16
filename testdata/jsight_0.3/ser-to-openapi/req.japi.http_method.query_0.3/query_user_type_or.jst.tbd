@@ -1,0 +1,18 @@
+JSIGHT 0.3
+
+# OR in Query's BODY 
+# Not yet implemented!
+
+GET /query/one-or-two
+  Query "one=1"
+    @one | @two
+
+TYPE @one
+  {
+    "one": 1
+  }
+
+TYPE @two
+  {
+    "two": "2"
+  }

@@ -1,0 +1,591 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "",
+    "version": ""
+  },
+  "paths": {
+    "/request/jschema/shortcuts/keyType": {
+      "get": {
+        "tags": ["/request"],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "foo": {
+                      "type": "string",
+                      "example": "bar"
+                    }
+                  },
+                  "required": ["foo"],
+                  "additionalProperties": {
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "example": "str"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "foo": {
+                      "type": "string",
+                      "example": "bar"
+                    }
+                  },
+                  "required": ["foo"],
+                  "additionalProperties": {
+                    "anyOf": [
+                      {
+                        "type": "integer",
+                        "example": 1
+                      },
+                      {
+                        "type": "string",
+                        "example": "str"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "202": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "foo": {
+                      "type": "string",
+                      "example": "bar"
+                    }
+                  },
+                  "required": ["foo"],
+                  "additionalProperties": {
+                    "anyOf": [
+                      {
+                        "type": "integer",
+                        "example": 1
+                      },
+                      {
+                        "type": "string",
+                        "example": "str"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "203": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "foo": {
+                      "type": "string",
+                      "example": "bar"
+                    }
+                  },
+                  "required": ["foo"]
+                }
+              }
+            }
+          },
+          "204": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "foo": {
+                      "type": "string",
+                      "example": "bar"
+                    }
+                  },
+                  "required": ["foo"]
+                }
+              }
+            }
+          },
+          "205": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "foo": {
+                      "type": "string",
+                      "example": "bar"
+                    }
+                  },
+                  "required": ["foo"],
+                  "additionalProperties": {
+                    "anyOf": [
+                      {
+                        "type": "string"
+                      },
+                      {
+                        "type": "integer",
+                        "example": 1
+                      },
+                      {
+                        "type": "string",
+                        "example": "str"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "206": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "foo": {
+                      "type": "string",
+                      "example": "bar"
+                    }
+                  },
+                  "required": ["foo"],
+                  "additionalProperties": {
+                    "anyOf": [
+                      {
+                        "type": "integer"
+                      },
+                      {
+                        "type": "integer",
+                        "example": 1
+                      },
+                      {
+                        "type": "string",
+                        "example": "str"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "207": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "foo": {
+                      "type": "string",
+                      "example": "bar"
+                    }
+                  },
+                  "required": ["foo"],
+                  "additionalProperties": {
+                    "anyOf": [
+                      {
+                        "type": "array",
+                        "items": {}
+                      },
+                      {
+                        "type": "integer",
+                        "example": 1
+                      },
+                      {
+                        "type": "string",
+                        "example": "str"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "208": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "foo": {
+                      "type": "string",
+                      "example": "bar"
+                    }
+                  },
+                  "required": ["foo"],
+                  "additionalProperties": {
+                    "anyOf": [
+                      {
+                        "type": "boolean"
+                      },
+                      {
+                        "type": "integer",
+                        "example": 1
+                      },
+                      {
+                        "type": "string",
+                        "example": "str"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "209": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "foo": {
+                      "type": "string",
+                      "example": "bar"
+                    }
+                  },
+                  "required": ["foo"],
+                  "additionalProperties": {
+                    "anyOf": [
+                      {
+                        "type": "number"
+                      },
+                      {
+                        "type": "integer",
+                        "example": 1
+                      },
+                      {
+                        "type": "string",
+                        "example": "str"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "210": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "foo": {
+                      "type": "string",
+                      "example": "bar"
+                    }
+                  },
+                  "required": ["foo"],
+                  "additionalProperties": {
+                    "anyOf": [
+                      {
+                        "type": "object",
+                        "properties": {},
+                        "additionalProperties": false
+                      },
+                      {
+                        "type": "integer",
+                        "example": 1
+                      },
+                      {
+                        "type": "string",
+                        "example": "str"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "211": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "foo": {
+                      "type": "string",
+                      "example": "bar"
+                    }
+                  },
+                  "required": ["foo"],
+                  "additionalProperties": {
+                    "anyOf": [
+                      {
+                        "enum": [null],
+                        "example": null
+                      },
+                      {
+                        "type": "integer",
+                        "example": 1
+                      },
+                      {
+                        "type": "string",
+                        "example": "str"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "212": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "foo": {
+                      "type": "string",
+                      "example": "bar"
+                    }
+                  },
+                  "required": ["foo"],
+                  "additionalProperties": {
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "format": "date"
+                      },
+                      {
+                        "type": "integer",
+                        "example": 1
+                      },
+                      {
+                        "type": "string",
+                        "example": "str"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "213": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "foo": {
+                      "type": "string",
+                      "example": "bar"
+                    }
+                  },
+                  "required": ["foo"],
+                  "additionalProperties": {
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "format": "date-time"
+                      },
+                      {
+                        "type": "integer",
+                        "example": 1
+                      },
+                      {
+                        "type": "string",
+                        "example": "str"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "214": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "foo": {
+                      "type": "string",
+                      "example": "bar"
+                    }
+                  },
+                  "required": ["foo"],
+                  "additionalProperties": {
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "format": "email"
+                      },
+                      {
+                        "type": "integer",
+                        "example": 1
+                      },
+                      {
+                        "type": "string",
+                        "example": "str"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "215": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "foo": {
+                      "type": "string",
+                      "example": "bar"
+                    }
+                  },
+                  "required": ["foo"],
+                  "additionalProperties": {
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "format": "uri"
+                      },
+                      {
+                        "type": "integer",
+                        "example": 1
+                      },
+                      {
+                        "type": "string",
+                        "example": "str"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "216": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "foo": {
+                      "type": "string",
+                      "example": "bar"
+                    }
+                  },
+                  "required": ["foo"],
+                  "additionalProperties": {
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "format": "uuid"
+                      },
+                      {
+                        "type": "integer",
+                        "example": 1
+                      },
+                      {
+                        "type": "string",
+                        "example": "str"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "217": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "foo": {
+                      "type": "string",
+                      "example": "bar"
+                    }
+                  },
+                  "required": ["foo"],
+                  "additionalProperties": {
+                    "anyOf": [
+                      {
+                        "$ref": "#/components/schemas/cat"
+                      },
+                      {
+                        "type": "integer",
+                        "example": 1
+                      },
+                      {
+                        "type": "string",
+                        "example": "str"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+
+        }
+      }
+    }
+  },
+
+  "components": {
+    "schemas": {
+      "stringId": {
+        "type": "string",
+        "example": "abc-123"
+      },
+      "catEmail": {
+        "type": "string",
+        "example": "abc@cat.com",
+        "pattern": "^[a-z]+@cat.com$"
+      },
+      "dogEmail": {
+        "type": "string",
+        "example": "abc@dog.com",
+        "pattern": "^[a-z]+@dog.com$"
+      },
+      "cat": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "example": "Tom"
+          }
+        },
+        "required": [
+          "name"
+        ],
+        "additionalProperties": false
+      }
+    }
+  }
+}

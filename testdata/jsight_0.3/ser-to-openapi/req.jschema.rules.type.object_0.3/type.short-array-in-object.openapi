@@ -1,0 +1,92 @@
+{
+  "info": {
+    "title": "",
+    "version": ""
+  },
+  "openapi": "3.0.3",
+  "paths": {
+    "/request/jschema/rules/type/short_array_in_object": {
+      "get": {
+        "tags": ["/request"],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "short-array-in-object": {
+                      "type": "array",
+                      "items": {
+                        "anyOf": [
+                          {
+                            "example": "foo",
+                            "type": "string"
+                          },
+                          {
+                            "type": "object",
+                            "description": "first object in short array",
+                            "properties": {
+                              "obj": {
+                                "type": "object",
+                                "description": "second object",
+                                "properties": {
+                                  "str": {
+                                    "example": "abc",
+                                    "type": "string"
+                                  }
+                                },
+                                "additionalProperties": false,
+                                "required": [
+                                  "str"
+                                ]
+                              },
+                              "str": {
+                                "example": "abc",
+                                "type": "string"
+                              }
+                            },
+                            "additionalProperties": false,
+                            "required": [
+                              "str",
+                              "obj"
+                            ]
+                          },
+                          {
+                            "type": "array",
+                            "description": "short-array-in-short-array",
+                            "items": {
+                              "anyOf": [
+                                {
+                                  "example": "abc",
+                                  "type": "string"
+                                },
+                                {
+                                  "example": 123,
+                                  "type": "integer"
+                                },
+                                {
+                                  "example": true,
+                                  "type": "boolean"
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "additionalProperties": false,
+                  "required": [
+                    "short-array-in-object"
+                  ]
+                }
+              }
+            },
+            "description": ""
+          }
+        }
+      }
+    }
+  }
+}

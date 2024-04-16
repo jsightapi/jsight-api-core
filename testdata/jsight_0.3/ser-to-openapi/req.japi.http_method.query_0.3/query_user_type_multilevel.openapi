@@ -1,0 +1,77 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "",
+    "version": ""
+  },
+  "components": {
+    "schemas": {
+      "queryUserTypeParent": {
+        "type": "object",
+        "properties": {
+          "childLevel1": {
+            "$ref": "#/components/schemas/queryUserTypeChildLevel1"
+          }
+        },
+        "required": [
+          "childLevel1"
+        ],
+        "additionalProperties": false
+      },
+      "queryUserTypeChildLevel1": {
+        "type": "object",
+        "properties": {
+          "childLevel2": {
+            "$ref": "#/components/schemas/queryUserTypeChildLevel2"
+          }
+        },
+        "required": [
+          "childLevel2"
+        ],
+        "additionalProperties": false
+      },
+      "queryUserTypeChildLevel2": {
+        "type": "object",
+        "properties": {
+          "foo": {
+            "type": "string",
+            "example": "bar"
+          }
+        },
+        "required": [
+          "foo"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "paths": {
+    "/query/user-type-multi-level": {
+      "get": {
+        "tags": ["/query"],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "childLevel1",
+            "style": "deepObject",
+            "explode": true,
+            "schema": {
+              "$ref": "#/components/schemas/queryUserTypeChildLevel1"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

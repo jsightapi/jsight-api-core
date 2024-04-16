@@ -1,0 +1,37 @@
+JSIGHT 0.3
+
+# Complex structure of the Query's BODY
+
+GET /query/complex
+  Query
+   { // {allOf: ["@queryUserType1", "@queryUserType2"]}
+      "prim1": "prim1 value",
+      "prim2": "@queryUserType1",
+      "arr": [
+        @queryUserTypeAllOf, "1", true, 234
+      ],
+      "obj": {  //  {allOf:["@queryUserType1", "@queryUserType2"]}
+        "queryUserType1": @queryUserType1,
+        "arrInObj": [
+          "1", 2, "thr33"
+        ],
+        "primInObj": false
+      }
+   }
+
+TYPE @queryUserType1
+  {
+    "first": 123,
+    "second": "value"
+  }
+
+TYPE @queryUserType2
+  {
+    "third": 456.78,
+    "fourth": true
+  }
+
+TYPE @queryUserTypeAllOf
+  { //  {allOf: ["@queryUserType1","@queryUserType2"]}
+    "fifth": "5"
+  }

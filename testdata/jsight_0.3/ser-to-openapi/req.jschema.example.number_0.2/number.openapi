@@ -1,0 +1,92 @@
+{
+  "info": {
+    "title": "",
+    "version": ""
+  },
+  "openapi": "3.0.3",
+  "paths": {
+    "/": {
+      "get": {
+        "tags": ["/"],
+        "responses": {
+
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "example": 1,
+                  "type": "integer"
+                }
+              }
+            },
+            "description": ""
+          },
+
+          "201": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "example": 1.1,
+                  "type": "number"
+                }
+              }
+            },
+            "description": ""
+          },
+
+          "202": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "positiveInteger": {
+                      "example": 123,
+                      "type": "integer"
+                    },
+                    "positiveFloat": {
+                      "example": 12.2,
+                      "type": "number"
+                    },
+                    "negativeInteger": {
+                      "example": -23,
+                      "type": "integer"
+                    },
+                    "negativeFloat": {
+                      "example": -987654321.12,
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "positiveInteger",
+                    "positiveFloat",
+                    "negativeInteger",
+                    "negativeFloat"
+                  ],
+                  "type": "object"
+                }
+              }
+            },
+            "description": ""
+          },
+
+          "203": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "example": -500,
+                    "type": "integer"
+                  },
+                  "type": "array"
+                }
+              }
+            },
+            "description": ""
+          }
+
+        }
+      }
+    }
+  }
+}

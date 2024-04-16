@@ -1,0 +1,133 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "",
+    "version": ""
+  },
+  "paths": {
+    "/path-parameter-rules-transfer/3/{par1}/{par2}": {
+      "parameters": [
+        {
+          "name": "par1",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "number",
+            "minimum": -1,
+            "maximum": 1,
+            "example": -0.12
+          }
+        },
+        {
+          "name": "par2",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "enum": ["right", "left"],
+            "example": "right"
+          }
+        }
+      ],
+      "post": {
+        "tags": ["/path-parameter-rules-transfer"],
+        "responses": {
+          "400": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": ["/path-parameter-rules-transfer"],
+        "responses": {
+          "401": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "tags": ["/path-parameter-rules-transfer"],
+        "responses": {
+          "402": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": ["/path-parameter-rules-transfer"],
+        "responses": {
+          "403": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": ["/path-parameter-rules-transfer"],
+        "responses": {
+          "404": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "allOfPathObject": {
+        "additionalProperties": false,
+        "properties": {
+          "par1": {
+            "example": -0.12,
+            "maximum": 1,
+            "minimum": -1,
+            "type": "number"
+          }
+        },
+        "required": [
+          "par1"
+        ],
+        "type": "object"
+      },
+      "pathObject": {
+        "additionalProperties": false,
+        "properties": {
+          "par2": {
+            "enum": [
+              "right",
+              "left"
+            ],
+            "example": "right"
+          }
+        },
+        "required": [
+          "par2"
+        ],
+        "type": "object"
+      }
+    }
+  }
+}

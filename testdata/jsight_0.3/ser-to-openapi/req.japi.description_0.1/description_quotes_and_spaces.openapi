@@ -1,0 +1,58 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "",
+    "version": "",
+    "description": "description\n\"Description\"\n'Description'\n\\\"Description\\\"\nDescriptio n\nD escription\n\\u0020Description\n\\u0044escription"
+  },
+  "paths": {
+    "/url1": {
+      "get": {
+        "tags": ["/url1"],
+      "description": "description",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/url2": {
+      "get": {
+        "tags": ["/url2"],
+      "description": "\"description\"",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/url3": {
+      "get": {
+        "tags": ["/url3"],
+      "description": "\\\"description\\\"",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

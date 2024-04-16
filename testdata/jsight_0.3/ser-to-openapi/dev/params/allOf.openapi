@@ -1,0 +1,87 @@
+{
+  "components": {
+    "schemas": {
+      "baseHeaders": {
+        "additionalProperties": false,
+        "properties": {
+          "h1": {
+            "example": 1,
+            "type": "integer"
+          },
+          "h2": {
+            "example": 2,
+            "type": "integer"
+          }
+        },
+        "required": [
+          "h1",
+          "h2"
+        ],
+        "type": "object"
+      }
+    }
+  },
+  "info": {
+    "title": "",
+    "version": ""
+  },
+  "openapi": "3.0.3",
+  "paths": {
+    "/some": {
+      "post": {
+        "tags": ["/some"],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "h3",
+            "required": true,
+            "schema": {
+              "example": 3,
+              "type": "integer"
+            }
+          },
+          {
+            "in": "header",
+            "name": "h1",
+            "required": true,
+            "schema": {
+              "example": 1,
+              "type": "integer"
+            }
+          },
+          {
+            "in": "header",
+            "name": "h2",
+            "required": true,
+            "schema": {
+              "example": 2,
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "additionalProperties": false,
+                "properties": {},
+                "type": "object"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "default": {
+            "content": {
+              "*/*": {
+                "schema": {}
+              }
+            },
+            "description": ""
+          }
+        }
+      }
+    }
+  }
+}

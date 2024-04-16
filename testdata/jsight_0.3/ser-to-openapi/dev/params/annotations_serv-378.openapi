@@ -1,0 +1,37 @@
+{
+  "info": {
+    "title": "",
+    "version": ""
+  },
+  "openapi": "3.0.3",
+  "paths": {
+    "/necessity/{parameter}": {
+      "parameters": [
+        {
+          "description": "The rule `optional: true` must be ignored for path parameters.",
+          "in": "path",
+          "name": "parameter",
+          "required": true,
+          "schema": {
+            "description": "The rule `optional: true` must be ignored for path parameters.",
+            "example": true,
+            "type": "boolean"
+          }
+        }
+      ],
+      "post": {
+        "tags": ["/necessity"],
+        "responses": {
+          "default": {
+            "content": {
+              "*/*": {
+                "schema": {}
+              }
+            },
+            "description": ""
+          }
+        }
+      }
+    }
+  }
+}

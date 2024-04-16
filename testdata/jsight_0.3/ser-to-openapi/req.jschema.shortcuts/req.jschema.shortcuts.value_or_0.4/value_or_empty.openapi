@@ -1,0 +1,121 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "",
+    "version": ""
+  },
+  "paths": {
+    "/request/jschema/shortcuts/value_or/empty": {
+      "get": {
+        "tags": ["/request"],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "1": {
+                      "anyOf": [
+                        {
+                          "$ref": "#/components/schemas/emptyObject"
+                        },
+                        {
+                          "$ref": "#/components/schemas/emptyArray"
+                        },
+                        {
+                          "$ref": "#/components/schemas/emptyString"
+                        },
+                        {
+                          "$ref": "#/components/schemas/nullType"
+                        }
+                      ]
+                    }
+                  },
+                  "required": [
+                    "1"
+                  ],
+                  "additionalProperties": false
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "anyOf": [
+                      {
+                        "$ref": "#/components/schemas/emptyObject"
+                      },
+                      {
+                        "$ref": "#/components/schemas/emptyArray"
+                      },
+                      {
+                        "$ref": "#/components/schemas/emptyString"
+                      },
+                      {
+                        "$ref": "#/components/schemas/nullType"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "202": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "anyOf": [
+                    {
+                      "$ref": "#/components/schemas/emptyObject"
+                    },
+                    {
+                      "$ref": "#/components/schemas/emptyArray"
+                    },
+                    {
+                      "$ref": "#/components/schemas/emptyString"
+                    },
+                    {
+                      "$ref": "#/components/schemas/nullType"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "emptyArray": {
+        "type": "array",
+        "items": {},
+        "maxItems": 0
+      },
+      "emptyObject": {
+        "type": "object",
+        "properties": {},
+        "additionalProperties": false
+      },
+      "emptyString": {
+        "type": "string",
+        "example": ""
+      },
+      "nullType": {
+        "enum": [
+          null
+        ],
+        "example": null
+      }
+    }
+  }
+}

@@ -1,0 +1,54 @@
+JSIGHT 0.3
+
+TYPE @stringId
+  "abc-123"
+
+TYPE @integerId
+  123
+
+GET /request/jschema/rules/or
+  200
+    "abc" /* {or: [
+        {type: "string" , maxLength: 3},
+    	{type: "integer", min: 0}
+    ]} */
+  201
+    "cat@mail.com" // {or: ["uuid", "email"]}
+  202
+    "cat@mail.com" // {or: [ {type: "uuid"}, {type: "email"} ]}
+  203
+    "cat@mail.com" // {or: [ {type: "null"}, {type: "email"} ]}
+  204
+    "cat@mail.com" // {or: [ {type: "any"}, {type: "email"} ]}
+  205
+    "cat@mail.com" // {type: "mixed", or: ["email", "integer"]}
+  206
+    "cat@mail.com" // {or: ["uuid", "email"], nullable: true} - some text
+  207
+    "abc" // {or: [ "string", "object", "array", "@stringId" ]}
+  208
+    1.2 // {or: [ {type: "decimal", precision: 1}, {type: "object"}, {type: "array"} ]}
+  209
+    123 // {or: [ {type: "@stringId"}, {type: "@integerId"} ]}
+  210
+    123 // {or: ["@stringId", "@integerId"]}
+  211
+    123 // {or: [ "@stringId", {type: "integer"} ]}
+  212
+    @stringId | @integerId
+  213
+      {
+        "foo": "bar" /* {
+                          type: "mixed",
+                          or: [
+                            { type: "string" , maxLength: 3 },
+                            { type: "integer", min: 0 },
+                            "@stringId",
+                            "string",
+                            "email"
+                          ],
+                          optional: true,
+                          nullable: true
+                        } 
+                      */
+      }

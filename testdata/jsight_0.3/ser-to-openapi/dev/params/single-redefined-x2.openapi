@@ -1,0 +1,93 @@
+{
+  "info": {
+    "title": "",
+    "version": ""
+  },
+  "openapi": "3.0.3",
+  "paths": {
+    "/parameter/{id}": {
+      "parameters": [
+        {
+          "in": "path",
+          "name": "id",
+          "required": true,
+          "schema": {
+            "example": 1,
+            "type": "integer"
+          }
+        }
+      ],
+      "get": {
+        "tags": ["/parameter"],
+        "responses": {
+          "default": {
+            "content": {
+              "*/*": {
+                "schema": {}
+              }
+            },
+            "description": ""
+          }
+        }
+      },
+      "post": {
+        "tags": ["/parameter"],
+        "responses": {
+          "302": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "example": "yet another response",
+                  "type": "string"
+                }
+              }
+            },
+            "description": ""
+          }
+        }
+      }
+    },
+    "/parameter/{id}/second/{name}/third/{age}": {
+      "parameters": [
+        {
+          "in": "path",
+          "name": "id",
+          "required": true,
+          "schema": {
+            "example": 1,
+            "type": "integer"
+          }
+        },
+        {
+          "in": "path",
+          "name": "name",
+          "required": true,
+          "schema": {
+            "example": "name",
+            "type": "string"
+          }
+        },
+        {
+          "in": "path",
+          "name": "age",
+          "required": true,
+          "schema": {}
+        }
+      ],
+      "put": {
+        "tags": ["/parameter"],
+        "responses": {
+          "default": {
+            "content": {
+              "*/*": {
+                "schema": {}
+              }
+            },
+            "description": ""
+          }
+        }
+      }
+    }
+  }
+}
+

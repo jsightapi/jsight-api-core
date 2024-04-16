@@ -1,0 +1,21 @@
+JSIGHT 0.3
+
+GET /request/jschema/rules/nullable/enum
+  200
+    "white" // {nullable: false, enum: ["white", "blue", "red"]}
+  201
+    -2.1 // { nullable: false, enum: [-3, -2.1, 1.2, true, false, "-3", "0", "1.2", "string", "true"]}
+  202
+    null // { nullable: false, enum: ["white", "blue", "red", null]}
+  203
+    {
+      "sEnum1": "white", // {nullable: false, enum: ["white", "blue", "red"]}
+      "sEnum2": -2.1, // { nullable: false, enum: [-3, -2.1, 1.2, true, false, "-3", "0", "1.2", "string", "true"]}
+      "sEnum3": null // { nullable: false, enum: ["white", "blue", "red", null]}
+    }
+  204
+    [
+      "white", // {nullable: false, enum: ["white", "blue", "red"]}
+      -2.1, // { nullable: false, enum: [-3, -2.1, 1.2, true, false, "-3", "0", "1.2", "string", "true"]}
+      null // { nullable: false, enum: ["white", "blue", "red", null]}
+    ]

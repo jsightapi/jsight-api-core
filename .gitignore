@@ -1,4 +1,9 @@
 .idea
 *.iml
+.tool-versions
 /build
 /vendor
+/local
+.DS_Store
+*.ACTUAL.json
+*.EXPECTED.json

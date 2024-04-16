@@ -1,0 +1,438 @@
+JSIGHT 0.3
+
+#--------------------- case ------------------------------
+
+POST /case/UPPER/lower
+  200 any
+
+#--------------------- necessity -------------------------
+
+GET /annotation/{parameter}
+  Path
+  {
+    "parameter": "value" // This is the parameter annotation.
+  }
+
+#--------------------- integer ------------------------------
+
+GET /integer-parameter/no-rules/{integer-value}
+  Path
+    {
+      "integer-value": 1
+    }
+  200 empty
+
+GET /integer-parameter/with-rules/{integer-value}
+  Path
+    {
+      "integer-value": 0 /* {
+                              min: -1, 
+                              max: 1,
+                              exclusiveMinimum: true,
+                              exclusiveMaximum: true
+                            } */
+    }
+  200 empty
+
+#--------------------- float ------------------------------
+
+GET /float-parameter/no-rules/{float-value}
+  Path
+    {
+      "float-value": 0.1
+    }
+  200 empty
+
+GET /float-parameter/with-rules/{float-value}
+  Path
+    {
+      "float-value": -0.1 // {nullable: true}
+    }
+  200 empty
+
+#--------------------- decimal ------------------------------
+
+GET /decimal-parameter/with-rules/{decimal-value}
+  Path
+    {
+      "decimal-value": 0.1 // {type: "decimal", precision: 1}
+    }
+  200 empty
+
+#--------------------- string ------------------------------
+
+URL /string-parameter/no-rules/{string-value}
+  GET
+    200 empty
+  Path
+    {
+      "string-value": "some-string"
+    }
+
+URL /string-parameter/with-rules/{string-value}
+  GET
+    200 empty
+  Path
+    {
+      "string-value": "1q2w3e" // {regex: "^\\d[a-z]\\d[a-z]\\d[a-z]$", nullable: true}
+    }
+
+#--------------------- email ------------------------------
+
+URL /email-parameter/no-rules/{email-value}
+  GET
+    200 empty
+  Path
+    {
+      "email-value": "tom@cat.com" // {type: "email"}
+    }
+
+URL /email-parameter/with-rules/{email-value}
+  GET
+    200 empty
+  Path
+    {
+      "email-value": "tom@cat.com" // {type: "email", const: true}
+    }
+
+#--------------------- uri ------------------------------
+
+URL /uri-parameter/no-rules/{uri-value}
+  GET
+    200 empty
+  Path
+    {
+      "uri-value": "http://cat.com" // {type: "uri"}
+    }
+
+URL /uri-parameter/with-rules/{uri-value}
+  GET
+    200 empty
+  Path
+    {
+      "uri-value": "http://wierd.com/.././%2D?query:=; #%fragment/api" // {type: "uri", const: true}
+    }    
+
+URL /uri-parameter/ascii/{uri-value}
+  GET
+    200 empty
+  Path
+    {
+      "uri-value": "https://username@[1080:0:0:0:8:800:200C:417A]:80/ABCDEFGHIJKLMNOPQRSTUVWXYZ?abcdefghijklmnopqrstuvwxyz!$&'()*+,;=#0123456789-._~ " // {type: "uri", const: true}
+    }    
+
+#--------------------- uuid ------------------------------
+
+URL /uuid-parameter/no-rules/{uuid-value}
+  GET
+    200 empty
+  Path
+    {
+      "uuid-value": "123e4567-e89b-12d3-a456-426614174000" // {type: "uuid"}
+    }
+
+URL /uuid-parameter/with-rules/{uuid-value}
+  GET
+    200 empty
+  Path
+    {
+      "uuid-value": "123e4567-e89b-12d3-a456-426614174000" // {type: "uuid", const: true}
+    }
+
+#--------------------- date ------------------------------
+
+URL /date-parameter/no-rules/{date-value}
+  GET
+    200 empty
+  Path
+    {
+      "date-value": "2012-12-31" // {type: "date"}
+    }
+
+URL /date-parameter/with-rules/{date-value}
+  GET
+    200 empty
+  Path
+    {
+      "date-value": "2012-12-31" // {type: "date", nullable: true}
+    }
+
+#--------------------- datetime ------------------------------
+
+URL /datetime-parameter/no-rules/{datetime-value}
+  GET
+    200 empty
+  Path
+    {
+      "datetime-value": "2012-12-31T23:59:59+04:00" // {type: "datetime"}
+    }
+
+URL /datetime-parameter/with-rules/{datetime-value}
+  GET
+    200 empty
+  Path
+    {
+      "datetime-value": "2012-12-31T23:59:59+04:00" // {type: "datetime", const: true}
+    }
+
+#--------------------- boolean ------------------------------
+
+POST /boolean-parameter/no-rules/{boolean-value}
+  Path
+    {
+      "boolean-value": true
+    }
+  200 empty
+
+POST /boolean-parameter/with-rules/{boolean-value}
+  Path
+    {
+      "boolean-value": false // {const: true}
+    }
+  200 empty
+
+#--------------------- null ------------------------------
+
+PATCH /null-parameter/no-rules/{null-value}
+  Path
+    {
+      "null-value": null
+    }
+  200 empty
+
+PATCH /null-parameter/with-rules/{null-value}
+  Path
+    {
+      "null-value": null // {type: "null", const: true}
+    }
+  200 empty
+
+#--------------------- enum ------------------------------
+
+DELETE /enum-parameter/no-rules/{enum-parameter}
+  Path
+  {
+    "enum-parameter": 1.2 /* {enum: [
+                                -3, -2.1, 0, 1.2, 
+                                true, false, null, 
+                                "-3", "0", "1.2", 
+                                "string", "true", "null"
+                             ]} */
+  }
+  200 any
+
+DELETE /enum-parameter/no-string-values/{enum-parameter}
+  Path
+  {
+    "enum-parameter": -3 /* {enum: [
+                                 -3, -2.1, 0, 1.2, 
+                                 true, false, null
+                              ]}*/
+  }
+  200 any
+
+DELETE /enum-parameter/string-ambiguous-values/{enum-parameter}
+  Path
+  {
+    "enum-parameter": "-3" /* {enum: [
+                                 "-3", "-2.1", "0", "1.2", 
+                                 "true", "false", "null"
+                              ]}*/
+  }
+  200 any
+
+DELETE /enum-parameter/empty-string/{enum-parameter}
+  Path
+  {
+    "enum-parameter": "" /* {enum: ["", "string"]} */
+  }
+  200 any
+
+DELETE /enum-parameter/with-rules/{enum-parameter}
+  Path
+  {
+    "enum-parameter": -2.1 /* {nullable: true,
+                               enum: [
+                                 -3, -2.1, 1.2, 
+                                 true, false,
+                                 "-3", "0", "1.2", 
+                                 "string", "true"
+                              ]} */
+  }
+  200 any
+
+#--------------------- object-in-path ------------------------------
+
+URL /object-in-path/simple/{integer-parameter}/{string-parameter}
+  Path
+    @objectInPath
+  PUT
+    200 any
+
+TYPE @objectInPath
+  {
+    "integer-parameter": 21, // {min: 0}
+    "string-parameter": "string" // {minLength: 3}
+  }
+  
+
+
+URL /object-in-path/user-type/{boolean-parameter}/{email-parameter}
+  Path
+    @objectInPath3
+  PUT
+    200 any
+
+TYPE @objectInPath3
+  {
+    "email-parameter": @emailInObject,
+    "boolean-parameter": @booleanInObject
+  }
+
+TYPE @emailInObject
+  "cat@mail.ru" // {type: "email"}
+
+TYPE @booleanInObject
+  true
+
+#--------------------- all-of-in-path ------------------------------
+
+GET /all-of-in-path/simple/{integer-parameter}/{string-parameter}
+  Path
+  { // {allOf: "@integerPath"}
+    "string-parameter": "some-string" // {minLength: 3}
+  }
+  200 any
+
+TYPE @integerPath
+{
+  "integer-parameter": 123 // {min: 0}
+}
+
+GET /all-of-in-path/empty/{integer-parameter}/{string-parameter}
+  Path
+    {} // {allOf: "@allOfPath"}
+  200 any
+
+TYPE @allOfPath
+{
+  "string-parameter": "some-string", // {minLength: 3}
+  "integer-parameter": 123 // {min: 0}
+}
+
+GET /all-of-in-path/user-type/{integer-parameter}/{string-parameter}
+  Path
+    {} // {allOf: "@allOfPath2"}
+  200 any
+
+TYPE @allOfPath2
+{
+  "string-parameter" : @allOfString,
+  "integer-parameter": @allOfInteger
+}
+
+TYPE @allOfString
+  "some-string" // {minLength: 3}
+
+TYPE @allOfInteger
+  1234 // {min: 0}
+
+GET /all-of-in-path/multiple/{integer-parameter}/{string-parameter}
+  Path
+    {} // {allOf: ["@allOfMultiplePath1", "@allOfMultiplePath2"]}
+  200 any
+
+TYPE @allOfMultiplePath1
+{
+  "string-parameter" : @allOfString
+}
+
+TYPE @allOfMultiplePath2
+{
+  "integer-parameter": @allOfInteger
+}
+
+#--------------------- any ------------------------------
+
+POST /any-parameter/no-rules/{any-value}
+  Path
+    {
+      "any-value": true // {type: "any"}
+    }
+  200 empty
+
+POST /any-parameter/with-rules/{any-value}
+  Path
+    {
+      "any-value": 123 // {type: "any", nullable: true}
+    }
+  200 empty
+
+#------------------------ mixed ------------------------------
+
+GET /mixed-parameter/embedded-types/no-rules/{mixed-value}
+  Path
+    {
+      "mixed-value": true // {or: ["boolean", "integer"]}
+    }
+  200 empty
+
+GET /mixed-parameter/embedded-types/with-rules/{mixed-value}
+  Path
+    {
+      "mixed-value": true // {or: ["boolean", "integer"], nullable: true}
+    }
+  200 empty
+
+GET /mixed-parameter/user-types/{mixed-value}
+  Path
+    {
+      "mixed-value": true // {or: ["@booleanRef", "@integerRef"]}
+    }
+  200 empty
+
+TYPE @booleanRef
+  true
+
+TYPE @integerRef
+  123
+
+GET /mixed-parameter/rule-sets/{mixed-value}
+  Path
+    {
+      "mixed-value": true /* {or: [
+                                {type: "integer", min: 0},
+                                {type: "boolean"}]} */
+    }
+  200 empty
+
+GET /mixed-parameter/multiple-reference/{mixed-value}
+  Path
+  {
+    "mixed-value": @booleanRef | @integerRef
+  }
+  200 empty
+
+### TODO: uncomment when the bug is fixed
+GET /mixed-parameter/multiple-reference-object/{mixed-value}
+  Path
+  {
+    "mixed-value": @multipleRefObject
+  }
+  200 empty
+
+TYPE @multipleRefObject
+  @booleanRef | @integerRef
+###
+
+#------------------------- user type --------------------------
+
+GET /user-type-parameter/{integer-value}
+  Path
+    {
+      "integer-value": @integer
+    }
+  200 empty
+
+TYPE @integer
+  1 // {min: -1, max: 1}

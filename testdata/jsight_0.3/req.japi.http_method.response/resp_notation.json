@@ -22,6 +22,32 @@
       "tags": [
         "@cats"
       ],
+      "pathVariables": {
+        "schema": {
+          "content": {
+            "tokenType": "object",
+            "type": "object",
+            "children": [
+              {
+                "key": "id",
+                "tokenType": "string",
+                "type": "any",
+                "scalarValue": "",
+                "rules": [
+                  {
+                    "key": "type",
+                    "tokenType": "string",
+                    "scalarValue": "any"
+                  }
+                ],
+                "optional": false
+              }
+            ],
+            "optional": false
+          },
+          "notation": "jsight"
+        }
+      },
       "responses": [
         {
           "code": "200",

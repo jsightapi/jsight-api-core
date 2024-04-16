@@ -1,0 +1,35 @@
+JSIGHT 0.3
+
+TYPE @stringId
+  "abc-123"
+
+TYPE @integerId
+  123
+
+TYPE @typeObject
+  {
+    "1": 1,
+    "2": "2"
+  }
+
+GET /request/jschema/shortcuts/value_or/complex
+  200
+    {
+      "1": @stringId | @integerId | @typeObject, // {nullable: true, optional: true} - description-1
+      "2": [
+        @stringId | @integerId | @typeObject,
+        @typeObject | @typeObject | @typeObject,  // {nullable: true} - description__2
+        @typeObject | @typeObject | @typeObject  // @typeObject | @typeObject | @typeObject
+      ],
+      "3": [  //  description.  3
+        [ 
+          [
+            @stringId | @integerId | @typeObject // description4
+          ]
+        ],
+        [ 
+          @stringId | @integerId | @typeObject
+        ]
+      ],
+      "4": "@stringId | @integerId | @typeObject" // {regex: "@stringId | @integerId | @typeObject"}
+    }

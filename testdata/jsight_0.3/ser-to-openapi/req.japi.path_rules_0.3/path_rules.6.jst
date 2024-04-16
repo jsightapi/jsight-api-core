@@ -1,0 +1,32 @@
+JSIGHT 0.3
+
+POST /path-parameter-rules-transfer/3/{par1}/{par2}
+  400 any
+
+PUT /path-parameter-rules-transfer/3/{par1}/{par2} # here we set the requirements for par2
+  Path
+    @pathObject
+  401 any
+
+TYPE @pathObject
+  {
+    "par2": "right" // {enum: ["right", "left"]}
+  }
+
+URL /path-parameter-rules-transfer/3/{par1}/{par2}
+  PATCH
+    402 any
+
+GET /path-parameter-rules-transfer/3/{par1}/{par2} # here we set the requirements for par1
+  Path
+    { // {allOf: "@allOfPathObject"}
+    }
+  403 any
+
+TYPE @allOfPathObject
+  {
+    "par1": -0.12 // {min: -1, max: 1}
+  }
+
+DELETE /path-parameter-rules-transfer/3/{par1}/{par2}
+  404 any

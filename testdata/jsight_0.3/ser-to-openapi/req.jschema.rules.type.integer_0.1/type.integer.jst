@@ -1,0 +1,25 @@
+JSIGHT 0.3
+
+GET /request/jschema/rules/type/integer
+  200
+    9 // {type: "integer"}
+  201
+    -9 // {type: "integer"}
+  202
+    0 // {type: "integer"}
+  203
+    18446744073709551615 // {type: "integer"}
+  204
+    -18446744073709551615 // {type: "integer"}
+  205
+    {
+      "zeroInteger": 0, // {type: "integer"}
+      "negativeInteger": -18446744073709551615, // {type: "integer"}
+      "positiveInteger": 18446744073709551615 // {type: "integer"}
+    }
+  206
+    [
+      0, // {type: "integer"}
+      -18446744073709551615, // {type: "integer"}
+      18446744073709551615 // {type: "integer"}
+    ]

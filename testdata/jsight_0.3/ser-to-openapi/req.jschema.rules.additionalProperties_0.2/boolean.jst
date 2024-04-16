@@ -1,0 +1,15 @@
+JSIGHT 0.3
+
+GET /request/jschema/rules/additionalProperties/boolean
+  200
+    {
+      "foo": "bar"
+    }
+  201
+    { // {additionalProperties: false}
+      "foo": "bar"
+    }
+  202
+    { // {additionalProperties: true}
+      "foo": "bar"
+    }

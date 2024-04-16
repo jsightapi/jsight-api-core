@@ -1,0 +1,87 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "",
+    "version": ""
+  },
+  "paths": {
+    "/path-parameter-rules-transfer/1/{par1}": {
+      "parameters": [{
+        "name": "par1",
+        "in": "path",
+        "required": true,
+        "description": "Type integer.",
+        "schema": {
+          "description": "Type integer.",
+          "type": "integer",
+          "example": 1
+        }
+      }],
+      "post": {
+        "tags": ["/path-parameter-rules-transfer"],
+        "responses": {
+          "300": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "tags": ["/path-parameter-rules-transfer"],
+        "responses": {
+          "301": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": ["/path-parameter-rules-transfer"],
+        "responses": {
+          "302": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": ["/path-parameter-rules-transfer"],
+        "responses": {
+          "303": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": ["/path-parameter-rules-transfer"],
+        "responses": {
+          "304": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

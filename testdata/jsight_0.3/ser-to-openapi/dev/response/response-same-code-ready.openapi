@@ -1,0 +1,116 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Same-code responses",
+    "version": "1"
+  },
+  "paths": {
+    "/": {
+      "get": {
+        "tags": ["/"],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {
+              "h1": {
+                "required": true,
+                "schema": {
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "description": "200-2 headers body root annotation: h1-1 local annotation",
+                      "example": "h1-1"
+                    },
+                    {
+                      "allOf": [
+                        {
+                          "$ref": "#/components/schemas/header1"
+                        }
+                      ],
+                      "description": "200-3 headers body root annotation: h1-2 local annotation"
+                    }
+                  ]
+                }
+              },
+              "h2": {
+                "required": true,
+                "schema": {
+                  "anyOf": [
+                    {
+                      "description": "200-2 headers body root annotation: h2-1 local annotation",
+                      "type": "object",
+                      "properties": {
+                        "h2p1": {
+                          "type": "string",
+                          "example": "h2p1"
+                        }
+                      },
+                      "required": [
+                        "h2p1"
+                      ],
+                      "additionalProperties": false
+                    },
+                    {
+                      "type": "integer",
+                      "example": 2,
+                      "description": "200-3 headers body root annotation: h2-2 local annotation"
+                    }
+                  ]
+                }
+              },
+              "h3": {
+                "description": "h3 local annotation",
+                "required": true,
+                "schema": {
+                  "type": "string",
+                  "example": "header three",
+                  "description": "h3 local annotation"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "anyOf": [
+                    {
+                      "description": "200-1 directive annotation: 200-1 body root annotation",
+                      "type": "string",
+                      "example": "ok"
+                    },
+                    {
+                      "allOf": [
+                        {
+                          "$ref": "#/components/schemas/body"
+                        }
+                      ],
+                      "description": "200-3 directive annotation: 200-3 body root annotation?"
+                    }
+                  ]
+                }
+              },
+              "*/*": {
+                "schema": {
+                  "description": "200-2 directive annotation"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "body": {
+        "type": "object",
+        "properties": {},
+        "additionalProperties": false
+      },
+      "header1": {
+        "type": "object",
+        "properties": {},
+        "additionalProperties": false
+      }
+    }
+  }
+}

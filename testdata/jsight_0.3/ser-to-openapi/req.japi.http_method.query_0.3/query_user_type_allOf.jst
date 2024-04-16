@@ -1,0 +1,48 @@
+JSIGHT 0.3
+
+# RULE "allOf" in USER TYPES in Query
+
+GET /query/one-user-type
+  Query "first=1&second=value"
+    { // {allOf: ["@queryUserType1"]}
+    }
+
+GET /query/one-user-type-add-fields
+  Query "first=1&second=value&addField=addFieldValue"
+    { // {allOf: "@queryUserType1"}
+      "addField": "addFieldValue"
+    }
+
+GET /query/two-user-types
+  Query "first=1&second=value&third=456.78&fourth=true"
+    { // {allOf: ["@queryUserType1", "@queryUserType2"]}
+    }
+
+GET /query/two-user-types-add-fields
+  Query "first=1&second=value&third=456.78&fourth=true&addField=addFieldValue"
+    { // {allOf: ["@queryUserType1", "@queryUserType2"]}
+      "addField": "addFieldValue"
+    }
+
+GET /query/one-user-type-with-allOf-inside-add-fields
+  Query "first=1&second=value&third=456.78&fourth=true&fifth=5&addField=addFieldValue"
+    { // {allOf: "@queryUserTypeAllOf"}
+      "addField": "addFieldValue"
+    }
+ 
+TYPE @queryUserType1
+  {
+    "first": 123,
+    "second": "value"
+  }
+
+TYPE @queryUserType2
+  {
+    "third": 456.78,
+    "fourth": true
+  }
+
+TYPE @queryUserTypeAllOf
+  { //  {allOf: ["@queryUserType1","@queryUserType2"]}
+    "fifth": "5"
+  }

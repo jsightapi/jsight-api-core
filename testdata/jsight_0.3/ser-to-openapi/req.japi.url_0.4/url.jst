@@ -1,0 +1,22 @@
+JSIGHT 0.3
+
+URL /
+  GET
+    300
+      "some response"
+
+URL /scary/ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!$&'()*+,;=#0123456789-._~%20
+  POST
+    301
+      "another response"
+
+URL /parameter/{id}
+  POST
+    302
+      "yet another response"
+
+URL /json-rpc # Must not be shown in OpenAPI document
+  Protocol json-rpc-2.0
+  Method helloWorld
+    Result
+      "Hello, World!"

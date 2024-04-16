@@ -1,0 +1,38 @@
+JSIGHT 0.3
+
+# "Empty" Query's BODY
+
+GET /query/body-empty-primitive
+  Query ""
+    ""
+
+GET /query/body-empty-object
+  Query ""
+    {}
+
+GET /query/body-empty-array
+  Query ""
+    []
+
+# "Empty" user types
+
+GET /query/user-type-empty-primitive
+  Query ""
+    @queryUserTypeEmptyPrimitive
+
+TYPE @queryUserTypeEmptyPrimitive
+  ""
+
+GET /query/user-type-empty-object
+  Query ""
+    @queryUserTypeEmptyObject
+
+TYPE @queryUserTypeEmptyObject
+  {}
+
+GET /query/user-type-empty-array
+  Query ""
+    @queryUserTypeEmptyArray
+
+TYPE @queryUserTypeEmptyArray
+  []

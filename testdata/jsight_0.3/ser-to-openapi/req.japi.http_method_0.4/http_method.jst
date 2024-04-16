@@ -1,0 +1,69 @@
+JSIGHT 0.3
+
+GET    /root-get-method-only
+POST   /root-post-method-only
+PUT    /root-put-method-only
+PATCH  /root-patch-method-only
+DELETE /root-delete-method-only
+
+#--------------------------------------------------
+
+GET /root-get-method
+  200 any
+
+POST /root-post-method
+  201 any
+
+PUT /root-put-method
+  202 any
+
+PATCH /root-patch-method
+  203 any
+
+DELETE /root-delete-method
+  204 any
+
+#--------------------------------------------------
+
+URL /url-all-methods-only
+  GET
+  POST
+  PUT
+  PATCH
+  DELETE
+
+#--------------------------------------------------
+
+URL /url-get-post-methods
+  GET
+    300 any
+  POST
+    301 any
+
+URL /url-put-patch-delete-methods
+  PUT
+    302 any
+  PATCH
+    303 any
+  DELETE
+    304 any
+
+#--------------------------------------------------
+
+POST /post-all-children/{path-par} // The annotation
+  Description
+    The description.
+  Path
+    {
+      "path-par": 12
+    }
+  Query
+    {
+      "query-par": "value"
+    }
+  Request
+    "some request"
+  200
+    12345
+  200
+    "some-string"

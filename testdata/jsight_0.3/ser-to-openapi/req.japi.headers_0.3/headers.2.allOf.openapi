@@ -1,0 +1,449 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "",
+    "version": ""
+  },
+  "paths": {
+    "/request/allOf": {
+      "post": {
+        "tags": ["/request"],
+        "parameters": [
+          {
+            "name": "Simple",
+            "in": "header",
+            "schema": {
+              "type": "string",
+              "example": "value"
+            }
+          },
+          {
+            "name": "Two-Words",
+            "in": "header",
+            "schema": {
+              "type": "string",
+              "example": "value"
+            }
+          },
+          {
+            "name": "Regex",
+            "in": "header",
+            "schema": {
+              "type": "string",
+              "pattern": "[A-C]+\\d+",
+              "example": "ABC12"
+            }
+          },
+          {
+            "name": "lower-case",
+            "in": "header",
+            "schema": {
+              "type": "string",
+              "enum": ["value"],
+              "example": "value"
+            }
+          },
+          {
+            "name": "UPPER-CASE",
+            "in": "header",
+            "schema": {
+              "type": "string",
+              "enum": ["value"],
+              "example": "value"
+            }
+          },
+          {
+            "name": "Required",
+            "in": "header",
+            "required": true,
+            "description": "Required",
+            "schema": {
+              "type": "string",
+              "description": "Required",
+              "example": "value"
+            }
+          },
+          {
+            "name": "Const",
+            "in": "header",
+            "schema": {
+              "type": "string",
+              "enum": ["HELLO"],
+              "example": "HELLO"
+            }
+          },
+          {
+            "name": "Min-Length",
+            "in": "header",
+            "schema": {
+              "type": "string",
+              "minLength": 3,
+              "example": "value"
+            }
+          },
+          {
+            "name": "Integer",
+            "in": "header",
+            "schema": {
+              "type": "integer",
+              "example": 1234567
+            }
+          },
+          {
+            "name": "Boolean",
+            "in": "header",
+            "schema": {
+              "type": "boolean",
+              "example": true
+            }
+          },
+          {
+            "name": "Float",
+            "in": "header",
+            "schema": {
+              "type": "number",
+              "example": 1.11239
+            }
+          },
+          {
+            "name": "Null",
+            "in": "header",
+            "schema": {
+              "enum": [null],
+              "example": null
+            }
+          },
+          {
+            "name": "Enum",
+            "in": "header",
+            "schema": {
+              "enum": ["one", "1", 2, true],
+              "example": "one"
+            }
+          },
+          {
+            "name": "Ascii-20-2f",
+            "in": "header",
+            "schema": {
+              "type": "string",
+              "enum": ["! \"#$%&'()*+,-./"],
+              "example": "! \"#$%&'()*+,-./"
+            }
+          },
+          {
+            "name": "Ascii-30-3f",
+            "in": "header",
+            "schema": {
+              "type": "string",
+              "enum": ["0123456789:;<=>?"],
+              "example": "0123456789:;<=>?"
+            }
+          },
+          {
+            "name": "Ascii-40-4f",
+            "in": "header",
+            "schema": {
+              "type": "string",
+              "enum": ["@ABCDEFGHIJKLMNO"],
+              "example": "@ABCDEFGHIJKLMNO"
+            }
+          },
+          {
+            "name": "Ascii-50-5f",
+            "in": "header",
+            "schema": {
+              "type": "string",
+              "enum": ["PQRSTUVWXYZ[\\]^_"],
+              "example": "PQRSTUVWXYZ[\\]^_"
+            }
+          },
+          {
+            "name": "Ascii-60-6f",
+            "in": "header",
+            "schema": {
+              "type": "string",
+              "enum": ["`abcdefghijklmno"],
+              "example": "`abcdefghijklmno"
+            }
+          },
+          {
+            "name": "Ascii-70-7e",
+            "in": "header",
+            "schema": {
+              "type": "string",
+              "enum": ["pqrstuvwxyz{|}~"],
+              "example": "pqrstuvwxyz{|}~"
+            }
+          },
+          {
+            "name": "Ascii-Tab",
+            "in": "header",
+            "schema": {
+              "type": "string",
+              "enum": ["tab-\t-tab-\t-tab"],
+              "example": "tab-\t-tab-\t-tab"
+            }
+          },
+          {
+            "name": "Uri",
+            "in": "header",
+            "schema": {
+              "type": "string",
+              "format": "uri",
+              "example": "https://cats.com/api"
+            }
+          },
+          {
+            "name": "Email",
+            "in": "header",
+            "schema": {
+              "type": "string",
+              "format": "email",
+              "example": "cat@email.com"
+            }
+          },
+          {
+            "name": "Any",
+            "in": "header",
+            "schema": {
+              "example": true
+            }
+          },
+          {
+            "name": "J-Date",
+            "in": "header",
+            "schema": {
+              "type": "string",
+              "format": "date",
+              "example": "2022-01-01"
+            }
+          },
+          {
+            "name": "Datetime",
+            "in": "header",
+            "schema": {
+              "type": "string",
+              "format": "date-time",
+              "example": "2022-01-01T00:00:00Z"
+            }
+          },
+          {
+            "name": "Usertype-Date",
+            "in": "header",
+            "schema": {
+              "$ref": "#/components/schemas/date"
+            }
+          },
+          {
+            "name": "Date-Or-Datetime",
+            "in": "header",
+            "schema": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/date"
+                },
+                {
+                  "$ref": "#/components/schemas/datetime"
+                }
+              ]
+            }
+          },
+          {
+            "name": "Uuid-Or-Email",
+            "in": "header",
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "string",
+                  "format": "email"
+                }
+              ],
+              "example": "cat@mail.com"
+            }
+          },
+          {
+            "name": "Uuid",
+            "in": "header",
+            "schema": {
+              "type": "string",
+              "format": "uuid",
+              "example": "00112233-4455-6677-8899-aabbccddeeff"
+            }
+          },
+          {
+            "name": "Date-Or-Email-Or-Datetime",
+            "in": "header",
+            "schema": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/date"
+                },
+                {
+                  "type": "string",
+                  "format": "email"
+                },
+                {
+                  "$ref": "#/components/schemas/datetime"
+                }
+              ],
+              "example": "a@a.com"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "*/*": {
+              "schema": {}
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "date": {
+        "type": "string",
+        "format": "date",
+        "example": "2022-01-01"
+      },
+      "datetime": {
+        "type": "string",
+        "format": "date-time",
+        "example": "2022-01-01T00:00:00Z"
+      },
+      "additionalHeaders": {
+        "type": "object",
+        "properties": {
+          "Null": {
+            "enum": [null],
+            "example": null
+          },
+          "Enum": {
+            "enum": ["one", "1", 2, true],
+            "example": "one"
+          },
+          "Ascii-20-2f": {
+            "type": "string",
+            "enum": ["! \"#$%&'()*+,-./"],
+            "example": "! \"#$%&'()*+,-./"
+          },
+          "Ascii-30-3f": {
+            "type": "string",
+            "enum": ["0123456789:;<=>?"],
+            "example": "0123456789:;<=>?"
+          },
+          "Ascii-40-4f": {
+            "type": "string",
+            "enum": ["@ABCDEFGHIJKLMNO"],
+            "example": "@ABCDEFGHIJKLMNO"
+          },
+          "Ascii-50-5f": {
+            "type": "string",
+            "enum": ["PQRSTUVWXYZ[\\]^_"],
+            "example": "PQRSTUVWXYZ[\\]^_"
+          },
+          "Ascii-60-6f": {
+            "type": "string",
+            "enum": ["`abcdefghijklmno"],
+            "example": "`abcdefghijklmno"
+          },
+          "Ascii-70-7e": {
+            "type": "string",
+            "enum": ["pqrstuvwxyz{|}~"],
+            "example": "pqrstuvwxyz{|}~"
+          },
+          "Ascii-Tab": {
+            "type": "string",
+            "enum": ["tab-\t-tab-\t-tab"],
+            "example": "tab-\t-tab-\t-tab"
+          },
+          "Uri": {
+            "type": "string",
+            "format": "uri",
+            "example": "https://cats.com/api"
+          },
+          "Email": {
+            "type": "string",
+            "format": "email",
+            "example": "cat@email.com"
+          },
+          "Any": {
+            "example": true
+          },
+          "J-Date": {
+            "type": "string",
+            "format": "date",
+            "example": "2022-01-01"
+          },
+          "Datetime": {
+            "type": "string",
+            "format": "date-time",
+            "example": "2022-01-01T00:00:00Z"
+          },
+          "Usertype-Date": {
+            "$ref": "#/components/schemas/date"
+          },
+          "Date-Or-Datetime": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/date"
+              },
+              {
+                "$ref": "#/components/schemas/datetime"
+              }
+            ]
+          },
+          "Uuid-Or-Email": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "uuid"
+              },
+              {
+                "type": "string",
+                "format": "email"
+              }
+            ],
+            "example": "cat@mail.com"
+          },
+          "Uuid": {
+            "type": "string",
+            "format": "uuid",
+            "example": "00112233-4455-6677-8899-aabbccddeeff"
+          },
+          "Date-Or-Email-Or-Datetime": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/date"
+              },
+              {
+                "type": "string",
+                "format": "email"
+              },
+              {
+                "$ref": "#/components/schemas/datetime"
+              }
+            ],
+            "example": "a@a.com"
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}

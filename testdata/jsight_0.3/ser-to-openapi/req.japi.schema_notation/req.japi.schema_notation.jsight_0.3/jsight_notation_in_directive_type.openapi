@@ -1,0 +1,101 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "",
+    "version": ""
+  },
+  "components": {
+    "schemas": {
+      "typeWithJSightAnnotation_object": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "integer",
+            "example": 1
+          }
+        },
+        "required": ["id"]
+      },
+      "typeWithJSightAnnotation_string": {
+        "type": "string",
+        "example": "just a string"
+      },
+      "typeWithJSightAnnotation_float": {
+        "type": "number",
+        "example": 1.2345
+      },
+      "typeWithJSightAnnotation_array": {
+        "type": "array",
+        "items": {
+          "anyOf": [
+            {
+              "type": "integer",
+              "example": 1
+            },
+            {
+              "type": "integer",
+              "example": 2
+            },
+            {
+              "type": "integer",
+              "example": 3
+            }
+          ]
+        }
+      },
+      "typeWithJSightAnnotation_null": {
+        "enum": [
+          null
+        ],
+        "example": null
+      }
+    }
+  },
+  "paths": {
+    "/resource/with/types": {
+      "get": {
+        "tags": ["/resource"],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "anyOf": [
+                    {
+                      "$ref": "#/components/schemas/typeWithJSightAnnotation_object"
+                    },
+                    {
+                      "$ref": "#/components/schemas/typeWithJSightAnnotation_string"
+                    },
+                    {
+                      "$ref": "#/components/schemas/typeWithJSightAnnotation_float"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "anyOf": [
+                    {
+                      "$ref": "#/components/schemas/typeWithJSightAnnotation_array"
+                    },
+                    {
+                      "$ref": "#/components/schemas/typeWithJSightAnnotation_null"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

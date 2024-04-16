@@ -1,0 +1,50 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "",
+    "version": ""
+  },
+  "paths": {
+    "/empty-object": {
+      "get": {
+        "tags": ["/empty-object"],
+        "responses": {
+          "default": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/not-empty-object": {
+      "get": {
+        "tags": ["/not-empty-object"],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "q1",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": "v1"
+            }
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

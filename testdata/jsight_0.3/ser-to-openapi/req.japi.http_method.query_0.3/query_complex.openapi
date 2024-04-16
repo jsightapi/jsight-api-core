@@ -1,0 +1,234 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "",
+    "version": ""
+  },
+  "components": {
+    "schemas": {
+      "queryUserType1": {
+        "type": "object",
+        "properties": {
+          "first": {
+            "type": "integer",
+            "example": 123
+          },
+          "second": {
+            "type": "string",
+            "example": "value"
+          }
+        },
+        "required": [
+          "first",
+          "second"
+        ],
+        "additionalProperties": false
+      },
+      "queryUserType2": {
+        "type": "object",
+        "properties": {
+          "third": {
+            "type": "number",
+            "example": 456.78
+          },
+          "fourth": {
+            "type": "boolean",
+            "example": true
+          }
+        },
+        "required": [
+          "third",
+          "fourth"
+        ],
+        "additionalProperties": false
+      },
+      "queryUserTypeAllOf": {
+        "type": "object",
+        "properties": {
+          "fifth": {
+            "type": "string",
+            "example": "5"
+          }
+        },
+        "required": [
+          "fifth"
+        ],
+        "additionalProperties": false,
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/queryUserType1"
+          },
+          {
+            "$ref": "#/components/schemas/queryUserType2"
+          }
+        ]
+      }
+    }
+  },
+  "paths": {
+    "/query/complex": {
+      "get": {
+        "tags": ["/query"],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "prim1",
+            "style": "deepObject",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "prim1 value"
+            },
+            "required": true
+          },
+          {
+            "in": "query",
+            "name": "prim2",
+            "style": "deepObject",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "@queryUserType1"
+            },
+            "required": true
+          },
+          {
+            "in": "query",
+            "name": "arr",
+            "style": "deepObject",
+            "explode": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "anyOf": [
+                  {
+                    "$ref": "#/components/schemas/queryUserTypeAllOf"
+                  },
+                  {
+                    "type": "string",
+                    "example": "1"
+                  },
+                  {
+                    "type": "boolean",
+                    "example": true
+                  },
+                  {
+                    "type": "integer",
+                    "example": 234
+                  }
+                ]
+              }
+            },
+            "required": true
+          },
+          {
+            "in": "query",
+            "name": "obj",
+            "required": true,
+            "style": "deepObject",
+            "explode": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "queryUserType1": {
+                  "$ref": "#/components/schemas/queryUserType1"
+                },
+                "arrInObj": {
+                  "type": "array",
+                  "items": {
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "example": "1"
+                      },
+                      {
+                        "type": "integer",
+                        "example": 2
+                      },
+                      {
+                        "type": "string",
+                        "example": "thr33"
+                      }
+                    ]
+                  }
+                },
+                "primInObj": {
+                  "type": "boolean",
+                  "example": false
+                }
+              },
+              "required": [
+                "queryUserType1",
+                "arrInObj",
+                "primInObj"
+              ],
+              "additionalProperties": false,
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/queryUserType1"
+                },
+                {
+                  "$ref": "#/components/schemas/queryUserType2"
+                }
+              ]
+            }
+          },
+          {
+            "in": "query",
+            "name": "first",
+            "style": "deepObject",
+            "explode": true,
+            "schema": {
+              "type": "integer",
+              "example": 123
+            },
+            "required": true
+          },
+          {
+            "in": "query",
+            "name": "second",
+            "style": "deepObject",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "value"
+            },
+            "required": true
+          },
+          {
+            "in": "query",
+            "name": "third",
+            "style": "deepObject",
+            "explode": true,
+            "schema": {
+              "type": "number",
+              "example": 456.78
+            },
+            "required": true
+          },
+          {
+            "in": "query",
+            "name": "fourth",
+            "style": "deepObject",
+            "explode": true,
+            "schema": {
+              "type": "boolean",
+              "example": true
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,11 @@
+JSIGHT 0.3
+
+GET /request/jschema/rules/type/object
+  200
+    {} // { type: "object" }
+  201
+    1.2 // {or: [ {type: "decimal", precision: 1}, {type: "object"}, {type: "array"} ]}
+  202
+    { // { type: "object" }
+	  "str": "abc"
+	}

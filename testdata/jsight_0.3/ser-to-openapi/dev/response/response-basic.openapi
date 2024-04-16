@@ -1,0 +1,67 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "",
+    "version": ""
+  },
+  "paths": {
+    "/": {
+      "get": {
+        "tags": ["/"],
+        "responses": {
+          "200": {
+            "description": "Annotation 200 - boolean",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "boolean",
+                  "example": false
+                }
+              }
+            }
+          },
+          "301": {
+            "description": "Body only",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string",
+                  "example": "Body"
+                }
+              }
+            }
+          },
+          "302": {
+            "description": "Body and Headers",
+            "headers": {
+              "X-Header": {
+                "required": true,
+                "schema": {
+                  "type": "string",
+                  "example": "header-value"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "foo": {
+                      "type": "string",
+                      "example": "bar"
+                    }
+                  },
+                  "required": [
+                    "foo"
+                  ],
+                  "additionalProperties": false
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

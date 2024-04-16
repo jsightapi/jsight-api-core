@@ -1,0 +1,45 @@
+JSIGHT 0.3
+
+# Different QueryExample as Query's PARAMETER
+
+GET /query-no-example
+  Query
+    {
+      "page": 1
+    }
+
+GET /query-contradicting-example
+  Query "something=else&and=0&ther[thing]=too&123"
+    {
+      "offset": 500
+    }
+
+GET /query-long-example
+  Query "tabs:			ascii: !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~ spec:¹²³$‰↑∞←→—≠€®™ѣѵіѳ′[]≈§°£₽„“”‘’×©↓−«»…´“„•ẞˇ¢·¸¨‘⌀⌘˘˚ѢѴІѲ″{}±–〉〈¿ˆ¼⅓½¡ Cyrillic: йцукенгшщзФЫВАПРОЛДЖЭ Chinese: 你好世界！"
+    {
+      "one": 1
+    }
+
+GET /query-example-htmlFormEncoded
+  Query "id=123" htmlFormEncoded
+    {
+      "id": 123
+    }
+
+GET /query-no-example-htmlFormEncoded
+  Query htmlFormEncoded
+    {
+      "id": 123
+    }
+
+GET /query-example-no-format
+  Query "no format example here, btw here's a json array with object: [{\"abc\": 123}]" noFormat
+    {
+      "name": "John"
+    }
+
+GET /query-no-example-no-format
+  Query noFormat
+    {
+      "name": "John"
+    }
