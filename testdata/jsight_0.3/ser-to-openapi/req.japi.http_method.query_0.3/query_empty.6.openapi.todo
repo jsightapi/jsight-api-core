@@ -1,0 +1,32 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "",
+    "version": ""
+  },
+  "components": {
+    "schemas": {
+      "queryUserTypeEmptyArray": {
+        "type": "array",
+        "items": {}
+      }
+    }
+  },
+  "paths": {
+    "/query/user-type-empty-array": {
+      "get": {
+        "tags": ["/query"],
+        "responses": {
+          "default": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
