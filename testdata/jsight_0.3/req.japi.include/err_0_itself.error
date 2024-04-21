@@ -1,4 +1,4 @@
-file dependency recursion is detected
+file dependency recursion is detected, learn more about the INCLUDE directive here: https://jsight.io/docs/jsight-api-0-3#directive-include
 mixins/itself.jst:1
 mixins/itself.jst:1
 err_0_itself.jst:3

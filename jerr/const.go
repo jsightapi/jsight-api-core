@@ -73,8 +73,8 @@ const (
 	WrongDescriptionContext                             = "wrong description context"
 	MethodIsAlreadyDefinedInResource                    = "this method has already been defined in the resource"
 	UndefinedRequestBodyForResource                     = "undefined request body for resource"
-	RecursionIsProhibited                               = "file dependency recursion is detected"
+	RecursionIsProhibited                               = "file dependency recursion is detected, learn more about the INCLUDE directive here: https://jsight.io/docs/jsight-api-0-3#directive-include"
 	UserTypeIsNotAnObject                               = "the user type is not an object"
 	ProcessTypeErr                                      = "process type"
-	FailedToComputeScannersHash                         = "failed to compute scanner's hash"
+	FailedToComputeScannersHash                         = "failed to compute the scanner's hash"
 )
