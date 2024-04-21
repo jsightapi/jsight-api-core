@@ -56,8 +56,8 @@ const (
 	UnknownNotation  = "unknown notation"
 
 	RequiredParameterNotSpecified         = "required parameter(s) not specified"
-	ParametersAreForbiddenForTheDirective = "parameters are forbidden for the directive"
-	ParametersIsAlreadyDefined            = "the parameter is already defined for the directive"
+	ParametersAreForbiddenForTheDirective = "the directive should not have parameters in this case"
+	ParametersIsAlreadyDefined            = "the parameter %q is already defined for the directive"
 
 	AnnotationIsForbiddenForTheDirective                = "annotation is forbidden for the directive"
 	NotUniqueDirective                                  = "not a unique directive"
