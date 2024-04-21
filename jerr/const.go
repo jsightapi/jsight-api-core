@@ -59,8 +59,8 @@ const (
 	ParametersAreForbiddenForTheDirective = "the directive should not have parameters in this case"
 	ParametersIsAlreadyDefined            = "the parameter %q is already defined for the directive"
 
-	AnnotationIsForbiddenForTheDirective                = "annotation is forbidden for the directive"
-	NotUniqueDirective                                  = "not a unique directive"
+	AnnotationIsForbiddenForTheDirective                = "the annotation is not allowed for this directive"
+	NotUniqueDirective                                  = "the directive has already been defined"
 	NotUniquePath                                       = "non-unique path %q in the URL directive"
 	BodyMustBeObject                                    = "body must be object"
 	CannotUseTheTypeAndSchemaNotationParametersTogether = "cannot use the Type and SchemaNotation parameters together"
