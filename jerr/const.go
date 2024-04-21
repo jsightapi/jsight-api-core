@@ -40,10 +40,10 @@ const (
 	PathParameterIsDuplicatedInThePath = "the parameter of the path is duplicated"
 	PathsAreSimilar                    = "the ambiguous paths are not allowed: \"/%s/{%s}\", \"/%s\", see the details here: https://jsight.io/docs/jsight-api-0-3#parameter-path"
 
-	IncludeRootErr      = "mustn't starts with '/'"
-	IncludeUpErr        = "mustn't include '..' or '.'"
-	IncludeSeparatorErr = "the separator for directories and files should be the symbol '/'"
-	IncludeDirectiveErr = "the directive not allowed in included file"
+	IncludeRootErr      = "cannot not start with `/`"
+	IncludeUpErr        = "cannot contain `..` or `.`"
+	IncludeSeparatorErr = "use the symbol `/` as a separator for directories"
+	IncludeDirectiveErr = "the directive is not allowed in included files:"
 
 	UnsupportedVersion                = "unsupported version of JSIGHT"
 	DirectiveJSIGHTShouldBeTheFirst   = "directive JSIGHT should be the first"

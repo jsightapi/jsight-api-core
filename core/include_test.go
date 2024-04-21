@@ -64,20 +64,20 @@ func Test_validateIncludeFileName(t *testing.T) {
 
 	t.Run("negative", func(t *testing.T) {
 		cc := map[string]string{
-			"/foo/bar":   "mustn't starts with '/'",
-			"/./bar":     "mustn't starts with '/'",
-			"/../bar":    "mustn't starts with '/'",
-			"./foo/bar":  "mustn't include '..' or '.'",
-			"../foo/bar": "mustn't include '..' or '.'",
-			"foo/.":      "mustn't include '..' or '.'",
-			"foo/./":     "mustn't include '..' or '.'",
-			"foo/./bar":  "mustn't include '..' or '.'",
-			"foo/..":     "mustn't include '..' or '.'",
-			"foo/../":    "mustn't include '..' or '.'",
-			"foo/../bar": "mustn't include '..' or '.'",
-			"foo/./bar/../fizz/../buzz/./fizzbuzz/..": "mustn't include '..' or '.'",
-			"foo\\bar":           "the separator for directories and files should be the symbol '/'",
-			"foo/bar\\fizz/buzz": "the separator for directories and files should be the symbol '/'",
+			"/foo/bar":   "cannot not start with `/`",
+			"/./bar":     "cannot not start with `/`",
+			"/../bar":    "cannot not start with `/`",
+			"./foo/bar":  "cannot contain `..` or `.`",
+			"../foo/bar": "cannot contain `..` or `.`",
+			"foo/.":      "cannot contain `..` or `.`",
+			"foo/./":     "cannot contain `..` or `.`",
+			"foo/./bar":  "cannot contain `..` or `.`",
+			"foo/..":     "cannot contain `..` or `.`",
+			"foo/../":    "cannot contain `..` or `.`",
+			"foo/../bar": "cannot contain `..` or `.`",
+			"foo/./bar/../fizz/../buzz/./fizzbuzz/..": "cannot contain `..` or `.`",
+			"foo\\bar":           "use the symbol `/` as a separator for directories",
+			"foo/bar\\fizz/buzz": "use the symbol `/` as a separator for directories",
 		}
 
 		for given, expected := range cc {
