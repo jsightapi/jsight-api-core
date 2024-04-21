@@ -18,12 +18,12 @@ const (
 	ProtocolNotFound     = `the directive "Protocol" not found`
 	ProtocolParameterErr = `the parameter value have to be "json-rpc-2.0"`
 
-	InfoIsEmpty        = "info is empty"
-	ResponsesIsEmpty   = "responses is empty"
-	RequestIsEmpty     = "request is empty"
-	DescriptionIsEmpty = "empty is description"
-	BodyIsEmpty        = "empty is body"
-	MacroIsEmpty       = "macro is empty"
+	InfoIsEmpty        = "the INFO directive cannot be empty"
+	ResponsesIsEmpty   = "the response cannot be empty"
+	RequestIsEmpty     = "the request cannot be empty"
+	DescriptionIsEmpty = "the description cannot be empty, learn more about the Description directive here: https://jsight.io/docs/jsight-api-0-3#directive-description"
+	BodyIsEmpty        = "the body cannot be empty"
+	MacroIsEmpty       = "the macros cannot be empty, learn more about the MACRO directive here: https://jsight.io/docs/jsight-api-0-3#directive-macro"
 
 	IncorrectPath             = "incorrect path"
 	IncorrectRequest          = "incorrect request"
@@ -69,11 +69,11 @@ const (
 	ApartFromTheOpeningParenthesis                      = "apart from the opening parenthesis, there should be nothing else on this line, learn more about the explicit direcitve boundaries here: https://jsight.io/docs/jsight-api-0-3#boundaries-of-the-body-of-the-directive" //nolint:lll
 	DuplicateNames                                      = "the name %q has already been declared before"
 	NotAllowedToOverrideTheProperty                     = "it is not allowed to override the %q property from the user type %q" //nolint:lll
-	ContextNotClosed                                    = "not all explicit contexts are closed"
+	ContextNotClosed                                    = "this opening paranthesis is not closed, learn more about the explicit direcitve boundaries here: https://jsight.io/docs/jsight-api-0-3#boundaries-of-the-body-of-the-directive"
 	WrongDescriptionContext                             = "wrong description context"
-	MethodIsAlreadyDefinedInResource                    = "method is already defined in resource"
+	MethodIsAlreadyDefinedInResource                    = "this method has already been defined in the resource"
 	UndefinedRequestBodyForResource                     = "undefined request body for resource"
-	RecursionIsProhibited                               = "recursion is prohibited"
+	RecursionIsProhibited                               = "file dependency recursion is detected"
 	UserTypeIsNotAnObject                               = "the user type is not an object"
 	ProcessTypeErr                                      = "process type"
 	FailedToComputeScannersHash                         = "failed to compute scanner's hash"

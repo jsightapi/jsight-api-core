@@ -1,4 +1,4 @@
-recursion is prohibited
+file dependency recursion is detected
 mixins/recursion1.jst:2
 mixins/recursion2.jst:1
 mixins/recursion1.jst:2
