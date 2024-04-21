@@ -39,17 +39,18 @@ const (
 	PathEmptyParameter                 = "empty PATH parameter"
 	PathParameterIsDuplicatedInThePath = "the parameter of the path is duplicated"
 	PathsAreSimilar                    = "the ambiguous paths are not allowed: \"/%s/{%s}\", \"/%s\", see the details here: https://jsight.io/docs/jsight-api-0-3#parameter-path"
+	PathParameterAlreadyDefined        = "The parameter %q has already been defined earlier, see more details about path parameters here: https://jsight.io/docs/jsight-api-0-3#parameter-path"
 
 	IncludeRootErr      = "cannot not start with `/`"
 	IncludeUpErr        = "cannot contain `..` or `.`"
 	IncludeSeparatorErr = "use the symbol `/` as a separator for directories"
 	IncludeDirectiveErr = "the directive is not allowed in included files:"
 
-	UnsupportedVersion                = "unsupported version of JSIGHT"
-	DirectiveJSIGHTShouldBeTheFirst   = "directive JSIGHT should be the first"
-	DirectiveJSIGHTGottaBeOnlyOneTime = "directive JSIGHT gotta be only one time"
-	DirectiveINFOGottaBeOnlyOneTime   = "directive INFO gotta be only one time"
-	DirectiveBaseURLAlreadyDefined    = "directive BaseURL already defined"
+	UnsupportedVersion                = "The specified JSight version is not supported"
+	DirectiveJSIGHTShouldBeTheFirst   = "The first directive in the document must be JSIGHT"
+	DirectiveJSIGHTGottaBeOnlyOneTime = "The directive JSIGHT has already been specified before"
+	DirectiveINFOGottaBeOnlyOneTime   = "The directive INFO has already been specified before"
+	DirectiveBaseURLAlreadyDefined    = "The directive BaseURL has already been defined before"
 
 	UnknownDirective = "unknown directive"
 	UnknownNotation  = "unknown notation"
