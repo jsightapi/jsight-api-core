@@ -27,18 +27,18 @@ const (
 
 	IncorrectPath             = "incorrect path"
 	IncorrectRequest          = "incorrect request"
-	IncorrectDirectiveContext = "incorrect directive context"
+	IncorrectDirectiveContext = "incorrect context for the directive"
 	IncorrectParameter        = "incorrect parameter"
 
-	PathOrErr                          = "the root schema object cannot have an OR rule in the Path directive"
-	PathObjectErr                      = "the body of the Path DIRECTIVE must be an object"
-	PathAdditionalPropertiesErr        = `the "additionalProperties" rule is invalid in the Path directive`
-	PathNullableErr                    = `the "nullable" rule is invalid in the Path directive`
-	PathEmptyErr                       = "an empty object in the Path directive"
+	PathOrErr                          = "the root schema object cannot have the `or` rule in the Path directive"
+	PathObjectErr                      = "the body of the Path directive must be an object, learn more about the Path directive here: https://jsight.io/docs/jsight-api-0-3#directive-path"
+	PathAdditionalPropertiesErr        = `the "additionalProperties" rule is invalid in the Path directive, learn more about the Path directive here: https://jsight.io/docs/jsight-api-0-3#directive-path`
+	PathNullableErr                    = `the "nullable" rule is invalid in the Path directive, learn more about the Path directive here: https://jsight.io/docs/jsight-api-0-3#directive-path`
+	PathEmptyErr                       = "the object in the Path directive can not be empty, learn more about the Path directive here: https://jsight.io/docs/jsight-api-0-3#directive-path"
 	PathMultiLevelPropertyErr          = "the multi-level property is not allowed in the Path directive"
 	PathEmptyParameter                 = "empty PATH parameter"
 	PathParameterIsDuplicatedInThePath = "the parameter of the path is duplicated"
-	PathsAreSimilar                    = `disallow the use of "similar" paths`
+	PathsAreSimilar                    = "the ambiguous paths are not allowed: \"/%s/{%s}\", \"/%s\", see the details here: https://jsight.io/docs/jsight-api-0-3#parameter-path"
 
 	IncludeRootErr      = "mustn't starts with '/'"
 	IncludeUpErr        = "mustn't include '..' or '.'"

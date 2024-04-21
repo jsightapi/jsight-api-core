@@ -54,7 +54,7 @@ func (core *JApiCore) collectPiecesOfPathVariables() *jerr.JApiError {
 
 			if registered && !piece.imitated && defined {
 				return core.rawPathVariables[i].pathDirective.KeywordError(
-					fmt.Sprintf("The parameter %q has already been defined earlier",
+					fmt.Sprintf("The parameter %q has already been defined earlier, see more details about path parameters here: https://jsight.io/docs/jsight-api-0-3#parameter-path",
 						pp.path))
 			}
 
