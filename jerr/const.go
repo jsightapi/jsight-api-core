@@ -61,13 +61,13 @@ const (
 
 	AnnotationIsForbiddenForTheDirective                = "the annotation is not allowed for this directive"
 	NotUniqueDirective                                  = "the directive has already been defined"
-	NotUniquePath                                       = "non-unique path %q in the URL directive"
-	BodyMustBeObject                                    = "body must be object"
-	CannotUseTheTypeAndSchemaNotationParametersTogether = "cannot use the Type and SchemaNotation parameters together"
-	ThereIsNoExplicitContextForClosure                  = "there is no explicit context for closure"
-	DirectiveNotAllowed                                 = "directive not allowed"
-	ApartFromTheOpeningParenthesis                      = "apart from the opening parenthesis, there should be nothing else on this line" //nolint:lll
-	DuplicateNames                                      = "duplicate names are not allowed"
+	NotUniquePath                                       = "the path %q has already been defined"
+	BodyMustBeObject                                    = "there must be an object or a reference to an object in the directive body"
+	CannotUseTheTypeAndSchemaNotationParametersTogether = "directive parameters `Type` and `SchemaNotation` cannot be declared simultaneously"
+	ThereIsNoExplicitContextForClosure                  = "nothing to close with this closing parenthesis, learn more about the explicit direcitve boundaries here: https://jsight.io/docs/jsight-api-0-3#boundaries-of-the-body-of-the-directive"
+	DirectiveNotAllowed                                 = "the directive is not allowed"
+	ApartFromTheOpeningParenthesis                      = "apart from the opening parenthesis, there should be nothing else on this line, learn more about the explicit direcitve boundaries here: https://jsight.io/docs/jsight-api-0-3#boundaries-of-the-body-of-the-directive" //nolint:lll
+	DuplicateNames                                      = "the name %q has already been declared before"
 	NotAllowedToOverrideTheProperty                     = "it is not allowed to override the %q property from the user type %q" //nolint:lll
 	ContextNotClosed                                    = "not all explicit contexts are closed"
 	WrongDescriptionContext                             = "wrong description context"

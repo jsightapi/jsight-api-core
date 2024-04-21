@@ -1,3 +1,3 @@
-duplicate names are not allowed "@included_macro"
+the name "@included_macro" has already been declared before
 mixins/macro.jst:2
 err_33_macro_override.jst:7
