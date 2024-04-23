@@ -11,5 +11,5 @@ import (
 
 func TestWithBannedDirectives(t *testing.T) {
 	err := NewJApiCore(fs.NewFile("", "JSIGHT 0.3"), WithBannedDirectives(directive.Jsight)).BuildCatalog()
-	assert.EqualError(t, err, "directive not allowed (JSIGHT)")
+	assert.EqualError(t, err, "the directive is not allowed (JSIGHT)")
 }

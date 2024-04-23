@@ -1,1 +1,1 @@
-Invalid value of "maxItems" constraint
+Invalid value in the "maxItems" rule. Learn about the rules here: https://jsight.io/docs/jsight-schema-0-3#rules

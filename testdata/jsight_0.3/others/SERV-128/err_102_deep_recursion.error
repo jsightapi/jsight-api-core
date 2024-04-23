@@ -1,1 +1,1 @@
-Infinity recursion detected @bar -> @fizz -> @buzz -> @foo -> @bar
+The infinite type recursion has been detected: @bar -> @fizz -> @buzz -> @foo -> @bar. Use rules `optional: false` or `nullable: true` to stop the recursion.

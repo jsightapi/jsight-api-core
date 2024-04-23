@@ -1,1 +1,1 @@
-Value of constraint "minLength" should be less or equal to value of "maxLength" constraint
+The value of the rule "minLength" should be less or equal to the value of the rule "maxLength"

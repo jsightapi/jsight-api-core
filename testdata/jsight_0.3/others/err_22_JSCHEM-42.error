@@ -1,1 +1,1 @@
-The "precision" constraint can't be used for the "float" type
+The rule "precision" is not compatible with the "float" type. Learn more about the rules and types compatibility here: https://jsight.io/docs/jsight-schema-0-3#appendix-1-a-table-of-all-built-in-types-and-rules

@@ -1,1 +1,1 @@
-You cannot specify child node if you use a type reference
+Only scalar types can be referenced in the "type" rule. Use type references right in the example for referencing objects or arrays. See the examples here: https://jsight.io/docs/jsight-schema-0-3#reference-to-the-user-type-in-the-example-value
