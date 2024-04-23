@@ -32,8 +32,8 @@ const (
 
 	PathOrErr                          = "the root schema object cannot have the `or` rule in the Path directive"
 	PathObjectErr                      = "the body of the Path directive must be an object, learn more about the Path directive here: https://jsight.io/docs/jsight-api-0-3#directive-path"
-	PathAdditionalPropertiesErr        = `the "additionalProperties" rule is invalid in the Path directive, learn more about the Path directive here: https://jsight.io/docs/jsight-api-0-3#directive-path`
-	PathNullableErr                    = `the "nullable" rule is invalid in the Path directive, learn more about the Path directive here: https://jsight.io/docs/jsight-api-0-3#directive-path`
+	PathAdditionalPropertiesErr        = `the "additionalProperties" rule should not be used in the Path directive, learn more about the Path directive here: https://jsight.io/docs/jsight-api-0-3#directive-path`
+	PathNullableErr                    = `the "nullable" rule should not be used in the Path directive, learn more about the Path directive here: https://jsight.io/docs/jsight-api-0-3#directive-path`
 	PathEmptyErr                       = "the object in the Path directive can not be empty, learn more about the Path directive here: https://jsight.io/docs/jsight-api-0-3#directive-path"
 	PathMultiLevelPropertyErr          = "the multi-level property is not allowed in the Path directive"
 	PathEmptyParameter                 = "empty PATH parameter"
@@ -43,7 +43,7 @@ const (
 
 	IncludeRootErr      = "cannot not start with `/`"
 	IncludeUpErr        = "cannot contain `..` or `.`"
-	IncludeSeparatorErr = "use the symbol `/` as a separator for directories"
+	IncludeSeparatorErr = "directories must be separated by slashes `/`"
 	IncludeDirectiveErr = "the directive is not allowed in included files:"
 
 	UnsupportedVersion                = "The specified JSight version is not supported"

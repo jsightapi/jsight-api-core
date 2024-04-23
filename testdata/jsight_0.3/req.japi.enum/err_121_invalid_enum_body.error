@@ -1,1 +1,1 @@
-Invalid character "{" looking for beginning of value
+Invalid character "{" — scalar value expected (number, string, boolean, or null)

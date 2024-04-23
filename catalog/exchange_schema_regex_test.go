@@ -34,7 +34,7 @@ func TestRegexMarshaller_Marshal(t *testing.T) {
 		require.NoError(t, err)
 
 		_, err = s.GetAST()
-		assert.EqualError(t, err, `ERROR (code 1500): Regex should starts with '/' character, but found 'i'
+		assert.EqualError(t, err, `ERROR (code 1500): Regular expression should start with the '/' character, not with 'i'
 	in line 1 on file 
 	> invalid
 	--^`)

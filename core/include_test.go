@@ -76,8 +76,8 @@ func Test_validateIncludeFileName(t *testing.T) {
 			"foo/../":    "cannot contain `..` or `.`",
 			"foo/../bar": "cannot contain `..` or `.`",
 			"foo/./bar/../fizz/../buzz/./fizzbuzz/..": "cannot contain `..` or `.`",
-			"foo\\bar":           "use the symbol `/` as a separator for directories",
-			"foo/bar\\fizz/buzz": "use the symbol `/` as a separator for directories",
+			"foo\\bar":           "directories must be separated by slashes `/`",
+			"foo/bar\\fizz/buzz": "directories must be separated by slashes `/`",
 		}
 
 		for given, expected := range cc {

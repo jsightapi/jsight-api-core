@@ -1,1 +1,1 @@
-You cannot specify child node if you use a "or" rule
+Only scalar values can be in an example when using the "or" rule. Use type references right in the example for referencing objects or arrays. See the examples here: https://jsight.io/docs/jsight-schema-0-3#reference-to-several-user-types-in-the-value-of-the-example

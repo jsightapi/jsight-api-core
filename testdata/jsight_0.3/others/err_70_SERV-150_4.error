@@ -1,1 +1,1 @@
-Invalid value of "maxLength" constraint
+Invalid value in the "maxLength" rule. Learn about the rules here: https://jsight.io/docs/jsight-schema-0-3#rules
