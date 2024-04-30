@@ -1,0 +1,103 @@
+{
+  "tags": {
+    "@_": {
+      "name": "@_",
+      "title": "/",
+      "interactionGroups": [
+        {
+          "protocol": "http",
+          "interactions": [
+            "http GET /"
+          ]
+        }
+      ]
+    }
+  },
+  "userTypes": {
+    "@parent": {
+      "schema": {
+        "content": {
+          "tokenType": "object",
+          "type": "object",
+          "children": [
+            {
+              "key": "uuid",
+              "tokenType": "string",
+              "type": "uuid",
+              "scalarValue": "fee039fd-35cf-4802-ac6a-b34058d79fe1",
+              "rules": [
+                {
+                  "key": "type",
+                  "tokenType": "string",
+                  "scalarValue": "uuid"
+                }
+              ],
+              "optional": false
+            },
+            {
+              "key": "level",
+              "tokenType": "number",
+              "type": "integer",
+              "scalarValue": "1",
+              "optional": false
+            },
+            {
+              "key": "parent",
+              "tokenType": "reference",
+              "type": "@parent",
+              "scalarValue": "@parent",
+              "rules": [
+                {
+                  "key": "nullable",
+                  "tokenType": "boolean",
+                  "scalarValue": "true"
+                }
+              ],
+              "optional": false
+            }
+          ],
+          "optional": false
+        },
+        "example": "{\"uuid\":\"fee039fd-35cf-4802-ac6a-b34058d79fe1\",\"level\":1,\"parent\":{\"uuid\":\"fee039fd-35cf-4802-ac6a-b34058d79fe1\",\"level\":1,\"parent\":{\"uuid\":\"fee039fd-35cf-4802-ac6a-b34058d79fe1\",\"level\":1,}}}",
+        "notation": "jsight",
+        "usedUserTypes": [
+          "@parent"
+        ]
+      }
+    }
+  },
+  "interactions": {
+    "http GET /": {
+      "id": "http GET /",
+      "protocol": "http",
+      "httpMethod": "GET",
+      "path": "/",
+      "tags": [
+        "@_"
+      ],
+      "responses": [
+        {
+          "code": "200",
+          "body": {
+            "format": "json",
+            "schema": {
+              "content": {
+                "tokenType": "reference",
+                "type": "@parent",
+                "scalarValue": "@parent",
+                "optional": false
+              },
+              "example": "{\"uuid\":\"fee039fd-35cf-4802-ac6a-b34058d79fe1\",\"level\":1,\"parent\":{\"uuid\":\"fee039fd-35cf-4802-ac6a-b34058d79fe1\",\"level\":1,}}",
+              "notation": "jsight",
+              "usedUserTypes": [
+                "@parent"
+              ]
+            }
+          }
+        }
+      ]
+    }
+  },
+  "jsight": "0.3",
+  "jdocExchangeVersion": "2.0.0"
+}

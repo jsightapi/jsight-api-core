@@ -1,0 +1,84 @@
+{
+  "components": {
+    "schemas": {
+      "query1": {
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/query1"
+          },
+          {
+            "$ref": "#/components/schemas/query2"
+          }
+        ]
+      },
+      "query2": {
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/query2"
+          },
+          {
+            "$ref": "#/components/schemas/query3"
+          }
+        ]
+      },
+      "query3": {
+        "additionalProperties": false,
+        "properties": {
+          "k": {
+            "example": "v",
+            "type": "string"
+          }
+        },
+        "required": [
+          "k"
+        ],
+        "type": "object"
+      }
+    }
+  },
+  "info": {
+    "title": "",
+    "version": ""
+  },
+  "openapi": "3.0.3",
+  "paths": {
+    "/by2/{id}": {
+      "get": {
+        "parameters": [
+          {
+            "explode": true,
+            "in": "query",
+            "name": "k",
+            "required": true,
+            "schema": {
+              "example": "v",
+              "type": "string"
+            },
+            "style": "deepObject"
+          }
+        ],
+        "responses": {
+          "default": {
+            "content": {
+              "*/*": {
+                "schema": {}
+              }
+            },
+            "description": ""
+          }
+        },
+        "tags": [
+          "/by2"
+        ]
+      },
+      "parameters": [
+        {
+          "in": "path",
+          "name": "id",
+          "required": true,
+          "schema": {}
+        }
+      ]
+    }
+  }
+}
