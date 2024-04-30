@@ -1,0 +1,11 @@
+{
+  "tags": {},
+  "info": {
+    "title": "Info title",
+    "version": "3.14",
+    "description": "Info description"
+  },
+  "interactions": {},
+  "jsight": "0.3",
+  "jdocExchangeVersion": "2.0.0"
+}
