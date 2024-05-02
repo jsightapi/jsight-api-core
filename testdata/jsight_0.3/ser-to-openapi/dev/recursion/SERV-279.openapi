@@ -1,0 +1,60 @@
+{
+  "components": {
+    "schemas": {
+      "parent": {
+        "additionalProperties": false,
+        "properties": {
+          "level": {
+            "example": 1,
+            "type": "integer"
+          },
+          "parent": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/parent"
+              }
+            ],
+            "nullable": true
+          },
+          "uuid": {
+            "example": "fee039fd-35cf-4802-ac6a-b34058d79fe1",
+            "format": "uuid",
+            "type": "string"
+          }
+        },
+        "required": [
+          "uuid",
+          "level",
+          "parent"
+        ],
+        "type": "object"
+      }
+    }
+  },
+  "info": {
+    "title": "",
+    "version": ""
+  },
+  "openapi": "3.0.3",
+  "paths": {
+    "/": {
+      "get": {
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/parent"
+                }
+              }
+            },
+            "description": ""
+          }
+        },
+        "tags": [
+          "/"
+        ]
+      }
+    }
+  }
+}

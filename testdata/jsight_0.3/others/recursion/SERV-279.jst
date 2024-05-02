@@ -1,0 +1,11 @@
+JSIGHT 0.3
+
+GET /
+  200 @parent
+
+TYPE @parent
+{
+    "uuid": "fee039fd-35cf-4802-ac6a-b34058d79fe1", // {type: "uuid"}
+    "level": 1,
+    "parent": @parent // {nullable: true}
+}

@@ -1,0 +1,123 @@
+{
+  "tags": {
+    "@by2": {
+      "name": "@by2",
+      "title": "/by2",
+      "interactionGroups": [
+        {
+          "protocol": "http",
+          "interactions": [
+            "http GET /by2/{id}"
+          ]
+        }
+      ]
+    }
+  },
+  "userTypes": {
+    "@query1": {
+      "schema": {
+        "content": {
+          "tokenType": "reference",
+          "type": "mixed",
+          "scalarValue": "@query1 | @query2",
+          "optional": false
+        },
+        "notation": "jsight",
+        "usedUserTypes": [
+          "@query1",
+          "@query2"
+        ]
+      }
+    },
+    "@query2": {
+      "schema": {
+        "content": {
+          "tokenType": "reference",
+          "type": "mixed",
+          "scalarValue": "@query2 | @query3",
+          "optional": false
+        },
+        "notation": "jsight",
+        "usedUserTypes": [
+          "@query2",
+          "@query3"
+        ]
+      }
+    },
+    "@query3": {
+      "schema": {
+        "content": {
+          "tokenType": "object",
+          "type": "object",
+          "children": [
+            {
+              "key": "k",
+              "tokenType": "string",
+              "type": "string",
+              "scalarValue": "v",
+              "optional": false
+            }
+          ],
+          "optional": false
+        },
+        "example": "{\"k\":\"v\"}",
+        "notation": "jsight"
+      }
+    }
+  },
+  "interactions": {
+    "http GET /by2/{id}": {
+      "id": "http GET /by2/{id}",
+      "protocol": "http",
+      "httpMethod": "GET",
+      "path": "/by2/{id}",
+      "pathVariables": {
+        "schema": {
+          "content": {
+            "tokenType": "object",
+            "type": "object",
+            "children": [
+              {
+                "key": "id",
+                "tokenType": "string",
+                "type": "any",
+                "scalarValue": "",
+                "rules": [
+                  {
+                    "key": "type",
+                    "tokenType": "string",
+                    "scalarValue": "any"
+                  }
+                ],
+                "optional": false
+              }
+            ],
+            "optional": false
+          },
+          "notation": "jsight"
+        }
+      },
+      "tags": [
+        "@by2"
+      ],
+      "query": {
+        "format": "htmlFormEncoded",
+        "schema": {
+          "content": {
+            "tokenType": "reference",
+            "type": "mixed",
+            "scalarValue": "@query1 | @query2",
+            "optional": false
+          },
+          "notation": "jsight",
+          "usedUserTypes": [
+            "@query1",
+            "@query2"
+          ]
+        }
+      }
+    }
+  },
+  "jsight": "0.3",
+  "jdocExchangeVersion": "2.0.0"
+}
