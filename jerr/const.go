@@ -50,7 +50,7 @@ const (
 	DirectiveJSIGHTShouldBeTheFirst   = "The first directive in the document must be JSIGHT"
 	DirectiveJSIGHTGottaBeOnlyOneTime = "The directive JSIGHT has already been specified before"
 	DirectiveINFOGottaBeOnlyOneTime   = "The directive INFO has already been specified before"
-	DirectiveBaseURLAlreadyDefined    = "The directive BaseURL has already been defined before"
+	DirectiveBaseURLAlreadyDefined    = "The directive BaseUrl has already been defined before"
 
 	UnknownDirective = "unknown directive"
 	UnknownNotation  = "unknown notation"
