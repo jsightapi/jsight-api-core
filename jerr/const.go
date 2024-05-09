@@ -38,7 +38,7 @@ const (
 	PathMultiLevelPropertyErr          = "the multi-level property is not allowed in the Path directive"
 	PathEmptyParameter                 = "empty PATH parameter"
 	PathParameterIsDuplicatedInThePath = "the parameter of the path is duplicated"
-	PathsAreSimilar                    = "the ambiguous paths are not allowed: \"/%s/{%s}\", \"/%s\", see the details here: https://jsight.io/docs/jsight-api-0-3#parameter-path"               //nolint:lll
+	PathsAreSimilar                    = "the ambiguous paths are not allowed: \"/%s\", \"/%s\", see the details here: https://jsight.io/docs/jsight-api-0-3#parameter-path"                    //nolint:lll
 	PathParameterAlreadyDefined        = "The parameter %q has already been defined earlier, see more details about path parameters here: https://jsight.io/docs/jsight-api-0-3#parameter-path" //nolint:lll
 
 	IncludeRootErr      = "cannot not start with `/`"

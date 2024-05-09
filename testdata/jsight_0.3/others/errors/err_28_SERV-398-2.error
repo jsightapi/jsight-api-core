@@ -1,0 +1,1 @@
+the ambiguous paths are not allowed: "/users/{id}", "/users/{name}", see the details here: https://jsight.io/docs/jsight-api-0-3#parameter-path
