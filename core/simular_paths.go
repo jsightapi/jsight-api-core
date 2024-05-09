@@ -2,8 +2,9 @@ package core
 
 import (
 	"fmt"
-	"github.com/jsightapi/jsight-api-core/jerr"
 	"strings"
+
+	"github.com/jsightapi/jsight-api-core/jerr"
 
 	"github.com/jsightapi/jsight-api-core/catalog"
 )
