@@ -21,13 +21,13 @@ jobs:
   openapi-lint:
     executor: docker-nodejs-small
     steps:
-      - run: 
-          name: install spectral cli
-          command: npm install -g @stoplight/spectral-cli
+      # - run: 
+      #     name: install spectral cli
+      #     command: npm install -g @stoplight/spectral-cli
       - run: 
           name: spectral lint
           command: >
-            spectral lint testdata/jsight_0.3/ser-to-openapi/**/*.openapi -v -D -F
+            npx @stoplight/spectral-cli lint testdata/jsight_0.3/ser-to-openapi/**/*.openapi -v -D -F
 
 workflows:
   qa:
