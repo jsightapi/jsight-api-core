@@ -11,10 +11,29 @@ parameters:
     type: string
     default: '1.50.1'
 
+executors:
+  docker-nodejs-small:
+    docker:
+      - image: cimg/node-lts
+    resource_class: small
+
+jobs:
+  openapi-lint:
+    executor: docker-nodejs-small
+    steps:
+      - run: 
+          name: install spectral cli
+          command: npm install -g @stoplight/spectral-cli
+      - run: 
+          name: spectral lint
+          command: >
+            spectral lint testdata/jsight_0.3/ser-to-openapi/**/*.openapi -v -D -F
 
 workflows:
   qa:
     jobs:
+      - openapi-lint
+
       - common/go-test: &common-params
           context: online-editor-development
           go-version: << pipeline.parameters.go-version >>
