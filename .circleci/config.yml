@@ -21,9 +21,6 @@ jobs:
   openapi-lint:
     executor: docker-nodejs-small
     steps:
-      # - run: 
-      #     name: install spectral cli
-      #     command: npm install -g @stoplight/spectral-cli
       - checkout
       - run: 
           name: spectral lint
