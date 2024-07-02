@@ -1,0 +1,62 @@
+{
+  "info": {
+    "title": "",
+    "version": ""
+  },
+  "openapi": "3.0.3",
+  "paths": {
+    "/other_without_operation_id": {
+      "get": {
+        "responses": {
+          "default": {
+            "content": {
+              "*/*": {
+                "schema": {}
+              }
+            },
+            "description": ""
+          }
+        },
+        "tags": [
+          "/other_without_operation_id"
+        ]
+      }
+    },
+    "/users": {
+      "get": {
+        "operationId": "getUsers",
+        "responses": {
+          "default": {
+            "content": {
+              "*/*": {
+                "schema": {}
+              }
+            },
+            "description": ""
+          }
+        },
+        "tags": [
+          "/users"
+        ]
+      }
+    },
+    "/v2/users": {
+      "get": {
+        "operationId": "get Users ver 2",
+        "responses": {
+          "default": {
+            "content": {
+              "*/*": {
+                "schema": {}
+              }
+            },
+            "description": ""
+          }
+        },
+        "tags": [
+          "/v2"
+        ]
+      }
+    }
+  }
+}
