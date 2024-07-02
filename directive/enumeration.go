@@ -48,7 +48,7 @@ const (
 	Result
 	TAG
 	Tags
-	OperationId
+	OperationID
 )
 
 var (
@@ -147,11 +147,11 @@ func (de Enumeration) IsAllowedForDirectiveContext(child Enumeration) bool {
 // types which can be placed into this directive context.
 var directiveAllowedToDirectiveContext = map[Enumeration]map[Enumeration]struct{}{
 	URL:              createEnumerationSet(Get, Post, Put, Patch, Delete, Path, Paste, Protocol, Method, Tags),
-	Get:              createEnumerationSet(Description, Request, HTTPResponseCode, Path, Query, Paste, Tags, OperationId),
-	Post:             createEnumerationSet(Description, Request, HTTPResponseCode, Path, Query, Paste, Tags, OperationId),
-	Put:              createEnumerationSet(Description, Request, HTTPResponseCode, Path, Query, Paste, Tags, OperationId),
-	Patch:            createEnumerationSet(Description, Request, HTTPResponseCode, Path, Query, Paste, Tags, OperationId),
-	Delete:           createEnumerationSet(Description, Request, HTTPResponseCode, Path, Query, Paste, Tags, OperationId),
+	Get:              createEnumerationSet(Description, Request, HTTPResponseCode, Path, Query, Paste, Tags, OperationID),
+	Post:             createEnumerationSet(Description, Request, HTTPResponseCode, Path, Query, Paste, Tags, OperationID),
+	Put:              createEnumerationSet(Description, Request, HTTPResponseCode, Path, Query, Paste, Tags, OperationID),
+	Patch:            createEnumerationSet(Description, Request, HTTPResponseCode, Path, Query, Paste, Tags, OperationID),
+	Delete:           createEnumerationSet(Description, Request, HTTPResponseCode, Path, Query, Paste, Tags, OperationID),
 	HTTPResponseCode: createEnumerationSet(Body, Headers, Paste),
 	Request:          createEnumerationSet(Body, Headers, Paste),
 	Info:             createEnumerationSet(Title, Version, Description, Paste),

@@ -87,7 +87,7 @@ func (d *Directive) AppendParameter(b bytes.Bytes) error {
 			return nil
 		}
 
-	case OperationId:
+	case OperationID:
 		return d.SetNamedParameter("OperationId", s)
 	}
 

@@ -71,8 +71,8 @@ type JApiCore struct {
 	// directivesWithPastes directives after processing the MACRO and PASTE directives.
 	directivesWithPastes []*directive.Directive
 
-	// uniqOperationId used for checking the uniqueness of the OperationId.
-	uniqOperationId map[string]struct{}
+	// uniqOperationID used for checking the uniqueness of the OperationId.
+	uniqOperationID map[string]struct{}
 }
 
 type Option func(*JApiCore)
@@ -112,7 +112,7 @@ func NewJApiCore(file *fs.File, oo ...Option) *JApiCore {
 		macro:                  make(map[string]*directive.Directive, 20),
 		scannersStack:          &scanner.Stack{},
 		rules:                  map[string]schema.Rule{},
-		uniqOperationId:        make(map[string]struct{}, 20),
+		uniqOperationID:        make(map[string]struct{}, 20),
 	}
 	core.directiveFunctions = map[directive.Enumeration]func(*directive.Directive) *jerr.JApiError{
 		directive.Jsight:           core.addJSight,
@@ -138,7 +138,7 @@ func NewJApiCore(file *fs.File, oo ...Option) *JApiCore {
 		directive.Method:           core.addJsonRpcMethod,
 		directive.Params:           core.addJsonRpcParams,
 		directive.Result:           core.addJsonRpcResult,
-		directive.OperationId:      core.addOperationId,
+		directive.OperationID:      core.addOperationID,
 	}
 
 	for _, o := range oo {

@@ -620,7 +620,7 @@ func (*Catalog) enumDirectiveToUserRule(d *directive.Directive, e *enum.Enum) (*
 	}, nil
 }
 
-func (c *Catalog) AddOperationId(d directive.Directive, id string) error {
+func (c *Catalog) AddOperationID(d directive.Directive, id string) error {
 	httpID, err := newHTTPInteractionID(d)
 	if err != nil {
 		return err
