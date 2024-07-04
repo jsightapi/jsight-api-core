@@ -1,0 +1,33 @@
+JSIGHT 0.3
+
+PUT /users/{id}
+  OperationId updateUser
+
+  Description
+    Update a user.
+
+  Query
+  {
+    "some": "query value"
+  }
+
+  Path
+  {
+    "id": 123
+  }
+
+  Request
+    Body
+    {
+      "name": "Tom"
+    }
+
+  200
+  {
+    "id": 123,
+    "name": "Tom"
+  }
+
+DELETE /users/{id}
+  OperationId deleteUser
+  204 empty

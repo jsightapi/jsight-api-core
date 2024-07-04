@@ -1,9 +1,15 @@
 JSIGHT 0.3
 
-GET /users
+GET /camelcase
   OperationId getUsers
 
-GET /v2/users
-  OperationId "get Users ver 2"
+GET /whitespaces
+  OperationId "any string with spaces"
 
-GET /other_without_operation_id
+GET /unicode
+  OperationId "Hello, 世界"
+
+GET /unicode_without_quotes
+  OperationId 世界
+
+GET /without_operation_id

@@ -1,0 +1,101 @@
+{
+  "info": {
+    "title": "",
+    "version": ""
+  },
+  "openapi": "3.0.3",
+  "paths": {
+    "/users/{id}": {
+      "delete": {
+        "operationId": "deleteUser",
+        "responses": {
+          "204": {
+            "content": {},
+            "description": ""
+          }
+        },
+        "tags": [
+          "/users"
+        ]
+      },
+      "parameters": [
+        {
+          "in": "path",
+          "name": "id",
+          "required": true,
+          "schema": {
+            "example": 123,
+            "type": "integer"
+          }
+        }
+      ],
+      "put": {
+        "description": "Update a user.",
+        "operationId": "updateUser",
+        "parameters": [
+          {
+            "explode": true,
+            "in": "query",
+            "name": "some",
+            "required": true,
+            "schema": {
+              "example": "query value",
+              "type": "string"
+            },
+            "style": "deepObject"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "additionalProperties": false,
+                "properties": {
+                  "name": {
+                    "example": "Tom",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "name"
+                ],
+                "type": "object"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "id": {
+                      "example": 123,
+                      "type": "integer"
+                    },
+                    "name": {
+                      "example": "Tom",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "name"
+                  ],
+                  "type": "object"
+                }
+              }
+            },
+            "description": ""
+          }
+        },
+        "tags": [
+          "/users"
+        ]
+      }
+    }
+  }
+}

@@ -5,24 +5,7 @@
   },
   "openapi": "3.0.3",
   "paths": {
-    "/other_without_operation_id": {
-      "get": {
-        "responses": {
-          "default": {
-            "content": {
-              "*/*": {
-                "schema": {}
-              }
-            },
-            "description": ""
-          }
-        },
-        "tags": [
-          "/other_without_operation_id"
-        ]
-      }
-    },
-    "/users": {
+    "/camelcase": {
       "get": {
         "operationId": "getUsers",
         "responses": {
@@ -36,13 +19,13 @@
           }
         },
         "tags": [
-          "/users"
+          "/camelcase"
         ]
       }
     },
-    "/v2/users": {
+    "/unicode": {
       "get": {
-        "operationId": "get Users ver 2",
+        "operationId": "Hello, 世界",
         "responses": {
           "default": {
             "content": {
@@ -54,7 +37,60 @@
           }
         },
         "tags": [
-          "/v2"
+          "/unicode"
+        ]
+      }
+    },
+    "/unicode_without_quotes": {
+      "get": {
+        "operationId": "世界",
+        "responses": {
+          "default": {
+            "content": {
+              "*/*": {
+                "schema": {}
+              }
+            },
+            "description": ""
+          }
+        },
+        "tags": [
+          "/unicode_without_quotes"
+        ]
+      }
+    },
+    "/whitespaces": {
+      "get": {
+        "operationId": "any string with spaces",
+        "responses": {
+          "default": {
+            "content": {
+              "*/*": {
+                "schema": {}
+              }
+            },
+            "description": ""
+          }
+        },
+        "tags": [
+          "/whitespaces"
+        ]
+      }
+    },
+    "/without_operation_id": {
+      "get": {
+        "responses": {
+          "default": {
+            "content": {
+              "*/*": {
+                "schema": {}
+              }
+            },
+            "description": ""
+          }
+        },
+        "tags": [
+          "/without_operation_id"
         ]
       }
     }
