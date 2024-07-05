@@ -1,0 +1,98 @@
+{
+  "info": {
+    "title": "",
+    "version": ""
+  },
+  "openapi": "3.0.3",
+  "paths": {
+    "/camelcase": {
+      "get": {
+        "operationId": "getUsers",
+        "responses": {
+          "default": {
+            "content": {
+              "*/*": {
+                "schema": {}
+              }
+            },
+            "description": ""
+          }
+        },
+        "tags": [
+          "/camelcase"
+        ]
+      }
+    },
+    "/unicode": {
+      "get": {
+        "operationId": "Hello, 世界",
+        "responses": {
+          "default": {
+            "content": {
+              "*/*": {
+                "schema": {}
+              }
+            },
+            "description": ""
+          }
+        },
+        "tags": [
+          "/unicode"
+        ]
+      }
+    },
+    "/unicode_without_quotes": {
+      "get": {
+        "operationId": "世界",
+        "responses": {
+          "default": {
+            "content": {
+              "*/*": {
+                "schema": {}
+              }
+            },
+            "description": ""
+          }
+        },
+        "tags": [
+          "/unicode_without_quotes"
+        ]
+      }
+    },
+    "/whitespaces": {
+      "get": {
+        "operationId": "any string with spaces",
+        "responses": {
+          "default": {
+            "content": {
+              "*/*": {
+                "schema": {}
+              }
+            },
+            "description": ""
+          }
+        },
+        "tags": [
+          "/whitespaces"
+        ]
+      }
+    },
+    "/without_operation_id": {
+      "get": {
+        "responses": {
+          "default": {
+            "content": {
+              "*/*": {
+                "schema": {}
+              }
+            },
+            "description": ""
+          }
+        },
+        "tags": [
+          "/without_operation_id"
+        ]
+      }
+    }
+  }
+}

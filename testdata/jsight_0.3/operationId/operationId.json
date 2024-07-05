@@ -1,0 +1,155 @@
+{
+  "tags": {
+    "@get": {
+      "name": "@get",
+      "title": "/get",
+      "interactionGroups": [
+        {
+          "protocol": "http",
+          "interactions": [
+            "http GET /get"
+          ]
+        }
+      ]
+    },
+    "@post": {
+      "name": "@post",
+      "title": "/post",
+      "interactionGroups": [
+        {
+          "protocol": "http",
+          "interactions": [
+            "http POST /post"
+          ]
+        }
+      ]
+    },
+    "@put": {
+      "name": "@put",
+      "title": "/put",
+      "interactionGroups": [
+        {
+          "protocol": "http",
+          "interactions": [
+            "http PUT /put"
+          ]
+        }
+      ]
+    },
+    "@patch": {
+      "name": "@patch",
+      "title": "/patch",
+      "interactionGroups": [
+        {
+          "protocol": "http",
+          "interactions": [
+            "http PATCH /patch"
+          ]
+        }
+      ]
+    },
+    "@delete": {
+      "name": "@delete",
+      "title": "/delete",
+      "interactionGroups": [
+        {
+          "protocol": "http",
+          "interactions": [
+            "http DELETE /delete"
+          ]
+        }
+      ]
+    },
+    "@v2": {
+      "name": "@v2",
+      "title": "/v2",
+      "interactionGroups": [
+        {
+          "protocol": "http",
+          "interactions": [
+            "http GET /v2/get"
+          ]
+        }
+      ]
+    },
+    "@v3": {
+      "name": "@v3",
+      "title": "/v3",
+      "interactionGroups": [
+        {
+          "protocol": "http",
+          "interactions": [
+            "http GET /v3/get"
+          ]
+        }
+      ]
+    }
+  },
+  "interactions": {
+    "http GET /get": {
+      "id": "http GET /get",
+      "protocol": "http",
+      "httpMethod": "GET",
+      "path": "/get",
+      "tags": [
+        "@get"
+      ]
+    },
+    "http POST /post": {
+      "id": "http POST /post",
+      "protocol": "http",
+      "httpMethod": "POST",
+      "path": "/post",
+      "tags": [
+        "@post"
+      ]
+    },
+    "http PUT /put": {
+      "id": "http PUT /put",
+      "protocol": "http",
+      "httpMethod": "PUT",
+      "path": "/put",
+      "tags": [
+        "@put"
+      ]
+    },
+    "http PATCH /patch": {
+      "id": "http PATCH /patch",
+      "protocol": "http",
+      "httpMethod": "PATCH",
+      "path": "/patch",
+      "tags": [
+        "@patch"
+      ]
+    },
+    "http DELETE /delete": {
+      "id": "http DELETE /delete",
+      "protocol": "http",
+      "httpMethod": "DELETE",
+      "path": "/delete",
+      "tags": [
+        "@delete"
+      ]
+    },
+    "http GET /v2/get": {
+      "id": "http GET /v2/get",
+      "protocol": "http",
+      "httpMethod": "GET",
+      "path": "/v2/get",
+      "tags": [
+        "@v2"
+      ]
+    },
+    "http GET /v3/get": {
+      "id": "http GET /v3/get",
+      "protocol": "http",
+      "httpMethod": "GET",
+      "path": "/v3/get",
+      "tags": [
+        "@v3"
+      ]
+    }
+  },
+  "jsight": "0.3",
+  "jdocExchangeVersion": "2.0.0"
+}
